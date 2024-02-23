@@ -1,9 +1,9 @@
 # Table of contents
 
-## Overview
+## Merkl Overview
 
-- [📐 What is Merkl](README.md)
-- [How Merkl works](merkl-mechanism.md)
+- [Merkl introduction](README.md)
+- [Merkl technical overview](merkl-mechanism.md)
 <!-- - [Campaign Types]()
   - d -->
 - [Smart contract addresses](addresses.md)

@@ -6,7 +6,7 @@ description: Guide for Merkl incentivizors
 
 DAOs or individuals looking to distribute incentives through Merkl need to create Merkl campaigns. There are three ways of creating a Merkl incentivization campaign:
 
-- Through the [deposit page](https://merkl.angle.money/deposit) of the Merkl App. This approach is recommended for first campaign creation and incentivizors who want to create few campaigns
+- Through the [create page](https://merkl.angle.money/create) of the Merkl App. This approach is recommended for first campaign creation and incentivizors who want to create few campaigns
   - Anyone who wants to create campaigns should visit this page at least once, it will show you all the campaign types and all the custom rules you can create for your campaigns.
 - [From a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe), this is the approach we recommend. The whole setup is documented in the next section
 - Directly from the [`DistributionCreator` contract](./supported-chains-amms.md) on the chain of your choice
@@ -29,7 +29,23 @@ Once created, a campaign on Merkl may take up to 1 hour to be picked up by the M
 If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.angle.money/partner)
 {% endhint %}
 
-## From a multisig or a Gnosis Safe
+## Configure your campaign
+
+The campaign configuration is specific to the type of campaign you want to create, however all campaign types share the following parameters:
+
+- Campaign creator: overrides the address which created the campaign. The creator address is used to recover the funds if the campaign was misconfigured
+- URL: url of the page to which the users will be redirected when clicking on the opportunity link on the Merkl frontend.
+- Whitelist: Empty by default. If addresses are provided, only these addresses will accrue rewards. The behavior can change if the address is provided is handled by a forwarder (e.g. if you provide the address of a staking contract for ERC20 campaigns, all users who staked their tokens on the contract will receive rewards, but if you provided an EOA then only that EOA would receive rewards).
+- Blacklist: Empty by default. List of addresses that will be not be taken into account during reward distribution. Similarly to whitelist, the behavior can be altered by forwarders.
+
+Forwarders are explained in more details [here](../merkl-mechanism.md#merkl-forwarders) and in the campaign specific documentation.
+
+The other parameters are specific to each campaign type:
+
+- [ERC20 campaign configuration](./campaign-specific/erc20.md#campaign-configuration)
+- [Concentrated liquidity campaign configuration](./campaign-specific/clamm.md#campaign-configuration)
+
+## Deploy your campaign from a multisig or a Gnosis Safe
 
 The recommended method of interaction to distribute rewards with Merkl with a multisig is to use Gnosis Safe Transaction Builder.
 

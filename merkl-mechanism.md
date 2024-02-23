@@ -2,7 +2,7 @@
 description: An in-depth look at Merkl
 ---
 
-# ⚙️ Merkl Mechanism
+# ⚙️ Merkl Technical Overview
 
 Merkl is based on an off-chain script that looks at on-chain data to measure user behavior and split the rewards between all eligible users based on the rules set by the incentivizor. Based on this, the script aggregates all reward distribution data in a Merkle tree, then compresses it into a Merkle root and pushes on-chain to allow LPs to claim their rewards.
 
@@ -56,12 +56,29 @@ This is the most critical component of the whole system, as such, it is fully is
 - fetches campaigns from the Merkl Distribution creator contracts
 - creates independent processes for each campaign which all run in parallel. Each process executes the following actions:
   - validates that the configuration of the campaign is correct
+  - fetches all the forwarders that are applicable to the campaign (see [Merkl Forwarders](#merkl-forwarders))
   - checks how much rewards have already been distributed for that campaign and when they were last distributed
   - fetches onchain data from RPC nodes, subgraphs or other solutions to measure user activity and reward users based on these metrics.
   - runs a several sanity checks to avoid a dispute. If an issue is detected the script will retry to compute the rewards up to 3 times, after the third time the new rewards from the campaign will be omitted in the new reward file to avoid blocking the whole system for a single campaign. These rewards will be recomputed at a later time.
   - creates a partial reward file for that campaign
 - aggregates all the partial reward files into one and computes a new merkl root
 - pushes the new merkle root on chain.
+
+#### Merkl Forwarders
+
+Merkl implements `forwarders` to track user activity across protocol. This allows users to accrue rewards even if the incentivized asset isn't directly present in their wallet. Each campaign type comes with its own forwarders:
+
+- [Concentrated Liquidity Forwarders](campaigns/erc20.md#forwarders)
+- [ERC20 Forwarders](campaigns/clamm.md#forwarders)
+
+Forwarders need to be integrated into Merkl, simple forwarders such as staking contracts for ERC20 tokens are integrated by default but more complex forwarders such as Active Liquidity Management protocols on concentrated liquidity pools need to go through an integration process which may incure integration fees.
+
+The reward forwarding mechanism works as follows when calculating rewards:
+
+- The calculator does a initial run where it doesn't take into account forwarders and distributes the rewards to all eligible addresses
+  - Whitelists and blacklists are applied during this first run. This means that if you blacklisted an address that is eligible to forwarding (e.g. a staking contract), all the liquidity provided by users in this address will not be taken into account into reward calculation (e.g. all tokens staked in a blacklisted contract will be disregarded)
+- The calculator then looks at all the addresses which received rewards and looks addresses eligible to forwarding (e.g. a staking contract address)
+- For each forwarder found, the calculator runs scripts specific to the forwarder type to distribute the rewards to the end users (e.g. looking at the balance of staked tokens of the users)
 
 ### Merkl rewards bucket
 

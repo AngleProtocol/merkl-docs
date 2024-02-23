@@ -1,8 +1,71 @@
 ---
 description: Guide for people using Merkl to incentivize Liquidity Providers
 ---
+# Incentivize concentrated liquidity pools with Merkl
 
-# 💰 Create an incentivization campaign with Merkl
+Everything you need to know to make the most of your incentives on concentrated liquidity pools!
+
+## Campaign configuration
+
+The following parameters are specific to concentrated liquidity campaigns, you can find the parameters common to all campaigns [here]
+
+### Required Parameters
+
+- Pool Address: address of the pool you want to incentivize
+- % Fees: % of incentives allocated by only looking at the fees accrued by the LPs
+- % Token0: % of incentives allocated by only looking at the amount of token0 provided by the LPs
+- % Token1: % of incentives allocated by only looking at the amount of token1 provided by the LPs
+
+### Optional Parameters
+
+- Incentivize out of range liquidity: defaults to false, wether or not to consider LPs positions which don't have liquidity on the tick of the pool during reward calculation
+- Boost token address: defaults to null address (disabled), address of the token which needs to be held by LPs to apply a boost to their rewards
+- Boost: defaults to 0 (no boost), multiplier to apply to holders of the boost token, should be set to a value greater than 1
+
+### Use cases
+
+No matter the campaign configuration, creating a Merkl campaign will always increase the pool TVL as it will attract more LPs.
+
+However, **the key feature of Merkl is its ability to shape the liquidity of the pool**.
+
+#### Increase pool volume by decreasing slippage
+
+**Goal:** increase the liquidity at the pool swap tick (low slippage)
+
+**Key configuration parameters**:
+
+- % Fees: 100
+- % Token0: 0
+- % Token1: 0
+- Incentivize out of range liquidity: false
+
+If your pool has a low volume (less than 10 swaps per hour) on a chain with low gas fees:
+
+- Whitelist: Addresses of one or several active liquidity management (ALM) vaults integrated in Merkl
+
+Whitelisting vaults forces LPs to provide liquidity through an ALM, we recommend this approach to avoid having farmers provide very concentrated liquidity around the tick, executing a swap and removing their liquidity right after the swap. When only incentivizing fees, Merkl only looks at how the fees were distributed to the LPs when calculating the rewards, this means that if a user provided a small amount of liquidity in a very tight range and executed a swap in that range right after, that user will collect most of the fees of that swap. If the pool volume is low, this means that a user could potentially accrue all the rewards for a campaign by executing this type of transactions. Forcing users to use ALMs will negate this issue as ALMs do not create such positions.
+
+#### Create directional low slippage for a given token of the pool (e.g a governance token)
+
+**Goal:** Encouraging swaps for a given token of the pool and discouraging swaps in the other direction
+
+This approach is useful for newly created governance tokens. You want people to be able to easily buy (low slippage when swapping to your governance token) your token but you want to avoid them dumping it (high slippage when swapping from your governance token).
+
+**Key configuration parameters for low slippage on token0**:
+
+- % Fees: 20
+- % Token0: 80
+- % Token1: 0
+- Incentivize out of range liquidity: false
+
+This configuration will force LPs to provide asymmetric liquidity to your pool and will have a double effect:
+
+- LPs will need to provide a lot of token0 when creating positions (if token0 is in a position then it's not being dumped!)
+- Swappers will have a very good price when buying your token and have a very bad price because of slippage when dumping your token.
+
+Technically, you could put all the incentives on Token 0 but having some on fees will encourage LPs to have tighter positions, further decreasing slippage.
+
+## 💰 Create an incentivization campaign with Merkl (legacy)
 
 DAOs or individuals looking to incentivize Liquidity Providers can use Merkl to create custom and efficient campaigns and get better liquidity.
 
@@ -26,7 +89,7 @@ Once created, a campaign on Merkl may take up to 1 hour to be picked up by the M
 If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.angle.money/partner)
 {% endhint %}
 
-## 📱 On [merkl.angle.money](https://merkl.angle.money)
+### 📱 On [merkl.angle.money](https://merkl.angle.money)
 
 You just need to fill the `address` of the pool you want to incentivize, the `total amount` of tokens you want to distribute, and the beginning and end dates of the distribution.
 
@@ -50,11 +113,11 @@ Merkl App does not integrate well with smart contract wallets when it comes to p
 
 ![Merkl Script](../../.gitbook/assets/docs-merkl-for-distributors.png)
 
-## From a multisig or a Gnosis Safe
+### From a multisig or a Gnosis Safe
 
 The recommended method of interaction to distribute rewards with Merkl with a multisig is to use Gnosis Safe Transaction Builder.
 
-### Building the payload
+#### Building the payload
 
 Now that the signing requirement is clear, what payload should you set in the Gnosis Safe transaction builder?
 
@@ -112,7 +175,7 @@ The `distribution` tuple given for the `createDistribution` function has the fol
 
 After using the payload provided in example and customizing both the approval and the parameters of the `createDistribution` transaction to fit your needs, you should be ready to execute the transaction to distribute rewards to Merkl!
 
-### If your multisig has been whitelisted
+#### If your multisig has been whitelisted
 
 It's possible that addresses are whitelisted so they do not need to post a signature onchain to be able to distribute rewards.
 If your multisig address has been whitelisted by Angle Labs, then you can directly interact with Merkl front from your Gnosis Safe.
@@ -123,7 +186,7 @@ To do this, head to the Apps section of your multisig, select `My Custom Apps` a
 Usually, Angle Labs will proceed to whitelisting a multisig if one of the signers of the multisig has posted a signature of the T&Cs onchain on the Merkl contract.
 {% endhint %}
 
-## With a custom script
+### With a custom script
 
 You do not specifically need to use the Angle frontend interface to reward pools on Merkl: this can directly be done with a transaction at the smart contract level.
 
