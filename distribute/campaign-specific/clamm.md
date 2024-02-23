@@ -7,7 +7,7 @@ Everything you need to know to make the most of your incentives on concentrated 
 
 ## Campaign configuration
 
-The following parameters are specific to concentrated liquidity campaigns, you can find the parameters common to all campaigns [here]
+The following parameters are specific to concentrated liquidity campaigns, you can find the parameters common to all campaigns [here](../README.md#configure-your-campaign)
 
 ### Required Parameters
 
@@ -63,7 +63,7 @@ This configuration will force LPs to provide asymmetric liquidity to your pool a
 - LPs will need to provide a lot of token0 when creating positions (if token0 is in a position then it's not being dumped!)
 - Swappers will have a very good price when buying your token and have a very bad price because of slippage when dumping your token.
 
-Technically, you could put all the incentives on Token 0 but having some on fees will encourage LPs to have tighter positions, further decreasing slippage.
+You could put all the incentives on token0 but having some on fees will encourage LPs to have tighter positions, further decreasing slippage.
 
 ## 💰 Create an incentivization campaign with Merkl (legacy)
 
@@ -77,7 +77,7 @@ Regardless of the method you are using, before depositing any incentives, make s
 - The token you want to distribute has been whitelisted and the amount per hour of tokens you want to distribute is greater than the minimum amount allowed in the contract (more on this below)
 - The AMM you're looking to send incentives to is supported on the chain you want to use
 
-{% content-ref url="incentivizor-tc.md" %}
+{% content-ref url="../incentivizor-tc.md" %}
 [incentivizor-tc.md](../incentivizor-tc.md)
 {% endcontent-ref %}
 
