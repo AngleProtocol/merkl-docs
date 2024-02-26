@@ -51,11 +51,11 @@ Merkl is built and maintained by Angle Labs, but is separate from the Angle Prot
 
 Merkl is a solution any DAO or protocol can use to incentivize any type of liquidity, and any liquidity provider can tap into to earn extra incentives without having to take any action after taking actions with their funds.
 
-Campaigns available on Merkl are all listed at [merkl.angle.money](https://merkl.angle.money). New campaigns can also be deposited from there.
+Campaigns available on Merkl are all listed at [merkl.xyz](https://merkl.xyz). New campaigns can also be deposited from there.
 
 The system for depositing incentives and claiming rewards **can be easily integrated on any dApp**. [This guide](./distribute/integrate/integration-guide.md) explains among other things how to integrate some Merkl campaigns in your frontend and how to build claim transactions for your users.
 
-If you simply want to use Merkl, check out these guides to [make the best of Merkl as a liquidity provider](./earn/README.md) or to [distribute incentives](./distribute/campaign-specific/) with the system.
+If you simply want to use Merkl, check out these guides to [make the best of Merkl as a liquidity provider](./earn/README.md) or to [distribute incentives](./distribute/README.md) with the system.
 
 ### Audits
 
@@ -63,7 +63,9 @@ Merkl smart contracts have been audited by Code4rena. Find the audit report [her
 
 ### 🔗 Links
 
-- [Merkl App](https://merkl.angle.money)
+- [Merkl App](https://merkl.xyz)
+- [Terms & Conditions](./distribute/incentivizor-tc.md)
+- [Smart contracts addresses](./addresses.md)
 - [Smart contracts code](https://github.com/AngleProtocol/merkl-contracts)
-- [Track all rewards distributed through Merkl](https://merkl-rewards.angle.money/)
+- [Track all rewards distributed through Merkl](https://rewards.merkl.xyz/)
 - [Open-source dispute bot](https://github.com/AngleProtocol/merkl-dispute)
