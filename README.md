@@ -8,7 +8,7 @@ coverY: 0
 
 Merkl is a solution to incentivize any complex onchain and offchain behavior. It can not only replicate any type of staking contract, it can also do much more and reward in a tailored manner any onchain or offchain action, or combination of actions.
 
-It is conceived as an agnostic powerhouse enabling everyone to unlock liquidity based on their exact needs without overspending or allocating tokens to reward behavior/users/actions that are not beneficial to the incentivizor. Merkl is for instance much more expressive and efficient at shaping liquidity on concentrated liquidity pools than other solutions available on the market.
+It is conceived as an agnostic powerhouse enabling everyone to unlock liquidity based on their exact needs without overspending or allocating tokens to reward behaviors/users/actions that are not beneficial to the incentivizor. Merkl is for instance much more expressive and efficient at shaping liquidity on concentrated liquidity pools than other solutions available on the market.
 
 Incentives are distributed by deploying **Merkl Campaigns** in which incentivizors select a token to distribute, an amount of that same token and a timeframe over which the token should be distributed. All Merkl campaigns can be found by visiting the [Merkl App](https://merkl.angle.money). Once a campaign is created, rewards are then regularly streamed to eligible liquidity providers through onchain merkle root updates.
 
@@ -44,3 +44,26 @@ It can also be waived for incentives which contain some specific approved tokens
 {% hint style="info" %}
 Merkl is built and maintained by Angle Labs, but is separate from the Angle Protocol.
 {% endhint %}
+
+## Resources
+
+### 📖 Guides
+
+Merkl is a solution any DAO or protocol can use to incentivize any type of liquidity, and any liquidity provider can tap into to earn extra incentives without having to take any action after taking actions with their funds.
+
+Campaigns available on Merkl are all listed at [merkl.angle.money](https://merkl.angle.money). New campaigns can also be deposited from there.
+
+The system for depositing incentives and claiming rewards **can be easily integrated on any dApp**. [This guide](./distribute/integrate/integration-guide.md) explains among other things how to integrate some Merkl campaigns in your frontend and how to build claim transactions for your users.
+
+If you simply want to use Merkl, check out these guides to [make the best of Merkl as a liquidity provider](./earn/README.md) or to [distribute incentives](./distribute/campaign-specific/) with the system.
+
+### Audits
+
+Merkl smart contracts have been audited by Code4rena. Find the audit report [here](https://code4rena.com/reports/2023-06-angle).
+
+### 🔗 Links
+
+- [Merkl App](https://merkl.angle.money)
+- [Smart contracts code](https://github.com/AngleProtocol/merkl-contracts)
+- [Track all rewards distributed through Merkl](https://merkl-rewards.angle.money/)
+- [Open-source dispute bot](https://github.com/AngleProtocol/merkl-dispute)
