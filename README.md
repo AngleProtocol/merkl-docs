@@ -10,7 +10,7 @@ Merkl is a solution to incentivize any complex onchain and offchain behavior. It
 
 It is conceived as an agnostic powerhouse enabling everyone to unlock liquidity based on their exact needs without overspending or allocating tokens to reward behaviors/users/actions that are not beneficial to the incentivizor. Merkl is for instance much more expressive and efficient at shaping liquidity on concentrated liquidity pools than other solutions available on the market.
 
-Incentives are distributed by deploying **Merkl Campaigns** in which incentivizors select a token to distribute, an amount of that same token and a timeframe over which the token should be distributed. All Merkl campaigns can be found by visiting the [Merkl App](https://merkl.angle.money). Once a campaign is created, rewards are then regularly streamed to eligible liquidity providers through onchain merkle root updates.
+Incentives are distributed by deploying **Merkl Campaigns** in which incentivizors select a token to distribute, an amount of that same token and a timeframe over which the token should be distributed. All Merkl campaigns can be found by visiting the [Merkl App](https://merkl.xyz). Once a campaign is created, rewards are then regularly streamed to eligible liquidity providers through onchain merkle root updates.
 
 For these users, Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.
 

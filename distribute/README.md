@@ -6,7 +6,7 @@ description: Guide for Merkl incentivizors
 
 DAOs or individuals looking to distribute incentives through Merkl need to create Merkl campaigns. There are three ways of creating a Merkl incentivization campaign:
 
-- Through the [create page](https://merkl.angle.money/create) of the Merkl App. This approach is recommended for first campaign creation and incentivizors who want to create few campaigns
+- Through the [create page](https://merkl.xyz/create) of the Merkl App. This approach is recommended for first campaign creation and incentivizors who want to create few campaigns
   - Anyone who wants to create campaigns should visit this page at least once, it will show you all the campaign types and all the custom rules you can create for your campaigns.
 - [From a Gnosis Safe multisig](#deploy-your-campaign-from-a-multisig-or-a-gnosis-safe), this is the approach we recommend. The whole setup is documented in the next section
 - Directly from the [`DistributionCreator` contract](./supported-chains-amms.md) on the chain of your choice
@@ -22,11 +22,11 @@ Regardless of the method you are using, before depositing any incentives, make s
 {% endcontent-ref %}
 
 {% hint style="info" %}
-Once created, a campaign on Merkl may take up to 1 hour to be picked up by the Merkl API and front interface. You may track how rewards were distributed to LPs of the pool by checking this [website](https://merkl-rewards.angle.money/) which contains the history of rewards given across all distributions across all pools of all supported AMMs.
+Once created, a campaign on Merkl may take up to 1 hour to be picked up by the Merkl API and front interface. You may track how rewards were distributed to LPs of the pool by checking this [website](https://rewards.merkl.xyz/) which contains the history of rewards given across all distributions across all pools of all supported AMMs.
 {% endhint %}
 
 {% hint style="info" %}
-If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.angle.money/partner)
+If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.merkl.xyz/partner)
 {% endhint %}
 
 ## Configure your campaign
@@ -97,7 +97,7 @@ Now that the signing requirement is clear, what payload should you set in the Gn
 
 #### From the Merkl Frontend (recommended)
 
-Go the the [Merkl campaign creation page](https://merkl.angle.money/create) and fill in all the data to configure your campaign.
+Go the the [Merkl campaign creation page](https://merkl.merkl.xyz/create) and fill in all the data to configure your campaign.
 
 Once this is done, click on the `Generate Gnosis Safe Payload` at the bottom of the page and copy the payload to your clipboard.
 

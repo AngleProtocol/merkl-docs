@@ -12,7 +12,7 @@ If you have integrated Merkl pools in your app, you can showcase it by showing t
 
 ![Powered by Merkl](/.gitbook/assets/powered-by-merkl-light.png)
 
-Please add a link on the images redirecting to [merkl.angle.money](https://merkl.angle.money)
+Please add a link on the images redirecting to [merkl.xyz](https://merkl.xyz)
 
 ## Other logos
 

@@ -69,7 +69,7 @@ You could put all the incentives on token0 but having some on fees will encourag
 
 DAOs or individuals looking to incentivize Liquidity Providers can use Merkl to create custom and efficient campaigns and get better liquidity.
 
-Incentivization Campaigns can be setup on [this app](https://merkl.angle.money) or directly from the [`DistributionCreator` contract](../../addresses.md) on the chain of your choice [with a script](#with-a-custom-script) or [from a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe).
+Incentivization Campaigns can be setup on [this app](https://merkl.xyz) or directly from the [`DistributionCreator` contract](../../addresses.md) on the chain of your choice [with a script](#with-a-custom-script) or [from a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe).
 
 Regardless of the method you are using, before depositing any incentives, make sure that:
 
@@ -82,14 +82,14 @@ Regardless of the method you are using, before depositing any incentives, make s
 {% endcontent-ref %}
 
 {% hint style="info" %}
-Once created, a campaign on Merkl may take up to 1 hour to be picked up by the Merkl API and front interface. You may track how rewards were distributed to LPs of the pool by checking this [website](https://merkl-rewards.angle.money/) which contains the history of rewards given across all distributions across all pools of all supported AMMs.
+Once created, a campaign on Merkl may take up to 1 hour to be picked up by the Merkl API and front interface. You may track how rewards were distributed to LPs of the pool by checking this [website](https://rewards.merkl.xyz/) which contains the history of rewards given across all distributions across all pools of all supported AMMs.
 {% endhint %}
 
 {% hint style="info" %}
-If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.angle.money/partner)
+If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.xyz/partner)
 {% endhint %}
 
-### 📱 On [merkl.angle.money](https://merkl.angle.money)
+### 📱 On [merkl.xyz](https://merkl.xyz)
 
 You just need to fill the `address` of the pool you want to incentivize, the `total amount` of tokens you want to distribute, and the beginning and end dates of the distribution.
 
@@ -180,7 +180,7 @@ After using the payload provided in example and customizing both the approval an
 It's possible that addresses are whitelisted so they do not need to post a signature onchain to be able to distribute rewards.
 If your multisig address has been whitelisted by Angle Labs, then you can directly interact with Merkl front from your Gnosis Safe.
 
-To do this, head to the Apps section of your multisig, select `My Custom Apps` and then click on `Add custom Safe App`, at which point you can enter for the `Safe App URL` the [Merkl app URL](https://merkl.angle.money/).
+To do this, head to the Apps section of your multisig, select `My Custom Apps` and then click on `Add custom Safe App`, at which point you can enter for the `Safe App URL` the [Merkl app URL](https://merkl.xyz/).
 
 {% hint style="info" %}
 Usually, Angle Labs will proceed to whitelisting a multisig if one of the signers of the multisig has posted a signature of the T&Cs onchain on the Merkl contract.
