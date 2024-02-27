@@ -8,7 +8,7 @@ DAOs or individuals looking to distribute incentives through Merkl need to creat
 
 - Through the [create page](https://merkl.angle.money/create) of the Merkl App. This approach is recommended for first campaign creation and incentivizors who want to create few campaigns
   - Anyone who wants to create campaigns should visit this page at least once, it will show you all the campaign types and all the custom rules you can create for your campaigns.
-- [From a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe), this is the approach we recommend. The whole setup is documented in the next section
+- [From a Gnosis Safe multisig](#deploy-your-campaign-from-a-multisig-or-a-gnosis-safe), this is the approach we recommend. The whole setup is documented in the next section
 - Directly from the [`DistributionCreator` contract](./supported-chains-amms.md) on the chain of your choice
 
 Regardless of the method you are using, before depositing any incentives, make sure that:
@@ -111,7 +111,7 @@ The `campaign` tuple given for the `createCampaign` function has the following f
 [
   // campaignId: this value must be left as is and cannot be customized
   "0x0000000000000000000000000000000000000000000000000000000000000000",
-  // creator: Address that will "own" the campaign. It is the address that will be used to recover the funds if the campaign was mis-configured. If the null address is provided, the contract will set the creator to the address which created the campaign. 
+  // creator: Address that will "own" the campaign. It is the address that will be used to recover the funds if the campaign was mis-configured. If the null address is provided, the contract will set the creator to the address which created the campaign.
   "0x0000000000000000000000000000000000000000",
   // rewardToken: Address of the reward token (here the OP token) which will be distributed to the users
   "0x4200000000000000000000000000000000000042",

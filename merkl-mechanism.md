@@ -4,28 +4,62 @@ description: An in-depth look at Merkl
 
 # ⚙️ Merkl Technical Overview
 
-Merkl is based on an offchain script that looks at onchain data to measure user behavior and split the rewards between all eligible users based on the rules set by the incentivizor. Based on this, the script aggregates all reward distribution data in a merkle tree, then compresses it into a merkle root and pushes onchain to allow LPs to claim their rewards.
+Merkl is based on an offchain engine that looks at onchain and offchain data to measure user behavior and split the rewards between all eligible users of a campaign based on the rules set by the incentivizor of the campaign.
+Based on this, the engine aggregates all reward distribution data in a merkle tree, then compresses it into a merkle root and pushes onchain to allow users to claim their rewards.
 
-The script is ran regularly for the period between when it is executed and its last execution. Every time the script is ran, it only looks at the onchain data related specifically to this period of time.
+The Merkl system relies on **a single merkle root per chain**. With this, Merkl users can claim all their token rewards (from potentially very different campaigns) in just one transaction on Merkl.
 
-Merkl can be split into several components:
+While campaigns on Merkl are treated independently of one another, every time it updates a Merkl root onchain, the Merkl engine usually aggregates the outcomes of multiple campaigns at once, and whenever possible, it aggregates updates for all the live campaigns on the chain.
 
-- Smart contracts deployed on each chain supported by Merkl
-  - Merkl Distribution Creator where incentivizors can create their campaigns
-  - Merkl Distributor where users claim their rewards
-- Offchain components hosted by Angle Labs
-  - The Merkl Engine (private) which computes rewards and pushes new merkle roots onchain
-  - A public frontend
-  - A public API
-  - A rewards bucket which holds all the historical reward files and from which anyone can re-build the merkle root
-- Offchain component which can be hosted by anyone
-  - The Merkl Dispute bot
+It's possible in some cases that a given merkle root on a chain includes rewards for a campaign but not for another one also live on the chain. In any case, the Merkl engine ensures that users who were involved in a campaign for the period during which a campaign was live all get rewarded.
+
+The Merkl engine is ran regularly for every campaign of a chain. Every time it is ran, it only looks into data specific to the period between when it is executed and the last execution for the campaign.
+
+## ⏳ Distribution Epochs
+
+The time periods (also called epochs) over which the engine is ran for a given campaign varies depending on the chain. Epoch lengths for campaigns on a chain basically range between 2 hours to 3 days.
+
+The length of an epoch is also the de facto amount of time between two reward distributions on a campaign. For instance, if epoch length is 1 day for campaigns on Ethereum, then users eligible to these campaigns can claim new rewards at most every day on Merkl.
+
+Note that the engine is compatible with multiple incentivizors incentivizing the same type of campaigns (like the same pool on UniswapV3), potentially with different parameters. If you are eligible for a campaign on Merkl (because you are providing liquidity on a pool), you will claim from all the incentivizors who incentivized your behavior when claiming your rewards. In other words, **many teams can incentivize a specific behavior at the same time with different tokens**.
+
+There is no need for users eligible to Merkl rewards to claim rewards at every epoch. Every merkle tree update takes into account the previous state of the reward tree and just adds new rewards on top (which is then reflected in the published merkle root). Unclaimed rewards for an epoch can be claimed later in the future, along with all the rewards distributed in between.
+
+## 🤺 Dispute Periods
+
+The engine computing rewards and updating the reward merkle root onchain is ran by Angle Labs. Merkle roots pushed onchain are based on offchain computations from onchain and also offchain data. Anyone can fetch the data required to run the script and verify the results sent.
+
+To allow anyone to permissionlessly verify that the system is working properly, and to reduce the system's exposure to potential hacks or failures, every new merkle root update is followed by a dispute period. A new merkle root that aggregates reward distribution data for a chain is only effective after this dispute period.
+
+Anyone can contest the result of a distribution during the dispute period. A dispute can be triggered by sending a pre-defined amount of `disputeToken` (agEUR) to the contract distributing rewards. During a dispute, the merkle root of the distribution contract is frozen to its last valid version. Disputes can then either be considered as valid, in which case the disputer is refunded and the disputed merkle root is revoked, or invalid. If it is invalid the disputer loses its funds and the dispute period is restarted from scratch (which means the disputed tree is still not considered valid).
+
+Dispute token, amount, and length can be obtained by directly querying the contract handling reward distribution on the chain of interest.
+
+We have developed [an open-source bot](https://github.com/AngleProtocol/merkl-dispute) for everyone to check the rewards sent on Merkl and potentially dispute them. This is an important piece of infrastructure as it prevents invalid rewards from being claimed by users.
+
+{% hint style="info" %}
+The more dispute bots are active the merrier, feel free to reach out to the Angle Labs team if you're having issues deploying this bot, we'll be more than happy to help!
+{% endhint %}
+
+## Merkl components
+
+Let's break down the different components involved in the Merkl system and how they work with one another:
+
+- [Smart contracts](#merkl-smart-contracts) deployed on each chain supported by Merkl
+- Offchain components hosted by Angle Labs, including:
+
+  - [The Merkl Engine](#merkl-engine) (private) which computes rewards and pushes new merkle roots onchain
+  - A public API: to allow anyone to easily access Merkl related data (current rewards, APRs, merkl proofs for claims, merkl analytics, ...) and incorporate Merkl data on its frontend
+  - A public frontend built on the public API: to allow users to easily see all the Merkl campaigns, the associated APRs and of course claim their rewards. Technically any team can set up a dedicated Merkl frontend as it fetches all of its data from the Merkl API which is fully public!
+  - [A rewards bucket](#merkl-rewards-bucket) which holds all the historical reward files and from which anyone can re-build the merkle root
+
+- The Merkl Dispute bot presented above, which anyone can host
 
 ![Merkl Components](.gitbook/assets/merkl-components.png)
 
 The components interact in the following way:
 
-1. An incentivor creates a campaign on the **Merkl Distribution Creator** contract
+1. An incentivizor creates a campaign on the **Merkl Distribution Creator** contract
 2. When the campaign is created, the incentive tokens (what users will receive) are forwarded to the **Merkl Distributor** contract
 3. At fixed intervals the **Merkl Engine** fetches the campaigns to process from the **Merkl Distribution Creator** contract, processes the campaigns to compute the rewards, computes a new merkle root from the result of the previous process and pushes the new merkle root to the **Merkl Distributor** contract. It also pushes a reward file to the **Merkl Rewards** bucket.
 4. When the root is pushed to the contract the dispute period starts, the dispute period lasts 1 hour and the newly pushed rewards cannot be claimed until the dispute period ends.
@@ -33,31 +67,26 @@ The components interact in the following way:
 6. Once the dispute period is over, users can see their rewards on the **Merkl Frontend** or any other frontend integrated with the **Merkl API**
 7. The users claim their rewards from the **Merkl Frontend** (or any other frontend that integrates with Merkl API), the merkle proofs needed to claim the rewards are provided by the **Merkl API**. These proofs can also be computed using the reward files from the **Merkl Rewards** bucket and the **Merkl API** can be used by any other frontend.
 
-## Merkl smart contracts
+### Merkl smart contracts
 
-The merkl smart contracts have been developed in-house by Angle Labs, the source code can be found [here](https://github.com/AngleProtocol/merkl-contracts).
+The Merkl smart contracts have been developed by Angle Labs, the source code can be found [here](https://github.com/AngleProtocol/merkl-contracts).
 
 {% hint style="info" %}
 Merkl smart contracts have been audited by Code4rena. Find the audit report [here](https://code4rena.com/reports/2023-06-angle).
 {% endhint %}
 
+The system relies on two main contracts:
+
+- The `DistributionCreator` contract: it is used by incentivizors to create campaigns. This contract holds no funds and is only used to store the campaigns and all their rules. When calculating rewards, the Merkl Engine fetches the campaigns and their configuration straight from this contract.
+- The `Distributor` contract: for users to claim their rewards. This contract holds all the tokens that will be distributed to the users. The tokens can only be claimed by providing merkle proofs which match with the current merkle root. A new merkle root is pushed every time the engine computes new rewards.
+
 Both contracts are managed through an `AccessControlManager` contract managed by a multisig which has the power to settle disputes, change dispute parameters, to modify fees and their recipients, and to whitelist new addresses allowed to modify merkle roots in the `Distributor` contract. It has no ability to alter distributions.
-
-### Merkl Distribution Creator
-
-The Distribution creator contract is used by incentivizors to create campaigns. This contract holds no funds and is only used to store the campaigns and all their rules. When calculating rewards, the Merkl Engine fetches the campaigns and their configuration straight from this contract.
-
-### Merkl Distributor
-
-The Merkl distributor is used by users to claim their rewards. This contract holds all the tokens that will be distributed to the users. The tokens can only be claimed by providing merkle proofs which match with the current merkle root. A new merkle root is pushed every time the engine computes new rewards.
-
-## Merkl offchain components hosted by Angle Labs
 
 ### Merkl Engine
 
 This is the most critical component of the whole system, as such, it is fully isolated and cannot be accessed from the internet. In short, at regular time intervals (between 3 and 12 hours depending on the chain) this component:
 
-- fetches campaigns from the Merkl Distribution creator contracts
+- fetches campaigns from the Merkl `DistributionCreator` contracts
 - creates independent processes for each campaign which all run in parallel. Each process executes the following actions:
   - validates that the configuration of the campaign is correct
   - fetches all the forwarders that are applicable to the campaign (see [Merkl Forwarders](#merkl-forwarders))
@@ -94,29 +123,3 @@ This bucket contains all the reward files generated by the Merkl Engine. It has 
 {% hint style="info" %}
 If the Merkl Engine pushes a new root but does not push a reward file to this bucket within the first 30 minutes after the upload of the root, the merkle root will be disputed.
 {% endhint %}
-
-### Merkl API
-
-This API is provided by Angle Labs to allow anyone to easily access Merkl related data (current rewards, APRs, merkl proofs for claims, merkl analytics etc.)
-
-This API is used by the Merkl frontend and by the frontends of incentivizors who want their users to be able to interact with Merkl directly from their app.
-
-### Merkl frontend
-
-A frontend provided by Angle Labs to allow users to easily see all the Merkl campaigns, the associated APRs and of course claim their rewards. Technically any other team could set up a dedicated Merkl frontend as it fetches all of its data from the Merkl API which is fully public!
-
-## Merkl Dispute bot
-
-The dispute bot is the second most important component of Merkl as it prevents invalid rewards from being claimed by users. It is fully open sourced and can be deployed by anyone, the source code can be found [here](https://github.com/AngleProtocol/merkl-dispute).
-
-The more dispute bots are active the merrier, feel free to reach out to the Angle Labs team if you're having issues deploying this bot, we'll be more than happy to help!
-
-### 🤺 Dispute Periods
-
-The script computing rewards and updating the reward merkle root onchain is ran by Angle Labs. Merkle roots pushed onchain are based on offchain computations from onchain data. Anyone can fetch the onchain data required to run the script and verify the results sent.
-
-To allow anyone to permissionlessly verify that the system is working properly, and to reduce the system's exposure to potential hacks or failures, every new merkle root update is followed by a dispute period. A new merkle root that aggregates reward distribution data for a chain is only effective after this dispute period.
-
-Anyone can contest the result of a distribution during the dispute period. A dispute can be triggered by sending a pre-defined amount of `disputeToken` (agEUR) to the contract distributing rewards. During a dispute, the merkle root of the distribution contract is frozen to its last valid version. Disputes can then either be considered as valid, in which case the disputer is refunded and the disputed merkle root is revoked, or invalid. If it is invalid the disputer loses its funds and the dispute period is restarted from scratch (which means the disputed tree is still not considered valid).
-
-Dispute token, amount, and length can be obtained by directly querying the contract handling reward distribution on the chain of interest.
