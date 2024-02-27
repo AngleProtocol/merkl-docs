@@ -129,3 +129,9 @@ The `campaign` tuple given for the `createCampaign` function has the following f
 ```
 
 After using the payload provided in example and customizing both the approval and the parameters of the `createCampaigns` transaction to fit your needs, you should be ready to execute the transaction to distribute rewards to Merkl!
+
+## Integrate Merkl campaign information and user rewards in your frontend
+
+The Merkl API provides all the information you need to show your users all Merkl related information. It contains data about the campaigns, the rewards received by the users and the data needed to craft claim transactions.
+
+The Merkl API is documented [here](./integrate/api-doc.md)

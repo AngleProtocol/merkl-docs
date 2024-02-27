@@ -4,8 +4,7 @@
 
 - [Merkl Documentation Portal](README.md)
 - [Technical Overview](merkl-mechanism.md)
-<!-- - [Campaign Types]()
-  - d -->
+  - [Concentrated Liquidity Mechanisms](./campaigns/clamm.md)
 - [Smart Contract Addresses](addresses.md)
 
 ## Earn with Merkl
@@ -20,6 +19,5 @@
   - [Incentivize Concentrated Liquidity](distribute/campaign-specific/clamm.md)
   - [Incentivize ERC20 Tokens](distribute/campaign-specific/erc20.md)
 - [Integrate Merkl in your App](distribute/integrate/integration-guide.md)
-  - [⛓ Integration Helpers](distribute/integrate/helpers.md)
   - [🖼️ Branding and Integration](distribute/integrate/branding.md)
 - [🖋 Incentivizor Disclaimer](distribute/incentivizor-tc.md)
