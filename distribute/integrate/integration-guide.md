@@ -25,13 +25,13 @@ Returns all the campaigns on a given chainId
 #### Example requests
 
 **Query all campaigns for all chains**
-[https://api.angle.money/v3/campaigns](https://api.angle.money/v3/campaigns)
+[https://api.merkl.xyz/v3/campaigns](https://api.merkl.xyz/v3/campaigns)
 
 **Query all campaigns on Ethereum Mainnet**
-[https://api.angle.money/v3/campaigns?chainIds=1](https://api.angle.money/v3/campaigns?chainIds=1)
+[https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
 
 **Query all campaigns on Ethereum Mainnet and Arbitrum**
-[https://api.angle.money/v3/campaigns?chainIds=1&chainIds=42161](https://api.angle.money/v3/campaigns?chainIds=1&chainIds=42161)
+[https://api.merkl.xyz/v3/campaigns?chainIds=1&chainIds=42161](https://api.merkl.xyz/v3/campaigns?chainIds=1&chainIds=42161)
 
 #### Response
 
@@ -47,7 +47,7 @@ Returns all the campaigns for a given mainParameter
 #### Example requests
 
 **Query campaigns on the wstETH/USDT Univ3 pool (`0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`)**
-[https://api.angle.money/v3/campaignsForMainParameter?chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.angle.money/v3/campaignsForMainParameter?chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
+[https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 
 #### Response
 
@@ -77,7 +77,7 @@ You can find the campaignId of the campaign by calling the [/v3/campaigns](#v3ca
 #### Example requests
 
 **Query all campaigns for all chains**
-[https://api.angle.money/v3/recipients?chainId=1&campaignId=0xbb9d6e4b3f665d6f73ccab5f83ebcf20325fd517f4e5af1fe864caf6a2ba5563](https://api.angle.money/v3/recipients?chainId=1&campaignId=0xbb9d6e4b3f665d6f73ccab5f83ebcf20325fd517f4e5af1fe864caf6a2ba5563)
+[https://api.merkl.xyz/v3/recipients?chainId=1&campaignId=0xbb9d6e4b3f665d6f73ccab5f83ebcf20325fd517f4e5af1fe864caf6a2ba5563](https://api.merkl.xyz/v3/recipients?chainId=1&campaignId=0xbb9d6e4b3f665d6f73ccab5f83ebcf20325fd517f4e5af1fe864caf6a2ba5563)
 
 #### Response
 
@@ -107,16 +107,16 @@ Return all rewards linked to a user on a given chain, data can be filtered by pr
 #### Example requests
 
 **Query all rewards for a user on Ethereum Mainnet**
-[https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1](https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1)
+[https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1)
 
 **Query all ANGLE (`0x31429d1856aD1377A8A0079410B297e1a9e214c2`) rewards earned by a user on Ethereum Mainnet**
-[https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2](https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2)
+[https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2)
 
 **Query all rewards earned on the wstETH/USDT Univ3 pool (`0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) by a user on Ethereum Mainnet**
-[https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
+[https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 
 **Query all rewards earned by a user to build a claim transaction on Ethereum Mainnet**
-[https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&proof=true](https://api.angle.money/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&proof=true)
+[https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&proof=true](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&proof=true)
 
 #### Response
 
@@ -180,7 +180,7 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
   try {
     data = (
       await axios.get(
-        `https://api.angle.money/v3/userRewards?chainId=${chainId}&user=${signer._address}&proof=true`,
+        `https://api.merkl.xyz/v3/userRewards?chainId=${chainId}&user=${signer._address}&proof=true`,
         {
           timeout: 5000,
         },
@@ -269,7 +269,7 @@ Data about all Merkl incentivized assets across all supported chains, contains a
 #### Example queries
 
 **Fetch all Merkl data for a user on Optimism**
-[`https://api.angle.money/v2/merkl?chainIds[]=10&user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`](https://api.angle.money/v2/merkl?chainIds[]=10&user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185).
+[`https://api.merkl.xyz/v2/merkl?chainIds[]=10&user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`](https://api.merkl.xyz/v2/merkl?chainIds[]=10&user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185).
 
 ## Listing incentivized pools
 
