@@ -127,6 +127,12 @@ Return all rewards linked to a user on a given chain, data can be filtered by pr
         unclaimed: string;
         decimals: number;
         symbol: string;
+        reasons: {
+          [reason: string]: {
+            accumulated: string;
+            unclaimed: string;
+          }
+        }
         proof?: string[]
     }
 }
