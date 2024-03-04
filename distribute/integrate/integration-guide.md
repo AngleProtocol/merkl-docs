@@ -142,7 +142,7 @@ To submit a [claim transaction](https://etherscan.io/address/0x3Ef3D8bA38EBe18DB
 
 - Users: `["<Address used for the request>"]`
 - Tokens: `["<Address of the token you want to claim>"]`
-- Amounts: `[data["<chain on which you want to claim>"].tokenData["<Address of the token you want to claim>"].unlclaimed]`
+- Amounts: `[data["<chain on which you want to claim>"].tokenData["<Address of the token you want to claim>"].accumulated]`
 - Proofs: `[data["<chain on which you want to claim>"].tokenData["<Address of the token you want to claim>"].proofs]`
 
 {% hint style="info" %}
@@ -190,7 +190,7 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
     throw 'Angle API not responding'
   }
   const tokens = Object.keys(data).filter((k) => (data[k].proof !== undefined || data[k].proof !== []))
-  const claims = tokens.map((t) => data[t].unclaimed)
+  const claims = tokens.map((t) => data[t].accumulated)
   const proofs = tokens.map((t) => data[t].proof)
 
   if (tokens.length === 0) throw 'No tokens to claim'
