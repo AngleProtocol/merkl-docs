@@ -4,7 +4,7 @@ description: Everything you need to know to earn on Merkl
 
 # Earn with Merkl
 
-All yield opportunities using Merkl are listed at [merkl.xyz](https://merkl.xyz).
+All yield opportunities using Merkl are listed at [app.merkl.xyz](https://app.merkl.xyz).
 
 This interface displays the different campaigns and their types. For every opportunity, you may find a link for where to deposit your funds.
 

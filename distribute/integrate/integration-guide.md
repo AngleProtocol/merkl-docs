@@ -4,7 +4,7 @@ description: Guide to integrate Merkl in your app
 
 # 🔌 Integrate Merkl in your App with the Merkl API
 
-You can integrate Merkl data in your app but you don't have to. The [Merkl App](https://merkl.xyz/) will show your users everything they need to use Merkl, they can also claim their tokens from there. This page will guide you through the different routes provided by the Merkl API.
+You can integrate Merkl data in your app but you don't have to. The [Merkl App](https://app.merkl.xyz/) will show your users everything they need to use Merkl, they can also claim their tokens from there. This page will guide you through the different routes provided by the Merkl API.
 
 ![Merkl front integration diagram](/.gitbook/assets/docs-merkl-front-integration.jpg)
 
@@ -60,7 +60,8 @@ Returns all the campaigns for a given mainParameter
   amountDecimal: string;
   startTimestamp: number;
   endTimestamp: number;
-}[]
+}
+[];
 ```
 
 ### /v3/recipients
@@ -83,11 +84,12 @@ You can find the campaignId of the campaign by calling the [/v3/campaigns](#v3ca
 
 ```typescript
 {
-    recipient: string;
-    reason: string;
-    rewardToken: string;
-    amount: string;
-}[]
+  recipient: string;
+  reason: string;
+  rewardToken: string;
+  amount: string;
+}
+[];
 ```
 
 ### User information
@@ -171,42 +173,44 @@ import {
   Distributor__factory,
   MerklAPIData,
   registry,
-} from '@angleprotocol/sdk'
-import { JsonRpcSigner } from '@ethersproject/providers'
-import axios from 'axios'
+} from "@angleprotocol/sdk";
+import { JsonRpcSigner } from "@ethersproject/providers";
+import axios from "axios";
 
 export const claim = async (chainId: number, signer: JsonRpcSigner) => {
-  let data: MerklAPIData['transactionData']
+  let data: MerklAPIData["transactionData"];
   try {
     data = (
       await axios.get(
         `https://api.merkl.xyz/v3/userRewards?chainId=${chainId}&user=${signer._address}&proof=true`,
         {
           timeout: 5000,
-        },
+        }
       )
-    ).data
+    ).data;
   } catch {
-    throw 'Angle API not responding'
+    throw "Angle API not responding";
   }
-  const tokens = Object.keys(data).filter((k) => (data[k].proof !== undefined || data[k].proof !== []))
-  const claims = tokens.map((t) => data[t].accumulated)
-  const proofs = tokens.map((t) => data[t].proof)
+  const tokens = Object.keys(data).filter(
+    (k) => data[k].proof !== undefined || data[k].proof !== []
+  );
+  const claims = tokens.map((t) => data[t].accumulated);
+  const proofs = tokens.map((t) => data[t].proof);
 
-  if (tokens.length === 0) throw 'No tokens to claim'
+  if (tokens.length === 0) throw "No tokens to claim";
 
-  const contractAddress = registry(chainId)?.Merkl?.Distributor
-  if (!contractAddress) throw 'Chain not supported'
-  const contract = Distributor__factory.connect(contractAddress, signer)
+  const contractAddress = registry(chainId)?.Merkl?.Distributor;
+  if (!contractAddress) throw "Chain not supported";
+  const contract = Distributor__factory.connect(contractAddress, signer);
   await (
     await contract.claim(
       tokens.map((t) => signer._address),
       tokens,
       claims,
-      proofs as string[][],
+      proofs as string[][]
     )
-  ).wait()
-}
+  ).wait();
+};
 ```
 
 {% hint style="info" %}
@@ -259,6 +263,7 @@ Returns all the rewards accumulated by a user, the merkl proofs needed for the c
 ## All data
 
 ### /v2/merkl
+
 Data about all Merkl incentivized assets across all supported chains, contains all Merkl data but is a bit slower than other endpoints. This route is subject to change in the near future.
 
 #### Parameters

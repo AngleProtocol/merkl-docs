@@ -1,6 +1,7 @@
 ---
 description: Guide for people using Merkl to incentivize Liquidity Providers
 ---
+
 # Incentivize concentrated liquidity pools with Merkl
 
 Everything you need to know to make the most of your incentives on concentrated liquidity pools!
@@ -69,7 +70,7 @@ You could put all the incentives on token0 but having some on fees will encourag
 
 DAOs or individuals looking to incentivize Liquidity Providers can use Merkl to create custom and efficient campaigns and get better liquidity.
 
-Incentivization Campaigns can be setup on [this app](https://merkl.xyz) or directly from the [`DistributionCreator` contract](../../addresses.md) on the chain of your choice [with a script](#with-a-custom-script) or [from a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe).
+Incentivization Campaigns can be setup on [this app](https://app.merkl.xyz) or directly from the [`DistributionCreator` contract](../../addresses.md) on the chain of your choice [with a script](#with-a-custom-script) or [from a Gnosis Safe multisig](#from-a-multisig-or-a-gnosis-safe).
 
 Regardless of the method you are using, before depositing any incentives, make sure that:
 
@@ -86,10 +87,10 @@ Once created, a campaign on Merkl may take up to 1 hour to be picked up by the M
 {% endhint %}
 
 {% hint style="info" %}
-If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://merkl.xyz/partner)
+If you want Merkl to integrate a new chain, a new AMM, or a new liquidity manager, check [this page](https://app.merkl.xyz/partner)
 {% endhint %}
 
-### 📱 On [merkl.xyz](https://merkl.xyz)
+### 📱 On [app.merkl.xyz](https://app.merkl.xyz)
 
 You just need to fill the `address` of the pool you want to incentivize, the `total amount` of tokens you want to distribute, and the beginning and end dates of the distribution.
 
@@ -180,7 +181,7 @@ After using the payload provided in example and customizing both the approval an
 It's possible that addresses are whitelisted so they do not need to post a signature onchain to be able to distribute rewards.
 If your multisig address has been whitelisted by Angle Labs, then you can directly interact with Merkl front from your Gnosis Safe.
 
-To do this, head to the Apps section of your multisig, select `My Custom Apps` and then click on `Add custom Safe App`, at which point you can enter for the `Safe App URL` the [Merkl app URL](https://merkl.xyz/).
+To do this, head to the Apps section of your multisig, select `My Custom Apps` and then click on `Add custom Safe App`, at which point you can enter for the `Safe App URL` the [Merkl app URL](https://app.merkl.xyz/).
 
 {% hint style="info" %}
 Usually, Angle Labs will proceed to whitelisting a multisig if one of the signers of the multisig has posted a signature of the T&Cs onchain on the Merkl contract.
@@ -196,29 +197,29 @@ The following script shows how to create one or multiple distributions at once o
 import {
   DistributionCreator__factory,
   Erc20__factory,
-} from '@angleprotocol/public-sdk'
-import { parseEther } from 'ethers/lib/utils'
-import { ethers, web3 } from 'hardhat'
+} from "@angleprotocol/public-sdk";
+import { parseEther } from "ethers/lib/utils";
+import { ethers, web3 } from "hardhat";
 
 async function main() {
-  const [deployer] = await ethers.getSigners()
-  const ZERO_ADDRESS = ethers.constants.AddressZero
-  const MAX_UINT256 = ethers.constants.MaxUint256
+  const [deployer] = await ethers.getSigners();
+  const ZERO_ADDRESS = ethers.constants.AddressZero;
+  const MAX_UINT256 = ethers.constants.MaxUint256;
 
   // Address of the reward token to send
-  const rewardTokenAddress = '0x84FB94595f9Aef81147cD4070a1564128A84bb7c'
+  const rewardTokenAddress = "0x84FB94595f9Aef81147cD4070a1564128A84bb7c";
   // Address of the pool
-  const pool = '0x3fa147d6309abeb5c1316f7d8a7d8bd023e0cd80'
+  const pool = "0x3fa147d6309abeb5c1316f7d8a7d8bd023e0cd80";
 
   // Same address across all chains
   const distributionCreatorAddress =
-    '0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd'
+    "0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd";
 
   const distributionCreator = DistributionCreator__factory.connect(
     distributionCreatorAddress,
-    deployer,
-  )
-  const rewardToken = Erc20__factory.connect(rewardTokenAddress, deployer)
+    deployer
+  );
+  const rewardToken = Erc20__factory.connect(rewardTokenAddress, deployer);
 
   const params = {
     // Address of the pool to incentivize
@@ -227,11 +228,11 @@ async function main() {
     rewardToken: rewardTokenAddress,
     // Addresses to exclude from the distribution (or optionally addresses of the wrappers that are not automatically detected
     // by the script)
-    positionWrappers: ['0xa29193Af0816D43cF44A3745755BF5f5e2f4F170'],
+    positionWrappers: ["0xa29193Af0816D43cF44A3745755BF5f5e2f4F170"],
     // Type of the wrappers (3=blacklisted addresses, 0=whitelisted addresses)
     wrapperTypes: [3],
     // Amount of tokens to send for the WHOLE distribution. The amount distributed per hour is `amount/numEpoch`
-    amount: parseEther('350'),
+    amount: parseEther("350"),
     // Proportion of rewards that'll be split among LPs which brought token0 in the pool during the time
     // of the distribution
     propToken0: 4000,
@@ -255,17 +256,17 @@ async function main() {
     // would for instance be the veBoostProxy address, or in other cases the veToken address.
     boostingAddress: ZERO_ADDRESS,
     // These two parameters are useless when creating a distribution, you may specify here whatever you like
-    rewardId: web3.utils.soliditySha3('europtimism') as string,
-    additionalData: web3.utils.soliditySha3('europtimism') as string,
-  }
+    rewardId: web3.utils.soliditySha3("europtimism") as string,
+    additionalData: web3.utils.soliditySha3("europtimism") as string,
+  };
 
   // Comment if you've already approved the contract with `rewardToken`
-  console.log('Approving')
+  console.log("Approving");
   await (
     await rewardToken
       .connect(deployer)
       .approve(distributionCreator.address, MAX_UINT256)
-  ).wait()
+  ).wait();
 
   /*
   Before depositing a reward, you must make sure that:
@@ -274,27 +275,27 @@ async function main() {
   2. You have read the T&C before signing them
   */
 
-  console.log('Signing the T&C')
-  const message = await distributionCreator.message()
-  console.log(message)
-  const signature = await deployer.signMessage(message)
+  console.log("Signing the T&C");
+  const message = await distributionCreator.message();
+  console.log(message);
+  const signature = await deployer.signMessage(message);
 
-  console.log('Depositing reward...')
+  console.log("Depositing reward...");
   await (
     await distributionCreator
       .connect(deployer)
       .signAndCreateDistribution(params, signature)
-  ).wait()
-  console.log('...Deposited reward ✅')
+  ).wait();
+  console.log("...Deposited reward ✅");
 
   // Now if you want to create multiple distributions at once, you may also do it as well
 
   const params1 = {
     uniV3Pool: pool,
     rewardToken: rewardTokenAddress,
-    positionWrappers: ['0xa29193Af0816D43cF44A3745755BF5f5e2f4F170'],
+    positionWrappers: ["0xa29193Af0816D43cF44A3745755BF5f5e2f4F170"],
     wrapperTypes: [2],
-    amount: parseEther('500'),
+    amount: parseEther("500"),
     propToken0: 4000,
     propToken1: 2000,
     propFees: 4000,
@@ -303,16 +304,16 @@ async function main() {
     numEpoch: 500,
     boostedReward: 0,
     boostingAddress: ZERO_ADDRESS,
-    rewardId: '0x',
-    additionalData: '0x',
-  }
+    rewardId: "0x",
+    additionalData: "0x",
+  };
 
   const params2 = {
     uniV3Pool: pool,
     rewardToken: rewardTokenAddress,
-    positionWrappers: ['0xa29193Af0816D43cF44A3745755BF5f5e2f4F170'],
+    positionWrappers: ["0xa29193Af0816D43cF44A3745755BF5f5e2f4F170"],
     wrapperTypes: [2],
-    amount: parseEther('750'),
+    amount: parseEther("750"),
     propToken0: 4000,
     propToken1: 2000,
     propFees: 4000,
@@ -321,21 +322,21 @@ async function main() {
     numEpoch: 500,
     boostedReward: 0,
     boostingAddress: ZERO_ADDRESS,
-    rewardId: '0x',
-    additionalData: '0x',
-  }
+    rewardId: "0x",
+    additionalData: "0x",
+  };
 
-  console.log('Depositing multiple rewards at once...')
+  console.log("Depositing multiple rewards at once...");
   await (
     await distributionCreator
       .connect(deployer)
       .createDistributions([params1, params2])
-  ).wait()
-  console.log('...Deposited rewards ✅')
+  ).wait();
+  console.log("...Deposited rewards ✅");
 }
 
 main().catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+  console.error(error);
+  process.exit(1);
+});
 ```
