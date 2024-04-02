@@ -42,8 +42,10 @@ Forwarders are explained in more details [here](../merkl-mechanism.md#merkl-forw
 
 The other parameters are specific to each campaign type:
 
-- [ERC20 campaign configuration](./campaign-specific/erc20.md#campaign-configuration)
 - [Concentrated liquidity campaign configuration](./campaign-specific/clamm.md#campaign-configuration)
+- [ERC20 campaign configuration](./campaign-specific/erc20.md#campaign-configuration)
+- [ERC20 Snapshot campaign configuration](./campaign-specific/snapshot.md#campaign-configuration)
+- [Airdrop campaign configuration](./campaign-specific/airdrop.md#campaign-configuration)
 
 ## Deploy your campaign from a multisig or a Gnosis Safe
 

@@ -4,7 +4,7 @@ description: Guide for people using Merkl to incentivize ERC20 holders
 
 # Incentivize ERC20 tokens with Merkl
 
-Everything you need to know to make the most of your incentives on concentrated liquidity pools!
+Everything you need to know to make the most of your incentives on ERC20 tokens!
 
 ## Campaign configuration
 
@@ -32,3 +32,11 @@ This can be applied to:
 **Key configuration parameters**:
 
 - Token address: address of the token received when depositing liquidity
+
+### Incentivize UniV2 pools
+
+**Goal:** reward LPs of UniV2 pools
+
+**Key configuration parameters**:
+
+- Token address: address of the UniV2 pool to incentivize
