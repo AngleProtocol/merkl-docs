@@ -18,6 +18,8 @@
 - [💸 Distribute Incentives](distribute/README.md)
   - [Incentivize Concentrated Liquidity](distribute/campaign-specific/clamm.md)
   - [Incentivize ERC20 Tokens](distribute/campaign-specific/erc20.md)
+  - [Snapshot token balances](distribute/campaign-specific/snapshot.md)
+  - [Airdrop tokens](distribute/campaign-specific/airdrop.md)
 - [Integrate Merkl in your App](distribute/integrate/integration-guide.md)
   - [🖼️ Branding and Integration](distribute/integrate/branding.md)
 - [🖋 Incentivizor Disclaimer](distribute/incentivizor-tc.md)
