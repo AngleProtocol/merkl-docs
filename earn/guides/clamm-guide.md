@@ -21,4 +21,6 @@ For example, a tight range will virtually provide more liquidity and earn more f
 
 If you were providing liquidity on a pool (directly on the AMM or through a liquidity position manager) before the incentive was created on Merkl, you will also be eligible to claim your rewards when they are distributed.
 
+Merkl automatically detects users who try to game the reward system by creating very tight positions and trading against themselves (wash trading). These users are automatically blacklisted. If you've been blacklisted and want to understand why or ask us to remove you from the blacklist, please open a support ticket in our [Discord](https://discord.gg/47mmUUwfMu)
+
 ![Merkl Script](/.gitbook/assets/docs-merkl-for-lps.png)

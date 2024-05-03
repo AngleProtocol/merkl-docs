@@ -4,7 +4,7 @@ description: An in-depth look at Merkl
 
 # ⚙️ Merkl Technical Overview
 
-Merkl is based on an offchain engine that looks at onchain and offchain data to measure user behavior and split the rewards between all eligible users of a campaign based on the rules set by the incentivizor of the campaign.
+Merkl is based on an offchain engine that looks at onchain and offchain data to measure user behavior and split the rewards between all eligible users of a campaign based on the rules set by the incentive provider of the campaign.
 Based on this, the engine aggregates all reward distribution data in a merkle tree, then compresses it into a merkle root and pushes onchain to allow users to claim their rewards.
 
 The Merkl system relies on **a single merkle root per chain**. With this, Merkl users can claim all their token rewards (from potentially very different campaigns) in just one transaction on Merkl.
@@ -17,11 +17,11 @@ The Merkl engine is ran regularly for every campaign of a chain. Every time it i
 
 ## ⏳ Distribution Epochs
 
-The time periods (also called epochs) over which the engine is ran for a given campaign varies depending on the chain. Epoch lengths for campaigns on a chain basically range between 2 hours to 3 days.
+The time periods (also called epochs) over which the engine is ran is 8 hours.
 
-The length of an epoch is also the de facto amount of time between two reward distributions on a campaign. For instance, if epoch length is 1 day for campaigns on Ethereum, then users eligible to these campaigns can claim new rewards at most every day on Merkl.
+The length of an epoch is also the de facto amount of time between two reward distributions on a campaign. For instance, with the current epoch length of 8 hours, users eligible to the campaigns can claim new rewards at most 3 times a day on Merkl.
 
-Note that the engine is compatible with multiple incentivizors incentivizing the same type of campaigns (like the same pool on UniswapV3), potentially with different parameters. If you are eligible for a campaign on Merkl (because you are providing liquidity on a pool), you will claim from all the incentivizors who incentivized your behavior when claiming your rewards. In other words, **many teams can incentivize a specific behavior at the same time with different tokens**.
+Note that the engine is compatible with multiple incentive providers incentivizing the same type of campaigns (like the same pool on UniswapV3), potentially with different parameters. If you are eligible for a campaign on Merkl (because you are providing liquidity on a pool), you will claim from all the incentive providers who incentivized your behavior when claiming your rewards. In other words, **many teams can incentivize a specific behavior at the same time with different tokens**.
 
 There is no need for users eligible to Merkl rewards to claim rewards at every epoch. Every merkle tree update takes into account the previous state of the reward tree and just adds new rewards on top (which is then reflected in the published merkle root). Unclaimed rewards for an epoch can be claimed later in the future, along with all the rewards distributed in between.
 
@@ -59,7 +59,7 @@ Let's break down the different components involved in the Merkl system and how t
 
 The components interact in the following way:
 
-1. An incentivizor creates a campaign on the **Merkl Distribution Creator** contract
+1. An incentive provider creates a campaign on the **Merkl Distribution Creator** contract
 2. When the campaign is created, the incentive tokens (what users will receive) are forwarded to the **Merkl Distributor** contract
 3. At fixed intervals the **Merkl Engine** fetches the campaigns to process from the **Merkl Distribution Creator** contract, processes the campaigns to compute the rewards, computes a new merkle root from the result of the previous process and pushes the new merkle root to the **Merkl Distributor** contract. It also pushes a reward file to the **Merkl Rewards** bucket.
 4. When the root is pushed to the contract the dispute period starts, the dispute period lasts 1 hour and the newly pushed rewards cannot be claimed until the dispute period ends.
@@ -77,7 +77,7 @@ Merkl smart contracts have been audited by Code4rena. Find the audit report [her
 
 The system relies on two main contracts:
 
-- The `DistributionCreator` contract: it is used by incentivizors to create campaigns. This contract holds no funds and is only used to store the campaigns and all their rules. When calculating rewards, the Merkl Engine fetches the campaigns and their configuration straight from this contract.
+- The `DistributionCreator` contract: it is used by incentive providers to create campaigns. This contract holds no funds and is only used to store the campaigns and all their rules. When calculating rewards, the Merkl Engine fetches the campaigns and their configuration straight from this contract.
 - The `Distributor` contract: for users to claim their rewards. This contract holds all the tokens that will be distributed to the users. The tokens can only be claimed by providing merkle proofs which match with the current merkle root. A new merkle root is pushed every time the engine computes new rewards.
 
 Both contracts are managed through an `AccessControlManager` contract managed by a multisig which has the power to settle disputes, change dispute parameters, to modify fees and their recipients, and to whitelist new addresses allowed to modify merkle roots in the `Distributor` contract. It has no ability to alter distributions.
