@@ -35,8 +35,6 @@ Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no risk
 
 With Merkl, you can start you incentives campaigns in a matter of minutes, you are responsible for configuring how you want to reward liquidity providers, Merkl handles the rest!
 
-Merkl's engine is conceived as an agnostic powerhouse enabling everyone to unlock liquidity based on their exact needs without overspending or allocating tokens to reward behaviors/users/actions that are not beneficial to the incentive providers. Merkl is for instance much more expressive and efficient at shaping liquidity on concentrated liquidity pools than other solutions available on the market.
-
 Want to get started with Merkl? Follow these steps:
 
 1. Visit the [Merkl campaign creation page](https://app.merkl.xyz/create)
