@@ -50,4 +50,4 @@ type AirdropJSON = {
 }
 ```
 
-One your JSON file is ready, you should ping us on Telegram so we can help you craft the campaign transaction (frontend is coming soon)
+Once your JSON file is ready, you should ping us on Telegram so we can help you craft the campaign transaction (frontend is coming soon)
