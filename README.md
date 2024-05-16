@@ -41,7 +41,7 @@ Want to get started with Merkl? Follow these steps:
 2. Select the type of campaign you would like to run (not finding what you're looking for? Please reach out [here]())
 3. Select the token you would like to distribute (not finding your token? Fill this [form](https://tally.so/forms/3y2bqx))
 4. Configure your campaign
-5. Execute the campaign creation transaction from our frontend our by generating the Gnosis Safe transaction batch provided
+5. Execute the campaign creation transaction from our frontend by generating the Gnosis Safe transaction batch provided
 6. That's it! Your campaign will take up to 30min to show up in the Merkl app and be visible to the Liquidity Providers
 
 Merkl provides an API which you can use to integrate all Merkl related data into your frontend, everything is documented [here](distribute/integrate/integration-guide.md)
