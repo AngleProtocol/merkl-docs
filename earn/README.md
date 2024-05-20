@@ -10,7 +10,7 @@ This interface displays the different campaigns and their types. For every oppor
 
 Once you deposit your funds or perform the actions for an opportunity incentivized with Merkl, no additional steps are required to start receiving your rewards. You will be able to claim them directly from the Merkl page or from any other app which integrates Merkl. In particular, **you will not need to stake your tokens anywhere else**.
 
-Rewards on Merkl do not increase block by block, but can be claimed at [a frequency](./helpers.md#🔗-live-amms-and-chains) which depends on the chain.
+Rewards on Merkl do not increase block by block, but can be claimed at a frequency which depends [on the chain](https://app.merkl.xyz/status).
 
 Merkl comes with an anti DoS filter which means that positions with less than \$20 of liquidity are not eligible for incentives.
 
