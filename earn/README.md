@@ -15,7 +15,7 @@ Rewards on Merkl do not increase block by block, but can be claimed at a frequen
 Merkl comes with an anti DoS filter which means that positions with less than \$20 of liquidity are not eligible for incentives.
 
 {% hint style="info" %}
-Note that on Merkl, rewards can be claimed by any address on behalf of any other address. If you are integrating Merkl as a smart contract and don't want rewards to be claimed on your behalf, you can call the `toggleOnlyOperatorCanClaim` function on the `Distributor` contract (address [here](./helpers.md#🧑‍💻-smart-contracts)).
+Note that on Merkl, by default rewards can only be claimed by the address which earned the rewards. If you want to claim rewards on behalf of another address you will need to open a ticket in our [Discord](https://discord.gg/tZPwmgqH) so that the team can whitelist your address.
 {% endhint %}
 
 In the following pages, we explain in more details how to take advantage of the different campaign types on Merkl to earn rewards.
