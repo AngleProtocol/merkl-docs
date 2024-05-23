@@ -6,6 +6,7 @@
 - [Technical Overview](merkl-mechanism.md)
   - [Concentrated Liquidity Mechanisms](./campaigns/clamm.md)
 - [Smart Contract Addresses](addresses.md)
+- [Supported protocols](./supported-protocols.md)
 
 ## Earn with Merkl
 
