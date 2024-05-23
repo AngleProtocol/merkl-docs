@@ -1,5 +1,5 @@
 ---
-description: Helpers to use and integrate Merkl
+description: Protocols Integrated on the Merkl Engine
 ---
 
 # 🧑‍💻 Supported protocols
