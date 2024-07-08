@@ -11,13 +11,13 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
@@ -27,11 +27,11 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 * Once your token is whitelisted, you can create your Silo campaign by clicking on the 'Lend/Borrow on Silo' button on the campaign creation page (see screenshot below).
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/silo-campaign-create.png" alt=""><figcaption></figcaption></figure>
 
 5. **Fill Out Campaign Details**
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/silo-fill-out-campaign-details.png" alt=""><figcaption></figcaption></figure>
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
@@ -52,7 +52,7 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 * Enable the markets where depositing or borrowing the asset will be incentivized. **Ideally, only one market should be enabled.**
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/silo-market-configuration.png" alt=""><figcaption></figcaption></figure>
 
 **Restrictions:**
 
@@ -73,7 +73,7 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/silo-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**
 
@@ -82,7 +82,7 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/silo-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Silo Incentivization Campaign using Merkl!
 

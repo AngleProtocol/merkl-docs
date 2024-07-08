@@ -11,13 +11,13 @@ Creating a Radiant campaign on Merkl is a straightforward process. Follow these 
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect you Wallet**
 
@@ -27,11 +27,11 @@ Creating a Radiant campaign on Merkl is a straightforward process. Follow these 
 
 * Once your token is whitelisted, you can create your Radiant campaign by clicking on the "_Lend/Borrow on Radiant"_ button on the campaign creation page (see screenshot below)
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/radiant-campaign-create.png" alt=""><figcaption></figcaption></figure>
 
 5. **Fill Out Campaign Details**
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/radiant-fill-out-campaign-details.png" alt=""><figcaption></figcaption></figure>
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
@@ -60,7 +60,7 @@ Creating a Radiant campaign on Merkl is a straightforward process. Follow these 
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/radiant-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**
 
@@ -69,7 +69,7 @@ Creating a Radiant campaign on Merkl is a straightforward process. Follow these 
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/radiant-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Radiant Incentivization Campaign using Merkl!
 

@@ -26,19 +26,19 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 * Once your configuration is complete, build the payload by clickcing on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
 
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
 3. Download or Copy the Safe Template
 
 * Download the Safe Template (recommended), or copy the payload to your clipboard if you intend to customize it further. If you need help with customization, [reach out to us on Discord by opening a BD ticket. ](https://discord.com/channels/1209830388726243369/1210212731047776357)
 
-<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/download-copy-safe-template.png" alt=""><figcaption></figcaption></figure>
 
 4. &#x20;**Upload the JSON File:**
 
 * Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on "Choose a file" to upload it manually.
 
-<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/upload-json-file.png" alt=""><figcaption></figcaption></figure>
 
 If you are using something other than the Transaction Builder, proceed as you are accustomed to.
 
@@ -52,7 +52,7 @@ You will see the 3 following transactions:
 * `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
 * `createCampaign`: Transaction to create the campaign
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/safe-wallet-approve+accept+create.png" alt=""><figcaption></figcaption></figure>
 
 * Click on "Create Batch" and then "Send Batch" to execute the transactions and deploy your Merkl Campaign.
 

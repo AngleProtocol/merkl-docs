@@ -13,13 +13,13 @@ Merkl makes airdropping tokens to your community simple and efficient!
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
@@ -29,13 +29,13 @@ Merkl makes airdropping tokens to your community simple and efficient!
 
 * Once your token is whitelisted, you can start your airdrop campaign by clicking on the "Airdrop" button (see screenshot below).
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/airdrop-campaign-create-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 5. **Upload your JSON file**
 
 * After clicking on the Airdrop button, you will be redirected to the next page (see screenshot below) where you will need to upload your JSON file. **Your JSON file must adhere to the same format as the provided template**. Below, you will find the template and an example.
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/airdrop-campaign-json-upload.png" alt=""><figcaption></figcaption></figure>
 
 **JSON format**
 
@@ -80,7 +80,7 @@ type AirdropJSON = {
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/airdrop-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**
 
@@ -91,7 +91,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to airdrop, keeping in mind that Merkl will collect 0.5% of the tokens as a maintenance fee.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/airdrop-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Airdrop Campaign using Merkl!
 

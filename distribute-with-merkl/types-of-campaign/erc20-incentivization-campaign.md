@@ -39,13 +39,13 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**&#x20;
 
@@ -55,11 +55,11 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 * Once your token is whitelisted, you can create your ERC20 campaign by clicking on the 'Token Balance' button on the campaign creation page (see screenshot below).
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ERC20-campaign-create-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 5. **Fill Out Campaign Details**
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ERC20-fill-out-campaign-details.png" alt=""><figcaption></figcaption></figure>
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
@@ -100,7 +100,7 @@ For more details on ERC20 Forwarders check out this [page](../../merkl-mechanism
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ERC20-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**
 
@@ -111,7 +111,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ERC20-accept-approve-deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Merkl ERC20 Incentivization Campaign!
 
