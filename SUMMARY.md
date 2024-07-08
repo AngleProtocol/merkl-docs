@@ -46,10 +46,10 @@
 * [Incentivizor Disclaimer](distribute-with-merkl/incentivizor-disclaimer.md)
 * [FAQ](distribute-with-merkl/faq.md)
 
-<!-- ## Integrate Merkl
+## Integrate Merkl
 
 * [Integrate Merkl to your App](integrate-merkl/integrate-merkl-to-your-app/README.md)
   * [Branding and Integration](integrate-merkl/integrate-merkl-to-your-app/branding-and-integration.md)
 * [AMM integration](integrate-merkl/amm-integration.md)
 * [ALM integration](integrate-merkl/alm-integration.md)
-* [Other integration](integrate-merkl/other-integration.md) -->
+* [Other integration](integrate-merkl/other-integration.md)
