@@ -18,20 +18,20 @@
 * [Smart Contract Address](general-information/smart-contract-address.md)
 * [Audit](general-information/audit.md)
 
-## Merkl mechanisms
+<!-- ## Merkl mechanisms
 
 * [Overview](merkl-mechanisms/overview.md)
 * [Architecture and Technical Overview](merkl-mechanisms/architecture-and-technical-overview/README.md)
   * [Concentrated Liquidity Mechanisms](merkl-mechanisms/architecture-and-technical-overview/concentrated-liquidity-mechanisms.md)
   * [ERC20 Mechanisms](merkl-mechanisms/architecture-and-technical-overview/erc20-mechanisms.md)
-* [Types of Campaign](merkl-mechanisms/types-of-campaign.md)
+* [Types of Campaign](merkl-mechanisms/types-of-campaign.md) -->
 
-## Earn with Merkl
+<!-- ## Earn with Merkl
 
 * [Earn with Merkl](earn-with-merkl/earn-with-merkl/README.md)
   * [Earn on Concentrated Liquidity Campaigns](earn-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md)
   * [Other Ways to Earn on Merkl](earn-with-merkl/earn-with-merkl/other-ways-to-earn-on-merkl.md)
-* [FAQ](earn-with-merkl/faq.md)
+* [FAQ](earn-with-merkl/faq.md) -->
 
 ## Distribute with Merkl
 
@@ -46,10 +46,10 @@
 * [Incentivizor Disclaimer](distribute-with-merkl/incentivizor-disclaimer.md)
 * [FAQ](distribute-with-merkl/faq.md)
 
-## Integrate Merkl
+<!-- ## Integrate Merkl
 
 * [Integrate Merkl to your App](integrate-merkl/integrate-merkl-to-your-app/README.md)
   * [Branding and Integration](integrate-merkl/integrate-merkl-to-your-app/branding-and-integration.md)
 * [AMM integration](integrate-merkl/amm-integration.md)
 * [ALM integration](integrate-merkl/alm-integration.md)
-* [Other integration](integrate-merkl/other-integration.md)
+* [Other integration](integrate-merkl/other-integration.md) -->
