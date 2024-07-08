@@ -26,5 +26,3 @@ If you were providing liquidity on a pool (directly on the AMM or through a liqu
 ## Fake volume attacks detection
 
 Merkl automatically detects users who try to game the reward system by creating very tight positions and trading against themselves (wash trading). These users are automatically blacklisted. If you've been blacklisted and want to understand why or ask us to remove you from the blacklist, please open a support ticket in our [Discord](https://discord.gg/tZPwmgqH). Please note that we can only un-blacklist an address and we have no way of recovering funds that should've been earned by the position while the address was blacklisted.
-
-test
