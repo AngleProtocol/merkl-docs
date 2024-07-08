@@ -11,13 +11,13 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect you Wallet**
 
@@ -27,11 +27,11 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 * Once your token is whitelisted, you can create your CLAMM campaign by clicking on the appropriate button (see screenshot below).
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-campaign-create-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 5. **Fill Out Campaign Details**
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-fill-out-campaign-detail.png" alt=""><figcaption></figcaption></figure>
 
 * You will then be redirected to the campaign configuration page, where you will need to provide the following details:
 
@@ -55,13 +55,13 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 * Enable the Automated Liquidity Managers (ALM) that will forward your campaign rewards to the Liquidity Providers using an ALM, and disable the ALMs you don't want to send rewards to.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-forwarder-1.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-forwarder-2.png" alt=""><figcaption></figcaption></figure>
 
 * As fewer ALMs are enabled, the restriction changes from blacklisting (disabled addresses) to whitelisting (enabled addresses).
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-forwarder-3.png" alt=""><figcaption></figcaption></figure>
 
 **Further Restrictions:**&#x20;
 
@@ -71,7 +71,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 * Boost rewards based on a token balance by providing the address of the token you want to incentivize and specifying the boost multiplier. This allows you to incentivize users to hold a specific token in their wallet to earn additional rewards.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-boost.png" alt=""><figcaption></figcaption></figure>
 
 **Details**:
 
@@ -81,7 +81,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**:
 
@@ -94,7 +94,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/CLAMM-accept-approve-deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Concentrated Liquidity Merkl Incentivization Campaign!
 

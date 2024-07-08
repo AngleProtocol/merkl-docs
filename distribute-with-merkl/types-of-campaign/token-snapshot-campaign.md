@@ -11,13 +11,13 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 1. **Access the Campaign Creation Page**:
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
 * After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
@@ -27,11 +27,11 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 * Once your token is whitelisted, you can create your Token Snapshot campaign by clicking on the appropriate button (see screenshot below).
 
-<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/token-snapshot-campaign-create.png" alt=""><figcaption></figcaption></figure>
 
 5. **Fill Out Campaign Details**
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/token-snapshot-fill-out-details.png" alt=""><figcaption></figcaption></figure>
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
@@ -57,7 +57,7 @@ Merkl supports a staking mechanism where users can earn rewards even if the ince
 \
 For example, users who stake their USDa will receive stUSD and even with this exchange , if you want to incentivize holders of USTa, they can still earn rewards. This works though a forwarder and this is what you need to fill if you have the need to. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts.
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/token-snapshot-staking-contracts.png" alt=""><figcaption></figcaption></figure>
 
 **If the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses below. The contract where users stake their tokens is the recipient of the initial rewards. The token issued when staking the token is the token to forward rewards to, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
 
@@ -76,7 +76,7 @@ For more details on ERC20 Forwarders check out this [page](../../merkl-mechanism
 
 * Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/token-snapshot-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
 7. **Sign and Submit**
 
@@ -87,7 +87,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/token-snapshot-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Merkl ERC20 Incentivization Campaign!
 
