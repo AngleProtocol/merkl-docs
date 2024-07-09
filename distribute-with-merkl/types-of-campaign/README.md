@@ -38,7 +38,7 @@ Merkl supports 5 types of campaigns:
 
 ERC20 campaigns incorporate various aspects such as token balance, LP token balance (liquidity pool V2), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
 
-However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific or campaign-specific types of campaigns for more tailored incentives.
+However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
 
 The current supported lending and borrowing protocols by Merkl are:
 
@@ -60,7 +60,7 @@ Merkl also currently support the following V2 AMMs:
 * Poolside V2
 * Quickswap V2
 
-if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol or campaign-specific campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
+if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 * For a detailed guide on how to set up your ERC20 campaign, check out this [page](erc20-incentivization-campaign.md).
 * When you're ready to start incentivizing an ERC20 campaign, create your incentivization campaign using [Merkl's ERC20 Campaign creation tool](https://app.merkl.xyz/create/hold). **Before you begin, do not forget to whitelist the tokens you want to incentivize the liquidity pool with, by filling out this** [form](https://tally.so/r/3y2bqx).
