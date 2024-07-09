@@ -15,7 +15,7 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -37,7 +37,7 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 **Distribution Details**:
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.&#x20;
+* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
 * **Duration**: Set the start and end dates for the campaign.
 * **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
@@ -61,7 +61,7 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is enabled, meaning this market is whitelisted, while all others are blacklisted.
 
-**Further Restrictions:**&#x20;
+**Further Restrictions:**
 
 * If you want to whitelist or blacklist EOAs (Externally Owned Accounts), you can do so manually by adding them.
 
@@ -88,9 +88,9 @@ After these steps, congratulations! You have created your Silo Incentivization C
 
 _**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
 
-* **Using a multisig wallet (Safe Wallet):**&#x20;
+* **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.&#x20;
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
 To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
 

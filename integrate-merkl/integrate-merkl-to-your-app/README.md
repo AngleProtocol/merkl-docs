@@ -18,7 +18,7 @@ Returns all the campaigns on a given `chainId`.
 
 **Parameters**
 
-* `chainId` (optional): You can specify one or several Merkl supported chain Ids. If none are provided, the API will return campaigns for all chains by default.&#x20;
+* `chainId` (optional): You can specify one or several Merkl supported chain Ids. If none are provided, the API will return campaigns for all chains by default.
 
 **Example requests**
 

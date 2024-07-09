@@ -4,7 +4,7 @@ description: Guide to create an ERC20 Campaign (Token, LP Token, Lending/Borrowi
 
 # ERC20 Incentivization Campaign
 
-ERC20 campaigns incorporate various aspects such as token balance, LP token balance (V2 liquidity pools), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.&#x20;
+ERC20 campaigns incorporate various aspects such as token balance, LP token balance (V2 liquidity pools), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
 
 However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific or campaign-specific types of campaigns for more tailored incentives.
 
@@ -28,7 +28,7 @@ Merkl also currently support the following V2 AMMs:
 * Poolside V2
 * Quickswap V2
 
-if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol or campaign-specific campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.&#x20;
+if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol or campaign-specific campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 ## Creating an ERC20 Campaigns
 
@@ -43,11 +43,11 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
-3. **Connect your Wallet**&#x20;
+3. **Connect your Wallet**
 
 * **Connect you wallet and select the chain on which you want to distribute the rewards.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
 
@@ -65,14 +65,14 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 **Distribution Details**:
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.&#x20;
+* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
 * **Duration**: Set the start and end dates for the campaign.
 * **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
 **Target:**
 
 * **Chain**: Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
-* **Token Address**: Select the address of the token (it can be a simple token, or the address of the LP token, or the borrowing or lending token) you want to incentivize by pasting it in the token address field.&#x20;
+* **Token Address**: Select the address of the token (it can be a simple token, or the address of the LP token, or the borrowing or lending token) you want to incentivize by pasting it in the token address field.
 
 **Restrictions:**
 
@@ -88,7 +88,7 @@ For example, users who stake their USDa will receive stUSD and even with this ex
 **If the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses below. The contract where users stake their tokens is the recipient of the initial rewards. The token issued when staking the token is the token to forward rewards to, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
 
 * **Recipient of the Initial Rewards:** The contract where users initially stake their tokens.
-* **Token to Forward Rewards To:** The ERC20 token contract that issues tokens when staking and to which the rewards will be forwarded to the users holding such staked tokens.&#x20;
+* **Token to Forward Rewards To:** The ERC20 token contract that issues tokens when staking and to which the rewards will be forwarded to the users holding such staked tokens.
 
 For more details on ERC20 Forwarders check out this [page](../../merkl-mechanisms/architecture-and-technical-overview/erc20-mechanisms.md).
 
@@ -117,9 +117,9 @@ After these steps, congratulations! You have created your Merkl ERC20 Incentiviz
 
 _**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
 
-* **Using a multisig wallet (Safe Wallet):**&#x20;
+* **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.&#x20;
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
 To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
 
