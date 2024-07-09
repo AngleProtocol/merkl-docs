@@ -11,13 +11,14 @@ Merkl makes airdropping tokens to your community simple and efficient!
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**:
-   * Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
+
+* Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token (if it hasn't been whitelisted yet). Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -95,20 +96,13 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 After these steps, congratulations! You have created your Airdrop Campaign using Merkl!
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}
 
-* **Using an EOA Account**:
-  * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
-  * Approve and then deposit the amount you want to incentivize, plus the maintenance fee.
+* **Using a multisig wallet (Safe Wallet):**
 
-After these steps, congratulations! You have created your  Concentrated Liquidity Merkl Incentivization Campaign!
-
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
-
-* **Using a multisig wallet (Safe Wallet):**&#x20;
-
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.&#x20;
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
 To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
 
@@ -116,4 +110,6 @@ To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction 
 [deploy-your-campaign-from-a-multisig-or-gnosis-safe.md](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 {% endcontent-ref %}
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}

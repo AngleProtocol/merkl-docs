@@ -24,7 +24,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 2. **Build the Payload:**
 
-* Once your configuration is complete, build the payload by clickcing on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
+* Once your configuration is complete, build the payload by clicking on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
 
 <figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
@@ -34,7 +34,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 <figure><img src="../.gitbook/assets/download-copy-safe-template.png" alt=""><figcaption></figcaption></figure>
 
-4. &#x20;**Upload the JSON File:**
+4. **Upload the JSON File:**
 
 * Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on "Choose a file" to upload it manually.
 
@@ -43,8 +43,6 @@ Follow these steps to build the payload and finalize your campaign creation:
 If you are using something other than the Transaction Builder, proceed as you are accustomed to.
 
 5. **Execute the Transactions:**
-
-* The app might tell you that the transaction batch is from another chain; you can disregard this message (the Merkl smart contract addresses are the same on all chains).
 
 You will see the 3 following transactions:
 

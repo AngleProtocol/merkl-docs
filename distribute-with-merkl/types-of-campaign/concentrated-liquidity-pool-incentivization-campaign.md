@@ -15,7 +15,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -37,7 +37,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 **Distribution Details**:
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.&#x20;
+* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
 * **Duration**: Set the start and end dates for the campaign.
 * **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
@@ -63,11 +63,11 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 <figure><img src="../../.gitbook/assets/CLAMM-forwarder-3.png" alt=""><figcaption></figcaption></figure>
 
-**Further Restrictions:**&#x20;
+**Further Restrictions:**
 
 * If you want to whitelist or blacklist EOAs (Externally Owned Accounts), you can do so manually by adding them.
 
-**Boost:**&#x20;
+**Boost:**
 
 * Boost rewards based on a token balance by providing the address of the token you want to incentivize and specifying the boost multiplier. This allows you to incentivize users to hold a specific token in their wallet to earn additional rewards.
 
@@ -98,11 +98,13 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 After these steps, congratulations! You have created your Concentrated Liquidity Merkl Incentivization Campaign!
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}
 
-* **Using a multisig wallet (Safe Wallet):**&#x20;
+* **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.&#x20;
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
 To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
 
@@ -110,4 +112,6 @@ To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction 
 [deploy-your-campaign-from-a-multisig-or-gnosis-safe.md](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 {% endcontent-ref %}
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}

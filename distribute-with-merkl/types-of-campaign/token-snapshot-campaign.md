@@ -15,7 +15,7 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.&#x20;
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -37,7 +37,7 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 **Distribution Details**:
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.&#x20;
+* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
 * **Snapshot**: Set the time for the snapshot (note that it will be taken at the block prior to this date).
 * **Distribution Date**: Set the date on which you want your rewards to be distributed.
 
@@ -62,7 +62,7 @@ For example, users who stake their USDa will receive stUSD and even with this ex
 **If the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses below. The contract where users stake their tokens is the recipient of the initial rewards. The token issued when staking the token is the token to forward rewards to, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
 
 * **Recipient of the Initial Rewards:** The contract where users initially stake their tokens.
-* **Token to Forward Rewards To:** The ERC20 token contract that issues tokens when staking and to which the rewards will be forwarded to the users holding such staked tokens.&#x20;
+* **Token to Forward Rewards To:** The ERC20 token contract that issues tokens when staking and to which the rewards will be forwarded to the users holding such staked tokens.
 
 **Press Add:** Don't forget to press "Add" once you've set the Recipient of the _"Initial rewards"_ and _"Token to forward rewards to"_. This ensures the rewards are forwarded to the users who have staked the token you want to incentivize.
 
@@ -91,11 +91,13 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 After these steps, congratulations! You have created your Merkl ERC20 Incentivization Campaign!
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}
 
-* **Using a multisig wallet (Safe Wallet):**&#x20;
+* **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.&#x20;
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
 To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
 
@@ -103,4 +105,6 @@ To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction 
 [deploy-your-campaign-from-a-multisig-or-gnosis-safe.md](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 {% endcontent-ref %}
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}
