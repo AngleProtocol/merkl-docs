@@ -98,7 +98,9 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 After these steps, congratulations! You have created your Concentrated Liquidity Merkl Incentivization Campaign!
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}
 
 * **Using a multisig wallet (Safe Wallet):**
 
@@ -110,4 +112,6 @@ To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction 
 [deploy-your-campaign-from-a-multisig-or-gnosis-safe.md](../deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 {% endcontent-ref %}
 
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
+{% hint style="info" %}
+Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+{% endhint %}

@@ -29,7 +29,7 @@ We strive to create a seamless and efficient reward distribution system that max
 <figure><img src=".gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 
-{% hint style="info" %}\
+{% hint style="info" %}
 Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no additional risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.\
 {% endhint %}
 
