@@ -12,7 +12,7 @@ Merkl is an innovative platform designed to optimize and streamline liquidity an
 
 Merkl's building blocks are its campaigns. Campaigns are created onchain by incentive providers and contain all the configurations for incentive distribution as set by the incentive provider. The Merkl offchain engine processes these campaigns to reward users based on the provided configuration. Campaigns allow users to earn competitive revenues with ease, while enabling protocols to distribute incentives easily, quickly and without operational hassle.
 
-&#x20;Merkl was also the first tool to enable UniswapV3 liquidity pools incentivization!
+Merkl was also the first tool to enable UniswapV3 liquidity pools incentivization!
 
 ## Our mission
 
