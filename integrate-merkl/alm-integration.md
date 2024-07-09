@@ -6,14 +6,14 @@ description: Guide to integrate your ALM into Merkl
 
 If you want your Automated Market Maker (AMM) to be integrated into the Merkl system, please fill out this [form](https://tally.so/r/w4JYLr).
 
-**Benefits of Integration:**
+## Benefits of Integration
 
 * **Increased Participation:** Attract more liquidity providers by offering additional rewards through the Merkl system.
 * **Enhanced Visibility:** Gain exposure to a broader audience of DeFi users who are actively looking for rewarding opportunities.
 * **Seamless Integration:** Our integration process is straightforward and designed to minimize disruption, allowing you to quickly benefit from the Merkl ecosystem.
 * **Comprehensive Support:** Receive dedicated support from the Merkl team to ensure a smooth and successful integration.
 
-**How It Works:**
+## How It Works
 
 1. **Submit the Form:** Provide the necessary details about your ALM and your specific integration requirements.
 2. **Review and Approval:** Our team will review your submission and get in touch with you to discuss the integration process in detail.

@@ -6,18 +6,18 @@ Merkl's Token Snapshot functionality is a powerful tool to capture and utilize t
 
 ## Key Features
 
-* **Accurate Balance Capture**: Capture the precise balance of ERC20 tokens held by users at a specific block.
-* **Flexible Applications**: Utilize snapshots for airdrops based on a points system, staking rewards, or other incentivization strategies.
-* **Efficient and Cost-Effective**: Conduct snapshot-based operations without the need for continuous tracking and updates.
+* **Accurate Balance Capture:** Capture the precise balance of ERC20 tokens held by users at a specific block.
+* **Flexible Applications:** Utilize snapshots for airdrops based on a points system, staking rewards, or other incentivization strategies.
+* **Efficient and Cost-Effective:** Conduct snapshot-based operations without the need for continuous tracking and updates.
 
 ### For Incentive Providers
 
-* **Learn How to Configure a Token Snapshot Campaign**: Are you a protocol, DAO or user looking to incentivize holders for maintaining an ERC20 token balance at a specific time? Go check this [page](../../../distribute-with-merkl/types-of-campaign/token-snapshot-campaign.md) to learn how to create your campaign.
-* **Start a Token Snapshot Campaign**: Ready to start a Token Snapshot campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/snapshot).
+* **Learn How to Configure a Token Snapshot Campaign:** Are you a protocol, DAO or user looking to incentivize holders for maintaining an ERC20 token balance at a specific time? Go check this [page](../../../distribute-with-merkl/types-of-campaign/token-snapshot-campaign.md) to learn how to create your campaign.
+* **Start a Token Snapshot Campaign:** Ready to start a Token Snapshot campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/snapshot).
   
 Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 ### For users
 
-* **Check Your Rewards**: Check the [user dashboard](https://app.merkl.xyz/user) to see if you're one of the recipients of a token snapshot.
-* **Learn More About Liquidity Incentive Rewards**: Want to learn more about how to benefit from Merkl's liquidity incentive rewards? Check this [page](../../../earn-with-merkl/earn-with-merkl/) to get started.
+* **Check Your Rewards:** Check the [user dashboard](https://app.merkl.xyz/user) to see if you're one of the recipients of a token snapshot.
+* **Learn More About Liquidity Incentive Rewards:** Want to learn more about how to benefit from Merkl's liquidity incentive rewards? Check this [page](../../../earning-with-merkl/earn-with-merkl/) to get started.

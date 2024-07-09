@@ -14,17 +14,18 @@ To receive rewards from a concentrated liquidity campaign on Merkl, you can:
 
 The main choices you need to make when adding liquidity are:
 
-* **Range tightness:** Decide how tight the position's range should be. For example, a tighter range provides more virtual liquidity and earns more fees and rewards but has a higher risk of becoming out-of-range and suffering from impermanent loss
-* **Token Split**: Determine the split between the two tokens.
+* **Range tightness:** Decide how tight the position's range should be. For example, a tighter range provides more virtual liquidity and earns more fees and rewards but has a higher risk of becoming out-of-range and suffering from impermanent loss.
+* **Token Split:** Determine the split between the two tokens.
 
 {% embed url="https://youtu.be/8tpGSHglVlc?feature=shared" %}
+
 2. **Or provide liquidity in one of the supported Automated Liquidity Management (ALM) protocols that has position(s) in the incentivized concentrated liquidity pool.** If you are using an Automated Liquidity Management (ALM) protocol, be careful to understand how they rebalance liquidity.
 
 **If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the Incentive Provider, you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position**
 
 **All Automated Market Makers (AMMs) and Automated Liquidity Management (ALMs) protocol shown on Merkl's app have been whitelisted by Merkl, ensuring that you can safely invest your liquidity across various platforms.** For a comprehensive list of AMMs and ALMs supported by Merkl, check this [link](https://app.merkl.xyz/integrations).
 
-<figure><img src="https://docs.merkl.xyz/~gitbook/image?url=https%3A%2F%2F3295124503-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FKRQdTiHhBGLRKeCCOqdc%252Fuploads%252Fgit-blob-33d4b8e8fec2d21212bdce431024a7ab8cc3b12f%252Fdocs-merkl-for-lps.png%3Falt%3Dmedia&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=d0c4c738&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merkl-for-liquidity-providers.png" alt=""><figcaption></figcaption></figure>
 
 ## Disclaimer for Concentrated Liquidity
 

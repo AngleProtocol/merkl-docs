@@ -28,7 +28,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 <figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
-3. Download or Copy the Safe Template
+3. **Download or Copy the Safe Template**
 
 * Download the Safe Template (recommended), or copy the payload to your clipboard if you intend to customize it further. If you need help with customization, [reach out to us on Discord by opening a BD ticket. ](https://discord.com/channels/1209830388726243369/1210212731047776357)
 

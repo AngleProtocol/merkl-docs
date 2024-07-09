@@ -4,7 +4,7 @@ description: Guide to display the Merkl logo in your app
 
 # Branding and Integration
 
-All Merkl branding assets can be found [here](https://anglemoney.notion.site/Merkl-Media-Assets-ac2bb25ed5f146acb2ffd4ac99af8548?pvs=4)
+All Merkl branding assets can be found [here](https://anglemoney.notion.site/Merkl-Media-Assets-ac2bb25ed5f146acb2ffd4ac99af8548?pvs=4).
 
 ### Featuring Merkl in your app <a href="#featuring-merkl-in-your-app" id="featuring-merkl-in-your-app"></a>
 

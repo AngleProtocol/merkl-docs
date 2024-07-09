@@ -10,7 +10,7 @@ Merkl makes airdropping tokens to your community simple and efficient!
 
 **Step-by-Step Process:**
 
-1. **Access the Campaign Creation Page**:
+1. **Access the Campaign Creation Page**
 
 * Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
@@ -74,8 +74,8 @@ type AirdropJSON = {
 }
 ```
 
-* **rewardToken**: The token being distributed.
-* **rewards**: User rewards with recipient addresses and reasons for the rewards.
+* **rewardToken:** The token being distributed.
+* **rewards:** User rewards with recipient addresses and reasons for the rewards.
 
 6. **Preview Transaction**
 
@@ -87,7 +87,7 @@ type AirdropJSON = {
 
 You can sign and submit using either an EOA account or a multisig wallet. The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. Regardless of the method you choose, you will need to follow these steps: sign the T\&C conditions, approve the tokens for transfer, and deposit them.
 
-* **Using an EOA Account**:
+* **Using an EOA Account:**
   * Double-check your campaign configuration.
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to airdrop, keeping in mind that Merkl will collect 0.5% of the tokens as a maintenance fee.

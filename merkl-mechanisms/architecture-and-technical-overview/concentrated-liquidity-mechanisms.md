@@ -6,7 +6,7 @@ description: Everything you need to know about concentrated liquidity campaigns
 
 ## Merkl Script
 
-<figure><img src="https://docs.merkl.xyz/~gitbook/image?url=https%3A%2F%2F3295124503-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FKRQdTiHhBGLRKeCCOqdc%252Fuploads%252Fgit-blob-68540f716bcdabc987398505f00046ce9ba3d529%252Fdocs-merkl-script.png%3Falt%3Dmedia&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=e6d29aef&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/docs-merkl-script.png" alt=""><figcaption></figcaption></figure>
 
 ## Reward Distribution Formula
 
