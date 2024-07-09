@@ -50,7 +50,7 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 ## What happens to unclaimed rewards ?
 
-* If rewards sent through Merkl remain unclaimed for over a year, we reserve the right to recover these rewards and redistribute part of them.
+* If rewards sent through Merkl remain unclaimed for over a year, we reserve the right to recover these rewards and/or redistribute part of them.
 
 ## What happens if I send below the Min rewards per hour or unapproved rewards ?
 

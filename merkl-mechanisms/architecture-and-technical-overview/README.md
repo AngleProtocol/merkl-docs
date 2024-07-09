@@ -51,10 +51,10 @@ The components interact in the following way:
 1. **Campaign Creation:** An incentive provider creates a campaign on the **Merkl Distribution Creator** contract.
 2. **Token Forwarding to the Merkl Distributor contract:** When the campaign is created, the incentive tokens (what users will receive) are forwarded to the **Merkl Distributor** contract
 3. **Merkl Engine Campaigns Processing:** At fixed intervals, the **Merkl Engine** fetches the campaigns from the **Merkl Distribution Creator** contract, processes the campaigns to compute the rewards, computes a new merkle root from the result of the previous process, and pushes the new merkle root to the **Merkl Distributor** contract. It also pushes a reward file to the **Merkl Rewards** **bucket**.
-4. **Dispute Period:** When the root is pushed to the contract, the dispute period starts. This period lasts 1 hour, during which the newly pushed rewards cannot be claimed.
+4. **Dispute Period:** When the root is pushed to the contract, the dispute period starts. This period lasts between 1 and 2 hours, during which the newly pushed rewards cannot be claimed.
 5. **Dispute Verification**: The **Merkl Dispute bots** fetch the reward file, re-compute the merkle root from it, and verify the validity of the reward allocation. If the merkle root cannot be re-computed or if the rewards are invalid, the bots can dispute the merkle root. No rewards can be claimed until the dispute is resolved.
 6. **Reward Availability**: Once the dispute period is over and if no disputes are valid, users can view their rewards on the **Merkl Frontend** or any other frontend integrated with the **Merkl API**.
-7. **Claiming Rewards**: Users claim their rewards through the Merkl Frontend (or any other frontend integrated with the Merkl API). The merkle proofs needed to claim the rewards are provided by the Merkl API, which can be used by any other frontend. These proofs can also be computed using the reward files from the **Merkl Rewards bucke**t.
+7. **Claiming Rewards**: Users claim their rewards through the Merkl Frontend (or any other frontend integrated with the Merkl API). The merkle proofs needed to claim the rewards are provided by the Merkl API, which can be used by any other frontend. These proofs can also be computed using the reward files from the **Merkl Rewards bucket**.
 
 #### Merkl smart contracts <a href="#merkl-smart-contracts" id="merkl-smart-contracts"></a>
 
