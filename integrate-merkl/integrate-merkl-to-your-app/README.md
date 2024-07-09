@@ -100,7 +100,7 @@ Returns all rewards linked to a user on a given chain. Data can be filtered by p
 * **Query all rewards earned on the wstETH/USDT Univ3 pool (**`mainParameter=`**`0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) on Ethereum Mainnet (chain** `chainId=1`**) by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**).** [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 * **Query all rewards earned by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**) to build a claim transaction (**`proof=true` **) on Ethereum Mainnet (**`chainId=1`)  [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true)
 
-**Response (orifginal)**
+**Response (original)**
 
 ```
 {
