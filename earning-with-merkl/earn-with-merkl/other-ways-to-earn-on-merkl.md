@@ -8,7 +8,7 @@ By providing liquidity in incentivized V2 Liquidity Pools, or by lending or borr
 2. Connect your wallet.
 3. Start depositing your liquidity, lending the incentivized lending asset, or borrowing the incentivized borrowing asset.
 
-Please be careful to ensure you add liquidity to the correct incentivized pool or lend/borrow the correct incentivized asset.
+Please be careful to ensure you add liquidity to the correct incentivized pool or lend/borrow the correct incentivized asset. Always check the [user dashboard](https://app.merkl.xyz/user) to make sure your liquidity is being detected.
 
 ## Earn Passively using Merkl
 

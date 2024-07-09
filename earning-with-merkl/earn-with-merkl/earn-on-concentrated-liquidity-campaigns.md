@@ -18,10 +18,9 @@ The main choices you need to make when adding liquidity are:
 * **Token Split**: Determine the split between the two tokens.
 
 {% embed url="https://youtu.be/8tpGSHglVlc?feature=shared" %}
-
 2. **Or provide liquidity in one of the supported Automated Liquidity Management (ALM) protocols that has position(s) in the incentivized concentrated liquidity pool.** If you are using an Automated Liquidity Management (ALM) protocol, be careful to understand how they rebalance liquidity.
 
-**If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the Incentive Provider, you will be eligible to claim your rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position**
+**If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the Incentive Provider, you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position**
 
 **All Automated Market Makers (AMMs) and Automated Liquidity Management (ALMs) protocol shown on Merkl's app have been whitelisted by Merkl, ensuring that you can safely invest your liquidity across various platforms.** For a comprehensive list of AMMs and ALMs supported by Merkl, check this [link](https://app.merkl.xyz/integrations).
 
@@ -29,7 +28,7 @@ The main choices you need to make when adding liquidity are:
 
 ## Disclaimer for Concentrated Liquidity
 
-Concentrated liquidity pools offer the potential for higher returns but come with specific risks. Snapshots for rewards are made based on swap activities, and the engine collects data from subgraphs to measure user participation. If your liquidity position is out of range during a swap, you won't be eligible to receive rewards for that period. Ensure your positions are actively managed to stay within the effective range to maximize your rewards.
+Concentrated liquidity pools offer the potential for higher returns but come with specific risks. Snapshots for rewards are made based on swap activities, and the engine collects data from subgraphs to measure user participation. If your liquidity position is out of range during a swap, you won't be eligible for that period. Ensure your positions are actively managed to stay within the effective range to maximize your rewards.
 
 ## Anti-DoS Filter in Concentrated Liquidity
 

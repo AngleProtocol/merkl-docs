@@ -44,8 +44,6 @@ If you are using something other than the Transaction Builder, proceed as you ar
 
 5. **Execute the Transactions:**
 
-* The app might tell you that the transaction batch is from another chain; you can disregard this message (the Merkl smart contract addresses are the same on all chains).
-
 You will see the 3 following transactions:
 
 * `approve`: Approval for the MerklDistributor contract to spend the reward tokens

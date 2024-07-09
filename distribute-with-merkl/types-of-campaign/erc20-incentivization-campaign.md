@@ -12,6 +12,7 @@ The current supported lending and borrowing protocols by Merkl are:
 
 * Silo (protocol-specific campaigns)
 * Radiant (protocol-specific campaigns)
+* Aave
 * Compound
 * Gearbox
 * Ionic
@@ -28,7 +29,7 @@ Merkl also currently support the following V2 AMMs:
 * Poolside V2
 * Quickswap V2
 
-if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
+If you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 ## Creating an ERC20 Campaigns
 

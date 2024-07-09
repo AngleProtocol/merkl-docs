@@ -21,7 +21,7 @@ Merkl is a one-stop shop for finding the best investment opportunities in DeFi a
 3. Invest your liquidity directly on the protocol's app by following the provided links.
 4. That's it! You're now earning rewards, no staking or other onchain action is needed.
 
-You can track your active positions and your rewards by visiting your [user dashboard](https://beta.merkl.xyz/user/).
+You can track your active positions and your rewards by visiting your [user dashboard](https://app.merkl.xyz/user/).
 
 Once you've earned rewards, you can claim all your earned tokens with a single click.
 
