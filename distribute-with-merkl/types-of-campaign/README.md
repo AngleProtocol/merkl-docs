@@ -1,8 +1,6 @@
 # Types of campaign
 
-
-
-**Before starting your campaign**, and using your reward token as an incentive token on Merkl, we need some information to make sure that we’ll be able to properly compute APRs, and that it’ll be safe for our users. For us to whitelist your token, please fill out the following [form](https://tally.so/r/3y2bqx).
+**Before starting your campaign**, and using your reward token as an incentive token on Merkl, we need some information to make sure that we’ll be able to properly compute APRs, and that it’ll be safe for our users. For us to whitelist your reward token, please fill out the following [form](https://tally.so/r/3y2bqx).
 
 **Remember, one of Merkl's core features is the ability to incentivize activity on one chain while distributing rewards on another.**
 
@@ -44,6 +42,7 @@ The current supported lending and borrowing protocols by Merkl are:
 
 * Silo (protocol-specific campaigns)
 * Radiant (protocol-specific campaigns)
+* Aave
 * Compound
 * Gearbox
 * Ionic

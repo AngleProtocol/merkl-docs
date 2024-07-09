@@ -11,13 +11,14 @@ Merkl makes airdropping tokens to your community simple and efficient!
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**:
-   * Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
+
+* Go to the Merkl App and navigate to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
+* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token (if it hasn't been whitelisted yet). Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -94,15 +95,6 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 <figure><img src="../../.gitbook/assets/airdrop-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
 
 After these steps, congratulations! You have created your Airdrop Campaign using Merkl!
-
-_**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
-
-* **Using an EOA Account**:
-  * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
-  * Approve and then deposit the amount you want to incentivize, plus the maintenance fee.
-
-After these steps, congratulations! You have created your  Concentrated Liquidity Merkl Incentivization Campaign!
 
 _**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**_
 
