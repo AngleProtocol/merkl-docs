@@ -19,8 +19,8 @@ If your protocol is not part of the list and you want to integrate your AMM V2 w
 ### For Incentive Providers 
 
 * **Learn How to Configure a Liquidity Pool V2 Incentive Campaign**: Are you an Incentive Provider looking to learn how to configure a Liquidity Pool V2 incentive campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to get started.
-* **Start a Liquidity Pool V2 Incentive Campaign**: Ready to start a Liquidity Pool V2 incentive campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Liquidity Pool V2 Incentive Campaign**: Ready to start a Liquidity Pool V2 incentive campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 ### For users
 

@@ -18,8 +18,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 #### For Incentive Providers :
 
 * **Learn How to Configure a CLAMM Incentive Campaign**: Are you an Incentive Provider looking to learn how to configure a Concentrated Liquidity (CLAMM) incentive campaign? Go check this [page](../distribute-with-merkl/types-of-campaign/concentrated-liquidity-pool-incentivization-campaign.md) to learn how to get started.
-* **Start a CLAMM Incentive Campaign**: Ready to start a Concentrated Liquidity (CLAMM) incentive campaign? Access the CLAMM campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/pool).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a CLAMM Incentive Campaign**: Ready to start a Concentrated Liquidity (CLAMM) incentive campaign? Access the CLAMM campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/pool).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 #### For users
 
@@ -32,8 +32,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 **For Incentive Providers **
 
 * **Learn How to Configure a Silo Campaign**: Are you an Incentive Provider looking to learn how to configure a Silo campaign? Go check this [page](../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-silo.md) to learn how to get started.
-* **Start a Silo Campaign**: Ready to start a Silo campaign? Access the Silo campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/silo).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Silo Campaign**: Ready to start a Silo campaign? Access the Silo campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/silo).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 **For users**
 
@@ -44,8 +44,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 **For Incentive Providers **
 
 * **Learn How to Configure a Radiant Campaign**: Are you an Incentive Provider looking to learn how to configure a Radiant campaign? Go check this [page](../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-radiant.md) to learn how to get started.
-* **Start a Radiant Campaign**: Ready to start a Radiant campaign? Access the Radiant campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/radiant).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Radiant Campaign**: Ready to start a Radiant campaign? Access the Radiant campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/radiant).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 **For users**
 
@@ -56,8 +56,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 #### For Incentive Providers :
 
 * **Learn how to set up your Airdrop Campaign:** Are you looking to set up an Airdrop Campaign?Check out this [page](../distribute-with-merkl/types-of-campaign/airdrop-campaign.md) to get started.
-* Start your Aidrop Campaign start your Airdrop Campaign, click on this [link](https://app.merkl.xyz/create/drop).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* Start your Aidrop Campaign start your Airdrop Campaign, click on this [link](https://app.merkl.xyz/create/drop).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 #### For users
 
@@ -83,8 +83,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 #### For Incentive Providers :
 
 * **Learn How to Configure a Liquidity Pool V2 Incentive Campaign**: Are you an Incentive Provider looking to learn how to configure a Liquidity Pool V2 incentive campaign? Go check this [page](broken-reference) to learn how to get started.
-* **Start a Liquidity Pool V2 Incentive Campaign**: Ready to start a Liquidity Pool V2 incentive campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Liquidity Pool V2 Incentive Campaign**: Ready to start a Liquidity Pool V2 incentive campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 #### For users
 
@@ -95,8 +95,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 **For Incentive Providers :**
 
 * **Learn How to Configure a Token Balance Campaign**: Are you a protocol or user looking to incentivize holders for maintaining an ERC20 token balance over a specific period? Go check this [page](../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to create your campaign.
-* **Start a Token Balance Campaign**: Ready to start a Token Balance campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Token Balance Campaign**: Ready to start a Token Balance campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 **For Users:**
 
@@ -107,8 +107,8 @@ Merkl offers a variety of incentivization campaigns to cater to different DeFi a
 **For Incentive Providers :**
 
 * **Learn How to Configure a Token Snapshot Campaign**: Are you a protocol, DAO or user looking to incentivize holders for maintaining an ERC20 token balance at a specific time? Go check this [page](../distribute-with-merkl/types-of-campaign/token-snapshot-campaign.md) to learn how to create your campaign.
-* **Start a Token Snapshot Campaign**: Ready to start a Token Snapshot campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/snapshot).\
-  Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+* **Start a Token Snapshot Campaign**: Ready to start a Token Snapshot campaign? Access the campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/snapshot).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 **For Users:**
 
