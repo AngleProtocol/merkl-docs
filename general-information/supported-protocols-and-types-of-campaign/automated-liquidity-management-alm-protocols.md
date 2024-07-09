@@ -1,6 +1,6 @@
 # Automated Liquidity Management (ALM) Protocols
 
-## What is an ALM Protocol?&#x20;
+## What is an ALM Protocol?
 
 Automated Liquidity Management (ALM) protocols are designed to optimize liquidity management by automatically adjusting positions within concentrated liquidity pools. Their primary goal is to maximize returns and efficiency in these pools.
 

@@ -34,7 +34,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 <figure><img src="../.gitbook/assets/download-copy-safe-template.png" alt=""><figcaption></figcaption></figure>
 
-4. &#x20;**Upload the JSON File:**
+4. **Upload the JSON File:**
 
 * Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on "Choose a file" to upload it manually.
 

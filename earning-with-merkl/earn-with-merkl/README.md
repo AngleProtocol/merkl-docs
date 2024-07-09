@@ -33,7 +33,7 @@ Rewards on Merkl do not increase block by block, but can be claimed at a frequen
 
 It is important to note that the Merkl engine script cuts off rewards for users who receive less than 1/10,000,000th (or 0.00001 %) of the campaign rewards per engine run across all active campaigns. This anti-DoS (Denial of Service) filter helps maintain the platform's integrity and therefore ensures the continuity of fair distribution of rewards.
 
-&#x20;Example on a V2 Liquidity Pool:
+Example on a V2 Liquidity Pool:
 
 * Campaign Duration: 14 days
 * Total Value Locked of the V2 Liquidity Pool: $1,000,000 on Arbitrum
@@ -53,4 +53,4 @@ Note that, by default, rewards can only be claimed by the address that earned th
 
 In the following pages, we explain in more detail how to take advantage of the [Concentrated Liquidity (CLAMM)](earn-on-concentrated-liquidity-campaigns.md) campaigns on Merkl to earn rewards.
 
-If you want to learn  the Other ways to earn on Merkl both actively and passively, check the [Other Ways to Earn on Merkl page](other-ways-to-earn-on-merkl.md).&#x20;
+If you want to learn  the Other ways to earn on Merkl both actively and passively, check the [Other Ways to Earn on Merkl page](other-ways-to-earn-on-merkl.md).
