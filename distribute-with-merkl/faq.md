@@ -24,7 +24,7 @@ To learn how to deploy the type of campaign you want to launch, check the corres
   * If you are an Automated Market Maker (AMM) looking to integrate Merkl, please complete this [form](https://tally.so/r/3XJODP).
   * If you are an Automated Liquidity Manager (ALM) interested in integrating Merkl, kindly fill out this [form](https://tally.so/r/w4JYLr).
 
-## Are they fees for using Merkl ?
+## Are they fees for using Merkl?
 
 * Yes, for campaigns, the maintenance fee is 3%, whereas for airdrops, it is 0.5%.
 
@@ -32,31 +32,31 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 * Rewards corresponding to incentives distributed through Merkl do not compound block by block but are made available regularly (through a Merkle root update) at a frequency depending on the chain.
 
-## Can there be delays in campaign updates
+## Can there be delays in campaign updates?
 
 * Yes, there may be delays in the onchain Merkle root updates due to potential flaws in the script or infrastructure used to update results onchain.
 
-## Can rewards posted onchain be disputed  ?
+## Can rewards posted onchain be disputed?
 
 * Yes, everyone can permissionlessly dispute the rewards posted onchain. When creating a campaign, you are responsible for checking the results and disputing them if necessary.
 
-## What happens if I specify an invalid or unsupported address ?
+## What happens if I specify an invalid or unsupported address?
 
 * If you specify an invalid address or an address not marked as supported, your rewards will not be taken into account. Instead, all rewards will be distributed to the address that created the campaign so you can recover the funds.
 
-## What should I do about smart contract address eligible for rewards ?
+## What should I do about smart contract address eligible for rewards?
 
 * If you do not blacklist smart contracts eligible for rewards (e.g., liquidity position managers or smart contract addresses holding LP tokens not natively supported by the Merkl system), the script will not account for the specificities of these addresses and will reward them like a normal externally owned account. If these are smart contracts that do not support external rewards, the rewards accruing to them will be lost.
 
-## What happens to unclaimed rewards ?
+## What happens to unclaimed rewards?
 
 * If rewards sent through Merkl remain unclaimed for over a year, we reserve the right to recover these rewards and/or redistribute part of them.
 
-## What happens if I send below the Min rewards per hour or unapproved rewards ?
+## What happens if I send below the Min rewards per hour or unapproved rewards?
 
 * If the Rewards per hour you are sending is below the Min Rewards per hour, or if you are using a token that is not approved, your rewards will not be handled by the script and will be lost.
 
-## Can I retrieve rewards if I send too much by mistake ?
+## Can I retrieve rewards if I send too much by mistake?
 
 * No, if you mistakenly send too many rewards compared to what you intended, you will not be able to retrieve them. Additionally, you cannot prematurely end a reward distribution once it has been created.
 

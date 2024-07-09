@@ -12,4 +12,4 @@ All Automated Liquidity Management (ALMs) protocols supported by the Merkl engin
 
 ## ALM Integration
 
-If you are interested in integrating your ALM with Merkl, please reach out to us on the Merkl Discord by [opening a BD ticket to discuss the integration process](https://discord.com/channels/1209830388726243369/1210212731047776357).
+If you are interested in integrating your ALM with Merkl, please reach out to us on the Merkl Discord by [opening a BD ticket to discuss the integration process](https://discord.com/channels/1209830388726243369/1210212731047776357) and by filling out this [form](https://tally.so/r/w4JYLr).

@@ -8,7 +8,7 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 **Step-by-Step Process:**
 
-1. **Access the Campaign Creation Page**:
+1. **Access the Campaign Creation Page**
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
@@ -35,20 +35,20 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
-**Distribution Details**:
+**Distribution Details:**
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
-* **Duration**: Set the start and end dates for the campaign.
-* **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
+* **Total Rewards:** Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
+* **Duration:** Set the start and end dates for the campaign.
+* **Min Rewards/Hour:** Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
-**Silo Asset Selection**:
+**Silo Asset Selection:**
 
-* **Chain**: Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
-* **Usage**: Select the specific usage for your Silo campaign (Deposit, Protected Deposit, or Debt)
-* **Version**: Choose the version of Silo (Silo Legacy, or Silo Llama)
-* **Asset**: Select the asset to incentivize from the dropdown menu or enter the asset address manually.
+* **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
+* **Usage:** Select the specific usage for your Silo campaign (Deposit, Protected Deposit, or Debt)
+* **Version:** Choose the version of Silo (Silo Legacy, or Silo Llama)
+* **Asset:** Select the asset to incentivize from the dropdown menu or enter the asset address manually.
 
-**Markets Configuration**:
+**Markets Configuration:**
 
 * Enable the markets where depositing or borrowing the asset will be incentivized. **Ideally, only one market should be enabled.**
 
@@ -65,9 +65,9 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
 
 * If you want to whitelist or blacklist EOAs (Externally Owned Accounts), you can do so manually by adding them.
 
-**Details**:
+**Details:**
 
-* **Deposit URL**: Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
+* **Deposit URL:** Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
 
 6. **Review and Submit**
 
@@ -77,7 +77,7 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
 
 7. **Sign and Submit**
 
-* **Using an EOA Account**:
+* **Using an EOA Account:**
   * Double-check your campaign configuration.
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.

@@ -6,7 +6,7 @@ description: Guide to create an ERC20 Campaign (Token, LP Token, Lending/Borrowi
 
 ERC20 campaigns incorporate various aspects such as token balance, LP token balance (V2 liquidity pools), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
 
-However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
+However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl.** The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
 
 The current supported lending and borrowing protocols by Merkl are:
 
@@ -37,7 +37,7 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 **Step-by-Step Process:**
 
-1. **Access the Campaign Creation Page**:
+1. **Access the Campaign Creation Page**
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
@@ -64,21 +64,21 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
-**Distribution Details**:
+**Distribution Details:**
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
-* **Duration**: Set the start and end dates for the campaign.
-* **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
+* **Total Rewards:** Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
+* **Duration:** Set the start and end dates for the campaign.
+* **Min Rewards/Hour:** Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
 **Target:**
 
-* **Chain**: Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
-* **Token Address**: Select the address of the token (it can be a simple token, or the address of the LP token, or the borrowing or lending token) you want to incentivize by pasting it in the token address field.
+* **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
+* **Token Address:** Select the address of the token (it can be a simple token, or the address of the LP token, or the borrowing or lending token) you want to incentivize by pasting it in the token address field.
 
 **Restrictions:**
 
-* **Blacklist**: Add addresses that should neither receive nor forward rewards. **Make sure to blacklist contracts you own and therefore hold large amounts of the incentivized token.** These could be addresses that are not capable of claiming rewards or that you don't want to reward because you aim to incentivize other users with your token, LP token, or lending/borrowing token.
-* **Whitelist**: If necessary, whitelist addresses to ensure that only these addresses received the rewards.
+* **Blacklist:** Add addresses that should neither receive nor forward rewards. **Make sure to blacklist contracts you own and therefore hold large amounts of the incentivized token.** These could be addresses that are not capable of claiming rewards or that you don't want to reward because you aim to incentivize other users with your token, LP token, or lending/borrowing token.
+* **Whitelist:** If necessary, whitelist addresses to ensure that only these addresses received the rewards.
 
 **Staking contracts:**
 
@@ -93,9 +93,9 @@ For example, users who stake their USDa will receive stUSD and even with this ex
 
 For more details on ERC20 Forwarders check out this [page](../../merkl-mechanisms/architecture-and-technical-overview/erc20-mechanisms.md).
 
-**Details**:
+**Details:**
 
-* **Deposit URL**: Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
+* **Deposit URL:** Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
 
 6. **Preview Transaction**
 
@@ -107,7 +107,7 @@ For more details on ERC20 Forwarders check out this [page](../../merkl-mechanism
 
 You can sign and submit using either an EOA account or a multisig wallet. The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. Regardless of the method you choose, you will need to follow these steps: sign the T\&C conditions, approve the tokens for transfer, and deposit them.
 
-* **Using an EOA Account**:
+* **Using an EOA Account:**
   * Double-check your campaign configuration.
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.

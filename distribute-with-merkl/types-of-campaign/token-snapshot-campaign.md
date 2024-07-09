@@ -8,7 +8,7 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 **Step-by-Step Process:**
 
-1. **Access the Campaign Creation Page**:
+1. **Access the Campaign Creation Page**
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
@@ -35,21 +35,21 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 * You will then be redirected to this page (see screenshot above), where you will need to fill out the following information:
 
-**Distribution Details**:
+**Distribution Details:**
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
-* **Snapshot**: Set the time for the snapshot (note that it will be taken at the block prior to this date).
-* **Distribution Date**: Set the date on which you want your rewards to be distributed.
+* **Total Rewards:** Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
+* **Snapshot:** Set the time for the snapshot (note that it will be taken at the block prior to this date).
+* **Distribution Date:** Set the date on which you want your rewards to be distributed.
 
 **Target:**
 
-* **Chain**: Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the snapshot is taken can be different from the chain on which you reward users.
-* **Token Address**: Enter the address of the token you want to incentivize by taking a token snapshot. Paste the token address into the appropriate field.
+* **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the snapshot is taken can be different from the chain on which you reward users.
+* **Token Address:** Enter the address of the token you want to incentivize by taking a token snapshot. Paste the token address into the appropriate field.
 
 **Restrictions:**
 
-* **Blacklist**: Add addresses that should neither receive nor forward rewards. **Make sure to blacklist contracts you own and therefore hold large amounts of the incentivized token.** These could be addresses that are not capable of claiming rewards or that you don't want to reward because you aim to incentivize other users with your token, LP token, or lending/borrowing token.
-* **Whitelist**: If necessary, whitelist addresses to ensure that only these addresses received the rewards.
+* **Blacklist:** Add addresses that should neither receive nor forward rewards. **Make sure to blacklist contracts you own and therefore hold large amounts of the incentivized token.** These could be addresses that are not capable of claiming rewards or that you don't want to reward because you aim to incentivize other users with your token, LP token, or lending/borrowing token.
+* **Whitelist:** If necessary, whitelist addresses to ensure that only these addresses received the rewards.
 
 **Staking contracts:**
 
@@ -68,9 +68,9 @@ For example, users who stake their USDa will receive stUSD and even with this ex
 
 For more details on ERC20 Forwarders check out this [page](../../merkl-mechanisms/architecture-and-technical-overview/erc20-mechanisms.md).
 
-**Details**:
+**Details:**
 
-* **Deposit URL**: Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
+* **Deposit URL:** Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
 
 6. **Preview Transaction**
 
@@ -82,7 +82,7 @@ For more details on ERC20 Forwarders check out this [page](../../merkl-mechanism
 
 You can sign and submit using either an EOA account or a multisig wallet. The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. Regardless of the method you choose, you will need to follow these steps: sign the T\&C conditions, approve the tokens for transfer, and deposit them.
 
-* **Using an EOA Account**:
+* **Using an EOA Account:**
   * Double-check your campaign configuration.
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.

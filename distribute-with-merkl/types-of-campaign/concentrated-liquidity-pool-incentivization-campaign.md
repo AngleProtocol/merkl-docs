@@ -8,7 +8,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 **Step-by-Step Process:**
 
-1. **Access the Campaign Creation Page**:
+1. **Access the Campaign Creation Page**
    * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
@@ -35,21 +35,21 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 * You will then be redirected to the campaign configuration page, where you will need to provide the following details:
 
-**Distribution Details**:
+**Distribution Details:**
 
-* **Total Rewards**: Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
-* **Duration**: Set the start and end dates for the campaign.
-* **Min Rewards/Hour**: Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
+* **Total Rewards:** Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
+* **Duration:** Set the start and end dates for the campaign.
+* **Min Rewards/Hour:** Ensure your distribution per hour is above the minimum rewards per hour. The Min Rewards/Hour is set at $1 per hour.
 
-**Liquidity Pool Selection**:
+**Liquidity Pool Selection:**
 
-* **Chain**: Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
+* **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
 * **Pool:** Select the liquidity pool to incentivize from the dropdown menu or enter the pool address manually.
 * **Reward allocation:**
-  * **Token0**: Specify the percentage of rewards allocated to holding Token0.
-  * **Token1**: Specify the percentage of rewards allocated to holding Token1.
-  * **Fees**: Specify the percentage of rewards allocated to Fees.
-  * **Incentivize only in-range or in-and-out-range liquidity positions**: Choose the applicable option.
+  * **Token0:** Specify the percentage of rewards allocated to holding Token0.
+  * **Token1:** Specify the percentage of rewards allocated to holding Token1.
+  * **Fees:** Specify the percentage of rewards allocated to Fees.
+  * **Incentivize only in-range or in-and-out-range liquidity positions:** Choose the applicable option.
 
 **Rewards Forwarders:**
 
@@ -73,9 +73,9 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 <figure><img src="../../.gitbook/assets/CLAMM-boost.png" alt=""><figcaption></figcaption></figure>
 
-**Details**:
+**Details:**
 
-* **Deposit URL**: Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
+* **Deposit URL:** Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
 
 6. **Preview Transaction and Submit**
 
@@ -83,11 +83,11 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 <figure><img src="../../.gitbook/assets/CLAMM-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
-7. **Sign and Submit**:
+7. **Sign and Submit**
 
 You can sign and submit using either an EOA account or a multisig wallet. The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. Regardless of the method you choose, you will need to follow these steps: sign the T\&C conditions, approve the tokens for transfer, and deposit them.
 
-* **Using an EOA Account**:
+* **Using an EOA Account:**
   * Double-check your campaign configuration.
   * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
   *   Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.

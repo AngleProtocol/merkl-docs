@@ -6,7 +6,7 @@ description: Guide to integrate Merkl in your app
 
 **You can integrate Merkl data in your app, but you don't have to**. The [Merkl App](https://app.merkl.xyz/) will show your users everything they need to use Merkl, and they can also claim their tokens directly from there. This page will guide you through the different routes provided by the Merkl API.
 
-<figure><img src="https://docs.merkl.xyz/~gitbook/image?url=https%3A%2F%2F3295124503-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FKRQdTiHhBGLRKeCCOqdc%252Fuploads%252Fgit-blob-76648012287e5c388aa2eb6608436bcf50779576%252Fdocs-merkl-front-integration.jpg%3Falt%3Dmedia&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=eba021123df16a566eb133fc8bdb2f9fc2b5d0503b1c8e2cede760790b15dbd7" alt=""><figcaption><p>Merkl front integration diagram</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/merkl-front-integration.png" alt=""><figcaption></figcaption></figure>
 
 **The Merkl API** is fully maintained by Angle Labs, and **contains all the information needed to integrate Merkl into your frontend. Some parameters are optional, but you should kep in mind that specifying more parameters can speed up the result.**
 
@@ -23,8 +23,8 @@ Returns all the campaigns on a given `chainId`.
 **Example requests**
 
 * **Query all V3 campaigns for all chains.** [https://api.merkl.xyz/v3/campaigns](https://api.merkl.xyz/v3/campaigns)
-* **Query all V3 campaigns on Ethereum Mainnet (**`chainId=1`). [https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
-* **Query all V3 campaigns on Ethereum Mainnet (**`chainId=1`) **and Arbitrum** **(**`chainId=42161`). [https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161](https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161)
+* **Query all V3 campaigns on Ethereum Mainnet** (`chainId=1`). [https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
+* **Query all V3 campaigns on Ethereum Mainnet** (`chainId=1`) **and Arbitrum** (`chainId=42161`). [https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161](https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161)
 
 ### /v3/campaignsForMainParameter
 
@@ -37,7 +37,7 @@ Returns all the campaigns for a given `mainParameter`.
 
 **Example requests**
 
-* **Query campaigns on the wstETH/USDT Univ3 pool (**`mainParameter=`**`0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) on Ethereum  Mainnet (**`chainId=1`). [https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
+* **Query campaigns on the wstETH/USDT Univ3 pool** (`mainParameter=``0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) **on Ethereum  Mainnet** (`chainId=1`). [https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 
 **Response Template**
 
@@ -67,7 +67,7 @@ You can find the campaignId of the campaign by calling the [/v3/campaigns](./#ca
 
 **Example requests**
 
-* **Query the campaign on Arbitrum (chain** `chainId=42161`**) with** `campaignId=`0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0 [https://api.merkl.xyz/v3/recipients?chainId=42161\&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0](https://api.merkl.xyz/v3/recipients?chainId=42161\&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0)
+* **Query the campaign on Arbitrum** (`chainId=42161`) with `campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0` [https://api.merkl.xyz/v3/recipients?chainId=42161\&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0](https://api.merkl.xyz/v3/recipients?chainId=42161\&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0)
 
 **Response**
 
@@ -90,37 +90,17 @@ Returns all rewards linked to a user on a given chain. Data can be filtered by p
 * `user`: Address of the user.
 * `chainId`: Merkl supported chain Id. In this instance, `chainId` is mandatory.
 * `rewardToken` (optional): Address of the token rewarded to the users.
-* `mainParameter` (optional): Address of the incentivized asset (pool address for concentrated liquidity campaigns, ERC20 address for ERC20 campaigns, etc.)
+* `mainParameter` (optional): Address of the incentivized asset (pool address for concentrated liquidity campaigns, ERC20 address for ERC20 campaigns, etc.).
 * `proof` (optional): Defaults to false. Allows you to choose whether or not to include proof of rewards. This cannot be set to true if `mainParameter` is specified, as the proof could be invalid if the user has unclaimed rewards of the same reward token earned over different `mainParameters`.
 
 **Example requests**
 
-* **Query all rewards eanred on Ethereum (chain** `chainId=1`**) by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**).**  [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1)
-* **Query all ANGLE (**`rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2`**) rewards earned on Ethereum Mainnet (chain** `chainId=1`**) by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**).** [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2)
-* **Query all rewards earned on the wstETH/USDT Univ3 pool (**`mainParameter=`**`0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) on Ethereum Mainnet (chain** `chainId=1`**) by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**).** [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
-* **Query all rewards earned by a user (**`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`**) to build a claim transaction (**`proof=true` **) on Ethereum Mainnet (**`chainId=1`)  [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true)
+* **Query all rewards earned on Ethereum** ( `chainId=1`) **by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`).  [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1)
+* **Query all ANGLE** (`rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2`) **rewards earned on Ethereum Mainnet** ( `chainId=1`) **by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`). [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2)
+* **Query all rewards earned on the wstETH/USDT Univ3 pool** (`mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) on Ethereum Mainnet (chain** `chainId=1`) **by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`). [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
+* **Query all rewards earned by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`) **to build a claim transaction** (`proof=true`) **on Ethereum Mainnet** (`chainId=1`)  [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true)
 
-**Response (original)**
-
-```
-{
-    [rewardTokenAddress: string]: {
-        accumulated: string;
-        unclaimed: string;
-        decimals: number;
-        symbol: string;
-        reasons: {
-          [reason: string]: {
-            accumulated: string;
-            unclaimed: string;
-          }
-        }
-        proof?: string[]
-    }
-}
-```
-
-**Response (for me this is the new structure, need to be checked)**
+**Response**
 
 ```
 {
@@ -148,7 +128,7 @@ To submit a [claim transaction](https://etherscan.io/address/0x3Ef3D8bA38EBe18DB
 * Amounts: `[data["<chain on which you want to claim>"].tokenData["<Address of the token you want to claim>"].accumulated]`
 * Proofs: `[data["<chain on which you want to claim>"].tokenData["<Address of the token you want to claim>"].proofs]`
 
-You can get the Merkl Distributor contract abi [here](https://etherscan.io/address/0x22b0ac22d5d58f05873e470bca5db7ceb5c47f5e#code) (same ABI on all chains)
+You can get the Merkl Distributor contract abi [here](https://etherscan.io/address/0x22b0ac22d5d58f05873e470bca5db7ceb5c47f5e#code). It is the same ABI on all chains.
 
 **Claiming user rewards**
 
