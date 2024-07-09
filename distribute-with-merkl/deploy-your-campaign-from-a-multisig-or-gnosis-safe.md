@@ -24,7 +24,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 2. **Build the Payload:**
 
-* Once your configuration is complete, build the payload by clickcing on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
+* Once your configuration is complete, build the payload by clicking on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
 
 <figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
