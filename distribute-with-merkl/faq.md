@@ -6,7 +6,7 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 ### How do/can I whitelist my token?&#x20;
 
-* Tokens distributed as rewards must be whitelisted on-chain. To whitelist your token, please complete this [form](https://tally.so/r/3y2bqx). Our team will carefully review and process your request to ensure accurate APR calculation and to maintain the security of our users.
+* Tokens distributed as rewards must be whitelisted onchain. To whitelist your token, please complete this [form](https://tally.so/r/3y2bqx). Our team will carefully review and process your request to ensure accurate APR calculation and to maintain the security of our users.
 
 ### I have just created my campaign and can't see it live on Merkl. Is this normal?&#x20;
 
@@ -34,11 +34,11 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 ### Can there be delays in campaign updates
 
-* Yes, there may be delays in the on-chain Merkle root updates due to potential flaws in the script or infrastructure used to update results on-chain.
+* Yes, there may be delays in the onchain Merkle root updates due to potential flaws in the script or infrastructure used to update results onchain.
 
-### Can rewards posted on-chain be disputed  ?&#x20;
+### Can rewards posted onchain be disputed  ?&#x20;
 
-* Yes, everyone can permissionlessly dispute the rewards posted on-chain. When creating a campaign, you are responsible for checking the results and disputing them if necessary.
+* Yes, everyone can permissionlessly dispute the rewards posted onchain. When creating a campaign, you are responsible for checking the results and disputing them if necessary.
 
 ### What happens if I specify an invalid or unsupported address ?&#x20;
 
@@ -60,7 +60,7 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 * No, if you mistakenly send too many rewards compared to what you intended, you will not be able to retrieve them. Additionally, you cannot prematurely end a reward distribution once it has been created.
 
-### Does the script consider all on-chain actions during incentivization?&#x20;
+### Does the script consider all onchain actions during incentivization?&#x20;
 
-* **For CLAMM:** The script handling reward distribution may not consider all on-chain actions (swaps on a pool) during the incentivization period, but only a subset to improve efficiency. Using Merkl implies that you understand how the script works, the approximations it makes, and the behaviors it may trigger (e.g., just-in-time liquidity).
+* **For CLAMM:** The script handling reward distribution may not consider all onchain actions (swaps on a pool) during the incentivization period, but only a subset to improve efficiency. Using Merkl implies that you understand how the script works, the approximations it makes, and the behaviors it may trigger (e.g., just-in-time liquidity).
 * **For ERC20 campaigns:** The engine reviews ERC20 holdings every 20 minutes to ensure accurate reward distribution.

@@ -4,7 +4,7 @@ description: List of the supported protocols by Merkl
 
 # Supported Protocols and Types of Campaign
 
-Merkl is designed to be versatile and compatible with a wide range of DeFi protocols. By processing data off-chain, utilizing Merkle trees, and distributing rewards on-chain, Merkl maximizes and optimizes liquidity for both users and incentivizers. Explore the dedicated pages to learn more about each type of protocol and how Merkl leverages them to benefit you as a user and enhance your incentivization strategies as a provider.
+Merkl is designed to be versatile and compatible with a wide range of DeFi protocols. By processing data offchain, utilizing Merkle trees, and distributing rewards onchain, Merkl maximizes and optimizes liquidity for both users and incentivizers. Explore the dedicated pages to learn more about each type of protocol and how Merkl leverages them to benefit you as a user and enhance your incentivization strategies as a provider.
 
 ## Airdrop Campaign
 

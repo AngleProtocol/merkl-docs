@@ -1,11 +1,11 @@
 # Architecture and Technical Overview
 
-Merkl operates on an off-chain engine that analyzes both on-chain and off-chain data to measure user behavior and distribute rewards among eligible users based on the rules set by the campaign's incentive provider. The Merkl's engine aggregates reward distribution data into a merkle tree, compresses it into a merkle root, and pushes it on-chain, allowing users to claim their rewards.
+Merkl operates on an offchain engine that analyzes both onchain and offchain data to measure user behavior and distribute rewards among eligible users based on the rules set by the campaign's incentive provider. The Merkl's engine aggregates reward distribution data into a merkle tree, compresses it into a merkle root, and pushes it onchain, allowing users to claim their rewards.
 
 ### Key Features of the Merkl System
 
 * **Single Merkl Root per Chain:** The Merkl system relies on **a single merkle root per chain**. This allows Merkl users to claim all their token rewards from various campaigns in just one transaction on Merkl.&#x20;
-* **Aggregated Campaigns:** Although campaigns on Merkl are treated independently, the Merkl engine usually aggregates the outcomes of multiple campaigns at once when updating a merkle root on-chain. This ensures that rewards for multiple campaigns are included in a single update whenever possible.
+* **Aggregated Campaigns:** Although campaigns on Merkl are treated independently, the Merkl engine usually aggregates the outcomes of multiple campaigns at once when updating a merkle root onchain. This ensures that rewards for multiple campaigns are included in a single update whenever possible.
 * **Multiple Incentive Providers:** The engine is compatible with multiple incentive providers incentivizing the same type of campaigns (e.g., the same pool on UniswapV3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all incentive providers who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
 
 However, it is possible for a given merkle root to include rewards for some campaigns but not others that are live on the same chain. Regardless, **the Merkl engine ensures that all users involved in a campaign during its live period receive their rewards**. Any rewards that were not distributed as they should have been will be distributed in an upcoming engine run. As the Merkl engine operates regularly for every campaign on a chain - examining only the data specific to the period between its current and previous executions - if distributions were missed, the engine will collect the necessary data from where it last left off, ensuring accurate and complete reward allocation.&#x20;
@@ -20,7 +20,7 @@ It is important to note that **users do not need to claim their Merkl rewards at
 
 ### 🤺 Dispute Periods <a href="#dispute-periods" id="dispute-periods"></a>
 
-The engine responsible for computing rewards and updating the reward's merkle root on-chain is operated by Angle Labs. Merkle roots pushed on-chain are based on off-chain computations from  both on-chain and off-chain data. Anyone can access the data required to run the script and verify the results.
+The engine responsible for computing rewards and updating the reward's merkle root onchain is operated by Angle Labs. Merkle roots pushed onchain are based on offchain computations from  both onchain and offchain data. Anyone can access the data required to run the script and verify the results.
 
 To allow anyone to permissionlessly verify and ensure that the system functions properly, while minimizing the risk of hacking or failures, each new merkle root update is followed by a dispute period. A new Merkle root that aggregates reward distribution data for a chain will not take effect until after this dispute period.
 
@@ -37,8 +37,8 @@ The more active dispute bots, the better. If you encounter any issues deploying 
 Let's break down the different components involved in the Merkl system and how they work with each other:
 
 * [Smart contracts](https://docs.merkl.xyz/overview/merkl-mechanism#merkl-smart-contracts)[ ](./#merkl-smart-contracts)deployed on each chain supported by Merkl
-* Off-chain components hosted by Angle Labs, including:
-  * The [Merkl Engine](./#merkl-engine) (proprietary): Computes rewards and pushes new merkle roots on-chain.&#x20;
+* offchain components hosted by Angle Labs, including:
+  * The [Merkl Engine](./#merkl-engine) (proprietary): Computes rewards and pushes new merkle roots onchain.&#x20;
   * Merkl Public API: Provides easy access to Merkl-related data such as current rewards, APRs, merkle proofs for claims, and analytics. Merkl's public API allows seamless integration of Merkl data into any frontend.
   * Merkl Public frontend: Built on the public API, Merkl's public frontend allows users to easily view all Merkl campaigns, associated APRs, and of course claim their rewards. Any team can set up a dedicated Merkl frontend, as it fetches all its data from the fully public Merkl API.
   * Merkl [rewards bucket](./#merkl-rewards-bucket): Stores all historical reward files, enabling anyone to rebuild the merkle root from these records.
@@ -79,12 +79,12 @@ This is the most critical component of the whole system and as such is fully iso
 * **Configuration Validation**: Ensures the campaign configuration is correct.&#x20;
 * **Fetches Forwarders**: Retrieves all forwarders applicable to the campaign (see [Merkl Forwarders](./#merkl-forwarders) for more information on forwarders).
 * **Rewards Check**: Checks the amount of rewards already distributed for the campaign and the last distribution time.
-* **Data Retrieval**: Fetches on-chain data from RPC nodes, subgraphs, or other solutions to measure user activity and reward users based on these metrics.
+* **Data Retrieval**: Fetches onchain data from RPC nodes, subgraphs, or other solutions to measure user activity and reward users based on these metrics.
 * **Sanity Checks:** Runs several sanity checks to avoid disputes. If an issue is detected, the script will retry to compute the rewards up to three times. If the issue persists, the new rewards for the campaign will be omitted in the reward file to avoid blocking the entire system for a single campaign. These rewards will be recomputed at a later time.
 * **Partial Reward File**: Creates a partial reward file for that campaign.
 
 3. **Aggregation and Computation**: Aggregates all partial reward files into one and computes a new merkle root.
-4. **Pushing Merkle Root**: Pushes the new merkle root on-chain.
+4. **Pushing Merkle Root**: Pushes the new merkle root onchain.
 
 #### Merkl Forwarders
 
