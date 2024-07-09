@@ -44,7 +44,7 @@ Sounds too good to be true? Check out our [stats](https://app.merkl.xyz/stats)!
 
 If you want to start earning incentives, check out the live campaigns [here](https://app.merkl.xyz/)
 
-If you want learn more how to use Merkl, click [here](earn-with-merkl/earn-with-merkl/).
+If you want learn more how to use Merkl, click [here](earning-with-merkl/earn-with-merkl/).
 
 ### Distributing Rewards with Merkl
 
