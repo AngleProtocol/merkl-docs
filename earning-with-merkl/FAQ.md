@@ -1,8 +1,10 @@
 # FAQ
 
+If you have any questions about how to earn rewards using Merkl, you're in the right place.
+
 ## What is Merkl? What types of campaigns does Merkl support?
 
-* Merkl is a platform that offers various yield opportunities in DeFi by providing incentives through Incentive Providers for liquidity providers, lenders, and borrowers. It allows users to earn rewards by participating in different campaigns and protocols.
+* Merkl is a platform that offers various yield opportunities in DeFi by providing incentives through Incentive Providers (IP) for liquidity providers, lenders, and borrowers. It allows users to earn rewards by participating in different campaigns and protocols.
 
 Additionally, Merkl supports airdrop, token snapshot, and token balance functionalities for IPs, allowing users to potentially receive additional tokens in their wallets. To see if you are eligible for any of these rewards, check your user [dashboard](https://app.merkl.xyz/user).
 
@@ -13,7 +15,7 @@ Additionally, Merkl supports airdrop, token snapshot, and token balance function
 1. Visit [app.merkl.xyz](https://app.merkl.xyz).
 2. Explore the various opportunities and find the one that suits you best.
 3. Invest your liquidity directly on the protocol's app using the provided links.
-4. Connect your wallet and start depositing your liquidity, lending  or borrowing the incentivized token.
+4. Connect your wallet and start depositing your liquidity, lending or borrowing the incentivized token.
 5. Check the user [dashboard](https://app.merkl.xyz/user) to track your positions and claim your rewards.
 
 ## Do I need to stake my tokens to earn rewards?
@@ -48,7 +50,7 @@ Additionally, Merkl supports airdrop, token snapshot, and token balance function
 
 ## Can I earn rewards from multiple incentive providers?
 
-* Yes, Merkl supports multiple incentive providers for the same type of campaign. You will receive rewards from all applicable incentive providers you have positions in when you claim your rewards.
+* Yes, Merkl supports multiple incentive providers for the same type of campaign. You will receive rewards from all applicable Incentive Providers (IP) you have positions in when you claim your rewards.
 
 ## Are all Automated Market Makers (AMMs) and Automated Liquidity Management (ALM) protocols supported by Merkl?
 

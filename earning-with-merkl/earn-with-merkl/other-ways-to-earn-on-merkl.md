@@ -12,4 +12,4 @@ Please be careful to ensure you add liquidity to the correct incentivized pool o
 
 ## Earn Passively using Merkl
 
-For the airdrop, token balance, and token snapshot campaigns, simply check the [user dashboard](https://app.merkl.xyz/user) to see if you're one of the recipients of rewards from a Merkl Incentive Provider.
+For the airdrop, token balance, and token snapshot campaigns, simply check the [user dashboard](https://app.merkl.xyz/user) to see if you're one of the recipients of rewards from a Merkl Incentive Provider (IP).
