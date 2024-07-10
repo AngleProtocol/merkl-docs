@@ -15,15 +15,14 @@ The current supported lending and borrowing protocols are:
 * Sturdy
 * Metamorpho Lending
 
-If you want your lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (similar to Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
+If you want your lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (similar to Silo's and Radiant's), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 ## Silo campaigns
 
 ### For Incentive Providers 
 
-* **Learn How to Configure a Silo Campaign:** Are you an Incentive Provider looking to learn how to configure a Silo campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-silo.md) to learn how to get started.
+* **Learn How to Configure a Silo Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Silo campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-silo.md) to learn how to get started.
 * **Start a Silo Campaign:** Ready to start a Silo campaign? Access the Silo campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/silo).
-
 Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
 ### For users
@@ -31,11 +30,11 @@ Don't forget to **whitelist the token you'll be using as a reward** by filling o
 * **Boost Your Lending and Borrowing APRs:** Are you a user looking to boost your APRs for lending or reduce your owned APRs for borrowing on Silo? Access Merkl's or Silo's app to start earning additional rewards on your lending or borrowing positions on Silo. All Merkl APRs are displayed directly on Silo but you can also connect your wallet, type "Silo" in the search bar to find the opportunity that suits you best, or click on the following [link](https://app.merkl.xyz/?search=silo).
 * **Learn More About Liquidity Incentive Rewards:** Want to learn more about how to benefit from Merkl's liquidity incentive rewards? Check this [page](../../earning-with-merkl/earn-with-merkl/) to get started.
 
-## Radiant Campaign
+## Radiant Campaigns
 
 ### For Incentive Providers 
 
-* **Learn How to Configure a Radiant Campaign:** Are you an Incentive Provider looking to learn how to configure a Radiant campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-radiant.md) to learn how to get started.
+* **Learn How to Configure a Radiant Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Radiant campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-radiant.md) to learn how to get started.
 * **Start a Radiant Campaign:** Ready to start a Radiant campaign? Access the Radiant campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/radiant).
 Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
@@ -44,12 +43,12 @@ Don't forget to **whitelist the token you'll be using as a reward** by filling o
 * **Boost Your Lending and Borrowing APRs:** Are you a user looking to boost your APRs for lending or reduce your owned APRs for borrowing on Radiant? Access Radiant or Merkl's app to start earning additional rewards on your lending or borrowing positions on Radiant. All Merkl APRs are displayed directly on Radiant but you can also connect your wallet, type "Radiant" in the search bar to find the opportunity that suits you best, or click on the following [link](https://app.merkl.xyz/?search=radiant).
 * **Learn More About Liquidity Incentive Rewards:** Want to learn more about how to benefit from Merkl's liquidity incentive rewards? Check this [page](../../earning-with-merkl/earn-with-merkl/) to get started.
 
-## Other Lending and Borrowing Protocols
+## Other Lending and Borrowing Protocols Campaigns
 
 ### For Incentive Providers
 
-* **Learn How to Configure Any Other Lending or Borrowing Campaign:** Are you an Incentive Provider looking to learn how to configure a lending or borrowing campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to get started.
-* **Start Any Other Lending or Borrowing Campaign:** Ready to start your lending or borrowing campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold). \
+* **Learn How to Configure Any Other Lending or Borrowing Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a lending or borrowing campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to get started.
+* **Start Any Other Lending or Borrowing Campaign:** Ready to start your lending or borrowing campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).
 
 Since most lending and borrowing protocols issue ERC20 receipt tokens and debt tokens, to start a lending or borrowing campaign, you will need to launch your campaign on the "Token Balance (Create an ERC20 Campaign)" campaign creator. For any campaign-specific configuration or to be supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process.
 

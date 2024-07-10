@@ -1,10 +1,10 @@
 ---
 description: >-
   Your official source of information for everything regarding the Merkl
-  platform.
+  platform
 ---
 # Merkl Documentation Portal
-## What is Merkl
+## What is Merkl?
 Merkl is an innovative platform designed to optimize and streamline liquidity and rewards distribution in DeFi. By leveraging advanced offchain data analysis and computing onchain actions, Merkl enables efficient and accurate reward allocations for various DeFi activities. These include incentivizing liquidity provisioning in both V2 and V3 liquidity pools, lending protocols, yield aggregators, and distributing rewards for holding tokens or through airdrops.
 
 Merkl's building blocks are its campaigns. Campaigns are created onchain by incentive providers and contain all the configurations for incentive distribution as set by the incentive provider. The Merkl offchain engine processes these campaigns to reward users based on the provided configuration. Campaigns allow users to earn competitive revenues with ease, while enabling protocols to distribute incentives easily, quickly and without operational hassle.
@@ -19,7 +19,7 @@ We strive to create a seamless and efficient reward distribution system that max
 * **Gas Optimization:** Merkl’s system allows users to claim all their rewards in a single transaction, minimizing gas fees and simplifying the process.
 
 {% hint style="info" %}
-Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no additional risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.\
+Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no additional risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.
 {% endhint %}
 
 ### For Protocols

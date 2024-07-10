@@ -6,7 +6,7 @@ Token Balance allows protocols to reward users for holding specific tokens over 
 
 ## Key Features
 
-* **User stickyness:** Encourage users to hold a ERC20 tokens for longer periods by offering rewards.
+* **User Stickyness:** Encourage users to hold a ERC20 tokens for longer periods by offering rewards.
 * **Automated Detection:** Merkl automatically detects and verifies token balances, eliminating the need for manual tracking.
 * **Flexible Reward Distribution:** Configure reward distribution parameters to align with your protocol’s goals.
 * **Staking contract support:** Configure you campaign to not only reward users who directly hold the token but also the ones who staked them in another contract.
