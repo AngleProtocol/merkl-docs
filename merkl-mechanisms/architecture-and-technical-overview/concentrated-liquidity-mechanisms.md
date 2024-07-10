@@ -12,15 +12,15 @@ description: Everything you need to know about concentrated liquidity campaigns
 
 For a given pool with two tokens (A and B), the script analyzes the swaps that occurred in the pool during the specified period and computes a reward score for each position based on the following factors:
 
-* **Fees Earned**: The fees earned by the position during the period, which represent the liquidity of the position used by the pool.
-* **Token A Holding**: The amount of token A held by the position during swaps in the pool, compared to the total amount of token A in the pool.
-* **Token B Holding**: The amount of token B held by the position during swaps in the pool, compared to the total amount of token B in the pool.
+* **Fees Earned:** The fees earned by the position during the period, which represent the liquidity of the position used by the pool.
+* **Token A Holding:** The amount of token A held by the position during swaps in the pool, compared to the total amount of token A in the pool.
+* **Token B Holding:** The amount of token B held by the position during swaps in the pool, compared to the total amount of token B in the pool.
 
 Each parameter is assigned a different weight, chosen by the incentivizer. Additionally, incentivizers can further customize the reward distribution for the pool by allowing addresses holding a specific token (e.g., veANGLE or veCRV) to earn boosted rewards.
 
 The exact distribution formula for a position in such a pool during a specified time period is as follows:
 
-\[𝑤fees×fees by positionfees by pool+𝑤A×A in positionA in pool+𝑤B×B in positionB in pool]×optional gov token boost\[wfees​×fees by poolfees by position​+wA​×A in poolA in position​+wB​×B in poolB in position​]×optional gov token boost
+$<[𝑤fees×fees by positionfees by pool+𝑤A×A in positionA in pool+𝑤B×B in positionB in pool]×optional gov token boost\[wfees​×fees by poolfees by position​+wA​×A in poolA in position​+wB​×B in poolB in position​]×optional gov token boost>$
 
 **For large pools with numerous swaps, the script may not analyze all the swaps that occurred during the specified period but instead sample the largest ones.**
 
@@ -29,7 +29,7 @@ The exact distribution formula for a position in such a pool during a specified 
 * **Positions with more than $20 worth of liquidity.**
 * **Users earning more than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run.**
 
-**For more information on Merkl rewards, check this** [**page**](../../earn-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md)**.**
+**For more information on Merkl rewards, check this** [page](../../earning-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md)*.
 
 ## Concentrated Liquidity Forwarders (ALMs)
 
@@ -39,4 +39,4 @@ With Merkl, if you incentivize a pool that is compatible with one of the liquidi
 
 Since the system is offchain, new types of position managers can easily be added into the system. For instance, it would be possible to reward users of protocols that use position manager tokens on other contracts, such as collateral for borrowing.
 
-The list of liquidity position managers supported for each AMM and chain can be found directly on the incentivized pools on[ Merkl app](https://app.merkl.xyz/integrations). If you want to add support for a type of liquidity position manager that is not currently supported or to directly reward the underlying users of a smart contract that indirectly controls AMM liquidity, fill out [this form](https://tally.so/r/w4JYLr) and [open a BD ticket on our Discord](https://discord.com/channels/1209830388726243369/1210212731047776357).
+The list of liquidity position managers supported for each AMM and chain can be found directly on the incentivized pools on[ Merkl app](https://app.merkl.xyz), or at this [link](https://app.merkl.xyz/integrations. If you want to add support for a type of liquidity position manager that is not currently supported or to directly reward the underlying users of a smart contract that indirectly controls AMM liquidity, fill out [this form](https://tally.so/r/w4JYLr) and [open a BD ticket on our Discord](https://discord.com/channels/1209830388726243369/1210212731047776357).

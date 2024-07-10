@@ -1,5 +1,5 @@
 ---
-description: 'ERC20 Mechanisms: Comprehensive Guide'
+description: 'ERC20 Mechanisms: A Comprehensive Guide'
 ---
 
 # ERC20 Mechanisms
@@ -52,12 +52,14 @@ if you want your AMM V2, or lending and borrowing protocol to be fully integrate
 
 Merkl supports a staking mechanism where users can earn rewards even if the incentivized asset isn't directly present in their wallet.
 
-For example, users who stake their USDa and receive stUSD in exchange can still earn rewards. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts. To learn more about USDa, and stUSD, you can check Angle Protocol's [website](https://www.angle.money/) and [documentation](https://docs.angle.money/) - Angle Labs is the company that developed Merkl and is a key contributor to Angle Protocol's stablecoins (USDa and EURa) and saving products (stUSD and stEUR)).
+For example, for a USDa incentivization campaign, users who staked their USDa and receive stUSD in exchange can still be eligible to earn rewards. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts. To learn more about USDa, and stUSD, you can check Angle Protocol's [website](https://www.angle.money/) and [documentation](https://docs.angle.money/) - Angle Labs is the company that developed Merkl and is a key contributor to Angle Protocol's stablecoins (USDa and EURa) and saving products (stUSD and stEUR).
 
 Here's how it works:
 
 * **Staking Example:** Users stake their EURa or USDa and receive stEUR or stUSD tokens in return.
-* **Forwarding Mechanism:** Although the staked tokens (EURa or USDa) are not in the user's wallet (as they are held in the stEUR and stUSD smart contracts), users are still rewarded based on their stEUR or stUSD holdings.
+* **Forwarding Mechanism:** Although the staked tokens (EURa or USDa) are not in the user's wallet (as they are held in the stEUR or stUSD smart contracts), users are still rewarded based on their stEUR or stUSD holdings.
 * **Reward Eligibility:** Merkl's forwarding mechanism ensures that users with stEUR or stUSD in their wallets can earn rewards, recognizing their stake in the original tokens.
 
-**As a result, if the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses below. The contract where users stake their tokens is the **recipient of the initial rewards**. The token issued when staking the token is the **token to forward rewards to**, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
+**As a result, if the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses (see screenshot below). The contract where users stake their tokens is the **recipient of the initial rewards**. The token issued when staking the token is the **token to forward rewards to**, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
+
+<figure><img src="../../.gitbook/assets/staking-contract.png" alt=""><figcaption></figcaption></figure>

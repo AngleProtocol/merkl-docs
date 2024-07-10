@@ -4,7 +4,7 @@ description: Protocols supported by Merkl
 
 # Supported Protocols and Types of Campaign
 
-Merkl is designed to be versatile and compatible with a wide range of DeFi protocols. Explore the dedicated pages to learn more about each type of supported protocol and how Merkl leverages them to benefit you as a user and enhance your incentivization strategies as a provider.
+Merkl is designed to be versatile and compatible with a wide range of DeFi protocols. Explore the dedicated pages to learn more about each type of supported protocol and how Merkl leverages them to benefit you as a user, and enhance your incentivization strategies as a provider.
 
 ## Airdrop Campaign
 
@@ -23,7 +23,7 @@ To learn more about setting up and benefiting from airdrop campaigns as both a u
 
 Merkl supports Concentrated Liquidity (V3) pools. Throughout the documentation, we often refer to these campaigns as CLAMM.
 
-* **For Users:** Discover how using Merkl and providing liquidity to V3 pools can further optimize your position by obtaining rewards from incentive providers in addition to your V3 liquidity pool returns.
+* **For Users:** Discover how using Merkl and providing liquidity to V3 pools can further optimize your positions by obtaining rewards from incentive providers in addition to your V3 liquidity pool returns.
 * **For Incentive Providers:** Learn how to incentivize your liquidity pool and reward users for bringing liquidity into your pool.
 
 To learn more about Concentrated Liquidity and how to use Merkl to benefit as a user and an incentive provider, go to this [page](concentrated-liquidity-v3-pools.md), or click on the page link below.
@@ -55,7 +55,7 @@ All Automated Liquidity Management protocols supported by the Merkl engine can b
 
 ## V2 Liquidity Pools
 
-Merkl natively supports all V2 Liquidity Pools because they utilize ERC20 tokens, and Merkl is compatible with all ERC20 tokens. However, if you want your AMM V2 to be fully integrated and supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits.
+**Merkl natively supports all V2 Liquidity Pools because they utilize ERC20 tokens, and Merkl is compatible with all ERC20 tokens.** However, if you want your AMM V2 to be fully integrated and supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process. **The advantages of being supported by Merkl include APR and TVL calculations, among other benefits.**
 
 * **For Users:** Explore how using Merkl for V2 pools can help you achieve additional competitive returns through liquidity incentives.
 * **For Incentive Providers:** Learn how to incentivize your V2 liquidity pools and reward users for providing liquidity.
@@ -68,9 +68,9 @@ To learn more about V2 Pools and how to use Merkl to benefit as a user and an in
 
 ## Lending and Borrowing Protocols
 
-Since lending and borrowing tokens are ERC20 tokens, and Merkl is compatible with all ERC20 tokens, **Merkl natively supports all lending and borrowing protocols which issue receipt tokens and debt tokens.**
+Since lending and borrowing tokens are ERC20 tokens, and Merkl is compatible with all ERC20 tokens, **Merkl natively supports all lending and borrowing protocols that issue receipt tokens and debt tokens.**
 
-However, if you want your Lending and Borrowing protocol to be fully integrated and supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits.
+However, if you want your Lending and Borrowing protocol to be fully integrated and supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process. **The advantages of being supported by Merkl include APR and TVL calculations, among other benefits.**
 
 * **For Users:** Find out how using Merkl to supply liquidity to lending and borrowing platforms can help you earn higher APRs.
 * **For Incentive Providers:** Discover how to create liquidity incentives for your lending and borrowing protocols and reward users for their participation.
