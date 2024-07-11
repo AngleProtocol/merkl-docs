@@ -1,6 +1,6 @@
 # Types of campaign
 
-**Before starting your campaign**, and using your reward token as an incentive token on Merkl, we need some information to make sure that we’ll be able to properly compute APRs, and that it’ll be safe for our users. You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/integrations). If your token is not part of the list, please fill out the following [form](https://tally.so/r/3y2bqx).
+**Before starting your campaign**, and using your reward token as an incentive token on Merkl, we need some information to make sure that we will be able to properly compute APRs, and that it will be safe for our users. You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/integrations). If your token is not part of the list, please fill out the following [form](https://tally.so/r/3y2bqx).
 
 **Remember, one of Merkl's core features is the ability to incentivize activity on one chain while distributing rewards on another.**
 
@@ -20,7 +20,7 @@ Merkl supports 5 types of campaigns:
 [concentrated-liquidity-pool-incentivization-campaign.md](concentrated-liquidity-pool-incentivization-campaign.md)
 {% endcontent-ref %}
 
-* When you're ready to start incentivizing the concentrated liquidity pool of your choice, create your concentrated liquidity incentivization campaign using [Merkl's CLAMM Campaign creation tool](https://app.merkl.xyz/create/pool).
+* When you're ready to start incentivizing the concentrated liquidity pool of your choice, create your concentrated liquidity incentivization campaign using [Merkl's CLAMM Campaign creation tool](https://app.merkl.xyz/create/pool). **Before you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).
 
 ## 2. Airdrop Campaign
 
@@ -34,11 +34,11 @@ Merkl supports 5 types of campaigns:
 
 ## 3. ERC20 Incentivization Campaign (Token, LP Token, and Lending and Borrowing Token Balance)
 
-ERC20 campaigns incorporate various aspects such as token balance, LP token balance (liquidity pool V2), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
+ERC20 campaigns incorporate various aspects such as token balance, LP token balance (liquidity pool V2), and lending and borrowing protocols that utilize receipt and debt tokens. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
 
-However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
+However, for V2 AMMs and Lending and Borrowing protocols that utilize receipt and debt tokens, **we strongly recommend your protocol to be fully supported by Merkl**. The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
 
-The current supported lending and borrowing protocols by Merkl are:
+The current supported Lending and Borrowing protocols by Merkl are:
 
 * Silo (protocol-specific campaigns)
 * Radiant (protocol-specific campaigns)
@@ -59,10 +59,15 @@ Merkl also currently support the following V2 AMMs:
 * Poolside V2
 * Quickswap V2
 
-if you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
+if you want your AMM V2, or Lending and Borrowing protocol that utilize receipt and debt tokens to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 * For a detailed guide on how to set up your ERC20 campaign, check out this [page](erc20-incentivization-campaign.md).
-* When you're ready to start incentivizing an ERC20 campaign, create your incentivization campaign using [Merkl's ERC20 Campaign creation tool](https://app.merkl.xyz/create/hold).
+
+{% content-ref url="erc20-incentivization-campaign.md" %}
+[erc20-incentivization-campaign.md](erc20-incentivization-campaign.md)
+{% endcontent-ref %}
+
+* When you're ready to start incentivizing an ERC20 campaign, create your incentivization campaign using [Merkl's ERC20 Campaign creation tool](https://app.merkl.xyz/create/hold). **Before you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).
 
 ## 4. Lending and Borrowing Incentivization Campaign on Silo and Radiant
 
@@ -94,4 +99,4 @@ if you want your AMM V2, or lending and borrowing protocol to be fully integrate
 [token-snapshot-campaign.md](token-snapshot-campaign.md)
 {% endcontent-ref %}
 
-* When you're ready to start your token snapshot campaign, create it using [Merkl's Token Snapshot Campaign creation tool. **B**](https://app.merkl.xyz/create/snapshot)**efore you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).
+* When you're ready to start your token snapshot campaign, create it using [Merkl's Token Snapshot Campaign creation tool.](https://app.merkl.xyz/create/snapshot). **Before you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).
