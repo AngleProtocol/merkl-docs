@@ -31,7 +31,7 @@
 * [Earn with Merkl](earning-with-merkl/earn-with-merkl/README.md)
   * [Earn on Concentrated Liquidity Campaigns](earning-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md)
   * [Other Ways to Earn on Merkl](earning-with-merkl/earn-with-merkl/other-ways-to-earn-on-merkl.md)
-* [FAQ](earning-with-merkl/faq.md)
+* [FAQ](earning-with-merkl/FAQ.md)
 
 ## Distribute with Merkl
 
