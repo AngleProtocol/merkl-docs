@@ -31,7 +31,7 @@ Don't forget to **whitelist the token you'll be using as a reward** by filling o
 
 #### For Incentive Providers
 
-* **Learn How to Configure a Morpho Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Morpho campaign? Go check this [page](../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-morpho.md) to learn how to get started.
+* **Learn How to Configure a Morpho Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Morpho campaign? Go check this [page](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-morpho.md) to learn how to get started.
 * **Start a Morpho Campaign:** Ready to start a Morpho campaign? Access the Morpho campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/morpho).
 Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
