@@ -4,24 +4,24 @@ description: Guide to set a Token Snapshot Campaign
 
 # Token Snapshot Campaign
 
-Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a straightforward process. Follow these steps to set up and launch your campaign effectively:
+Creating a Token Snapshot Campaign utilizing Merkl is a straightforward process. Follow these steps to set up and launch your campaign effectively:
 
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**
-   * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
+   * Go to the Merkl's App and go to the campaign creation section by selecting *Create Campaign* from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
+* After clicking on the *Create Campaign*, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
-**Connect your wallet and select the chain on which you want to distribute the rewards.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
+* Connect your wallet and select the chain on which you want to distribute the rewards. **The chain connected to your wallet during the campaign creation will determine where the rewards are distributed.**  To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
 
 4. **Create your Token Snapshot Campaign**
 
@@ -38,13 +38,13 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 **Distribution Details:**
 
 * **Total Rewards:** Enter the total amount of rewards to be distributed. Keep in mind that a 3% maintenance fee is applied.
-* **Snapshot:** Set the time for the snapshot (note that it will be taken at the block prior to this date).
+* **Snapshot:** Set the time for the snapshot - note that it will be taken at the block prior to this date.
 * **Distribution Date:** Set the date on which you want your rewards to be distributed.
 
 **Target:**
 
 * **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the snapshot is taken can be different from the chain on which you reward users.
-* **Token Address:** Enter the address of the token you want to incentivize by taking a token snapshot. Paste the token address into the appropriate field.
+* **Token Address:** Paste the token address of the token you want to take a snapshot.
 
 **Restrictions:**
 
@@ -55,7 +55,7 @@ Creating an Airdrop Campaign based on Concentrated Liquidity (CLAMM) Pool Incent
 
 Merkl supports a staking mechanism where users can earn rewards even if the incentivized asset isn't directly present in their wallet.\
 \
-For example, users who stake their USDa will receive stUSD and even with this exchange , if you want to incentivize holders of USTa, they can still earn rewards. This works though a forwarder and this is what you need to fill if you have the need to. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts.
+For example, users who stake their USDa will receive stUSD and even with this exchange, if you want to incentivize holders of USTa, they can still earn rewards. This works though a forwarder and this is what you need to fill if you have the need to. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts.
 
 <figure><img src="../../.gitbook/assets/token-snapshot-staking-contracts.png" alt=""><figcaption></figcaption></figure>
 
@@ -64,17 +64,17 @@ For example, users who stake their USDa will receive stUSD and even with this ex
 * **Recipient of the Initial Rewards:** The contract where users initially stake their tokens.
 * **Token to Forward Rewards To:** The ERC20 token contract that issues tokens when staking and to which the rewards will be forwarded to the users holding such staked tokens.
 
-**Press Add:** Don't forget to press "Add" once you've set the Recipient of the _"Initial rewards"_ and _"Token to forward rewards to"_. This ensures the rewards are forwarded to the users who have staked the token you want to incentivize.
+**Press Add:** Don't forget to press *Add* once you have set the Recipient of the *Initial rewards* and *Token to forward rewards to*. This ensures the rewards are forwarded to the users who have staked the token you want to incentivize.
 
 For more details on ERC20 Forwarders check out this [page](../../merkl-mechanisms/architecture-and-technical-overview/erc20-mechanisms.md).
 
 **Details:**
 
-* **Deposit URL:** Provide the deposit URL where users can participate in the campaign. This URL should direct them to the relevant page for participating in the campaign.
+* **Name your Snapshot:** Provide the name of your snapshot.
 
 6. **Preview Transaction**
 
-* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
+* Double-check all the information entered for accuracy. Once you have finished configuring your campaign, proceed by pressing the *Preview Transaction* button.
 
 <figure><img src="../../.gitbook/assets/token-snapshot-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
@@ -84,7 +84,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 * **Using an EOA Account:**
   * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
+  * Read and accept Merkl's T\&Cs by clicking on the *Accept* button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
 <figure><img src="../../.gitbook/assets/token-snapshot-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>

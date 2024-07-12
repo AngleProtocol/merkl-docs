@@ -12,7 +12,7 @@ To deploy successfully your campaign, you will need to follow these steps: sign 
 
 Merkl requires anyone depositing incentives into the system to accept the Terms & Conditions. This is done by calling the `acceptConditions` function of the `DistributionCreator`. For those creating multiple campaigns in a single transaction batch, accepting the Terms & Conditions once is sufficient.
 
-{% file src="../.gitbook/assets/Accept T&Cs JSON.json" %}
+{% file src="../.gitbook/assets/acceptConditions.json" %}
 
 ## Building the payload from the Merkl Frontend
 
@@ -24,7 +24,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 2. **Build the Payload:**
 
-* Once your configuration is complete, build the payload by clicking on the Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload. This option can be found at the bottom of the campaign creation page (see screenshot below).
+* Once your configuration is complete, build the payload by clicking on the *Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload*. This option can be found at the bottom of the campaign creation page (see screenshot below).
 
 <figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
@@ -36,7 +36,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 4. **Upload the JSON File:**
 
-* Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on "Choose a file" to upload it manually.
+* Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on *Choose a file* to upload it manually.
 
 <figure><img src="../.gitbook/assets/upload-json-file.png" alt=""><figcaption></figcaption></figure>
 
@@ -48,11 +48,11 @@ You will see the 3 following transactions:
 
 * `approve`: Approval for the MerklDistributor contract to spend the reward tokens
 * `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
-* `createCampaign`: Transaction to create the campaign
+* `createCampaign`: Transaction to create the campaign.
 
 <figure><img src="../.gitbook/assets/safe-wallet-approve+accept+create.png" alt=""><figcaption></figcaption></figure>
 
-* Click on "Create Batch" and then "Send Batch" to execute the transactions and deploy your Merkl Campaign.
+* Click on *Create Batch* and then *Send Batch* to execute the transactions and deploy your Merkl Campaign.
 
 Congratulations! You have successfully created your Merkl campaign!
 
@@ -74,7 +74,7 @@ If you do not want to create multiple campaigns in a single transaction batch, y
 
 4. **Optimize for Gas fees:**
 
-* Note that you do not need to include `acceptConditions` for every campaign. Including it only in the first element of the list can help reduce gas fees, which is particularly beneficial for chains with high transaction costs.
+* Note that you do not need to include `acceptConditions` for every campaign. Including it only in the first element of the list can help reduce gas fees.
 
 5. **Save for Future Use:**
 
