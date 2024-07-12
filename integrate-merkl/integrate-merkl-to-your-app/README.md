@@ -4,7 +4,7 @@ description: Guide to integrate Merkl in your app
 
 # Integrate Merkl to your App
 
-**You can integrate Merkl data in your app, but you don't have to**. The [Merkl App](https://app.merkl.xyz/) will show your users everything they need to use Merkl, and they can also claim their tokens directly from there. This page will guide you through the different routes provided by the Merkl API.
+You can integrate Merkl data directly into your application and use Merkl as a white-label solution. However, this is entirely up to you. Regardless of your choice, the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides your users with everything they need to utilize Merkl, including the ability to claim their tokens directly. This guide will walk you through the various routes available via the Merkl API.
 
 <figure><img src="../../.gitbook/assets/merkl-front-integration.png" alt=""><figcaption></figcaption></figure>
 
@@ -63,7 +63,7 @@ Returns all the rewarded addresses of a given campaign.
 * `chainId`: Merkl supported chain Id. In this instance, `chainId` is mandatory.
 * `campaignId`: Campaign Id of the campaign.
 
-You can find the campaignId of the campaign by calling the [/v3/campaigns](./#campaigns-information-1) or [/v3/campaignsForMainParameter](./#v3-campaignsformainparameter)
+You can find the `campaignId` of the campaign by calling the [/v3/campaigns](./#campaigns-information-1) or [/v3/campaignsForMainParameter](./#v3-campaignsformainparameter)
 
 **Example requests**
 
@@ -241,7 +241,7 @@ Copy
 
 When called for a specific chain, the API returns in a `pools` object a mapping between pool addresses of this chain (like Uniswap V3 pool addresses) and details on the APRs for providing liquidity.
 
-**Note:** Due to the nature of concentrated liquidity AMMs and the script's workings, two LPs with different positions may earn drastically different returns. Therefore, APRs displayed here are average measures of the returns LPs can earn. If you integrate Merkl into your app, you may want to build APR indicators tailored to your use cases.
+**Note: Due to the nature of concentrated liquidity AMMs and the script's workings, two LPs with different positions may earn drastically different returns. Therefore, APRs displayed here are average measures of the returns LPs can earn. If you integrate Merkl into your app, you may want to build APR indicators tailored to your use cases.**
 
 The `pools` object also includes details about past distributions for each incentivized pool, such as start and end dates, parameters set, and the amount of incentives for each distribution. You can filter the `pools` object to display only the pools of your choice (e.g., pools with tokens in a subset and with an active distribution).
 
