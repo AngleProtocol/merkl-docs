@@ -25,7 +25,19 @@ Don't forget to **whitelist the token you'll be using as a reward** by filling o
 
 * **Boost Your Concentrated Liquidity Pools Positions APRs:** Are you a user looking to boost your concentrated liquidity pools positions APRs? Access Merkl's website to start earning additional rewards on your concentrated liquidity pool positions. Connect your wallet, filter by "Provide Liquidity" on Actions to find the best opportunity, or click on this [link](https://app.merkl.xyz/?action=pool).
 
-## 2. Lending and Borrowing Protocols Liquidity Incentivization Campaigns on Silo or Radiant
+## 2. Lending and Borrowing Protocols Liquidity Incentivization Campaigns on Mopho, Silo or Radiant
+
+### On Morpho
+
+#### For Incentive Providers
+
+* **Learn How to Configure a Morpho Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Morpho campaign? Go check this [page](../distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-morpho.md) to learn how to get started.
+* **Start a Morpho Campaign:** Ready to start a Morpho campaign? Access the Morpho campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/morpho).
+Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
+
+#### For users
+
+* **Boost Your Lending and Borrowing APRs:** Are you a user looking to boost your APRs for lending or reduce your owned APRs for borrowing on Morpho Blue, or boost your APRs on MetaMorpho's Vaults? Access Merkl's website to start earning additional rewards on your positions on Morpho. Connect your wallet, type "Morpho" in the search bar to find the opportunity that suits you best, or click on the following [link](https://app.merkl.xyz/?search=morpho).
 
 ### On Silo
 
