@@ -39,6 +39,7 @@
   * [Concentrated Liquidity Pool Incentivization Campaign](distribute-with-merkl/types-of-campaign/concentrated-liquidity-pool-incentivization-campaign.md)
   * [Airdrop Campaign](distribute-with-merkl/types-of-campaign/airdrop-campaign.md)
   * [ERC20 Incentivization Campaign](distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md)
+  * [Lending/Borrowing Incentivization Campaign on Morpho](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-morpho.md)
   * [Lending/Borrowing Incentivization Campaign on Silo](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-silo.md)
   * [Lending/Borrowing Incentivization Campaign on Radiant](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-radiant.md)
   * [Token Snapshot Campaign](distribute-with-merkl/types-of-campaign/token-snapshot-campaign.md)
