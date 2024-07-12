@@ -52,10 +52,6 @@ To learn how to deploy the type of campaign you want to launch, check the corres
 
 * If rewards sent through Merkl remain unclaimed for over a year, we reserve the right to recover these rewards and/or redistribute part of them.
 
-## What happens if I send below the Min rewards per hour or unapproved rewards?
-
-* In the event that you are able to create a reward for which Rewards per hour you are sending is below the Min Rewards per hour, or if you are using a token that is not approved, your rewards will not be handled by the script and will be lost.
-
 ## Can I retrieve rewards if I send too much by mistake?
 
 * No, if you mistakenly send too many rewards compared to what you intended, you will not be able to retrieve them. Additionally, you cannot prematurely end a reward distribution once it has been created.
