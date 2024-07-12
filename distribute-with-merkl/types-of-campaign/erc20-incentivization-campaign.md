@@ -38,23 +38,23 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**
-   * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
+   * Go to the Merkl's App and go to the campaign creation section by selecting *Create Campaign* from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
+* After clicking on the *Create Campaign*, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
-* **Connect you wallet and select the chain on which you want to distribute the rewards.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
+* Connect your wallet and select the chain on which you want to distribute the rewards. **The chain connected to your wallet during the campaign creation will determine where the rewards are distributed.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
 
 4. **Create your ERC20 Campaign**
 
-* Once your token is whitelisted, you can create your ERC20 campaign by clicking on the 'Token Balance' button on the campaign creation page (see screenshot below).
+* Once your token is whitelisted, you can create your ERC20 campaign by clicking on the *Token Balance* button on the campaign creation page (see screenshot below).
 
 <figure><img src="../../.gitbook/assets/ERC20-campaign-create-screenshot.png" alt=""><figcaption></figcaption></figure>
 
@@ -84,7 +84,7 @@ Creating an ERC20 campaign on Merkl is a straightforward process. Follow these s
 
 Merkl supports a staking mechanism where users can earn rewards even if the incentivized asset isn't directly present in their wallet.\
 \
-For example, users who stake their USDa will receive stUSD and even with this exchange , if you want to incentivize holders of USTa, they can still earn rewards. This works though a forwarder and this is what you need to fill if you have the need to. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts.\
+For example, users who stake their USDa will receive stUSD and even with this exchange, if you want to incentivize holders of USTa, they can still earn rewards. This works though a forwarder and this is what you need to fill if you have the need to. The forwarder includes users who have staked their USDa, ensuring they receive rewards despite not having the original tokens in their wallets since their USDa are locked in the stUSD smart contracts.\
 \
 **If the token you are incentivizing can be staked in another contract (such as staking USDa in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, you need to provide the staking contract addresses below. The contract where users stake their tokens is the recipient of the initial rewards. The token issued when staking the token is the token to forward rewards to, and this contract needs to be an ERC20 token. Most of the time, these are the same contracts, so you should enter the same address twice.
 
@@ -99,7 +99,7 @@ For more details on ERC20 Forwarders check out this [page](../../merkl-mechanism
 
 6. **Preview Transaction**
 
-* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
+* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the *Preview Transaction* button.
 
 <figure><img src="../../.gitbook/assets/ERC20-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
@@ -109,7 +109,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 * **Using an EOA Account:**
   * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
+  * Read and accept Merkl's T\&Cs by clicking on the *Accept* button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
 <figure><img src="../../.gitbook/assets/ERC20-accept-approve-deposit.png" alt=""><figcaption></figcaption></figure>

@@ -99,4 +99,4 @@ if you want your AMM V2, or Lending and Borrowing protocol that utilize receipt 
 [token-snapshot-campaign.md](token-snapshot-campaign.md)
 {% endcontent-ref %}
 
-* When you're ready to start your token snapshot campaign, create it using [Merkl's Token Snapshot Campaign creation tool.](https://app.merkl.xyz/create/snapshot). **Before you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).
+* When you're ready to start your token snapshot campaign, create it using [Merkl's Token Snapshot Campaign creation tool](https://app.merkl.xyz/create/snapshot). **Before you begin, do not forget to whitelist the tokens you want to use for the incentives by filling out this** [form](https://tally.so/r/3y2bqx).

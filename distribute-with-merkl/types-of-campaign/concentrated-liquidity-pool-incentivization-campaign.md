@@ -9,19 +9,19 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**
-   * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
+   * Go to the Merkl's App and go to the campaign creation section by selecting *Create Campaign* from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
+* After clicking on the *Create Campaign*, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect you Wallet**
 
-* **Connect your wallet and select the chain on which you want to distribute the rewards.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
+* Connect your wallet and select the chain on which you want to distribute the rewards. **The chain connected to your wallet during the campaign creation will determine where the rewards are distributed.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
 
 4. **Create your CLAMM Campaign**
 
@@ -59,7 +59,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 <figure><img src="../../.gitbook/assets/CLAMM-forwarder-2.png" alt=""><figcaption></figcaption></figure>
 
-* As fewer ALMs are enabled, the restriction changes from blacklisting (disabled addresses) to whitelisting (enabled addresses).
+* As fewer ALMs are enabled, the restriction changes from blacklisted (disabled addresses) to whitelisted (enabled addresses).
 
 <figure><img src="../../.gitbook/assets/CLAMM-forwarder-3.png" alt=""><figcaption></figcaption></figure>
 
@@ -79,7 +79,7 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
 
 6. **Preview Transaction and Submit**
 
-* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
+* Double-check all the information entered for accuracy. Once you have finished configuring your campaign, proceed by pressing the *Preview Transaction* button.
 
 <figure><img src="../../.gitbook/assets/CLAMM-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
@@ -89,7 +89,7 @@ You can sign and submit using either an EOA account or a multisig wallet. The re
 
 * **Using an EOA Account:**
   * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
+  * Read and accept Merkl's T\&Cs by clicking on the *Accept* button and signing using your wallet.
   *   Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
 

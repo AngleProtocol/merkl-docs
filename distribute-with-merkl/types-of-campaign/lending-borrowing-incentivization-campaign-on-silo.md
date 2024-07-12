@@ -9,23 +9,23 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 **Step-by-Step Process:**
 
 1. **Access the Campaign Creation Page**
-   * Go to the Merkl's App and go to the campaign creation section by selecting "Create Campaign" from the dashboard.
+   * Go to the Merkl's App and go to the campaign creation section by selecting *Create Campaign* from the dashboard.
 
 <figure><img src="../../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 2. **Whitelist your Token**
 
-* After clicking on the _Create Campaign_, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
+* After clicking on the *Create Campaign*, this will redirect you to the page below. But first we need to whitelist your token. Fill up the following [form](https://tally.so/r/3y2bqx) - you can also access by clicking where the red square is (see screenshot) on the Merkl App.
 
 <figure><img src="../../.gitbook/assets/whitelist-token-screenshot.png" alt=""><figcaption></figcaption></figure>
 
 3. **Connect your Wallet**
 
-**Connect your wallet and select the chain on which you want to distribute the rewards.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
+* Connect your wallet and select the chain on which you want to distribute the rewards. **The chain connected to your wallet during the campaign creation will determine where the rewards are distributed.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations). **One of the core features of Merkl is the ability to incentivize activity on one chain while distributing rewards on another.**
 
 4. **Create your Silo Campaign**
 
-* Once your token is whitelisted, you can create your Silo campaign by clicking on the 'Lend/Borrow on Silo' button on the campaign creation page (see screenshot below).
+* Once your token is whitelisted, you can create your Silo campaign by clicking on the *Lend/Borrow on Silo* button on the campaign creation page (see screenshot below).
 
 <figure><img src="../../.gitbook/assets/silo-campaign-create.png" alt=""><figcaption></figcaption></figure>
 
@@ -44,8 +44,8 @@ Creating a Silo campaign on Merkl is a straightforward process. Follow these ste
 **Silo Asset Selection:**
 
 * **Chain:** Choose the blockchain network (Ethereum, Arbitrum, Optimism, etc.) where the campaign will be conducted. Note that the chain on which the campaign runs can be different from the chain on which you reward users.
-* **Usage:** Select the specific usage for your Silo campaign (Deposit, Protected Deposit, or Debt)
-* **Version:** Choose the version of Silo (Silo Legacy, or Silo Llama)
+* **Usage:** Select the specific usage for your Silo campaign (Deposit, Protected Deposit, or Debt).
+* **Version:** Choose the version of Silo (Silo Legacy, or Silo Llama).
 * **Asset:** Select the asset to incentivize from the dropdown menu or enter the asset address manually.
 
 **Markets Configuration:**
@@ -71,7 +71,7 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
 
 6. **Review and Submit**
 
-* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the "Preview Transaction" button.
+* Double-check all the information entered for accuracy. Once you've finished configuring your campaign, proceed by pressing the *Preview Transaction* button.
 
 <figure><img src="../../.gitbook/assets/silo-preview-transaction.png" alt=""><figcaption></figcaption></figure>
 
@@ -79,7 +79,7 @@ In the example (see screenshot above), only the PT-rsETH-26SEPT2024 market is en
 
 * **Using an EOA Account:**
   * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the "Accept" button and signing using your wallet.
+  * Read and accept Merkl's T\&Cs by clicking on the *Accept* button and signing using your wallet.
   * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
 
 <figure><img src="../../.gitbook/assets/silo-accept+approve+deposit.png" alt=""><figcaption></figcaption></figure>
