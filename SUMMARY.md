@@ -7,7 +7,7 @@
 * [Core Features](general-information/core-features.md)
 * [Supported Protocols and Types of Campaign](general-information/supported-protocols-and-types-of-campaign/README.md)
   * [Airdrop](general-information/supported-protocols-and-types-of-campaign/airdrop.md)
-  * [Concentrated Liquidity (V3) Pools](general-information/supported-protocols-and-types-of-campaign/concentrated-liquidity-v3-pools.md)
+  * [Concentrated Liquidity Pools](general-information/supported-protocols-and-types-of-campaign/concentrated-liquidity-pools.md)
   * [Automated Liquidity Management (ALM) Protocols](general-information/supported-protocols-and-types-of-campaign/automated-liquidity-management-alm-protocols.md)
   * [V2 Liquidity Pools](general-information/supported-protocols-and-types-of-campaign/v2-liquidity-pools.md)
   * [Lending and Borrowing Protocols](general-information/supported-protocols-and-types-of-campaign/lending-and-borrowing-protocols.md)
@@ -15,7 +15,7 @@
     * [Token Snapshot](general-information/supported-protocols-and-types-of-campaign/other-merkl-functionalities/token-snapshot.md)
     * [Token Balance](general-information/supported-protocols-and-types-of-campaign/other-merkl-functionalities/token-balance.md)
 * [Revenue Model](general-information/revenue-model.md)
-* [Smart Contract Address](general-information/smart-contract-address.md)
+* [Smart Contract Addresses](general-information/smart-contract-address.md)
 * [Audit](general-information/audit.md)
 
 ## Merkl mechanisms
