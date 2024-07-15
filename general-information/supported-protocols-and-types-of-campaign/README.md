@@ -19,22 +19,22 @@ To learn more about setting up and benefiting from airdrop campaigns as both a u
 [airdrop.md](airdrop.md)
 {% endcontent-ref %}
 
-## Concentrated Liquidity (V3) Pools
+## Concentrated Liquidity Pools
 
-Merkl supports Concentrated Liquidity (V3) pools. Throughout the documentation, we often refer to these campaigns as CLAMM.
+Throughout the documentation, we often refer to these campaigns as CLAMM.
 
-* **For Users:** Discover how using Merkl and providing liquidity to V3 pools can further optimize your positions by obtaining rewards from incentive providers in addition to your V3 liquidity pool returns.
+Merkl already supports many Concentrated Liquidity pools such as UniswapV3, SUshiSwapV3, Retro, Camelot, etc. You can find the list of all the CLAMMs Merkl supports by checking out this [link](https://app.merkl.xyz/integrations).
+
+* **For Users:** Discover how using Merkl and providing liquidity to concentrated liquidity pools can further optimize your positions by obtaining rewards from incentive providers in addition to your concentrated liquidity pool returns.
 * **For Incentive Providers:** Learn how to incentivize your liquidity pool and reward users for bringing liquidity into your pool.
 
-To learn more about Concentrated Liquidity and how to use Merkl to benefit as a user and an incentive provider, go to this [page](concentrated-liquidity-v3-pools.md), or click on the page link below.
+To learn more about Concentrated Liquidity and how to use Merkl to benefit as a user and an incentive provider, go to this [page](concentrated-liquidity-pools.md), or click on the page link below.
 
 {% content-ref url="concentrated-liquidity-v3-pools.md" %}
-[concentrated-liquidity-v3-pools.md](concentrated-liquidity-v3-pools.md)
+[concentrated-liquidity-pools.md](concentrated-liquidity-pools.md)
 {% endcontent-ref %}
 
-All Automated Market Maker currently supported by the Merkl engine can be found [here](https://app.merkl.xyz/integrations).
-
-**To start deploying CLAMM campaigns on your AMM V3, integration with Merkl is required.** To integrate your V3 AMM with Merkl, please fill out the following [form](https://tally.so/r/3XJODP) and contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process.
+**If your AMM, or the AMM on which you want to create your first CLAMM campaigns, is not yet supported by Merkl, please note that integration with Merkl is required.** To integrate your AMM, or the AMM on which you want to start your first campaign, if it is not supported by Merkl please fill out the following [form](https://tally.so/r/3XJODP) and contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process. All CLAMM currently supported by the Merkl engine can be found [here](https://app.merkl.xyz/integrations).
 
 ## Automated Liquidity Management Protocols (ALM)
 

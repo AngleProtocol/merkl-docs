@@ -23,7 +23,7 @@ The main choices you need to make when adding liquidity are:
 
 **If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the Incentive Provider (IP), you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position(s)**
 
-**All Automated Market Makers (AMMs) and Automated Liquidity Management (ALMs) protocol shown on Merkl's app have been whitelisted by Merkl, ensuring that you can safely invest your liquidity across various platforms.** For a comprehensive list of AMMs and ALMs supported by Merkl, check this [link](https://app.merkl.xyz/integrations).
+For a comprehensive list of all CLAMMs and ALMs supported by Merkl, check this [link](https://app.merkl.xyz/integrations).
 
 <figure><img src="../../.gitbook/assets/merkl-for-liquidity-providers.png" alt=""><figcaption></figcaption></figure>
 
