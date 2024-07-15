@@ -20,10 +20,7 @@ Each parameter is assigned a different weight, chosen by the incentivizer. Addit
 
 The exact distribution formula for a position in such a pool during a specified time period is as follows:
 
-\[
-\left[ \frac{w_{\text{fees}} \times \text{fees by position}}{\text{fees by pool}} + \frac{w_A \times A \text{ in position}}{A \text{ in pool}} + \frac{w_B \times B \text{ in position}}{B \text{ in pool}} \right] \times \text{optional gov token boost}
-\]
-
+$$\left[ \frac{w_{\text{fees}} \times \text{fees by position}}{\text{fees by pool}} + \frac{w_A \times A \text{ in position}}{A \text{ in pool}} + \frac{w_B \times B \text{ in position}}{B \text{ in pool}} \right] \times \text{optional gov token boost}$$
 
 **For large pools with numerous swaps, the script may not analyze all the swaps that occurred during the specified period but instead sample the largest ones.**
 
