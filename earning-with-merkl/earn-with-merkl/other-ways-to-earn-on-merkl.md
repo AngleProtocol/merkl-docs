@@ -2,7 +2,7 @@
 
 ## Earn Actively using Merkl
 
-By providing liquidity in incentivized V2 Liquidity Pools, or by lending or borrowing in protocols that suits you best and offers incentives, you can earn competitive boosted APRs. It's as simple as that!
+By providing liquidity in incentivized Constant Product Liquidity Pools (such as on UniSwapV2), or by lending or borrowing in protocols that suits you best and offers incentives, you can earn competitive boosted APRs. It's as simple as that!
 
 1. Click on the opportunity that suits you best.
 2. Connect your wallet.

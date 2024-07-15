@@ -35,13 +35,13 @@ Also, don't forget to **whitelist the token you'll be using as a reward** by fil
 
 ## Morpho campaigns
 
-#### For Incentive Providers
+### For Incentive Providers
 
 * **Learn How to Configure a Morpho Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a Morpho campaign? Go check this [page](https://docs.merkl.xyz/distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-morpho) to learn how to get started.
 * **Start a Morpho Campaign:** Ready to start a Morpho campaign? Access the Morpho campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/morpho).
 Don't forget to **whitelist the token you'll be using as a reward** by filling out this [form](https://tally.so/r/3y2bqx).
 
-#### For users
+### For users
 
 * **Boost Your Lending and Borrowing APRs:** Are you a user looking to boost your APRs for lending or reduce your owned APRs for borrowing on Morpho Blue, or boost your APRs on MetaMorpho's Vaults? Access Merkl's website to start earning additional rewards on your positions on Morpho. Connect your wallet, type "Morpho" in the search bar to find the opportunity that suits you best, or click on the following [link](https://app.merkl.xyz/?search=morpho).
 * **Learn More About Liquidity Incentive Rewards:** Want to learn more about how to benefit from Merkl's liquidity incentive rewards? Check this [page](../../earning-with-merkl/earn-with-merkl/) to get started.
