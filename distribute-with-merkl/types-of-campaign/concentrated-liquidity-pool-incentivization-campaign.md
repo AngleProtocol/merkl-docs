@@ -51,6 +51,11 @@ Creating a Concentrated Liquidity (CLAMM) Pool Incentive campaign on Merkl is a 
   * **Fees:** Specify the percentage of rewards allocated to Fees.
   * **Incentivize only in-range or in-and-out-range liquidity positions:** Choose the applicable option.
 
+The exact distribution formula for a position in a concentrated liquidity pool per engine run is determined as follows:
+
+$$\left[ \frac{w_{\text{fees}} \times \text{fees by position}}{\text{fees by pool}} + \frac{w_A \times A \text{ in position}}{A \text{ in pool}} + \frac{w_B \times B \text{ in position}}{B \text{ in pool}} \right] \times \text{optional gov token boost}$$
+
+For more information on the mechanisms of Concentrated Liquidity Campaign, check out this [page](../../merkl-mechanisms/architecture-and-technical-overview/concentrated-liquidity-mechanisms.md)
 **Rewards Forwarders:**
 
 * Enable the Automated Liquidity Managers (ALM) that will forward your campaign rewards to the Liquidity Providers using an ALM, and disable the ALMs you don't want to send rewards to.

@@ -33,10 +33,10 @@ Rewards on Merkl do not increase block by block, but can be claimed at a frequen
 
 It is important to note that the Merkl engine script cuts off rewards for users who receive less than 1/10,000,000th (or 0.00001 %) of the campaign rewards per engine run across all active campaigns. This anti-DoS (Denial of Service) filter helps maintain the platform's integrity and therefore ensures the continuity of fair distribution of rewards.
 
-Example on a V2 Liquidity Pool:
+Example on a Constant Product Liquidity Pool on UniSwapV2:
 
 * Campaign Duration: 14 days
-* Total Value Locked of the V2 Liquidity Pool: $1,000,000 on Arbitrum
+* Total Value Locked of the UniSwapV2 Liquidity Pool: $1,000,000 on Arbitrum
 * Merkl Engine Script Frequency: Every 4 hours (6 times per day)
 
 For this campaign:

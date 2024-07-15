@@ -4,9 +4,9 @@ description: Guide to create an ERC20 Campaign (Token, LP Token, Lending/Borrowi
 
 # ERC20 Incentivization Campaign
 
-ERC20 campaigns incorporate various aspects such as token balance, LP token balance (V2 liquidity pools), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
+ERC20 campaigns incorporate various aspects such as token balance, LP token balance (Constant Product liquidity pools), and lending and borrowing protocols. Since all these protocols are based on ERC20 tokens, Merkl can integrate them by default, ensuring that users participating in different activities can earn rewards.
 
-However, for V2 AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl.** The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
+However, for Constant Product AMMs and lending and borrowing protocols, **we strongly recommend you to be fully supported by Merkl.** The advantages of being supported by Merkl include APR and TVL calculations, among other benefits. Additionally, you can create protocol-specific types of campaigns for more tailored incentives.
 
 The current supported lending and borrowing protocols by Merkl are:
 
@@ -19,7 +19,7 @@ The current supported lending and borrowing protocols by Merkl are:
 * Sturdy
 * Metamorpho Lending
 
-Merkl also currently support the following V2 AMMs:
+Merkl also currently support the following Constant Product AMMs:
 
 * Uniswap V2
 * Balancer V2
@@ -29,7 +29,7 @@ Merkl also currently support the following V2 AMMs:
 * Poolside V2
 * Quickswap V2
 
-If you want your AMM V2, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
+If you want your Constant Product AMM, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create protocol campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. Integration allows APRs and TVL calculations.
 
 ## Creating an ERC20 Campaigns
 
