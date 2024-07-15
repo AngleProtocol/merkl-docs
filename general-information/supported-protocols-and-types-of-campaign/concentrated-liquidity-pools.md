@@ -1,4 +1,4 @@
-# Concentrated Liquidity (V3) Pools
+# Concentrated Liquidity Pools
 
 Concentrated liquidity allows liquidity providers to allocate their capital within specific price ranges, making their liquidity more efficient and potentially earning higher rewards. This targeted approach maximizes capital efficiency but comes with the risk that if the market price moves outside of the specified range, the position can become inactive, and no fees or rewards are earned.
 

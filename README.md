@@ -5,7 +5,7 @@ description: >-
 ---
 # Merkl Documentation Portal
 ## What is Merkl?
-Merkl is an innovative platform designed to optimize and streamline liquidity and rewards distribution in DeFi. By leveraging advanced offchain data analysis and computing onchain actions, Merkl enables efficient and accurate reward allocations for various DeFi activities. These include incentivizing liquidity provisioning in both V2 and V3 liquidity pools, lending protocols, yield aggregators, and distributing rewards for holding tokens or through airdrops.
+Merkl is an innovative platform designed to optimize and streamline liquidity and rewards distribution in DeFi. By leveraging advanced offchain data analysis and computing onchain actions, Merkl enables efficient and accurate reward allocations for various DeFi activities. These include incentivizing liquidity provisioning in both concentrated liquidity (such as UniSwapV3) and constant product pools (such as UniSwapV2) liquidity pools, lending protocols, yield aggregators, and distributing rewards for holding tokens or through airdrops.
 
 Merkl's building blocks are its campaigns. Campaigns are created onchain by incentive providers and contain all the configurations for incentive distribution as set by the incentive provider. The Merkl offchain engine processes these campaigns to reward users based on the provided configuration. Campaigns allow users to earn competitive revenues with ease, while enabling protocols to distribute incentives easily, quickly and without operational hassle.
 
@@ -25,7 +25,7 @@ Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no addi
 ### For Protocols
 * **Easy and Simple to Start Incentivizing:** In less than 3 minutes, anyone from your team can start an incentivization campaign.
 * **Flexibility:** Customize your campaigns to suit your specific needs and goals, Merkl provides the flexibility to incentivize various behaviors and actions. Merkl can handle multiple campaigns for the same asset, allowing for complex reward structures and broad participation incentives.
-  * **Efficient Liquidity Incentives:** Merkl enables protocols to incentivize liquidity more efficiently across various assets, including both **V2** and **concentrated liquidity** (V3) pools, as well as **lending protocols** and **yield aggregators**.
+  * **Efficient Liquidity Incentives:** Merkl enables protocols to incentivize liquidity more efficiently across various assets, including both **constant product pools (such as UniSwapV2)** and **concentrated liquidity** (such as UniSwapV3) pools, as well as **lending protocols** and **yield aggregators**.
   * **Airdrops:** Distribute tokens or rewards seamlessly to a broad user base using Merkl’s airdrop functionality.
   * **Token Snapshots:** Easily take snapshots to reward users based on their holdings at a specific point in time.
   * **Token Balance:** Reward users for holding a token over a specified period.
