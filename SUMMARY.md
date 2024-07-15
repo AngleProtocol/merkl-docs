@@ -9,7 +9,7 @@
   * [Airdrop](general-information/supported-protocols-and-types-of-campaign/airdrop.md)
   * [Concentrated Liquidity Pools](general-information/supported-protocols-and-types-of-campaign/concentrated-liquidity-pools.md)
   * [Automated Liquidity Management (ALM) Protocols](general-information/supported-protocols-and-types-of-campaign/automated-liquidity-management-alm-protocols.md)
-  * [V2 Liquidity Pools](general-information/supported-protocols-and-types-of-campaign/v2-liquidity-pools.md)
+  * [Constant Product Liquidity Pools (such as UniSwap V2)](general-information/supported-protocols-and-types-of-campaign/constant-product-liquidity-pools.md)
   * [Lending and Borrowing Protocols](general-information/supported-protocols-and-types-of-campaign/lending-and-borrowing-protocols.md)
   * [Other Merkl functionalities](general-information/supported-protocols-and-types-of-campaign/other-merkl-functionalities/README.md)
     * [Token Snapshot](general-information/supported-protocols-and-types-of-campaign/other-merkl-functionalities/token-snapshot.md)

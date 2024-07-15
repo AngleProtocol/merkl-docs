@@ -21,7 +21,7 @@ If you want your lending and borrowing protocol to be fully integrated and suppo
 
 ### For Incentive Providers
 
-* **Learn How to Configure Any Other Lending or Borrowing Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a lending or borrowing campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to get started.
+* **Learn How to Configure Any Lending or Borrowing Campaign:** Are you an Incentive Provider (IP) looking to learn how to configure a lending or borrowing campaign? Go check this [page](../../distribute-with-merkl/types-of-campaign/erc20-incentivization-campaign.md) to learn how to get started.
 * **Start Any Other Lending or Borrowing Campaign:** Ready to start your lending or borrowing campaign? Access the "Token Balance (Create an ERC20 campaign)" campaign creator mode by clicking on this [link](https://app.merkl.xyz/create/hold).
 
 Since most lending and borrowing protocols issue ERC20 receipt tokens and debt tokens, to start a lending or borrowing campaign, you will need to launch your campaign on the "Token Balance (Create an ERC20 Campaign)" campaign creator. For any campaign-specific configuration or to be supported by Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process.

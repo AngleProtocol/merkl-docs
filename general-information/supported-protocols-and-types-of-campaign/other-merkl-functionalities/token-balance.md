@@ -2,7 +2,7 @@
 
 ## What is Token Balance?
 
-Token Balance allows protocols to reward users for holding specific tokens over a defined period. Since tokens, V2 LP tokens, and tokens from lending and borrowing protocols are all ERC20, protocols wishing to incentivize any ERC20 tokens can utilize Merkl's Token Balance campaigns to achieve their goals.
+Token Balance allows protocols to reward users for holding specific tokens over a defined period. Since tokens, Constant Product LP tokens, and tokens from lending and borrowing protocols are all ERC20, protocols wishing to incentivize any ERC20 tokens can utilize Merkl's Token Balance campaigns to achieve their goals.
 
 ## Key Features
 
