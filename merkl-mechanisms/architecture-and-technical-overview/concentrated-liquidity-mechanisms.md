@@ -32,7 +32,7 @@ The exact distribution formula for a position in such a pool during a specified 
 * **Positions with more than $20 worth of liquidity.**
 * **Users earning more than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run.**
 
-**For more information on Merkl rewards, check this** [page](../../earning-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md)*.
+**For more information on Merkl rewards, check this** [page](../../earning-with-merkl/earn-with-merkl/earn-on-concentrated-liquidity-campaigns.md).
 
 ## Concentrated Liquidity Forwarders (ALMs)
 
@@ -42,4 +42,4 @@ With Merkl, if you incentivize a pool that is compatible with one of the liquidi
 
 Since the system is offchain, new types of position managers can easily be added into the system. For instance, it would be possible to reward users of protocols that use position manager tokens on other contracts, such as collateral for borrowing.
 
-The list of liquidity position managers supported for each AMM and chain can be found directly on the incentivized pools on[ Merkl app](https://app.merkl.xyz), or at this [link](https://app.merkl.xyz/integrations. If you want to add support for a type of liquidity position manager that is not currently supported or to directly reward the underlying users of a smart contract that indirectly controls AMM liquidity, fill out [this form](https://tally.so/r/w4JYLr) and [open a BD ticket on our Discord](https://discord.com/channels/1209830388726243369/1210212731047776357).
+The list of liquidity position managers supported for each AMM and chain can be found directly on the incentivized pools on[ Merkl app](https://app.merkl.xyz), or at this [link](https://app.merkl.xyz/integrations). If you want to add support for a type of liquidity position manager that is not currently supported or to directly reward the underlying users of a smart contract that indirectly controls AMM liquidity, fill out [this form](https://tally.so/r/w4JYLr) and [open a BD ticket on our Discord](https://discord.com/channels/1209830388726243369/1210212731047776357).
