@@ -54,3 +54,9 @@ Note that, by default, rewards can only be claimed by the address that earned th
 In the following pages, we explain in more detail how to take advantage of the [Concentrated Liquidity (CLAMM)](earn-on-concentrated-liquidity-campaigns.md) campaigns on Merkl to earn rewards.
 
 If you want to learn  the Other ways to earn on Merkl both actively and passively, check the [Other Ways to Earn on Merkl page](other-ways-to-earn-on-merkl.md).
+
+{% hint style="info" %}
+For users, the main risk lies with the protocols being incentivized, not with Merkl, as users do not need to stake any assets to be eligible and claim their rewards. However, users' funds on the incentivized protocols could be at risk due to the inherent risks associated with those protocols, such as smart contract vulnerabilities or operational failures. Nevertheless, these risks are not directly caused by Merkl's architecture and smart contracts. To mitigate the risks associated with third-party protocols, we diligently whitelist every project we work with to ensure they are reliable and safe for our users. This involves thorough due diligence and ongoing monitoring of these projects to maintain a high standard of security and trustworthiness.
+
+Additionally, there are potential risks associated with the front-end, such as malicious transaction injection, which could occur if the front-end is compromised and a malicious actor injects harmful transactions, and the incorrect display of data. However, these risks are inherent to all blockchain protocols that rely on front-end interfaces.
+{% endhint %}
