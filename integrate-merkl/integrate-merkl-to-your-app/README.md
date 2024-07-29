@@ -2,9 +2,18 @@
 description: Guide to integrate Merkl in your app
 ---
 
-# Integrate Merkl to your App
+## Integrate Merkl to your App
 
-You can integrate Merkl data directly into your application and use Merkl as a white-label solution. However, this is entirely up to you. Regardless of your choice, the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides your users with everything they need to utilize Merkl, including the ability to claim their tokens directly. This guide will walk you through the various routes available via the Merkl API.
+You can integrate Merkl data directly into your application and use Merkl as a white-label solution. However, this is entirely up to you. Regardless of your choice, the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides your users with everything they need to utilize Merkl, including the ability to claim their tokens directly. This guide will walk you through the various routes available via the Merkl API. 
+
+If you choose to use Merkl as a white-label solution, you will need to integrate our logo with a clickable link that redirects to our app. Here is the link to [Merkl App](https://app.merkl.xyz/) and below is the logo you need to incorporate into your frontend:
+
+<figure><img src="../../.gitbook/assets/powered-by-merkl-dark.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/powered-by-merkl-light.png" alt=""><figcaption></figcaption></figure>
+
+
+## Merkl Front Integration: Options and Implementation
 
 <figure><img src="../../.gitbook/assets/merkl-front-integration.png" alt=""><figcaption></figcaption></figure>
 
