@@ -19,21 +19,143 @@ If you choose to use Merkl as a white-label solution, you will need to integrate
 
 **The Merkl API** is fully maintained by Angle Labs, and **contains all the information needed to integrate Merkl into your frontend. Some parameters are optional, but you should kep in mind that specifying more parameters can speed up the result.**
 
-## V3 Campaigns APIs
+## Merkl API
 
-### /V3/campaigns <a href="#campaigns-information" id="campaigns-information"></a>
+The Merkl API is available here [https://api.merkl.xyz](https://api.merkl.xyz) and contains all the data you need to track campaigns. All the data from the Merkl app is served by this API.
 
-Returns all the campaigns on a given `chainId`.
+The swagger can be found [here](https://api.merkl.xyz/swagger)
+
+### /v3/campaigns <a href="#campaigns-information" id="campaigns-information"></a>
+
+Used to query all the information relative to Merkl campaigns
 
 **Parameters**
 
-* `chainId` (optional): You can specify one or several Merkl supported chain Ids. If none are provided, the API will return campaigns for all chains by default.
+* `chainIds` (optional): You can specify one or several Merkl supported chain Ids. If none are provided, the API will return campaigns for all chains by default.
+* `live` (optional): defaults to false, if set to true the route will only return live campaigns
+* `types` (optional): only return campaigns of a given type. The types are
+  * 1: ERC20
+  * 2: Concentrated liquidity 
+  * 3: ERC20 snapshot
+  * 4: Airdrops
+  * 5: Silo
+  * 6: Radiant emissions
+  * 7: Morpho
+  * 8: Dolomite
+* `creatorTag` (optional): only return campaigns created by an a given creator (for this to work we need to tag the address you used to create the campaigns)
 
 **Example requests**
 
-* **Query all V3 campaigns for all chains.** [https://api.merkl.xyz/v3/campaigns](https://api.merkl.xyz/v3/campaigns)
-* **Query all V3 campaigns on Ethereum Mainnet** (`chainId=1`). [https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
-* **Query all V3 campaigns on Ethereum Mainnet** (`chainId=1`) **and Arbitrum** (`chainId=42161`). [https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161](https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161)
+* **Query all campaigns for all chains** [https://api.merkl.xyz/v3/campaigns](https://api.merkl.xyz/v3/campaigns)
+* **Query all campaigns on Ethereum Mainnet** [https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
+* **Query all campaigns on Ethereum Mainnet and Arbitrum** [https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161](https://api.merkl.xyz/v3/campaigns?chainIds=1\&chainIds=42161)
+* **Query all live campaigns on Ethereum Mainnet** [https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true](https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true)
+* **Query all live ERC20 campaigns on Ethereum Mainnet** [https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1](https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1)
+* **Query all campaigns created by the Optimism Superfest address** [https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1](https://api.merkl.xyz/v3/campaigns?creatorTag=superfest)
+
+**Processing the data**
+
+The return data is structured as follows:
+
+* the root key is the chainId
+  * under each chainId you will have a map with multiple keys, each key corresponds to an asset and a campaign type, the keys are structure as follows: `<CampaignType>_<mainParameter>` (for most types of campaigns, the mainParameter is the asset address)
+    * under each `<CampaignType>_<mainParameter>` you will find a map of campaignIds for the given asset
+      * the format will change depending on the campaign type but they all share the following fields
+        * **chainId**: number - chain where the campaign was created
+        * **index**: number - index of the campaign in the contract, can be ignored
+        * **campaignId**: number - ID of the campaign, same as the key
+        * **creator**: string - address that created the campaign
+        * **campaignType**: number - type of the campaign
+        * **campaignSubType**: number - subtype of the campaign
+        * **rewardToken**: string - address of the token being distributed by the campaign
+        * **priceRewardToken**: number - price of the reward token
+        * **amount**: string - amount of token being distributed by the campaign
+        * **startTimestamp**: number - start timestamp of the campaign in seconds
+        * **endTimestamp**: number - end timestamp of the campaign in seconds
+        * **mainParameter**: string - asset targeted by the campaign
+        * **campaignParameters**: any - map of additional information regarding the campaign, format depends on the campaign type
+        * **computeChainId**: number - chain where the incentivized asset is located
+        * **tags**: string[] - creator tags
+        * **apr**: number - apr of the campaign, if there are multiple campaigns for a given asset you will need to sum the aprs to get the total apr of the campaign
+        * **tvl**: number - tvl of the incentivized asset
+
+**Example data**
+```json
+{
+  "10": {
+    "2_0xb40DA71c49c745Dd3ab801882b1D410760541678": {
+      "0x47e87ee5d0bc69e66646543966b782689df0ac7716fa580b69b163dc0616cbcd": {
+        "chainId": 10,
+        "index": 217,
+        "campaignId": "0x47e87ee5d0bc69e66646543966b782689df0ac7716fa580b69b163dc0616cbcd",
+        "creator": "0xd0Db870a674A1B8b82FB18F1C295736B3b965701",
+        "campaignType": 2,
+        "campaignSubType": 0,
+        "rewardToken": "0x4200000000000000000000000000000000000042",
+        "amount": "7500000000000000000000",
+        "amountDecimal": "0",
+        "startTimestamp": 1722938400,
+        "endTimestamp": 1724148000,
+        "mainParameter": "0xb40DA71c49c745Dd3ab801882b1D410760541678",
+        "campaignParameters": {
+          "amm": 0,
+          "url": "https://app.uniswap.org/explore/pools/optimism/0xb40DA71c49c745Dd3ab801882b1D410760541678",
+          "token0": "0x1F32b1c2345538c0c6f582fCB022739c4A194Ebb",
+          "token1": "0x2416092f143378750bb29b79eD961ab195CcEea5",
+          "ammAlgo": 0,
+          "poolFee": "0.01",
+          "duration": 1209600,
+          "blacklist": [],
+          "whitelist": [],
+          "forwarders": [],
+          "weightFees": 4000,
+          "poolAddress": "0xb40DA71c49c745Dd3ab801882b1D410760541678",
+          "symbolToken0": "wstETH",
+          "symbolToken1": "ezETH",
+          "weightToken0": 3000,
+          "weightToken1": 3000,
+          "boostedReward": 0,
+          "boostedAddress": "0x0000000000000000000000000000000000000000",
+          "decimalsToken0": 18,
+          "decimalsToken1": 18,
+          "symbolRewardToken": "OP",
+          "decimalsRewardToken": 18,
+          "isOutOfRangeIncentivized": false
+        },
+        "computeChainId": 10,
+        "tags": [
+          "superfest"
+        ],
+        "amm": 0,
+        "ammAlgo": 0,
+        "ammAlgoName": "UniswapV3",
+        "ammName": "UniswapV3",
+        "apr": 50.93152684877548,
+        "aprs": {
+          "Average APR (rewards / pool TVL)": 50.93152684877548,
+          "APR for holding wstETH in pool": 40.5856583057182,
+          "APR for holding  ezETH in pool": 24.504937823499315
+        },
+        "blacklistedBalance0": 0,
+        "blacklistedBalance1": 0,
+        "blacklistedLiquidity": 0,
+        "forwarders": [],
+        "isBoosted": false,
+        "isLive": true,
+        "isMock": false,
+        "poolBalanceToken0": 63.46559700542308,
+        "poolBalanceToken1": 121.45932060025895,
+        "poolTotalLiquidity": 158865.61727916493,
+        "symbolToken0": "wstETH",
+        "symbolToken1": "ezETH",
+        "tick": 1480,
+        "priceRewardToken": 1.3,
+        "tvl": 499094.459363415
+      }
+    }
+  }
+}
+```
 
 ### /v3/campaignsForMainParameter
 
@@ -59,8 +181,7 @@ Returns all the campaigns for a given `mainParameter`.
   amountDecimal: string;
   startTimestamp: number;
   endTimestamp: number;
-}
-[];
+}[];
 ```
 
 ### /v3/recipients
