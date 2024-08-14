@@ -38,3 +38,5 @@ Concentrated liquidity pools offer the potential for higher returns but come wit
 ## Fake Volume Attacks detection
 
 Merkl automatically detects and blacklist users who try to game the reward system by creating very tight positions and trading against themselves (i.e., users engaging in wash trading). If you have been blacklisted and want to understand why or request removal from the blacklist, please open a support ticket in our [Discord](https://discord.gg/tZPwmgqH). Note that we can only un-blacklist an address; we cannot recover funds that should have been earned by the position while the address was blacklisted.
+
+Frequent rebalancing due to narrow price ranges can be mistaken for wash trading, leading to address blacklisting. Please exercise caution when using these strategies.
