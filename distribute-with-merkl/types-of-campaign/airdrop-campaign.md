@@ -64,11 +64,11 @@ type AirdropJSON = {
   "rewardToken": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8",
   "rewards": {
     "0x529619a10129396a2F642cae32099C1eA7FA2834": {
-      "reason1": "18270342438556"
+      "reason1": "1827034243855622331"
     },
     "0x0C2553e4B9dFA9f83b1A6D3EAB96c4bAaB42d430": {
-      "reason1": "41411959210326626",
-      "reason2": "10352989802581656"
+      "reason1": "1827034243855622331",
+      "reason2": "1035298980258165611"
     }
   }
 }
