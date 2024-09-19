@@ -43,6 +43,7 @@
   * [Lending/Borrowing Incentivization Campaign on Silo](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-silo.md)
   * [Lending/Borrowing Incentivization Campaign on Radiant](distribute-with-merkl/types-of-campaign/lending-borrowing-incentivization-campaign-on-radiant.md)
   * [Token Snapshot Campaign](distribute-with-merkl/types-of-campaign/token-snapshot-campaign.md)
+* [Boosting Rewards for token or NFT holders](boosting-rewards-with-Merkl.md)  
 * [Deploy your campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 * [Incentivizor Disclaimer](distribute-with-merkl/incentivizor-disclaimer.md)
 * [FAQ](distribute-with-merkl/faq.md)
