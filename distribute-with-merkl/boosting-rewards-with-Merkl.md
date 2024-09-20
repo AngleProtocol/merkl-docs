@@ -17,8 +17,9 @@ Where
 There is no minimum value, and you can boost users holding any token as much as you want!
 ### Merkl Formula for Boost
 $$
-B = b \times \left( \frac{R \times v}{V \times r} )+ 1 \right
+B = b \times \frac{R \times v}{V \times r} + 1
 $$
+
 
 Where:
 - **B** is the boost a user receives.
