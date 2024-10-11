@@ -52,7 +52,7 @@ These parameters help you fine-tune how rewards are allocated to align with your
 The exact formula used for reward distribution for a position in a pool during a specified time period is as follows:
 
 $$
-\left[ \frac{w_{\text{fees}} \times \text{fees by position}}{\text{fees by pool}} + \frac{w_A \times A_{\text{in position}}}{A_{\text{in pool}}} + \frac{w_B \times B_{\text{in position}}}{B_{\text{in pool}}} \right] \times \text{optional gov token boost}
+\left[ \frac{w_f \times \text{fees by position}}{\text{fees by pool}} + \frac{w_A \times A_{\text{in position}}}{A_{\text{in pool}}} + \frac{w_B \times B_{\text{in position}}}{B_{\text{in pool}}} \right] \times \text{optional gov token boost}
 $$
 
 ### Explanation of the Formula
