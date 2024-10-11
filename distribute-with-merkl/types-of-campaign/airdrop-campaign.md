@@ -6,7 +6,13 @@ description: Guide to set up an Airdrop Campaign
 
 Merkl makes airdropping tokens to your community simple and efficient!
 
-**Important Note:** Merkl applies a fee of 0.5%. Therefore, if the total amount of tokens to be airdropped in your JSON file sums up to 100,000, then 100,000 will be distributed to the recipients and a fee will be applied on top of it. To ensure that 100,000 tokens reach your users, you need to provide 100,502.512563 tokens (100,000 / (1 - 0.5%)).
+**Important Note:** Merkl applies a fee of 0.5%. Therefore, if the total amount of tokens to be airdropped in your JSON file sums up to 100,000, then 100,000 will be distributed to the recipients, and a fee will be applied on top of it. To ensure that 100,000 tokens reach your users, you need to provide 100,502.512563 tokens (100,000 / (1 - 0.5%)).
+
+Our frontend will automatically calculate the correct amount for you.
+
+If you prefer to have exactly 100,000 tokens leave your wallet, then the sum of the amounts in your JSON file should be 99,500 tokens (100,000 * (1 - 0.5%)).
+
+**TLDR:** If you want to distribute X tokens, the sum of all tokens in your JSON file should equal X * 0.995.
 
 **Step-by-Step Process:**
 
