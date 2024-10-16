@@ -11,7 +11,7 @@
   - [🏹 Airdrop Campaigns](mechanisms/campaigns/airdrop.md)
   - [🧑‍🌾 ERC20 Campaigns and Applications](mechanisms/campaigns/erc20-mechanisms.md)
   - [🏦 Custom Lending and Borrowing Campaigns](mechanisms/campaigns/lending-borrowing.md)
-- [🪝 Customazibility Hooks](hooks/README.md)
+- [🪝 Customazibility Hooks](mechanisms/hooks/README.md)
 - [💳 Fee Model](mechanisms/revenue-model.md)
 - [⛓️ Smart Contract Addresses](mechanisms/smart-contract-address.md)
 - [🔐 Audit](mechanisms/audit.md)
