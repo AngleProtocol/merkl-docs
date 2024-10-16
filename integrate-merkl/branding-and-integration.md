@@ -2,11 +2,11 @@
 description: Guide to display the Merkl logo in your app
 ---
 
-# Branding and Integration
+# 🧑‍🎨 Branding and Integration
 
 All Merkl branding assets can be found [here](https://anglemoney.notion.site/Merkl-Media-Assets-ac2bb25ed5f146acb2ffd4ac99af8548?pvs=4).
 
-### Featuring Merkl in your app <a href="#featuring-merkl-in-your-app" id="featuring-merkl-in-your-app"></a>
+## Featuring Merkl in your app
 
 If you have integrated Merkl pools in your app, you can showcase it by showing the following logo:
 
@@ -16,7 +16,7 @@ If you have integrated Merkl pools in your app, you can showcase it by showing t
 
 Please add a link on the images redirecting to [merkl.xyz](https://merkl.xyz/).
 
-### Other logos <a href="#other-logos" id="other-logos"></a>
+## Other logos
 
 Here are additional Merkl logos you can use for communication purposes:
 
