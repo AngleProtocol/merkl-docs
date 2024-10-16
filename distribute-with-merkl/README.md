@@ -53,6 +53,10 @@ Again, if you're looking for some incentive mechanism for which you're not sure 
 
 ## Step-by-step process
 
+{% hint style="info" %}
+The Merkl Campaign creation page contains an extended FAQ that may be helpful if you encounter any issue while creating a campaign.
+{% endhint %}
+
 1. **Access the Campaign Creation Page**
    Go to the Merkl's App and go to the campaign creation section by selecting _Create Campaign_ from the dashboard.
 
