@@ -10,28 +10,14 @@ In Merkl ERC20 Campaigns, users holding an ERC20 token that is rewarded by an in
 
 For example, if a user holds 1% of the total token supply for a period of time, they are eligible for 1% of the reward pool for this period of time.
 
-### Blacklisting
+### Customizability Hooks
 
-When creating a campaign, Merkl incentive providers have the possibility to blacklist or whitelist some specific addresses which should not or should be the only ones receiving rewards.
+When creating a campaign, Merkl incentive providers have the possibility to specify some hooks to modify the default behavior of their campaign. They can typically choose to blacklist or whitelist some specific addresses which should not or should be the only ones receiving rewards. Or they can choose to enable forwarders to allow users to earn rewards even if the incentivized asset is not directly present in their wallet (because they staked it in some other contracts)
 
-In the case of blacklisting, if some addresses are blacklisted, the user's share of the reward pool will increase proportionally. In this case, the user will receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted. This ensures that the total rewards are distributed fairly among the eligible participants.
-
-### ERC20 Campaign Forwarders: Staking Mechanism
-
-With ERC20 Campaigns, Merkl supports a staking mechanism where users can earn rewards even if the incentivized asset is not directly present in their wallet.
-
-For example, for a USDA incentivization campaign, users who staked their USDA and received stUSD in exchange can still be eligible to earn rewards. The forwarder includes users who have staked their USDA, ensuring they receive rewards despite not having the original tokens in their wallets since their USDA are locked in the stUSD smart contracts.
-
-Here's how it works:
-
-- **Staking Example:** Users stake their USDA and receive stUSD tokens in return.
-- **Forwarding Mechanism:** Although the staked tokens (USDA) are not in the user's wallet (as they are held in the stUSD smart contracts), users are still rewarded based on their stUSD holdings.
-- **Reward Eligibility:** Merkl's forwarding mechanism ensures that users with stUSD in their wallets can earn rewards, recognizing their stake in the original tokens.
-
-**As a result, if the token you are incentivizing can be staked in another contract (such as staking USDA in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.** For this to work, when creating a campaign you need to provide the staking contract addresses. The contract where users stake their tokens is the **recipient of the initial rewards**. The token issued when staking the token is the **token to forward rewards to**, and this contract needs to be an ERC20 token.
+Hooks come particularly handy for ERC20 campaigns as they can enrich and extend over what would be possible with a classical onchain `StakingRewards` behavior.
 
 {% hint style="info" %}
-Most of the time, these are the same contracts, so you should enter the same address twice when creating a campaign
+For more details on customizability hooks, please refer to [this page](../hooks/README.md).
 {% endhint %}
 
 ## Applications
