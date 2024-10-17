@@ -4,7 +4,6 @@
 
 ## Merkl mechanisms
 
-- [🌄 Overview](mechanisms/overview.md)
 - [🔍 Architecture and Technical Overview](mechanisms/technical-overview.md)
 - [🏕️ Merkl Campaign Types](mechanisms/types-of-campaign.md)
   - [🦄 Concentrated Liquidity Campaigns](mechanisms/campaigns/concentrated-liquidity-mechanisms.md)

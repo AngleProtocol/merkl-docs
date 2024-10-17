@@ -42,11 +42,15 @@ With:
 
 With this setup, this is as if the overall incentive budget was split in 3, with a proportion being shared by LPs based on how much fees they've earned, a proportion shared based on the overall amount of token 0 they've held and a last portion based on the relative token 1 balance they've had in their position during the time period.
 
-Let's say parameters are set so that: `fees = 40%, Token 0 = 30%, Token 1 = 30%`:
+Let's say parameters are set such that: `fees = 40%, Token 0 = 30%, Token 1 = 30%`:
 
 - if a user earns 50% of the total fees from an epoch, they will receive 20% of the total rewards for that epoch.
 - if a user holds 30% of the Token 0 in the pool for an entire epoch, they will receive 9% (30% × 30%) of the total rewards for that epoch.
 - if a user holds 20% of the Token 1 in the pool for the entire epoch, they will receive 6% (30% × 20%) of the total rewards for that epoch.
+
+{% hint style="info" %}
+On the Merkl frontend, these parameters can set by incentive providers on the page where they create their concentrated liquidity campaigns.
+{% endhint %}
 
 ## Reward strategy examples
 
@@ -58,11 +62,9 @@ It's up to incentive providers to fine tune these parameters and choose them so 
 ## Sampling and Anti-DOS
 
 For large pools with numerous swaps, the engine may not analyze all the swaps that occurred during the specified period but instead sample the largest ones.
+If a position is detected as out of range during the swaps that were sampled, then it will not be eligible to rewards for that period. It's up to liquidity providers to ensure that their positions are actively managed to stay within the effective range to maximize their rewards.
 
-While Merkl can incentivize any type of liquidity provider, the system includes an anti-DoS filter that only rewards addresses meeting the following criteria:
-
-- Positions with more than \$20 worth of liquidity.
-- Users earning more than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run.
+Also on top of the common Anti-DoS filter removing users earning less than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run, the Merkl engine disqualifies in concentrated liquidity campaigns positions with less than \$20 worth of liquidity.
 
 ## Out of range liquidity
 
@@ -87,4 +89,33 @@ With Merkl, if you incentivize a pool that is compatible with one of the liquidi
 
 Since the system is offchain, new types of position managers can easily be added into the system. For instance, it would be possible to reward users of protocols that use position manager tokens on other contracts, such as collateral for borrowing.
 
-Incentive providers on Merkl have the possibility to whitelist or blacklist some ALM solutions when creating campaigns on concentrated liquidity pools. Typically, if an incentive provider whitelists two ALMs, only users who provide liquidity through these ALMs will be eligible to rewards, and the amount of rewards they get will be dependent on how efficient the ALMs are with respect to one another.
+Like any Merkl campaign, incentive providers have the possibility to blacklist or whitelist some addresses, including ALM solutions from rewards in their campaigns.
+
+{% hint style="info" %}
+For more details on forwarding, blacklisting and whitelisting with Merkl, you can check [this page](../hooks/README.md) on customizability hooks.
+{% endhint %}
+
+## APRs in Concentrated Liquidity Campaigns
+
+The Merkl frontend usually displays APRs for all the campaigns live on its frontend. In the case of concentrated liquidity campaigns, the APR values displayed on Merkl frontend are average APRs. In fact, every position earns something different based on how it provides liquidity with respect to the reward parameters that were set.
+
+Typically, if the fee parameter is set at a big value (like 99%), and if you provide a full range position, then you may be providing a significant amount of liquidity in the pool without receiving a lot of rewards.
+
+As a liquidity provider, if the value of the parameter for one token are higher than the other token (e.g 60% token A, 10% token B and 30% fees), then you are better off skewing your position so it has more of token A than of token B.
+
+## Providing Liquidity for Concentrated Liquidity Campaigns
+
+Globally on concentrated liquidity campaigns, what you earn is tied to how others have provided liquidity. If you had a concentrated liquidity position, but someone with less liquidity had a more concentrated position, then this user may earn more rewards than you.
+
+People who provide liquidity through the same automated liquidity management solution all earn the same APR though.
+
+In summary, to receive rewards from a concentrated liquidity campaign you can:
+
+1. **Provide liquidity directly in one of the incentivized pools.** The main choices you need to make when adding liquidity are:
+
+- **Range tightness:** Decide how tight the position's range should be. For example, a tighter range provides more virtual liquidity and earns more fees and rewards but has a higher risk of becoming out-of-range and suffering from impermanent loss.
+- **Token Split:** Determine the split between the two tokens. You can look into the parameter for token A and token B in the campaign you're targeting to see if there is an optimal ratio to find
+
+{% embed url="https://youtu.be/8tpGSHglVlc?feature=shared" %}
+
+2. **Or provide liquidity in one of the supported Automated Liquidity Management (ALM) protocols that has position(s) in the incentivized concentrated liquidity pool.** If you are using an Automated Liquidity Management (ALM) protocol, be careful to understand how they rebalance liquidity. If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the incentive provider, you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position(s).

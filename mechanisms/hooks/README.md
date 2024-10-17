@@ -10,6 +10,28 @@ Here are some of the most common hooks supported by Merkl.
 We are constantly adding new forms of hooks and customization tools to incentive providers on Merkl. This list may therefore not be fully up to date with what's currently supported by the Merkl engine and frontend.
 {% endhint %}
 
+## Forwarders
+
+For some campaign types, forwarders will be automatically detected and there is no need to specify them. This applies typically to [concentrated liquidity campaigns](../campaigns/concentrated-liquidity-mechanisms.md#automated-liquidity-management-solutions) where once whitelisted automated liquidity management solutions are automatically detected and supported.
+
+For other ERC20 campaigns, incentive providers may choose to specify forwarders (provided that these are also ERC20 tokens) likely to hold the tokens to be incentivized.
+
+Let's illustrate this forwarding feature using an ERC20 campaign incentivizing USDA holders. With forwarding enabled, users who staked their USDA and received stUSD in exchange can still be eligible to earn rewards even if they don't hold USDA in their wallets.
+
+Here's how it works:
+
+- **Staking Example:** Users stake their USDA and receive stUSD tokens in return.
+- **Forwarding Mechanism:** Although the staked tokens (USDA) are not in the user's wallet (as they are held in the stUSD smart contracts), users are still rewarded based on their stUSD holdings.
+- **Reward Eligibility:** Merkl's forwarding mechanism can recognize their stake in the original tokens, ensuring that users with stUSD in their wallets can earn rewards.
+
+**As a result, if the token you are incentivizing can be staked in another contract (such as staking USDA in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.**
+
+For this to work, when creating a campaign you need to provide the staking contract addresses. The contract where users stake their tokens is the **recipient of the initial rewards**. The token issued when staking the token is the **token to forward rewards to**, and this contract needs to be an ERC20 token.
+
+{% hint style="info" %}
+Most of the time, these are the same contracts, so you should enter the same address twice when creating a campaign.
+{% endhint %}
+
 ## Whitelisting
 
 Incentive providers may whitelist some addresses (usually forwarders) so only the whitelisted addresses and the addresses that are associated to whitelisted addresses can be eligible to rewards.
@@ -29,11 +51,7 @@ Incentive providers may choose to blacklist addresses from being eligible to rew
 
 Back to the case of an ERC20 campaign incentivizing holders of a given ERC20 token on a chain, if a staking contract address is blacklisted, and a user has staked 10 tokens in the contract, but holds 5 tokens in its wallet, then only its 5 tokens will be eligible to the rewards of the campaign.
 
-## Forwarders
-
-For some campaign types, forwarders will be automatically detected and there is no need to specify them. This applies typically to concentrated liquidity campaigns where once whitelisted automated liquidity management solutions are automatically detected and supported.
-
-For other ERC20 campaigns, incentive providers may choose to specify forwarders (provided that these are also ERC20 tokens) likely to hold the tokens to be incentivized.
+More globally, if some addresses are blacklisted in a campaign, the share of all non-blacklisted users in the reward pool increases proportionally. In this case, users receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted. This ensures that the total rewards are distributed fairly among the eligible participants.
 
 ## Incentivized bridged liquidity
 
