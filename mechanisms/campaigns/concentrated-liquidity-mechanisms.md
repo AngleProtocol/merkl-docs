@@ -4,7 +4,7 @@ description: Everything you need to know about concentrated liquidity campaigns 
 
 # 🦄 Concentrated Liquidity Campaigns
 
-Concentrated Liquidity Campaigns enable incentive providers to reward Liquidity Providers (LPs) on concentrated liquidity AMMs such as UniswapV3, Quickswap, Camelot. While most incentivization mechanisms rely on one-size-fits-all approaches where all liquidity providers are rewarded the same way, here in concentrated liquidity campaigns, incentive providers can reward liquidity providers differently based on how they have provided liquidity.
+Concentrated Liquidity Campaigns enable incentive providers to reward Liquidity Providers (LPs) on concentrated liquidity AMMs such as Uniswap V3, Quickswap, Camelot. While most incentivization mechanisms rely on one-size-fits-all approaches where all liquidity providers are rewarded the same way, here in concentrated liquidity campaigns, incentive providers can reward liquidity providers differently based on how they have provided liquidity.
 
 Concentrated liquidity allows liquidity providers to allocate their capital within specific price ranges, making their liquidity more efficient and potentially earning more fees.
 Merkl mechanism for concentrated liquidity was designed to preserve the full benefits and flexibility offered by this type of Decentralized Exchange (DEX) for LPs, typically enabling them to earn more rewards if they are more concentrated.

@@ -2,11 +2,11 @@
 
 With Merkl, you can create what we call ERC20 campaigns -  campaigns where users are rewarded based on their time-weighted balance of a token.
 
-These campaigns, in their simplest form, are equivalent to classical `StakingRewards` contracts and can serve a wide range of use cases: providing liquidity in constant product formula decentralized exchanges (like UniswapV2). With Merkl forwarding technology, this simple mechanism can be extended to seamlessly support rewarding tokens staked in periphery contracts or blacklisting some addresses.
+These campaigns, in their simplest form, are equivalent to classical `StakingRewards` contracts and can serve a wide range of use cases: providing liquidity in constant product formula decentralized exchanges (like Uniswap V2). With Merkl forwarding technology, this simple mechanism can be extended to seamlessly support rewarding tokens staked in periphery contracts or blacklisting some addresses.
 
 ## ERC20 Campaign Design
 
-In Merkl ERC20 Campaigns, users holding an ERC20 token - that is incentivized by an incentivize provider -  in their wallets are rewarded based on their token balance. Reward distribution is proportional to the percentage of the total token supply a user holds.
+In Merkl ERC20 Campaigns, users holding an ERC20 token - that is incentivized by an incentive provider -  in their wallets are rewarded based on their token balance. Reward distribution is proportional to the percentage of the total token supply a user holds.
 
 For example, if a user holds 1% of the total token supply for a period of time, they are eligible for 1% of the reward pool for this period of time.
 
@@ -26,7 +26,7 @@ The advantage of ERC20 campaigns is that they can cover a wide range of differen
 
 This notably applies to:
 
-- constant product AMMs (like Uniswap V2): any incentivizer can use Merkl to incentivize Liquidity Providers on a UniswapV2 or Sushiswap pool based on how much liquidity they provide with respect to others
+- constant product AMMs (like Uniswap V2): any incentivizer can use Merkl to incentivize Liquidity Providers on a Uniswap V2 or Sushiswap pool based on how much liquidity they provide with respect to others
 - lending and borrowing protocols that emit receipt and debt tokens (i.e., ERC20 tokens) when users lend and borrow: lenders can be rewarded based on how much they lend over time, or borrowers based on how much they borrow relative to others
 
 {% hint style="info" %}

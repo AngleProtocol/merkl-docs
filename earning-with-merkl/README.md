@@ -8,7 +8,7 @@ All yield opportunities using Merkl are listed at [app.merkl.xyz](https://app.me
 
 This interface displays the different campaigns and their types. For every opportunity, you will find a link to deposit your funds directly on the respective protocol's app. Once you deposit your funds or perform the required actions for an opportunity incentivized by Merkl, no additional steps are required to start receiving your rewards. You can claim them directly from the [Merkl dashboard](https://app.merkl.xyz/user) or any other app that integrates with Merkl. In particular, **you will not need to stake your tokens anywhere else**.
 
-The Merkl engine is compatible with multiple incentive providers incentivizing the same type of campaigns (e.g., the same pool on UniswapV3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all incentive providers who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
+The Merkl engine is compatible with multiple incentive providers incentivizing the same type of campaigns (e.g., the same pool on Uniswap V3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all incentive providers who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
 
 Additionally, you can claim all your tokens in one click per chain, making the process seamless and efficient.
 

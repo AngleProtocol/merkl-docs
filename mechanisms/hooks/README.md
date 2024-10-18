@@ -36,7 +36,7 @@ Most of the time, these are the same contracts, so you should enter the same add
 
 Incentive providers may whitelist some addresses (usually forwarders) so only the whitelisted addresses and the addresses that are associated with whitelisted addresses can be eligible to rewards.
 
-Let's take the case of a campaign on a UniswapV3 pool with 3 supported ALMs. If an incentive provider chooses to whitelist the addresses corresponding to 2 of the 3 ALMs and one individual user address, then only the addresses providing liquidity through the 2 ALMs and the whitelisted user providing liquidity directly on the pool will be eligible for rewards.
+Let's take the case of a campaign on a Uniswap V3 pool with 3 supported ALMs. If an incentive provider chooses to whitelist the addresses corresponding to 2 of the 3 ALMs and one individual user address, then only the addresses providing liquidity through the 2 ALMs and the whitelisted user providing liquidity directly on the pool will be eligible for rewards.
 The reward allocation rules that apply between whitelisted addresses are the same that would apply if all addresses were eligible.
 
 For an ERC20 Campaign incentivizing holders of a given ERC20 token on a chain, let's say two staking contract addresses are whitelisted by the incentive providers, then only the addresses that staked within one of the 2 staking contracts will be eligible for rewards and the amount of rewards they get is dependent on how much they've staked over time with respect to the total amount that has been staked over the two staking contracts.

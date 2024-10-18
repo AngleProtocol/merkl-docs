@@ -8,7 +8,7 @@ Merkl is designed to be versatile and compatible with a wide range of DeFi proto
 4. Campaigns to incentivize holders of an ERC20 token over time (ERC20 Campaigns). This campaign type can be used for a wide range of different purposes including:
 
 - Incentivizing liquidity on any lending and borrowing protocol that uses receipt and debt tokens
-- Incentivizing liquidity in a Constant Product Liquidity Pool based on the LP token balance: this works to incentivize UniswapV2 liquidity
+- Incentivizing liquidity in a Constant Product Liquidity Pool based on the LP token balance: this works to incentivize Uniswap V2 liquidity
 - Or, simply incentivizing users holding a token (e.g. wBTC, ETH, USDA, EURA, etc.) over time based on how much they're holding
 
 In the following pages, we explain some of the technicalities and specifities associated with each campaign type on Merkl.
@@ -25,10 +25,10 @@ Typically, the Merkl engine applies across most campaigns an anti-DoS filter. Pr
 
 This anti-DoS (Denial of Service) filter helps maintain the platform's integrity and therefore ensures the continuity of fair distribution of rewards.
 
-Example on a campaign rewarding LPs on a UniswapV2 pool:
+Example on a campaign rewarding LPs on a Uniswap V2 pool:
 
 - Campaign Duration: 14 days
-- Total Value Locked of the UniswapV2 Liquidity Pool: \$1,000,000 on Arbitrum
+- Total Value Locked of the Uniswap V2 Liquidity Pool: \$1,000,000 on Arbitrum
 - Merkl Engine Script Frequency: Every 4 hours (6 times per day)
 
 For this campaign:

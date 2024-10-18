@@ -8,7 +8,7 @@ description: >-
 
 ## What is Merkl?
 
-Merkl is a platform that bridges users in DeFi with liquidity, enabling them to deploy it to incentive providers aiming to boost activity and liquidity in their protocols.
+Merkl is a platform that bridges users in DeFi with liquidity to deploy to incentive providers aiming to boost activity and liquidity in their protocols.
 
 Users can leverage Merkl to earn rewards or points by participating in various incentive campaigns, while incentive providers can utilize the platform to meet all their incentivization and growth needs - whether it is tracking points earned by their users, attracting more lenders, borrowers, and liquidity providers, executing retroactive token airdrops, or addressing other unique use cases specific to their protocols.
 
@@ -16,7 +16,7 @@ In short, Merkl allows users to effortlessly earn competitive returns and access
 
 Merkl is built on top of an offchain engine that leverages onchain and offchain data to compute reward and point allocations for campaigns created by incentive providers.
 
-This system leaves the flexibility for Merkl to support tracking and rewarding virtually any type of offchain or onchain DeFi activity. Typically, Merkl currently supports incentives for providing liquidity in both concentrated (e.g., Uniswap V3) and constant product (e.g., UniswapV2) pools, lending and borrowing across a wide range of different protocols, providing liquidity through a yield aggregator, holding a token over a given period of time. Protocols also use Merkl to execute retroactive token airdrops or as a backend infrastructure to power their point systems.
+This system leaves the flexibility for Merkl to support tracking and rewarding virtually any type of offchain or onchain DeFi activity. Typically, Merkl currently supports incentives for providing liquidity in both concentrated (e.g., Uniswap V3) and constant product (e.g., Uniswap V2) pools, lending and borrowing across a wide range of different protocols, providing liquidity through a yield aggregator, holding a token over a given period of time. Protocols also use Merkl to execute retroactive token airdrops or as a backend infrastructure to power their point systems.
 
 ## What sets Merkl apart?
 

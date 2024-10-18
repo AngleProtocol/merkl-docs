@@ -124,8 +124,8 @@ The return data is structured as follows:
         "tags": ["superfest"],
         "amm": 0,
         "ammAlgo": 0,
-        "ammAlgoName": "UniswapV3",
-        "ammName": "UniswapV3",
+        "ammAlgoName": "Uniswap V3",
+        "ammName": "Uniswap V3",
         "apr": 50.93152684877548,
         "aprs": {
           "Average APR (rewards / pool TVL)": 50.93152684877548,

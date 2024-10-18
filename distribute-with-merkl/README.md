@@ -27,7 +27,7 @@ If you are looking to run a points program and want to leverage Merkl for this, 
 
 ### Token whitelisting
 
-Before starting your campaign, you need to ensure that the token you want to use as reward with Merkl has been whitelisted.  It's a way for us to ensure that we will be able to properly compute APRs and that the token will be safe to use for our users.
+Before starting your campaign, you need to ensure that the token you want to use as reward with Merkl has been whitelisted. We usually process token whitelisting requests once a day, and it's a way for us to ensure that we will be able to properly compute APRs and that the token will be safe to use for our users.
 
 You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/integrations). If your token is not part of the list, please fill out the following [form](https://tally.so/r/3y2bqx).
 

@@ -1,6 +1,6 @@
 # 🔍 Architecture and Technical Overview
 
-Merkl is a platform designed to streamline and optimize reward distribution in the DeFi space. It operates on an offchain engine that analyzes both onchain and offchain data to measure user behavior and distribute rewards among eligible users based on the rules set by the campaign creator (the Incentive Provider). The Merkl engine aggregates reward distribution data into a merkle tree, compresses it into a merkle root, and pushes it onchain, allowing users to claim their rewards.
+Merkl is a platform designed to streamline and optimize reward distribution in the DeFi space. It operates on an offchain engine that analyzes both onchain and offchain data to measure user behavior and distribute rewards among eligible users based on the rules set by the campaign creator (the incentive provider). The Merkl engine aggregates reward distribution data into a merkle tree, compresses it into a merkle root, and pushes it onchain, allowing users to claim their rewards.
 
 ## Platform Overview
 
@@ -19,7 +19,7 @@ The global flow is the following:
 
 - **Single Merkl Root per Chain:** The Merkl system relies on **a single merkle root per chain**. This allows Merkl users to claim all their token rewards from various campaigns in just one transaction on Merkl.
 - **Aggregated Campaigns:** Although campaigns on Merkl are treated independently, the Merkl engine usually aggregates the outcomes of multiple campaigns at once when updating a merkle root onchain. This ensures that rewards for multiple campaigns are included in a single update whenever possible.
-- **Multiple Incentive Providers:** The engine is compatible with multiple Incentive Providers incentivizing the same type of campaigns (e.g., the same pool on UniswapV3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all incentive providers who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
+- **Multiple Incentive Providers:** The engine is compatible with multiple incentive providers incentivizing the same type of campaigns (e.g., the same pool on Uniswap V3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all incentive providers who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
 
 However, it is possible for a given merkle root to include rewards for some campaigns but not others that are live on the same chain. Regardless, **the Merkl engine ensures that all users involved in a campaign during its live period receive their rewards**. Any rewards that were not distributed as they should have been will be distributed in an upcoming engine run. As the Merkl engine operates regularly for every campaign on a chain - examining only the data specific to the period between its current and previous executions - if distributions were missed, the engine will collect the necessary data from where it last left off, ensuring accurate and complete reward allocation.
 
