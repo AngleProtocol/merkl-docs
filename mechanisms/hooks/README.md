@@ -2,7 +2,7 @@
 
 Beyond the different types of pools of opportunities incentivizers can choose to track, incentive providers with Merkl have the possibility to customize their campaigns with some hooks to change the default behavior of their campaigns.
 
-While some hooks are campaign specific (e.g prevent out of range liquidity from being incentivized), others are global and their behavior is roughly the same from one campaign type to another.
+While some hooks are campaign-specific (e.g., prevent out of range liquidity from being incentivized), others are global and their behavior is roughly the same from one campaign type to another.
 
 Here are some of the most common hooks supported by Merkl.
 
@@ -14,9 +14,9 @@ We are constantly adding new forms of hooks and customization tools to incentive
 
 For some campaign types, forwarders will be automatically detected and there is no need to specify them. This applies typically to [concentrated liquidity campaigns](../campaigns/concentrated-liquidity-mechanisms.md#automated-liquidity-management-solutions) where once whitelisted automated liquidity management solutions are automatically detected and supported.
 
-For other ERC20 campaigns, incentive providers may choose to specify forwarders (provided that these are also ERC20 tokens) likely to hold the tokens to be incentivized.
+For other ERC20 campaigns, incentive providers may choose to specify forwarders (provided that these are also ERC20 tokens) that are likely to hold the tokens to be incentivized.
 
-Let's illustrate this forwarding feature using an ERC20 campaign incentivizing USDA holders. With forwarding enabled, users who staked their USDA and received stUSD in exchange can still be eligible to earn rewards even if they don't hold USDA in their wallets.
+Let's illustrate this forwarding feature using an ERC20 campaign incentivizing USDA holders. With forwarding enabled, users who staked their USDA and received stUSD in return can still be eligible to earn rewards even if they don't hold USDA in their wallets.
 
 Here's how it works:
 
@@ -34,36 +34,36 @@ Most of the time, these are the same contracts, so you should enter the same add
 
 ## Whitelisting
 
-Incentive providers may whitelist some addresses (usually forwarders) so only the whitelisted addresses and the addresses that are associated to whitelisted addresses can be eligible to rewards.
+Incentive providers may whitelist some addresses (usually forwarders) so only the whitelisted addresses and the addresses that are associated with whitelisted addresses can be eligible to rewards.
 
-Let's take the case of a campaign on a UniswapV3 pool with 3 supported ALMs. If an incentive provider chooses to whitelist the addresses corresponding to 2 of the 3 ALMs and to one individual user address, then only the addresses providing liquidity through the 2 ALMs and the whitelisted user providing liquidity directly on the pool will be eligible to rewards.
+Let's take the case of a campaign on a Uniswap V3 pool with 3 supported ALMs. If an incentive provider chooses to whitelist the addresses corresponding to 2 of the 3 ALMs and one individual user address, then only the addresses providing liquidity through the 2 ALMs and the whitelisted user providing liquidity directly on the pool will be eligible for rewards.
 The reward allocation rules that apply between whitelisted addresses are the same that would apply if all addresses were eligible.
 
-For an ERC20 Campaign incentivizing holders of a given ERC20 token on a chain, let's say two staking contract addresses are whitelisted by the incentive providers, then only the addresses which staked within one of the 2 staking contracts will be eligible to rewards and the amount of rewards they get is dependent on how much they've staked over time with respect to the total amount that has been staked over the two staking contracts.
+For an ERC20 Campaign incentivizing holders of a given ERC20 token on a chain, let's say two staking contract addresses are whitelisted by the incentive providers, then only the addresses that staked within one of the 2 staking contracts will be eligible for rewards and the amount of rewards they get is dependent on how much they've staked over time with respect to the total amount that has been staked over the two staking contracts.
 
 Whitelisting always prevails over blacklisting, in the sense that if an address is whitelisted and another one is blacklisted, all other non whitelisted addresses will by default be blacklisted and not eligible to rewards.
 
-There may be the case where some campaigns run in parallel on the same opportunity (e.g the same pool), and there is a campaign with a whitelist and a campaign without. If you're a user providing liquidity, if there is any doubt about this, you need to check the card corresponding to each campaign on the opportunity page to make sure that you understand what the APRs displayed are referring to, and what you need to do to be eligible to the whitelisted campaign in case this is of interest.
+There may be cases where some campaigns run in parallel on the same opportunity (e.g., the same pool), and there is a campaign with a whitelist and another without. If you're a user providing liquidity and have any doubt  about this, you should check the card corresponding to each campaign on the opportunity page to make sure that you understand what the APRs displayed are referring to, and what you need to do to be eligible to the whitelisted campaign, in case this is of interest.
 
 ## Blacklisting
 
-Incentive providers may choose to blacklist addresses from being eligible to rewards. If a forwarder address is blacklisted, then all the balance from the addresses associated to this forwarder will not be eligible to rewards.
+Incentive providers may choose to blacklist certain addresses from being eligible to rewards. If a forwarder address is blacklisted, then all the balance from the addresses associated to this forwarder will not be eligible for rewards.
 
-Back to the case of an ERC20 campaign incentivizing holders of a given ERC20 token on a chain, if a staking contract address is blacklisted, and a user has staked 10 tokens in the contract, but holds 5 tokens in its wallet, then only its 5 tokens will be eligible to the rewards of the campaign.
+Returning to the case of an ERC20 campaign incentivizing holders of a given ERC20 token on a chain: if a staking contract address is blacklisted, and a user has staked 10 tokens in the contract, but holds 5 tokens in its wallet, then only its 5 tokens will be eligible for the campaign's rewards.
 
-More globally, if some addresses are blacklisted in a campaign, the share of all non-blacklisted users in the reward pool increases proportionally. In this case, users receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted. This ensures that the total rewards are distributed fairly among the eligible participants.
+More generally, if some addresses are blacklisted in a campaign, the share of all non-blacklisted users in the reward pool increases proportionally. In this case, users receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted, ensuring that the total rewards are distributed fairly among the eligible participants.
 
 ## Incentivized bridged liquidity
 
 Merkl has partnered with Jumper to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
 
-In fact, it's a way to only whitelist the set of addresses which used the chosen bridge.
+In fact, it's a way to only whitelist the set of addresses that used the chosen bridge.
 
 ## Cross-chain Incentives
 
-With Merkl, you can choose to incentivize activity on one chain while distributing rewards on another. If you don't want to deal with the hurdle of bridging your reward tokens to a given chain, this feature enables you to typically incentivize activity on a pool on Arbitrum but let people claim on Uniswap.
+With Merkl, you can choose to incentivize activity on one chain while distributing rewards on another. If you don't want to deal with the hurdle of bridging your reward tokens to a given chain, this feature enables you to typically incentivize activity on a pool on Arbitrum but let people claim on Ethereum.
 
-In this case, you need to be wary of the fact that some smart contract addresses on Arbitrum may be providing liquidity on the chain but are not deployed at the same address on Ethereum (or not deployed at all on Eth). In this case, these addresses which provided liquidity will be unable to access their rewards. It's up to you to blacklist addresses which might be concerned here.
+However, you need to be wary of the fact that some smart contract addresses on Arbitrum may be providing liquidity but are either not deployed at the same address on Ethereum or not deployed on Ethereum at all. In this case, these addresses will be unable to access their rewards. It's your responsibility to blacklist any addresses that may be affected.
 
 ## Boosting Rewards with Merkl
 

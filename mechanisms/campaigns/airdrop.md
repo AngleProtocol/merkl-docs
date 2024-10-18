@@ -9,9 +9,9 @@ Merkl supports two different types of airdrops:
 
 ## JSON airdrops
 
-The only thing that is expected from reward providers is to come with a JSON file giving the breakdown of user addresses and the amount of rewards they need to receive.
+The only thing that is expected from reward providers is to come with a JSON file giving the breakdown of user addresses and the amount of rewards they need to receive. To create your JSON Airdrop campaign on Merkl, head to this [page](https://app.merkl.xyz/create/drop).
 
-The expected format for the JSOn is the following
+The expected format for the JSON is the following
 
 ```
 type AirdropJSON = {
@@ -58,10 +58,10 @@ If you prefer to have exactly 100,000 tokens leave your wallet, then the sum of 
 
 ## Token Balance Airdrops
 
-In this type of airdrop, Merkl provides the possibility to airdrop tokens to token holders based on their snapshoted token balance at a chosen moment in time.
+In this type of airdrop, Merkl provides the possibility to airdrop tokens to token holders based on their snapshotted token balance at a chosen moment in time.
 
 For this type of campaign, beyond the rewards amount, incentive providers need to input the following parameters:
 
 - **Snapshot:** Set the time for the snapshot - it will be taken at the block prior to this date.
 - **Distribution Date:** Set the date on which your rewards should be distributed.
-- **Name your Snapshot:** Provide the name of their snapshot.
+- **Name your Snapshot:** Provide the name of your snapshot.

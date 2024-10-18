@@ -4,7 +4,7 @@ description: Everything you need to know about concentrated liquidity campaigns 
 
 # 🦄 Concentrated Liquidity Campaigns
 
-Concentrated Liquidity Campaigns enable incentive providers to reward Liquidity Providers (LPs) on concentrated liquidity AMMs like UniswapV3, Quickswap, Camelot. While most incentivization mechanisms rely on one-size-fits-all approaches where all liquidity providers the same way, here in concentrated liquidity campaigns, incentive providers can reward liquidity providers differently based on how they have provided liquidity.
+Concentrated Liquidity Campaigns enable incentive providers to reward Liquidity Providers (LPs) on concentrated liquidity AMMs such as Uniswap V3, Quickswap, Camelot. While most incentivization mechanisms rely on one-size-fits-all approaches where all liquidity providers are rewarded the same way, here in concentrated liquidity campaigns, incentive providers can reward liquidity providers differently based on how they have provided liquidity.
 
 Concentrated liquidity allows liquidity providers to allocate their capital within specific price ranges, making their liquidity more efficient and potentially earning more fees.
 Merkl mechanism for concentrated liquidity was designed to preserve the full benefits and flexibility offered by this type of Decentralized Exchange (DEX) for LPs, typically enabling them to earn more rewards if they are more concentrated.
@@ -17,9 +17,9 @@ The concentrated liquidity DEX and ALM solutions currently supported by the Merk
 
 ## Reward formula
 
-When an incentive provider comes to incentivize a concentrated liquidity DEX on Merkl, it specifies a given pool, a period of time for which the pool should be incentivized as well as some specific incentivization parameters that we are going to detail below.
+When an incentive provider decides to incentivize a concentrated liquidity DEX on Merkl, it specifies a given pool, a period of time for which the pool should be incentivized as well as some specific incentivization parameters that we are going to detail below.
 
-Let's say a pool with two tokens (A and B) is incentivized, the way the Merkl engine works then is that it analyzes the swaps that occurred in the pool during the specified period and computes a reward score for each position based on the following factors:
+Let's say a pool with two tokens (A and B) is incentivized, the way the Merkl engine works is that it analyzes the swaps that occurred in the pool during the specified period and computes a reward score for each position based on the following factors:
 
 - **Fees Earned:** The fees earned by the position during the period, which represent the liquidity of the position used by the pool.
 - **Token 0 Holding:** The amount of token 0 held by the position during swaps in the pool, compared to the total amount of token 0 in the pool.
@@ -54,9 +54,9 @@ On the Merkl frontend, these parameters can set by incentive providers on the pa
 
 ## Reward strategy examples
 
-It's up to incentive providers to fine tune these parameters and choose them so they align with their campaign goals. Some examples of what you can achieve with different parameters:
+It's up to incentive providers to fine-tune these parameters and choose them so they align with their campaign goals. Some examples of what you can achieve with different parameters:
 
-- an incentive provider for a stablecoin that is depegging may try to establish a liquidity wall in like USDC to reduce the harm done by people dumping their stablecoin. They can do this by skewing the token parameters and setting a significantly higher value to the parameter associated to holding USDC in pool with respect to the one related to holding their stablecoin: with this LPs with more USDC are earning more than those who have balanced liquidity positions, hereby encouraging the formation of liquidity walls
+- an incentive provider for a stablecoin that is depegging may try to establish a liquidity wall in like USDC to reduce the harm done by people dumping their stablecoin. They can do this by skewing the token parameters and setting a significantly higher value to the parameter associated with holding USDC in pool with respect to the one related to holding their stablecoin: with this LPs with more USDC are earning more than those who have balanced liquidity positions, thereby encouraging the formation of liquidity walls
 - a LRT provider who want people to be able to seamlessly be able to swap in or out of their asset for ETH may want to encourage super concentrated liquidity around the tick and allocate 98% of the rewards to liquidity providers based on how much they've earned in fees
 
 ## Sampling and Anti-DOS
@@ -64,7 +64,7 @@ It's up to incentive providers to fine tune these parameters and choose them so 
 For large pools with numerous swaps, the engine may not analyze all the swaps that occurred during the specified period but instead sample the largest ones.
 If a position is detected as out of range during the swaps that were sampled, then it will not be eligible to rewards for that period. It's up to liquidity providers to ensure that their positions are actively managed to stay within the effective range to maximize their rewards.
 
-Also on top of the common Anti-DoS filter removing users earning less than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run, the Merkl engine disqualifies in concentrated liquidity campaigns positions with less than \$20 worth of liquidity.
+Also on top of the common Anti-DoS filter removing users earning less than 1/10,000,000th (or 0.00001%) of the campaign rewards per engine run, in concentrated liquidity campaigns, the Merkl engine disqualifies positions with less than \$20 worth of liquidity.
 
 ## Out of range liquidity
 
@@ -118,4 +118,6 @@ In summary, to receive rewards from a concentrated liquidity campaign you can:
 
 {% embed url="https://youtu.be/8tpGSHglVlc?feature=shared" %}
 
-2. **Or provide liquidity in one of the supported Automated Liquidity Management (ALM) protocols that has position(s) in the incentivized concentrated liquidity pool.** If you are using an Automated Liquidity Management (ALM) protocol, be careful to understand how they rebalance liquidity. If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the incentive provider, you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position(s).
+2. **Or provide liquidity in one of the supported Automated Liquidity Management (ALM) protocols that has position(s) in the incentivized concentrated liquidity pool.** If you are using an Automated Liquidity Management (ALM) protocol, be careful to understand how they rebalance liquidity. 
+
+If you started providing liquidity in a concentrated liquidity pool (either directly on the AMM or through an ALM) before the incentive was created on Merkl, and your positions are still active and meet the parameters set by the incentive provider, you will be eligible to earn rewards when they are distributed. There is no need to recalibrate or exit and re-enter the liquidity pool with your position(s).
