@@ -1,121 +1,82 @@
 ---
-description: Your official source of information for everything regarding the Merkl platform.
-cover: ./.gitbook/assets/merkl-cover.jpg
-coverY: 0
+description: >-
+  Your official source of information for everything regarding the Merkl
+  platform
 ---
 
-# 🥨 Overview
+# 🥨 Merkl Documentation Portal
 
-Merkl is the largest liquidity marketplace in defi with over $1M of assets being distributed by incentive providers every week to liquidity providers accross 17+ chains.
+## What is Merkl?
 
-Thanks to Merkl, users can benefit from boosted APRs on liquidity pools, lending protocols, yield optimizers and more!
+Merkl is a platform that bridges users in DeFi with liquidity to deploy to incentive providers aiming to boost activity and liquidity in their protocols.
+
+Users can leverage Merkl to earn rewards or points by participating in various incentive campaigns, while incentive providers can utilize the platform to meet all their incentivization and growth needs - whether it is tracking points earned by their users, attracting more lenders, borrowers, and liquidity providers, executing retroactive token airdrops, or addressing other unique use cases specific to their protocols.
+
+In short, Merkl allows users to effortlessly earn competitive returns and access attractive opportunities, while enabling incentive providers to launch complex growth and incentive campaigns swiftly and without the usual operational burdens.
+
+Merkl is built on top of an offchain engine that leverages onchain and offchain data to compute reward and point allocations for campaigns created by incentive providers.
+
+This system leaves the flexibility for Merkl to support tracking and rewarding virtually any type of offchain or onchain DeFi activity. Typically, Merkl currently supports incentives for providing liquidity in both concentrated (e.g., Uniswap V3) and constant product (e.g., Uniswap V2) pools, lending and borrowing across a wide range of different protocols, providing liquidity through a yield aggregator, holding a token over a given period of time. Protocols also use Merkl to execute retroactive token airdrops or as a backend infrastructure to power their point systems.
+
+## What sets Merkl apart?
+
+### For Users
+
+- **Competitive APRs:** With over \$60M distributed and multiple points program powered, Merkl stands as an all-in-one incentivization hub offering attractive returns and opportunities. Merkl offers the possibility to participate in multiple campaigns that incentivize the same asset or pool, allowing users to be eligible for rewards from various incentive providers and therefore maximize their earning potential.
+- **No Staking Required:** Users don’t need to stake any assets to earn rewards or points with Merkl: simply participate in the eligible activities and start earning. This also means there's no extra cost or additional smart contract risk for users.
+- **Gas Optimization:** Merkl’s system allows users to claim all their rewards in a single transaction, minimizing gas fees and simplifying the process - in addition to saving costs from not having to stake.
+- **A Hub:** With over 12,800 campaigns and many of the most competitive opportunties in DeFi, users can see all the available campaigns in one unified front end. Merkl users can also view all their active positions and rewards on a single page.
+
+{% hint style="info" %}
+Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no additional risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.
+{% endhint %}
+
+### For Protocols
+
+- **Easy and Simple to Start Incentivizing:** In less than 3 minutes, anyone from your team can start a complex incentivization campaign. With Merkl, you can focus on your core product and reduce the time for launching growth/incentive campaigns from weeks to minutes.
+- **Coverage:** Merkl offers a variety of incentivization methods (also known as campaign types) and supports incentives for a wide range of different protocols, chains and actions. This includes among other things:
+  - **Liquidity Incentives**: Campaigns for liquidity providers in Concentrated Liquidity Pools (CLAMM) such as on Uniswap V3
+  - **Airdrops**: Campaigns to airdrop tokens to a wide range of users based on a json file or based on their token holdings at a given moment in time
+  - **Lending/Borrowing**: Campaigns for lenders and borrowers of various types of lending protocols including Aave, Compound, Morpho, Euler, Silo, Radiant, Dolomite, among the many supported by Merkl
+  - **Token Balance**: Campaigns to reward simple holders of ERC20 tokens based on their relative balance over time. This can typically apply to holders of LP tokens on liquidity pools.
+- **Flexibility:** Customize your campaigns to suit your specific needs and goals, Merkl provides the flexibility to incentivize various behaviors and actions. Merkl can handle multiple campaigns for the same asset, just like it allows for complex reward structures and broad participation incentives. You also don't necessarily need to give rewards and may use Merkl as a backend to run your points programs. On every Merkl campaign, you may choose among a set of options to incentivize the exact liquidity that you need. This includes notably:
+  - **Crosschain Incentives**: Incentivize an asset on a chain and distribute rewards on another one.
+  - **Reward Boosts**: Increase rewards for users holding specific ERC20 tokens in their wallets.
+  - **Blacklist / Whitelist**: Blacklist some users from rewards (e.g sanctioned crypto wallets published by government associations such as the US’s OFAC and the UK’s FCDO), whitelist a set of wallets types that you want to be eligible (e.g., only users who provide liquidity through a concentrated liquidity pool through a given liquidity management solution)
+- **Smart rewards forwarding:** In many cases, the Merkl engine knows how to recognize a smart contract from an externally owned account, just like it knows how to make the difference between a staking contract and an account abstraction wallet. When rewarding a given address, Merkl can smartly forward the rewards that were meant for a smart contract address to the addresses that provided liquidity to it (e.g to the addresses which staked into a staking contract). With this, Merkl can seamlessly integrate into any existing reward flow and people who previously integrated your systems do not need to update their contracts to fit with a new incentive method
+- **Easy integration:** Integrate Merkl's data (APRs, user rewards, claiming data, analytics, ...) into your app effortlessly with the fully maintained Merkl API. However, you don't have to integrate it if you don't want to: the Merkl App will show your users everything they need, from reward APRs to TVL in the corresponding pools including the ability to claim their tokens directly from the app.
+- **Advanced Analytics:** Incentive providers on Merkl get access to detailed analytics on their campaigns (addresses rewarded over time, liquidity sources breakdown, claiming data, ...)
+
+By combining a user-centric approach with powerful tools for protocols, Merkl is setting a new standard for DeFi incentivization. Its comprehensive and innovative solutions make it the go-to platform for anyone looking to maximize their rewards or efficiently distribute incentives. With Merkl, both users and protocols can achieve their incentive goals more effectively and efficiently than ever before.
 
 Sounds too good to be true? Check out our [stats](https://app.merkl.xyz/stats)!
 
-## You are a liquidity provider looking for competitive APRs
+## How to get started?
 
-Merkl is a one stop shop to find the best investment opportunities in Defi and it only takes a few clicks to get started!
+### Earning Rewards with Merkl
 
-1. Visit the [Merkl App](https://app.merkl.xyz/)
-2. Explore the various opportunities and find the one which suits you best
-3. Invest your liquidity directly on the protocol's app by following the links
-4. That's it! You're now earning rewards, no staking or other on chain action is needed
+If you want to start earning incentives, check out the live campaigns [here](https://app.merkl.xyz/)
 
-You can track your active positions and your rewards by visiting your [user dashboard](https://beta.merkl.xyz/user/)
+If you want learn more how to use Merkl, click [here](./earning-with-merkl/README.md).
 
-Once you've earned rewards, you can claim all your earned tokens with a single click.
+### Distributing Rewards with Merkl
 
-Happy farming!
+For more details on how Merkl works under the hood, you can check this [page](https://docs.merkl.xyz/merkl-mechanisms/technical-overview).
 
-{% hint style="info" %}
-Merkl is a **non custodial solution**. Earning rewards on Merkl incurs **no risk of funds** and requires no specific smart contract interactions. Liquidity Providers can retain the custody of their liquidity while receiving rewards. They only need to interact with Merkl contracts to claim their rewards.
-{% endhint %}
+If you want to learn more about the different types of campaigns that Merkl supports, you may check our docs page [here](./mechanisms/types-of-campaign.md).
 
-## You are a protocol looking to grow your liquidity
+To get started and learn how to create campaigns using [Merkl's campaign creation page](https://app.merkl.xyz/create), you may use [our guides](./distribute-with-merkl/README.md).
 
-With Merkl, you can start you incentives campaigns in a matter of minutes, you are responsible for configuring how you want to reward liquidity providers, Merkl handles the rest!
+## 🔗 Links
 
-Want to get started with Merkl? Follow these steps:
+- [Merkl App](https://app.merkl.xyz/)
+- [Merkl Website](https://merkl.xyz/)
+- [Twitter](https://x.com/merkl_xyz)
+- [Discord](https://discord.com/invite/Gs8MUrUVP3)
+- [Audit](https://code4rena.com/reports/2023-06-angle)
 
-1. Visit the [Merkl campaign creation page](https://app.merkl.xyz/create)
-2. Select the type of campaign you would like to run (not finding what you're looking for? Please reach out [here]())
-3. Select the token you would like to distribute (not finding your token? Fill this [form](https://tally.so/forms/3y2bqx))
-4. Configure your campaign
-5. Execute the campaign creation transaction from our frontend by generating the Gnosis Safe transaction batch provided
-6. That's it! Your campaign will take up to 30min to show up in the Merkl app and be visible to the Liquidity Providers
+## 📩 Contact us
 
-Merkl provides an API which you can use to integrate all Merkl related data into your frontend, everything is documented [here](distribute/integrate/integration-guide.md)
+Merkl is an ever-evolving project with new features and capabilities added every day.
 
-Check out the complete guide for creating campaigns [here](./distribute/README.md)
-
-## How Merkl works
-
-Merkl was built to incentivize any complex onchain and offchain behavior. It can not only replicate any type of staking contract, it can also do much more and reward in a tailored manner any onchain or offchain action, or combination of actions.
-
-Merkl's custom engine is conceived as an agnostic powerhouse enabling everyone to unlock liquidity based on their exact needs without overspending or allocating tokens to reward behaviors/users/actions that are not beneficial to the incentive providers. Merkl is for instance much more expressive and efficient at shaping liquidity on concentrated liquidity pools than other solutions available on the market.
-
-### Merkl building blocks
-
-Merkl is a hybrid solution with both onchain and offchain components to benefit from the security of onchain data and from the flexibility of offchain scripts. It can be broken down into 3 main components:
-
-- **Merkl campaign creator contract:** contract to create Merkl campaigns, this is the contract incentive providers interact with when creating campaigns.
-- **Merkl distributor contract:** contract which holds all the rewards, this is the contract liquidity providers interact with when claiming their rewards.
-- **Merkl Engine:** Off chain infrastructure which runs every 8 hours to allocate rewards to liquidity providers and push them on chain
-
-### Merkl campaigns
-
-Incentives are distributed by deploying **Merkl Campaigns** in which incentive providers select a token to distribute, an amount of that same token and a timeframe over which the token should be distributed. Once a campaign is created, rewards are then regularly streamed to eligible liquidity providers through onchain merkle root updates.
-
-While the set of behaviors that can be incentivized with Merkl is infinite, **Merkl provides the ability to add custom rules to every campaign such as:**
-
-- only rewarding users which matched the eligibility criterias for a set amount of time
-- blacklist or whitelist some addresses for every campaigns
-- boosting rewards of the users which hold a specific token
-
-Merkl supports many more custom rules which are specific to the type of onchain behavior which is incentivized, it can currently reward:
-
-- liquidity providers on concentrated liquidity protocols (like Uniswap V3)
-- liquidity providers on lending protocols
-- liquidity providers of any protocol which issues ERC20 tokens such as yield aggregators
-
-{% hint style="info" %}
-Merkl offchain logic allows it to easily support new and complex use cases. If there is a specific use case that you are interested in incentivizing efficiently (e.g. users of a perp DEX protocol, borrowers of a lending protocol that are not folding their positions, ...), contact us on [Merkl Discord](https://discord.gg/jnYfrGxDbe).
-{% endhint %}
-
-A key feature of Merkl is its ability to trace user activity across protocols. This enables users to accrue rewards even if the incentivized asset isn't directly present in their wallet, the rewards which would have been accrued by a smart contract holding the incentivized asset are forwarded the user which deposited tokens in it (see [Merkl Forwarders](merkl-mechanism#merkl-forwarders))
-
-{% hint style="info" %}
-For example, when an ERC20 holder stakes the ERC20 token in a staking contract, the address of the user no longer holds the incentivized ERC20 token. Merkl will detect ERC20 tokens held by the staking contract and forward the rewards to the original user.
-{% endhint %}
-
-## ⚱️ Fee Structure
-
-Excluding gas, Merkl is free to use for liquidity providers claiming rewards. There is a maintenance fee applied to incentives that are sent by incentive providers. This fee is different for each type of campaign (between 0.5% and 3%) and can be decreased for large incentive providers.
-
-It can also be waived for incentives which contain some specific approved tokens. In particular, there are no fees for incentives sent to pools which have Angle tokens in it.
-
-{% hint style="info" %}
-Merkl is built and maintained by Angle Labs, but is separate from the Angle Protocol.
-{% endhint %}
-
-## Resources
-
-### 📖 Guides
-
-The system for launching campaigns and claiming rewards **can be easily integrated on any dApp**. [This guide](./distribute/integrate/integration-guide.md) explains among other things how to integrate some Merkl campaigns in your frontend and how to build claim transactions for your users.
-
-If you want to use Merk to farm, check out these guides to [make the best of Merkl as a liquidity provider](./earn/README.md) or to [distribute incentives](./distribute/README.md) with the system.
-
-### Audits
-
-Merkl smart contracts have been audited by Code4rena. Find the audit report [here](https://code4rena.com/reports/2023-06-angle).
-
-### 🔗 Links
-
-- [Merkl App](https://app.merkl.xyz)
-- [Terms & Conditions](./distribute/incentivizor-tc.md)
-- [Smart contracts addresses](./addresses.md)
-- [Supported protocols](./supported-protocols.md)
-- [Smart contracts code](https://github.com/AngleProtocol/merkl-contracts)
-- [Track all rewards distributed through Merkl](https://rewards.merkl.xyz/)
-- [Open-source dispute bot](https://github.com/AngleProtocol/merkl-dispute)
+If you want Merkl to support specific use cases (e.g., incentivizing users of a perpetual DEX protocol, incentivizing borrowers of a lending protocol who are not folding their positions, creating incentivization programs for yield aggregators, etc.) and leverage Merkl's capabilities, or if you have questions on what's optimal for your points program or incentive campaign, contact us on [Merkl Discord by opening a BD ticket.](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe&sa=D&source=docs&ust=1714726869927696&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD)

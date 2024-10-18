@@ -1,26 +1,31 @@
 # Table of contents
 
-## Overview
+- [🥨 Merkl Documentation Portal](README.md)
 
-- [Merkl Documentation Portal](README.md)
-- [Technical Overview](merkl-mechanism.md)
-  - [Concentrated Liquidity Mechanisms](./campaigns/clamm.md)
-- [Smart Contract Addresses](addresses.md)
-- [Supported protocols](supported-protocols.md)
+## Merkl mechanisms
+
+- [🔍 Architecture and Technical Overview](mechanisms/technical-overview.md)
+- [🏕️ Merkl Campaign Types](mechanisms/types-of-campaign.md)
+  - [🦄 Concentrated Liquidity Campaigns](mechanisms/campaigns/concentrated-liquidity-mechanisms.md)
+  - [🏹 Airdrop Campaigns](mechanisms/campaigns/airdrop.md)
+  - [🧑‍🌾 ERC20 Campaigns and Applications](mechanisms/campaigns/erc20-mechanisms.md)
+  - [🏦 Custom Lending and Borrowing Campaigns](mechanisms/campaigns/lending-borrowing.md)
+- [🪝 Customazibility Hooks](mechanisms/hooks/README.md)
+- [💳 Fee Model](mechanisms/fee-model.md)
+- [⛓️ Smart Contract Addresses](mechanisms/smart-contract-address.md)
+- [🔐 Audit](mechanisms/audit.md)
 
 ## Earn with Merkl
 
-- [Earning with Merkl](earn/README.md)
-  - [Earn on Concentrated Liquidity](earn/guides/clamm-guide.md)
-  - [Earn on ERC20 tokens](earn/guides/erc20-guide.md)
+- [💰 Earn with Merkl](earning-with-merkl/README.md)
 
-## Distribute Incentives
+## Distribute with Merkl
 
-- [💸 Distribute Incentives](distribute/README.md)
-  - [Incentivize Concentrated Liquidity](distribute/campaign-specific/clamm.md)
-  - [Incentivize ERC20 Tokens](distribute/campaign-specific/erc20.md)
-  - [Snapshot token balances](distribute/campaign-specific/snapshot.md)
-  - [Airdrop tokens](distribute/campaign-specific/airdrop.md)
-- [Integrate Merkl in your App](distribute/integrate/integration-guide.md)
-  - [🖼️ Branding and Integration](distribute/integrate/branding.md)
-- [🖋 Incentivizor Disclaimer](distribute/incentivizor-tc.md)
+- [😽 Distribute with Merkl](distribute-with-merkl/README.md)
+- [🧑‍🔬 Deploy your campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
+- [📝 Incentivizor Disclaimer](distribute-with-merkl/incentivizor-disclaimer.md)
+
+## Integrate Merkl
+
+- [👩‍💻 Merkl API - Integrate Merkl to your App](integrate-merkl/README.md)
+- [🧑‍🎨 Branding and Integration](integrate-merkl/branding-and-integration.md)
