@@ -32,9 +32,13 @@ Used to query all the information relative to Merkl campaigns
   - 3: ERC20 snapshot
   - 4: Airdrops
   - 5: Silo
-  - 6: Radiant emissions
+  - 6: Radiant
   - 7: Morpho
   - 8: Dolomite
+  - 9: Badger
+  - 10: CompoundV2
+  - 11: Ajna
+  - 12: Euler Finance
 - `creatorTag` (optional): only return campaigns created by an a given creator (for this to work we need to tag the address you used to create the campaigns)
 
 #### Example requests
@@ -120,8 +124,8 @@ The return data is structured as follows:
         "tags": ["superfest"],
         "amm": 0,
         "ammAlgo": 0,
-        "ammAlgoName": "UniswapV3",
-        "ammName": "UniswapV3",
+        "ammAlgoName": "Uniswap V3",
+        "ammName": "Uniswap V3",
         "apr": 50.93152684877548,
         "aprs": {
           "Average APR (rewards / pool TVL)": 50.93152684877548,
