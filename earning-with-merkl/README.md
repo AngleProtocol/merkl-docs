@@ -18,10 +18,10 @@ Merkl is a one-stop shop for finding the best investment opportunities in DeFi a
 
 1. Visit the [Merkl App](https://app.merkl.xyz/).
 2. Explore the various opportunities and find the one that suits you best.
-3. Before getting on any Merkl opportunity, make sure that you understand how it works and how users can be rewarded as part of this opportunity. For this, we encourage to:
+3. Before getting on any Merkl opportunity, make sure that you understand how it works and how users can be rewarded as part of this opportunity. For this, we encourage you to:
 
-- look into [the page of the docs](../../mechanisms/types-of-campaign.md) that covers the campaign type in question. All campaign types have their specificity and its crucial to understand them before trying to earn rewards from it
-- look into the page associated to the opportunity. Every opportunity listed on Merkl has its dedicated page, and on each page you may find the details of the different campaigns that were created for the opportunity. It's important to look into the cards associated to the live campaigns so you understand whether [specific hooks](../../mechanisms/hooks/README.md) apply to them.
+- look into [the page of the docs](../../mechanisms/types-of-campaign.md) that covers the campaign type in question. All campaign types have their specificity and it's crucial to understand them before trying to earn rewards from it
+- look into the page associated with the opportunity. Every opportunity listed on Merkl has its dedicated page, and on each page you may find the details of the different campaigns that were created for the opportunity. It's important to look into the cards associated with the live campaigns so you understand whether [specific hooks](../../mechanisms/hooks/README.md) apply to them.
 - understand the protocol where you're depositing liquidity and DYOR before putting funds somewhere. The main risk with Merkl lies with the underlying protocols being incentivized, not with Merkl, as you do not need to stake any assets to be eligible and claim your rewards. Your funds on underlying protocols could be at risk due to the inherent risks associated with those protocols, such as smart contract vulnerabilities or operational failures. While we do our best to whitelist every project we work with to ensure they are reliable and safe for our users, we cannot fully audit every project using the platform, and are not responsible for the potential issues of the protocols incentivized on Merkl.
 
 4. Invest your liquidity directly on the protocol's app by following the provided links.

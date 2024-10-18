@@ -32,9 +32,13 @@ Used to query all the information relative to Merkl campaigns
   - 3: ERC20 snapshot
   - 4: Airdrops
   - 5: Silo
-  - 6: Radiant emissions
+  - 6: Radiant
   - 7: Morpho
   - 8: Dolomite
+  - 9: Badger
+  - 10: CompoundV2
+  - 11: Ajna
+  - 12: Euler Finance
 - `creatorTag` (optional): only return campaigns created by an a given creator (for this to work we need to tag the address you used to create the campaigns)
 
 #### Example requests
