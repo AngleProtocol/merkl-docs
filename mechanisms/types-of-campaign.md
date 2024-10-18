@@ -37,4 +37,4 @@ For this campaign:
 - If a user has $10 of liquidity, it represents 1/100,000th (or 0.001%) of the total TVL ($10 / \$1,000,000 = 1/100,000 = 0.001%).
 - Per script run, the user's potential reward would be 1/8,400,000th (approximatively 0.000012%) of the total rewards (1/100,000 \* 1/84), which is more than 1/100,000,000th (or 0.000001 %). Therefore, the reward would be distributed.
 
-However, if the TVL were $20,000,000 and users had $10 of liquidity, the user's liquidity would represent 1/2,000,000th (or 0.00005%) of the total TVL. Per run, the potential reward would be 1/16,800,000th (1/2,000,000 \* 1/84, or approximatively 0.000000006%), which is in that case below the threshold (1/100,000,000th or 0.000001 %) and thus would not be distributed.
+However, if the TVL were $20,000,000 and users had $10 of liquidity, the user's liquidity would represent 1/2,000,000th (or 0.00005%) of the total TVL. Per run, the potential reward would be 1/16,800,000th (1/2,000,000 \* 1/84, or approximatively 0.0000006%), which is in that case below the threshold (1/100,000,000th or 0.000001 %) and thus would not be distributed.
