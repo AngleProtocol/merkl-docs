@@ -21,7 +21,7 @@ We are constantly working on adding support for new campaign types. This list as
 
 While Merkl campaigns are all different, there are some common patterns and rules that apply across all campaigns on Merkl.
 
-Typically, the Merkl engine applies across most campaigns an anti-DoS filter. Precisely, except for airdrop campaigns, the Merkl engine cuts off rewards for users who receive less than 1/10,000,000th (or 0.00001 %) of the campaign rewards per engine run across all active campaigns.
+Typically, the Merkl engine applies across most campaigns an anti-DoS filter. Precisely, except for airdrop campaigns, the Merkl engine cuts off rewards for users who receive less than 1/100,000,000th (or 0.000001 %) of the campaign rewards per engine run across all active campaigns.
 
 This anti-DoS (Denial of Service) filter helps maintain the platform's integrity and therefore ensures the continuity of fair distribution of rewards.
 
@@ -35,6 +35,6 @@ For this campaign:
 
 - Each distribution will release 1/84th of the total rewards (1 / (14 days \* 6 times per day)).
 - If a user has $10 of liquidity, it represents 1/100,000th (or 0.001%) of the total TVL ($10 / \$1,000,000 = 1/100,000 = 0.001%).
-- Per script run, the user's potential reward would be 1/8,400,000th (approximatively 0.000012%) of the total rewards (1/100,000 \* 1/84), which is more than 1/10,000,000th (or 0.00001 %). Therefore, the reward would be distributed.
+- Per script run, the user's potential reward would be 1/8,400,000th (approximatively 0.000012%) of the total rewards (1/100,000 \* 1/84), which is more than 1/100,000,000th (or 0.000001 %). Therefore, the reward would be distributed.
 
-However, if the TVL were $2,000,000 and users had $10 of liquidity, the user's liquidity would represent 1/200,000th (or 0.0005%) of the total TVL. Per run, the potential reward would be 1/16,800,000th (1/200,000 \* 1/84, or approximatively 0.0000059%), which is in that case below the threshold (1/10,000,000th or 0.00001 %) and thus would not be distributed.
+However, if the TVL were $20,000,000 and users had $10 of liquidity, the user's liquidity would represent 1/2,000,000th (or 0.00005%) of the total TVL. Per run, the potential reward would be 1/16,800,000th (1/2,000,000 \* 1/84, or approximatively 0.000000006%), which is in that case below the threshold (1/100,000,000th or 0.000001 %) and thus would not be distributed.
