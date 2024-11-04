@@ -2,7 +2,7 @@
 description: Answers to common Merkl questions to check before opening a support ticket.
 ---
 
-# 📝 Merkl user FAQ
+# 📝 Merkl User FAQ
 
 ### What’s the frequency of rewards distribution?
 
@@ -16,7 +16,7 @@ If you're unable to claim rewards on Merkl after supplying liquidity to a pool, 
     
     *Note:* Reward allocation is retroactive. Once a swap occurs, the Merkl engine will distribute all rewards accrued from the last engine run. If no engine run has happened since you added liquidity, you will receive all rewards accumulated from the time you initially supplied liquidity.
     
-- **Campaign Status:** The campaign may not have started yet. Check its Status — if it’s marked as "Upcoming," it hasn’t started. Only "Live" campaigns are currently active, while completed ones are labeled "past."
+- **Campaign Status:** The campaign may not have started yet. Check its Status — if it’s marked as "Upcoming," it hasn’t started. Only "Live" campaigns are currently active, while completed ones are labeled "Past."
 
 ### I performed an action (providing liquidity, lending, borrowing, …) on one chain, but rewards are distributed on another, is that normal?
 
@@ -24,7 +24,7 @@ Yes, the chain where you perform an action may differ from the one where rewards
 
 You can find the chain where rewards are distributed in the campaign details on the opportunity page.
 
-![Screenshot-FAQ.png](../.gitbook/assets/screenshot-FAQ.png)
+![](../.gitbook/assets/screenshot-FAQ.png) 
 
 ### My wallet address has been blacklisted. Why?
 

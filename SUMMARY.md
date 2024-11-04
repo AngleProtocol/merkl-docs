@@ -18,7 +18,7 @@
 ## Earn with Merkl
 
 - [💰 Earn with Merkl](earning-with-merkl/README.md)
-- [📝 Merkl user FAQ](earning-with-merkl/FAQ-earn.md)
+- [📝 Merkl User FAQ](earning-with-merkl/FAQ-earn.md)
 
 ## Distribute with Merkl
 
