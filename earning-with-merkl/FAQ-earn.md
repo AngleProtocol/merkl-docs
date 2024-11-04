@@ -6,7 +6,7 @@ description: Answers to common Merkl questions to check before opening a support
 
 ### What’s the frequency of rewards distribution?
 
-The rewards distribution frequency varies by chain. On average, rewards are distributed approximately every 9 hours, but some chains — like Arbitrum — have distributions as frequently as every 4 hours. You can find the specific distribution frequency for each chain on this page: https://app.merkl.xyz/status
+The rewards distribution frequency varies by chain. On average, rewards are distributed approximately every 9 hours, but some chains — like Arbitrum — have distributions as frequently as every 4 hours. You can find the specific distribution frequency for each chain on this [page](https://app.merkl.xyz/status).
 
 ### I participated in a Merkl campaign but I can’t claim rewards on Merkl. Why?
 
