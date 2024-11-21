@@ -55,15 +55,11 @@ More generally, if some addresses are blacklisted in a campaign, the share of al
 
 ## OFAC compliance
 
-Merkl automatically blacklists all OFAC sanctioned addresses on the blockchain. This ensures that any addresses listed by the Office of Foreign Assets Control (OFAC) are not eligible to receive rewards in any campaign. This feature helps incentive providers comply with international sanctions and regulatory requirements.
+Merkl provides the option to automatically blacklist all OFAC sanctioned addresses on the blockchain. This ensures that any addresses listed by the Office of Foreign Assets Control (OFAC) are not eligible to receive rewards in any campaign. This feature helps incentive providers comply with international sanctions and regulatory requirements.
 
-Merkl continuously updates the blacklist with the latest OFAC sanctioned addresses, ensuring that your campaigns remain compliant without requiring manual intervention.
+When enabled, Merkl continuously updates the blacklist with the latest OFAC sanctioned addresses, ensuring that your campaigns remain compliant without requiring manual intervention.
 
-By default, all of our campaigns are OFAC compliant.
-
-## Incentivized bridged liquidity
-
-Merkl has partnered with Jumper to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
+## Incentiver to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
 
 In fact, it's a way to only whitelist the set of addresses that used the chosen bridge.
 
