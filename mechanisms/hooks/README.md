@@ -59,7 +59,9 @@ Merkl provides the option to automatically blacklist all OFAC sanctioned address
 
 When enabled, Merkl continuously updates the blacklist with the latest OFAC sanctioned addresses, ensuring that your campaigns remain compliant without requiring manual intervention.
 
-## Incentiver to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
+## Incentivized bridged liquidity
+
+Merkl has partnered with Jumper to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
 
 In fact, it's a way to only whitelist the set of addresses that used the chosen bridge.
 
