@@ -53,6 +53,12 @@ Returning to the case of an ERC20 campaign incentivizing holders of a given ERC2
 
 More generally, if some addresses are blacklisted in a campaign, the share of all non-blacklisted users in the reward pool increases proportionally. In this case, users receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted, ensuring that the total rewards are distributed fairly among the eligible participants.
 
+## OFAC compliance
+
+Merkl provides the option to automatically blacklist all OFAC sanctioned addresses on the blockchain. This ensures that any addresses listed by the Office of Foreign Assets Control (OFAC) are not eligible to receive rewards in any campaign. This feature helps incentive providers comply with international sanctions and regulatory requirements.
+
+When enabled, Merkl continuously updates the blacklist with the latest OFAC sanctioned addresses, ensuring that your campaigns remain compliant without requiring manual intervention.
+
 ## Incentivized bridged liquidity
 
 Merkl has partnered with Jumper to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
