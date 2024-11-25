@@ -113,3 +113,8 @@ Where:
 ### Boost for NFT Collections
 
 We offer the ability to boost rewards based on the number of NFT a user holds from an NFT collection. If you'd like to set up a campaign with an NFT boost, please contact us to ensure the setup is configured accurately.
+
+## Eligibility
+This hook allows incentive providers to reward only addresses that meet both a minimum token holding requirement and a set duration. For example, if the token chosen for eligibility is stUSD, and the threshold is set to 500 stUSD with a duration of 30 days, a user holding 600 stUSD for 44 days would qualify for rewards.
+
+Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
