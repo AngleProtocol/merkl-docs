@@ -43,4 +43,11 @@ Before aping in a campaign, do not get lured by APR values: it could be the case
 
 Rewards on Merkl do not increase block by block, but can be claimed at a frequency which depends on the chain. You can check the claim frequency at this [link](https://app.merkl.xyz/status).
 
-Note that, by default, rewards can only be claimed by the address that earned them. If you need to claim rewards on behalf of another address, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357)so that the team can whitelist your address.
+
+Note that, by default, rewards can only be claimed by the address that earned them. You can however approve an operator to claim on your behalf by calling the function `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status). However, rewards will still be sent to the original address that earned them.
+
+So to sum up, assuming Alice earned the rewards:
+ - by default only Alice can claim and rewards are sent to Alice.
+ - by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
+
+If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
