@@ -24,6 +24,7 @@
 
 - [😽 Distribute with Merkl](distribute-with-merkl/README.md)
 - [🧑‍🔬 Deploy your campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
+- [🗳️ Deploy your campaign from a DAO](distribute-with-merkl/deploy-your-campaign-from-a-dao.md)
 - [📝 Incentivizor Disclaimer](distribute-with-merkl/incentivizor-disclaimer.md)
 
 ## Integrate Merkl
