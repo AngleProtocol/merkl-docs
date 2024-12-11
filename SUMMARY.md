@@ -30,3 +30,4 @@
 
 - [👩‍💻 Merkl API - Integrate Merkl to your App](integrate-merkl/README.md)
 - [🧑‍🎨 Branding and Integration](integrate-merkl/branding-and-integration.md)
+- [📦 Quickstart Merkl API package](integrate-merkl/merkl-api-package.md)
