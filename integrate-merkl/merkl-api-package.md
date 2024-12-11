@@ -1,6 +1,6 @@
 # MerklAPI Quickstart
 
-![screenshot (3)](https://github.com/user-attachments/assets/775a2f92-8d7f-4f87-a72a-0a7b6e278edf)
+![](https://github.com/user-attachments/assets/775a2f92-8d7f-4f87-a72a-0a7b6e278edf)
 
 
 This quickstart guide will help you get started with interacting with the Eden Treaty app object using the Merkl API package.
@@ -78,7 +78,7 @@ console.log(campaignsUSDC.data);
 - All API responses are wrapped within a `data` attribute. This consistency across all API calls ensures that developers can reliably access the actual response payload. Access this attribute to get the actual response payload.
 - The Merkl API object methods are strongly typed, making it easier to catch errors during development.
 
-For additional documentation and advanced usage, refer to the [Merkl API documentation](https://api.merkl.xyz/docs).
+For additional documentation and advanced usage, refer to the [Merkl API swagger](https://api.merkl.xyz/swagger).
 
 ---
 
