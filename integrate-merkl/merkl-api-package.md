@@ -1,5 +1,8 @@
 # MerklAPI Quickstart
 
+![screenshot (3)](https://github.com/user-attachments/assets/775a2f92-8d7f-4f87-a72a-0a7b6e278edf)
+
+
 This quickstart guide will help you get started with interacting with the Eden Treaty app object using the Merkl API package.
 
 ## Installation 🚀
