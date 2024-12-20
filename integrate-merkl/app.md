@@ -1,109 +1,117 @@
 ---
-description: Guide to integrate Merkl in your app
+description: Integrate Merkl in your app using Merkl API V4
 ---
 
-You can integrate Merkl data directly into your application and use Merkl as a white-label solution. However, this is entirely up to you. Regardless of your choice, the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides your users with everything they need to utilize Merkl, including the ability to claim their tokens directly. This guide will walk you through the various routes available via the Merkl API.
+# 🧑‍💻 Integrate Merkl to your app
 
-<figure><img src="../../.gitbook/assets/merkl-front-integration.png" alt=""><figcaption></figcaption></figure>
+While the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides users and Liquidity Providers with everything they need to take advantage of Merkl opportunities, Merkl is also designed so anyone can integrate Merkl data into its own application and use it as a white-label solution.
 
-If you choose to use Merkl as a white-label solution, you will need to integrate our logo with a clickable link that redirects to our app.
+This guide aims at walking you through the integration of Merkl in your app via the Merkl API.
 
-## Merkl Front Integration: Options and Implementation
+{% hint style="info" %}
+If you use Merkl as a white-label solution in your frontend, you must integrate [our logo](./branding-and-integration.md) with a clickable link that redirects to our app.
+{% endhint %}
 
-**The Merkl API** is fully maintained by Angle Labs, and **contains all the information needed to integrate Merkl into your frontend. Some parameters are optional, but you should kep in mind that specifying more parameters can speed up the result.**
+Merkl provides an API, available [here](https://api.merkl.xyz) that contains all the information you need to track campaigns and selectively display the ones you want on your frontend.
+All the data from the Merkl app is served by this API.
 
-The Merkl API is available here [https://api.merkl.xyz](https://api.merkl.xyz) and contains all the data you need to track campaigns. All the data from the Merkl app is served by this API.
+The documentation for can be found [here](https://api.merkl.xyz/v4/docs). We encourage you to use this documentation for reference after having read the paragraphs below.
 
-The documentation for can be found [here](https://api.merkl.xyz/v4/docs). We encourage you to use this documentation after having read the paragraphs below.
+{% hint style="info" %}
+As you browse through the documentation, you'll notice that some API parameters are optional. Keep in mind though that specifying more parameters can speed up the result of your API queries.
+{% endhint %}
 
-### Displaying campaigns and opportunities
+## Displaying campaigns, opportunities and rewards
 
 To show Merkl data in your front-end, you have 2 types of data you can use:
- - campaigns are programs running on a given pool / ERC20, etc over a certain time
- - opportunities are groups of campaigns targeting the same user base
 
-#### Campaigns
+- `Campaigns`: these are programs running on a given pool, ERC20 token, etc, over a period of time
+- `Opportunities`: these are groups of campaigns targeting the same user base (the same pool, ERC20 token, ...). Typically, multiple campaigns can run in parallel for liquidity providers on a pool, and these all make up an opportunity.
 
-So assuming you're have created a campaign using PYTH targeting the Euler Vault 0x82D2CE1f71cbe391c05E21132811e5172d51A6EE, you can find this campaign's data using [https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH](https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH).
+### Campaigns
 
-Here, you'll find data related to this campaign start and end date, the amount of PYTH streamed, its id, etc.
+Assuming you've have created a campaign using PYTH as a reward token targeting the Euler Vault `0x82D2CE1f71cbe391c05E21132811e5172d51A6EE`, you can find this campaign's data using the following endpoint: [https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH](https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH).
 
-Fill free to browse through the available filters at [https://api.merkl.xyz/v4/docs#tag/campaigns/GET/v4/campaigns/](https://api.merkl.xyz/v4/docs#tag/campaigns/GET/v4/campaigns/).
+Here, you will find data related to this campaign start and end date, the amount of PYTH streamed, its ID, ...
 
-#### Opportunities
+{% hint style="info" %}
+Each campaign on Merkl is identified on the Merkl API by a unique ID.
+{% endhint %}
 
-Now, you may want to display data about all the campaigns targeting this pool. This way, you'll be able to have the combined APR of all and them, and will be able to display the aggregated data. You could this by getting this opportunity using [https://api.merkl.xyz/v4/opportunities?name=Euler](https://api.merkl.xyz/v4/opportunities?name=Euler).
+There are different filters available to find the campaigns that are relevant for you. You may browse the available filters [here](https://api.merkl.xyz/v4/docs#tag/campaigns/GET/v4/campaigns/).
 
-Here, you'll find aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
+### Opportunities
 
-Fill free to browse through the available filters at [https://api.merkl.xyz/v4/docs#tag/opportunities/GET/v4/opportunities/](https://api.merkl.xyz/v4/docs#tag/opportunities/GET/v4/opportunities/).
+Now, you may want to display data about all the campaigns targeting this pool.
 
+This will enable you to display aggregated data about all these campaigns, like the resulting APR of these all.
 
-#### Rewards
+Taking the example from above, you may get the opportunity corresponding to the Euler vault by using: [https://api.merkl.xyz/v4/opportunities?name=Euler](https://api.merkl.xyz/v4/opportunities?name=Euler).
 
-You can find rewards earned by a user through Merkl using [https://api.merkl.xyz/v4/docs#tag/users/GET/v4/users/{address}/rewards](https://api.merkl.xyz/v4/docs#tag/users/GET/v4/users/{address}/rewards). You'll need to specify the address and chainIds.
+This will give you aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
+
+Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/v4/docs#tag/opportunities/GET/v4/opportunities/).
+
+### Rewards
+
+The API docs explains [here](https://api.merkl.xyz/v4/docs#tag/users/GET/v4/users/{address}/rewards) how to find the rewards earned by a user through Merkl.
+
+Essentially, you need to specify the address you want to find rewards for as well as the chainIds for which you want to compute rewards.
 
 Here is an example: [https://api.merkl.xyz/v4/users/0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185/rewards?chainId=1,10](https://api.merkl.xyz/v4/users/0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185/rewards?chainId=1,10).
 
+## Claiming user rewards
 
-### Benefit from typescript typings when using the API
+Rewards on Merkl are claimable per token: meaning that if a user has accumulated rewards of several tokens, they may choose to only claim their rewards of one token type, just like they can choose to claim all their token rewards at once.
 
-Interacting safely with Merkl API is possible using our NPM package. See our guide [here](./merkl-api-package.md).
+The contract on which rewards should be claimed is the `Distributor` contract which address across different chains can be found on this [page](https://app.merkl.xyz/status).
 
-### Claiming user rewards
+There are different options with which you can help your users claim their rewards:
 
-Rewards are claimable per token: meaning that if you have accumulated rewards of several tokens, you may choose to only claim your rewards of one token type, but you may also choose to claim all your token rewards at once.
+- **Rely on the data provided by the `Rewards` API route mentioned above (recommended):** In this case the Merkl API builds entirely the claim transaction payload and the associated proof. All you need to do is call the Merkl API. This is the example shown below.
+- **Build the proof yourself:** In this setting, once the proof is built on your end, you may join it to the transaction data from the Merkl API. You can find a Github repository below showing how to do that. If you need further help, please reach out to us on Discord or Telegram.
 
-The contract on which rewards should be claimed is the `Distributor` contract which address can be found on at this [page](https://app.merkl.xyz/status).
-
-You have two options to claim rewards:
-
-- **Rely on the data provided by this route (recommended):** We build the claim transaction payload and the associated proof, for you. Simply call our API. This is the example shown below.
-- **Build the proof yourself:** Built the proof yourself and join it to the transaction data from the API. You can find a Github repository below showing how to do that.
-
-In any case, if a call is made to the correct `Distributor` contract and the `token` or `amount` doesn't match the `proof`, the transaction will revert.
+{% hint style="info" %}
+In any case, if a call is made to the correct `Distributor` contract and the `token` or `amount` do not match the `proof`, the transaction will revert.
+{% endhint %}
 
 Here is a script you may use to claim all the token rewards for a user on a chain.
 
-```
-import type { JsonRpcSigner } from "@ethersproject/providers";
-import { MerklApi } from "@merkl/api";
-import { Distributor__factory } from "@sdk"; // ABI can be fetched on etherscan
+```javascript
+import type { JsonRpcSigner } from '@ethersproject/providers'
+import { MerklApi } from '@merkl/api'
+import { Distributor__factory } from '@sdk' // ABI can be fetched on etherscan
 
-const DISTRIBUTOR_ADDRESS = "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae";
+const DISTRIBUTOR_ADDRESS = '0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae'
 
 export const claim = async (chainId: number, signer: JsonRpcSigner) => {
-  const { status, data } = await MerklApi("https://api.merkl.xyz")
+  const { status, data } = await MerklApi('https://api.merkl.xyz')
     .v4.users({ address: signer._address })
-    .rewards.get({ query: { chainId: [chainId] } });
-  if (status !== 200) throw "Failed to fetch rewards";
+    .rewards.get({ query: { chainId: [chainId] } })
+  if (status !== 200) throw 'Failed to fetch rewards'
 
-  const users = [];
-  const tokens = [];
-  const amounts = [];
-  const proofs = [];
+  const users = []
+  const tokens = []
+  const amounts = []
+  const proofs = []
 
   for (const rewards of data) {
-    if (rewards.chain.id !== chainId) continue;
+    if (rewards.chain.id !== chainId) continue
     for (const reward of rewards.rewards) {
-      users.push(signer._address);
-      tokens.push(reward.token.address);
-      amounts.push(reward.amount);
-      proofs.push(reward.proofs);
+      users.push(signer._address)
+      tokens.push(reward.token.address)
+      amounts.push(reward.amount)
+      proofs.push(reward.proofs)
     }
   }
 
-  if (tokens.length === 0) throw "No tokens to claim";
+  if (tokens.length === 0) throw 'No tokens to claim'
 
-  const contract = Distributor__factory.connect(DISTRIBUTOR_ADDRESS, signer);
-  await (await contract.claim(users, tokens, amounts, proofs)).wait();
-};
-
+  const contract = Distributor__factory.connect(DISTRIBUTOR_ADDRESS, signer)
+  await (await contract.claim(users, tokens, amounts, proofs)).wait()
+}
 ```
 
-If you want to build the proof yourself please reach out to us on Telegram, we'll be glad to help!
+## Benefit from Typescript typings when using the Merkl API
 
----
-
-You're now ready to interact with the Merkl API! 🎉
-
+Interacting safely with Merkl API is possible using our NPM package. See our guide [here](./merkl-api-package.md).
