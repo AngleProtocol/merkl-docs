@@ -1,26 +1,20 @@
 ---
-description: Guide to integrate Merkl in your app
+description: Interact with the now deprecated V3 API routes
 ---
 
-You can integrate Merkl data directly into your application and use Merkl as a white-label solution. However, this is entirely up to you. Regardless of your choice, the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides your users with everything they need to utilize Merkl, including the ability to claim their tokens directly. This guide will walk you through the various routes available via the Merkl API.
+# 3️⃣ Merkl API V3 Docs
 
-<figure><img src="../../.gitbook/assets/merkl-front-integration.png" alt=""><figcaption></figcaption></figure>
+Merkl API comes with several versions. While the more up to date and fast version is the latest version, you may still use the V3 version of the API to integrate Merkl data into your frontend.
 
-If you choose to use Merkl as a white-label solution, you will need to integrate our logo with a clickable link that redirects to our app.
+The swagger for the V3 API routes can be found [here](https://api.merkl.xyz/swagger).
 
-## Merkl Front Integration: Options and Implementation
+Below are more details on some specific V3 API routes.
 
-**The Merkl API** is fully maintained by Angle Labs, and **contains all the information needed to integrate Merkl into your frontend. Some parameters are optional, but you should kep in mind that specifying more parameters can speed up the result.**
+## /v3/campaigns
 
-The Merkl API is available here [https://api.merkl.xyz](https://api.merkl.xyz) and contains all the data you need to track campaigns. All the data from the Merkl app is served by this API.
+Used to query all the information relative to Merkl campaigns.
 
-A swagger can be found [here](https://api.merkl.xyz/swagger)
-
-### /v3/campaigns
-
-Used to query all the information relative to Merkl campaigns
-
-#### Parameters
+### Parameters
 
 - `chainIds` (optional): You can specify one or several Merkl supported chain Ids. If none are provided, the API will return campaigns for all chains by default.
 - `live` (optional): defaults to false, if set to true the route will only return live campaigns
@@ -39,7 +33,7 @@ Used to query all the information relative to Merkl campaigns
   - 12: Euler Finance
 - `creatorTag` (optional): only return campaigns created by an a given creator (for this to work we need to tag the address you used to create the campaigns)
 
-#### Example requests
+### Example requests
 
 - **Query all campaigns for all chains** [https://api.merkl.xyz/v3/campaigns](https://api.merkl.xyz/v3/campaigns)
 - **Query all campaigns on Ethereum Mainnet** [https://api.merkl.xyz/v3/campaigns?chainIds=1](https://api.merkl.xyz/v3/campaigns?chainIds=1)
@@ -48,7 +42,7 @@ Used to query all the information relative to Merkl campaigns
 - **Query all live ERC20 campaigns on Ethereum Mainnet** [https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1](https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1)
 - **Query all campaigns created by the Optimism Superfest address** [https://api.merkl.xyz/v3/campaigns?chainIds=1&live=true&types=1](https://api.merkl.xyz/v3/campaigns?creatorTag=superfest)
 
-#### Data processing
+### Data processing
 
 The return data is structured as follows:
 
@@ -74,7 +68,7 @@ The return data is structured as follows:
         - **apr**: number - apr of the campaign, if there are multiple campaigns for a given asset you will need to sum the aprs to get the total apr of the campaign
         - **tvl**: number - tvl of the incentivized asset
 
-#### Example data
+### Example data
 
 ```json
 {
@@ -151,20 +145,20 @@ The return data is structured as follows:
 }
 ```
 
-### /v3/campaignsForMainParameter
+## /v3/campaignsForMainParameter
 
 Returns all the campaigns for a given `mainParameter`.
 
-#### Parameters
+### Parameters
 
 - `chainId`: Merkl supported chain Id. In this instance, `chainId` is mandatory.
 - `mainParameter`: Address of the incentivized asset (pool address for concentrated liquidity campaigns, ERC20 address for ERC20 campaigns, etc.).
 
-#### Example requests
+### Example requests
 
 - **Query campaigns on the wstETH/USDT Univ3 pool** (` mainParameter=``0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA `) **on Ethereum Mainnet** (`chainId=1`). [https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/campaignsForMainParameter?chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 
-#### Response Template
+### Response Template
 
 ```
 {
@@ -178,22 +172,22 @@ Returns all the campaigns for a given `mainParameter`.
 }[];
 ```
 
-### /v3/recipients
+## /v3/recipients
 
 Returns all the rewarded addresses of a given campaign.
 
-#### Parameters
+### Parameters
 
 - `chainId`: Merkl supported chain Id. In this instance, `chainId` is mandatory.
 - `campaignId`: Campaign Id of the campaign.
 
 You can find the `campaignId` of the campaign by calling the [/v3/campaigns](./#campaigns-information-1) or [/v3/campaignsForMainParameter](./#v3-campaignsformainparameter)
 
-#### Example requests
+### Example requests
 
 - **Query the campaign on Arbitrum** (`chainId=42161`) with `campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0` [https://api.merkl.xyz/v3/recipients?chainId=42161\&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0](https://api.merkl.xyz/v3/recipients?chainId=42161&campaignId=0x2bba7ce636dcd4ddd2ea70f790729cdc87510327074aa3f5df8a3aeb3f54f7d0)
 
-#### Response
+### Response
 
 ```
 {
@@ -205,11 +199,11 @@ You can find the `campaignId` of the campaign by calling the [/v3/campaigns](./#
 [];
 ```
 
-### /v3/userRewards
+## /v3/userRewards
 
 Returns all rewards linked to a user on a given chain. Data can be filtered by providing parameters.
 
-#### Parameters
+### Parameters
 
 - `user`: Address of the user.
 - `chainId`: Merkl supported chain Id. In this instance, `chainId` is mandatory.
@@ -217,14 +211,14 @@ Returns all rewards linked to a user on a given chain. Data can be filtered by p
 - `mainParameter` (optional): Address of the incentivized asset (pool address for concentrated liquidity campaigns, ERC20 address for ERC20 campaigns, etc.).
 - `proof` (optional): Defaults to false. Allows you to choose whether or not to include proof of rewards. This cannot be set to true if `mainParameter` is specified, as the proof could be invalid if the user has unclaimed rewards of the same reward token earned over different `mainParameters`.
 
-#### Example requests
+### Example requests
 
 - **Query all rewards earned on Ethereum** ( `chainId=1`) **by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`). [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1)
 - **Query all ANGLE** (`rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2`) **rewards earned on Ethereum Mainnet** ( `chainId=1`) **by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`). [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&rewardToken=0x31429d1856aD1377A8A0079410B297e1a9e214c2)
 - **Query all rewards earned on the wstETH/USDT Univ3 pool** (`mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA`) on Ethereum Mainnet (chain** `chainId=1`) **by a user\*\* (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`). [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&mainParameter=0xeC5055067d60292Ab2c514A1090Bc8E014e4aBAA)
 - **Query all rewards earned by a user** (`user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185`) **to build a claim transaction** (`proof=true`) **on Ethereum Mainnet** (`chainId=1`) [https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185\&chainId=1\&proof=true](https://api.merkl.xyz/v3/userRewards?user=0xfdA462548Ce04282f4B6D6619823a7C64Fdc0185&chainId=1&proof=true)
 
-#### Response
+### Response
 
 ```
 {
@@ -254,7 +248,7 @@ To submit a [claim transaction](https://etherscan.io/address/0x3Ef3D8bA38EBe18DB
 
 You can get the Merkl Distributor contract abi [here](https://etherscan.io/address/0x22b0ac22d5d58f05873e470bca5db7ceb5c47f5e#code). It is the same ABI on all chains.
 
-#### Claiming user rewards
+### Claiming user rewards
 
 Rewards are claimable per token: meaning that if you have accumulated rewards of several tokens, you may choose to only claim your rewards of one token type, but you may also choose to claim all your token rewards at once.
 
@@ -269,7 +263,7 @@ In any case, if a call is made to the correct `Distributor` contract and the `to
 
 Here is a script you may use to claim all the token rewards for a user on a chain.
 
-```
+```javascript
 import {
   Distributor__factory,
   MerklAPIData,
@@ -316,18 +310,18 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
 
 If you want to build the proof yourself please reach out to us on Telegram, we'll be glad to help!
 
-### /v3/rewards
+## /v3/rewards
 
 This route was made for the Angle Labs Merkl frontend. To get user rewards, we recommend using `/v3/userRewards` as it is faster and returns more specific information.
 
 `/v3/rewards`returns all the rewards accumulated by a user, the merkl proofs needed for the claim transaction, and the campaign information.
 
-#### Parameters
+### Parameters
 
 - `user`: Address of the user.
 - `chainIds` (optional): One or several Merkl supported chain Ids. If none are provided, the API will return rewards for all chains.
 
-#### Response
+### Response
 
 ```
 {
@@ -359,7 +353,7 @@ This route was made for the Angle Labs Merkl frontend. To get user rewards, we r
 }
 ```
 
-### Listing incentivized pools
+## Listing incentivized pools
 
 When called for a specific chain, the API returns in a `pools` object a mapping between pool addresses of this chain (like Uniswap V3 pool addresses) and details on the APRs for providing liquidity.
 

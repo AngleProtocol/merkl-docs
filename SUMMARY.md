@@ -28,7 +28,7 @@
 
 ## Integrate Merkl
 
-- [👩‍💻 Deprecated - Integrate Merkl to your App](integrate-merkl/README.md)
-- [👩‍💻 Merkl API V4 - Integrate Merkl to your App](integrate-merkl/app.md)
-- [👩‍💻 Merkl API V4 - Use the NPM Package](integrate-merkl/merkl-api-package.md)
+- [👩‍💻 Integrate Merkl to your App - Merkl API V4 Docs](integrate-merkl/app.md)
+- [📦 Merkl API V4 NPM Package](integrate-merkl/merkl-api-package.md)
+- [3️⃣ Merkl API V3 Docs](integrate-merkl/deprecated-v3-endpoints.md)
 - [🧑‍🎨 Branding and Integration](integrate-merkl/branding-and-integration.md)
