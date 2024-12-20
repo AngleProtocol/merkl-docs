@@ -1,4 +1,4 @@
-# MerklAPI Quickstart
+# MerklAPI NPM Package Quickstart
 
 ![](https://github.com/user-attachments/assets/775a2f92-8d7f-4f87-a72a-0a7b6e278edf)
 
