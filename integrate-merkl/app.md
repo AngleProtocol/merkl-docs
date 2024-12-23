@@ -15,7 +15,7 @@ If you use Merkl as a white-label solution in your frontend, you must integrate 
 Merkl provides an API, available [here](https://api.merkl.xyz) that contains all the information you need to track campaigns and selectively display the ones you want on your frontend.
 All the data from the Merkl app is served by this API.
 
-The documentation for can be found [here](https://api.merkl.xyz/v4/docs). We encourage you to use this documentation for reference after having read the paragraphs below.
+The documentation for can be found [here](https://api.merkl.xyz/docs). We encourage you to use this documentation for reference after having read the paragraphs below.
 
 {% hint style="info" %}
 As you browse through the documentation, you'll notice that some API parameters are optional. Keep in mind though that specifying more parameters can speed up the result of your API queries.
@@ -38,7 +38,7 @@ Here, you will find data related to this campaign start and end date, the amount
 Each campaign on Merkl is identified on the Merkl API by a unique ID.
 {% endhint %}
 
-There are different filters available to find the campaigns that are relevant for you. You may browse the available filters [here](https://api.merkl.xyz/v4/docs#tag/campaigns/GET/v4/campaigns/).
+There are different filters available to find the campaigns that are relevant for you. You may browse the available filters [here](https://api.merkl.xyz/docs#tag/campaigns/GET/v4/campaigns/).
 
 ### Opportunities
 
@@ -50,11 +50,11 @@ Taking the example from above, you may get the opportunity corresponding to the 
 
 This will give you aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
 
-Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/v4/docs#tag/opportunities/GET/v4/opportunities/).
+Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/docs#tag/opportunities/GET/v4/opportunities/).
 
 ### Rewards
 
-The API docs explains [here](https://api.merkl.xyz/v4/docs#tag/users/GET/v4/users/{address}/rewards) how to find the rewards earned by a user through Merkl.
+The API docs explains [here](https://api.merkl.xyz/docs#tag/users/GET/v4/users/{address}/rewards) how to find the rewards earned by a user through Merkl.
 
 Essentially, you need to specify the address you want to find rewards for as well as the chainIds for which you want to compute rewards.
 

@@ -83,7 +83,7 @@ console.log(campaignsUSDC.data)
 - All API responses are wrapped within a `data` attribute. This consistency across all API calls ensures that developers can reliably access the actual response payload. Access this attribute to get the actual response payload.
 - The Merkl API object methods are strongly typed, making it easier to catch errors during development.
 
-For additional documentation and advanced usage, refer to the [Merkl API swagger](https://api.merkl.xyz/v4/docs).
+For additional documentation and advanced usage, refer to the [Merkl API swagger](https://api.merkl.xyz/docs).
 
 ---
 
