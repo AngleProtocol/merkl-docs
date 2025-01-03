@@ -56,6 +56,10 @@ Our frontend will automatically calculate the correct amount for you.
 
 If you prefer to have exactly 100,000 tokens leave your wallet, then the sum of the amounts in your JSON file should be 99,500 tokens (100,000 \* (1 - 0.5%)).
 
+### Distribution lag
+
+The tokens you airdropped will be claimable by users at the next reward update on the chain your airdropped the tokens to. Thus, it can take up to 8 hours for the airdropped tokens to be claimable by your users. If you plan to communicate on the airdrop, we recommend to wait for the rewards to be claimable before notifying your users.
+
 ## Token Balance Airdrops
 
 In this type of airdrop, Merkl provides the possibility to airdrop tokens to token holders based on their snapshotted token balance at a chosen moment in time.
