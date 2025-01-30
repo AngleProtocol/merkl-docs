@@ -1,3 +1,7 @@
+---
+description: Merkl different distribution types
+---
+
 # 💸 Distribution Types
 
 Merkl supports various distribution methods, allowing campaign creators to choose how rewards are allocated based on participant activity and liquidity contributions.

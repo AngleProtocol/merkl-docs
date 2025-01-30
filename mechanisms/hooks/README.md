@@ -6,8 +6,6 @@ Below are some of the most commonly used hooks in Merkl.
 
 ## 🔁 Forwarders
 
-### Merkl Forwarders
-
 Merkl Engine can smartly enable users to accrue rewards even if the incentivized asset isn't directly present in their wallet. Take the case of a campaign incentivizing holders of the token, but many of these tokens are staked in a staking contract: if the Merkl engine has integrated the staking contract, it can reward users which have provided liquidity on the staking contract based on how much they have staked.
 
 This functionality to track user activity across various protocols and contracts is called Merkl `forwarders`. [Each campaign type](mechanisms/README.md) comes with its own forwarders.

@@ -1,3 +1,7 @@
+---
+description: Basics about Merkl Incentive mechanisms and customizability features
+---
+
 # 🪷 Merkl Incentive Mechanisms
 
 Merkl is designed to be highly versatile, supporting a wide range of incentive structures across both DeFi and broader Web3 ecosystems.
