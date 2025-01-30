@@ -2,7 +2,7 @@
 description: Guide to deploy a Merkl Campaign from a multisig or Gnosis Safe
 ---
 
-# 🧑‍🔬 Deploy your campaign from a multisig or Gnosis Safe
+# 🧑‍🔬 Deploy a campaign from a multisig or Gnosis Safe
 
 The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 

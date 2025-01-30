@@ -4,12 +4,12 @@ Merkl supports airdrop campaigns, simplifying the process for protocols looking 
 
 Merkl supports two different types of airdrops:
 
-- one where incentive providers are responsible for allocating rewards to their users and choose which users get what amount of rewards. In this case, incentive providers come with a JSON file and Merkl is just used to handle the distribution through its usual claim system
-- another one where Merkl airdrops the rewards based on the snapshoted balance of a given token at a chosen moment in time
+1. **Custom Allocation Airdrops**: Incentive providers define the reward distribution, specifying which users receive what amount. Providers upload a JSON file with allocation details, and Merkl handles the distribution via its claim system.
+2. **Snapshot-Based Airdrops**: Merkl distributes rewards based on a snapshot of a given token’s balance at a chosen point in time.
 
 ## JSON airdrops
 
-The only thing that is expected from reward providers is to come with a JSON file giving the breakdown of user addresses and the amount of rewards they need to receive. To create your JSON Airdrop campaign on Merkl, head to this [page](https://app.merkl.xyz/create/drop).
+For Custom Allocation Airdrops, providers only need to upload a JSON file specifying user addresses and reward amounts. To create your JSON Airdrop campaign on Merkl, visit this [page](https://app.merkl.xyz/create/drop).
 
 The expected format for the JSON is the following
 
@@ -50,22 +50,23 @@ Example:
 
 ### Important Note
 
-On these campaigns, Merkl applies a fee of 0.5%. Therefore, if the total amount of tokens to be airdropped in your JSON file sums up to 100,000, then 100,000 will be distributed to the recipients, and a fee will be applied on top of it. To ensure that 100,000 tokens reach your users, you need to provide 100,502.512563 tokens (100,000 / (1 - 0.5%)).
+Merkl applies a 0.5% fee to airdrop campaigns. This fee is added on top of the total airdropped amount, ensuring recipients receive the full intended distribution.
 
-Our frontend will automatically calculate the correct amount for you.
+- If you want exactly 100,000 tokens to be distributed to users, you need to provide 100,502.51 tokens (calculated as 100,000 / (1 - 0.5%)).
+- If you prefer to send exactly 100,000 tokens from your wallet, then the total sum of allocations in your JSON file should be 99,500 tokens (calculated as 100,000 \* (1 - 0.5%)).
 
-If you prefer to have exactly 100,000 tokens leave your wallet, then the sum of the amounts in your JSON file should be 99,500 tokens (100,000 \* (1 - 0.5%)).
+Our frontend automatically calculates the correct amount for you.
 
 ### Distribution lag
 
-The tokens you airdropped will be claimable by users at the next reward update on the chain your airdropped the tokens to. Thus, it can take up to 8 hours for the airdropped tokens to be claimable by your users. If you plan to communicate on the airdrop, we recommend to wait for the rewards to be claimable before notifying your users.
+Airdropped tokens become claimable at the next reward update on the target chain, which can take up to 8 hours. If you plan to announce the airdrop, we recommend waiting until the rewards are claimable to notify your users.
 
 ## Token Balance Airdrops
 
-In this type of airdrop, Merkl provides the possibility to airdrop tokens to token holders based on their snapshotted token balance at a chosen moment in time.
+Merkl allows you to distribute tokens to holders based on their snapshotted balance at a chosen moment in time.
 
-For this type of campaign, beyond the rewards amount, incentive providers need to input the following parameters:
+For this type of campaign, in addition to the reward amount, incentive providers must specify:
 
-- **Snapshot:** Set the time for the snapshot - it will be taken at the block prior to this date.
-- **Distribution Date:** Set the date on which your rewards should be distributed.
-- **Name your Snapshot:** Provide the name of your snapshot.
+- Snapshot Date – The balance snapshot is taken at the last block before this date.
+- Distribution Date – The date on which rewards should be distributed.
+- Snapshot Name – A label for your snapshot.

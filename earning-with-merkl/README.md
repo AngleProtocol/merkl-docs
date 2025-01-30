@@ -20,7 +20,7 @@ Merkl is a one-stop shop for finding the best investment opportunities in DeFi a
 2. Explore the various opportunities and find the one that suits you best.
 3. Before getting on any Merkl opportunity, make sure that you understand how it works and how users can be rewarded as part of this opportunity. For this, we encourage you to:
 
-- look into [the page of the docs](../../mechanisms/types-of-campaign.md) that covers the campaign type in question. All campaign types have their specificity and it's crucial to understand them before trying to earn rewards from it
+- look into [the page of the docs](../../mechanisms/campaigns/README.md) that covers the campaign type in question. All campaign types have their specificity and it's crucial to understand them before trying to earn rewards from it
 - look into the page associated with the opportunity. Every opportunity listed on Merkl has its dedicated page, and on each page you may find the details of the different campaigns that were created for the opportunity. It's important to look into the cards associated with the live campaigns so you understand whether [specific hooks](../../mechanisms/hooks/README.md) apply to them.
 - understand the protocol where you're depositing liquidity and DYOR before putting funds somewhere. The main risk with Merkl lies with the underlying protocols being incentivized, not with Merkl, as you do not need to stake any assets to be eligible and claim your rewards. Your funds on underlying protocols could be at risk due to the inherent risks associated with those protocols, such as smart contract vulnerabilities or operational failures. While we do our best to whitelist every project we work with to ensure they are reliable and safe for our users, we cannot fully audit every project using the platform, and are not responsible for the potential issues of the protocols incentivized on Merkl.
 
@@ -43,11 +43,11 @@ Before aping in a campaign, do not get lured by APR values: it could be the case
 
 Rewards on Merkl do not increase block by block, but can be claimed at a frequency which depends on the chain. You can check the claim frequency at this [link](https://app.merkl.xyz/status).
 
-
 Note that, by default, rewards can only be claimed by the address that earned them. You can however approve an operator to claim on your behalf by calling the function `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status). However, rewards will still be sent to the original address that earned them.
 
 So to sum up, assuming Alice earned the rewards:
- - by default only Alice can claim and rewards are sent to Alice.
- - by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
+
+- by default only Alice can claim and rewards are sent to Alice.
+- by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
 
 If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
