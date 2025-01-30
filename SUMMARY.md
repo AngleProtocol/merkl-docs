@@ -5,7 +5,7 @@
 ## Merkl mechanisms
 
 - [🔍 Technical Overview](mechanisms/technical-overview.md)
-- [🪷 Incentive Mechanisms](mechanisms/technical-overview.md)
+- [🪷 Incentive Mechanisms](mechanisms/incentive-mechanisms.md)
 - [🏕️ Campaign Types](mechanisms/campaigns/README.md.md)
   - [🦄 Concentrated Liquidity Campaigns](mechanisms/campaigns/concentrated-liquidity-mechanisms.md)
   - [🏹 Airdrop Campaigns](mechanisms/campaigns/airdrop.md)
@@ -19,6 +19,7 @@
 
 - [😽 Create a Merkl campaign](distribute-with-merkl/README.md)
 - [🧑‍🔬 Deploy a campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
+- [🗳️ Deploy your campaign from a DAO](distribute-with-merkl/deploy-your-campaign-from-dao.md)
 - [💳 Fee Model](distribute-with-merkl/fee-model.md)
 
 ## Earn with Merkl

@@ -1,8 +1,12 @@
-# 🔍 Architecture and Technical Overview
+---
+description: Technical overview of the Merkl system
+---
+
+# 🔍 Technical Overview
 
 Merkl operates through an offchain engine that analyzes both onchain and offchain data to track user activity and allocate rewards based on campaign rules set by incentive providers. The Merkl engine processes reward data into a merkle tree, compresses it into a merkle root, and pushes it onchain, enabling users to claim rewards transparently and efficiently.
 
-## Platform Overview
+## 🗺️ Platform Overview
 
 Merkl operates through campaigns created by incentive providers. A campaign is a time-bound incentive program where Merkl tracks onchain and offchain activity based on predefined rules. Rewards or points are either posted onchain or updated offchain via Merkl’s endpoints, allowing users to monitor their accumulated rewards.
 
@@ -22,7 +26,7 @@ Merkl operates through campaigns created by incentive providers. A campaign is a
 - **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
 - **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
 
-## Deep-Dive
+## 🤿 Deep-Dive
 
 ### Parallel Campaign Processing
 

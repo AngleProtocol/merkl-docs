@@ -1,3 +1,7 @@
+---
+description: Merkl various campaign types
+---
+
 # 🏕️ Campaign Types
 
 {% content-ref url="concentrated-liquidity-mechanisms.md" %}

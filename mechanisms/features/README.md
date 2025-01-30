@@ -1,3 +1,7 @@
+---
+description: Important features of Merkl campaigns
+---
+
 # 🪶 Additional Features
 
 Beyond campaign types, distribution methods, and hook customization, Merkl offers several advanced features to enhance campaign flexibility and reward management.
@@ -11,7 +15,7 @@ Merkl allows multiple campaigns to be created simultaneously for the same pool o
 - Co-incentives: Different parties can independently add incentives to the same opportunity.
 - Flexible Stacking: Multiple campaigns can run alongside each other on the same pool or token, supporting different incentive structures.
 
-## ⏳ Campaigns of Any Duratio
+## ⏳ Campaigns of Any Duration
 
 Merkl campaigns can run for any length of time, from as short as one hour to as long as six months (or more).
 
@@ -80,7 +84,7 @@ Merkl allows campaign creators to modify an active campaign by adding extra cust
 - Enabling additional features as needed.
 - Ending a campaign early if necessary
 
-## 🏛️ On-Chain Governance System Integrations
+## 🏛️ Onchain Governance System Integrations
 
 Merkl supports onchain governance-driven incentives, allowing protocols to automatically issue incentives through Merkl based on governance vote outcomes.
 
