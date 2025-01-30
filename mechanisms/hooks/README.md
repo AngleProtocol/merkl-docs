@@ -1,101 +1,102 @@
 # 🪝 Customazibility Hooks
 
-Beyond the different types of pools of opportunities incentivizers can choose to track, incentive providers with Merkl have the possibility to customize their campaigns with some hooks to change the default behavior of their campaigns.
+Merkl allows incentive providers to customize campaign behavior using hooks, adding flexibility beyond standard campaign parameters.
 
-While some hooks are campaign-specific (e.g., prevent out of range liquidity from being incentivized), others are global and their behavior is roughly the same from one campaign type to another.
+Below are some of the most commonly used hooks in Merkl.
 
-Here are some of the most common hooks supported by Merkl.
+## 🔁 Forwarders
 
-{% hint style="info" %}
-We are constantly adding new forms of hooks and customization tools to incentive providers on Merkl. This list may therefore not be fully up to date with what's currently supported by the Merkl engine and frontend.
-{% endhint %}
+### Merkl Forwarders
 
-## Forwarders
+Merkl Engine can smartly enable users to accrue rewards even if the incentivized asset isn't directly present in their wallet. Take the case of a campaign incentivizing holders of the token, but many of these tokens are staked in a staking contract: if the Merkl engine has integrated the staking contract, it can reward users which have provided liquidity on the staking contract based on how much they have staked.
 
-For some campaign types, forwarders will be automatically detected and there is no need to specify them. This applies typically to [concentrated liquidity campaigns](../campaigns/concentrated-liquidity-mechanisms.md#automated-liquidity-management-solutions) where once whitelisted automated liquidity management solutions are automatically detected and supported.
+This functionality to track user activity across various protocols and contracts is called Merkl `forwarders`. [Each campaign type](mechanisms/README.md) comes with its own forwarders.
 
-For other ERC20 campaigns, incentive providers may choose to specify forwarders (provided that these are also ERC20 tokens) that are likely to hold the tokens to be incentivized.
+Forwarders enable reward distribution to users who hold an incentivized asset indirectly (e.g., staked tokens, LP tokens).
 
-Let's illustrate this forwarding feature using an ERC20 campaign incentivizing USDA holders. With forwarding enabled, users who staked their USDA and received stUSD in return can still be eligible to earn rewards even if they don't hold USDA in their wallets.
+**How It Works**:
 
-Here's how it works:
+- Forwarder integration varies by complexity. Simple forwarders, such as staking contracts for ERC20 tokens, are automatically supported by Merkl. However, more complex forwarders,like Active Liquidity Management (ALM) protocols for concentrated liquidity, or non-standard staking contracts, require a dedicated integration within Merkl.
+- Some campaign types (e.g., Concentrated Liquidity Campaigns) automatically detect integrated forwarders, requiring no manual setup when creating a campaign
+- For ERC20 or lending/borrowing campaigns, incentive providers can specify ERC20 forwarders or integrated forwarders that commonly hold the incentivized token.
 
-- **Staking Example:** Users stake their USDA and receive stUSD tokens in return.
-- **Forwarding Mechanism:** Although the staked tokens (USDA) are not in the user's wallet (as they are held in the stUSD smart contracts), users are still rewarded based on their stUSD holdings.
-- **Reward Eligibility:** Merkl's forwarding mechanism can recognize their stake in the original tokens, ensuring that users with stUSD in their wallets can earn rewards.
+**Example: Staked Token Rewards**:
 
-**As a result, if the token you are incentivizing can be staked in another contract (such as staking USDA in the stUSD contract), Merkl can trace back the liquidity in the staking contract to the original user.**
+- A campaign incentivizes USDA holders.
+- Users who staked USDA and received stUSD would normally be ineligible for rewards because they don't hold the USDA directly in their wallet.
+- With forwarding enabled, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly.
 
-For this to work, when creating a campaign you need to provide the staking contract addresses. The contract where users stake their tokens is the **recipient of the initial rewards**. The token issued when staking the token is the **token to forward rewards to**, and this contract needs to be an ERC20 token.
+**How to Enable Forwarding**:
 
-{% hint style="info" %}
-Most of the time, these are the same contracts, so you should enter the same address twice when creating a campaign.
-{% endhint %}
+When creating a campaign:
 
-## Whitelisting
-
-Incentive providers may whitelist some addresses (usually forwarders) so only the whitelisted addresses and the addresses that are associated with whitelisted addresses can be eligible to rewards.
-
-Let's take the case of a campaign on a Uniswap V3 pool with 3 supported ALMs. If an incentive provider chooses to whitelist the addresses corresponding to 2 of the 3 ALMs and one individual user address, then only the addresses providing liquidity through the 2 ALMs and the whitelisted user providing liquidity directly on the pool will be eligible for rewards.
-The reward allocation rules that apply between whitelisted addresses are the same that would apply if all addresses were eligible.
-
-For an ERC20 Campaign incentivizing holders of a given ERC20 token on a chain, let's say two staking contract addresses are whitelisted by the incentive providers, then only the addresses that staked within one of the 2 staking contracts will be eligible for rewards and the amount of rewards they get is dependent on how much they've staked over time with respect to the total amount that has been staked over the two staking contracts.
-
-Whitelisting always prevails over blacklisting, in the sense that if an address is whitelisted and another one is blacklisted, all other non whitelisted addresses will by default be blacklisted and not eligible to rewards.
-
-There may be cases where some campaigns run in parallel on the same opportunity (e.g., the same pool), and there is a campaign with a whitelist and another without. If you're a user providing liquidity and have any doubt  about this, you should check the card corresponding to each campaign on the opportunity page to make sure that you understand what the APRs displayed are referring to, and what you need to do to be eligible to the whitelisted campaign, in case this is of interest.
-
-## Blacklisting
-
-Incentive providers may choose to blacklist certain addresses from being eligible to rewards. If a forwarder address is blacklisted, then all the balance from the addresses associated to this forwarder will not be eligible for rewards.
-
-Returning to the case of an ERC20 campaign incentivizing holders of a given ERC20 token on a chain: if a staking contract address is blacklisted, and a user has staked 10 tokens in the contract, but holds 5 tokens in its wallet, then only its 5 tokens will be eligible for the campaign's rewards.
-
-More generally, if some addresses are blacklisted in a campaign, the share of all non-blacklisted users in the reward pool increases proportionally. In this case, users receive the same percentage of the rewards that the blacklisted addresses would have collected if they were not blacklisted, ensuring that the total rewards are distributed fairly among the eligible participants.
-
-## OFAC compliance
-
-Merkl provides the option to automatically blacklist all OFAC sanctioned addresses on the blockchain. This ensures that any addresses listed by the Office of Foreign Assets Control (OFAC) are not eligible to receive rewards in any campaign. This feature helps incentive providers comply with international sanctions and regulatory requirements.
-
-When enabled, Merkl continuously updates the blacklist with the latest OFAC sanctioned addresses, ensuring that your campaigns remain compliant without requiring manual intervention.
-
-## Incentivized bridged liquidity
-
-Merkl has partnered with Jumper to enable incentivized bridged liquidity. This feature allows chains or other incentive providers to only incentivize users to bridge liquidity from another chain, rather than moving it between protocols on the same chain. This results in a real chain-wide increase in liquidity.
-
-In fact, it's a way to only whitelist the set of addresses that used the chosen bridge.
-
-## Cross-chain Incentives
-
-With Merkl, you can choose to incentivize activity on one chain while distributing rewards on another. If you don't want to deal with the hurdle of bridging your reward tokens to a given chain, this feature enables you to typically incentivize activity on a pool on Arbitrum but let people claim on Ethereum.
-
-However, you need to be wary of the fact that some smart contract addresses on Arbitrum may be providing liquidity but are either not deployed at the same address on Ethereum or not deployed on Ethereum at all. In this case, these addresses will be unable to access their rewards. It's your responsibility to blacklist any addresses that may be affected.
-
-## Boosting Rewards with Merkl
-
-Merkl allows you to boost rewards for users holding a specific token or NFT. The formula used for boosting is similar to Curve Finance’s but offers greater flexibility, as there is no 2.5x limit on boosting rewards for a user.
+- Provide the staking contract address (recipient of the rewards).
+- Provide the forwarded token address (token users receive when staking).
 
 {% hint style="info" %}
-This boosting feature is not automatically supported for custom integrations (beyond Concentrated Liquidity campaigns and ERC20 campaigns). If you are interested, please reach out by opening a BD ticket in our Discord.
+Most of the time, these are the same contract address, so you may need to enter the same address twice when setting up a campaign.
 {% endhint %}
 
-### Curve Formula
+For the non-standard forwarders that are not automatically detected (e.g everything but ALMs in concentrated liquidity campaigns), you may also directly specify during campaign creation.
 
-$$
-B = \min \left( 2.5, 1.5 \times \frac{D \times v}{V \times d} + 1 \right)
-$$
+## ✅ Whitelisting
 
-Where
+Whitelisting restricts rewards to a specific address or set of addresses (e.g., selected forwarders, ALMs, or individual users).
 
-- **B** is the boost a user receives.
-- **d** is the value a user deposits, in USD.
-- **D** is the total value deposited to the pool/vault, in USD.
-- **v** is the amount of veCRV a user has (vote weight).
-- **V** is the total veCRV in the system (total vote weight).
+**Example: Uniswap V3 ALM Incentives**:
 
-### Merkl Boost
+- A campaign incentivizes LPs in a Uniswap V3 pool with three Automated Liquidity Managers (ALMs).
+- The incentive provider whitelists only two ALMs and one user address.
+- Result:
 
-There is no minimum value, and you can boost users holding any token as much as you want!
+      - Only liquidity providers using the two approved ALMs or the whitelisted user will receive rewards
+      - Rewards are distributed normally among whitelisted addresses based on liquidity share.
+
+**Whitelisting & Blacklisting Priority**:
+
+- Whitelisting overrides blacklisting: If an address is whitelisted, all other addresses are automatically blacklisted.
+- If multiple campaigns run on the same pool, some may have whitelists while others do not.
+- Users should check the campaign details to confirm eligibility requirements.
+
+## ❌ Blacklisting
+
+Blacklisting excludes specific addresses from receiving rewards.
+
+- If a forwarder is blacklisted, all associated users are also ineligible.
+- Example: Staking Contract Blacklist
+  - A user holds 10 USDA but has staked 5 USDA in a blacklisted staking contract.
+  - Only the 5 USDA in the user’s wallet qualifies for rewards.
+  - Impact: Blacklisted addresses cannot earn rewards. The campaign rewards are distributed among eligible participants.
+
+## 🚫 OFAC Compliance
+
+Merkl provides an automatic OFAC sanctions blacklist hook, ensuring that any addresses flagged by the Office of Foreign Assets Control (OFAC) are excluded from all campaigns.
+
+- The blacklist is continuously updated.
+- Helps protocols comply with international sanctions.
+
+## 🌉 Incentivized bridged liquidity
+
+Merkl has partnered with Jumper to allow incentive providers to reward users for bridging liquidity from another chain.
+
+**Why Use This?**:
+
+- Instead of rewarding liquidity movement within the same chain, incentives can target cross-chain liquidity inflows.
+- Helps chains attract new liquidity from external networks.
+
+**How It Works**:
+
+- Only users who bridged funds via a whitelisted bridge will be eligible.
+- Ensures that only genuine cross-chain liquidity movement is rewarded.
+
+## 🗯️ Boosting Rewards with Merkl
+
+Merkl allows incentive providers to boost rewards for users holding a specific token or NFT.
+
+- Similar to Curve’s vote-escrowed boost formula but with more flexibility.
+- No 2.5x limit – You can customize boost multipliers as needed.
+
+### Boost Formula Computation
 
 $$
 B = b \times \frac{R \times v}{V \times r} + 1
@@ -103,18 +104,35 @@ $$
 
 Where:
 
-- **B** is the boost a user receives.
-- **b** is the boost multiplier selected by the Incentive Provider when creating a campaign (visible in the front end in the campaign creation page).
-- **R** is the total amount of rewards distributed per epoch.
-- **r** is the user’s rewards per epoch.
-- **V** is the total supply of the token used for the boost (for NFTs, it’s the number of NFTs in a collection).
-- **v** is the amount of the token held by the user during an epoch (or the number of NFTs held if applicable).
+- **B**: Boost multiplier
+- **b**: Custom boost factor chosen by incentive provider
+- **R**: Total rewards per epoch
+- **r**: User’s reward per epoch
+- **V**: Total supply of the boost token/NFT
+- **v**: User’s holdings of the boost token/NFT
 
-### Boost for NFT Collections
+### NFT-Based Boosting
 
-We offer the ability to boost rewards based on the number of NFT a user holds from an NFT collection. If you'd like to set up a campaign with an NFT boost, please contact us to ensure the setup is configured accurately.
+- Boosts can be based on NFT holdings.
+- Contact us for help setting up NFT-based reward boosts.
 
-## Eligibility
+## 🎯 Eligibility Filters
+
+Merkl allows eligibility requirements based on:
+
+- Minimum token holdings
+- Holding duration
+
+Example:
+
+- A campaign requires 500 stUSD held for 30 days.
+- A user holding 600 stUSD for 44 days qualifies.
+- A user holding 400 stUSD for 60 days does not qualify.
+
 This hook allows incentive providers to reward only addresses that meet both a minimum token holding requirement and a set duration. For example, if the token chosen for eligibility is stUSD, and the threshold is set to 500 stUSD with a duration of 30 days, a user holding 600 stUSD for 44 days would qualify for rewards.
 
 Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
+
+## 🔄 Dynamic Boosting – API Hook (Coming Soon)
+
+## 🎟️ Raffles (Coming Soon)
