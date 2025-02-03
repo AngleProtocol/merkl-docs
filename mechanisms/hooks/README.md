@@ -208,3 +208,15 @@ Campaign creators can also choose to throw an error instead of proceeding, which
 
 
 ## 🎟️ Raffles (Coming Soon)
+### 🌶️ Spice up your rewards!
+Merkl allows you to set up raffles that randomly select lucky winners for your campaigns. You can customize these raffles in various ways to match your campaign needs.
+
+### Customisation
+Merkl provides several options for you to tailor your raffles:
+
+- **Mutliple raffles**: Choose how often you want raffles to run. Every day ? Every week ? The choice is yours
+- **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
+- **Selection method**: You can choose how winners are selected.  
+  - **MEveryone is equal**: All participants have an equal chance of winning.
+  - **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
+- **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
