@@ -94,5 +94,5 @@ For protocols using gauge systems:
 - These connectors automatically translate governance votes into highly customizable Merkl campaigns. Our Governance Plug-in Templates are available [here](https://github.com/AngleProtocol/merkl-contracts/tree/main/contracts/partners/middleman).
 
 {% hint style="info" %}
-Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance!
+Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](../../distribute-with-merkl/deploy-your-campaign-from-dao.md).
 {% endhint %}
