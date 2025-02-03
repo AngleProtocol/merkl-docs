@@ -4,7 +4,7 @@ description: Guide to deploy a Merkl Campaign from a DAO
 
 # 🗳️ Deploy your campaign from a DAO
 
-## For an onchain gauge system
+## From an Onchain Gauge System
 
 Many protocols rely on gauge systems where users vote onchain to determine the allocation of governance token rewards.
 
@@ -27,7 +27,7 @@ Other teams have also worked on different implementations. You may check some ot
 - [Quickswap](https://polygonscan.com/address/0x3a381497813208508689d78c90EC9fb115D5640d#code)
 - [CrossCurve implementation](https://arbiscan.io/address/0xb665d0B69e91F596B9Dee3016e49136335993Fb8#readProxyContract)
 
-### Step by step guide
+### Step by Step Guide
 
 1. **Update the plug-in contract interface**
 
@@ -51,7 +51,7 @@ Once your plugin is set up and your campaigns are correctly pre-formatted (a one
 
 If you already have an automation setup to push rewards to your other gauges, then there's nothing specific that you need to do!
 
-## For a governance proposal
+## From a One-Off Governance Proposal
 
 Some protocols may also need to execute one-off governance votes through onchain systems to execute campaigns (can be airdrops typically).
 
