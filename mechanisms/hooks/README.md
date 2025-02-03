@@ -131,6 +131,92 @@ This hook allows incentive providers to reward only addresses that meet both a m
 
 Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
 
-## 🔄 Dynamic Boosting – API Hook (Coming Soon)
+## 🔄 Dynamic Boosting – API Hook
 
-## 🎟️ Raffles (Coming Soon)
+Merkl provides several methods to manage dynamic boosting through an API. Here are the different methods available:
+
+#### Multiply
+
+Multiply the current amount by the provided input.
+
+$$
+\text{amount} = \text{amount} \times \text{boost}
+$$
+
+#### Multiply with Offset
+
+Apply a 1 + boost computation.
+
+$$
+\text{amount} = \text{amount} \times (1 + \text{boost})
+$$
+
+#### Add
+
+Add the boost number to the current amount.
+
+$$
+\text{amount} = \text{amount} + \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
+$$
+
+#### Replace
+
+Replace the current amount with the boosted amount.
+
+$$
+\text{amount} = \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
+$$
+
+### Implementation
+
+The hook has the following parameters:
+
+- **url**: The endpoint to which the API call will be made.
+- **boostingFunction**: The function used to calculate the boost. Options include `REPLACE`, `ADD`, `MULTIPLY`, and `MULTIPLY_WITH_OFFSET`.
+- **sendScores**: A boolean indicating whether to send scores along with the addresses.
+- **defaultBoost**: The default boost value to use if no specific boost is provided. Options include `ZERO_ADDRESS` and `ERROR`.
+  - ZERO_ADDRESS : If we don't find the address in your response, we will use the ZERO_ADDRESS boost as a default value.
+  - ERROR : If we don't find the address in your response, the campaign will not proceed.
+
+Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:
+`sendScores=True`
+```jsx
+let body: { address: string; score: string }[];
+```
+
+`sendScores=False`
+```jsx
+let body: { addresses: string[] } ;
+```
+
+We will expect the following response:
+
+```jsx
+const data : {
+  address!: string;
+  boost!: bigint;
+}[]
+```
+
+Any other response will be dropped, and if the object cannot be parsed, the hook will fail.
+
+## Default Values
+
+Since we always exclude the zero address in our computation, we can use it to fill in the default values.
+
+Campaign creators can also choose to throw an error instead of proceeding, which is a safer option.
+
+
+## 🎟️ Raffles
+### 🌶️ Spice up your rewards!
+Merkl allows you to set up raffles that randomly select lucky winners for your campaigns. You can customize these raffles in various ways to match your campaign needs.
+
+### Customisation
+Merkl provides several options for you to tailor your raffles:
+
+- **Mutliple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
+- **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
+- **Selection method**: You can choose how winners are selected.  
+  - **Everyone is equal**: All participants have an equal chance of winning.
+  - **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
+- **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
