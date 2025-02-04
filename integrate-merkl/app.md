@@ -28,6 +28,7 @@ To show Merkl data in your front-end, you have 2 types of data you can use:
 - `Campaigns`: these are programs running on a given pool, ERC20 token, etc, over a period of time
 - `Opportunities`: these are groups of campaigns targeting the same user base (the same pool, ERC20 token, ...). Typically, multiple campaigns can run in parallel for liquidity providers on a pool, and these all make up an opportunity.
 
+## Integrating APRs Data into your frontend
 1. **Retrieve the Opportunity ID**:
     - If you're a DeFi protocol integrating APRs for **your own opportunities**, query this API route with your protocol name:
         
