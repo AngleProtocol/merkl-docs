@@ -84,7 +84,7 @@ Each campaign on Merkl is identified on the Merkl API by a unique ID.
 
 There are different filters available to find your campaigns. You may browse the available filters [here](https://api.merkl.xyz/docs#tag/campaigns/GET/v4/campaigns/).
 
-### Retreiving Opportunity Data
+### Retrieving Opportunity Data
 
 Now, you may want to display data about all the campaigns targeting this pool.
 
