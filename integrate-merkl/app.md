@@ -116,9 +116,9 @@ https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/reward
 
 This route provides:
 
-- The amount of tokens ever claimed by token.
-- The pending rewards of that token.
-- The amount claimed of that token.
+- The amount of tokens to ever be distributed to this user by token.
+- The pending rewards of that token that are yet to be claimable on chain.
+- The amount of already claimed tokens.
 - Proofs that will assist in integrating the claiming of rewards (details in the next section).
 
 ## Claiming user rewards
