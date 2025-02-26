@@ -223,12 +223,14 @@ Merkl provides several options for you to tailor your raffles:
 
 ### Reproducibility
 
-**Seed**
-The seed is the blockHash of the very next block after the timestamp that is set by the campaign creator.
-**Generating winning numbers**
-The random number generation is done using the XORShift128Plus pseudo-random number generator (PRNG). This PRNG is seeded with the previously generated seed.
-Step is the minimum score of a user divided by 1000. (In the case the score is not used to pick users, the step is of course 1)
-````
+**Seed**  
+The seed is the **block hash** of the very next block after the timestamp set by the campaign creator.
+
+**Generating Winning Numbers**  
+The random number generation is done using the **XORShift128Plus** pseudo-random number generator (PRNG). This PRNG is seeded with the previously generated seed.  
+The **step** is the minimum score of a user divided by 1000. (In the case where the score is not used to pick users, the step is, of course, 1.)
+
+````typescript
 function getSelectedNumbers(seed: number, numberOfWinners: number, totalScore: number, step: number): number[] {
   const random = new XORShift128Plus(seed);
   const selectedNumbers = [];
@@ -239,9 +241,21 @@ function getSelectedNumbers(seed: number, numberOfWinners: number, totalScore: n
 }
 ````
 
-**Winners**
-The selected numbers correspond to different "ranges" in the list of participants (based on their amount or score). The system picks winners by matching these random numbers with ranges of amounts that participants have.
-Winners are picked by sorting all the participants by address.
+**Winners**  
+The selected numbers correspond to different **"ranges"** in the list of participants (based on their amount or score). The system picks winners by matching these random numbers with ranges of amounts that participants have.  
+Winners are picked by sorting all the participants by their address.
+
+In the case of a **snapshot** or **airdrop**, obtaining the list of addresses is straightforward because the participants are known ahead of time. This list typically includes all the addresses that are eligible for the snapshot or airdrop, and they are usually collected from a specific event or condition.
+
+For **more complex campaigns**, where winners are determined through specific criteria or weighted selections, one approach is to run a campaign with the **exact same parameters** but **without the raffle hook**. 
+
+The key idea is:
+- You run this simplified version of the campaign **with a smaller amount** (i.e., a lower prize or allocation) and **without the raffle hook**. 
+- This will **generate the list of users** that Merkl identifies as eligible or **potential winners**. 
+- You can use this list to generate the list of users.
+
+In essence, the result of this campaign (without the raffle hook) gives you the list of users who met the conditions set by the campaign. These users are then the ones Merkl considers for potential winning when the raffle hook is applied.
+
 
 ### How the Winner is Selected: Example with 5 Users, 5 Weights, and One Number Picked
 

@@ -66,7 +66,7 @@ const rewards = await merkl
 console.log(rewards.data)
 ```
 
-For perfomance issue, most response are cached in our API.
+For perfomance issue, most responses are cached in our API.
 To bypass the cache, and get the latest value that the user would be able to claim (for instance directly after a claim transaction), you can ask for a reload. If the reload is done before the transaction can be indexed, the reload will not properly update the expected balance.
 
 **This will increase latency on the response.**
