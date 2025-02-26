@@ -66,6 +66,21 @@ const rewards = await merkl
 console.log(rewards.data)
 ```
 
+For perfomance issue, most responses are cached in our API.
+To bypass the cache, and get the latest value that the user would be able to claim (for instance directly after a claim transaction), you can ask for a reload. If the reload is done before the transaction can be indexed, the reload will not properly update the expected balance.
+
+**This will increase latency on the response.**
+
+```javascript
+const rewards = await merkl
+  .users({
+    address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
+  })
+  .rewards.get({ query: { chainId: 1 ,reloadChainId : 1} })
+
+console.log(rewards.data)
+```
+
 #### Get Campaigns Rewarding USDC
 
 Retrieve campaigns filtered by token symbol, such as `USDC`:
