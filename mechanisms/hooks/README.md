@@ -220,3 +220,85 @@ Merkl provides several options for you to tailor your raffles:
   - **Everyone is equal**: All participants have an equal chance of winning.
   - **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
 - **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
+
+### Reproducibility
+
+**Seed**
+The seed is the blockHash of the very next block after the timestamp that is set by the campaign creator.
+**Generating winning numbers**
+The random number generation is done using the XORShift128Plus pseudo-random number generator (PRNG). This PRNG is seeded with the previously generated seed.
+Step is the minimum score of a user divided by 1000. (In the case the score is not used to pick users, the step is of course 1)
+````
+function getSelectedNumbers(seed: number, numberOfWinners: number, totalScore: number, step: number): number[] {
+  const random = new XORShift128Plus(seed);
+  const selectedNumbers = [];
+  for (let i = 0; i < numberOfWinners; i++) {
+    selectedNumbers.push(random.randBelow(totalScore / step) * step);
+  }
+  return selectedNumbers;
+}
+````
+
+**Winners**
+The selected numbers correspond to different "ranges" in the list of participants (based on their amount or score). The system picks winners by matching these random numbers with ranges of amounts that participants have.
+Winners are picked by sorting all the participants by address.
+
+### How the Winner is Selected: Example with 5 Users, 5 Weights, and One Number Picked
+
+#### Scenario Setup:
+
+We have **5 users** in the raffle, each with an associated **weight** (which represents their chance of winning). The system will pick **one winner** based on a randomly selected number.
+
+Let’s assume the users and their weights are as follows:
+
+| User | Weight (Amount) |
+|------|-----------------|
+| A    | 10              |
+| B    | 20              |
+| C    | 30              |
+| D    | 40              |
+| E    | 50              |
+
+We want to pick one winner randomly based on these weights.
+
+### Step-by-Step Explanation:
+
+#### 1. **Total Weight Calculation**:
+
+First, we calculate the **total weight** by summing the weights of all the users. This total represents the "pool" from which the random number will be drawn.
+
+Total Weight = 10 + 20 + 30 + 40 + 50 = 150
+
+
+#### 2. **Random Number Generation**:
+
+The system will then pick a random number. This random number will be between **0 and the total weight (150)**.
+
+Let’s assume the randomly picked number is **107**.
+
+#### 3. **Weighted Selection**:
+
+The system uses this random number to determine which user will win. To do this, it calculates cumulative weights, which define "ranges" for each user.
+
+- For **User A**: The range is from **0 to 10** (because A has a weight of 10).
+- For **User B**: The range is from **10 to 30** (since A’s range is 0–10, and B has a weight of 20).
+- For **User C**: The range is from **30 to 60**.
+- For **User D**: The range is from **60 to 100**.
+- For **User E**: The range is from **100 to 150**.
+
+So, the cumulative ranges are as follows:
+
+| User | Cumulative Weight Range | Range |
+|------|-------------------------|-------|
+| A    | 0–10                    | 10    |
+| B    | 10–30                   | 20    |
+| C    | 30–60                   | 30    |
+| D    | 60–100                  | 40    |
+| E    | 100–150                 | 50    |
+
+#### 4. **Determine the Winner**:
+
+Now, the system checks where the random number falls in the cumulative weight ranges:
+- **Random number**: 107
+The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
+
