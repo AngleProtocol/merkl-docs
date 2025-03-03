@@ -2,7 +2,7 @@
 description: Everything you need to know about concentrated liquidity campaigns on Uniswap V4
 ---
 
-# 🦄 🎣 Concentrated Liquidity Campaigns on Uniswap V4
+# 🦄 Concentrated Liquidity Campaigns on Uniswap V4
 
 ## Overview
 
@@ -50,7 +50,7 @@ Incentive providers can fine-tune parameters to match their objectives:
 
 ## 🚀 Sampling and Anti-DOS
 
-Uniswap V4 incentive distribution leverages Merkl's LogProcessor algorithm, which continuously tracks the pool's state at any given moment. As a result, each campaign calculates an average value for each position, ensuring that users are rewarded based on both their position and the duration they keep it open.
+Uniswap V4 incentive distribution leverages Merkl's `LogProcessor` algorithm, which continuously tracks the pool's state at any given moment. As a result, each campaign calculates an average value for each position, ensuring that users are rewarded based on both their position and the duration they keep it open.
 
 ## ⛔ Out of Range Liquidity
 
