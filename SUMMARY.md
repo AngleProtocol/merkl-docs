@@ -11,6 +11,7 @@
   - [🏹 Airdrop Campaigns](mechanisms/campaigns/airdrop.md)
   - [🧑‍🌾 ERC20 Campaigns and Applications](mechanisms/campaigns/erc20-mechanisms.md)
   - [🏦 Custom Lending and Borrowing Campaigns](mechanisms/campaigns/lending-borrowing.md)
+  - [[NEW] 🎣 UniswapV4 Liquidity Campaigns](mechanisms/campaigns/uniswapv4.md)
 - [💸 Distribution Types](mechanisms/distributions/README.md)
 - [🪝 Customazibility Hooks](mechanisms/hooks/README.md)
 - [🪶 Additional Features](mechanisms/features/README.md)
