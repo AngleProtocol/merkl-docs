@@ -65,7 +65,8 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 ## 🔄 Campaign Reallocation
 
 Once a campaign has ended, campaign creators can reallocate unclaimed rewards from any recipient to another address at their discretion.
-Campaign creators can also reallocate all unclaimed rewards at once 
+
+Campaign creators can also reallocate all unclaimed rewards at once.
 
 To ensure users have enough time to claim their rewards, this feature is only available after a set period following the campaign’s end.
 
@@ -76,13 +77,13 @@ To ensure users have enough time to claim their rewards, this feature is only av
 
 **Developer:**
 
-To reallocate rewards you need to call from the creator address [reallocateCampaignRewards](https://github.com/AngleProtocol/merkl-contracts/blob/1006c8ff64ba3eb4732a19da3cec92d4afc92eb8/contracts/DistributionCreator.sol#L285) with parameters:
+To reallocate rewards, you need to call from the creator address [reallocateCampaignRewards](https://github.com/AngleProtocol/merkl-contracts/blob/1006c8ff64ba3eb4732a19da3cec92d4afc92eb8/contracts/DistributionCreator.sol#L285) with parameters:
 
-- _campaignId: the campaign id you want to reallocate unclaimed rewards for 
+- _campaignId: the campaign ID you want to reallocate unclaimed rewards for
 - froms: An array of addresses that you want to reallocate from
 - to: the address that should receive the reallocated rewards
 
-To reallocate all unclaimed rewards you can set `froms` to `[0x0000000000000000000000000000000000000000]`.
+To reallocate all unclaimed rewards, you can set `froms` to `[0x0000000000000000000000000000000000000000]`.
 
 
 ## ✏️ Campaign Overrides
@@ -95,13 +96,13 @@ Merkl allows campaign creators to modify an active campaign by adding extra cust
 
 ❌ What you cannot do :
 
-- Reward token
-- Change the end date of the campaign for a date in the past
-- For variable APRs campaign you cannot change the total amount distributed.
+- Change the reward token
+- Change the end date of the campaign to a date in the past
+- For variable APR campaigns, you cannot change the total amount distributed.
 
 ## ◀️ Retroactive Campaigns 
 
-You can create campaigns in the past, to reward OG users. It can start and end in the past or it can end in the future.
+You can create campaigns in the past to reward OG users. It can start and end in the past or it can end in the future.
 
 
 ## 🏛️ Onchain Governance System Integrations

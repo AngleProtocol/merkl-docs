@@ -71,10 +71,9 @@ A campaign offers $1 in rewards per $100 in liquidity per day - which makes a 36
 - If TVL = $100, the cost is $1 per day.
 - If TVL = $100 million, the cost for the campaign creator scales to $1M per day.
 
-You can also incentivise by number of token hold. Let's say that Bob want to incentivise holding *LONG* and he doesn't know how to price it.
+You can also incentivize by the number of tokens held. Let's say that Bob wants to incentivize holding *LONG* and he doesn't know how to price it.
 
-A campaign can offer $1 in rewards per 100 *LONG* hold per day.
-
+A campaign can offer \$1 in rewards per 100 *LONG* held per day.
 
 ### 🎯 The Special Case of Points
 
@@ -84,11 +83,9 @@ The main difference here in fixed APR campaigns for points is that when distribu
 
 #### Example: Points
 
-Bob wants to incentivise holding his token *LONG* with a point token named *BOB*.
+Bob wants to incentivize holding his token *LONG* with a point token named *BOB*.
 
-If *LONG* has a dollar value, Bob can create a campaign that offers 1 *BOB* in rewards per \$1 hold of *LONG* in liquidity per day.
-But Bob can also create a campaign that offers 1 *BOB* in rewards per X *LONG* hold in liquidity per day, when he doesn't want to take into account the $ value.
-
+If *LONG* has a dollar value, Bob can create a campaign that offers 1 *BOB* in rewards per \$1 held of *LONG* in liquidity per day. Alternatively, Bob can create a campaign that offers 1 *BOB* in rewards per X *LONG* held in liquidity per day, when he doesn't want to take into account the dollar value of *LONG*.
 
 ## Coming Soon: Max APR campaigns
 
