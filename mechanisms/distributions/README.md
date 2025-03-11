@@ -54,9 +54,9 @@ For this campaign:
 
 However, if the TVL increased to \$20,000,000, the same user’s share would drop to 1/2,000,000th (0.00005%), and their per-run reward would be 1/16,800,000th (0.0000006%), below the threshold. As a result, they would not receive rewards.
 
-## 🔒 Fixed APR campaigns
+## 🔒 Fixed rate campaigns
 
-In Fixed APR campaigns, users earn a predefined amount of rewards per unit of liquidity at a set rate.
+In Fixed rate campaigns, users earn a predefined amount of rewards per unit of liquidity at a set rate.
 
 ### Key Characteristics
 
@@ -66,16 +66,29 @@ In Fixed APR campaigns, users earn a predefined amount of rewards per unit of li
 
 ### Example: Fixed APR Campaign
 
-A campaign offers $1 in rewards per $100 in liquidity per day.
+A campaign offers $1 in rewards per $100 in liquidity per day - which makes a 365% fixed APR.
 
 - If TVL = $100, the cost is $1 per day.
 - If TVL = $100 million, the cost for the campaign creator scales to $1M per day.
+
+You can also incentivise by number of token hold. Let's say that Bob want to incentivise holding *LONG* and he doesn't know how to price it.
+
+A campaign can offer $1 in rewards per 100 *LONG* hold per day.
+
 
 ### 🎯 The Special Case of Points
 
 This distribution method is widely used in point systems. Traditionally in points systems, users earn points for completing a specific action (like providing \$1 of liquidity in a pool for a day), regardless of how many other people did.
 
 The main difference here in fixed APR campaigns for points is that when distributing points, the budget is effectively unlimited; and so campaign creators can allocate as many points as they want, allowing the campaign to last indefinitely.
+
+#### Example: Points
+
+Bob wants to incentivise holding his token *LONG* with a point token named *BOB*.
+
+If *LONG* has a dollar value, Bob can create a campaign that offers 1 *BOB* in rewards per \$1 hold of *LONG* in liquidity per day.
+But Bob can also create a campaign that offers 1 *BOB* in rewards per X *LONG* hold in liquidity per day, when he doesn't want to take into account the $ value.
+
 
 ## Coming Soon: Max APR campaigns
 
