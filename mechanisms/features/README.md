@@ -62,6 +62,25 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 - Affected addresses will be unable to claim rewards in this case
 - Solution: As an incentive provider, you should blacklist any ineligible addresses to prevent reward loss. Or you can reallocate rewards (more below) of addresses that cannot claim to an address controlled by the same provider that can claim its rewards
 
+
+## 🤝 Referral Program Documentation
+
+### Overview
+
+The **Referral Program** feature allows you to create and manage multiple referral programs across the **Merkl Ecosystem**. This feature comes with a wide range of customization options to suit your needs, from user rewards to whitelist gates, all secured by blockchain technology.
+
+### Key Features:
+- **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
+- **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
+- **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
+- **Cross-Protocol Support**: Referral programs are compatible across the entire Merkl ecosystem, allowing creators to incentivize on any protocol/behaviour integrated with Merkl.
+- **Customizable Rewards**: Tailor rewards to users, referrers, invited users, or even non-participating users.
+- **Conditions to participate**: Add a whitelist restriction to the program, and optionally charge a fee to create a referral code. Or let anyone participate.
+- **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
+
+### Next steps:
+- Contact Merkl for details on how to implement
+
 ## 🔄 Campaign Reallocation
 
 Once a campaign has ended, campaign creators can reallocate rewards from any recipient to another address at their discretion.
@@ -96,3 +115,4 @@ For protocols using gauge systems:
 {% hint style="info" %}
 Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](../../distribute-with-merkl/deploy-your-campaign-from-dao.md).
 {% endhint %}
+
