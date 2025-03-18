@@ -19,3 +19,7 @@ description: Merkl various campaign types
 {% content-ref url="lending-borrowing.md" %}
 [lending-borrowing.md](lending-borrowing.md)
 {% endcontent-ref %}
+
+{% content-ref url="encompassing.md" %}
+[encompassing.md](encompassing.md)
+{% endcontent-ref %}
