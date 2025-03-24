@@ -87,7 +87,8 @@ Once a campaign has ended, campaign creators can reallocate unclaimed rewards fr
 
 Campaign creators can also reallocate all unclaimed rewards at once.
 
-To ensure users have enough time to claim their rewards, this feature is only available after a set period following the campaign’s end.
+To ensure users have enough time to claim their rewards, this feature is only available after a set period following the campaign’s end. Currently, this can only be done between 1 month and 3 months after the end of the campaign. 
+When triggered, reallocation can take up to a day as security checks need to be performed.
 
 **Use Case:**
 
