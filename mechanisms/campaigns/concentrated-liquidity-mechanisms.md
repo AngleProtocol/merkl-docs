@@ -64,8 +64,8 @@ Incentive providers can fine-tune parameters to match their objectives:
 For large pools with high swap activity, Merkl samples the largest swaps instead of analyzing every transaction.
 
 - Out-of-range positions detected during sampled swaps are excluded from rewards.
-- Users earning less than 0.00001% of total rewards are filtered out.
-- Positions with less than \$20 liquidity are disqualified.
+- Users earning less than 0.0000001% of total rewards are filtered out.
+- Positions with less than \$10 liquidity are disqualified.
 
 To maximize rewards, LPs should actively manage their positions to stay in-range.
 
