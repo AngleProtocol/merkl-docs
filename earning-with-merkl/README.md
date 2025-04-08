@@ -26,8 +26,8 @@ Merkl is a one-stop shop for finding the best investment opportunities in DeFi a
 
 4. Invest your liquidity directly on the protocol's app by following the provided links.
 5. That's it! You're now earning rewards, no staking or other onchain action is needed.
-6. You should normally be able to track your active positions and your rewards by visiting your [user dashboard](https://app.merkl.xyz/user/). Note that while the majority of protocols we support are accurately tracked, there may be some situations where the Merkl frontend is unable to detect your position in a given protocol. The source of truth in this case remains the frontend of the protocols where you deposited funds. It's not because your position is not detected on the user page of the Merkl frontend that you cannot be eligible to rewards for this position. Also, positions that lead to rewards received from airdrop campaigns will not be visible in the user dashboard.
-7. Once you've earned rewards, you can claim all your earned tokens with a single click.
+6. The next day, your [user dashboard](https://app.merkl.xyz/user/) will start showing the rewards you've earned. All you need to do now is claim all your earned tokens with a single click. If gas is expensive, you can wait a few more days/weeks to claim the rewards.
+7. Make sure that you claim all your rewards within a year of receiving them!
 
 Happy farming!
 
