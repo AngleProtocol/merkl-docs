@@ -133,7 +133,7 @@ Addresses that fail to meet either the token amount or duration threshold are ex
 
 ## 🌍 Worldchain ID
 
-Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, World ID, which allows users to anonymously and securely verify that they are real and unique humans. (https://docs.world.org/world-id)
+Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, [World ID](https://docs.world.org/world-id), which allows users to anonymously and securely verify that they are real and unique humans.
 
 ## 🔄 Dynamic Boosting – API Hook
 
