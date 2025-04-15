@@ -316,3 +316,6 @@ Now, the system checks where the random number falls in the cumulative weight ra
 - **Random number**: 107
 The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
 
+## 🌍 Worldchain ID
+
+Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, World ID, which allows users to anonymously and securely verify that they are real and unique humans.
