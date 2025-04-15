@@ -131,6 +131,10 @@ This hook allows incentive providers to reward only addresses that meet both a m
 
 Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
 
+## 🌍 Worldchain ID
+
+Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, World ID, which allows users to anonymously and securely verify that they are real and unique humans. (https://docs.world.org/world-id)
+
 ## 🔄 Dynamic Boosting – API Hook
 
 Merkl provides several methods to manage dynamic boosting through an API. Here are the different methods available:
@@ -315,7 +319,3 @@ So, the cumulative ranges are as follows:
 Now, the system checks where the random number falls in the cumulative weight ranges:
 - **Random number**: 107
 The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
-
-## 🌍 Worldchain ID
-
-Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, World ID, which allows users to anonymously and securely verify that they are real and unique humans.
