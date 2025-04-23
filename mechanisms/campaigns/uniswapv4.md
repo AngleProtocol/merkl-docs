@@ -12,7 +12,7 @@ With Uniswap V4’s Hooks, LPs can leverage automated strategies to optimize liq
 
 ## Merkl on UniswapV4
 
-Merkl's integration with Uniswap V4 introduces significant improvements over its previous implementation on Uniswap V3, delivering a more performant, stable, and Just-In-Time (JIT) attack-resistant solution for distributing LPs rewards. The new system allows fine-grained control over how and when liquidity usage is measured. This leads to more accurate, deterministic tracking of LP contributions and reduces noise or anomalies from short-term volatility.
+Merkl's integration with UniswapV4 builds on the solid foundation of its previous implementation on UniswapV3 and introduces significant improvements, delivering a more performant, stable, and Just-In-Time (JIT) attack-resistant solution for distributing LPs rewards. The new system allows fine-grained control over how and when liquidity usage is measured. This leads to more accurate, deterministic tracking of LP contributions and reduces noise or anomalies from short-term volatility.
 
 ## 🔢 Reward Formula
 
