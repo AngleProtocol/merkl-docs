@@ -36,7 +36,7 @@ You can find all whitelisted tokens by chain on this [page](https://app.merkl.xy
 
 ### Merkl Terms
 
-You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/merklTerms.pdf). You will be required to agree to these terms during the campaign setup process.
+You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.
 
 ## Step-by-step process
 
