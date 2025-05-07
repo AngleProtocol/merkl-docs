@@ -77,6 +77,37 @@ To maximize your rewards in Uniswap V4 campaigns:
 
 Most importantly, always review the specific incentive parameters of the campaigns running on the pools you’re participating in—these directly influence how rewards are distributed.
 
+### Restrictions Rules
+
+Restriction rules are optional and must be set by the campaign creator.
+
+#### Tick Price Limits for Reward Eligibility
+
+To qualify for rewards under a campaign with this rule, a liquidity position must meet both of the following conditions:
+	•	(if set by the campaign creator) Upper Tick Price must be below the specified `threshold_0`:
+Upper Tick Price < `threshold_0`
+	• (Resp.) Lower Tick Price must be above the specified threshold:
+Lower Tick Price > `threshold_1`
+
+Here, price refers to the ratio of token 1 to token 0. For example, if token 1 is ETH and token 0 is BTC, the price reflects the ETH/BTC exchange rate.
+
+This rule ensures that only positions providing liquidity within a targeted price range are eligible for rewards. Positions exceeding these limits on either side are not eligible.
+
+_Example_:
+
+Suppose the thresholds are:
+	•	Upper Price Threshold = 1,050 token 1 per token 0
+	•	Lower Price Threshold = 950 token 1 per token 0
+
+Then:
+	•	A position from 960 to 1,040 qualifies (upper < 1,050, lower > 950).
+	•	A position from 940 to 1,020 does not qualify (lower < 950).
+	•	A position from 990 to 1,080 does not qualify (upper > 1,050).
+
+This setup encourages liquidity within a narrow, strategic price corridor, optimizing depth and efficiency around critical price levels.
+
+Note: The thresholds are set independently — it is possible to define a limit for the upper tick price without setting one for the lower tick price (and vice versa).
+
 ### How are APRs calculated?
 
 The APRs shown on the Merkl interface for Uniswap V4 campaigns represent average values. They are calculated by dividing the annualized reward emissions for a pool by its current TVL.
