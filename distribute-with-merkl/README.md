@@ -119,7 +119,7 @@ To get started, you’ll need to provide:
 - Any optional custom hooks you'd like to apply (you can read more about supported hooks [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
 
 
-Once provided, we’ll save this configuration on our end and generate the corresponding **keys** needed to launch your campaigns in bulk.. We will share with you these keys via a GitHub Gist.
+Once provided, we’ll save this configuration on our end and generate the corresponding **keys** needed to launch your campaigns in bulk. We will share with you these keys via a GitHub Gist.
 
 Once your configuration is set, you’ll be able to create multiple campaigns at once, all sharing the same following base parameters:
 - `program`: Provided by us – the internal ID of your incentive program
