@@ -62,7 +62,6 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 - Affected addresses will be unable to claim rewards in this case
 - Solution: As an incentive provider, you should blacklist any ineligible addresses to prevent reward loss. Or you can reallocate rewards (more below) of addresses that cannot claim to an address controlled by the same provider that can claim its rewards
 
-
 ## 🤝 Referral Program Documentation
 
 ### Overview
@@ -70,6 +69,7 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 The **Referral Program** feature allows you to create and manage multiple referral programs across the **Merkl Ecosystem**. This feature comes with a wide range of customization options to suit your needs, from user rewards to whitelist gates, all secured by blockchain technology.
 
 ### Key Features:
+
 - **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
 - **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
 - **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
@@ -79,6 +79,7 @@ The **Referral Program** feature allows you to create and manage multiple referr
 - **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
 
 ### Next steps:
+
 - Contact Merkl for details on how to implement
 
 ## 🔄 Campaign Reallocation
@@ -87,8 +88,11 @@ Once a campaign has ended, campaign creators can reallocate unclaimed rewards fr
 
 Campaign creators can also reallocate all unclaimed rewards at once.
 
-To ensure users have enough time to claim their rewards, this feature is only available after a set period following the campaign’s end. Currently, this can only be done between 1 month and 3 months after the end of the campaign. 
-When triggered, reallocation can take up to a day as security checks need to be performed.
+To give users time to claim their rewards, reallocation is only available after a defined window following the campaign’s end. Currently, this window ranges from 1 day to 7 months post-campaign.
+
+When reallocation is triggered, the process can take up to 24 hours. This delay is due to required security checks and the need to publish a Merkle root onchain—an essential step for making the reallocated rewards claimable. Since Merkle root updates do not occur continuously or in real time, this contributes to the delay.
+
+Once the reallocation is complete and the Merkle root is updated on the relevant chain, the new rewards can be claimed just like any other Merkl reward, using the address to which they were reassigned.
 
 **Use Case:**
 
@@ -99,12 +103,11 @@ When triggered, reallocation can take up to a day as security checks need to be 
 
 To reallocate rewards, you need to call from the creator address [reallocateCampaignRewards](https://github.com/AngleProtocol/merkl-contracts/blob/1006c8ff64ba3eb4732a19da3cec92d4afc92eb8/contracts/DistributionCreator.sol#L285) with parameters:
 
-- _campaignId: the campaign ID you want to reallocate unclaimed rewards for
+- \_campaignId: the campaign ID you want to reallocate unclaimed rewards for
 - froms: An array of addresses that you want to reallocate from
 - to: the address that should receive the reallocated rewards
 
 To reallocate all unclaimed rewards, you can set `froms` to `[0x0000000000000000000000000000000000000000]`.
-
 
 ## ✏️ Campaign Overrides
 
@@ -112,7 +115,7 @@ Merkl allows campaign creators to modify an active campaign by adding extra cust
 
 - Adjusting blacklists or whitelists to include or exclude certain addresses.
 - Enabling additional features as needed.
-- Ending a campaign early if necessary 
+- Ending a campaign early if necessary
 
 ❌ What you cannot do :
 
@@ -120,10 +123,9 @@ Merkl allows campaign creators to modify an active campaign by adding extra cust
 - Change the end date of the campaign to a date in the past
 - For variable APR campaigns, you cannot change the total amount distributed.
 
-## ◀️ Retroactive Campaigns 
+## ◀️ Retroactive Campaigns
 
 You can create campaigns in the past to reward OG users. It can start and end in the past or it can end in the future.
-
 
 ## 🏛️ Onchain Governance System Integrations
 
@@ -137,4 +139,3 @@ For protocols using gauge systems:
 {% hint style="info" %}
 Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](../../distribute-with-merkl/deploy-your-campaign-from-dao.md).
 {% endhint %}
-
