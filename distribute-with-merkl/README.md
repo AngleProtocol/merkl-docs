@@ -132,7 +132,7 @@ Once your configuration is set, you’ll be able to create multiple campaigns at
 This setup is particularly useful for protocols or chains running recurring or large-scale programs. For example, a chain running a coordinated incentive program may want to incentivize its DEXes, lending protocols, vaults, and more — all with aligned campaign durations and launch timing.
 
 ### Payload Generation
-You can generate your campaign payloads using this endpoint: [https://api.merkl.xyz/docs#tag/programpayload/GET/v4/program-payload/campaignData](https://api.merkl.xyz/docs#tag/programpayload/GET/v4/program-payload/campaignData). 
+You can generate your campaign payloads using this endpoint: [https://api.merkl.xyz/docs#tag/programpayload/POST/v4/program-payload/program/withAmounts](https://api.merkl.xyz/docs#tag/programpayload/POST/v4/program-payload/program/withAmounts).
 
 To use it:
 
