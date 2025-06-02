@@ -35,4 +35,4 @@
 - [📦 Merkl API V4 NPM Package](integrate-merkl/merkl-api-package.md)
 - [3️⃣ Merkl API V3 Docs](integrate-merkl/deprecated-v3-endpoints.md)
 - [🧑‍🎨 Branding and Integration](integrate-merkl/branding-and-integration.md)
-- [📋 Smart Contract Addresses]((integrate-merkl/smart-contract-addresses.md))
+- [📋 Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)
