@@ -14,7 +14,7 @@
   - [[NEW] 🎣 UniswapV4 Liquidity Campaigns](mechanisms/campaigns/uniswapv4.md)
   - [[NEW] 🌐 Encompassing Campaigns](mechanisms/campaigns/encompassing.md)
 - [💸 Distribution Types](mechanisms/distributions/README.md)
-- [🪝 Customazibility Hooks](mechanisms/hooks/README.md)
+- [🪝 Customizability Hooks](mechanisms/hooks/README.md)
 - [🪶 Additional Features](mechanisms/features/README.md)
 
 ## Distribute with Merkl
