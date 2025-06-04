@@ -20,7 +20,7 @@ Follow these steps to build the payload and finalize your campaign creation:
 
 1. **Configure your campaign:**
 
-Go the the [Merkl campaign creation page](https://app.merkl.xyz/create) and fill in all the necessary data to configure your campaign.
+Go the the [Merkl campaign creation page](https://studio.merkl.xyz) and fill in all the necessary data to configure your campaign.
 
 2. **Build the Payload:**
 

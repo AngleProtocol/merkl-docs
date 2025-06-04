@@ -48,7 +48,7 @@ Merkl is a non-custodial solution. You retain full control over your assets—Me
 
 - Learn how Merkl works under the hood: [Technical Overview](./mechanisms/technical-overview.md)
 - Explore available the versatility of [Merkl incentive mechanisms](./mechanisms/incentive-mechanisms.md), including its [Campaign Types](./mechanisms/campaigns/README.md.md), [Distribution Types](./mechanisms/distributions/README.md), its [Customizability Hooks](./mechanisms/hooks/README.md) or [the additional features](./mechanisms/features/README.md) it offers.
-- Start your first campaign [on the Merkl App](https://app.merkl.xyz/create) using [our Guides](./distribute-with-merkl/README.md)
+- Start your first campaign [on the Merkl App](https://studio.merkl.xyz/) using [our Guides](./distribute-with-merkl/README.md)
 
 ### For Users
 

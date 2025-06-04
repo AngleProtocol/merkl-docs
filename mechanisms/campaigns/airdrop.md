@@ -9,7 +9,7 @@ Merkl supports two different types of airdrops:
 
 ## JSON airdrops
 
-For Custom Allocation Airdrops, providers only need to upload a JSON file specifying user addresses and reward amounts. To create your JSON Airdrop campaign on Merkl, visit this [page](https://app.merkl.xyz/create/drop).
+For Custom Allocation Airdrops, providers only need to upload a JSON file specifying user addresses and reward amounts. To create your JSON Airdrop campaign on Merkl, visit this [page](https://studio.merkl.xyz/create-campaign/airdrop).
 
 The expected format for the JSON is the following
 
