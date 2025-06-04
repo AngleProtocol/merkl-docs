@@ -44,7 +44,7 @@ We are actively building a feature compatibility page within the Merkl app to di
 Until this page is live, you can refer to:
 
 - [Merkl Integration Page](https://app.merkl.xyz/integrations): Lists supported chains, reward tokens, as well as integrated AMMs, and ALMs.
-- [Merkl Create Campaign Page](https://app.merkl.xyz/create): gives the list of campaign types supported in the frontend
+- [Merkl Create Campaign Page](https://studio.merkl.xyz): gives the list of campaign types supported in the frontend
 
 Some hook, campaign type, and distribution combinations are not configurable directly via the frontend. In such cases, we recommend reaching out to us—we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.
 
