@@ -90,7 +90,7 @@ Now, you may want to display data about all the campaigns targeting this pool.
 
 This will enable you to display aggregated data about all these campaigns. 
 
-The two routes we recommending using are:
+The two routes we recommend using are:
 - ```https://api.merkl.xyz/v4/opportunities?name={protocol_name} ```
 - ```https://api.merkl.xyz/v4/opportunities?tags={tag}```
 
