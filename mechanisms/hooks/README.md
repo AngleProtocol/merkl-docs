@@ -6,36 +6,48 @@ Below are some of the most commonly used hooks in Merkl.
 
 ## 🔁 Forwarders
 
-Merkl Engine can smartly enable users to accrue rewards even if the incentivized asset isn't directly present in their wallet. Take the case of a campaign incentivizing holders of the token, but many of these tokens are staked in a staking contract: if the Merkl engine has integrated the staking contract, it can reward users which have provided liquidity on the staking contract based on how much they have staked.
+Merkl Engine intelligently enables users to earn rewards even when they don’t hold the incentivized asset directly in their wallet. For example, in a campaign rewarding token holders, many users may have their tokens staked in a contract. If Merkl has integrated that staking contract, those users will still receive rewards based on their staked amount.
 
-This functionality to track user activity across various protocols and contracts is called Merkl `forwarders`. [Each campaign type](mechanisms/README.md) comes with its own forwarders.
+This mechanism—tracking indirect ownership across contracts and protocols—is handled by Merkl forwarders. Forwarders allow Merkl to distribute rewards to users holding an incentivized asset indirectly, such as through staking contracts or LP tokens. By default, Merkl supports forwarding for most major DeFi protocols.
 
-Forwarders enable reward distribution to users who hold an incentivized asset indirectly (e.g., staked tokens, LP tokens).
+In most [campaign types](mechanisms/README.md), Merkl automatically detects and applies any integrated forwarders. However, for older, legacy campaigns (e.g., the original ERC20 campaign type), forwarders must be manually specified at the time of campaign creation.
 
 **How It Works**:
 
-- Forwarder integration varies by complexity. Simple forwarders, such as staking contracts for ERC20 tokens, are automatically supported by Merkl. However, more complex forwarders,like Active Liquidity Management (ALM) protocols for concentrated liquidity, or non-standard staking contracts, require a dedicated integration within Merkl.
-- Some campaign types (e.g., Concentrated Liquidity Campaigns) automatically detect integrated forwarders, requiring no manual setup when creating a campaign
-- For ERC20 or lending/borrowing campaigns, incentive providers can specify ERC20 forwarders or integrated forwarders that commonly hold the incentivized token.
+- **Complexity Varies**: While for some simple forwarders, such as staking contracts for ERC20 tokens, the integration and forwarding process is relatively straightforward, some are equivalent to a complex integration of a new protocol type, and imply forwarding rewards across several stakeholders on multiple smart contract layers.
+- **Auto-Detection**: Once a forwarder is integrated, it’s automatically applied—no manual configuration is needed. The Merkl frontend includes a scan tool to check if an address matches any known forwarder patterns.
+- **Protocol Fidelity**: Merkl mirrors the logic of each protocol. For example, if a protocol charges a fee on accrued rewards, Merkl will automatically account for and replicate that fee in the reward forwarding process.
 
-**Example: Staked Token Rewards**:
+**Example 1: Staked Token Rewards**:
 
 - A campaign incentivizes USDA holders.
 - Users who staked USDA and received stUSD would normally be ineligible for rewards because they don't hold the USDA directly in their wallet.
-- With forwarding enabled, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly.
+- As forwarding is automatically enabled, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly.
+
+**Example 2: Morpho Rewards**:
+
+- A campaign targets USDA holders.
+- USDA is used across multiple Morpho markets, either as collateral or loan token.
+- Merkl detects the Morpho singleton as a forwarder, automatically distributes the USDA rewards among relevant stakeholders across all markets, proportionate to their contribution to the singleton’s USDA holdings.
+
+**Example 3: Pendle Rewards**:
+
+- A campaign rewards USDA holders.
+- USDA is deposited into a Pendle market.
+- Merkl forwards rewards only to eligible Pendle stakeholders (YT and LP token holders), excluding PT holders, and applies the Pendle treasury fee per protocol rules.
 
 **How to Enable Forwarding**:
 
-When creating a campaign:
+Forwarding is enabled by default on most campaign types in Merkl. If your campaign requires a new forwarder integration or support for a new protocol, please reach out to our team.
+
+{% hint style="info" %}
+Coming soon: When creating a campaign, you’ll be able to specify that an address is an ERC20 token, enabling automatic forwarding to its token holders.
+{% endhint %}
+
+On the legacy campaign types where forwarders must be manually specified, when creating a campaign, you need to:
 
 - Provide the staking contract address (recipient of the rewards).
 - Provide the forwarded token address (token users receive when staking).
-
-{% hint style="info" %}
-Most of the time, these are the same contract address, so you may need to enter the same address twice when setting up a campaign.
-{% endhint %}
-
-For the non-standard forwarders that are not automatically detected (e.g everything but ALMs in concentrated liquidity campaigns), you may also directly specify during campaign creation.
 
 ## ✅ Whitelisting
 
@@ -184,13 +196,15 @@ The hook has the following parameters:
 
 Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:
 `sendScores=True`
+
 ```jsx
-let body: { address: string; score: string }[];
+let body: { address: string, score: string }[]
 ```
 
 `sendScores=False`
+
 ```jsx
-let body: { addresses: string[] } ;
+let body: { addresses: string[] }
 ```
 
 We will expect the following response:
@@ -210,17 +224,19 @@ Since we always exclude the zero address in our computation, we can use it to fi
 
 Campaign creators can also choose to throw an error instead of proceeding, which is a safer option.
 
-
 ## 🎟️ Raffles
+
 ### 🌶️ Spice up your rewards!
+
 Merkl allows you to set up raffles that randomly select lucky winners for your campaigns. You can customize these raffles in various ways to match your campaign needs.
 
 ### Customisation
+
 Merkl provides several options for you to tailor your raffles:
 
 - **Mutliple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
 - **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
-- **Selection method**: You can choose how winners are selected.  
+- **Selection method**: You can choose how winners are selected.
   - **Everyone is equal**: All participants have an equal chance of winning.
   - **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
 - **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
@@ -234,16 +250,21 @@ The seed is the **block hash** of the very next block after the timestamp set by
 The random number generation is done using the **XORShift128Plus** pseudo-random number generator (PRNG). This PRNG is seeded with the previously generated seed.  
 The **step** is the minimum score of a user divided by 1000. (In the case where the score is not used to pick users, the step is, of course, 1.)
 
-````typescript
-function getSelectedNumbers(seed: number, numberOfWinners: number, totalScore: number, step: number): number[] {
-  const random = new XORShift128Plus(seed);
-  const selectedNumbers = [];
+```typescript
+function getSelectedNumbers(
+  seed: number,
+  numberOfWinners: number,
+  totalScore: number,
+  step: number,
+): number[] {
+  const random = new XORShift128Plus(seed)
+  const selectedNumbers = []
   for (let i = 0; i < numberOfWinners; i++) {
-    selectedNumbers.push(random.randBelow(totalScore / step) * step);
+    selectedNumbers.push(random.randBelow(totalScore / step) * step)
   }
-  return selectedNumbers;
+  return selectedNumbers
 }
-````
+```
 
 **Winners**  
 The selected numbers correspond to different **"ranges"** in the list of participants (based on their amount or score). The system picks winners by matching these random numbers with ranges of amounts that participants have.  
@@ -251,15 +272,15 @@ Winners are picked by sorting all the participants by their address.
 
 In the case of a **snapshot** or **airdrop**, obtaining the list of addresses is straightforward because the participants are known ahead of time. This list typically includes all the addresses that are eligible for the snapshot or airdrop, and they are usually collected from a specific event or condition.
 
-For **more complex campaigns**, where winners are determined through specific criteria or weighted selections, one approach is to run a campaign with the **exact same parameters** but **without the raffle hook**. 
+For **more complex campaigns**, where winners are determined through specific criteria or weighted selections, one approach is to run a campaign with the **exact same parameters** but **without the raffle hook**.
 
 The key idea is:
-- You run this simplified version of the campaign **with a smaller amount** (i.e., a lower prize or allocation) and **without the raffle hook**. 
-- This will **generate the list of users** that Merkl identifies as eligible or **potential winners**. 
+
+- You run this simplified version of the campaign **with a smaller amount** (i.e., a lower prize or allocation) and **without the raffle hook**.
+- This will **generate the list of users** that Merkl identifies as eligible or **potential winners**.
 - You can use this list to generate the list of users.
 
 In essence, the result of this campaign (without the raffle hook) gives you the list of users who met the conditions set by the campaign. These users are then the ones Merkl considers for potential winning when the raffle hook is applied.
-
 
 ### How the Winner is Selected: Example with 5 Users, 5 Weights, and One Number Picked
 
@@ -270,7 +291,7 @@ We have **5 users** in the raffle, each with an associated **weight** (which rep
 Let’s assume the users and their weights are as follows:
 
 | User | Weight (Amount) |
-|------|-----------------|
+| ---- | --------------- |
 | A    | 10              |
 | B    | 20              |
 | C    | 30              |
@@ -286,7 +307,6 @@ We want to pick one winner randomly based on these weights.
 First, we calculate the **total weight** by summing the weights of all the users. This total represents the "pool" from which the random number will be drawn.
 
 Total Weight = 10 + 20 + 30 + 40 + 50 = 150
-
 
 #### 2. **Random Number Generation**:
 
@@ -307,7 +327,7 @@ The system uses this random number to determine which user will win. To do this,
 So, the cumulative ranges are as follows:
 
 | User | Cumulative Weight Range | Range |
-|------|-------------------------|-------|
+| ---- | ----------------------- | ----- |
 | A    | 0–10                    | 10    |
 | B    | 10–30                   | 20    |
 | C    | 30–60                   | 30    |
@@ -317,5 +337,6 @@ So, the cumulative ranges are as follows:
 #### 4. **Determine the Winner**:
 
 Now, the system checks where the random number falls in the cumulative weight ranges:
+
 - **Random number**: 107
-The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
+  The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
