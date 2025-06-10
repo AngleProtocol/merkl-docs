@@ -101,7 +101,7 @@ Once the reallocation is complete and the Merkle root is updated on the relevant
 
 **Developer:**
 
-To reallocate rewards, you need to call from the creator address [reallocateCampaignRewards](https://github.com/AngleProtocol/merkl-contracts/blob/1006c8ff64ba3eb4732a19da3cec92d4afc92eb8/contracts/DistributionCreator.sol#L285) with parameters:
+To reallocate rewards, you need to call from the creator address [reallocateCampaignRewards](https://github.com/AngleProtocol/merkl-contracts/blob/1006c8ff64ba3eb4732a19da3cec92d4afc92eb8/contracts/DistributionCreator.sol#L285) on the Campaign Creator (Smart contract addresses [here](../../integrate-merkl/smart-contract-addresses.md)) with parameters:
 
 - \_campaignId: the campaign ID you want to reallocate unclaimed rewards for
 - froms: An array of addresses that you want to reallocate from
