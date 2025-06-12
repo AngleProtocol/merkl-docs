@@ -6,7 +6,7 @@ description: >-
 
 # 🥨 Merkl Documentation Portal
 
-Merkl is a DeFi incentive platform that connects liquidity providers with protocols looking to boost activity and engagement.
+Merkl is a DeFi incentive platform that **connects liquidity providers with protocols** looking to boost activity and engagement.
 
 * For Protocols: Launch, manage, and customize growth campaigns to attract liquidity, track user engagement, and distribute incentives without the usual operational burden.
 * For Users: Earn rewards or points by participating in incentive campaigns.
@@ -34,6 +34,8 @@ At its core, Merkl operates on an offchain engine that processes both onchain an
 * 📊 **Advanced Analytics**: Gain deep insights into incentive performance, including reward distribution, liquidity source breakdowns, and engagement trends.
 * 🔌 **Effortless Integration**: Use the Merkl API for seamless data integration (APRs, rewards, analytics) or rely on the Merkl App for a ready-to-use interface.
 
+<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 12.56.11 1.png" alt=""><figcaption><p>Launch and manage your incentive campaigns in Merkl Studio</p></figcaption></figure>
+
 ### For Users
 
 * 💰 **Maximize Earnings with Competitive APRs**: Access multiple campaigns for the same asset to stack incentives and boost returns.
@@ -41,24 +43,27 @@ At its core, Merkl operates on an offchain engine that processes both onchain an
 * ⛽ **Gas-Efficient Rewards**: Batch claim rewards in a single transaction, saving gas fees.
 * 🌍 **A One-Stop Hub for DeFi Incentives**: With 20,000+ campaigns, Merkl provides a centralized dashboard to track earnings and discover the best opportunities.
 
-Merkl is a non-custodial solution. You retain full control over your assets—Merkl only processes reward claims. There is no additional smart contract risk beyond what’s already involved in your DeFi activities.
+Merkl is a **non-custodial solution**. You retain full control over your assets—Merkl only processes reward claims. There is no additional smart contract risk beyond what’s already involved in your DeFi activities.
+
+<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 11.47.52 1.png" alt=""><figcaption><p>Users can explore earning opportunities and claim their rewards on the Merkl App</p></figcaption></figure>
 
 ## How to get started?
 
 ### For Incentive Providers
 
-* Learn how Merkl works under the hood: [Technical Overview](merkl-mechanisms/technical-overview.md)
-* Explore available the versatility of [Merkl incentive mechanisms](merkl-mechanisms/incentive-mechanisms.md), including its [Campaign Types](mechanisms/campaigns/README.md.md), [Distribution Types](merkl-mechanisms/distributions.md), its [Customizability Hooks](merkl-mechanisms/hooks.md) or [the additional features](merkl-mechanisms/features.md) it offers.
-* Start your first campaign [on the Merkl App](https://studio.merkl.xyz/) using [our Guides](distribute-with-merkl/distribute-with-merkl.md)
+* Learn how Merkl works under the hood by checking the [Technical Overview](merkl-mechanisms/technical-overview.md)
+* Explore available the versatility of [Merkl Incentive Mechanisms](merkl-mechanisms/incentive-mechanisms.md), including its [Campaign Types](merkl-mechanisms/campaign-types/), [Distribution Types](merkl-mechanisms/distributions.md), its [Customizability Hooks](merkl-mechanisms/hooks.md) or the [Additional Features](merkl-mechanisms/features.md) it offers
+* Start your first campaign on [Merkl Studio](https://studio.merkl.xyz/) using our [guides](distribute-with-merkl/distribute-with-merkl.md)
 
 ### For Users
 
-* Discover active campaigns & start earning: [Live Campaigns](https://app.merkl.xyz/)
-* Learn how to use Merkl: [User Guide](earn-with-merkl/earning-with-merkl.md)
+* Discover active campaigns & start earning in [the Merkl App](https://app.merkl.xyz/)
+* Learn how to earn rewards in Merkl by checking the [user guide](earn-with-merkl/earning-with-merkl.md)
 
 ## 🔗 Links
 
 * [Merkl App](https://app.merkl.xyz/)
+* [Merkl Studio](https://studio.merkl.xyz/)
 * [Merkl Website](https://merkl.xyz/)
 * [Twitter](https://x.com/merkl_xyz)
 * [Discord](https://discord.com/invite/Gs8MUrUVP3)
