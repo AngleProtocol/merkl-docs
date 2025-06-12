@@ -1,4 +1,4 @@
-# Smart Contract Addresses
+# 📋 Smart Contract Addresses
 
 All Merkl smart contract addresses, categorized by chain are listed [here](https://app.merkl.xyz/status).
 

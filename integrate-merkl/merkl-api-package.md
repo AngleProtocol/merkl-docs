@@ -2,7 +2,7 @@
 description: Easily interact with the Merkl API using the dedicated NPM package
 ---
 
-# 📦 Merkl API V4 NPM Package
+# 👩‍💻 Merkl API V4 NPM Package
 
 Merkl API V4 comes with a dedicated NPM package to help you interact with it.
 
@@ -66,7 +66,7 @@ const rewards = await merkl
 console.log(rewards.data)
 ```
 
-For perfomance issue, most responses are cached in our API.
+For perfomance issue, most responses are cached in our API.\
 To bypass the cache, and get the latest value that the user would be able to claim (for instance directly after a claim transaction), you can ask for a reload. If the reload is done before the transaction can be indexed, the reload will not properly update the expected balance.
 
 **This will increase latency on the response.**
@@ -95,11 +95,11 @@ console.log(campaignsUSDC.data)
 
 ## Notes 📝
 
-- All API responses are wrapped within a `data` attribute. This consistency across all API calls ensures that developers can reliably access the actual response payload. Access this attribute to get the actual response payload.
-- The Merkl API object methods are strongly typed, making it easier to catch errors during development.
+* All API responses are wrapped within a `data` attribute. This consistency across all API calls ensures that developers can reliably access the actual response payload. Access this attribute to get the actual response payload.
+* The Merkl API object methods are strongly typed, making it easier to catch errors during development.
 
 For additional documentation and advanced usage, refer to the [Merkl API swagger](https://api.merkl.xyz/docs).
 
----
+***
 
 You're now ready to interact with the Merkl API! 🎉
