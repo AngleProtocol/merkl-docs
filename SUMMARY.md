@@ -19,7 +19,7 @@
 
 ## Distribute with Merkl
 
-* [🚀 Create a Merkl campaign](distribute-with-merkl/distribute-with-merkl.md)
+* [🚀 Create a campaign](distribute-with-merkl/distribute-with-merkl.md)
 * [🧑‍🔬 Deploy a campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 * [🗳️ Deploy your campaign from a DAO](distribute-with-merkl/deploy-your-campaign-from-dao.md)
 * [💳 Fee Model](distribute-with-merkl/fee-model.md)
