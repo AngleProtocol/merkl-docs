@@ -1,22 +1,26 @@
 # 🪝 Customizability Hooks
 
-Merkl allows incentive providers to customize campaign behavior using hooks, adding flexibility beyond standard campaign parameters.
+Merkl allows incentive providers to **customize campaign behavior using hooks**, adding flexibility beyond standard campaign parameters.
 
 Below are some of the most commonly used hooks in Merkl.
 
 ## 🔁 Forwarders
 
-Merkl Engine intelligently enables users to earn rewards even when they don’t hold the incentivized asset directly in their wallet. For example, in a campaign rewarding token holders, many users may have their tokens staked in a contract. If Merkl has integrated that staking contract, those users will still receive rewards based on their staked amount.
+Merkl Engine intelligently enables users to **earn rewards even when they don’t hold the incentivized asset directly in their wallet**. For example, in a campaign rewarding token holders, many users may have their tokens staked in a contract. If Merkl has integrated that staking contract, those users will still receive rewards based on their staked amount.
 
 This mechanism—tracking indirect ownership across contracts and protocols—is handled by Merkl forwarders. Forwarders allow Merkl to distribute rewards to users holding an incentivized asset indirectly, such as through staking contracts or LP tokens. By default, Merkl supports forwarding for most major DeFi protocols.
 
 In most [campaign types](../mechanisms/hooks/mechanisms/), Merkl automatically detects and applies any integrated forwarders. However, for older, legacy campaigns (e.g., the original ERC20 campaign type), forwarders must be manually specified at the time of campaign creation.
+
+<figure><img src="../.gitbook/assets/Forwarders.png" alt=""><figcaption><p>The forwarder scan in Merkl Studio</p></figcaption></figure>
 
 **How It Works**:
 
 * **Complexity Varies**: While for some simple forwarders, such as staking contracts for ERC20 tokens, the integration and forwarding process is relatively straightforward, some are equivalent to a complex integration of a new protocol type, and imply forwarding rewards across several stakeholders on multiple smart contract layers.
 * **Auto-Detection**: Once a forwarder is integrated, it’s automatically applied—no manual configuration is needed. The Merkl frontend includes a scan tool to check if an address matches any known forwarder patterns.
 * **Protocol Fidelity**: Merkl mirrors the logic of each protocol. For example, if a protocol charges a fee on accrued rewards, Merkl will automatically account for and replicate that fee in the reward forwarding process.
+
+<figure><img src="../.gitbook/assets/Docs-merkl-forwarders.png" alt=""><figcaption></figcaption></figure>
 
 **Example 1: Staked Token Rewards**:
 
@@ -53,6 +57,8 @@ On the legacy campaign types where forwarders must be manually specified, when c
 
 Whitelisting restricts rewards to a specific address or set of addresses (e.g., selected forwarders, ALMs, or individual users).
 
+<figure><img src="../.gitbook/assets/Group 4.png" alt=""><figcaption><p>Whitelist addresses when setting up a campaign in Merkl Studio</p></figcaption></figure>
+
 **Example: Uniswap V3 ALM Incentives**:
 
 * A campaign incentivizes LPs in a Uniswap V3 pool with three Automated Liquidity Managers (ALMs).
@@ -66,7 +72,7 @@ Whitelisting restricts rewards to a specific address or set of addresses (e.g., 
 
 **Whitelisting & Blacklisting Priority**:
 
-* Whitelisting overrides blacklisting: If an address is whitelisted, all other addresses are automatically blacklisted.
+* **Whitelisting overrides blacklisting. If an address is whitelisted, all other addresses are automatically blacklisted.**
 * If multiple campaigns run on the same pool, some may have whitelists while others do not.
 * Users should check the campaign details to confirm eligibility requirements.
 
@@ -74,7 +80,9 @@ Whitelisting restricts rewards to a specific address or set of addresses (e.g., 
 
 Blacklisting excludes specific addresses from receiving rewards.
 
-* If a forwarder is blacklisted, all associated users are also ineligible.
+<figure><img src="../.gitbook/assets/Group 5.png" alt=""><figcaption><p>Blacklist addresses when setting up a campaign in Merkl Studio</p></figcaption></figure>
+
+* **If a forwarder is blacklisted, all associated users are also ineligible.**
 * Example: Staking Contract Blacklist
   * A user holds 10 USDA but has staked 5 USDA in a blacklisted staking contract.
   * Only the 5 USDA in the user’s wallet qualifies for rewards.
@@ -108,6 +116,8 @@ Merkl allows incentive providers to boost rewards for users holding a specific t
 * Similar to Curve’s vote-escrowed boost formula but with more flexibility.
 * No 2.5x limit – You can customize boost multipliers as needed.
 
+<figure><img src="../.gitbook/assets/Group 3.png" alt=""><figcaption><p>Boost rewards for specific token holders in Merkl Studio</p></figcaption></figure>
+
 ### Boost Formula Computation
 
 $$
@@ -134,6 +144,8 @@ Merkl allows eligibility requirements based on:
 
 * Minimum token holdings
 * Holding duration
+
+<figure><img src="../.gitbook/assets/Group 2.png" alt=""><figcaption><p>Apply eligibility filters to specific token holders in Merkl Studio</p></figcaption></figure>
 
 Example:
 
