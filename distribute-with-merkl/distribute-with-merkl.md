@@ -113,7 +113,7 @@ You may also be asked to provide a deposit URL — this is the link to the asset
 
 
 
-7. **Review campaign and launch**
+7. **Review campaign and accept Terms**
 
 Double-check all the information. Once you’re done, hit the _Accept Terms_ button, and confirm in your wallet.
 
