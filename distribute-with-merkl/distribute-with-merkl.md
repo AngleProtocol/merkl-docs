@@ -2,7 +2,7 @@
 description: Everything you need to know to create campaigns on Merkl
 ---
 
-# 🚀 Create a Merkl campaign
+# 🚀 Create a campaign
 
 ## Getting started
 
@@ -15,9 +15,9 @@ Before setting up your campaign on Merkl, make sure you have read and understood
 
 Key Considerations:
 
-* Ensure you understand how your selected campaign and distribution types work.
-* Familiarize yourself with the hooks you plan to use for customization.
-* Check for any additional features that may be relevant to your campaign.
+* Ensure you understand how your [selected campaign](../merkl-mechanisms/campaign-types/) and [distribution types](../merkl-mechanisms/distributions.md) work.
+* Familiarize yourself with the [hooks](../merkl-mechanisms/hooks.md) you plan to use for customization.
+* Check for any [additional features](../merkl-mechanisms/features.md) that may be relevant to your campaign.
 
 {% hint style="info" %}
 If you're looking for some incentive mechanism for which you're not sure about whether it's supported or looking to add incentive features or hooks that are not displayed on the platform, please contact us!
@@ -36,7 +36,7 @@ Want to create multiple campaigns at once as part of your program? Skip to the [
 
 Before starting your campaign, you need to ensure that the token you want to use as reward with Merkl has been whitelisted. We usually process token whitelisting requests once a day, and it's a way for us to ensure that we will be able to properly compute APRs and that the token will be safe to use for our users.
 
-You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/integrations). If your token is not part of the list, please fill out the following [form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
+You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/status). If your token is not part of the list, please fill out the following [form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
 
 ### Merkl Terms
 
@@ -44,70 +44,112 @@ You must also make sure that you have read and understood [Merkl's Terms & Condi
 
 ## Step-by-step process for single campaign creation
 
-1. **Access the Campaign Creation Page**\
-   Go to the Merkl App and go to the campaign creation section by selecting _Create Campaign_ from the dashboard.
 
-<figure><img src="../.gitbook/assets/create-campaign-screenshot.png" alt=""><figcaption></figcaption></figure>
 
-3. **Connect your Wallet**
+1. **Go to Merkl Studio**\
+   [Merkl Studio](https://studio.merkl.xyz/) is your command center to launch, manage and optimize your incentive campaigns.
 
-Connect your wallet and select the chain on which you want to distribute the rewards. **The chain connected to your wallet during the campaign creation will determine where the rewards are distributed, but not necessarily where you'll be incentivizing activity.** To see all the chains that Merkl supports, check this [page](https://app.merkl.xyz/integrations).
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
+
+
+
+2. **Connect your wallet**
+
+Connect the wallet holding the rewards to distribute. Make sure you’re connected on the chain on which you want to distribute the rewards. To see all chains that Merkl supports, check the [Status page](https://app.merkl.xyz/status) in the Merkl App.
+
+<figure><img src="../.gitbook/assets/Group 8.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.03 1.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+You can create cross-chain campaigns with Merkl — incentivize an asset on one chain while distributing the rewards on another (e.g. incentivize an WETH-USDC pool on Ethereum by distributing WBTC on Base).
+{% endhint %}
+
+
+
+3. **Click on&#x20;**_**Create Campaign**_
+
+Click on the _Create Campaign_ button to create a single campaign.
+
+<figure><img src="../.gitbook/assets/Group 7.png" alt=""><figcaption></figcaption></figure>
+
+
 
 4. **Select your campaign type**
 
-Once your token is whitelisted, you can choose your specific campaign type by clicking on the appropriate button (see screenshot below).
+Choose your specific campaign type by clicking on the appropriate card.
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.21 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-While you may see various campaign types associated with some lending or borrowing protocols, if a lending protocol or a constant product AMM doesn't have its own card in the campaign creation page of the Merkl frontend, you may still incentivize it directly on Merkl using the **ERC20 Campaign** type.
+To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, please use the _Token Holding_ campaign category.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/CLAMM-campaign-create-screenshot.png" alt=""><figcaption></figcaption></figure>
 
-5. **Fill Out Campaign Details**
 
-<figure><img src="../.gitbook/assets/CLAMM-fill-out-campaign-detail.png" alt=""><figcaption></figcaption></figure>
+5. **Configure the campaign**
 
-You will then be redirected to the campaign configuration page. The details required will depend on the campaign type you selected. Refer to [the documentation](../mechanisms/campaigns/) for your specific campaign type or category. These pages provide detailed explanations of each required parameter.
+Fill out campaign details such as the asset to incentivize, the reward amount to distribute, a start date and an end date, etc. The details required will depend on the campaign type you selected. Please check the [campaign types page](../merkl-mechanisms/campaign-types/) to get detailed explanations of each required parameter.
 
-In most campaigns, you will be required to input a rewards amount as well as start and end dates for the campaign. The total rewards amount is the total amount of rewards to be distributed over the whole campaign duration (a maintenance fee may be applied on top).
-
-For each whitelisted token, Merkl sets a minimum amount of token that can be distributed per hour. If your token amount is too low (generally parameters are calibrated so that you cannot distribute less than $1 per hour), then you will not be able to create your campaign.
-
-While the Merkl frontend usually detects the protocols incentivized and will automatically link to the right frontend associated with the opportunity, campaign creators may provide onchain the deposit URL where users can participate in the campaign.
-
-6. **Customize your campaign with hooks**
-
-Campaigns on Merkl are fully customizable, and you may typically have to decide whether to modify the default behavior for the campaign.\
-Some of the hooks supported on Merkl are detailed [here](../merkl-mechanisms/hooks.md).
-
-7. **Preview Transaction and Submit**
-
-Double-check all the information entered for accuracy. Once you have finished configuring your campaign, proceed by pressing the _Preview Transaction_ button.
-
-<figure><img src="../.gitbook/assets/CLAMM-preview-transaction.png" alt=""><figcaption></figcaption></figure>
-
-8. **Sign and Submit**
-
-You can sign and submit using either an EOA account or a multisig wallet. The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. Regardless of the method you choose, you will need to follow these steps: accept the T\&C, approve the tokens for transfer, and deposit them.
-
-* **Using an EOA Account:**
-  * Double-check your campaign configuration.
-  * Read and accept Merkl's T\&Cs by clicking on the _Accept_ button and signing using your wallet.
-  * Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
-
-<figure><img src="../.gitbook/assets/CLAMM-accept-approve-deposit.png" alt=""><figcaption></figcaption></figure>
-
-After these steps, congratulations! You have created your Merkl Campaign!
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.59 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Please note that once created, your campaign may take up to one hour to become visible on the front-end.
+The total rewards amount is the total amount of rewards to be distributed over the whole campaign duration (a maintenance fee may be applied on top).
 {% endhint %}
 
-* **Using a multisig wallet (Safe Wallet):**
+{% hint style="info" %}
+For each token to distribute as reward, Merkl sets a minimum amount of token that can be distributed per hour. If your token amount is too low (generally parameters are calibrated so that you cannot distribute less than $1 per hour), then you will not be able to create your campaign.
+{% endhint %}
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
-To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
+
+6. **Customize your campaign with optional hooks**
+
+Campaigns on Merkl are fully customizable. You can choose whether or not to apply hooks such as boosts, forwarders and more. New hooks are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl hooks [here](../merkl-mechanisms/hooks.md).
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.43.49 1.png" alt=""><figcaption></figcaption></figure>
+
+You may also be asked to provide a deposit URL — this is the link to the asset you want to incentivize (e.g. a lending market, liquidity pool, etc.). Since Merkl is non-custodial, users must interact directly with the protocols to be eligible for rewards. Merkl does not hold any user funds.
+
+
+
+7. **Review campaign and launch**
+
+Double-check all the information. Once you’re done, hit the _Accept Terms_ button, and confirm in your wallet.
+
+<figure><img src="../.gitbook/assets/Group 9.png" alt=""><figcaption></figcaption></figure>
+
+
+
+8. **Approve and launch**
+
+Approve rewards transfer from your wallet to Merkl, then create the campaign by signing the transaction. You can sign and submit using either an EOA account or a multisig wallet.
+
+Regardless of the method you choose, you will need to follow these 3 steps:
+
+* accept the T\&C
+* approve the tokens for transfer
+* deposit the tokens
+
+{% hint style="info" %}
+**Using an EOA Account:**
+
+* Double-check your campaign configuration.
+* Read and accept Merkl's T\&Cs by clicking on the _Accept_ button and signing using your wallet.
+* Approve the tokens for transfer and deposit the amount you want to incentivize, plus the maintenance fee of 3%.
+{% endhint %}
+
+{% hint style="info" %}
+**Using a multisig wallet (Safe Wallet):**
+
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
+{% endhint %}
+
+Congratulations! You have launched your incentive campaign! 🎉
+
+{% hint style="success" %}
+**Please note that once created, your campaign may take up to one hour to become visible on the front-end.**
+{% endhint %}
 
 ## Create batch campaigns or multiple campaigns at once
 
