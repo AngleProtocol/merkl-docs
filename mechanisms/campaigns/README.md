@@ -23,3 +23,7 @@ description: Merkl various campaign types
 {% content-ref url="encompassing.md" %}
 [encompassing.md](encompassing.md)
 {% endcontent-ref %}
+
+{% content-ref url="staking.md" %}
+[staking.md](staking.md)
+{% endcontent-ref %}
