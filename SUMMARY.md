@@ -24,6 +24,10 @@
 * [🗳️ Deploy your campaign from a DAO](distribute-with-merkl/deploy-your-campaign-from-dao.md)
 * [💳 Fee Model](distribute-with-merkl/fee-model.md)
 
+***
+
+* [📝 Glossary](glossary.md)
+
 ## Earn with Merkl
 
 * [💰 Earn with Merkl](earn-with-merkl/earning-with-merkl.md)
