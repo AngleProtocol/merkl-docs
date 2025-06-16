@@ -24,8 +24,8 @@ An example plug-in can be found [here](https://github.com/AngleProtocol/merkl-co
 
 Other teams have also worked on different implementations. You may check some other examples here:
 
-- [Quickswap](https://polygonscan.com/address/0x3a381497813208508689d78c90EC9fb115D5640d#code)
-- [CrossCurve implementation](https://arbiscan.io/address/0xb665d0B69e91F596B9Dee3016e49136335993Fb8#readProxyContract)
+* [Quickswap](https://polygonscan.com/address/0x3a381497813208508689d78c90EC9fb115D5640d#code)
+* [CrossCurve implementation](https://arbiscan.io/address/0xb665d0B69e91F596B9Dee3016e49136335993Fb8#readProxyContract)
 
 ### Step by Step Guide
 
@@ -43,7 +43,7 @@ Technically (but this depends on the setup of your voting contract), you can dep
 
 Once your contract is deployed, the way you can pre-format your campaign is through the `setGaugeParameters` function [here](https://github.com/AngleProtocol/merkl-contracts/blob/32150c5577127a1feaf0315e1d7fcca0830eeb3c/contracts/partners/middleman/MerklGaugeMiddlemanTemplate.sol#L65).
 
-To retrieve the necessary campaign data and parameters for this function based on your use case, follow the guide [here](./deploy-your-campaign-from-a-multisig-or-gnosis-safe.md).
+To retrieve the necessary campaign data and parameters for this function based on your use case, follow the guide [here](deploy-your-campaign-from-a-multisig-or-gnosis-safe.md).
 
 3. **Automate weekly (or biweekly) execution**
 
@@ -78,7 +78,7 @@ Then use the output to craft the proposal action, for example:
 }
 ```
 
-2. **Create the ToS transaction**
+2. **Create the ToS transaction**\
    Sign the Merkl terms of service
 
 ```bash
@@ -94,10 +94,14 @@ Example result:
 }
 ```
 
-3. **Copy and edit the payload**
-Follow the instructions in [🧑‍🔬 Deploy your campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) to generate and copy the campaign payload. This step is required to properly generate the `campaignData`, which includes the campaign IPFS hash.
-<figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
-The campaign becomes available at `startTime + duration`. NOTE: `duration` is NOT the length of time in which users can claim. 
+3. **Copy and edit the payload**\
+   Follow the instructions in [🧑‍🔬 Deploy your campaign from a multisig or Gnosis Safe](deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) to generate and copy the campaign payload. This step is required to properly generate the `campaignData`, which includes the campaign IPFS hash.
+
+<figure><img src="../.gitbook/assets/Group 13.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Group 12.png" alt=""><figcaption></figcaption></figure>
+
+The campaign becomes available at \`startTime + duration\`. NOTE: \`duration\` is NOT the length of time in which users can claim.\
 Here is the function selector for reference:
 
 ```js
@@ -130,17 +134,17 @@ createCampaign(
 
 Then update the format to be compatible with the Foundry CLI:
 
-- Replace the square brackets `[` with parenthesis `(`
-- Remove quotations `"`
-- Remove newlines
-- Add single quotes `'`
+* Replace the square brackets `[` with parenthesis `(`
+* Remove quotations `"`
+* Remove newlines
+* Add single quotes `'`\
   For example:
 
 ```js
 '(0x0000000000000000000000000000000000000000000000000000000000000000,0x0000000000000000000000000000000000000000,0x000D636bD52BFc1B3a699165Ef5aa340BEA8939c,35175873467336683417086,4,1734307200,3600,0x000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000005568747470733a2f2f616e676c652d626c6f672e696e667572612d697066732e696f2f697066732f516d5558667658666274526576376d377750796a464d4c736a777568457a676e796a334653376172714b69446f33000000000000000000000000000000000000000000000000000000000000000000000000000000000000194f70656e20446f6c6c617220626f6c74732072657761726473000000000000000000000000000000000000000000000000000000000000000000000000000000)'
 ```
 
-4. **Create the `createCampaign` transaction**
+4. **Create the `createCampaign` transaction**\
    Run the cast command using the the properly formatted payload
 
 ```bash

@@ -75,9 +75,9 @@ Click on the _Create Campaign_ button to create a single campaign.
 
 
 
-4. **Select your campaign type**
+4. **Select your incentive category**
 
-Choose your specific campaign type by clicking on the appropriate card.
+Choose your incentive category by clicking on the appropriate card.
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.21 1.png" alt=""><figcaption></figcaption></figure>
 

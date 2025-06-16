@@ -18,23 +18,31 @@ Merkl requires anyone depositing incentives into the system to accept the Terms 
 
 Follow these steps to build the payload and finalize your campaign creation:
 
-1. **Configure your campaign:**
 
-Go the the [Merkl campaign creation page](https://studio.merkl.xyz) and fill in all the necessary data to configure your campaign.
 
-2. **Build the Payload:**
+1. **Configure your campaign**
 
-Once your configuration is complete, build the payload by clicking on the _Using <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> Safe ? Build a payload_. This option can be found at the bottom of the campaign creation page (see screenshot below).
+Set up your campaign in [Merkl Studio](https://studio.merkl.xyz) by entering all the required information.
 
-<figure><img src="../.gitbook/assets/Build-the-payload.png" alt=""><figcaption></figcaption></figure>
 
-3. **Download or Copy the Safe Template**
 
-Download the Safe Template (recommended), or copy the payload to your clipboard if you intend to customize it further. If you need help with customization, [reach out to us on Discord by opening a BD ticket. ](https://discord.com/channels/1209830388726243369/1210212731047776357)
+2. **Build the payload**
 
-<figure><img src="../.gitbook/assets/download-copy-safe-template.png" alt=""><figcaption></figcaption></figure>
+Once your configuration is complete, build the payload by clicking on _Using_ <img src="https://raw.githubusercontent.com/AngleProtocol/angle-token-list/main/src/assets/tokens/SAFE.svg" alt="token" data-size="line"> _SAFE wallet ? Build a payload._ This option can be found at the bottom of the last campaign creation step.
 
-4. **Upload the JSON File:**
+<figure><img src="../.gitbook/assets/Group 13.png" alt=""><figcaption></figcaption></figure>
+
+
+
+3. **Download or copy the Safe template**
+
+Download the Safe template (recommended), or copy the payload to your clipboard if you intend to customize it further. If you need help with customization, [reach out to us on Discord by opening a BD ticket.](https://discord.com/channels/1209830388726243369/1210212731047776357)
+
+<figure><img src="../.gitbook/assets/Group 12.png" alt=""><figcaption></figcaption></figure>
+
+
+
+4. **Upload the JSON file**
 
 Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file into the appropriate area, or click on _Choose a file_ to upload it manually.
 
@@ -42,13 +50,15 @@ Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file in
 
 If you are using something other than the Transaction Builder, proceed as you are accustomed to.
 
-5. **Execute the Transactions:**
+
+
+5. **Execute the transactions**
 
 You will see the 3 following transactions:
 
-- `approve`: Approval for the MerklDistributor contract to spend the reward tokens
-- `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
-- `createCampaign`: Transaction to create the campaign.
+* `approve`: Approval for the MerklDistributor contract to spend the reward tokens
+* `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
+* `createCampaign`: Transaction to create the campaign.
 
 <figure><img src="../.gitbook/assets/safe-wallet-approve+accept+create.png" alt=""><figcaption></figcaption></figure>
 
