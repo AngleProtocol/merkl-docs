@@ -13,6 +13,7 @@
   * [🏦 Custom Lending and Borrowing Campaigns](merkl-mechanisms/campaign-types/lending-borrowing.md)
   * [\[NEW\] 🎣 UniswapV4 Liquidity Campaigns](merkl-mechanisms/campaign-types/uniswapv4.md)
   * [\[NEW\] 🌐 Encompassing Campaigns](merkl-mechanisms/campaign-types/encompassing.md)
+  * [\[NEW\] 🔐 Staking Campaigns](merkl-mechanisms/campaign-types/staking.md)
 * [💸 Distribution Types](merkl-mechanisms/distributions.md)
 * [🪝 Customizability Hooks](merkl-mechanisms/hooks.md)
 * [🪶 Additional Features](merkl-mechanisms/features.md)
