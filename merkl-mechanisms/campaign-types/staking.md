@@ -6,27 +6,24 @@ description: Staking, Restaking, Locking integrations
 
 ## Overview
 
-Merkl enables tracking of staking events even if there is no receipt token.
-Here are the custom campaign types that have already been configured. Please contact us if you wish to have something that isn't listed here.
+Merkl enables tracking and rewarding liquidity deposited in staking or restaking contracts—even if these contracts do not issue receipt tokens to LPs.
+
+Below are the custom campaign types currently supported. If you need support for a different contract type, please contact us.
 
 ### **Staking and Restaking**
 
 - **Symbiotic Vault**
-  Merkl can track Symbiotic Vault, more specifically track the value of the underlying token a user has deposited into the vault. This means Merkl can also offer fixed APR campaigns, on top of the usual customizability.
+  Merkl can track Symbiotic Vaults, specifically monitoring the value of the underlying tokens deposited by users. This enables highly customizable reward campaigns, such as fixed or variable reward rates over time, points systems, or token distributions.
 
 - **Masterchef Vault**
-  The most common Masterchef implementation can be easily tracked with Merkl, verify with us if you can track yours immediately.
-
-{% hint style="info" %}
-If you want your Staking and Restaking contract to be fully integrated and supported by Merkl, please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. **Integration allows APRs and TVL calculations**.
-{% endhint %}
+  Merkl supports tracking and rewarding liquidity in the most common Masterchef implementations.
 
 ### **Locker**
-Locking is one of the most common primitive in DeFi. Merkl can reward lockers, and incentivize your most loyal users. On top of that, campaign creators can detail the reward curve they want to apply.
 
-- **Puffer : Carrot Locker**:  
-  Merkl tracks the locking of CARROT, and can now track multiple locking mechanism.  : e.g Puffer has chosen to apply a boost based on the number of months a user has locked his position, but you can also apply the usual curves, or use your own. Please contact merkl to have your locker integrated.
+Locking is a core primitive in DeFi. Merkl can reward liquidity in locker contracts, allowing you to incentivize your most loyal users. Campaign creators can define custom reward curves or boosts, for example, based on the number of months a user locks their position.
+
+- **Puffer : Carrot Locker**
 
 {% hint style="info" %}
-If you want your Locker contract to be fully integrated and supported by Merkl, please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. **Integration allows APRs and TVL calculations**.
+To have your locker, staking, or restaking contract fully integrated and supported by Merkl, please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process.
 {% endhint %}
