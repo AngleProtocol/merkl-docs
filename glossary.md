@@ -2,7 +2,7 @@
 description: Here you'll find the key terms used across Merkl's products and experience.
 ---
 
-# 📝 Glossary
+# Glossary
 
 ## APR
 
@@ -52,9 +52,18 @@ An optional feature that allows a campaign creator to restrict rewards so that o
 
 A campaign type that enables campaign creators to distribute rewards without requiring Merkl’s engine to compute the results. In this model, partners provide API endpoints containing opportunity data and rewards, which are distributed based on the provided output.
 
-## Fixed rate/budget
+## Fixed reward rate campaign
 
-A predefined amount of rewards is distributed per unit of liquidity provided by users at a constant rate. As more users join, the campaign’s overall budget increases, but individual earnings remain stable. Campaigns end when funds are depleted or the scheduled duration expires.
+A predefined amount of rewards is distributed per unit of liquidity provided by users at a constant rate. As more users join, the campaign’s budget is consumed more quickly, but individual earnings remain stable. Campaigns end when funds are depleted or the scheduled duration expires.\
+There are two types of fixed reward rate campaigns depending on whether the distributed amount is pegged to a fixed token amount ([fixed token rewards](glossary.md#fixed-token-rewards)) or to a fixed dollar value ([fixed dollar rewards](glossary.md#fixed-dollar-rewards)).
+
+## Fixed dollar rewards
+
+Fixed dollar rewards are a type of [fixed reward rate campaign](glossary.md#fixed-reward-rate-campaigns). With fixed dollar rewards, users earn a fixed amount of rewards in USD terms, even though the reward is distributed in tokens. The APR in dollar value remains stable for users, but the number of tokens they receive may vary depending on the token’s market price.
+
+## Fixed token rewards
+
+Fixed token rewards are a type of [fixed reward rate campaign](glossary.md#fixed-reward-rate-campaigns). With fixed token rewards, users earn a predetermined number of tokens, regardless of fluctuations in the token’s market price. As a result, users’ APR is directly affected by changes in the token's value: if the token price increases, the effective return grows, and if it decreases, the return diminishes.
 
 ## Forwarder
 
@@ -80,9 +89,9 @@ A system that lets a Merkl user share a link to an opportunity with another pers
 
 Total Value Locked (TVL) measures the total amount of assets deposited in an opportunity. It reflects the combined value of all tokens provided by liquidity providers and serves as a key indicator of the market/pool’s size and liquidity depth. TVL directly impacts an opportunity’s APR and daily rewards.
 
-## Variable rate/budget
+## Variable reward rate campaign
 
-Rewards are distributed proportionally based on time-weighted liquidity. The APR fluctuates depending on the value of rewards distributed, the campaign duration, and the total eligible user balances participating over time. As more or fewer users participate, the reward rate adjusts accordingly. This is the most common type of campaign.
+A set amount of daily rewards is shared among all participants proportionally to their contribution. Each user earns according to his campaign’s share. The APR fluctuates depending on participation and TVL. This is the most common type of campaign. Variable reward rate campaigns contrast with [fixed reward rate campaigns](glossary.md#fixed-reward-rate-campaign), where the reward is predefined and where each user gets the same APR.
 
 ## Whitelist
 

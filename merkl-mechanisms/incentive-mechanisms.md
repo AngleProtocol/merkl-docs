@@ -2,7 +2,7 @@
 description: Basics about Merkl Incentive mechanisms and customizability features
 ---
 
-# 🪷 Incentive Mechanisms
+# Incentive Mechanisms
 
 Merkl is designed to be highly versatile, supporting a wide range of incentive structures across both DeFi and broader Web3 ecosystems.
 
@@ -30,8 +30,8 @@ Some of the most commonly used campaign types include
 
 [Distribution types](distributions.md) define how rewards are allocated among eligible users. Common models include:
 
-* Variable APR campaigns: Rewards are distributed proportionally based on liquidity provided relative to others.
-* Fixed APR campaigns: Rewards accrue at a fixed rate for a given amount of liquidity.
+* Variable reward rate campaigns: Rewards are distributed proportionally based on liquidity provided relative to others.
+* Fixed reward rate campaigns: Rewards accrue at a fixed rate for a given amount of liquidity.
 
 ## 🔄 Feature Compatibility
 
