@@ -24,6 +24,10 @@ Liquidity that has been bridged from one chain to another before being deposited
 
 A distribution of tokens or points over a defined period, launched by an incentivizer to reward participants of a specific opportunity. For example, an incentive campaign distributing 50k tokens over 3 days to users who provide liquidity in a particular pool. Note that multiple campaigns can exist for the same opportunity—for instance, Protocol A and Protocol B may both launch campaigns to reward participants of the opportunity “Deposit tokens in the AAA-BBB liquidity pool.” In such cases, users can earn rewards from both campaigns with just one deposit.
 
+## Capped reward rate campaigns
+
+Capped reward rate is a [type of reward distribution](merkl-mechanisms/distributions.md) where the APR starts off fixed, until TVL reaches a point where the remaining budget can no longer sustain it. APR then automatically becomes variable to ensure the campaign runs its full duration. This prevents a few users from capturing too many rewards early on thanks to a fixed APR, and ensures the campaign budget isn’t depleted too quickly even with high participation thanks to variable APR.
+
 ## Cross-chain rewards
 
 Distributing rewards to users on a different blockchain than where the incentivized asset is located. For example, incentivizing a WETH-USDC pool on Ethereum by distributing WBTC rewards on Base.

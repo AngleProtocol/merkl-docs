@@ -98,9 +98,31 @@ Bob wants to incentivize holding his token _LONG_ with a point token named _BOB_
 
 If _LONG_ has a dollar value, Bob can create a campaign that offers 1 _BOB_ in rewards per $1 held of _LONG_ in liquidity per day. Alternatively, Bob can create a campaign that offers 1 _BOB_ in rewards per X _LONG_ held in liquidity per day, when he doesn't want to take into account the dollar value of _LONG_.
 
-## Coming Soon: Max APR campaigns
+## 📉 Capped Reward Rate Campaigns
 
-These campaigns are variable APR campaigns which become fixed APR campaigns when they start distributing too much.
+APR starts as fixed and automatically switches to variable to prevent overpaying users at launch and to align with the campaign’s intended duration.
+
+### Key Characteristics
+
+* Total reward amount is fully distributed over the set period.
+* Users get a fixed APR until the TVL reaches a level where the remaining budget can no longer sustain it. APR then becomes variable to ensure the campaign runs its full duration.
+* This prevents a few users from capturing too many rewards early on thanks to a fixed APR, and ensures the campaign budget isn’t depleted too quickly even with high participation thanks to variable APR.
+
+### Example: Capped Reward Rate Campaign
+
+A protocol launches a 4-week campaign with a total reward budget of 10,000 tokens to distribute. The campaign starts with a fixed APR of 20%.
+
+1/ Fixed APR Phase
+
+* During the first two weeks, the TVL averages around $150,000, resulting in a 20% APR that distributes approximately 576 tokens per week — or 1,152 tokens over the two weeks, staying well within the campaign’s budget.
+* In Week 3, TVL increases sharply to $500,000. Maintaining a 20% APR would now require \~1,923 tokens/week, which would exceed the remaining budget if sustained.
+
+2/ Variable APR Phase
+
+* To prevent running out of rewards too early, the system automatically switches to variable APR.
+* At this point, 8,848 tokens remain, with 2 weeks left in the campaign.
+* The new APR is adjusted based on TVL and remaining time: with $500,000 TVL and 8,848 tokens, users now earn \~884 tokens/week, or an APR of \~9.2%.
+* This dynamic adjustment ensures the campaign lasts its full duration, and the entire 10,000 token budget is distributed fairly and sustainably.
 
 ## ⚠️ Important Note
 
