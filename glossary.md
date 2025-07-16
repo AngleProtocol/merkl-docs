@@ -26,7 +26,7 @@ A distribution of tokens or points over a defined period, launched by an incenti
 
 ## Capped reward rate campaigns
 
-Capped reward rate is a [type of reward distribution](merkl-mechanisms/distributions.md) where the APR starts off fixed, until TVL reaches a point where the remaining budget can no longer sustain it. APR then automatically becomes variable to ensure the campaign runs its full duration. This prevents a few users from capturing too many rewards early on thanks to a fixed APR, and ensures the campaign budget isn’t depleted too quickly even with high participation thanks to variable APR.
+A capped reward rate campaign is similar to a [variable reward rate campaign](glossary.md#variable-reward-rate-campaign) — where APR adjusts based on TVL — but the APR is capped and cannot be exceeded. This prevents users from capturing excessive rewards when TVL is low, especially at the beginning of the campaign.
 
 ## Cross-chain rewards
 
