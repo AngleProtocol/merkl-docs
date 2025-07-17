@@ -1,12 +1,12 @@
-# 🧑‍🌾 ERC20 Campaigns and Applications
+# ERC20 Campaigns and Applications
 
 Merkl enables the creation of ERC20 campaigns—reward programs where users earn incentives based on their balance of a token over time.
 
 At their core, these campaigns function similarly to traditional `StakingRewards` contracts. However, with Merkl’s forwarding technology, they can be extended to support more advanced use cases, such as:
 
-- Rewarding liquidity providers in constant product AMMs (e.g., Uniswap V2).
-- Supporting tokens staked in periphery contracts (through Merkl forwarder technology)
-- Blacklisting specific addresses from receiving rewards.
+* Rewarding liquidity providers in constant product AMMs (e.g., Uniswap V2).
+* Supporting tokens staked in periphery contracts (through Merkl forwarder technology)
+* Blacklisting specific addresses from receiving rewards.
 
 With Merkl, you can create what we call ERC20 campaigns - campaigns where users are rewarded based on their time-weighted balance of a token.
 
@@ -22,12 +22,14 @@ Typically, in a variable APR campaign, reward distribution is proportional to th
 
 Merkl allows incentive providers to customize campaign behavior through hooks, enabling:
 
-- Blacklisting or whitelisting specific addresses for reward eligibility.
-- Forwarding rewards to users whose tokens are staked in external contracts (e.g., LP tokens or lending deposits).
+* Blacklisting or whitelisting specific addresses for reward eligibility.
+* Forwarding rewards to users whose tokens are staked in external contracts (e.g., LP tokens or lending deposits).
 
 These hooks significantly enhance the flexibility of ERC20 campaigns beyond the limitations of traditional onchain `StakingRewards` contracts.
 
-{% hint style="info" %} For more details on customizability hooks, refer to [this page](../hooks/README.md). {% endhint %}
+{% hint style="info" %}
+For more details on customizability hooks, refer to \[this page]\(../hooks/README.md).
+{% endhint %}
 
 ## Applications
 
@@ -35,11 +37,11 @@ ERC20 campaigns are highly versatile, supporting a wide range of DeFi use cases.
 
 This notably applies to:
 
-- constant product AMMs (like Uniswap V2): any incentivizer can use Merkl to incentivize Liquidity Providers on a Uniswap V2 or Sushiswap pool
-- lending and borrowing protocols that emit receipt and debt tokens (i.e., ERC20 tokens) when users lend and borrow: lenders can be rewarded based on how much they lend over time, or borrowers based on how much they borrow
+* constant product AMMs (like Uniswap V2): any incentivizer can use Merkl to incentivize Liquidity Providers on a Uniswap V2 or Sushiswap pool
+* lending and borrowing protocols that emit receipt and debt tokens (i.e., ERC20 tokens) when users lend and borrow: lenders can be rewarded based on how much they lend over time, or borrowers based on how much they borrow
 
 {% hint style="info" %}
-Not all lending and borrowing protocols issue ERC20 receipt or debt tokens when you borrow from them. These protocols require a custom integration within Merkl. You can find more details on these dedicated lending and borrowing campaigns [here](./lending-borrowing.md).
+Not all lending and borrowing protocols issue ERC20 receipt or debt tokens when you borrow from them. These protocols require a custom integration within Merkl. You can find more details on these dedicated lending and borrowing campaigns [here](lending-borrowing.md).
 {% endhint %}
 
 For constant product AMMs and lending/borrowing protocols that issue receipt tokens, we strongly recommend full Merkl integration. Without it, Merkl may be unable to accurately compute APR and TVL for incentivized pools. A full integration ensures seamless calculation and visibility.

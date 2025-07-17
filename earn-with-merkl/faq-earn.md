@@ -2,7 +2,7 @@
 description: Answers to common Merkl questions to check before opening a support ticket.
 ---
 
-# 📝 Merkl User FAQ
+# Merkl User FAQ
 
 ### What’s the frequency of rewards distribution?
 
@@ -12,11 +12,10 @@ The rewards distribution frequency varies by chain. On average, rewards are dist
 
 If you're unable to claim rewards on Merkl after supplying liquidity to a pool, here are a few possible reasons:
 
-- **Concentrated Liquidity Campaigns:** For campaigns based on concentrated liquidity, the Merkl engine requires at least one swap in the pool to calculate rewards accurately. If no swaps have occurred since the last engine run, the engine won’t process rewards yet, as one of the reward weights depends on swap fees.
-    
-    *Note:* Reward allocation is retroactive. Once a swap occurs, the Merkl engine will distribute all rewards accrued from the last engine run. If no engine run has happened since you added liquidity, you will receive all rewards accumulated from the time you initially supplied liquidity.
-    
-- **Campaign Status:** The campaign may not have started yet. Check its Status — if it’s marked as "Upcoming," it hasn’t started. Only "Live" campaigns are currently active, while completed ones are labeled "Past."
+*   **Concentrated Liquidity Campaigns:** For campaigns based on concentrated liquidity, the Merkl engine requires at least one swap in the pool to calculate rewards accurately. If no swaps have occurred since the last engine run, the engine won’t process rewards yet, as one of the reward weights depends on swap fees.
+
+    _Note:_ Reward allocation is retroactive. Once a swap occurs, the Merkl engine will distribute all rewards accrued from the last engine run. If no engine run has happened since you added liquidity, you will receive all rewards accumulated from the time you initially supplied liquidity.
+* **Campaign Status:** The campaign may not have started yet. Check its Status — if it’s marked as "Upcoming," it hasn’t started. Only "Live" campaigns are currently active, while completed ones are labeled "Past."
 
 ### I performed an action (providing liquidity, lending, borrowing, …) on one chain, but rewards are distributed on another, is that normal?
 
@@ -24,7 +23,7 @@ Yes, the chain where you perform an action may differ from the one where rewards
 
 You can find the chain where rewards are distributed in the campaign details on the opportunity page.
 
-![](../.gitbook/assets/screenshot-FAQ.png) 
+![](../.gitbook/assets/screenshot-FAQ.png)
 
 ### My wallet address has been blacklisted. Why?
 
@@ -44,11 +43,9 @@ The main APR displayed is calculated as:
 
 $$
 \frac{\text{Daily Rewards} \times 365}{\text{Adjusted TVL*}}
-
 $$
 
 * The adjusted TVL of a pool or market is:
-
-- the Total TVL of the pool/market if none addresses are either backlisted or whitelisted
-- the Total TVL minus the TVL of the blacklisted addresses if the campaign creator backlisted EOA addresses and/or smart contracts
-- the Total TVL of the whitelisted contract (e.g., if a campaign is restricted to a Gamma vault, Adjusted TVL will include the vault’s TVL, including idle liquidity)
+* the Total TVL of the pool/market if none addresses are either backlisted or whitelisted
+* the Total TVL minus the TVL of the blacklisted addresses if the campaign creator backlisted EOA addresses and/or smart contracts
+* the Total TVL of the whitelisted contract (e.g., if a campaign is restricted to a Gamma vault, Adjusted TVL will include the vault’s TVL, including idle liquidity)

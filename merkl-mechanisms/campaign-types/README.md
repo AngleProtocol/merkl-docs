@@ -1,2 +1,2 @@
-# 🏕️ Campaign Types
+# Campaign Types
 

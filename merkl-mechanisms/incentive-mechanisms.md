@@ -30,25 +30,28 @@ Some of the most commonly used campaign types include
 
 [Distribution types](distributions.md) define how rewards are allocated among eligible users. Common models include:
 
-* Variable reward rate campaigns: Rewards are distributed proportionally based on liquidity provided relative to others.
-* Fixed reward rate campaigns: Rewards accrue at a fixed rate for a given amount of liquidity.
+* [Variable reward rate campaigns](distributions.md#variable-reward-rate-campaigns): rewards are distributed proportionally based on time-weighted liquidity within the eligibility pool.
+* [Fixed reward rate campaigns](distributions.md#fixed-reward-rate-campaigns): a predefined amount of rewards per unit of liquidity is distributed at a fixed rate.
+* [Capped reward rate campaigns](distributions.md#capped-reward-rate-campaigns): similar to variable rate campaigns, but with a maximum APR that cannot be exceeded.
 
 ## 🔄 Feature Compatibility
 
+{% hint style="danger" %}
 Not all campaign types are compatible with all distribution types. Similarly, some hooks may only work with specific campaign or distribution types.
+{% endhint %}
 
-We are actively building a feature compatibility page within the Merkl app to display which campaign types support specific distribution methods and hooks.
+### How to Track Merkl's Current Feature Set
 
-### How To Track Merkl's Current Feature set
+To check the status of Merkl’s features, the compatibility between campaign types and distribution types, or to view the list of supported chains and tokens, simply visit [**Merkl Studio**](https://studio.merkl.xyz/) and simulate the creation of a campaign.
 
-Until this page is live, you can refer to:
+To determine if a smart contract address is recognized as a [forwarder](hooks.md#forwarders) by Merkl, the **Forwarder Scan tool** can be accessed during the “Set options” step within Merkl Studio.
 
-* [Merkl Integration Page](https://app.merkl.xyz/integrations): Lists supported chains, reward tokens, as well as integrated AMMs, and ALMs.
-* [Merkl Create Campaign Page](https://studio.merkl.xyz): gives the list of campaign types supported in the frontend
-
-Some hook, campaign type, and distribution combinations are not configurable directly via the frontend. In such cases, we recommend reaching out to us—we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.
+<figure><img src="../.gitbook/assets/Group 10.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Merkl’s capabilities continuously expand, adding support for new campaign types, distribution methods, and hooks.\
-The pages above may not always reflect the latest features. If you need a custom incentivization model, contact us by opening a [BD ticket on Discord](https://discord.gg/jnYfrGxDbe) or sending a message on Telegram.
+Some hooks, campaign types, and distribution types are not configurable directly via Merkl Studio. In such cases, we recommend reaching out to us — we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.
+{% endhint %}
+
+{% hint style="success" %}
+Merkl’s capabilities continuously expand, adding support for new campaign types, distribution methods, and hooks. If you need a custom incentivization model, contact us by opening a [BD ticket on Discord](https://discord.gg/jnYfrGxDbe) or sending a message on Telegram.
 {% endhint %}

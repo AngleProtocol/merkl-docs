@@ -2,7 +2,7 @@
 description: Everything you need to know to earn on Merkl
 ---
 
-# 💰 Earn with Merkl
+# Earn with Merkl
 
 All yield opportunities using Merkl are listed at [app.merkl.xyz](https://app.merkl.xyz)
 

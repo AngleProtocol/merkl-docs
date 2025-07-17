@@ -2,7 +2,7 @@
 description: Everything you need to know about concentrated liquidity campaigns on Merkl
 ---
 
-# 🦄 Concentrated Liquidity Campaigns
+# Concentrated Liquidity Campaigns
 
 ## Overview
 

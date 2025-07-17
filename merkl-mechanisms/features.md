@@ -2,7 +2,7 @@
 description: Important features of Merkl campaigns
 ---
 
-# 🪶 Additional Features
+# Additional Features
 
 Beyond campaign types, distribution methods, and hook customization, Merkl offers several advanced features to enhance campaign flexibility and reward management.
 

@@ -1,4 +1,4 @@
-# 🪝 Customizability Hooks
+# Customizability Hooks
 
 Merkl allows incentive providers to **customize campaign behavior using hooks**, adding flexibility beyond standard campaign parameters.
 

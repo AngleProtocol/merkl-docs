@@ -1,4 +1,4 @@
-# 🏦 Custom Lending and Borrowing Campaigns
+# Custom Lending and Borrowing Campaigns
 
 Merkl natively supports all lending and borrowing protocols that issue receipt tokens for lenders and debt tokens for borrowers. However, it also extends support to:
 

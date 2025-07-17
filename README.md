@@ -4,7 +4,7 @@ description: >-
   platform
 ---
 
-# 🥨 Merkl Documentation Portal
+# Merkl Documentation Portal
 
 Merkl is a DeFi incentive platform that **connects liquidity providers with protocols** looking to boost activity and engagement.
 

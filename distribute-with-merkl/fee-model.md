@@ -1,4 +1,4 @@
-# 💳 Fee Model
+# Fee Model
 
 In most cases, Merkl’s fees are collected from the incentives distributed by the incentive provider. These fees support platform maintenance and ongoing development.
 

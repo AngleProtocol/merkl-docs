@@ -2,7 +2,7 @@
 description: Integrate Merkl in your app using Merkl API V4
 ---
 
-# 👩‍💻 Integrate Merkl to your App - Merkl API V4 Docs
+# Integrate Merkl to your App - Merkl API V4 Docs
 
 While the [Merkl App](https://app.merkl.xyz/) offers a comprehensive interface that provides users and Liquidity Providers with everything they need to take advantage of Merkl opportunities, Merkl is also designed so anyone can integrate Merkl data into its own application and use it as a white-label solution.
 

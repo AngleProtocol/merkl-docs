@@ -2,7 +2,7 @@
 description: Everything you need to know to create campaigns on Merkl
 ---
 
-# 🚀 Create a campaign
+# Create a campaign
 
 ## Getting started
 

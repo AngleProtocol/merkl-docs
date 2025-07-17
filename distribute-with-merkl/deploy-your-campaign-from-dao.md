@@ -2,7 +2,7 @@
 description: Guide to deploy a Merkl Campaign from a DAO
 ---
 
-# 🗳️ Deploy your campaign from a DAO
+# Deploy your campaign from a DAO
 
 ## From an Onchain Gauge System
 

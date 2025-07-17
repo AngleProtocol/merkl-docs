@@ -2,7 +2,7 @@
 description: Technical overview of the Merkl system
 ---
 
-# 🔍 Technical Overview
+# Technical Overview
 
 Merkl operates through an offchain engine that analyzes both onchain and offchain data to track user activity and allocate rewards based on campaign rules set by incentive providers. The Merkl engine processes reward data into a merkle tree, compresses it into a merkle root, and pushes it onchain, enabling users to claim rewards transparently and efficiently.
 
@@ -21,10 +21,10 @@ Merkl operates through campaigns created by incentive providers. A campaign is a
 
 ### Key Features
 
-- **Single Merkl Root per Chain:** Merkl consolidates rewards from multiple campaigns into one merkle root per chain, enabling efficient batch claiming rewards from multiple different campaigns in a single transaction.
-- **Aggregated Campaigns:** While campaigns operate independently, Merkl batches multiple campaign updates into a single onchain transaction
-- **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
-- **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
+* **Single Merkl Root per Chain:** Merkl consolidates rewards from multiple campaigns into one merkle root per chain, enabling efficient batch claiming rewards from multiple different campaigns in a single transaction.
+* **Aggregated Campaigns:** While campaigns operate independently, Merkl batches multiple campaign updates into a single onchain transaction
+* **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
+* **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
 
 ## 🤿 Deep-Dive
 
@@ -34,19 +34,19 @@ Campaigns in Merkl are processed in parallel on each chain. Because campaigns ar
 
 **How it works**:
 
-- When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times.
-- Because onchain Merkle root updates occur separately, it is possible that:
-  - Rewards for one campaign have been finalized and pushed onchain.
-  - Rewards for another campaign are still pending because they weren’t processed in time for the last update.
-- Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
+* When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times.
+* Because onchain Merkle root updates occur separately, it is possible that:
+  * Rewards for one campaign have been finalized and pushed onchain.
+  * Rewards for another campaign are still pending because they weren’t processed in time for the last update.
+* Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
 
 ### Distribution Epochs
 
 Merkle root updates occur at fixed intervals, ranging from 3 to 12 hours, depending on the chain.
 
-- Campaign processing and merkle root updates are independent
-- For example, on an 8-hour epoch, rewards are updated onchain up to three times per day
-- Unclaimed rewards roll over into the next Merkle root update.
+* Campaign processing and merkle root updates are independent
+* For example, on an 8-hour epoch, rewards are updated onchain up to three times per day
+* Unclaimed rewards roll over into the next Merkle root update.
 
 Last reward distributions for each chain can be viewed on the Merkl app [here](https://app.merkl.xyz/status).
 
@@ -78,9 +78,9 @@ These contract are [publicly available](https://github.com/AngleProtocol/merkl-c
 
 Key contracts:
 
-- `DistributionCreator`: Stores campaign details and configurations.
-- `Distributor`: Holds tokens and processes reward claims based on merkle proofs.
-- `AccessControlManager`: A multisig-controlled contract that manages disputes, fees, and access control but cannot alter distributions.
+* `DistributionCreator`: Stores campaign details and configurations.
+* `Distributor`: Holds tokens and processes reward claims based on merkle proofs.
+* `AccessControlManager`: A multisig-controlled contract that manages disputes, fees, and access control but cannot alter distributions.
 
 Smart contract addresses, categorized by chain are listed [here](https://app.merkl.xyz/status).
 
@@ -90,5 +90,5 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 ### Merkl Frontends (Multiple Implementations)
 
-- [Merkl Public frontend](https://app.merkl.xyz): Built on the Merkl API, this interface allows users to explore campaigns, check APRs, and claim rewards.
-- Custom Frontends: Any team can build their own frontend leveraging the Merkl API, and Merkl can also host for large users branded white-label frontends, providing a seamless experience within their own ecosystem while benefiting from Merkl’s incentive distribution system.
+* [Merkl Public frontend](https://app.merkl.xyz): Built on the Merkl API, this interface allows users to explore campaigns, check APRs, and claim rewards.
+* Custom Frontends: Any team can build their own frontend leveraging the Merkl API, and Merkl can also host for large users branded white-label frontends, providing a seamless experience within their own ecosystem while benefiting from Merkl’s incentive distribution system.

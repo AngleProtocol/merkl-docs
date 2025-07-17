@@ -2,7 +2,7 @@
 description: Easily interact with the Merkl API using the dedicated NPM package
 ---
 
-# 👩‍💻 Merkl API V4 NPM Package
+# Merkl API V4 NPM Package
 
 Merkl API V4 comes with a dedicated NPM package to help you interact with it.
 
