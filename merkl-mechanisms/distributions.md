@@ -1,10 +1,12 @@
 ---
-description: Merkl different distribution types
+description: The various distribution types of Merkl campaigns
 ---
 
 # Distribution Types
 
 Merkl supports various distribution methods, allowing campaign creators to choose how rewards are allocated based on participant activity and liquidity contributions.
+
+<figure><img src="../.gitbook/assets/schema_distribution-type-radius-corner.png" alt=""><figcaption></figcaption></figure>
 
 ## 📈 Variable Reward Rate Campaigns
 
@@ -114,7 +116,7 @@ A protocol launches a 4-week campaign with a total reward budget of 10,000 token
 
 At the start of the campaign, the TVL averages around $150,000. Based on this TVL, the APR would normally be 20%, which would distribute approximately 576 tokens per week. However, due to the 15% APR cap, the actual APR is limited to 15%, resulting in fewer tokens distributed per week than the uncapped rate.
 
-In Week 3, TVL increases sharply to $500,000. As TVL rises, the APR adjusts downward accordingly, staying below the 15% cap. This ensures the campaign budget is distributed evenly and sustainably over the full 4 weeks.
+In week 3, TVL increases sharply to $500,000. As TVL rises, the APR adjusts downward accordingly, staying below the 15% cap. This ensures the campaign budget is distributed evenly and sustainably over the full 4 weeks.
 
 ## ⚠️ Important Note
 

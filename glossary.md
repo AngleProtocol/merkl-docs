@@ -85,6 +85,10 @@ The command center for incentive campaign creators. It allows anyone to launch i
 
 An asset (liquidity pool, lending market, ...) and its associated action that is incentivized via Merkl. For example, providing liquidity to a specific liquidity pool, holding a particular token, or lending a token on a given protocol. Not to be confused with a campaign.
 
+## Pre-TGE
+
+In pre-TGE campaigns, participants receive reward tokens representing a future allocation of tokens that have not yet been launched. These pre-TGE tokens are non-transferable, non-tradable, and their displayed value is an estimate subject to change at the time of the Token Generation Event (TGE).
+
 ## Referral
 
 A system that lets a Merkl user share a link to an opportunity with another person. If that person deposits liquidity into the opportunity, both the new participant and the original user receive a boost in rewards. Referral helps campaigns grow virally.
