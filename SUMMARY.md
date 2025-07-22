@@ -10,7 +10,7 @@
   * [Concentrated Liquidity Campaigns](merkl-mechanisms/campaign-types/concentrated-liquidity-mechanisms.md)
   * [UniswapV4 Liquidity Campaigns](merkl-mechanisms/campaign-types/uniswapv4.md)
   * [Airdrop Campaigns](merkl-mechanisms/campaign-types/airdrop.md)
-  * [ERC20 Campaigns and Applications](merkl-mechanisms/campaign-types/erc20-mechanisms.md)
+  * [Token Holding Campaigns](merkl-mechanisms/campaign-types/erc20-mechanisms.md)
   * [Custom Lending and Borrowing Campaigns](merkl-mechanisms/campaign-types/lending-borrowing.md)
   * [Encompassing Campaigns](merkl-mechanisms/campaign-types/encompassing.md)
   * [🔐 \[NEW\] 🔐 Staking & Restaking Campaigns](merkl-mechanisms/campaign-types/staking.md)
