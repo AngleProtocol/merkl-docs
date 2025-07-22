@@ -93,11 +93,11 @@ In pre-TGE campaigns, participants receive reward tokens representing a future a
 
 A system that lets a Merkl user share a link to an opportunity with another person. If that person deposits liquidity into the opportunity, both the new participant and the original user receive a boost in rewards. Referral helps campaigns grow virally.
 
-## Reward Computation
+## Reward computation
 
 The process by which the Merkl Engine calculates reward allocations based on onchain and offchain data, as well as the rules defined by each campaign (e.g., blacklists). Reward computations run **on average every 2 hours**. After this step, users can view the rewards they’ve earned, which are marked as pending until the [rewards are updated](glossary.md#reward-update) — at which point they become claimable.
 
-## Reward Update
+## Reward update (aka Merkl root update)
 
 The process by which the Merkl Engine compresses computed campaign data into a Merkle root and pushes it onchain to the Merkl Distributor contract, enabling users to claim their rewards. Updates run **on average every 8 hours (between 4 to 12 hours)**, and each includes a [reward file](https://app.merkl.xyz/status) for transparency and auditability.
 

@@ -14,8 +14,8 @@ Merkl operates through campaigns created by incentive providers. A campaign is a
 
 1. **Campaign Creation**: Incentive providers create campaigns using a smart contract called the **Merkl Distribution Creator**. This includes defining eligibility criteria, reward structures, and distribution methods. Campaign details are then pushed onchain, along with the incentive tokens that need to be distributed
 2. **User Participation**: Users engage with the protocol (e.g., providing liquidity, lending, borrowing) in order to earn the rewards/points as specified in the campaign.
-3. **Reward Computation:** At fixed intervals, a system called the **Merkl Engine** fetches campaigns from the **Merkl Distribution Creator** contract and processes reward calculations based on available onchain and offchain data and on the rules set by the campaign creator. After this step, users can see that they have earned rewards which are only pending as they cannot claim them yet (awaiting Merkle root update).
-4. **Merkle Root Update:** At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [here](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
+3. **Reward Computation:** At fixed intervals, a system called the **Merkl Engine** fetches campaigns from the **Merkl Distribution Creator** contract and processes reward calculations based on available onchain and offchain data and on the rules set by the campaign creator. After this step, users can see that they have earned rewards which are only pending as they cannot claim them yet (awaiting reward update).
+4. **Reward Update:** At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [here](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
 5. **Dispute Period:** After this step, a 1-2 hour dispute period begins, during which newly computed rewards cannot be claimed yet. However, rewards from the previous Merkle root remain claimable. During this period, dispute bots verify the published reward file. If an inconsistency is found, a dispute can be raised to halt incorrect distributions before they become effective.
 6. **Reward Availability:** Once the dispute period ends, users can see their rewards on any frontend integrated with the Merkl API. Users can claim rewards through a Merkl-powered frontend. Merkle proofs, required for claiming, are provided by the Merkl API or can be computed from reward files.
 
@@ -40,15 +40,15 @@ Campaigns in Merkl are processed in parallel on each chain. Because campaigns ar
   * Rewards for another campaign are still pending because they weren’t processed in time for the last update.
 * Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
 
-### Distribution Epochs
+### Merkl root update
 
-Merkle root updates occur at fixed intervals, ranging from 3 to 12 hours, depending on the chain.
+Merkle root updates — aka reward updates — occur on average every 8 hours (ranging from 4 to 12 hours), depending on the chain.
 
-* Campaign processing and merkle root updates are independent
-* For example, on an 8-hour epoch, rewards are updated onchain up to three times per day
-* Unclaimed rewards roll over into the next Merkle root update.
+* [Reward computation](../glossary.md#reward-computation) and [reward update](../glossary.md#reward-update) are independent
+* For example, between two reward updates (8 hours apart on average), rewards are computed up to four times
+* Unclaimed rewards roll over into the next reward update.
 
-Last reward distributions for each chain can be viewed on the Merkl app [here](https://app.merkl.xyz/status).
+Last reward update for each chain can be viewed on the Merkl app [here](https://app.merkl.xyz/status).
 
 ### Dispute Process
 
