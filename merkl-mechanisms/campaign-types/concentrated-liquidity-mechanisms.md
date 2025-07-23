@@ -6,7 +6,7 @@ description: Everything you need to know about concentrated liquidity campaigns 
 
 ## Overview
 
-Merkl’s Concentrated Liquidity Campaigns allow incentive providers to reward Liquidity Providers (LPs) on concentrated liquidity AMMs like Uniswap V3, Quickswap, and Sushiswap. Unlike traditional one-size-fits-all incentive models, these campaigns reward LPs based on how they provide liquidity rather than just their total deposit amount.
+Merkl’s Concentrated Liquidity Campaigns allow campaign creators to reward Liquidity Providers (LPs) on concentrated liquidity AMMs like Uniswap V3, Quickswap, and Sushiswap. Unlike traditional one-size-fits-all incentive models, these campaigns reward LPs based on how they provide liquidity rather than just their total deposit amount.
 
 Concentrated liquidity enables LPs to allocate capital within specific price ranges, enhancing capital efficiency and maximizing fee earnings. Merkl’s mechanism preserves these benefits, allowing LPs to earn more rewards when providing liquidity in narrower ranges.
 
@@ -18,7 +18,7 @@ The concentrated liquidity DEX and ALM solutions currently supported by the Merk
 
 ## 🔢 Reward formula
 
-When an incentive provider creates a Concentrated Liquidity Campaign, they specify:
+When a campaign creator creates a Concentrated Liquidity Campaign, they specify:
 
 * A pool to be incentivized
 * A time period for rewards
@@ -30,7 +30,7 @@ Merkl analyzes swaps within the pool during the incentive period and assigns rew
 * **Token 0 Holding**: The amount of token 0 held by the position during swaps in the pool, compared to the total amount of token 0 in the pool.
 * **Token 1 Holding**: The amount of token 1 held by the position during swaps in the pool, compared to the total amount of token 1 in the pool.
 
-Each factor is assigned a weight (`w_fees`, `w_0`, `w_1`), which the incentive provider defines.
+Each factor is assigned a weight (`w_fees`, `w_0`, `w_1`), which the campaign creator defines.
 
 With this setup, this is as if the overall incentive budget was split in 3, with a proportion being shared by LPs based on how much fees they've earned, a proportion shared based on the overall amount of token 0 they've held and a last portion based on the relative token 1 balance they've had in their position during the time period.
 
@@ -49,14 +49,14 @@ then:
 * A user holding 20% of Token 1 receives 6% of total rewards (20% × 30%).
 
 {% hint style="info" %}
-On the Merkl frontend, these parameters can set by incentive providers on the page where they create their concentrated liquidity campaigns.
+On the Merkl frontend, these parameters can be set by campaign creators on the page where they design their concentrated liquidity campaigns.
 {% endhint %}
 
 ## 🎯 Reward strategy examples
 
-Incentive providers can fine-tune parameters to match their objectives:
+Campaign creators can fine-tune parameters to match their objectives:
 
-* Stablecoin Peg Protection – To prevent USDC dumps, an incentive provider might increase the weight of Token 0 (USDC), rewarding LPs who hold more USDC in the pool.
+* Stablecoin Peg Protection – To prevent USDC dumps, a campaign creator might increase the weight of Token 0 (USDC), rewarding LPs who hold more USDC in the pool.
 * Encouraging Tight Ranges – A Liquid Restaking Token (LRT) provider might allocate 98% of rewards to fee generation, incentivizing super-concentrated liquidity around the tick.
 
 ## 🚀 Sampling and Anti-DOS
@@ -71,7 +71,7 @@ To maximize rewards, LPs should actively manage their positions to stay in-range
 
 ## ⛔ Out of range liquidity
 
-Incentive providers can choose whether to reward out-of-range liquidity.
+Campaign creators can choose whether to reward out-of-range liquidity.
 
 * By default, only in-range positions receive rewards.
 * We strongly recommend incentivizing in-range liquidity, as this ensures active liquidity provision and avoids rewarding idle capital.
@@ -94,7 +94,7 @@ Merkl supports ALMs, which actively manage liquidity positions.
 
 * ALMs are treated like normal LPs, and their rewards are automatically forwarded to depositors.
 * New ALMs can be integrated offchain, making it easy to add support for new types of position managers
-* Incentive providers can blacklist/whitelist ALMs if needed.
+* Campaign creators can blacklist/whitelist ALMs if needed.
 
 {% hint style="info" %}
 For more details on forwarding, blacklisting and whitelisting with Merkl, you can check [this page](../hooks.md) on customizability hooks.

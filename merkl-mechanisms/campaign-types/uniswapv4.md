@@ -4,7 +4,7 @@ description: >-
   V4
 ---
 
-# \[NEW] 🎣 UniswapV4 Liquidity Campaigns
+# UniswapV4 Liquidity Campaigns
 
 ## Overview
 
@@ -16,7 +16,7 @@ With Uniswap V4 Hooks, LPs can implement automated, dynamic strategies to concen
 
 ## 🔢 Reward Formula
 
-When an incentive provider creates a concentrated liquidity campaign, they specify:
+When a campaign creator design a concentrated liquidity campaign, they specify:
 
 * The Uniswap V4 pool to incentivize (using its `poolId`)
 * A time period for rewards
@@ -29,7 +29,7 @@ The main incentive parameters are the following:
 * **Token 0 Holding**: The share of token 0 held by a position relative to the total token 0 in the pool.
 * **Token 1 Holding**: The share of token 1 held by a position relative to the total token 1 in the pool.
 
-Each of these parameters is assigned a weight (`w_liquidity`, `w_0`, `w_1`) by the incentive provider. Conceptually, the total reward budget is divided among these three components, with each parameter determining how its portion is distributed.
+Each of these parameters is assigned a weight (`w_liquidity`, `w_0`, `w_1`) by the campaign creator. Conceptually, the total reward budget is divided among these three components, with each parameter determining how its portion is distributed.
 
 This structure offers fine-grained control for customizing incentives to align with specific liquidity goals.
 
@@ -53,7 +53,7 @@ Then:
 
 ## 🎯 Reward Strategy Examples
 
-Incentive providers can fine-tune parameters to match their objectives:
+Campaign creators can fine-tune parameters to match their objectives:
 
 * **Encouraging Deep Liquidity** – Increasing the weight of liquidity contribution rewards encourages deep liquidity in high-volume trading ranges.
 * **Stablecoin Peg Protection** – Allocating more weight to Token 0 (e.g., USDC) rewards LPs who provide more stable liquidity.
@@ -65,7 +65,7 @@ Uniswap V4 incentive distribution leverages Merkl's `LogProcessor` algorithm, wh
 
 ## ⛔ Out of Range Liquidity
 
-Incentive providers can choose whether to reward out-of-range liquidity. By default, only in-range positions receive rewards to ensure active liquidity provision.
+Campaign creators can choose whether to reward out-of-range liquidity. By default, only in-range positions receive rewards to ensure active liquidity provision.
 
 ## Providing Liquidity for Uniswap V4 Campaigns
 

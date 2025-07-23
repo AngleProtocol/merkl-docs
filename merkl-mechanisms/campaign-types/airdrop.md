@@ -4,7 +4,7 @@ Merkl supports airdrop campaigns, simplifying the process for protocols looking 
 
 Merkl supports two different types of airdrops:
 
-1. **Custom Allocation Airdrops**: Incentive providers define the reward distribution, specifying which users receive what amount. Providers upload a JSON file with allocation details, and Merkl handles the distribution via its claim system.
+1. **Custom Allocation Airdrops**: Campaign creators define the reward distribution, specifying which users receive what amount. Providers upload a JSON file with allocation details, and Merkl handles the distribution via its claim system.
 2. **Snapshot-Based Airdrops**: Merkl distributes rewards based on a snapshot of a given token’s balance at a chosen point in time.
 
 ## JSON airdrops
@@ -65,7 +65,7 @@ Airdropped tokens become claimable at the next [reward update](../../glossary.md
 
 Merkl allows you to distribute tokens to holders based on their snapshotted balance at a chosen moment in time.
 
-For this type of campaign, in addition to the reward amount, incentive providers must specify:
+For this type of campaign, in addition to the reward amount, campaign creators must specify:
 
 * Snapshot Date – The balance snapshot is taken at the last block before this date.
 * Distribution Date – The date on which rewards should be distributed.

@@ -16,14 +16,14 @@ Before setting up your campaign on Merkl, make sure you have read and understood
 Key Considerations:
 
 * Ensure you understand how your [selected campaign](../merkl-mechanisms/campaign-types/) and [distribution types](../merkl-mechanisms/distributions.md) work.
-* Familiarize yourself with the [hooks](../merkl-mechanisms/hooks.md) you plan to use for customization.
+* Familiarize yourself with the [customization options](../merkl-mechanisms/hooks.md) you plan to use for customization.
 * Check for any [additional features](../merkl-mechanisms/features.md) that may be relevant to your campaign.
 
 {% hint style="info" %}
-If you're looking for some incentive mechanism for which you're not sure about whether it's supported or looking to add incentive features or hooks that are not displayed on the platform, please contact us!
+If you're looking for some incentive mechanism for which you're not sure about whether it's supported, or looking to add incentive features or customization options that are not displayed on the platform, please contact us!
 {% endhint %}
 
-Some Merkl features (e.g., new distribution types, campaign types, hooks) may not be directly available in the campaign creation flow. If a required configuration option is not available in the frontend, we can:
+Some Merkl features (e.g., new distribution types, campaign types, customization options) may not be directly available in the campaign creation flow. If a required configuration option is not available in the frontend, we can:
 
 * Help you generate the correct campaign payload.
 * Provide dedicated API endpoints so you can structure your campaign as needed.
@@ -103,9 +103,9 @@ For each token to distribute as reward, Merkl sets a minimum amount of token tha
 
 
 
-6. **Customize your campaign with optional hooks**
+6. **Personalize your campaign with customization options**
 
-Campaigns on Merkl are fully customizable. You can choose whether or not to apply hooks such as boosts, forwarders and more. New hooks are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl hooks [here](../merkl-mechanisms/hooks.md).
+Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl customization options [here](../merkl-mechanisms/hooks.md).
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.43.49 1.png" alt=""><figcaption></figcaption></figure>
 
@@ -160,7 +160,7 @@ If you're planning to launch several campaigns simultaneously — for example, a
 To get started, you’ll need to provide:
 
 * The assets you'd like to incentivize
-* Any optional custom hooks you'd like to apply (you can read more about supported hooks [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
+* Any customization options you'd like to apply (you can read more about supported customization options [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
 
 Once provided, we’ll save this configuration on our end and generate the corresponding **keys** needed to launch your campaigns in bulk. We will share with you these keys via a GitHub Gist.
 

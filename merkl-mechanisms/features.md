@@ -4,7 +4,7 @@ description: Important features of Merkl campaigns
 
 # Additional Features
 
-Beyond campaign types, distribution methods, and hook customization, Merkl offers several advanced features to enhance campaign flexibility and reward management.
+Beyond campaign types, distribution methods, and customization options, Merkl offers several advanced features to enhance campaign flexibility and reward management.
 
 ## 🔥 Run Multiple Campaigns on the Same Opportunity
 
@@ -62,7 +62,7 @@ Merkl allows you to incentivize activity on one chain while distributing rewards
 Some smart contracts on the chain you are incentivizing activity may not exist on the chain where users can claim their reward (or may exist at a different address):
 
 * Affected addresses will be unable to claim rewards in this case
-* Solution: As an incentive provider, you should blacklist any ineligible addresses to prevent reward loss. Or you can reallocate rewards (more below) of addresses that cannot claim to an address controlled by the same provider that can claim its rewards
+* Solution: As an campaign creator, you should blacklist any ineligible addresses to prevent reward loss. Or you can reallocate rewards (more below) of addresses that cannot claim to an address controlled by the same provider that can claim its rewards
 
 ## 🤝 Referral Program Documentation
 

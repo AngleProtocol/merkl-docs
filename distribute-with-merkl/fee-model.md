@@ -1,6 +1,6 @@
 # Fee Model
 
-In most cases, Merkl’s fees are collected from the incentives distributed by the incentive provider. These fees support platform maintenance and ongoing development.
+In most cases, Merkl’s fees are collected from the incentives distributed by the campaign creator. These fees support platform maintenance and ongoing development.
 
 ## Pay-as-You-Go
 

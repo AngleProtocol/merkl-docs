@@ -15,7 +15,7 @@ At its core, Merkl operates on an offchain engine that processes both onchain an
 
 ## What sets Merkl apart?
 
-### For Incentive Providers
+### For Campaign Creators
 
 * 🚀 **Launch Complex Incentives in Minutes**: Start a fully customized incentive campaign in less than 3 minutes—no need for weeks of development.
 * 📈 **Comprehensive Coverage**: Merkl supports incentives on top of various DeFi activities across multiple chains:
@@ -49,7 +49,7 @@ Merkl is a **non-custodial solution**. You retain full control over your assets�
 
 ## How to get started?
 
-### For Incentive Providers
+### For Campaign Creators
 
 * Learn how Merkl works under the hood by checking the [Technical Overview](merkl-mechanisms/technical-overview.md)
 * Explore available the versatility of [Merkl Incentive Mechanisms](merkl-mechanisms/incentive-mechanisms.md), including its [Campaign Types](merkl-mechanisms/campaign-types/), [Distribution Types](merkl-mechanisms/distributions.md), its [Customizability Hooks](merkl-mechanisms/hooks.md) or the [Additional Features](merkl-mechanisms/features.md) it offers

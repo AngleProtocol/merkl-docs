@@ -28,6 +28,10 @@ A distribution of tokens or points over a defined period, launched by an incenti
 
 A capped reward rate campaign is similar to a [variable reward rate campaign](glossary.md#variable-reward-rate-campaign) — where APR adjusts based on TVL — but the APR is capped and cannot be exceeded. This prevents users from capturing excessive rewards when TVL is low, especially at the beginning of the campaign.
 
+## Customization option
+
+Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, forwarders, bridged liquidity, and more. A non exhaustive list of customization options is available [here](merkl-mechanisms/hooks.md).
+
 ## Cross-chain rewards
 
 Distributing rewards to users on a different blockchain than where the incentivized asset is located. For example, incentivizing a WETH-USDC pool on Ethereum by distributing WBTC rewards on Base.
@@ -72,10 +76,6 @@ Fixed token rewards are a type of [fixed reward rate campaign](glossary.md#fixed
 ## Forwarder
 
 A contract (such as a staking, an ALM, or a vault) that holds the incentivized asset on behalf of users. Merkl detects the underlying users and distributes rewards to them, even if the asset isn’t held directly in their wallet. For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
-
-## Hook
-
-Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, forwarders, bridged liquidity, and more. A non exhaustive list of hooks is available here.
 
 ## Merkl Studio
 
