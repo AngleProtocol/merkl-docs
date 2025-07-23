@@ -44,11 +44,6 @@ Forwarding is enabled by default on most campaign types in Merkl. If your campai
 Coming soon: When creating a campaign, you’ll be able to specify that an address is an ERC20 token, enabling automatic forwarding to its token holders.
 {% endhint %}
 
-On the legacy campaign types where forwarders must be manually specified, when creating a campaign, you need to:
-
-- Provide the staking contract address (recipient of the rewards).
-- Provide the forwarded token address (token users receive when staking).
-
 ## ✅ Whitelisting
 
 Whitelisting restricts rewards to a specific address or set of addresses (e.g., selected forwarders, ALMs, or individual users).
