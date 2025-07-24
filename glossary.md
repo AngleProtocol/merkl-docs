@@ -30,7 +30,7 @@ A capped reward rate campaign is similar to a [variable reward rate campaign](gl
 
 ## Customization option
 
-Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, forwarders, bridged liquidity, and more. A non exhaustive list of customization options is available [here](merkl-mechanisms/hooks.md).
+Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, forwarders, bridged liquidity, and more. A non exhaustive list of customization options is available [here](merkl-mechanisms/customization-options.md).
 
 ## Cross-chain rewards
 

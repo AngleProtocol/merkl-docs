@@ -4,45 +4,11 @@ description: Everything you need to know to create campaigns on Merkl
 
 # Create a campaign
 
-## Getting started
-
-### 📌 Before You Create a Campaign
-
-Before setting up your campaign on Merkl, make sure you have read and understood:
-
-* [How Merkl works](../merkl-mechanisms/technical-overview.md): A high-level overview of Merkl’s mechanisms and processes.
-* [Configuring Your Incentive Mechanism](../merkl-mechanisms/incentive-mechanisms.md): A detailed guide on campaign types, distribution methods, and customization options.
-
-Key Considerations:
-
-* Ensure you understand how your [selected campaign](../merkl-mechanisms/campaign-types/) and [distribution types](../merkl-mechanisms/distributions.md) work.
-* Familiarize yourself with the [customization options](../merkl-mechanisms/hooks.md) you plan to use for customization.
-* Check for any [additional features](../merkl-mechanisms/features.md) that may be relevant to your campaign.
-
-{% hint style="info" %}
-If you're looking for some incentive mechanism for which you're not sure about whether it's supported, or looking to add incentive features or customization options that are not displayed on the platform, please contact us!
-{% endhint %}
-
-Some Merkl features (e.g., new distribution types, campaign types, customization options) may not be directly available in the campaign creation flow. If a required configuration option is not available in the frontend, we can:
-
-* Help you generate the correct campaign payload.
-* Provide dedicated API endpoints so you can structure your campaign as needed.
-
-{% hint style="info" %}
-Want to create multiple campaigns at once as part of your program? Skip to the [Batch Campaigns Creation](distribute-with-merkl.md#create-batch-campaigns-or-multiple-campaigns-at-once)
-{% endhint %}
-
-### Token whitelisting
-
-Before starting your campaign, you need to ensure that the token you want to use as reward with Merkl has been whitelisted. We usually process token whitelisting requests once a day, and it's a way for us to ensure that we will be able to properly compute APRs and that the token will be safe to use for our users.
-
-You can find all whitelisted tokens by chain on this [page](https://app.merkl.xyz/status). If your token is not part of the list, please fill out the following [form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
-
-### Merkl Terms
-
-You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.
-
 ## Step-by-step process for single campaign creation
+
+{% hint style="info" %}
+Want to create multiple campaigns at once as part of your program? Skip to the [Batch Campaigns Creation section](create-a-campaign.md#create-batch-campaigns-or-multiple-campaigns-at-once)
+{% endhint %}
 
 
 
@@ -105,7 +71,7 @@ For each token to distribute as reward, Merkl sets a minimum amount of token tha
 
 6. **Personalize your campaign with customization options**
 
-Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl customization options [here](../merkl-mechanisms/hooks.md).
+Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl customization options [here](../merkl-mechanisms/customization-options.md).
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.43.49 1.png" alt=""><figcaption></figcaption></figure>
 

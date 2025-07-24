@@ -14,7 +14,7 @@ For example, in a [variable reward rate campaign](../distributions.md#variable-r
 
 ### Customizability options
 
-Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../hooks.md) such as:
+Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../customization-options.md) such as:
 
 * **Whitelisting or blacklisting** specific addresses for reward eligibility.
 * [**Forwarding rewards**](../../glossary.md#forwarder) to users whose tokens are staked in external contracts (e.g. LP tokens or lending positions).

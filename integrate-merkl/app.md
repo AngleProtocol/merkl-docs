@@ -176,4 +176,4 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
 
 ## Benefit from Typescript typings when using the Merkl API
 
-Interacting safely with Merkl API is possible using our NPM package. See our guide [here](merkl-api-package.md).
+Interacting safely with Merkl API is possible using our NPM package. See our guide [here](broken-reference).

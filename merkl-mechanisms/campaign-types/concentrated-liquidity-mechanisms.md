@@ -97,7 +97,7 @@ Merkl supports ALMs, which actively manage liquidity positions.
 * Campaign creators can blacklist/whitelist ALMs if needed.
 
 {% hint style="info" %}
-For more details on forwarding, blacklisting and whitelisting with Merkl, you can check [this page](../hooks.md) on customizability hooks.
+For more details on forwarding, blacklisting and whitelisting with Merkl, you can check [this page](../customization-options.md) on customizability hooks.
 {% endhint %}
 
 ## 📈 APRs in Concentrated Liquidity Campaigns

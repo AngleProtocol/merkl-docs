@@ -1,4 +1,4 @@
-# Custom Lending and Borrowing Campaigns
+# Lending and Borrowing Campaigns
 
 Merkl natively supports all lending and borrowing protocols that issue receipt tokens for lenders and debt tokens for borrowers. However, it also extends support to:
 
@@ -11,7 +11,7 @@ From a user perspective, interacting with these custom lending protocols feels t
 
 This means that campaign creators can also customize:
 
-* their [campaign hooks](../hooks.md) (e.g. blacklisting, whitelisting systems, forwarding mechanisms, ...)
+* their [campaign hooks](../customization-options.md) (e.g. blacklisting, whitelisting systems, forwarding mechanisms, ...)
 * their [distribution methods](../distributions.md) (e.g fixed APR, variable APR, ...)
 
 {% hint style="info" %}
