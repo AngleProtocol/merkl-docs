@@ -4,7 +4,7 @@ description: Everything you need to know to create campaigns on Merkl
 
 # Create a campaign
 
-## Step-by-step process for single campaign creation
+## 🪜 Step-by-step process for single campaign creation
 
 {% hint style="info" %}
 Want to create multiple campaigns at once as part of your program? Skip to the [Batch Campaigns Creation section](create-a-campaign.md#create-batch-campaigns-or-multiple-campaigns-at-once)
@@ -117,7 +117,7 @@ Congratulations! You have launched your incentive campaign! 🎉
 **Please note that once created, your campaign may take up to one hour to become visible on the front-end.**
 {% endhint %}
 
-## Create batch campaigns or multiple campaigns at once
+## ⏭️ Create batch campaigns or multiple campaigns at once
 
 If you're planning to launch several campaigns simultaneously — for example, as part of a protocol-level program or a chain-wide initiative — please reach out to us on Telegram so we can better support you and fast-track the operational setup and onboarding. If we’re not already in contact, you can open a BD ticket on our [Discord](https://discord.gg/kZVG3T6Z)
 

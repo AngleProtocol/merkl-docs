@@ -6,7 +6,7 @@ description: >-
 
 # Before you start
 
-## Merkl’s core principles
+## ⚙️ Merkl’s core principles
 
 Before setting up your campaign on Merkl, make sure you have read and understood:
 
@@ -24,11 +24,11 @@ Some Merkl features (e.g., new distribution types, campaign types, customization
 * Help you generate the correct campaign payload.
 * Provide dedicated API endpoints so you can structure your campaign as needed.
 
-## Incentivized assets
+## 🪙 Incentivized assets
 
 Inform us about the asset(s) you want to incentivize. If it’s not deployed yet, deploy it!
 
-## Token whitelisting
+## 📝 Token whitelisting
 
 Before starting your campaign, you need to ensure that the token you want to use as reward with Merkl has been whitelisted.
 
@@ -37,10 +37,13 @@ We usually process token whitelisting requests once a day, and it's a way for us
 You can find all whitelisted tokens by chain on the [status page](https://app.merkl.xyz/status). If your token is not part of the list, please submit the reward token’s price source and logo by filling out this [whitelisting form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
 
 {% hint style="info" %}
-If your reward token is not transferable, whitelist both our campaign creator & distributor contracts:
+If your reward token is not transferable, make sure to whitelist both our campaign creator and distributor contracts for the blockchain where you intend to distribute rewards. You can find the relevant contract addresses on our [status page](https://app.merkl.xyz/status).
 
-* campaign creator: 0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd
-* distributor: 0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae
+
+
+![](<../.gitbook/assets/Status page doc.png>)
+
+
 
 Note: You need to whitelist the campaignCreator for both transfer and transferFrom!
 {% endhint %}
@@ -49,10 +52,6 @@ Note: You need to whitelist the campaignCreator for both transfer and transferFr
 Make sure you have all the tokens you want to distribute in your wallet.
 {% endhint %}
 
-## Test campaigns
-
-Merkl is not deployed on testnets. However, we can send you our test token (aglaMerkl) if you want to create a test campaign.
-
-## Merkl terms
+## 📃 Merkl terms
 
 You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.
