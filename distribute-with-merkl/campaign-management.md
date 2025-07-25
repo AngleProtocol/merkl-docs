@@ -28,3 +28,17 @@ You now have the full ownership of your campaign. You’ll be able to:
 **Note**: If you want to add extra rewards or add another new reward token to your existing campaign, you’ll need to create another campaign on top of the current one. The new campaign must have a slightly modified start or end date (by a minimum of one hour) to prevent campaign duplication in our engine.
 
 If you need assistance renewing your campaign, please notify us at least 3 days before it ends to ensure a smooth transition.
+
+
+To fetch important data regarding your campaigns, you can use our API to get detailed information. More information [here](https://docs.merkl.xyz/integrate-merkl/app). Here are the most commonly used endpoints:
+
+- Getting the leaderboard for your campaign: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/)
+- Getting opportunities and their included campaigns: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/campaigns](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/campaigns)
+- Checking rewards amount at user level: [https://api.merkl.xyz/docs#tag/users/GET/v4/users/%7Baddress%7D/rewards](https://api.merkl.xyz/docs#tag/users/GET/v4/users/%7Baddress%7D/rewards)
+- Checking rewards amount at campaign level: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total)
+- Checking rewards amount at token level: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/)
+- Checking how many rewards are unclaimed: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
+- Integrating APRs data in your front-end: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/)
+    - For this route, match the incentivized asset’s address with the “explorerAddress” field.
+
+Note: You can find each campaign or opportunity ID directly on the opportunities page [here](https://app.merkl.xyz/).

@@ -59,6 +59,14 @@ Campaign creators can fine-tune parameters to match their objectives:
 * Stablecoin Peg Protection – To prevent USDC dumps, a campaign creator might increase the weight of Token 0 (USDC), rewarding LPs who hold more USDC in the pool.
 * Encouraging Tight Ranges – A Liquid Restaking Token (LRT) provider might allocate 98% of rewards to fee generation, incentivizing super-concentrated liquidity around the tick.
 
+Here are some suggestions depending on your needs and pool type:
+
+* For stable pools/pegged pools (e.g., USDC/USDT or WBTC/BTC): Liquidity contribution = 80%, token0 = 10%, token1 = 10%
+* For volatile pools (e.g., WETH/USDC): Liquidity contribution = 20%, token0 = 40%, token1 = 40% (the higher the volatility, the higher the weights for token0 and token1 percentages should be)
+* You can also refer to this [blog](https://blog.merkl.xyz/merkl-insights-how-can-incentives-prevent-your-token-from-dumping) about liquidity walls (to prevent a token from dumping, or a stablecoin from losing its peg)
+
+* Note: Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or weight feed parameters on similar campaigns.
+
 ## 🚀 Sampling and Anti-DOS
 
 For large pools with high swap activity, Merkl samples the largest swaps instead of analyzing every transaction.
