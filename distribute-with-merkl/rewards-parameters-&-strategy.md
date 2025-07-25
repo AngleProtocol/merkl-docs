@@ -1,7 +1,5 @@
-description: This page helps you define your rewards parameters & the associated strategy when creating your campaigns.
----
 
-# Rewards Parameters & Strategy
+This page helps you define your rewards parameters & the associated strategy when creating your campaigns.
 
 ## APR, TVL and rewards amount:
 
