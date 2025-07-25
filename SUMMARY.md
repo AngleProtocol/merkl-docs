@@ -27,7 +27,6 @@
 * [Before you start](distribute-with-merkl/before-you-start.md)
 * [Test campaigns](distribute-with-merkl/test-campaigns.md)
 * [Create a campaign](distribute-with-merkl/create-a-campaign.md)
-* [Rewards Parameters & Strategy](distribute-with-merkl/rewards-parameters-&-strategy.md)
 * [Deploy a campaign from a multisig or Gnosis Safe](distribute-with-merkl/deploy-your-campaign-from-a-multisig-or-gnosis-safe.md)
 * [Deploy your campaign from a DAO](distribute-with-merkl/deploy-your-campaign-from-dao.md)
 * [Campaign Management](distribute-with-merkl/campaign-management.md)
