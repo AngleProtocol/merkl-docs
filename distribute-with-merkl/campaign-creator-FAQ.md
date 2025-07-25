@@ -1,7 +1,4 @@
-
- This FAQ covers common questions from campaign creators before, during, and after launching an incentive program on Merkl.
-
-# Merkl Campaign Creator FAQ
+This FAQ covers common questions from campaign creators before, during, and after launching an incentive program on Merkl.
 
 ## Before creating a campaign
 
