@@ -36,9 +36,6 @@ New campaigns may take up to 1 hour to appear on the Merkl App due to caching. I
 
 Yes, you can run several campaigns targeting the same asset/pool, with different reward tokens, or other parameters.
 
-### Do ALMs take a cut of the rewards?
-
-No, Merkl forwards 100% of the rewards to users. If ALMs (Automated Liquidity Manager) deduct fees or take a share, that’s up to their own contract logic.
 
 ## During the campaign
 
@@ -60,12 +57,6 @@ Rewards updates (process by which the Merkl Engine compresses computed campaign 
 
 We do not have a filter for points earned by time. However you can take a daily snapshot of our API to build this dataset.
 
-### What do "Amount", "Pending", and "Claimed" mean in the UI?
-
-- **Amount** refers to the total number of tokens already credited to the user onchain.
-- **Pending** refers to rewards that are queued and will be pushed onchain in the next update..
-- **Claimable** refers to rewards that have been computed and are ready to be claimed by users.
-- **Claimed** shows the amount the user has already claimed.
 
 ### Why is APR or TVL not showing for my campaign / why do they have incorrect or unusual values ?
 
@@ -81,7 +72,9 @@ There can be several reasons for this. The main ones are:
 
 ### What happens to unclaimed rewards after the campaign ends?
 
-Unclaimed tokens remain in the distributor's campaign vault. You can either withdraw them or allocate them to a new campaign.
+Campaign creators on Merkl can [freely reallocate](../merkl-mechanisms/features.md) all unclaimed rewards once their campaign ends.
+
+One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them. This policy ensures that unused incentives are efficiently reallocated, supporting the platform’s long-term sustainability.
 
 ### Can campaigns end prematurely?
 
@@ -92,17 +85,3 @@ On the other hand, if too few users participate in the campaign, undistributed r
 
 Campaigns cannot be extended after they end, but you can easily create a new one using the same parameters. Any unused rewards from the previous campaign can be reused.
 
-### Is there a way to retrieve the campaign data?
-
-Yes. You can use our API to fetch detailed information. More information [here](https://docs.merkl.xyz/integrate-merkl/app). Here are the most commonly used endpoints:
-
-- Getting the leaderboard for your campaign: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/)
-- Getting opportunities and their included campaigns: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/campaigns](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/campaigns)
-- Checking rewards amount at user level: [https://api.merkl.xyz/docs#tag/users/GET/v4/users/%7Baddress%7D/rewards](https://api.merkl.xyz/docs#tag/users/GET/v4/users/%7Baddress%7D/rewards)
-- Checking rewards amount at campaign level: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total)
-- Checking rewards amount at token level: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/)
-- Checking how many rewards are unclaimed: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
-- Integrating APRs data in your front-end: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/)
-    - For this route, match the incentivized asset’s address with the “explorerAddress” field.
-
-Note: You can find each campaign or opportunity ID directly on the opportunities page [here](https://app.merkl.xyz/).

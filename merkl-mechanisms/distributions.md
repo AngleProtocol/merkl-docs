@@ -56,6 +56,21 @@ For this campaign:
 
 However, if the TVL increased to $20,000,000, the same user’s share would drop to 1/2,000,000th (0.00005%), and their per-run reward would be 1/16,800,000th (0.0000006%), below the threshold. As a result, they would not receive rewards.
 
+### APR, TVL and reward amount
+
+To estimate your reward amount for variable rate rewards, we recommend targeting an APR and back-calculating based on your desired TVL:
+
+1. daily rewards = (APR \* TVL) / 365
+2. total reward amount = daily rewards x campaign duration (in days)
+
+For more details on this, refer to the documentation [here](https://docs.merkl.xyz/earn-with-merkl/faq-earn#how-are-aprs-calculated)
+
+Let’s take an example: If you want your stable pool to reach $2M TVL, with a 10% APR, for a 14 days campaign, the rewards amount will be:
+
+daily rewards = (0.1 x $2M)/365 = 547,94$
+
+total rewards = 547,94 x 14 = 7671,16$
+
 ## 🔒 Fixed Reward Rate Campaigns
 
 In fixed reward rate campaigns, users earn a predefined amount of rewards per unit of liquidity at a set rate.

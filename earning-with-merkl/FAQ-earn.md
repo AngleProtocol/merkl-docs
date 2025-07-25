@@ -52,3 +52,10 @@ $$
 - the Total TVL of the pool/market if none addresses are either backlisted or whitelisted
 - the Total TVL minus the TVL of the blacklisted addresses if the campaign creator backlisted EOA addresses and/or smart contracts
 - the Total TVL of the whitelisted contract (e.g., if a campaign is restricted to a Gamma vault, Adjusted TVL will include the vault’s TVL, including idle liquidity)
+
+### What do "Amount", "Pending", and "Claimed" mean in the UI?
+
+- **Amount** refers to the total number of tokens already credited to the user onchain.
+- **Pending** refers to rewards that are queued and will be pushed onchain in the next update..
+- **Claimable** refers to rewards that have been computed and are ready to be claimed by users.
+- **Claimed** shows the amount the user has already claimed.

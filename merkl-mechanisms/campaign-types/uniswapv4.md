@@ -59,6 +59,14 @@ Campaign creators can fine-tune parameters to match their objectives:
 * **Stablecoin Peg Protection** – Allocating more weight to Token 0 (e.g., USDC) rewards LPs who provide more stable liquidity.
 * **Tight Range Incentives** – Using Uniswap V4 Hooks, LPs can implement automated rebalancing strategies to optimize rewards for tight-range liquidity.
 
+Here are some suggestions depending on your needs and pool type:
+
+* For stable pools/pegged pools (e.g., USDC/USDT or WBTC/BTC): Liquidity contribution = 80%, token0 = 10%, token1 = 10%
+* For volatile pools (e.g., WETH/USDC): Liquidity contribution = 20%, token0 = 40%, token1 = 40% (the higher the volatility, the higher the weights for token0 and token1 percentages should be)
+* You can also refer to this [blog](https://blog.merkl.xyz/merkl-insights-how-can-incentives-prevent-your-token-from-dumping) about liquidity walls (to prevent a token from dumping, or a stablecoin from losing its peg)
+
+* Note: Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or weight feed parameters on similar campaigns.
+
 ## 🚀 Sampling and Anti-DOS
 
 Uniswap V4 incentive distribution leverages Merkl's `LogProcessor` algorithm, which continuously tracks the pool's state at any given moment. As a result, each campaign calculates an average value for each position, ensuring that users are rewarded based on both their position and the duration they keep it open.
