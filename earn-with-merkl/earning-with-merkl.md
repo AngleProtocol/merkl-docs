@@ -22,17 +22,19 @@ Merkl is a one-stop shop for finding the best investment opportunities in DeFi a
 2. Explore the various opportunities and find the one that suits you best.
 3. Before getting on any Merkl opportunity, make sure that you understand how it works and how users can be rewarded as part of this opportunity. For this, we encourage you to:
    1. check the different [campaign types](../merkl-mechanisms/campaign-types/). All campaign have their specificities and it's crucial to understand them before trying to earn rewards from it
-   2.  explore the page associated with each opportunity in the Merkl App. Every opportunity listed on Merkl has a dedicated page where you can find details about the different campaigns linked to it. It's important to review the information for each live campaign to check if any specific rules or eligibility criteria apply.\
+   2. explore the page associated with each opportunity in the Merkl App. Every opportunity listed on Merkl has a dedicated page where you can find details about the different campaigns linked to it. It's important to review the information for each live campaign to check if any specific rules or eligibility criteria apply.\
 
 
        <figure><img src="../.gitbook/assets/Group 1.png" alt=""><figcaption><p>Opportunity page in the Merkl App with two active incentive campaigns</p></figcaption></figure>
-   3. understand the protocol where you're depositing liquidity and DYOR before investing. Merkl is non-custodial — you don’t need to deposit any assets on Merkl to be eligible or to claim your rewards. All interactions happen directly on the protocols. The main risk with Merkl lies in the underlying protocols being incentivized and with which you interact. Your funds on these underlying protocols may be at risk due to inherent issues, such as smart contract vulnerabilities or operational failures. While we do our best to whitelist every project we work with to ensure they are reliable and safe for our users, we cannot fully audit every project using the platform, and are not responsible for the potential issues of the protocols incentivized on Merkl.
+
+3. understand the protocol where you're depositing liquidity and DYOR before investing. Merkl is non-custodial — you don’t need to deposit any assets on Merkl to be eligible or to claim your rewards. All interactions happen directly on the protocols. The main risk with Merkl lies in the underlying protocols being incentivized and with which you interact. Your funds on these underlying protocols may be at risk due to inherent issues, such as smart contract vulnerabilities or operational failures. While we do our best to whitelist every project we work with to ensure they are reliable and safe for our users, we cannot fully audit every project using the platform, and are not responsible for the potential issues of the protocols incentivized on Merkl.
 4. Deposit your liquidity directly on the protocol's app by following the provided links on the opportunity page.
 5. That's it! You're now earning rewards, no staking or other onchain action is needed.
-6.  The next day, your [user dashboard](https://app.merkl.xyz/user/) will start showing the rewards you've earned. All you need to do now is claim all your earned tokens with a single click. If gas is expensive, you can wait a few more days/weeks to claim the rewards.\
+6. The next day, your [user dashboard](https://app.merkl.xyz/user/) will start showing the rewards you've earned. All you need to do now is claim all your earned tokens with a single click. If gas is expensive, you can wait a few more days/weeks to claim the rewards.\
 
 
     <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 12.20.32 1.png" alt=""><figcaption><p>The Merkl dashboard to claim rewards in the Merkl App</p></figcaption></figure>
+
 7. Make sure that you claim all your rewards within a year of receiving them!
 
 Happy farming!
@@ -53,7 +55,29 @@ Note that, by default, rewards can only be claimed by the address that earned th
 
 So to sum up, assuming Alice earned the rewards:
 
-* by default only Alice can claim and rewards are sent to Alice.
-* by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
+- by default only Alice can claim and rewards are sent to Alice.
+- by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
 
 If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
+
+### Claiming from a multisig
+
+When claiming rewards from a multisig address, we recommend delegating the claim process to an operator. This is because Merkl reward proofs are only valid for on average four hours (varies depending on the chain). If you fail to gather the necessary signatures and execute the claim transaction before a Merkle root is updated, your claim transaction will fail.
+
+### Claiming as an operator
+
+Currently, when you're connected to the Merkl frontend with an operator address, you only see rewards earned by that operator address—not by the addresses that have appointed it.
+
+To claim rewards on behalf of another address using an operator, you'll need to bypass the frontend and use the Merkl API directly. For example, you can retrieve the Merkle proof for a specific user and chain by calling: `https://api.merkl.xyz/v4/users/0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701/rewards?chainId=1`
+
+This response will include the Merkle proof data needed to submit a claim.
+You can then use this information to call the claim function on the [Merkl Distributor contract](../integrate-merkl/smart-contract-addresses.md) via a block explorer or directly onchain.
+
+To structure the claim:
+
+- `users`: Provide the address(es) you're claiming on behalf of. If claiming for multiple tokens, repeat the user address for each token.
+- `tokens`: List the token addresses you're claiming.
+- `amounts`: Use the amount field from the Merkl API response for each token.
+- `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
+
+<figure><img src=".gitbook/assets/DistributorClaim.png" alt=""><figcaption><p>Claiming Merkl rewards using a block explorer</p></figcaption></figure>
