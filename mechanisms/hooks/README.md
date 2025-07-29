@@ -151,7 +151,7 @@ Merkl provides several methods to manage dynamic boosting through an API. Here a
 Multiply the current amount by the provided input.
 
 $$
-\text{amount} = \text{amount} \times \frac{\text{boost}}{\text{1e18}}
+\text{amount} = \text{amount} \times \frac{\text{boost}}{\text{1e9}}
 $$
 
 #### Multiply with Offset
@@ -159,7 +159,7 @@ $$
 Apply a 1 + boost computation.
 
 $$
-\text{amount} = \text{amount} \times (1 + \frac{\text{boost}}{\text{1e18}})
+\text{amount} = \text{amount} \times (1 + \frac{\text{boost}}{\text{1e9}})
 $$
 
 #### Add
@@ -167,7 +167,7 @@ $$
 Add the boost number to the current amount.
 
 $$
-\text{amount} = \text{amount} + \left(\frac{\frac{\text{boost}}{\text{1e18}} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
+\text{amount} = \text{amount} + \left(\frac{\frac{\text{boost}}{\text{1e9}} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
 $$
 
 #### Replace
