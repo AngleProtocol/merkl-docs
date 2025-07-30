@@ -5,6 +5,10 @@ Merkl natively supports all lending and borrowing protocols that issue receipt t
 * Lending protocols that don’t follow this standard structure.
 * Tailored incentive campaigns—for example, rewarding users based on their net lending position (lending minus borrowing).
 
+As a campaign creator, you have the possibility to enable net lending on a specific opportunity. When enabled, users will not get extra rewards by borrowing the same asset and re-lending it again. This is to ensure there are no infinite loops & unefficient TVL (e.g if you lend $100 wstETH and borrow $60 USDC, you get rewarded for $100 wstETH)
+
+Note: this is not always the case. If you’ve got a doubt about net lending when preparing a campaign, feel free to reach out to us.
+
 Some notable custom integrations include Silo, Radiant, Morpho, Ajna, Euler, and Compound V2 (along with its forks).
 
 From a user perspective, interacting with these custom lending protocols feels the same as with standard ones. Merkl’s engine abstracts away protocol-specific differences, ensuring a consistent UX and feature set.
