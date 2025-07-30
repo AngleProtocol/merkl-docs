@@ -52,7 +52,7 @@ While Merkl campaigns generally use a standardized formula to compute TVLs and h
 
 For certain opportunity types, such as net lending, Merkl attempts — when possible — to compute APR based on the real, net opportunity TVL. As a result, we try to use the net supplied TVL (i.e., total supplied minus borrowed) as the basis for APR calculation instead of raw deposits.
 
-For opportunities that include blacklisted or whitelisted addresses, or have specific eligibility criteria, the Net TVL will only include the TVL from addresses that meet all the defined conditions."
+For opportunities that include blacklisted or whitelisted addresses, or have specific eligibility criteria, the Net TVL will only include the TVL from addresses that meet all the defined conditions.
 
 Overall, TVL within Merkl are adapted as much as possible to reflect the true opportunity size, but there are situations where this TVL might be over or underestimated, because they rely on approximations for simplicity in computations or because exact computing logic was not yet implemented. 
 
