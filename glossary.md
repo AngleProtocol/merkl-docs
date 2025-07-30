@@ -81,6 +81,10 @@ A contract (such as a staking, an ALM, or a vault) that holds the incentivized a
 
 The command center for incentive campaign creators. It allows anyone to launch incentive campaigns via Merkl, independently and in just a few minutes, and provides powerful tools to manage them effectively.
 
+## Net lending
+
+Refers to lending & borrowing campaigns where only the firstly deposited asset is accounted. This is to ensure there are no infinite loops & unefficient TVL (when the same asset is supplied & borrowed multiple times).
+
 ## Opportunity
 
 An asset (liquidity pool, lending market, ...) and its associated action that is incentivized via Merkl. For example, providing liquidity to a specific liquidity pool, holding a particular token, or lending a token on a given protocol. Not to be confused with a campaign.

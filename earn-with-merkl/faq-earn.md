@@ -45,10 +45,18 @@ $$
 \frac{\text{Daily Rewards} \times 365}{\text{Adjusted TVL*}}
 $$
 
-* The adjusted TVL of a pool or market is:
-* the Total TVL of the pool/market if none addresses are either backlisted or whitelisted
-* the Total TVL minus the TVL of the blacklisted addresses if the campaign creator backlisted EOA addresses and/or smart contracts
-* the Total TVL of the whitelisted contract (e.g., if a campaign is restricted to a Gamma vault, Adjusted TVL will include the vault’s TVL, including idle liquidity)
+* When there are no specific conditions or eligibility restrictions, **adjusted TVL = TVL**
+* When there are some (e.g, net lending, whitelist and/or blacklist hooks, or eligibility thresholds), **adjusted TVL = Net TVL**
+
+While Merkl campaigns generally use a standardized formula to compute TVLs and hence APRs, there are important nuances when it comes to how TVL is defined and used, especially for opportunities with non-trivial eligibility conditions (e.g., net lending, whitelist hooks, or eligibility thresholds).
+
+For certain opportunity types, such as net lending, Merkl attempts — when possible — to compute APR based on the real, net opportunity TVL. As a result, we try to use the net supplied TVL (i.e., total supplied minus borrowed) as the basis for APR calculation instead of raw deposits.
+
+For opportunities that include blacklisted or whitelisted addresses, or have specific eligibility criteria, the Net TVL will only include the TVL from addresses that meet all the defined conditions."
+
+Overall, TVL within Merkl are adapted as much as possible to reflect the true opportunity size, but there are situations where this TVL might be over or underestimated, because they rely on approximations for simplicity in computations or because exact computing logic was not yet implemented. 
+
+If you’ve got a doubt about a true opportunity TVL, feel free to reach out to us to understand how APRs are being computed.
 
 ### What do "Amount", "Pending", and "Claimed" mean in the UI?
 
