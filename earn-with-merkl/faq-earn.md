@@ -31,6 +31,10 @@ Merkl automatically blacklists addresses that display suspicious behavior, such 
 
 If you believe you were blacklisted by mistake, please open a support ticket and provide your wallet address along with an explanation of your activity. Our team will review your case.
 
+### On lending campaigns, can I loop assets to get extra rewards?
+
+No - In most cases, you will get rewarded only for the supplied amount. If you supplied & borrowed the same asset, you will get rewarded for the difference (supplied - borrowed). This is to ensure there are no infinite loops & unefficient TVL on the opportunity.
+
 ### The daily distribution of rewards didn't occur. Will I still receive my rewards?
 
 Yes, rewards are retroactive. If there’s a delay in the Merkl engine run for a campaign, you’ll receive any missed rewards during the next engine run once the issue is resolved. Since the Merkl engine runs multiple times per day, you won’t have to wait long for missed rewards. For example, if a campaign didn’t distribute rewards today but the engine runs the following day after the issue is fixed, you’ll receive both the missed rewards and the current rewards.
@@ -42,13 +46,14 @@ One common reason for delays is the absence of a swap in the pool. Swaps are nec
 The main APR displayed is calculated as:
 
 $$
-\frac{\text{Daily Rewards} \times 365}{\text{Adjusted TVL*}}
+\frac{\text{Daily Rewards} \times 365}{\text{Net TVL*}}
 $$
 
-* The adjusted TVL of a pool or market is:
-* the Total TVL of the pool/market if none addresses are either backlisted or whitelisted
-* the Total TVL minus the TVL of the blacklisted addresses if the campaign creator backlisted EOA addresses and/or smart contracts
-* the Total TVL of the whitelisted contract (e.g., if a campaign is restricted to a Gamma vault, Adjusted TVL will include the vault’s TVL, including idle liquidity)
+While Merkl campaigns generally use a standardized formula to compute TVLs and hence APRs, there are important nuances when it comes to how Net TVL is defined and used, especially for opportunities with non-trivial eligibility conditions (e.g., net lending, whitelist/blacklist hooks, or eligibility thresholds).
+
+For campaigns with blacklisted and/or whitelisted addresses, or specific eligibility conditions, the Net TVL will only include the TVL from addresses meeting all the specified conditions.
+
+For net lending campaigns, Merkl attempts — when possible — to compute APR based on the real, net opportunity TVL. As a result, we use the net supplied TVL (i.e., total supplied minus borrowed) as the basis for APR calculation instead of raw deposits. 
 
 ### What do "Amount", "Pending", and "Claimed" mean in the UI?
 

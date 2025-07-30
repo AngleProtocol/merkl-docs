@@ -20,6 +20,17 @@ Yes, we support test campaigns on mainnet using dummy tokens (e.g., Aglamerkl fo
 
 You should consider your desired APR, the target TVL, and the campaign duration (we recommend a 2-week duration for your first campaigns).This will help you calculate the total reward amount you’ll need to deposit when launching your campaign. 
 
+### How does net lending work?
+
+As a campaign creator, you have the possibility to enable net lending on a specific opportunity. When enabled, users will not get extra rewards by borrowing the same asset and re-lending it again. This is to ensure there are no infinite loops & unefficient TVL.
+
+A few examples of what can be done:
+
+- if you lend $100 wstETH and borrow $60 USDC, you get rewarded for $100 wstETH
+- if you lend $100 wstETH and borrow $60 wstETH, you get rewarded for: $100 - $60 = $40 wstETH
+
+Note: this is not systematic. If you’ve got a doubt about net lending when preparing a campaign, feel free to reach out to us.
+
 ### What is the minimum reward distribution per hour?
 
 Campaigns must distribute at least ~$1/hour in total rewards to avoid dusting. Also, positions with less than $10 in liquidity are excluded from receiving rewards.

@@ -67,9 +67,9 @@ For more details on this, refer to the documentation [here](https://docs.merkl.x
 
 Let’s take an example: If you want your stable pool to reach $2M TVL, with a 10% APR, for a 14 days campaign, the rewards amount will be:
 
-daily rewards = (0.1 x $2M)/365 = 547,94$
+daily rewards = (0.1 x $2M)/365 = $547,94
 
-total rewards = 547,94 x 14 = 7671,16$
+total rewards = $547,94 x 14 = $7671,16
 
 ## 🔒 Fixed Reward Rate Campaigns
 
