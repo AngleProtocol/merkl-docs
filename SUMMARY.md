@@ -8,7 +8,6 @@
 * [Incentive Mechanisms](merkl-mechanisms/incentive-mechanisms.md)
 * [Campaign Types](merkl-mechanisms/campaign-types/README.md)
   * [Concentrated Liquidity Campaigns](merkl-mechanisms/campaign-types/concentrated-liquidity-mechanisms.md)
-  * [UniswapV4 Liquidity Campaigns](merkl-mechanisms/campaign-types/uniswapv4.md)
   * [Airdrop Campaigns](merkl-mechanisms/campaign-types/airdrop.md)
   * [Token Holding Campaigns](merkl-mechanisms/campaign-types/erc20-mechanisms.md)
   * [Lending and Borrowing Campaigns](merkl-mechanisms/campaign-types/lending-borrowing.md)
