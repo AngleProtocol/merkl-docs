@@ -1,46 +1,70 @@
+---
+description: Reward users who lend, borrow, or use tokens as collateral in lending markets
+---
+
 # Lending and Borrowing Campaigns
 
-Merkl natively supports all lending and borrowing protocols that issue receipt tokens for lenders and debt tokens for borrowers. However, it also extends support to:
+## 🫴🏼 Supported protocols
 
-* Lending protocols that don’t follow this standard structure.
-* Tailored incentive campaigns—for example, rewarding users based on their net lending position (lending minus borrowing).
+Merkl supports **most major lending and borrowing protocols**, such as Morpho, Euler, Compound, and Aave.
 
-As a campaign creator, you have the possibility to enable net lending on a specific opportunity. When enabled, users will not get extra rewards by borrowing the same asset and re-lending it again. This is to ensure there are no infinite loops & unefficient TVL (e.g if you lend $100 wstETH and borrow $60 USDC, you get rewarded for $100 wstETH)
+The full list of supported protocols can be found in the ["Lending & Borrowing" section of Merkl Studio](https://studio.merkl.xyz/create-campaign/lend) when selecting a protocol.
+
+<figure><img src="../../.gitbook/assets/Group 14.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+Merkl natively supports **all lending and borrowing protocols that issue receipt tokens** for lenders and debt tokens for borrowers — such as Aave with aTokens.
+
+For these protocols, please use the [“Token Holding” incentive category](https://studio.merkl.xyz/create-campaign/erc20) in Merkl Studio, as you are incentivizing a token that represents a lending position.
+{% endhint %}
+
+{% hint style="info" %}
+If you’d like your lending and borrowing protocol to be fully integrated and supported by Merkl — or if you're looking to create tailored protocol-specific campaigns — please reach out on the [Merkl Discord](https://discord.com/invite/jnYfrGxDbe) by opening a BD ticket to discuss the integration process.
+{% endhint %}
+
+## 🔁 Preventing lending loops
+
+Merkl allows campaign creators to reward users based on their **net lending position** (lending minus borrowing) to avoid lending and borrowing loops.
+
+As a campaign creator, you have the possibility to enable net lending on a specific opportunity. When enabled, users will not get extra rewards by borrowing the same asset and re-lending it again. This is to ensure there are no infinite loops & unefficient TVL.
+
+For example, if you lend $100 wstETH and borrow $60 wstETH, you get rewarded for $40 wstETH ($100 - $60).
 
 Note: this is not always the case. If you’ve got a doubt about net lending when preparing a campaign, feel free to reach out to us.
 
-Some notable custom integrations include Silo, Radiant, Morpho, Ajna, Euler, and Compound V2 (along with its forks).
+## 🪡 Campaign personalization
 
-From a user perspective, interacting with these custom lending protocols feels the same as with standard ones. Merkl’s engine abstracts away protocol-specific differences, ensuring a consistent UX and feature set.
+Campaign creators can design custom lending incentive campaigns by leveraging:
 
-This means that campaign creators can also customize:
+* [distribution types](../distributions.md): fixed reward rate, variable reward rate, …
+* [customization options](../customization-options.md): whitelist / blacklist systems, boosts,…
+* [additional features](../features.md): forwarders, token wrappers,…
 
-* their [campaign hooks](../customization-options.md) (e.g. blacklisting, whitelisting systems, forwarding mechanisms, ...)
-* their [distribution methods](../distributions.md) (e.g fixed APR, variable APR, ...)
+## 🚀 Create a campaign
+
+To set up and launch a lending & borrowing incentive campaign, please follow the steps in the [“Create a Campaign”](../../distribute-with-merkl/create-a-campaign.md) section.
+
+## 🦋 Morpho multi-market campaign
+
+With Merkl you can **incentivize a single token (e.g. USDC) across all Morpho markets with just one campaign!**
+
+No need to precise a specific markets or vault to incentivize.
+
+Merkl detects all Morpho markets where the selected incentivized token is active and also identifies every wallet that interacted with those markets. Then, Merkl automatically cascades rewards across every whitelisted Morpho markets where the token is used based on:
+
+* the liquidity and size of each market
+* the user’s share of liquidity
+
+To create a multi-market campaign, you just need to select any of these three options when selection an action to incentivize in the Choose target step in Merkl Studio:
+
+* `Supply a token to any market`
+* `Borrow a token from any market`
+* `Use a token as collateral on any market`
+
+<figure><img src="../../.gitbook/assets/Group 15.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-If you want your lending and borrowing protocol to be fully integrated and supported by Merkl, or to create tailored protocol-campaigns, please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process.
+**Who is this designed for?**
+
+The multi-market campaign feature is especially aimed at **token issuers**, such as stablecoin protocols. It allow them to grow their token easily by running a campaign across all Morpho markets — for example, rewarding DeFi users who use their token as collateral.
 {% endhint %}
-
-Here are below some specificities you may face with some lending protocol integrations on Merkl.
-
-## Morpho
-
-When creating a campaign for a Morpho pool, you'll be asked to input the following parameters:
-
-* **Usage:** From the dropdown menu, select the usage type (_MetaMorpho_, _Supply_, _Borrow_, _Collateral_) you want to incentivize. Choosing _MetaMorpho_ will incentivize a MetaMorpho vault, while selecting _Supply_, _Borrow_, or _Collateral_ will incentivze a Morpho Blue market.
-* **Market ID:** Specify the Market ID. For _MetaMorpho_, select the desired MetaMorpho vault to incentivize. For Morpho Blue, choose whether to incentivize the _supply_, _borrow_, or _collateral_ for a specific Morpho Blue market. You also have the option to manually enter the asset address for any type of Market ID.
-
-## Radiant
-
-You'll be asked to set a `cap` parameter in USDC. This is used by Radiant: if you're not the Radiant protocol you should set it to 0.
-
-## Silo
-
-Like on Morpho, there are some custom parameters to choose:
-
-* **Usage:** Select the specific usage for your Silo campaign (Deposit, Protected Deposit, or Debt).
-* **Version:** Choose the version of Silo (Silo Legacy, or Silo Llama).
-* **Asset:** Select the asset to incentivize from the dropdown menu or enter the asset address manually.
-
-The blacklist/whitelist features also come handy here as you may use it to automatically blacklist silos that should not receive rewards.
