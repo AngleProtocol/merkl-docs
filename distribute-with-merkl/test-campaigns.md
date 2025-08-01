@@ -8,7 +8,9 @@ description: >-
 
 **Merkl is not deployed on testnets, but you can still run test campaigns using our test token: aglaMerkl**
 
-These campaigns will **not appear on the Merkl app** and will not be visible to users, as they are automatically filtered out from the interface.
+These test campaigns are not mandatory — they’re available to help you experiment with how Merkl works using valueless tokens, so you can better prepare your upcoming campaigns. However, since they consume computation resources on our end, we encourage you to use this feature only when there’s a clear need
+
+Note that test campaigns will **not appear on the Merkl app** and will not be visible to users, as they are automatically filtered out from the interface.
 
 To get started, send us a message and we’ll provide you with our test token. aglaMerkl has no value and is only intended for creating test campaigns on Merkl.
 
