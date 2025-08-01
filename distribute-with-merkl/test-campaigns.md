@@ -12,7 +12,7 @@ These campaigns will **not appear on the Merkl app** and will not be visible to 
 
 To get started, send us a message and we’ll provide you with our test token. aglaMerkl has no value and is only intended for creating test campaigns on Merkl.
 
-You can then create your test campaign using aglaMerkl tokens. While the campaign won’t show up in the Merkl app, you’ll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation.
+You can then create your test campaign using aglaMerkl tokens. While the campaign won’t show up in the Merkl app, you’ll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation. You can refer to the [Campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management/) for more info regarding the mostly used endpoints.
 
 Make sure to verify that:
 
@@ -20,3 +20,5 @@ Make sure to verify that:
 * key metrics like TVL are correctly computed
 
 If everything looks good in the API, it will appear correctly in the Merkl front end once the real campaign is live!
+
+If you need help to create your first test campaigns, feel free to reach out to us.

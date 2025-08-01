@@ -68,7 +68,7 @@ There can be several reasons for this. The main ones are:
 - A technical issue occurred (subgraph, RPC, etc.). We’ll keep you informed once it’s resolved.
 - An incorrect pool address or the wrong chain being selected when creating the campaign.
 
-## During the campaign
+## After the campaign
 
 ### What happens to unclaimed rewards after the campaign ends?
 
