@@ -6,26 +6,30 @@ Below are some of the most commonly used customization options in Merkl.
 
 ## ✅ Whitelisting
 
-Whitelisting restricts rewards to a specific address or set of addresses (e.g., selected forwarders, ALMs, or individual users).
+Whitelisting restricts rewards to a specific address or set of addresses (e.g., forwarders, or individual users).
 
 <figure><img src="../.gitbook/assets/Group 4.png" alt=""><figcaption><p>Whitelist addresses when setting up a campaign in Merkl Studio</p></figcaption></figure>
 
-**Example: Uniswap V3 ALM Incentives**:
+**Example: Uniswap V3 whitelisting**:
 
-* A campaign incentivizes LPs in a Uniswap V3 pool with three Automated Liquidity Managers (ALMs).
-* The campaign creator whitelists only two ALMs and one user address.
-*   Result:
+A campaign incentivizes LPs in a Uniswap V3 pool with three forwarders — here Automated Liquidity Managers.
 
-    ```
-    - Only liquidity providers using the two approved ALMs or the whitelisted user will receive rewards
-    - Rewards are distributed normally among whitelisted addresses based on liquidity share.
-    ```
+The campaign creator whitelists only two forwarders and one user address.
+
+Result:
+
+* Only liquidity providers using the two approved forwarders or the whitelisted user will receive rewards
+* Rewards are distributed normally among whitelisted addresses based on liquidity share.
 
 **Whitelisting & Blacklisting Priority**:
 
-* **Whitelisting overrides blacklisting. If an address is whitelisted, all other addresses are automatically blacklisted.**
-* If multiple campaigns run on the same pool, some may have whitelists while others do not.
-* Users should check the campaign details to confirm eligibility requirements.
+{% hint style="danger" %}
+Whitelisting overrides blacklisting. If an address is whitelisted, all other addresses are automatically blacklisted.
+{% endhint %}
+
+If multiple campaigns run on the same pool, some may have whitelists while others do not.
+
+Users should check the campaign details to confirm eligibility requirements.
 
 ## ❌ Blacklisting
 

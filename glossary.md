@@ -75,7 +75,9 @@ Fixed token rewards are a type of [fixed reward rate campaign](glossary.md#fixed
 
 ## Forwarder
 
-A contract (such as a staking, an ALM, or a vault) that holds the incentivized asset on behalf of users. Merkl detects the underlying users and distributes rewards to them, even if the asset isn’t held directly in their wallet. For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
+A contract (such as staking, an Automated Liquidity Manager, or a vault) that holds the incentivized asset on behalf of users. Merkl detects the underlying users and distributes rewards to them, even if the asset isn’t held directly in their wallet.
+
+For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
 
 ## Merkl Studio
 
