@@ -34,7 +34,7 @@ Before starting your campaign, you need to ensure that the token you want to use
 
 We usually process token whitelisting requests once a day, and it's a way for us to ensure that we will be able to properly compute APRs and that the token will be safe to use for our users.
 
-You can find all whitelisted tokens by chain on the [status page](https://app.merkl.xyz/status). If your token is not part of the list, please submit the reward token’s price source and logo by filling out this [whitelisting form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
+You can check whether your token is already whitelisted by setting it as the reward token in the [Merkl studio](https://studio.merkl.xyz/create-campaign/clamm). If your token is not whitelisted, please submit the reward token’s price source and logo by filling out this [whitelisting form](https://anglemoney.notion.site/1aecfed0d48c808a8194fe2befd50bdb?pvs=105).
 
 {% hint style="info" %}
 If your reward token is not transferable, make sure to whitelist both our campaign creator and distributor contracts for the blockchain where you intend to distribute rewards. You can find the relevant contract addresses on our [status page](https://app.merkl.xyz/status).
@@ -45,7 +45,7 @@ If your reward token is not transferable, make sure to whitelist both our campai
 
 
 
-Note: You need to whitelist the campaignCreator for both transfer and transferFrom!
+Note: You need to whitelist the campaignCreator for both transfer and transferFrom! as well as the Distributor contract (but not for points campaigns)
 {% endhint %}
 
 {% hint style="success" %}
