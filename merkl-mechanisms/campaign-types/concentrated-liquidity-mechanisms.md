@@ -100,7 +100,7 @@ Here are some suggestions depending on your needs and pool type:
 * You can also refer to the Merkl blog about [liquidity walls](https://blog.merkl.xyz/merkl-insights-how-can-incentives-prevent-your-token-from-dumping) explaining how to prevent a token from dumping, or a stablecoin from losing its peg
 
 {% hint style="danger" %}
-Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or weight feed parameters on similar campaigns.
+Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or weight fees parameters on similar campaigns.
 {% endhint %}
 
 ## 💉 Sampling and Anti-DoS

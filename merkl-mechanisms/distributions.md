@@ -109,6 +109,15 @@ This distribution method is widely used in point systems. Traditionally in point
 
 The main difference here in fixed APR campaigns for points is that when distributing points, the budget is effectively unlimited; and so campaign creators can allocate as many points as they want, allowing the campaign to last indefinitely.
 
+If you plan to launch points campaigns, please make sure you give us in advance the following information so that we can deploy your point:
+
+* name
+* symbol
+* logo
+* address which will create the campaign (so that we can whitelist it)
+
+Finally, please make sure you have read our [blog](https://blog.merkl.xyz/how-to-build-a-point-program-with-merkl) regarding the points system before creating your campaign.
+
 #### Example: Points
 
 Bob wants to incentivize holding his token _LONG_ with a point token named _BOB_.
