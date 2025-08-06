@@ -40,6 +40,5 @@
 ## Integrate Merkl
 
 * [Integrate Merkl to your App - Merkl API V4 Docs](integrate-merkl/app.md)
-* [3️⃣ Merkl API V3 Docs](integrate-merkl/deprecated-v3-endpoints.md)
 * [Branding and Integration](integrate-merkl/branding-and-integration.md)
 * [Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)

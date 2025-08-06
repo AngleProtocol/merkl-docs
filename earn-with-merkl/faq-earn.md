@@ -61,6 +61,6 @@ If you’ve got a doubt about a true opportunity TVL, feel free to reach out to 
 ### What do "Amount", "Pending", and "Claimed" mean in the UI?
 
 - **Amount** refers to the total number of tokens already credited to the user onchain.
-- **Pending** refers to rewards that are queued and will be pushed onchain in the next update..
+- **Pending** refers to rewards that are queued and will be pushed onchain in the next update.
 - **Claimable** refers to rewards that have been computed and are ready to be claimed by users.
 - **Claimed** shows the amount the user has already claimed.
