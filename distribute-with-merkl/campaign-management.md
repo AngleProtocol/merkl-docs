@@ -16,7 +16,7 @@ You now have the full ownership of your campaign. You’ll be able to:
 
     ✅ You can:
 
-    * Change the start date & end dates if the campaign is not live yet
+    * Change the start date & end dates if they are not in the past
     * Edit blacklists or whitelists to include or exclude certain addresses
     * Enable additional features as needed
 
