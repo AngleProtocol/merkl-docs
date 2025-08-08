@@ -28,17 +28,17 @@ To show Merkl data in your front-end, you have 2 types of data you can use:
 * `Campaigns`: these are programs running on a given pool, ERC20 token, etc, over a period of time
 * `Opportunities`: these are groups of campaigns targeting the same user base (the same pool, ERC20 token, ...). Typically, multiple campaigns can run in parallel for liquidity providers on a pool, and these all make up an opportunity.
 
-Note: there are two types IDs used by merkl to identify campaigns & opportunities:
+Note: there are two types ids used by merkl to identify campaigns & opportunities:
 
-* campaignid: this refers to the onchain id of a campaign (in 0x... format). This one is not unique: there can be multiple campaigns across different chains with the same campaignid. It can be easily found in the opportunity description on our app.
+* `campaignid`: this refers to the onchain id of a campaign (in 0x... format). This one is not unique: there can be multiple campaigns across different chains with the same `campaignid`. It can be easily found in the [opportunities page](https://app.merkl.xyz/) by looking into a speficic opportunity and going in the campaign details, then in the "advanced" tab.
 
-* id (or DatabaseID): this refers to the id stored in our Database (e.g 13972358188887408622). It is unique and is used to retrieve data for most of the routes. You can find it by using the 0x.. campaignid on this route [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/)
+* id (or `databaseid`): this refers to the id stored in our database (e.g 13972358188887408622). It is unique and is used to retrieve data for most of the routes. You can find it by using the 0x.. `campaignid` on this route [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/)
 
 You can find a list of the most frequently used endpoint in the [campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management)
 
 ## Integrating APRs Data into your frontend
 
-1. **Retrieve the Opportunity ID**:
+1. **Retrieve the Opportunity id**:
    *   If you're a DeFi protocol integrating APRs for **your own opportunities**, query this API route with your protocol name:
 
        ```
@@ -51,7 +51,7 @@ You can find a list of the most frequently used endpoint in the [campaign manage
        https://api.merkl.xyz/v4/opportunities?name=Izumi
        ```
 
-       Just below the `tags` of an opportunity, you’ll find the opportunity ID. Copy it for later.
+       Just below the `tags` of an opportunity, you’ll find the opportunity id. Copy it for later.
    *   If your opportunities are across multiple protocols, we recommend using this route:
 
        ```
@@ -64,9 +64,9 @@ You can find a list of the most frequently used endpoint in the [campaign manage
        https://api.merkl.xyz/v4/opportunities?tags=zksync
        ```
 
-       If you want a tag added to an opportunity, feel free to reach out, and we will assign the campaign to your protocol’s tag. Similarly, below `tags`, you’ll find the opportunity ID. Copy it for later.
+       If you want a tag added to an opportunity, feel free to reach out, and we will assign the campaign to your protocol’s tag. Similarly, below `tags`, you’ll find the opportunity id. Copy it for later.
 2. **Retrieve APR Data**:
-   *   Once you have the opportunity ID, call the following route, replacing `{id}` with your opportunity ID:
+   *   Once you have the opportunity id, call the following route, replacing `{id}` with your opportunity id:
 
        ```
        https://api.merkl.xyz/v4/opportunities/{id}
@@ -84,13 +84,13 @@ You can find a list of the most frequently used endpoint in the [campaign manage
 
 Assuming you've created a campaign using $PYTH as a reward token targeting the Euler Vault `0x82D2CE1f71cbe391c05E21132811e5172d51A6EE`, you can find this campaign's data using the following endpoint: [https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH](https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH).
 
-Here, you will find data related to this campaign start and end date, the amount of PYTH streamed, its ID, etc.
+Here, you will find data related to this campaign start and end date, the amount of PYTH streamed, its id, etc.
 
 {% hint style="info" %}
-Each campaign on Merkl is identified on the Merkl API by a unique ID. You can find it by using the 0x.. campaignid on this route https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/
+Each campaign on Merkl is identified on the Merkl API by a unique id. You can find it by using the 0x.. `campaignid` on this route https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/
 {% endhint %}
 
-After obtaining the DatabaseID of a campaign, you can use it to retrieve data related to this specific campaign using this route: [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id})
+After obtaining the `databaseid` of a campaign, you can use it to retrieve data related to this specific campaign using this route: [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id})
 
 There are different filters available to find your campaigns. You may browse the available filters [here](https://api.merkl.xyz/docs#tag/campaigns/GET/v4/campaigns/).
 
@@ -109,7 +109,7 @@ Taking the example from above, you may get the opportunity corresponding to the 
 
 This will give you aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
 
-You can also retrieve data for a specific opportunity using the following route: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}) using the DatabaseID.
+You can also retrieve data for a specific opportunity using the following route: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}) using the `databaseid`.
 
 Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/docs#tag/opportunities/GET/v4/opportunities/).
 
