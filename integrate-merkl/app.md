@@ -28,6 +28,14 @@ To show Merkl data in your front-end, you have 2 types of data you can use:
 * `Campaigns`: these are programs running on a given pool, ERC20 token, etc, over a period of time
 * `Opportunities`: these are groups of campaigns targeting the same user base (the same pool, ERC20 token, ...). Typically, multiple campaigns can run in parallel for liquidity providers on a pool, and these all make up an opportunity.
 
+Note: there are two types IDs used by merkl to identify campaigns & opportunities:
+
+* campaignid: this refers to the onchain id of a campaign (in 0x... format). This one is not unique: there can be multiple campaigns across different chains with the same campaignid. It can be easily found in the opportunity description on our app.
+
+* id (or DatabaseID): this refers to the id stored in our Database (e.g 13972358188887408622). It is unique and is used to retrieve data for most of the routes. You can find it by using the 0x.. campaignid on this route [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/)
+
+You can find a list of the most frequently used endpoint in the [campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management)
+
 ## Integrating APRs Data into your frontend
 
 1. **Retrieve the Opportunity ID**:
@@ -79,12 +87,14 @@ Assuming you've created a campaign using $PYTH as a reward token targeting the E
 Here, you will find data related to this campaign start and end date, the amount of PYTH streamed, its ID, etc.
 
 {% hint style="info" %}
-Each campaign on Merkl is identified on the Merkl API by a unique ID.
+Each campaign on Merkl is identified on the Merkl API by a unique ID. You can find it by using the 0x.. campaignid on this route https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/
 {% endhint %}
+
+After obtaining the DatabaseID of a campaign, you can use it to retrieve data related to this specific campaign using this route: [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id})
 
 There are different filters available to find your campaigns. You may browse the available filters [here](https://api.merkl.xyz/docs#tag/campaigns/GET/v4/campaigns/).
 
-### Retrieving Opportunity Data
+## Retrieving Opportunity Data
 
 Now, you may want to display data about all the campaigns targeting this pool.
 
@@ -98,6 +108,8 @@ The two routes we recommend using are:
 Taking the example from above, you may get the opportunity corresponding to the Euler vault by using: [https://api.merkl.xyz/v4/opportunities?name=Euler](https://api.merkl.xyz/v4/opportunities?name=Euler).
 
 This will give you aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
+
+You can also retrieve data for a specific opportunity using the following route: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}] (https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}) using the DatabaseID.
 
 Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/docs#tag/opportunities/GET/v4/opportunities/).
 
@@ -117,9 +129,9 @@ https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/reward
 
 This route provides:
 
-* Amount : the total amount of tokens to have been credited to the user onchain.
-* Pending : the pending rewards that will be credited onchain on the next update.
-* Claimed : the number of already claimed tokens.
+* Amount: the total amount of tokens to have been credited to the user onchain.
+* Pending: the pending rewards that will be credited onchain on the next update.
+* Claimed: the number of already claimed tokens.
 * Proofs that will assist in integrating the claiming of rewards (details in the next section).
 
 ## Claiming user rewards
