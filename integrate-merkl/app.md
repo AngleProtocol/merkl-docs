@@ -109,7 +109,7 @@ Taking the example from above, you may get the opportunity corresponding to the 
 
 This will give you aggregated data related to the opportunity like daily rewards, APRs, TVLs, etc.
 
-You can also retrieve data for a specific opportunity using the following route: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}] (https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}) using the DatabaseID.
+You can also retrieve data for a specific opportunity using the following route: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/{id}) using the DatabaseID.
 
 Once again, there are different filters available to find the opportunities of your choice. You may browse the different filters for opportunities [here](https://api.merkl.xyz/docs#tag/opportunities/GET/v4/opportunities/).
 
