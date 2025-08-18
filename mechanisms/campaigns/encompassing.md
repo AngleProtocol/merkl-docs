@@ -62,7 +62,9 @@ Example:
 - **rewards:** User rewards with recipient addresses, reasons, amount and timestamp for the rewards.
 
 Good to know:
-- `timestamp` is the unix timestamp in seconds, date at which the reward is sent to the recipient. This timestamp must not exceed the end date of the campaign (it will not be processed if it's after the end date), and if it's before the start date of the campaign, the reward will be sent to the recipient at the start date.
+- The Merkl engine polls the endpoint every 2 to 8 hours. When it polls the endpoint, it compares the current time to the timestamps in the reasons, if the timestamp is in the future, the reason is not processed
+- Onced processed, a reason can be removed from the endpoint. If you wish to know if a reason was processed, you can look for it in the rewards endpoint associated to the campaign (doc [here](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/))
+- `timestamp` is the unix timestamp in seconds, date at which the reward is sent to the recipient.  This timestamp must not exceed the end date of the campaign (it will not be processed if it's after the end date), and if it's before the start date of the campaign, the reward will be sent to the recipient at the start date.
 - Once the engine has processed some rewards, even if the reward endpoint is updated, the rewards already distributed can't be reverted. If a campaign  creator needs to send additional rewards to the same user, he can do it by adding another reason for the same recipient. 
 
 Example:
@@ -97,7 +99,7 @@ The expected format for the JSON data is the following
 ```
 type DataJSON = {
   tvl: string;
-  apr: string; // in decimal
+  apr: string; // in decimal, value is multiplied by 100 in the frontend (eg. 0.25 = 25%)
   opportunityName: string; // optional
 }
 ```
