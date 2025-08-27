@@ -12,6 +12,10 @@ In Token Holding Campaigns, users who hold an incentivized ERC20 token in their 
 
 For example, in a [variable reward rate campaign](../distributions.md#variable-reward-rate-campaigns), rewards are distributed proportionally to each user’s share of the total token supply. So if a user holds 1% of the total supply over a given period, they’re eligible to receive 1% of the rewards distributed during that time.
 
+The methodology used to calculate rewards is as follows:
+
+Transfer events are tracked to reconstruct the exact balance of each participant. An integral is then computed over the selected time frame for every user, with no approximations: everything is exact. Users are then rewarded proportionally to their individual area under the curve compared to the total area of all participants.
+
 ### Customizability options
 
 Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../customization-options.md) such as:
