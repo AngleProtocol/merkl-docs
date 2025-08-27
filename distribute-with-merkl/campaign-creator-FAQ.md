@@ -72,7 +72,9 @@ There can be several reasons for this. The main ones are:
 
 ### What happens to unclaimed rewards after the campaign ends?
 
-Campaign creators on Merkl can [freely reallocate](../merkl-mechanisms/features.md) all unclaimed rewards once their campaign ends.
+Campaign creators on Merkl can [freely reallocate](https://docs.merkl.xyz/merkl-mechanisms/features#campaign-reallocation) all unclaimed rewards once their campaign ends.
+
+After a Merkl campaign concludes, the undistributed rewards will be available to claim when connecting to the [Merkl dashboard](https://app.merkl.xyz/users/) with the address used to create the campaign. The rewards will show 24h after the campaign ends.
 
 One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them. This policy ensures that unused incentives are efficiently reallocated, supporting the platform’s long-term sustainability.
 
