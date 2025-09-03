@@ -21,46 +21,117 @@ To create a multi-campaign payload, you first need to identify the campaign mode
 
 To generate a multi-campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
 
+We strongly encourage you to retrieve an `id` of a campaign that is as close as possible to the one you wish to create, so that you minimize the number of parameters to edit and reduce the risk of errors.
+
+The list of parameters you can override when generating the payload are the ones in the `params` field of the response. Depending on the campaign type selected, you will be able to edit the relevant parameters. Also, for each campaign, you will always be able to edit the `amount` of tokens to distribute.
+
+For each campaign in the batch, you will have to provide the `id` from Step 1 (e.g 3011317640800818752) in the `campaignsParams` parameter.
+
 **The following parameters will apply to the whole campaign batch. That means if you want to create a campaign with one different parameter, you'll have to create another payload.**
 
-`creatorAddress`: the address creating the campaigns
-`rewardToken`: the token used for rewards across all campaigns
-`distributionChainId`: the chainId where campaigns will run
-`startTimestamp`: the start date of the campaigns (in unix time stamp format)
-`endTimestamp`: the end date of the campaigns (in unix time stamp format)
+- `creatorAddress`: the address creating the campaigns
+- `rewardToken`: the token used for rewards across all campaigns
+- `distributionChainId`: the chainId where campaigns will run
+- `startTimestamp`: the start date of the campaigns (in unix time stamp format)
+- `endTimestamp`: the end date of the campaigns (in unix time stamp format)
 
-Then, for each campaign in the batch, you will have to provide the `id` from Step 1 (e.g 3011317640800818752) in the `campaignsParams` parameter. 
+You can also override the following parameters:
+- `computeChainId` (make sure it's a chain we already support)
+- `hooks`
+- `APR`: you can edit the the APR type (variable, fixed, capped) of the template campaign by modyfing the following section: 
 
-Finally, the list of the parameters you can override will depend on the campaign template used:
+```
+"distributionMethod": "FIX_APR",
+"distributionSettings": {
+"apr": "0.16",
+}
+```
 
-**For holding token campaign and v2 pools campaigns, the parameters to be overridden are:**
-- `url`: the url which will be displayed in the opportunity's page in our app
-- `amount`: the amount of tokens to be distributed as rewards
-- `blacklist`: the list of addresses you want to exclude from the campaign
-- `whitelist`: the list of addresses you want to reward in the campaign (other addresses will be excluded)
+
+Here is the list of the relevant parameters depending on the campaign type used as a template:
+
+**ERC20 campaigns:**
 - `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns) or the 0x address of the LP token for the underlying incentivized v2 pool
 
-**For CLAMM campaigns, the parameters to be overridden are:**
-- `url`: the url which will be displayed in the opportunity's page in our app
-- `amount`: the amount of tokens to be distributed as rewards
-- `blacklist`: the list of addresses you want to exclude from the campaign
-- `whitelist`: the list of addresses you want to reward in the campaign (other addresses will be excluded)
-- `poolId`: the 0x address of the incentivized pool
-- `currency0`: the 0x address of the 1st token in the pool
-- `currency1`: the 0x address of the 2nd token in the pool
-- `lpFee`: the weight for the rewards split associated to the total fees generated
+**UniV3 campaigns:**
+- `poolAddress`: the 0x address of the incentivized pool
+- `weightFees`: the weight for the rewards split associated to the total fees generated
 - `weightToken0`: the weight for the rewards split of token 0 in the pool
 - `weightToken1`: the weight for the rewards split of token 1 in the pool
+- `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
 
-**For lending & borrowing campaigns, the parameters to be overridden are:**
-- `url`: the url which will be displayed in the opportunity's page in our app
-- `amount`: the amount of tokens to be distributed as rewards
-- `blacklist`: the list of addresses you want to exclude from the campaign
-- `whitelist`: the list of addresses you want to reward in the campaign (other addresses will be excluded)
-- `targetToken`: the 0x address of the vault
-- `addressAsset`: the 0x address of the token you want to borrow or lend
+**UniV4 campaigns:**
+- `poolId`: the 0x address of the incentivized pool
+- `weightFees`: the weight for the rewards split associated to the total fees generated
+- `weightToken0`: the weight for the rewards split of token 0 in the pool
+- `weightToken1`: the weight for the rewards split of token 1 in the pool
+- `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
+
+**Morpho single token campaigns:**
+- `targetToken`: the 0x address of the token supplied on any Morpho Market
+
+**Euler supply campaigns:**
+- `targetToken`: the 0x address of the incentivized vault
+- `addressAsset`: the 0x address of the supplied token
+
+**Euler borrow campaigns:**
+- `targetToken`: the 0x address of the incentivized vault
+- `addressAsset`: the 0x address of the borrowed token 
 
 Once you have completed all the parameters, you can generate the payload.
+
+Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and a lending campaign on Aave (`id`: 711211603263558496). When using the API route, the body will look like this:
+
+```json
+{
+"creatorAddress": "0xF057afeEc22E220f47AD4220871364e9E828b2e9",
+"rewardToken": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+"distributionChainId": 1,
+"startTimestamp": 1756512000,
+"endTimestamp": 1756598400,
+"campaignsParams": {
+"9427880006586247706": [
+{
+"amount": "496250000000000000000000",
+"poolAddress": "0x2A2C512beAA8eB15495726C235472D82EFFB7A6B",
+"weightToken0": 3000,
+"weightToken1": 2000,
+"weightFees": 5000,
+"blacklist": [],
+"forwarders": [],
+"hooks": []
+},
+{
+"amount": "496250000000000000000000",
+"poolAddress": "0xaCc2874ed22e811afdc47979c7b7985cCEd53b29",
+"computeChainId": 8453,
+"weightToken0": 3000,
+"weightToken1": 2000,
+"weightFees": 5000,
+"blacklist": [],
+"forwarders": [],
+"hooks": []
+}
+],
+"711211603263558496": [
+      {
+        "amount": "496250000000000000000000",
+        "distributionMethodParameters": {
+"distributionMethod": "FIX_APR",
+"distributionSettings": {
+"apr": "0.15",
+"targetToken": "0xE3190143Eb552456F88464662f0c0C4aC67A77eB",
+"symbolTargetToken": "aHorRwaRLUSD",
+"rewardTokenPricing": true,
+"targetTokenPricing": true,
+"decimalsTargetToken": 18
+}
+}
+      }
+    ]
+  }
+}
+```
 
 ## 3. Generate the multi-campaigns payload
 
@@ -69,7 +140,7 @@ The response contains two objects:
 - `campaignPayloads`: A Safe payload for creating the campaigns on-chain
 - `simulatedCampaigns`: A preview simulation of the campaigns that will be created from this payload
 
-Once the payload is generated, you can check the simulatedCampaigns section to confirm the campaigns match your expectations (e.g., tokens, amounts, timestamps, etc).
+Once the payload is generated, you can check the `simulatedCampaigns` section to confirm the campaigns match your expectations (e.g., tokens, amounts, timestamps, etc), and preview what will be displayed in our app (title, description, etc)
 
 Then, copy the `campaignPayloads` value from the response, and import it using the Gnosis Safe Transaction Builder to execute the onchain transactions that will create the campaigns.
 
