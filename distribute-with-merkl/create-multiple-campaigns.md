@@ -17,6 +17,8 @@ To create a multi-campaign payload, you first need to identify the campaign mode
 - Find the `campaignId` (0x...) of the campaign model you want to use. To find it, go in our app [here](https://app.merkl.xyz/), select the opportunity and go in the "Advanced" tab.
 - Input the `campaignId` in this route [GET /v4/campaigns API endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) which appears in the first line in the response (e.g., 3011317640800818752). This is the `id` you'll use in the next step for each campaign of the batch.
 
+If you need more help finding an `id`, you can refer to this [section](https://docs.merkl.xyz/integrate-merkl/app#understanding-the-difference-between-opportunities-and-campaigns)
+
 ### 2. Prepare the multi-campaigns payload
 
 To generate a multi-campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
