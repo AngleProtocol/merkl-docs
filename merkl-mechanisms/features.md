@@ -54,6 +54,45 @@ Forwarding will not be enabled for an address if the total rewards over a given 
 Coming soon: When creating a campaign, you’ll be able to specify that an address is an ERC20 token—enabling automatic forwarding to its token holders.
 {% endhint %}
 
+## ❌ Blacklisting
+
+Blacklisting excludes specific addresses from receiving rewards.
+
+<figure><img src="../.gitbook/assets/Group 16.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+If a [forwarder](features.md#forwarders) is blacklisted, all associated users are also ineligible.
+
+
+
+Example of a staking contract blacklist:
+
+* A user holds 10 USDA but has staked 6 USDA in a blacklisted staking contract (forwarder).
+* Only the 4 USDA in the user’s wallet qualifies for rewards.
+{% endhint %}
+
+## ✅ Whitelisting
+
+Whitelisting restricts rewards to a specific address or set of addresses (e.g., forwarders, or individual users).
+
+Example of Uniswap V3 whitelisting:
+
+* A campaign incentivizes LPs in a Uniswap V3 pool with three forwarders — here Automated Liquidity Managers.
+* The campaign creator whitelists only two forwarders and one user address.
+* Result:
+  * Only liquidity providers using the two approved forwarders or the whitelisted user will receive rewards
+  * Rewards are distributed normally among whitelisted addresses based on liquidity share.
+
+{% hint style="danger" %}
+**Whitelisting overrides blacklisting. If an address is whitelisted, all other addresses are automatically blacklisted.**
+{% endhint %}
+
+{% hint style="warning" %}
+If multiple campaigns run on the opportunity (e.g. Uniswap v4 ETH-USDC), some may have whitelists while others do not. This means that, for the same opportunity, the users receiving rewards can differ.
+
+Users should check the campaign details on the opportunity page to confirm eligibility requirements.
+{% endhint %}
+
 ## 🔥 Run Multiple Campaigns on the Same Opportunity
 
 Merkl allows multiple campaigns to be created simultaneously for the same pool or set of actions.
@@ -111,26 +150,6 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 
 * Affected addresses will be unable to claim rewards in this case
 * Solution: As an campaign creator, you should blacklist any ineligible addresses to prevent reward loss. Or you can reallocate rewards (more below) of addresses that cannot claim to an address controlled by the same provider that can claim its rewards
-
-## 🤝 Referral Program Documentation
-
-### Overview
-
-The **Referral Program** feature allows you to create and manage multiple referral programs across the **Merkl Ecosystem**. This feature comes with a wide range of customization options to suit your needs, from user rewards to whitelist gates, all secured by blockchain technology.
-
-### Key Features:
-
-* **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
-* **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
-* **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
-* **Cross-Protocol Support**: Referral programs are compatible across the entire Merkl ecosystem, allowing creators to incentivize on any protocol/behaviour integrated with Merkl.
-* **Customizable Rewards**: Tailor rewards to users, referrers, invited users, or even non-participating users.
-* **Conditions to participate**: Add a whitelist restriction to the program, and optionally charge a fee to create a referral code. Or let anyone participate.
-* **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
-
-### Next steps:
-
-* Contact Merkl for details on how to implement
 
 ## 🔄 Campaign Reallocation
 

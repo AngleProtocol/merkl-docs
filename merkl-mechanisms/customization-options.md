@@ -1,79 +1,56 @@
+---
+description: Personalize reward distribution to make your campaign unique
+---
+
 # Customization Options
 
-Merkl allows campaign creators to **customize campaign behavior through optional features**, offering greater flexibility beyond standard campaign parameters.
+Merkl enables campaign creators to **customize their incentive programs with optional features** — from participant eligibility to reward boosts and referral mechanisms — providing greater flexibility beyond standard campaign settings.
 
-Below are some of the most commonly used customization options in Merkl.
+The full list of customization options is available in [Merkl Studio](https://studio.merkl.xyz/create-campaign/erc20) under the **Personalize** step when creating a campaign (you can simulate the campaign creation to explore all options — no need to actually launch a campaign).
 
-## ✅ Whitelisting
+<figure><img src="../.gitbook/assets/Group 15 (1).png" alt=""><figcaption></figcaption></figure>
 
-Whitelisting restricts rewards to a specific address or set of addresses (e.g., forwarders, or individual users).
+Below are some of the most common customization options.
 
-<figure><img src="../.gitbook/assets/Group 4.png" alt=""><figcaption><p>Whitelist addresses when setting up a campaign in Merkl Studio</p></figcaption></figure>
+## Access Control
 
-**Example: Uniswap V3 whitelisting**:
+### 🚫 OFAC Compliance
 
-A campaign incentivizes LPs in a Uniswap V3 pool with three forwarders — here Automated Liquidity Managers.
+Merkl allows you to **blacklist addresses flagged by the U.S. Office of Foreign Assets Control (OFAC)** to ensure compliance with U.S. economic and trade sanctions imposed on certain countries, organizations, and individuals.
 
-The campaign creator whitelists only two forwarders and one user address.
+To do this, you need to provide the address of the contract that contains the registry of OFAC-flagged addresses, such as the [Chainalysis Sanctions Oracle on Ethereum](https://etherscan.io/address/0x40c57923924b5c5c5455c48d93317139addac8fb).
 
-Result:
+### 🌍 Worldchain ID
 
-* Only liquidity providers using the two approved forwarders or the whitelisted user will receive rewards
-* Rewards are distributed normally among whitelisted addresses based on liquidity share.
+Merkl enables filtering of campaign participants using Worldchain’s identity system, [World ID](https://docs.world.org/world-id), ensuring that only real, unique humans — not bots — are rewarded.
 
-**Whitelisting & Blacklisting Priority**:
+## Eligibility
 
-{% hint style="danger" %}
-Whitelisting overrides blacklisting. If an address is whitelisted, all other addresses are automatically blacklisted.
-{% endhint %}
+### 🔒 Token Holding
 
-If multiple campaigns run on the same pool, some may have whitelists while others do not.
+Merkl allows campaign creators to add a customization option that **limits reward eligibility to users holding a minimum amount of a specific token in their wallet over a given period** — and this token can differ from the reward token.
 
-Users should check the campaign details to confirm eligibility requirements.
+Example of a campaign requiring 500 stUSD held for 30 days to earn rewards:
 
-## ❌ Blacklisting
+* A user holding 600 stUSD for 44 days is eligible
+* A user holding 400 stUSD for 60 days is not eligible
 
-Blacklisting excludes specific addresses from receiving rewards.
+Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
 
-<figure><img src="../.gitbook/assets/Group 5.png" alt=""><figcaption><p>Blacklist addresses when setting up a campaign in Merkl Studio</p></figcaption></figure>
+### 📸 Token Snapshot
 
-* **If a forwarder is blacklisted, all associated users are also ineligible.**
-* Example: Staking Contract Blacklist
-  * A user holds 10 USDA but has staked 5 USDA in a blacklisted staking contract.
-  * Only the 5 USDA in the user’s wallet qualifies for rewards.
-  * Impact: Blacklisted addresses cannot earn rewards. The campaign rewards are distributed among eligible participants.
+You can also customize campaigns to reward only users who hold a minimum amount of a specific token in their wallet at a given snapshot, instead of over a duration.
 
-## 🚫 OFAC Compliance
+## Boosts
 
-Merkl provides an automatic OFAC sanctions blacklist option, ensuring that any addresses flagged by the Office of Foreign Assets Control (OFAC) are excluded from all campaigns.
-
-* The blacklist is continuously updated.
-* Helps protocols comply with international sanctions.
-
-## 🌉 Incentivized bridged liquidity
-
-Merkl has partnered with Jumper to allow campaign creators to reward users for bridging liquidity from another chain.
-
-**Why Use This?**:
-
-* Instead of rewarding liquidity movement within the same chain, incentives can target cross-chain liquidity inflows.
-* Helps chains attract new liquidity from external networks.
-
-**How It Works**:
-
-* Only users who bridged funds via a whitelisted bridge will be eligible.
-* Ensures that only genuine cross-chain liquidity movement is rewarded.
-
-## 🗯️ Boosting Rewards with Merkl
+### 🚀 Boost
 
 Merkl allows campaign creators to boost rewards for users holding a specific token or NFT.
 
 * Similar to Curve’s vote-escrowed boost formula but with more flexibility.
 * No 2.5x limit – You can customize boost multipliers as needed.
 
-<figure><img src="../.gitbook/assets/Group 3.png" alt=""><figcaption><p>Boost rewards for specific token holders in Merkl Studio</p></figcaption></figure>
-
-### Boost Formula Computation
+#### Boost Formula Computation:
 
 $$
 B = b \times \frac{R \times v}{V \times r} + 1
@@ -88,41 +65,17 @@ Where:
 * **V**: Total supply of the boost token/NFT
 * **v**: User’s holdings of the boost token/NFT
 
-### NFT-Based Boosting
+#### NFT-Based Boosting
 
-* Boosts can be based on NFT holdings.
-* Contact us for help setting up NFT-based reward boosts.
+Boosts can be based on NFT holdings. Contact us for help setting up NFT-based reward boosts.
 
-## 🎯 Eligibility Filters
-
-Merkl allows eligibility requirements based on:
-
-* Minimum token holdings
-* Holding duration
-
-<figure><img src="../.gitbook/assets/Group 2.png" alt=""><figcaption><p>Apply eligibility filters to specific token holders in Merkl Studio</p></figcaption></figure>
-
-Example:
-
-* A campaign requires 500 stUSD held for 30 days.
-* A user holding 600 stUSD for 44 days qualifies.
-* A user holding 400 stUSD for 60 days does not qualify.
-
-This customization option allows campaign creators to reward only addresses that meet both a minimum token holding requirement and a set duration. For example, if the token chosen for eligibility is stUSD, and the threshold is set to 500 stUSD with a duration of 30 days, a user holding 600 stUSD for 44 days would qualify for rewards.
-
-Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
-
-## 🌍 Worldchain ID
-
-Merkl enables filtering of rewarded users by leveraging Worldchain's identity system, [World ID](https://docs.world.org/world-id), which allows users to anonymously and securely verify that they are real and unique humans.
-
-## 🔄 Dynamic Boosting – API Option
+### 📡 API Boost
 
 Merkl provides several methods to manage dynamic boosting through an API. Here are the different methods available:
 
 #### Multiply
 
-Multiply the current amount by the provided input.
+Multiply the current amount by the provided input:
 
 $$
 \text{amount} = \text{amount} \times \text{boost}
@@ -130,7 +83,7 @@ $$
 
 #### Multiply with Offset
 
-Apply a 1 + boost computation.
+Apply a 1 + boost computation:
 
 $$
 \text{amount} = \text{amount} \times (1 + \text{boost})
@@ -138,7 +91,7 @@ $$
 
 #### Add
 
-Add the boost number to the current amount.
+Add the boost number to the current amount:
 
 $$
 \text{amount} = \text{amount} + \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
@@ -146,13 +99,13 @@ $$
 
 #### Replace
 
-Replace the current amount with the boosted amount.
+Replace the current amount with the boosted amount:
 
 $$
 \text{amount} = \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
 $$
 
-### Implementation
+#### Implementation
 
 The customization option has the following parameters:
 
@@ -186,30 +139,56 @@ const data : {
 
 Any other response will be dropped, and if the object cannot be parsed, the cutomization option will fail.
 
-## Default Values
+#### Default Values
 
 Since we always exclude the zero address in our computation, we can use it to fill in the default values.
 
 Campaign creators can also choose to throw an error instead of proceeding, which is a safer option.
 
-## 🎟️ Raffles
+## Advanced Logic
 
-### 🌶️ Spice up your rewards!
+### 🌉 Jumper Bridge
+
+Merkl has partnered with Jumper to enable campaign creators to reward users who bridged liquidity from another chain before participating in a campaign.
+
+This feature ensures that only cross-chain liquidity is incentivized, not movements within the same chain.
+
+### 🤝 Referral Program
+
+The on-chain Referral Program allows campaign creators to reward users who refer others to a campaign they’ve participated in, as well as the invitees themselves. This helps acquire new users and accelerate liquidity participation.
+
+The feature offers a wide range of customization options — from user rewards to whitelist gates — all secured by blockchain technology.
+
+#### Key Features:
+
+* **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
+* **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
+* **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
+* **Cross-Protocol Support**: Referral programs are compatible across the entire Merkl ecosystem, allowing creators to incentivize on any protocol/behaviour integrated with Merkl.
+* **Customizable Rewards**: Tailor rewards to users, referrers, invited users, or even non-participating users.
+* **Conditions to participate**: Add a whitelist restriction to the program, and optionally charge a fee to create a referral code. Or let anyone participate.
+* **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
+
+{% hint style="info" %}
+**Contact Merkl for details on how to implement referral programs**
+{% endhint %}
+
+### 🎟️ Raffle
 
 Merkl allows you to set up raffles that randomly select lucky winners for your campaigns. You can customize these raffles in various ways to match your campaign needs.
 
-### Customization
+#### Customization
 
 Merkl provides several options for you to tailor your raffles:
 
-* **Mutliple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
+* **Multiple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
 * **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
 * **Selection method**: You can choose how winners are selected.
   * **Everyone is equal**: All participants have an equal chance of winning.
   * **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
 * **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
 
-### Reproducibility
+#### Reproducibility
 
 **Seed**\
 The seed is the **block hash** of the very next block after the timestamp set by the campaign creator.
@@ -250,9 +229,7 @@ The key idea is:
 
 In essence, the result of this campaign (without the raffle option) gives you the list of users who met the conditions set by the campaign. These users are then the ones Merkl considers for potential winning when the raffle customization option is applied.
 
-### How the Winner is Selected: Example with 5 Users, 5 Weights, and One Number Picked
-
-#### Scenario Setup:
+#### Example with 5 users, 5 weights, and one number picked
 
 We have **5 users** in the raffle, each with an associated **weight** (which represents their chance of winning). The system will pick **one winner** based on a randomly selected number.
 
@@ -268,21 +245,25 @@ Let’s assume the users and their weights are as follows:
 
 We want to pick one winner randomly based on these weights.
 
-### Step-by-Step Explanation:
 
-#### 1. **Total Weight Calculation**:
+
+**1/ Total Weight Calculation:**
 
 First, we calculate the **total weight** by summing the weights of all the users. This total represents the "pool" from which the random number will be drawn.
 
 Total Weight = 10 + 20 + 30 + 40 + 50 = 150
 
-#### 2. **Random Number Generation**:
+
+
+**2/ Random Number Generation**:
 
 The system will then pick a random number. This random number will be between **0 and the total weight (150)**.
 
 Let’s assume the randomly picked number is **107**.
 
-#### 3. **Weighted Selection**:
+
+
+**3/ Weighted Selection**
 
 The system uses this random number to determine which user will win. To do this, it calculates cumulative weights, which define "ranges" for each user.
 
@@ -302,7 +283,7 @@ So, the cumulative ranges are as follows:
 | D    | 60–100                  | 40    |
 | E    | 100–150                 | 50    |
 
-#### 4. **Determine the Winner**:
+**4/ Determine the Winner:**
 
 Now, the system checks where the random number falls in the cumulative weight ranges:
 
