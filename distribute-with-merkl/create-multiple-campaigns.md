@@ -71,11 +71,11 @@ Here is the list of the relevant parameters depending on the campaign type used 
 - `targetToken`: the 0x address of the token supplied on any Morpho Market
 
 **Euler supply campaigns:**
-- `targetToken`: the 0x address of the incentivized vault
+- `evkAddress`: the 0x address of the incentivized vault
 - `addressAsset`: the 0x address of the supplied token
 
 **Euler borrow campaigns:**
-- `targetToken`: the 0x address of the incentivized vault
+- `evkAddress`: the 0x address of the incentivized vault
 - `addressAsset`: the 0x address of the borrowed token 
 
 Once you have completed all the parameters, you can generate the payload.
