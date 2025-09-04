@@ -41,7 +41,7 @@ Yes, you can run several campaigns targeting the same asset/pool, with different
 
 ### Can I cancel a campaign and get refunded?
 
-Yes, you can cancel a live campaign at any time. Any remaining (undistributed) tokens will be available for withdrawal through the Merkl UI or directly via contract interaction.
+Yes, you can cancel a live campaign at any time. Go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right. Any remaining (undistributed) tokens will be available in the next 24 hours for withdrawal through the Merkl UI or directly via contract interaction.
 
 ### What parameters can I edit after launch?
 
