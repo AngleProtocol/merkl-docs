@@ -10,14 +10,14 @@ This guide provides a step-by-step process for creating a payload to launch mult
 
 A multi-campaign payload allows you to create multiple campaigns in a single transaction, saving time and gas costs. You can use existing campaigns as templates and customize their parameters to suit your needs. This guide covers how to retrieve campaign models, generate a payload, and execute it using a Safe Wallet.
 
-## 1. Retrieve the campaign templates you want to use
+### 1. Retrieve the campaign templates you want to use
 
 To create a multi-campaign payload, you first need to identify the campaign models you want to use as templates.
 
 - Find the `campaignId` (0x...) of the campaign model you want to use. To find it, go in our app [here](https://app.merkl.xyz/), select the opportunity and go in the "Advanced" tab.
 - Input the `campaignId` in this route [GET /v4/campaigns API endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) which appears at the first line in the response (e.g 3011317640800818752). This is the `id` you'll use in the next step for each campaign of the batch.
 
-## 2. Prepare the multi-campaigns payload
+### 2. Prepare the multi-campaigns payload
 
 To generate a multi-campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
 
@@ -123,7 +123,7 @@ Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and 
 }
 ```
 
-## 3. Generate the multi-campaigns payload
+### 3. Generate the multi-campaigns payload
 
 The response contains two objects:
 
