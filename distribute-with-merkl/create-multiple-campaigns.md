@@ -10,59 +10,59 @@ This guide provides a step-by-step process for creating a payload to launch mult
 
 A multi-campaign payload allows you to create multiple campaigns in a single transaction, saving time and gas costs. You can use existing campaigns as templates and customize their parameters to suit your needs. This guide covers how to retrieve campaign models, generate a payload, and execute it using a Safe Wallet.
 
-## 1. Retrieve the campaign templates you want to use
+### 1. Retrieve the campaign templates you want to use
 
 To create a multi-campaign payload, you first need to identify the campaign models you want to use as templates.
 
 - Find the `campaignId` (0x...) of the campaign model you want to use. To find it, go in our app [here](https://app.merkl.xyz/), select the opportunity and go in the "Advanced" tab.
-- Input the `campaignId` in this route [GET /v4/campaigns API endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) which appears at the first line in the response (e.g 3011317640800818752). This is the `id` you'll use in the next step for each campaign of the batch.
+- Input the `campaignId` in this route [GET /v4/campaigns API endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) which appears in the first line in the response (e.g., 3011317640800818752). This is the `id` you'll use in the next step for each campaign of the batch.
 
-## 2. Prepare the multi-campaigns payload
+### 2. Prepare the multi-campaigns payload
 
 To generate a multi-campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
 
 We strongly encourage you to retrieve an `id` of a campaign that is as close as possible to the one you wish to create, so that you minimize the number of parameters to edit and reduce the risk of errors.
 
-The list of parameters you can override when generating the payload are the ones in the `params` field of the response. Depending on the campaign type selected, you will be able to edit the relevant parameters. Also, for each campaign, you will always be able to edit the `amount` of tokens to distribute.
+The list of parameters you can override when generating the payload are those in the `params` field of the response. Depending on the campaign type selected, you will be able to edit the relevant parameters. Also, for each campaign, you will always be able to edit the `amount` of tokens to distribute.
 
-For each campaign in the batch, you will have to provide the `id` from Step 1 (e.g 3011317640800818752) in the `campaignsParams` parameter.
+For each campaign in the batch, you will have to provide the `id` from Step 1 (e.g., 3011317640800818752) in the `campaignsParams` parameter.
 
-**The following parameters will apply to the whole campaign batch. That means if you want to create a campaign with one different parameter, you'll have to create another payload.**
+**The following parameters will apply to the whole campaign batch. This means that if you want to create a campaign with one different parameter, you'll have to create another payload.**
 
 - `creatorAddress`: the address creating the campaigns
 - `rewardToken`: the token used for rewards across all campaigns
 - `distributionChainId`: the chainId where campaigns will run
-- `startTimestamp`: the start date of the campaigns (in unix time stamp format)
-- `endTimestamp`: the end date of the campaigns (in unix time stamp format)
+- `startTimestamp`: the start date of the campaigns (in Unix timestamp format)
+- `endTimestamp`: the end date of the campaigns (in Unix timestamp format)
 
 Note: You can also edit the `computeChainId` parameter (make sure it's a chain we already support)
 
 Here is the list of the relevant parameters depending on the campaign type used as a template:
 
-**ERC20 campaigns - CampaignType: 1** (e.g: `id` 4098468975241669624)
+**ERC20 campaigns - CampaignType: 1** (e.g., `id` 4098468975241669624)
 - `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns) or the 0x address of the LP token for the underlying incentivized v2 pool
 
-**UniV3 campaigns - CampaignType: 2** (e.g: `id` 9427880006586247706)
+**UniV3 campaigns - CampaignType: 2** (e.g., `id` 9427880006586247706)
 - `poolAddress`: the 0x address of the incentivized pool
-- `weightFees`: the weight for the rewards split associated to the total fees generated
+- `weightFees`: the weight for the rewards split associated with the total fees generated
 - `weightToken0`: the weight for the rewards split of token 0 in the pool
 - `weightToken1`: the weight for the rewards split of token 1 in the pool
 - `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
 
-**UniV4 campaigns - CampaignType: 13** (e.g: `id` 14050222419773482936)
+**UniV4 campaigns - CampaignType: 13** (e.g., `id` 14050222419773482936)
 - `poolId`: the 0x address of the incentivized pool
-- `weightFees`: the weight for the rewards split associated to the total fees generated
+- `weightFees`: the weight for the rewards split associated with the total fees generated
 - `weightToken0`: the weight for the rewards split of token 0 in the pool
 - `weightToken1`: the weight for the rewards split of token 1 in the pool
 - `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
 
-**Morpho single token campaigns - CampaignType: 24** (e.g: `id` 3011317640800818752)
+**Morpho single token campaigns - CampaignType: 24** (e.g., `id` 3011317640800818752)
 - `targetToken`: the 0x address of the token supplied on any Morpho Market
 
-**Euler supply campaigns - CampaignType: 12** (e.g: `id` 16912425279432080078)
+**Euler supply campaigns - CampaignType: 12** (e.g., `id` 16912425279432080078)
 - `evkAddress`: the 0x address of the incentivized vault
 
-**Euler borrow campaigns - CampaignType: 12** (e.g: `id` 17331543524323336682)
+**Euler borrow campaigns - CampaignType: 12** (e.g., `id` 17331543524323336682)
 - `evkAddress`: the 0x address of the incentivized vault
 
 Once you have completed all the parameters, you can generate the payload.
@@ -123,7 +123,7 @@ Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and 
 }
 ```
 
-## 3. Generate the multi-campaigns payload
+### 3. Generate the multi-campaigns payload
 
 The response contains two objects:
 
@@ -170,7 +170,7 @@ To use it:
 2. In the request body, paste the JSON file with the **keys and placeholder amounts** we provided via GitHub Gist. You can find an example below in the example section.
 3. For each key:
    * Replace the placeholder amount with the number of tokens you want to allocate (in raw units).
-   * Use the correct number of decimals (e.g. `5000000000000000000` for 5 tokens if the token has 18 decimals).
+   * Use the correct number of decimals (e.g., `5000000000000000000` for 5 tokens if the token has 18 decimals).
    * **If you do not plan to incentivize a specific key, do not set the amount to `0`. Instead, remove the key entirely from the JSON.**
 4. Click Send. If the payload is successfully generated, you’ll be able to download it. If not, there may be an error, feel free to reach out to us — we’ll help troubleshoot.
 5. Download the generated payload and drag it into the Safe Transaction Builder to execute it.
