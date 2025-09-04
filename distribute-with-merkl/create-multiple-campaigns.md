@@ -35,50 +35,40 @@ For each campaign in the batch, you will have to provide the `id` from Step 1 (e
 - `startTimestamp`: the start date of the campaigns (in unix time stamp format)
 - `endTimestamp`: the end date of the campaigns (in unix time stamp format)
 
-You can also override the following parameters:
-- `computeChainId` (make sure it's a chain we already support)
-- `hooks`
-- `APR`: you can edit the the APR type (variable, fixed, capped) of the template campaign by modyfing the following section: 
-
-```
-"distributionMethod": "FIX_APR",
-"distributionSettings": {
-"apr": "0.16",
-}
-```
-
+Note: You can also edit the `computeChainId` parameter (make sure it's a chain we already support)
 
 Here is the list of the relevant parameters depending on the campaign type used as a template:
 
-**ERC20 campaigns:**
+**ERC20 campaigns - CampaignType: 1** (e.g: `id` 4098468975241669624)
 - `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns) or the 0x address of the LP token for the underlying incentivized v2 pool
 
-**UniV3 campaigns:**
+**UniV3 campaigns - CampaignType: 2** (e.g: `id` 9427880006586247706)
 - `poolAddress`: the 0x address of the incentivized pool
 - `weightFees`: the weight for the rewards split associated to the total fees generated
 - `weightToken0`: the weight for the rewards split of token 0 in the pool
 - `weightToken1`: the weight for the rewards split of token 1 in the pool
 - `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
 
-**UniV4 campaigns:**
+**UniV4 campaigns - CampaignType: 13** (e.g: `id` 14050222419773482936)
 - `poolId`: the 0x address of the incentivized pool
 - `weightFees`: the weight for the rewards split associated to the total fees generated
 - `weightToken0`: the weight for the rewards split of token 0 in the pool
 - `weightToken1`: the weight for the rewards split of token 1 in the pool
 - `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
 
-**Morpho single token campaigns:**
+**Morpho single token campaigns - CampaignType: 24** (e.g: `id` 3011317640800818752)
 - `targetToken`: the 0x address of the token supplied on any Morpho Market
 
-**Euler supply campaigns:**
+**Euler supply campaigns - CampaignType: 12** (e.g: `id` 16912425279432080078)
 - `evkAddress`: the 0x address of the incentivized vault
-- `addressAsset`: the 0x address of the supplied token
 
-**Euler borrow campaigns:**
+**Euler borrow campaigns - CampaignType: 12** (e.g: `id` 17331543524323336682)
 - `evkAddress`: the 0x address of the incentivized vault
-- `addressAsset`: the 0x address of the borrowed token 
 
 Once you have completed all the parameters, you can generate the payload.
+
+Note: Even though we don’t recommend doing so, you can still edit the distributionType (variable, fixed, capped) of the template campaign. If you wish to do so, please reach out to us directly.
+
 
 Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and a lending campaign on Aave (`id`: 711211603263558496). When using the API route, the body will look like this:
 
