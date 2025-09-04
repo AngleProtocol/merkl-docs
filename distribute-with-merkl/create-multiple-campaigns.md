@@ -74,49 +74,49 @@ Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and 
 
 ```json
 {
-"creatorAddress": "0xF057afeEc22E220f47AD4220871364e9E828b2e9",
-"rewardToken": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
-"distributionChainId": 1,
-"startTimestamp": 1756512000,
-"endTimestamp": 1756598400,
-"campaignsParams": {
-"9427880006586247706": [
-{
-"amount": "496250000000000000000000",
-"poolAddress": "0x2A2C512beAA8eB15495726C235472D82EFFB7A6B",
-"weightToken0": 3000,
-"weightToken1": 2000,
-"weightFees": 5000,
-"blacklist": [],
-"forwarders": [],
-"hooks": []
-},
-{
-"amount": "496250000000000000000000",
-"poolAddress": "0xaCc2874ed22e811afdc47979c7b7985cCEd53b29",
-"computeChainId": 8453,
-"weightToken0": 3000,
-"weightToken1": 2000,
-"weightFees": 5000,
-"blacklist": [],
-"forwarders": [],
-"hooks": []
-}
-],
-"711211603263558496": [
+  "creatorAddress": "0xF057afeEc22E220f47AD4220871364e9E828b2e9",
+  "rewardToken": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+  "distributionChainId": 1,
+  "startTimestamp": 1756512000,
+  "endTimestamp": 1756598400,
+  "campaignsParams": {
+    "9427880006586247706": [
+      {
+        "amount": "496250000000000000000000",
+        "poolAddress": "0x2A2C512beAA8eB15495726C235472D82EFFB7A6B",
+        "weightToken0": 3000,
+        "weightToken1": 2000,
+        "weightFees": 5000,
+        "blacklist": [],
+        "forwarders": [],
+        "hooks": []
+      },
+      {
+        "amount": "496250000000000000000000",
+        "poolAddress": "0xaCc2874ed22e811afdc47979c7b7985cCEd53b29",
+        "computeChainId": 8453,
+        "weightToken0": 3000,
+        "weightToken1": 2000,
+        "weightFees": 5000,
+        "blacklist": [],
+        "forwarders": [],
+        "hooks": []
+      }
+    ],
+    "711211603263558496": [
       {
         "amount": "496250000000000000000000",
         "distributionMethodParameters": {
-"distributionMethod": "FIX_APR",
-"distributionSettings": {
-"apr": "0.15",
-"targetToken": "0xE3190143Eb552456F88464662f0c0C4aC67A77eB",
-"symbolTargetToken": "aHorRwaRLUSD",
-"rewardTokenPricing": true,
-"targetTokenPricing": true,
-"decimalsTargetToken": 18
-}
-}
+          "distributionMethod": "FIX_APR",
+          "distributionSettings": {
+            "apr": "0.15",
+            "targetToken": "0xE3190143Eb552456F88464662f0c0C4aC67A77eB",
+            "symbolTargetToken": "aHorRwaRLUSD",
+            "rewardTokenPricing": true,
+            "targetTokenPricing": true,
+            "decimalsTargetToken": 18
+          }
+        }
       }
     ]
   }
