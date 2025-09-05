@@ -30,9 +30,9 @@ To show Merkl data in your front-end, you have 2 types of data you can use:
 
 **Important note**: there are two types of `ids` used by merkl to identify campaigns & opportunities:
 
-- `campaignId`: this refers to the onchain `id` of a campaign (in 0x... format). This one is not unique: there can be multiple campaigns across different chains with the same `campaignId`. It can be easily found in the [opportunities page](https://app.merkl.xyz/) by looking into a speficic opportunity and going in the campaign details, then in the "advanced" tab.
+- `campaignId`: this refers to the onchain identity of a campaign (in 0x... format). This one is not unique: there can be multiple campaigns across different chains with the same `campaignId`. It can be easily found in the [opportunities page](https://app.merkl.xyz/) by looking into a speficic opportunity and going in the campaign details, then in the "advanced" tab.
 
-- `id` (or `databaseId`): this refers to the `id` stored in our database (e.g 13972358188887408622). It is unique and is used to retrieve data for most of the routes. You can find it by using the 0x.. `campaignId` on this route [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/)
+- `id`: this refers to the campaign's code stored in our database (e.g 13972358188887408622). It is unique and is used to retrieve data for most of the routes. You can find it by using the 0x.. `campaignId` on this route [https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/)
 
 You can find a list of the most frequently used endpoints in the [campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management).
 
