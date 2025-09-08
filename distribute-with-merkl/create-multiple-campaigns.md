@@ -8,22 +8,22 @@ description: Everything you need to know to create multiple campaigns at once on
 
 This guide provides a step-by-step process for creating a payload to launch multiple campaigns simultaneously using existing campaign models.
 
-A multi-campaign payload allows you to create multiple campaigns in a single transaction, saving time and gas costs. You can use existing campaigns as templates and customize their parameters to suit your needs. This guide covers how to retrieve campaign models, generate a payload, and execute it using a Safe Wallet.
+A multiple campaigns payload allows you to create multiple campaigns in a single transaction, saving time and gas costs. You can use existing campaigns as templates and customize their parameters to suit your needs. This guide covers how to retrieve campaign models, generate a payload, and execute it using a Safe Wallet.
 
 ### 1. Retrieve the campaign templates you want to use
 
-To create a multi-campaign payload, you first need to identify the campaign models you want to use as templates.
+To create a multiple campaigns payload, you first need to identify the campaign models you want to use as templates.
 
-- Find the `campaignId` (0x...) of the campaign model you want to use. To find it, go in [our app](https://app.merkl.xyz/), select the opportunity and go in the "Advanced" tab.
-- Input the `campaignId` in this route [GET /v4/campaigns API endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) which appears in the first line in the response (e.g., 3011317640800818752). This is the `id` you'll use in the next step for each campaign of the batch.
+- Find the `campaignId` (0x...) of the campaign model you want to use. To do this, go in [our app](https://app.merkl.xyz/), select the opportunity and go to the "Advanced" tab.
+- Input the `campaignId` in this route: [GET /v4/campaigns](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/), and note down the `id` (not the `campaignId`) that appears in the first line in the response (e.g., 3011317640800818752). This is the `id` you'll use in the next step for each campaign in the batch.
 
 If you need more help finding an `id`, you can refer to the [Merkl API v4 section](https://docs.merkl.xyz/integrate-merkl/app#understanding-the-difference-between-opportunities-and-campaigns)
 
-### 2. Prepare the multi-campaigns payload
+### 2. Prepare the multiple campaigns payload
 
-To generate a multi-campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
+To generate a multiple campaigns payload from the selected campaign models, use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload).
 
-We strongly encourage you to retrieve an `id` of a campaign that is as close as possible to the one you wish to create, so that you minimize the number of parameters to edit and reduce the risk of errors. For each campaign in the batch, you will have to provide the `id` from Step 1 (e.g., 3011317640800818752) in the `campaignsParams` parameter.
+We strongly encourage you to retrieve an `id` from a campaign as close as possible to the one you wish to create: this minimizes the number of parameters you need to edit and reduces the risk of errors. For each campaign in the batch, you will have to provide the `id` from Step 1 (e.g., 3011317640800818752) in the `campaignsParams` parameter.
 
 The list of relevant parameters you can override for each campaign type can be found in the `params` field of the response. Also, for each campaign, you will always be able to edit:
  - `amount`: amount of rewards to be distributed in a campaign
@@ -34,7 +34,7 @@ The list of relevant parameters you can override for each campaign type can be f
 **The following base parameters will apply to the whole campaign batch. This means that if you want to create a campaign with one different parameter, you'll have to create another payload.**
 
 - `creatorAddress`: the address creating the campaigns
-- `rewardToken`: the token used for rewards across all campaigns
+- `rewardToken`: the token used for rewards for all campaigns
 - `distributionChainId`: the chainId where campaigns will run
 - `startTimestamp`: the start date of the campaigns (in Unix timestamp format)
 - `endTimestamp`: the end date of the campaigns (in Unix timestamp format)
@@ -43,37 +43,37 @@ Note: you can go to this [page](https://www.unixtimestamp.com/) to retrieve the 
 
 Here is the list of the relevant parameters depending on the campaign type used as a template:
 
-**ERC20LOGPROCESSOR campaigns - CampaignType: 18** (e.g., `id` 8270489034958466914)
-- `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns) or the 0x address of the LP token for the underlying incentivized v2 pool
+**ERC20LOGPROCESSOR campaigns - CampaignType: 18** (e.g., `id`: 8270489034958466914)
+- `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns), or the 0x address of the LP token for the underlying incentivized v2 pool
 
-**UniV3 campaigns - CampaignType: 2** (e.g., `id` 9427880006586247706)
+**UniV3 campaigns - CampaignType: 2** (e.g., `id`: 9427880006586247706)
 - `poolAddress`: the 0x address of the incentivized pool
-- `weightFees`: the weight for the rewards split associated with the total fees generated in 10000 basis (e.g., input 5000 for 50%)
-- `weightToken0`: the weight for the rewards split of token 0 in the pool in 10000 basis (e.g., input 2500 for 25%)
-- `weightToken1`: the weight for the rewards split of token 1 in the pool in 10000 basis (e.g., input 2500 for 25%)
-- `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not
+- `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
+- `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
+- `weightToken1`: the weight of rewards for holding token1, in 10,000 basis points (e.g., 2500 = 25%)
+- `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
 
-**UniV4 campaigns - CampaignType: 13** (e.g., `id` 14050222419773482936)
+**UniV4 campaigns - CampaignType: 13** (e.g., `id`: 14050222419773482936)
 - `poolId`: the 0x address of the incentivized pool
-- `weightFees`: the weight for the rewards split associated with the total fees generated in 10000 basis (e.g., input 5000 for 50%)
-- `weightToken0`: the weight for the rewards split of token 0 in the pool in 10000 basis (e.g., input 2500 for 25%)
-- `weightToken1`: the weight for the rewards split of token 1 in the pool in 10000 basis (e.g., input 2500 for 25%)
-- `isOutOfRangeIncentivized`: if you want to reward out-of-range positions or not. This is a boolean parameter
+- `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
+- `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
+- `weightToken1`: the weight of rewards for holding token1, in 10,000 basis points (e.g., 2500 = 25%)
+- `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
 
-**Morpho single token campaigns - CampaignType: 57** (e.g., `id` 3011317640800818752)
+**Morpho single token campaigns - CampaignType: 57** (e.g., `id`: 3011317640800818752)
 - `targetToken`: the 0x address of the token supplied on any Morpho Market
 
-**Euler supply campaigns - CampaignType: 12** (e.g., `id` 16912425279432080078)
+**Euler supply campaigns - CampaignType: 12** (e.g., `id`: 16912425279432080078)
 - `evkAddress`: the 0x address of the incentivized vault
 
-**Euler borrow campaigns - CampaignType: 12** (e.g., `id` 17331543524323336682)
+**Euler borrow campaigns - CampaignType: 12** (e.g., `id`: 17331543524323336682)
 - `evkAddress`: the 0x address of the incentivized vault
 
 Once you have completed all the parameters, you can generate the payload.
 
-Note: Even though we don’t recommend doing so, you can still edit the distributionType (variable, fixed, capped) of the template campaign. If you wish to do so, please reach out to us directly.
+Note: The best practice is to use a template campaign with the same APR type as the one you plan to use. Yet,even though we don’t recommend doing so, you can still edit the distributionType (variable, fixed, capped) of the template campaign. If you wish to do so, please reach out to us directly.
 
-Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and a lending campaign on Aave (`id`: 711211603263558496). When using the API route, the body will look like this:
+Here is an example of a UniV3 campaign creation (using template `id`: 9427880006586247706) and a lending campaign on Aave (using template `id`: 711211603263558496). When using the API route, the body will look like this:
 
 ```json
 {
@@ -125,16 +125,16 @@ Here is an example of a UniV3 campaign creation (`id`: 9427880006586247706) and 
 }
 ```
 
-### 3. Generate the multi-campaigns payload
+### 3. Generate the multiple campaigns payload
 
 The response contains two objects:
 
-- `campaignPayloads`: A Safe payload for creating the campaigns on-chain
+- `campaignPayloads`: A Safe payload for creating the campaigns
 - `simulatedCampaigns`: A preview simulation of the campaigns that will be created from this payload
 
-Once the payload is generated, you can check the `simulatedCampaigns` section to confirm the campaigns match your expectations (e.g., tokens, amounts, timestamps, etc), and preview what will be displayed in our app (title, description, etc)
+Once the payload is generated, you can check the `simulatedCampaigns` section to confirm the campaigns match your expectations (e.g., tokens, amounts, timestamps, etc), and to preview what will be displayed in our app (title, description, etc)
 
-Then, copy the `campaignPayloads` value only from the response (not the `simulatedCampaigns` part), and import it using Gnosis Safe Transaction Builder to execute the onchain transactions that will create the campaigns.
+Then, copy only the `campaignPayloads` value from the response (not the `simulatedCampaigns` part), and drag and drop it in Gnosis Safe Transaction Builder to then execute the onchain transaction, which will create the campaigns.
 
 You're done! The campaigns will appear in our app shortly!
 
