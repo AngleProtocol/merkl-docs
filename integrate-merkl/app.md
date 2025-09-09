@@ -12,10 +12,9 @@ This guide aims at walking you through the integration of Merkl in your app via 
 If you use Merkl as a white-label solution in your frontend, you must integrate [our logo](branding-and-integration.md) with a clickable link that redirects to our app.
 {% endhint %}
 
-Merkl provides an API, available [here](https://api.merkl.xyz) that contains all the information you need to track campaigns and selectively display the ones you want on your frontend.\
+Merkl provides an API, available [here](https://api.merkl.xyz/docs) that contains all the information you need to track campaigns and selectively display the ones you want on your frontend.\
 All the data from the Merkl app is served by this API.
-
-The documentation for can be found [here](https://api.merkl.xyz/docs). We encourage you to use this documentation for reference after having read the paragraphs below.
+We encourage you to use the API documentation for reference after having read the paragraphs below.
 
 {% hint style="info" %}
 As you browse through the documentation, you'll notice that some API parameters are optional. Keep in mind though that specifying more parameters can speed up the result of your API queries.
