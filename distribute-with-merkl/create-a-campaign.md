@@ -11,8 +11,6 @@ description: Everything you need to know to create campaigns on Merkl
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
 
-![alt text](image-1.png)
-
 
 2. **Connect your wallet**
 
