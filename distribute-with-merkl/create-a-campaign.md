@@ -50,7 +50,7 @@ To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, p
 
 Fill out campaign details such as the asset to incentivize, the asset type (token or point), the reward amount to distribute, a start date and an end date, etc. The details required will depend on the campaign type you selected. Please check the [campaign types page](../merkl-mechanisms/campaign-types/) to get detailed explanations of each required parameter.
 
-![alt text](image.png)
+![Configure the campaign](image.png)
 
 {% hint style="info" %}
 The total rewards amount is the total amount of rewards to be distributed over the whole campaign duration (a maintenance fee may be applied on top).
@@ -66,13 +66,13 @@ This section allows you to set blacklist and/or whitelist for your campaign. Bla
 
 You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/features#forwarders).
 
-![alt text](image-5.png)
+![Set restrictions](image-5.png)
 
 7. **Personalize your campaign with customization options**
 
 Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl customization options [here](../merkl-mechanisms/customization-options.md).
 
-![alt text](image-4.png)
+![Personalize your campaign](image-4.png)
 
 You may also be asked to provide a deposit URL — this is the link to the asset you want to incentivize (e.g. a lending market, liquidity pool, etc.). Since Merkl is non-custodial, users must interact directly with the protocols to be eligible for rewards. Merkl does not hold any user funds.
 
