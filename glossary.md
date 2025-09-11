@@ -79,6 +79,10 @@ A contract (such as staking, an Automated Liquidity Manager, or a vault) that ho
 
 For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
 
+## Linked Opportunities
+
+A feature in Merkl that identifies when two opportunities are connected because one routes liquidity into the other. In this setup, a child opportunity (for example, a Gamma vault) may deposit funds into a parent opportunity (such as the underlying Uniswap pool). Merkl highlights these links to provide transparency on where deposits ultimately go and how these opportunities interact. Thanks to reward forwarding, participants in the child opportunity still receive any rewards from the parent, on top of the child’s own incentives.
+
 ## Merkl Studio
 
 The command center for incentive campaign creators. It allows anyone to launch incentive campaigns via Merkl, independently and in just a few minutes, and provides powerful tools to manage them effectively.
