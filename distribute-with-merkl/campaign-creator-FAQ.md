@@ -57,6 +57,12 @@ Rewards updates (process by which the Merkl Engine compresses computed campaign 
 
 We do not have a filter for points earned by time. However you can take a daily snapshot of our API to build this dataset.
 
+### My campaign is marked as being linked to other opportunities in the Merkl app, what does this mean?
+
+When a campaign is marked as linked to other opportunities, it means the users' deposits can flow through multiple layers of contracts — for example, a vault (child) that allocates funds into another pool (parent). Merkl detects these connections and displays them so that users can see both upstream and downstream campaigns. 
+
+For example, "Provide liquidity to Uniswap v4" could be a parent opportunity, where you earn rewards by supplying liquidity directly to the pool, and at the same time, there could be a linked child opportunity, such as "Provide liquidity to the GammaUni v4 vault".
+
 
 ### Why is APR or TVL not showing for my campaign / why do they have incorrect or unusual values ?
 

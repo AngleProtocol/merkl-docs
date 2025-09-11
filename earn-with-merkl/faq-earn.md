@@ -31,6 +31,13 @@ Merkl automatically blacklists addresses that display suspicious behavior, such 
 
 If you believe you were blacklisted by mistake, please open a support ticket and provide your wallet address along with an explanation of your activity. Our team will review your case.
 
+### The opportunity I want to participate in is marked as being linked to other opportunities in the Merkl app, what does this mean?
+
+When a campaign is marked as linked to other opportunities, it means your deposits flow through multiple layers of contracts — for example, a vault (child) that allocates funds into another pool (parent). Thanks to reward forwarding, you still receive any rewards distributed at the parent level in addition to those from the child. 
+This setup can sometimes boost your returns, since a child campaign may combine rewards from both levels.
+
+For example, "Provide liquidity to Uniswap v4" could be a parent opportunity, where you earn rewards by supplying liquidity directly to the pool, and at the same time, there could be a linked child opportunity, such as "Provide liquidity to the GammaUni v4 vault". Here, participating in the child opportunity would also make you earn rewards from the parent's opportunity.
+
 ### The daily distribution of rewards didn't occur. Will I still receive my rewards?
 
 Yes, rewards are retroactive. If there’s a delay in the Merkl engine run for a campaign, you’ll receive any missed rewards during the next engine run once the issue is resolved. Since the Merkl engine runs multiple times per day, you won’t have to wait long for missed rewards. For example, if a campaign didn’t distribute rewards today but the engine runs the following day after the issue is fixed, you’ll receive both the missed rewards and the current rewards.
