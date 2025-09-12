@@ -22,7 +22,9 @@ Liquidity that has been bridged from one chain to another before being deposited
 
 ## Campaign
 
-A distribution of tokens or points over a defined period, launched by an incentivizer to reward participants of a specific opportunity. For example, an incentive campaign distributing 50k tokens over 3 days to users who provide liquidity in a particular pool. Note that multiple campaigns can exist for the same opportunity—for instance, Protocol A and Protocol B may both launch campaigns to reward participants of the opportunity “Deposit tokens in the AAA-BBB liquidity pool.” In such cases, users can earn rewards from both campaigns with just one deposit.
+A distribution of tokens or points over a defined period, launched by an incentivizer to reward participants of a specific opportunity. For example, an incentive campaign distributing 50k tokens over 3 days to users who provide liquidity in a particular pool.
+
+Note that multiple campaigns can exist for the same opportunity. For instance, Protocol A and Protocol B may both launch campaigns to reward participants of the opportunity “Deposit tokens in the AAA-BBB liquidity pool.” In such cases, users can earn rewards from both campaigns with just one deposit.
 
 ## Capped reward rate campaigns
 
@@ -79,21 +81,25 @@ A contract (such as staking, an Automated Liquidity Manager, or a vault) that ho
 
 For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
 
-## Linked Opportunities
+## Linked opportunities
 
-A feature in Merkl that identifies when two opportunities are connected because one routes liquidity into the other. In this setup, a child opportunity (for example, a Gamma vault) may deposit funds into a parent opportunity (such as the underlying Uniswap pool). Merkl highlights these links to provide transparency on where deposits ultimately go and how these opportunities interact. Thanks to reward forwarding, participants in the child opportunity still receive any rewards from the parent, on top of the child’s own incentives.
+DeFi opportunities linked by liquidity, where one funnels funds into the other and receives rewards from it.
+
+For example, a vault managing user funds (child opportunity) may deposit liquidity into an Uniswap pool (parent opportunity) and earn rewards from Merkl campaigns incentivizing that pool. Thanks to Merkl forwarders, participants in the child opportunity—who are indirectly participating in the parent opportunity—receive rewards from the parent, in addition to any Merkl rewards from the child itself.
+
+Linked opportunities are displayed in the Merkl App to help users decide where to deposit liquidity to maximize rewards.
 
 ## Merkl Studio
 
 The command center for incentive campaign creators. It allows anyone to launch incentive campaigns via Merkl, independently and in just a few minutes, and provides powerful tools to manage them effectively.
 
-## Net lending
+## Net lending & borrowing
 
-Refers to lending & borrowing campaigns where only the firstly deposited asset is accounted. This is to ensure there are no infinite loops & unefficient TVL (when the same asset is supplied & borrowed multiple times).
+Net lending & borrowing refers to lending & borrowing opportunities in the Merkl App where only the initially deposited liquidity is rewarded, excluding recursive supply-and-borrow loops that artificially inflate TVL.
 
 ## Opportunity
 
-An asset (liquidity pool, lending market, ...) and its associated action that is incentivized via Merkl. For example, providing liquidity to a specific liquidity pool, holding a particular token, or lending a token on a given protocol. Not to be confused with a campaign.
+An asset (liquidity pool, lending market, ...) and its associated action that is incentivized via Merkl. For example, providing liquidity to a specific liquidity pool, holding a particular token, or lending a token on a given protocol. Not to be confused with a [campaign](glossary.md#campaign).
 
 ## Pre-TGE
 

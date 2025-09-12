@@ -6,7 +6,7 @@ description: Answers to common Merkl questions to check before opening a support
 
 ### What’s the frequency of rewards distribution?
 
-The rewards distribution frequency varies by chain. On average, rewards are distributed approximately every 9 hours, but some chains — like Arbitrum — have distributions as frequently as every 4 hours. You can find the specific distribution frequency for each chain on this [page](https://app.merkl.xyz/status).
+The rewards distribution frequency varies by chain. On average, rewards are distributed approximately every 9 hours, but some chains — like Arbitrum — have distributions as frequently as every 4 hours. You can find the specific distribution frequency for each chain on the [Status page](https://app.merkl.xyz/status).
 
 ### I participated in a Merkl campaign but I can’t claim rewards on Merkl. Why?
 
@@ -23,20 +23,19 @@ Yes, the chain where you perform an action may differ from the one where rewards
 
 You can find the chain where rewards are distributed in the campaign details on the opportunity page.
 
-![](../.gitbook/assets/screenshot-FAQ.png)
-
 ### My wallet address has been blacklisted. Why?
 
 Merkl automatically blacklists addresses that display suspicious behavior, such as wash trading to artificially inflate rewards. This usually involves addresses trading in pools where they hold positions specifically to maximize rewards.
 
 If you believe you were blacklisted by mistake, please open a support ticket and provide your wallet address along with an explanation of your activity. Our team will review your case.
 
-### The opportunity I want to participate in is marked as being linked to other opportunities in the Merkl app, what does this mean?
+### An opportunity I’m interested in is marked as linked to other opportunities in the Merkl App. What does this mean?
 
-When a campaign is marked as linked to other opportunities, it means your deposits flow through multiple layers of contracts — for example, a vault (child) that allocates funds into another pool (parent). Thanks to reward forwarding, you still receive any rewards distributed at the parent level in addition to those from the child. 
-This setup can sometimes boost your returns, since a child campaign may combine rewards from both levels.
+When a campaign is marked as linked to other opportunities, it means your deposits flow through multiple layers of contracts.
 
-For example, "Provide liquidity to Uniswap v4" could be a parent opportunity, where you earn rewards by supplying liquidity directly to the pool, and at the same time, there could be a linked child opportunity, such as "Provide liquidity to the GammaUni v4 vault". Here, participating in the child opportunity would also make you earn rewards from the parent's opportunity.
+For instance, a vault in which you supply assets (child opportunity) may allocate part of the funds into a liquidity pool (parent opportunity) and earn rewards from Merkl campaigns distributing incentives to the pool’s liquidity providers. Thanks to Merkl forwarders, you receive any rewards from the parent opportunity (in which you indirectly participate), in addition to the rewards from the child opportunity itself.
+
+This setup can sometimes boost your returns, as participating in a child opportunity may combine rewards from both the parent and child.
 
 ### The daily distribution of rewards didn't occur. Will I still receive my rewards?
 
@@ -61,13 +60,13 @@ For certain opportunity types, such as net lending, Merkl attempts — when poss
 
 For opportunities that include blacklisted or whitelisted addresses, or have specific eligibility criteria, the Net TVL will only include the TVL from addresses that meet all the defined conditions.
 
-Overall, TVL within Merkl are adapted as much as possible to reflect the true opportunity size, but there are situations where this TVL might be over or underestimated, because they rely on approximations for simplicity in computations or because exact computing logic was not yet implemented. 
+Overall, TVL within Merkl are adapted as much as possible to reflect the true opportunity size, but there are situations where this TVL might be over or underestimated, because they rely on approximations for simplicity in computations or because exact computing logic was not yet implemented.
 
 If you’ve got a doubt about a true opportunity TVL, feel free to reach out to us to understand how APRs are being computed.
 
 ### What do "Amount", "Pending", and "Claimed" mean in the UI?
 
-- **Amount** refers to the total number of tokens already credited to the user onchain.
-- **Pending** refers to rewards that are queued and will be pushed onchain in the next update.
-- **Claimable** refers to rewards that have been computed and are ready to be claimed by users.
-- **Claimed** shows the amount the user has already claimed.
+* **Amount** refers to the total number of tokens already credited to the user onchain.
+* **Pending** refers to rewards that are queued and will be pushed onchain in the next update.
+* **Claimable** refers to rewards that have been computed and are ready to be claimed by users.
+* **Claimed** shows the amount the user has already claimed.
