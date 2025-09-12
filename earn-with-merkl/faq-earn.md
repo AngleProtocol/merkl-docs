@@ -1,5 +1,5 @@
 ---
-description: Answers to common Merkl questions to check before opening a support ticket.
+description: Answers to common questions from Merkl users
 ---
 
 # Merkl User FAQ

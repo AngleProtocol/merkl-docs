@@ -11,7 +11,6 @@ description: Everything you need to know to create campaigns on Merkl
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
 
-
 2. **Connect your wallet**
 
 Connect the wallet holding the rewards to distribute. Make sure you’re connected on the chain on which you want to distribute the rewards. To see all chains that Merkl supports, check the [Status page](https://app.merkl.xyz/status) in the Merkl App.
@@ -46,11 +45,11 @@ To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, p
 
 
 
-5. **Configure the campaign**
+5. **Configure your rewards**
 
 Fill out campaign details such as the asset to incentivize, the asset type (token or point), the reward amount to distribute, a start date and an end date, etc. The details required will depend on the campaign type you selected. Please check the [campaign types page](../merkl-mechanisms/campaign-types/) to get detailed explanations of each required parameter.
 
-![Configure the campaign](image.png)
+<figure><img src="../.gitbook/assets/Group 18.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The total rewards amount is the total amount of rewards to be distributed over the whole campaign duration (a maintenance fee may be applied on top).
@@ -60,19 +59,23 @@ The total rewards amount is the total amount of rewards to be distributed over t
 For each token to distribute as reward, Merkl sets a minimum amount of token that can be distributed per hour. If your token amount is too low (generally parameters are calibrated so that you cannot distribute less than $1 per hour), then you will not be able to create your campaign.
 {% endhint %}
 
+
+
 6. **Set restrictions**
 
 This section allows you to set blacklist and/or whitelist for your campaign. Blacklisted addresses won't receive any rewards, whereas whitelisted addresses will exclusively receive the campaign's rewards (excluding all other addresses).
 
 You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/features#forwarders).
 
-![Set restrictions](image-5.png)
+<figure><img src="../.gitbook/assets/Group 19.png" alt=""><figcaption></figcaption></figure>
 
-7. **Personalize your campaign with customization options**
 
-Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! You can check out the non-exhaustive list of Merkl customization options [here](../merkl-mechanisms/customization-options.md).
 
-![Personalize your campaign](image-4.png)
+7. **Personalize your campaign**
+
+Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! Check out the non-exhaustive list of options on the [Customization options page](../merkl-mechanisms/customization-options.md).
+
+<figure><img src="../.gitbook/assets/Group 20.png" alt=""><figcaption></figcaption></figure>
 
 You may also be asked to provide a deposit URL — this is the link to the asset you want to incentivize (e.g. a lending market, liquidity pool, etc.). Since Merkl is non-custodial, users must interact directly with the protocols to be eligible for rewards. Merkl does not hold any user funds.
 
@@ -116,7 +119,7 @@ Congratulations! You have launched your incentive campaign! 🎉
 **Please note that once created, your campaign may take up to one hour to become visible on the front-end.**
 {% endhint %}
 
-### Test campaigns
+## 🧪 Test campaigns
 
 **Merkl is not deployed on testnets, but you can still run test campaigns using our test token: aglaMerkl**
 
