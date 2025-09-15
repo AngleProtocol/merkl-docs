@@ -15,7 +15,7 @@ These two pillars can work together or independently — and many protocols take
 
 * **Liquidity mining programs** typically use both features: Merkl tracks user activity and distributes tokens accordingly
 * **Airdrops** use Merkl's reward distribution functionality without relying on its indexing: Merkl distributes tokens based on a list of addresses
-* **Point systems**, like the ones we’ll explore here, often rely solely on Merkl’s indexing power: Merkl is used to calculate how many points each user should get based on their onchain activity, but Merkl does not distribute any tokens with attached value.
+* **Point systems**, like the ones we’ll explore here, often rely solely on Merkl’s indexing power: Merkl is used to calculate how many points each user should get based on their onchain activity, but Merkl does not distribute any tokens with attached value
 
 {% hint style="success" %}
 While Merkl is capable of handling complex reward setups like Uniswap v4 liquidity provision, it also offers robust capabilities to track onchain activities such as LP positions, lending, or protocol usage — enabling the creation of sophisticated points campaigns based on this data.
@@ -88,7 +88,7 @@ This approach offers complete control over point allocation, allowing you to exc
 In this setup, you are responsible for displaying points on their own UI. However, you can easily build a leaderboard or dashboard using the data from Merkl’s mock campaigns via the Merkl API as seen above.
 
 {% hint style="success" %}
-To wrapp up
+To wrap up
 
 * Want **fast setup** and Merkl UI? Use **tokenized points.**
 * Want **full control** and custom logic? Go with **non-tokenized points.**
