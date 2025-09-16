@@ -33,7 +33,7 @@ The Opportunities page in the Merkl app allows you to browse and compare all ava
 For each one, you can view key metrics such as APR, TVL, daily rewards, and reward tokens. By opening an opportunity, additional tabs give access to more details:
 
 - Overview: global information (e.g, dates, chain, APR, blacklist ...)
-- Advanced: detailed information regarding distrbiution's progress, last snapshot, creator address and `campaignId`.
+- Advanced: detailed information regarding distribution's progress, last snapshot, creator address and `campaignId`.
 - Leaderboard: the list of addresses participating in the opportunity
 - Linked Opportunities: related opportunities. More info on this in the [glossary](https://docs.merkl.xyz/glossary#linked-opportunities)
 
