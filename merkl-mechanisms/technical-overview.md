@@ -37,7 +37,7 @@ For each one, you can view key metrics such as APR, TVL, daily rewards, and rewa
 - Leaderboard: the list of addresses participating in the opportunity
 - Linked Opportunities: related opportunities. More info on this in the [glossary](https://docs.merkl.xyz/glossary#linked-opportunities)
 
-![Opportunities page](image.png)
+![Opportunities page](image-2.png)
 
 When using our app, either as a user or a campaign creator, make sure you understand the difference between an opportunity and a campaign:
 
