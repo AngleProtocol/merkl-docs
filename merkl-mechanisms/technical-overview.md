@@ -26,6 +26,27 @@ Merkl operates through campaigns created by campaign creators. A campaign is a t
 * **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
 * **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
 
+## 🔎 App Overview
+
+The Opportunities page in the Merkl app allows you to browse and compare all available earning opportunities.
+
+For each one, you can view key metrics such as APR, TVL, daily rewards, and reward tokens. By opening an opportunity, additional tabs give access to more details:
+
+- Overview: global information (e.g, dates, chain, APR, blacklist ...)
+- Advanced: detailed information regarding distrbiution's progress, last snapshot, creator address and `campaignId`.
+- Leaderboard: the list of addresses participating in the opportunity
+- Linked Opportunities: related opportunities. More info on this in the [glossary](https://docs.merkl.xyz/glossary#linked-opportunities)
+
+![Opportunities page](image.png)
+
+When using our app, either as a user or a campaign creator, make sure you understand the difference between an opportunity and a campaign:
+
+A campaign on Merkl is a specific incentive program with defined parameters: one single reward token, duration, eligibility rules, etc. It targets a given user-action or behavior (e.g. providing liquidity, holding a token, lending/borrowing).
+
+An opportunity is a grouping of campaigns that target the same user base or protocol behavior (e.g, the same liquidity pool, the same token, or similar user action). Multiple campaigns can run concurrently on the same opportunity, while aggregating APR, TVL & rewards at the opportunity level. 
+
+On the example in the screenshot above, the opportunity targets one single SushiSwap pool, while incentivizing it with 3 different reward tokens, thus containing 3 different campaigns.
+
 ## 🤿 Deep-Dive
 
 ### Parallel Campaign Processing
