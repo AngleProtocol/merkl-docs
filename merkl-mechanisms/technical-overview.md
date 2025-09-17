@@ -88,28 +88,50 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 [Merkl API](../integrate-merkl/app.md) provides real-time access to Merkl data, including rewards, APRs, merkle proofs, and analytics. This API enables any frontend to integrate Merkl seamlessly.
 
-### Merkl Frontends (Multiple Implementations)
+### Merkl App
 
-* [Merkl Public frontend](https://app.merkl.xyz): Built on the Merkl API, this interface allows users to explore campaigns, check APRs, and claim rewards.
-* Custom Frontends: Any team can build their own frontend leveraging the Merkl API, and Merkl can also host for large users branded white-label frontends, providing a seamless experience within their own ecosystem while benefiting from Merkl’s incentive distribution system.
+[The Merkl App](https://app.merkl.xyz/), built on the Merkl API, enables users to explore reward opportunities, track APRs, and seamlessly claim their rewards.
 
-### 🔎 App Overview
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-09-17 à 10.51.55 1.png" alt="Homepage of the Merkl app"><figcaption><p>Home page of the Merkl App</p></figcaption></figure>
 
-The Opportunities page in the Merkl app allows you to browse and compare all available earning opportunities.
+The interface is organized around several types of pages:
 
-For each one, you can view key metrics such as APR, TVL, daily rewards, and reward tokens. By opening an opportunity, additional tabs give access to more details:
+* **Home page (all opportunities)** – displays all available opportunities with filtering options
+* **Opportunity page** – dedicated view for each opportunity
+* **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
+* **Dashboard** – where users can claim their rewards
 
-- Overview: global information (e.g, dates, chain, APR, blacklist ...)
-- Advanced: detailed information regarding distribution's progress, last snapshot, creator address and `campaignId`.
-- Leaderboard: the list of addresses participating in the opportunity
-- Linked Opportunities: related opportunities. More info on this in the [glossary](https://docs.merkl.xyz/glossary#linked-opportunities)
+{% hint style="info" %}
+Among these, the Opportunity page is central, as this is where you’ll find the campaigns you’ve created!
+{% endhint %}
 
-![Opportunities page](image-2.png)
+#### Opportunity vs. Campaign
 
-When using our app, either as a user or a campaign creator, make sure you understand the difference between an opportunity and a campaign:
+Before using Merkl, it’s important to understand the difference between an opportunity and a campaign.
 
-A campaign on Merkl is a specific incentive program with defined parameters: one single reward token, duration, eligibility rules, etc. It targets a given user-action or behavior (e.g. providing liquidity, holding a token, lending/borrowing).
+* **Campaign**: a reward distribution set by a campaign creator, with specific parameters such as [distribution type](distributions.md), reward amount, [eligibility rules](customization-options.md#eligibility), [boosts](customization-options.md#boosts), and duration. A campaign always targets a specific onchain behavior (e.g. providing liquidity in a pool, holding a token, lending/borrowing), also referred to as an opportunity.
+* **Opportunity**: an asset (e.g. pool, vault,…) and its associated action (e.g. depositing liquidity, borrowing assets) that are incentivized.\
+  Example: _Provide liquidity to the SushiswapV3 liquidity pool._
 
-An opportunity is a grouping of campaigns that target the same user base or protocol behavior (e.g, the same liquidity pool, the same token, or similar user action). Multiple campaigns can run concurrently on the same opportunity, while aggregating APR, TVL & rewards at the opportunity level. 
+<figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
 
-In the example of the screenshot above, the opportunity targets one single SushiSwap pool, while incentivizing it with 3 different reward tokens, thus containing 3 different campaigns.
+{% hint style="success" %}
+**Multiple campaigns can run simultaneously on the same opportunity**. This means that for a single onchain action, a user can earn rewards from several campaigns.
+{% endhint %}
+
+#### Focus - Opportunity page
+
+On an Opportunity page, you’ll find key metrics that aggregate all active campaigns for that opportunity:
+
+* APR
+* TVL (Total Value Locked)
+* Daily rewards (the amount of rewards shared each day among participants)
+
+<figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
+
+Detailed info for each campaign running on the opportunity is available across several tabs:
+
+* **Overview:** global details such as dates, APR, and eligibility rules,…
+* **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
+* **Leaderboard**: list of addresses participating in the opportunity
+* [**Linked opportunities**](../glossary.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards

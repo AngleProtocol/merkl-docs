@@ -1,25 +1,8 @@
 ---
-description: Launch your point program with Merkl
+description: Everything you need to know to create a point program with Merkl
 ---
 
 # Create a point program
-
-## 🛫 Getting started
-
-Merkl excels at two things:
-
-* **Indexing onchain activities** across chains and protocols
-* **Distributing rewards** accurately, at scale
-
-These two pillars can work together or independently — and many protocols take advantage of that flexibility:
-
-* **Liquidity mining programs** typically use both features: Merkl tracks user activity and distributes tokens accordingly
-* **Airdrops** use Merkl's reward distribution functionality without relying on its indexing: Merkl distributes tokens based on a list of addresses
-* **Point systems**, like the ones we’ll explore here, often rely solely on Merkl’s indexing power: Merkl is used to calculate how many points each user should get based on their onchain activity, but Merkl does not distribute any tokens with attached value
-
-{% hint style="success" %}
-While Merkl is capable of handling complex reward setups like Uniswap v4 liquidity provision, it also offers robust capabilities to track onchain activities such as LP positions, lending, or protocol usage — enabling the creation of sophisticated points campaigns based on this data.
-{% endhint %}
 
 ## 🔀 Two ways to set up a point program
 
@@ -28,9 +11,16 @@ There are two main setups for running points programs with Merkl:
 * **Tokenized points** — where points are represented by non-transferable ERC20 tokens.
 * **Non-tokenized points** — where Merkl is used purely for indexing.
 
+{% hint style="success" %}
+TL;DR
+
+* Want **fast setup** and Merkl UI? Use **tokenized points**
+* Want **full control** and custom logic? Go with **non-tokenized points**
+{% endhint %}
+
 Let’s dive into each setup!
 
-### Tokenized points (ERC20, non-transferable)
+### Tokenized points
 
 In this setup, **points are issued as ERC20 tokens but configured to be non-transferable**. From Merkl’s perspective, this is just like running a standard token reward campaign.
 
@@ -42,23 +32,29 @@ In this setup, **points are issued as ERC20 tokens but configured to be non-tran
 
 **If you later choose to airdrop a token based on points, simply map your airdrop distribution to user point balances.** Just be sure to exclude Merkl’s distributor contract, which may still hold unclaimed tokens.
 
-**With this setup, you benefit from all of Merkl’s default features, including leaderboards and public campaign visibility in the frontend.** Merkl can even assign an estimated value to your points directly within the interface, so users see estimated APR values when farming.
+**With this setup, you benefit from all of Merkl’s default features, including leaderboards and public campaign visibility in the** [**Merkl app**](https://app.merkl.xyz/?tokenType=POINT\&sort=tvl-desc)**.** Merkl can even assign an estimated value to your points directly within the interface, so users see estimated APR values when farming.
 
+<figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Tokenized point programs are visible in the Merkl app</p></figcaption></figure>
+
+{% hint style="success" %}
 This is a straightforward way to leverage Merkl’s full stack while retaining control over the transferability of your points.
+{% endhint %}
 
-### Non-tokenized points (pure indexing)
+### Non-tokenized points
 
 In this case, points are most likely accounted for in **an offchain database that you control**. This means that Merkl cannot mint points for you, it can just run computations based on onchain activity. Here you simply need to define the logic, Merkl tracks user actions, and you use the results however you like.
 
 **How does it work?**
 
-#### 1. Create a campaign using test tokens to launch computation
+#### 1. Create a campaign using mock tokens to launch computation
 
-Merkl will give you some mock tokens on a chain of your choice (like Gnosis Chain). You'll then be able to use these tokens to create campaigns that effectively track what you’re interested in rewarding with your points (e.g providing liquidity in a pool).
+Merkl will give you some mock tokens on a chain of your choice (like Gnosis Chain), or provide a template so you can deploy them yourself.
+
+You'll then be able to use these tokens to create campaigns that effectively track what you’re interested in rewarding with your points (e.g providing liquidity in a pool).
 
 You can setup these campaigns to mirror your intended logic (e.g., “1 mock token per $1,000 deposited”). Note that campaigns can be created in a fully programmatic way through easy scripts.
 
-The campaigns you’re creating with this will effectively distribute mock tokens, but these won’t be visible to your users and users do not need to claim rewards. As explained above, Merkl cannot mint points for you, rather you need to parse the results of these campaigns to know how to allocate your rewards.
+The campaigns you’re creating will effectively distribute mock tokens, but these **won’t be visible** to your users, will be **non-transferable**, and **users do not need to claim them**. As explained above, Merkl cannot mint points for you, rather you need to parse the results of these campaigns to know how to allocate your rewards.
 
 #### 2. Get the results via Merkl's API
 
@@ -86,13 +82,6 @@ This approach offers complete control over point allocation, allowing you to exc
 #### 4. **Display points on your own UI**
 
 In this setup, you are responsible for displaying points on their own UI. However, you can easily build a leaderboard or dashboard using the data from Merkl’s mock campaigns via the Merkl API as seen above.
-
-{% hint style="success" %}
-To wrap up
-
-* Want **fast setup** and Merkl UI? Use **tokenized points.**
-* Want **full control** and custom logic? Go with **non-tokenized points.**
-{% endhint %}
 
 ## 💪🏼 Enhance your program with optional features
 
