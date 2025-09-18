@@ -16,9 +16,6 @@
 - [Distribution Types](merkl-mechanisms/distributions.md)
 - [Customization Options](merkl-mechanisms/customization-options.md)
 - [Additional Features](merkl-mechanisms/features.md)
-
----
-
 - [Glossary](glossary.md)
 
 ## Distribute with Merkl
