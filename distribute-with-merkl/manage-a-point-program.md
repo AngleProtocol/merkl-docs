@@ -109,6 +109,7 @@ For more info on how you can track the results of existing campaigns, you may al
 
 {% hint style="warning" %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Please note that Merkl's rewards endpoint are paginated — be sure to fetch all pages using `&page=<NUMBER>`
 =======
 Please note that the rewards endpoint is paginated — be sure to fetch all pages using `&page=<NUMBER>`
@@ -135,22 +136,33 @@ You are responsible for displaying points in your own interface. Using data from
 
 # Once you have your list of users and their earned points, you can export it to a JSON file and use it to run your [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
 
-Keep in mind that all the results given by the Merkl API are given in mock token units, and before allocating points for your users you can renormalize the results to fit your specific needs.
+# Keep in mind that all the results given by the Merkl API are given in mock token units, and before allocating points for your users you can renormalize the results to fit your specific needs.
 
-For example, if you create one campaign that distributes 1 point per \$1,000 deposited in a protocol, and another campaign that does the same for a different protocol, you can apply different multipliers as needed when allocating points to your users.
+Please note that Merkl's rewards endpoint are paginated — be sure to fetch all pages using `&page=<NUMBER>`
+{% endhint %}
 
-If you want to apply a 5× multiplier for the second protocol afterwards, you can simply mint 5x more points to recipients of this campaign — if address A has earned 1 mock token in reward from the second campaign, you can assign 5 points to that address.
+### **3. Normalize and customize**
 
-This approach offers complete control over point allocation, allowing you to exclude certain campaigns, selectively boost rewards for specific users, or customize the system however you like.
+All results from the Merkl API are expressed in mock token units. Before allocating points to your users, you can renormalize these results to fit your specific rules.
 
-If you don't want to have to renormalize and map 1:1 the results of the Merkl campaigns to points to assign to your users, the way you can set your points multipliers is by simply increasing the reward rate when you create your campaigns with Merkl.
+> > > > > > > afac97f (clean useless files)
+
+For example, if one campaign distributes 1 point per \$1,000 deposited in Protocol A, and another does the same for Protocol B, you can apply different multipliers for each protocol. Suppose you want a 5× multiplier for Protocol B: if address A earned 1 mock token from the second campaign, you can assign 5 points to that address.
+
+This approach gives you full control over point allocation, letting you exclude certain campaigns, selectively boost rewards for specific users, or otherwise customize your system.
+
+If you prefer not to renormalize later, you can set your multipliers directly when creating campaigns in Merkl by increasing the reward rate at creation.
 
 ### 4. **Display points on your own UI**
 
-In this setup, you are responsible for displaying points on their own UI. However, you can easily build a leaderboard or dashboard using the data from Merkl’s mock campaigns via the Merkl API as seen above.
+You are responsible for displaying points in your own interface. Using data from Merkl’s mock campaigns via the API, you can easily build a leaderboard, dashboard, or other visualizations.
 
 ### 5. Run your airdrop
 
+<<<<<<< HEAD
 Once you've got your list of users along with the amount of points that they earned, you can simply parse it in a JSON file and use this file to run [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
 
-> > > > > > > 246ace8 (improve-points)
+> > > > > > > # 246ace8 (improve-points)
+> > > > > > >
+> > > > > > > Once you have your list of users and their earned points, you can export it to a JSON file and use it to run your [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
+> > > > > > > afac97f (clean useless files)
