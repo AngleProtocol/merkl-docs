@@ -46,7 +46,7 @@ This is the most straightforward way to unlock Merkl’s full feature set while 
 
 ## Non-tokenized points
 
-In this case, points are most likely recorded in an off-chain database that you manage. This means Merkl cannot mint points directly for you—it can only compute rewards based on on-chain activity. You simply define the logic you want Merkl to track or index, Merkl monitors user actions across the chains and protocols you select, and you can then use the results however you like to credit and display points to your users.
+In this case, points are most likely recorded in an offchain database that you manage. This means Merkl cannot mint points directly for you, it can only compute rewards based on onchain activity. You simply define the logic you want Merkl to track or index, Merkl monitors user actions across the chains and protocols you select, and you can then use the results however you like to credit and display points to your users.
 
 **How does it work?**
 
@@ -56,7 +56,7 @@ To have Merkl track activity on a protocol or token of your choice, you need to 
 
 Therefore, to run a point program with Merkl, you’ll need a token that serves as the distribution unit when instructing the system what to track.
 
-Merkl provides a template [PointToken.sol](https://github.com/AngleProtocol/merkl-contracts/blob/main/contracts/partners/tokenWrappers/PointToken.sol)for such mock tokens. For any point campaign, we can also deploy and mint a mock point token for you on the chain of your choice (typically a low-cost chain). For your mock token, you can also configure:
+Merkl provides a template [PointToken.sol](https://github.com/AngleProtocol/merkl-contracts/blob/main/contracts/partners/tokenWrappers/PointToken.sol) for such mock tokens. For any point campaign, we can also deploy and mint a mock point token for you on the chain of your choice (typically a low-cost chain). For your mock token, you can also configure:
 
 - The token’s name and symbol
 - The logo you’d like to use
@@ -65,11 +65,7 @@ Keep in mind that the chain where you deploy campaigns is independent of the cha
 
 ### 1. Create campaigns using mock tokens to launch computation
 
-Once your mock tokens are ready, you can set up campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited in this pool”). Campaigns can be created programmatically with simple scripts, and—just like any other Merkl campaign
-—you’ll have access to extensive customization options
-for how results are computed.
-
-Once you've got your mock tokens, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and—just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
+Once you've got your mock tokens, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
 
 **Allocations.** Each campaign requires a maximum allocation of mock tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation.
 
@@ -83,7 +79,7 @@ The campaigns you create will distribute **non-transferable mock tokens**. Users
 
 ### 2. Retrieve results via Merkl's API
 
-As noted earlier, Merkl does not mint points directly. Instead, you parse the results of your campaigns to determine how to allocate rewards.
+As noted earlier, Merkl does not mint points directly. Instead, you need to parse the results of your campaigns to determine how to allocate rewards.
 
 Using the Merkl API, you can fetch:
 
@@ -103,7 +99,7 @@ Below are some useful API routes for accessing your campaign results:
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
 
 {% hint style="warning" %}
-Please note that Merkl's rewards endpoints are paginated — be sure to fetch all pages using `&page=<NUMBER>`
+Please note that Merkl's rewards endpoints are paginated - be sure to fetch all pages using `&page=<NUMBER>`
 {% endhint %}
 
 ### **3. Normalize and customize**
