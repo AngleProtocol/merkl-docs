@@ -1,8 +1,8 @@
 ---
-description: Guide to deploy a Merkl Campaign from a multisig or Gnosis Safe
+description: Guide to create a Merkl Campaign from a multisig or Gnosis Safe
 ---
 
-# Deploy a campaign from a multisig or Gnosis Safe
+# Create a campaign from a multisig or Gnosis Safe
 
 The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder.
 
@@ -18,13 +18,9 @@ Merkl requires anyone depositing incentives into the system to accept the Terms 
 
 Follow these steps to build the payload and finalize your campaign creation:
 
-
-
 1. **Configure your campaign**
 
 Set up your campaign in [Merkl Studio](https://studio.merkl.xyz) by entering all the required information.
-
-
 
 2. **Build the payload**
 
@@ -32,15 +28,11 @@ Once your configuration is complete, build the payload by clicking on _Using_ <i
 
 <figure><img src="../.gitbook/assets/Group 13.png" alt=""><figcaption></figcaption></figure>
 
-
-
 3. **Download or copy the Safe template**
 
 Download the Safe template (recommended), or copy the payload to your clipboard if you intend to customize it further. If you need help with customization, [reach out to us on Discord by opening a BD ticket.](https://discord.com/channels/1209830388726243369/1210212731047776357)
 
 <figure><img src="../.gitbook/assets/Group 12.png" alt=""><figcaption></figcaption></figure>
-
-
 
 4. **Upload the JSON file**
 
@@ -50,15 +42,13 @@ Using the Gnosis Safe Transaction Builder, simply drag and drop the JSON file in
 
 If you are using something other than the Transaction Builder, proceed as you are accustomed to.
 
-
-
 5. **Execute the transactions**
 
 You will see the 3 following transactions:
 
-* `approve`: Approval for the MerklDistributor contract to spend the reward tokens
-* `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
-* `createCampaign`: Transaction to create the campaign.
+- `approve`: Approval for the MerklDistributor contract to spend the reward tokens
+- `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
+- `createCampaign`: Transaction to create the campaign.
 
 <figure><img src="../.gitbook/assets/safe-wallet-approve+accept+create.png" alt=""><figcaption></figcaption></figure>
 

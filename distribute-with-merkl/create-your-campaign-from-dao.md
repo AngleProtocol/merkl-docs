@@ -1,8 +1,8 @@
 ---
-description: Guide to deploy a Merkl Campaign from a DAO
+description: Guide to create a Merkl Campaign from a DAO
 ---
 
-# Deploy your campaign from a DAO
+# Create your campaign from a DAO
 
 ## From an Onchain Gauge System
 
@@ -24,8 +24,8 @@ An example plug-in can be found [here](https://github.com/AngleProtocol/merkl-co
 
 Other teams have also worked on different implementations. You may check some other examples here:
 
-* [Quickswap](https://polygonscan.com/address/0x3a381497813208508689d78c90EC9fb115D5640d#code)
-* [CrossCurve implementation](https://arbiscan.io/address/0xb665d0B69e91F596B9Dee3016e49136335993Fb8#readProxyContract)
+- [Quickswap](https://polygonscan.com/address/0x3a381497813208508689d78c90EC9fb115D5640d#code)
+- [CrossCurve implementation](https://arbiscan.io/address/0xb665d0B69e91F596B9Dee3016e49136335993Fb8#readProxyContract)
 
 ### Step by Step Guide
 
@@ -134,10 +134,10 @@ createCampaign(
 
 Then update the format to be compatible with the Foundry CLI:
 
-* Replace the square brackets `[` with parenthesis `(`
-* Remove quotations `"`
-* Remove newlines
-* Add single quotes `'`\
+- Replace the square brackets `[` with parenthesis `(`
+- Remove quotations `"`
+- Remove newlines
+- Add single quotes `'`\
   For example:
 
 ```js
