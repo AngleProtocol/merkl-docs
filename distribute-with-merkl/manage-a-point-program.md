@@ -48,8 +48,6 @@ This is the most straightforward way to unlock Merkl’s full feature set while 
 
 In this case, points are most likely recorded in an offchain database that you manage. This means Merkl cannot mint points directly for you, it can only compute rewards based on onchain activity. You simply define the logic you want Merkl to track or index, Merkl monitors user actions across the chains and protocols you select, and you can then use the results however you like to credit and display points to your users.
 
-**How does it work?**
-
 ### (Optional) 0. Deploy a point token with Merkl
 
 To have Merkl track activity on a protocol or token of your choice, you need to create a campaign. The Merkl system is configured such that campaigns need a token to distribute. This token can be any ERC20, including a mock, non-transferable token with no monetary value.
