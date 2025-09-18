@@ -99,17 +99,26 @@ Below are some useful API routes for accessing your campaign results:
 - Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true`\
   (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701\&test=true](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701&test=true))
 - Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>&test=true`\
-  (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100\&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c\&test=true](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c&test=true))
-- Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0))
+   (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100\&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c\&test=true](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c&test=true))
+  <<<<<<< HEAD
+- # Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0))
+- Alternatively, we also offer a route that gives the list of addresses that were ever rewarded with a given reward token with Merkl, you can simply use this route with the mock token that you distribute (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0))
+  > > > > > > > 246ace8 (improve-points)
 
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
 
 {% hint style="warning" %}
+<<<<<<< HEAD
 Please note that Merkl's rewards endpoint are paginated — be sure to fetch all pages using `&page=<NUMBER>`
-{% endhint %}
+=======
+Please note that the rewards endpoint is paginated — be sure to fetch all pages using `&page=<NUMBER>`
+
+> > > > > > > 246ace8 (improve-points)
+> > > > > > > {% endhint %}
 
 ### **3. Normalize and customize**
 
+<<<<<<< HEAD
 All results from the Merkl API are expressed in mock token units. Before allocating points to your users, you can renormalize these results to fit your specific rules.
 
 For example, if one campaign distributes 1 point per \$1,000 deposited in Protocol A, and another does the same for Protocol B, you can apply different multipliers for each protocol. Suppose you want a 5× multiplier for Protocol B: if address A earned 1 mock token from the second campaign, you can assign 5 points to that address.
@@ -124,4 +133,24 @@ You are responsible for displaying points in your own interface. Using data from
 
 ### 5. Run your airdrop
 
-Once you have your list of users and their earned points, you can export it to a JSON file and use it to run your [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
+# Once you have your list of users and their earned points, you can export it to a JSON file and use it to run your [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
+
+Keep in mind that all the results given by the Merkl API are given in mock token units, and before allocating points for your users you can renormalize the results to fit your specific needs.
+
+For example, if you create one campaign that distributes 1 point per \$1,000 deposited in a protocol, and another campaign that does the same for a different protocol, you can apply different multipliers as needed when allocating points to your users.
+
+If you want to apply a 5× multiplier for the second protocol afterwards, you can simply mint 5x more points to recipients of this campaign — if address A has earned 1 mock token in reward from the second campaign, you can assign 5 points to that address.
+
+This approach offers complete control over point allocation, allowing you to exclude certain campaigns, selectively boost rewards for specific users, or customize the system however you like.
+
+If you don't want to have to renormalize and map 1:1 the results of the Merkl campaigns to points to assign to your users, the way you can set your points multipliers is by simply increasing the reward rate when you create your campaigns with Merkl.
+
+### 4. **Display points on your own UI**
+
+In this setup, you are responsible for displaying points on their own UI. However, you can easily build a leaderboard or dashboard using the data from Merkl’s mock campaigns via the Merkl API as seen above.
+
+### 5. Run your airdrop
+
+Once you've got your list of users along with the amount of points that they earned, you can simply parse it in a JSON file and use this file to run [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
+
+> > > > > > > 246ace8 (improve-points)
