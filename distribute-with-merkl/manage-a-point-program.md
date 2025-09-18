@@ -103,7 +103,7 @@ Below are some useful API routes for accessing your campaign results:
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
 
 {% hint style="warning" %}
-Please note that Merkl's rewards endpoint are paginated — be sure to fetch all pages using `&page=<NUMBER>`
+Please note that Merkl's rewards endpoints are paginated — be sure to fetch all pages using `&page=<NUMBER>`
 {% endhint %}
 
 ### **3. Normalize and customize**
