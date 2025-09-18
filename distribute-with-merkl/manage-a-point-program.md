@@ -22,8 +22,6 @@ There are two main setups for running points programs with Merkl:
 To explore running a tokenized or non-tokenized point campaign with Merkl, please contact us to discuss support on the initial setup and pricing options.
 {% endhint %}
 
-Let’s break down each setup.
-
 ## Tokenized points (Pre TGE tokens)
 
 In this model, **points are ERC20 tokens that are initially non-transferable**. From Merkl’s perspective, this works just like any regular token reward campaign—the key difference is that the distributed token represents points, which automatically become your project’s token once transferability is enabled.
