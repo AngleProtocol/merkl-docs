@@ -32,8 +32,8 @@ Merkl allows campaign creators to add a customization option that **limits rewar
 
 Example of a campaign requiring 500 stUSD held for 30 days to earn rewards:
 
-* A user holding 600 stUSD for 44 days is eligible
-* A user holding 400 stUSD for 60 days is not eligible
+- A user holding 600 stUSD for 44 days is eligible
+- A user holding 400 stUSD for 60 days is not eligible
 
 Addresses that fail to meet either the token amount or duration threshold are excluded from the campaign’s rewards, ensuring incentives are focused on long-term participants rather than short-term holders.
 
@@ -47,8 +47,8 @@ You can also customize campaigns to reward only users who hold a minimum amount 
 
 Merkl allows campaign creators to boost rewards for users holding a specific token or NFT.
 
-* Similar to Curve’s vote-escrowed boost formula but with more flexibility.
-* No 2.5x limit – You can customize boost multipliers as needed.
+- Similar to Curve’s vote-escrowed boost formula but with more flexibility.
+- No 2.5x limit – You can customize boost multipliers as needed.
 
 #### Boost Formula Computation:
 
@@ -58,12 +58,12 @@ $$
 
 Where:
 
-* **B**: Boost multiplier
-* **b**: Custom boost factor chosen by campaign creator
-* **R**: Total rewards per epoch
-* **r**: User’s reward per epoch
-* **V**: Total supply of the boost token/NFT
-* **v**: User’s holdings of the boost token/NFT
+- **B**: Boost multiplier
+- **b**: Custom boost factor chosen by campaign creator
+- **R**: Total rewards per epoch
+- **r**: User’s reward per epoch
+- **V**: Total supply of the boost token/NFT
+- **v**: User’s holdings of the boost token/NFT
 
 #### NFT-Based Boosting
 
@@ -109,12 +109,12 @@ $$
 
 The customization option has the following parameters:
 
-* **url**: The endpoint to which the API call will be made.
-* **boostingFunction**: The function used to calculate the boost. Options include `REPLACE`, `ADD`, `MULTIPLY`, and `MULTIPLY_WITH_OFFSET`.
-* **sendScores**: A boolean indicating whether to send scores along with the addresses.
-* **defaultBoost**: The default boost value to use if no specific boost is provided. Options include `ZERO_ADDRESS` and `ERROR`.
-  * ZERO\_ADDRESS : If we don't find the address in your response, we will use the ZERO\_ADDRESS boost as a default value.
-  * ERROR : If we don't find the address in your response, the campaign will not proceed.
+- **url**: The endpoint to which the API call will be made.
+- **boostingFunction**: The function used to calculate the boost. Options include `REPLACE`, `ADD`, `MULTIPLY`, and `MULTIPLY_WITH_OFFSET`.
+- **sendScores**: A boolean indicating whether to send scores along with the addresses.
+- **defaultBoost**: The default boost value to use if no specific boost is provided. Options include `ZERO_ADDRESS` and `ERROR`.
+  - ZERO_ADDRESS : If we don't find the address in your response, we will use the ZERO_ADDRESS boost as a default value.
+  - ERROR : If we don't find the address in your response, the campaign will not proceed.
 
 Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:`sendScores=True`
 
@@ -155,19 +155,19 @@ This feature ensures that only cross-chain liquidity is incentivized, not moveme
 
 ### 🤝 Referral Program
 
-The on-chain Referral Program allows campaign creators to reward users who refer others to a campaign they’ve participated in, as well as the invitees themselves. This helps acquire new users and accelerate liquidity participation.
+The onchain Referral Program allows campaign creators to reward users who refer others to a campaign they’ve participated in, as well as the invitees themselves. This helps acquire new users and accelerate liquidity participation.
 
 The feature offers a wide range of customization options — from user rewards to whitelist gates — all secured by blockchain technology.
 
 #### Key Features:
 
-* **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
-* **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
-* **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
-* **Cross-Protocol Support**: Referral programs are compatible across the entire Merkl ecosystem, allowing creators to incentivize on any protocol/behaviour integrated with Merkl.
-* **Customizable Rewards**: Tailor rewards to users, referrers, invited users, or even non-participating users.
-* **Conditions to participate**: Add a whitelist restriction to the program, and optionally charge a fee to create a referral code. Or let anyone participate.
-* **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
+- **Create Unlimited Referral Programs**: Launch as many referral programs as you want.
+- **Referral Code Generation**: Users can generate unique referral codes, share them with their friends, and earn rewards.
+- **Whitelabel Integration**: Easily integrate the program into your front-end with whitelabel options (Contact Merkl for details).
+- **Cross-Protocol Support**: Referral programs are compatible across the entire Merkl ecosystem, allowing creators to incentivize on any protocol/behaviour integrated with Merkl.
+- **Customizable Rewards**: Tailor rewards to users, referrers, invited users, or even non-participating users.
+- **Conditions to participate**: Add a whitelist restriction to the program, and optionally charge a fee to create a referral code. Or let anyone participate.
+- **Blockchain Security**: Users need to sign a transaction to confirm their referral action, ensuring secure and verified participation.
 
 {% hint style="info" %}
 **Contact Merkl for details on how to implement referral programs**
@@ -181,12 +181,12 @@ Merkl allows you to set up raffles that randomly select lucky winners for your c
 
 Merkl provides several options for you to tailor your raffles:
 
-* **Multiple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
-* **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
-* **Selection method**: You can choose how winners are selected.
-  * **Everyone is equal**: All participants have an equal chance of winning.
-  * **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
-* **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
+- **Multiple raffles**: Choose how often you want raffles to run. Every day? Every week? The choice is yours
+- **Number of winners**: Decide how many winners you want to select in each raffle. You can have one grand prize winner, or ay number of lucky winners, depending on your preference.
+- **Selection method**: You can choose how winners are selected.
+  - **Everyone is equal**: All participants have an equal chance of winning.
+  - **Whales first**: Users with higher campaign scores have a better chance of winning (this can help reward top participants).
+- **Multiple selection**: You can set up multiple raffles that run at the same time, each with its own rules on how rewards are distributed.
 
 #### Reproducibility
 
@@ -223,9 +223,9 @@ For **more complex campaigns**, where winners are determined through specific cr
 
 The key idea is:
 
-* You run this simplified version of the campaign **with a smaller amount** (i.e., a lower prize or allocation) and **without the raffle option**.
-* This will **generate the list of users** that Merkl identifies as eligible or **potential winners**.
-* You can use this list to generate the list of users.
+- You run this simplified version of the campaign **with a smaller amount** (i.e., a lower prize or allocation) and **without the raffle option**.
+- This will **generate the list of users** that Merkl identifies as eligible or **potential winners**.
+- You can use this list to generate the list of users.
 
 In essence, the result of this campaign (without the raffle option) gives you the list of users who met the conditions set by the campaign. These users are then the ones Merkl considers for potential winning when the raffle customization option is applied.
 
@@ -245,15 +245,11 @@ Let’s assume the users and their weights are as follows:
 
 We want to pick one winner randomly based on these weights.
 
-
-
 **1/ Total Weight Calculation:**
 
 First, we calculate the **total weight** by summing the weights of all the users. This total represents the "pool" from which the random number will be drawn.
 
 Total Weight = 10 + 20 + 30 + 40 + 50 = 150
-
-
 
 **2/ Random Number Generation**:
 
@@ -261,17 +257,15 @@ The system will then pick a random number. This random number will be between **
 
 Let’s assume the randomly picked number is **107**.
 
-
-
 **3/ Weighted Selection**
 
 The system uses this random number to determine which user will win. To do this, it calculates cumulative weights, which define "ranges" for each user.
 
-* For **User A**: The range is from **0 to 10** (because A has a weight of 10).
-* For **User B**: The range is from **10 to 30** (since A’s range is 0–10, and B has a weight of 20).
-* For **User C**: The range is from **30 to 60**.
-* For **User D**: The range is from **60 to 100**.
-* For **User E**: The range is from **100 to 150**.
+- For **User A**: The range is from **0 to 10** (because A has a weight of 10).
+- For **User B**: The range is from **10 to 30** (since A’s range is 0–10, and B has a weight of 20).
+- For **User C**: The range is from **30 to 60**.
+- For **User D**: The range is from **60 to 100**.
+- For **User E**: The range is from **100 to 150**.
 
 So, the cumulative ranges are as follows:
 
@@ -287,5 +281,5 @@ So, the cumulative ranges are as follows:
 
 Now, the system checks where the random number falls in the cumulative weight ranges:
 
-* **Random number**: 107\
+- **Random number**: 107\
   The number **107** falls in **User E's** range (100–150), so **User E** is the winner.
