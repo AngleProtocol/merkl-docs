@@ -1,8 +1,8 @@
 ---
-description: Everything you need to know to manage a point program with Merkl
+description: Everything you need to know to create and manage a point program with Merkl
 ---
 
-# Manage a point program
+# Create and manage a point program
 
 ## 🔀 Two ways to set up a point program
 
@@ -35,7 +35,7 @@ At TGE, each point automatically converts **1:1 into real tokens**, making the t
 3. Users participate as usual and claim their non-transferable points through their Merkl dashboard.
 
 With this setup, you get **all of Merkl’s built-in features**, including leaderboards and public campaign visibility in [the Merkl app](https://app.merkl.xyz/?tokenType=PRETGE&sort=tvl-desc).
-.
+
 Merkl can also assign an estimated value to your points directly in the UI, so users see APRs when farming. Typically, this estimate is based on your latest fundraising valuation or the price agreed with a CEX for an upcoming listing.
 
 <figure><img src="../.gitbook/assets/Group 26.png" alt=""><figcaption><p>Tokenized point programs appear in the Merkl app under the Pre-TGE section</p></figcaption></figure>
@@ -89,9 +89,9 @@ Reward amounts are expressed in units of the mock token you configured.
 Below are some useful API routes for accessing your campaign results:
 
 - Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true`\
-  (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701\&test=true](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701&test=true))
-- Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>&test=true`\
-   (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100\&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c\&test=true](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c&test=true))
+  (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701))
+- Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
+   (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c))
 - Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0))
 
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
