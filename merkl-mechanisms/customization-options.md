@@ -111,10 +111,11 @@ The customization option has the following parameters:
 
 - **url**: The endpoint to which the API call will be made.
 - **boostingFunction**: The function used to calculate the boost. Options include `REPLACE`, `ADD`, `MULTIPLY`, and `MULTIPLY_WITH_OFFSET`.
-- **sendScores**: A boolean indicating whether to send scores along with the addresses.
+- **sendScores**: A boolean indicating whether to send ongoing reward computation scores along with the addresses.
 - **defaultBoost**: The default boost value to use if no specific boost is provided. Options include `ZERO_ADDRESS` and `ERROR`.
-  - ZERO_ADDRESS : If we don't find the address in your response, we will use the ZERO_ADDRESS boost as a default value.
-  - ERROR : If we don't find the address in your response, the campaign will not proceed.
+
+  - `ZERO_ADDRESS`: If an eligible address as per our reward computation is not within your API response, we will use the `ZERO_ADDRESS` boost as a default boost value for this address. Since we always exclude the zero address in our computation, it is indeed safe to use the null address as a default. If you use this option, you must therefore absolutely input a boost value for the zero address.
+  - `ERROR`: If there is an address eligible to rewards that we do not find in your API response, the campaign will not proceed.
 
 Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:`sendScores=True`
 
@@ -139,11 +140,7 @@ const data : {
 
 Any other response will be dropped, and if the object cannot be parsed, the cutomization option will fail.
 
-#### Default Values
-
-Since we always exclude the zero address in our computation, we can use it to fill in the default values.
-
-Campaign creators can also choose to throw an error instead of proceeding, which is a safer option.
+**The boost values are to be given in base 9**. This means that for a boost of 1, the value given for boost should be: "1000000000".
 
 ## Advanced Logic
 
