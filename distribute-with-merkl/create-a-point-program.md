@@ -65,11 +65,16 @@ Keep in mind that the chain where you deploy campaigns is independent of the cha
 
 Once you've got your mock tokens, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
 
-**Allocations.** Each campaign requires a maximum allocation of mock tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation.
+**Allocations.** Each campaign requires a maximum allocation of mock tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation. **We recommend setting a cap of 3 billion points**, this will ensure that:
+- everyone with more than $1 will earn points
+- you have a big enough budget to not have your campaign end early. 
+You can set a higher budget, but only do so if you know that your campaign will distribute more than 3 billion points.
 
 **Duration.** When setting up your campaigns, you’ll also need to set a start and end date. Even if your points program is meant to last 6 months, we recommend creating shorter campaigns and renewing them periodically. Campaign parameters are difficult to change once live, so shorter durations give you flexibility to adjust as needed.
 
 **Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/features.md#-forwarders). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
+
+**Fixed APR campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing. To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced bu Merkl. When in doubt, reach out to the sales team on Telegram. 
 
 <figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in the Points section of the Merkl app.</p></figcaption></figure>
 
