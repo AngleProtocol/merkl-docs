@@ -67,7 +67,7 @@ This section allows you to set blacklist and/or whitelist for your campaign. Bla
 
 You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/features#forwarders).
 
-<figure><img src="../.gitbook/assets/Group 19.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -110,7 +110,7 @@ Regardless of the method you choose, you will need to follow these 3 steps:
 {% hint style="info" %}
 **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](deploy-your-campaign-from-a-multisig-or-gnosis-safe.md) where everything is explained in more detail.
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](broken-reference) where everything is explained in more detail.
 {% endhint %}
 
 Congratulations! You have launched your incentive campaign! 🎉

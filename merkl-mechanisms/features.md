@@ -14,7 +14,11 @@ This mechanism—tracking indirect ownership across contracts and protocols—is
 
 In most [campaign types](../mechanisms/hooks/mechanisms/), Merkl automatically detects and applies any integrated forwarders. However, for older, legacy campaigns (e.g., the original ERC20 campaign type), forwarders must be manually specified at the time of campaign creation.
 
-<figure><img src="../.gitbook/assets/Forwarders.png" alt=""><figcaption><p>The forwarder scan in Merkl Studio</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-10-10 à 15.20.07 1.png" alt=""><figcaption><p>The forwarder scan in Merkl Studio</p></figcaption></figure>
+
+{% hint style="info" %}
+Check whether a contract is recognized as a forwarder by Merkl at [https://forwarders.merkl.xyz/](https://forwarders.merkl.xyz/)
+{% endhint %}
 
 **How It Works**:
 
@@ -58,7 +62,7 @@ Coming soon: When creating a campaign, you’ll be able to specify that an addre
 
 Blacklisting excludes specific addresses from receiving rewards.
 
-<figure><img src="../.gitbook/assets/Group 16.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 If a [forwarder](features.md#forwarders) is blacklisted, all associated users are also ineligible.
@@ -206,5 +210,5 @@ For protocols using gauge systems:
 * These connectors automatically translate governance votes into highly customizable Merkl campaigns. Our Governance Plug-in Templates are available [here](https://github.com/AngleProtocol/merkl-contracts/tree/main/contracts/partners/middleman).
 
 {% hint style="info" %}
-Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](../distribute-with-merkl/deploy-your-campaign-from-dao.md).
+Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](broken-reference).
 {% endhint %}
