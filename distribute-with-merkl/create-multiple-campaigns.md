@@ -62,13 +62,13 @@ Per-campaign overrides go under `campaignsParams`. Supported fields include:
  - `blacklist`: the list of addresses you want to exclude from the campaign
  - `whitelist`: the list of addresses you want to include in the campaign (excluding all others)
  - `distributionMethodParameters`: depending on your distribution type
-  - Variable reward rate:
+    - Variable reward rate:
 ```json
 "distributionMethodParameters": {
                     "distributionMethod": "DUTCH_AUCTION"
                   } 
 ```
-  - Fixed APR rate: 
+    - Fixed APR rate: 
  ```json
  "distributionMethodParameters": {
                     "distributionMethod": "FIX_APR",
@@ -80,7 +80,7 @@ Per-campaign overrides go under `campaignsParams`. Supported fields include:
                   }  
 ```
 
-  - Capped APR rate: 
+    - Capped APR rate: 
  ```json
  "distributionMethodParameters": {
                     "distributionMethod": "MAX_APR",
