@@ -94,7 +94,7 @@ $$
 Add the boost number to the current amount:
 
 $$
-\text{amount} = \text{amount} + \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
+\text{amount} = \text{amount} + \text{boost}
 $$
 
 #### Replace
@@ -102,7 +102,7 @@ $$
 Replace the current amount with the boosted amount:
 
 $$
-\text{amount} = \left(\frac{\text{boost} \times \text{amount}}{\text{recipientsToAmount[recipient]}}\right)
+\text{amount} = \text{boost}
 $$
 
 #### Implementation
