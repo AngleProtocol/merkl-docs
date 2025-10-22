@@ -4,49 +4,19 @@ description: Everything you need to know to create and manage a point program wi
 
 # Create and manage a point program
 
-## 🔀 Two ways to set up a point program
+Merkl serves as a powerful indexing and computation engine for points programs, tracking onchain activity and calculating time-weighted user contributions. However, **Merkl does not mint or allocate points directly**—it provides the raw data and calculations that you can use however you see fit.
 
-There are two main setups for running points programs with Merkl:
+Think of Merkl as a flexible indexing tool: you define the logic you want to track (such as liquidity provision, token holdings, or protocol usage), Merkl monitors and computes user actions across the chains and protocols you select, and you then consume these results in whatever way best suits your program—whether that's crediting points 1:1, applying custom multipliers, filtering specific users, or combining data from multiple campaigns.
 
-- **Tokenized points** (Pre-TGE tokens): Points are issued as ERC20 tokens that start out non-transferable, and later become transferable at TGE.
-- **Non-tokenized points**: Points exist purely within Merkl’s indexing system (and optionally your own database), without requiring any token representation from the end user’s perspective.
+**You maintain full control over your points system.** Merkl simply provides the underlying tracking infrastructure and calculations. You're free to:
+- Renormalize the data with custom multipliers
+- Exclude or include specific campaigns or users
+- Apply additional logic or filters before allocating points
+- Display points in your own UI exactly as you envision
 
-{% hint style="success" %}
+In this page, we break down how to set up points tracking campaigns with Merkl and how to consume the results for your points system.
 
-- Want a **fast setup** with Merkl’s UI showing APRs? Choose tokenized points and distribute them as non-transferable tokens before TGE.
-- Want **maximum flexibility** and retain the custom logic enabled by Merkl campaigns? Go with non-tokenized points.
-
-{% endhint %}
-
-{% hint style="info" %}
-To explore running a tokenized or non-tokenized point campaign with Merkl, please contact us to discuss support on the initial setup and pricing options.
-{% endhint %}
-
-## Tokenized points (Pre TGE tokens)
-
-In this model, **points are ERC20 tokens that are initially non-transferable**. From Merkl’s perspective, this works just like any regular token reward campaign—the key difference is that the distributed token represents points, which automatically become your project’s token once transferability is enabled.
-
-At TGE, each point automatically converts **1:1 into real tokens**, making the transition seamless for users.
-
-**How it works:**
-
-1. Whitelist Merkl’s Creator and Distributor contracts so Merkl can distribute your points (non-transferable tokens).
-2. Create campaigns using Merkl’s standard flow: define multipliers as reward rates and specify which onchain actions to track.
-3. Users participate as usual and claim their non-transferable points through their Merkl dashboard.
-
-With this setup, you get **all of Merkl’s built-in features**, including leaderboards and public campaign visibility in [the Merkl app](https://app.merkl.xyz/?tokenType=PRETGE&sort=tvl-desc).
-
-Merkl can also assign an estimated value to your points directly in the UI, so users see APRs when farming. Typically, this estimate is based on your latest fundraising valuation or the price agreed with a CEX for an upcoming listing.
-
-<figure><img src="../.gitbook/assets/Group 26.png" alt=""><figcaption><p>Tokenized point programs appear in the Merkl app under the Pre-TGE section</p></figcaption></figure>
-
-{% hint style="success" %}
-This is the most straightforward way to unlock Merkl’s full feature set while keeping control over point transferability and your future token.
-{% endhint %}
-
-## Non-tokenized points
-
-In this case, points are most likely recorded in an offchain database that you manage. This means Merkl cannot mint points directly for you, it can only compute rewards based on onchain activity. You simply define the logic you want Merkl to track or index, Merkl monitors user actions across the chains and protocols you select, and you can then use the results however you like to credit and display points to your users.
+## Step by step process
 
 ### (Optional) 0. Deploy a point token with Merkl
 
@@ -61,9 +31,11 @@ Merkl provides a template [PointToken.sol](https://github.com/AngleProtocol/merk
 
 Keep in mind that the chain where you deploy campaigns is independent of the chain where activity is being tracked.
 
+Once deployed and whitelisted, this point token will be equivalent to an API key you can use to start tracking campaigns on Merkl.
+
 ### 1. Create campaigns using mock tokens to launch computation
 
-Once you've got your mock tokens, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
+Once you've got your mock point token, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
 
 **Allocations.** Each campaign requires a maximum allocation of mock tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation. **We recommend setting a cap of 3 billion points**, this will ensure that:
 - everyone with more than $1 will earn points
@@ -74,11 +46,15 @@ You can set a higher budget, but only do so if you know that your campaign will 
 
 **Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/features.md#-forwarders). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
 
-**Fixed APR campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing. To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced bu Merkl. When in doubt, reach out to the sales team on Telegram. 
+**Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram. 
 
-<figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in the Points section of the Merkl app.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in [the Points section](https://app.merkl.xyz/?tokenType=POINT&sort=tvl-desc) of the Merkl app.</p></figcaption></figure>
 
-The campaigns you create will distribute **non-transferable mock tokens**. Users do not need to claim them, and these campaigns will **not appear** on their dashboards.
+The campaigns you create will distribute **non-transferable mock tokens**. Users cannot claim these tokens through the Merkl UI—they exist purely for tracking purposes.
+
+{% hint style="warning" %}
+**Important**: All points data displayed in the Merkl frontend is informational only. Leaderboard rankings and point totals shown in the app should not be considered final, as projects retain full control to adjust allocations based on their own criteria before conducting airdrops or distributing rewards.
+{% endhint %}
 
 ### 2. Retrieve results via Merkl's API
 
@@ -97,7 +73,7 @@ Below are some useful API routes for accessing your campaign results:
   (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701))
 - Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
    (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c))
-- Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0))
+- Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
 
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
 
@@ -122,3 +98,30 @@ You are responsible for displaying points in your own interface. Using data from
 ### 5. Run your airdrop
 
 Once you have your list of users and their earned points, you can export it to a JSON file and use it to run your [your airdrop with Merkl](../merkl-mechanisms/campaign-types/airdrop.md).
+
+## Pricing
+
+Points tracking campaigns follow a straightforward pricing model based on the number of opportunities (point sources) you're monitoring:
+
+**Standard Campaigns**
+- **$30 per week** per point source that can be created through the Merkl UI
+- **Additional fee**: $0.015 per recipient if your campaign has more than 500 recipients
+
+**Advanced Campaigns**
+- **One-time setup fee**: $300 for complex campaigns (e.g., Net Lending on Aave) that require custom development and testing by our team
+- **Ongoing cost**: $30 per week after setup (same as standard campaigns)
+
+{% hint style="info" %}
+**What is a point source?**
+
+A point source is the specific opportunity or asset that Merkl monitors to calculate points. Examples include:
+- A Uniswap liquidity pool
+- A Morpho lending market
+- A vault or staking contract
+{% endhint %}
+
+### Invoicing
+
+**Billing cycle**: You will be invoiced retroactively at the end of each month for all campaigns created during that period.
+
+**Payment terms**: Invoices must be paid within 7 days. If payment is not received within this timeframe, all ongoing campaigns will be paused and your project will be temporarily blocked from Merkl until payment is resolved.
