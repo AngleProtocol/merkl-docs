@@ -14,7 +14,7 @@ Unlike traditional incentives where users are rewarded based on deposit amount, 
 
 LPs who provide liquidity in optimal, high-impact ranges are rewarded more generously, ensuring capital efficiency.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2025-07-31 à 14.59.51 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Concentrated-liquidity.png" alt=""><figcaption></figcaption></figure>
 
 ## 🏦 Reward forwarding
 
