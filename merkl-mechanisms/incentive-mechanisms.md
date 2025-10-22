@@ -44,12 +44,12 @@ Not all campaign types are compatible with all distribution types. Similarly, so
 
 To check the status of Merkl’s features, the compatibility between campaign types and distribution types, or to view the list of supported chains and tokens, simply visit [**Merkl Studio**](https://studio.merkl.xyz/) and simulate the creation of a campaign.
 
-To determine if a smart contract address is recognized as a [forwarder](customization-options.md#forwarders) by Merkl, the **Forwarder Scan tool** can be accessed during the “Set options” step within Merkl Studio.
+To check whether a smart contract is detected as a [forwarder](features.md#forwarders) by Merkl, go to the [**Forwarder Scan page**](https://forwarders.merkl.xyz/), accessible from the navigation bar in Merkl Studio by clicking 'Scan'.
 
-<figure><img src="../.gitbook/assets/Group 10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-10-10 à 15.20.07 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Some customization options, campaign types, and distribution types are not configurable directly via Merkl Studio. In such cases, we recommend reaching out to us — we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.
+Some [customization options](customization-options.md), [campaign types](campaign-types/), and [distribution types](distributions.md) are not configurable directly via Merkl Studio. In such cases, we recommend reaching out to us — we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.
 {% endhint %}
 
 {% hint style="success" %}
