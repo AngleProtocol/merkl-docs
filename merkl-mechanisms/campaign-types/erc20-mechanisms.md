@@ -21,7 +21,7 @@ Transfer events are tracked to reconstruct the exact balance of each participant
 Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../customization-options.md) such as:
 
 * **Whitelisting or blacklisting** specific addresses for reward eligibility.
-* [**Forwarding rewards**](../../glossary.md#forwarder) to users whose tokens are staked in external contracts (e.g. LP tokens or lending positions).
+* [**Forwarding rewards**](../glossary.md#forwarder) to users whose tokens are staked in external contracts (e.g. LP tokens or lending positions).
 
 ## Applications
 

@@ -136,4 +136,4 @@ Our frontend automatically calculates the correct amount for you.
 
 ### ⏳ Distribution lag
 
-Tokens become claimable at the next [reward update](../../glossary.md#reward-update-aka-merkl-root-update) on the target chain, which typically occurs within 8 hours. If you plan to announce the distribution, we recommend waiting until the rewards are claimable to notify your users.
+Tokens become claimable at the next [reward update](../glossary.md#reward-update-aka-merkl-root-update) on the target chain, which typically occurs within 8 hours. If you plan to announce the distribution, we recommend waiting until the rewards are claimable to notify your users.

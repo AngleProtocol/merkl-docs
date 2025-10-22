@@ -21,10 +21,10 @@ Merkl operates through campaigns created by campaign creators. A campaign is a t
 
 ### Key Features
 
-- **Single Merkl Root per Chain:** Merkl consolidates rewards from multiple campaigns into one merkle root per chain, enabling efficient batch claiming rewards from multiple different campaigns in a single transaction.
-- **Aggregated Campaigns:** While campaigns operate independently, Merkl batches multiple campaign updates into a single onchain transaction
-- **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
-- **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
+* **Single Merkl Root per Chain:** Merkl consolidates rewards from multiple campaigns into one merkle root per chain, enabling efficient batch claiming rewards from multiple different campaigns in a single transaction.
+* **Aggregated Campaigns:** While campaigns operate independently, Merkl batches multiple campaign updates into a single onchain transaction
+* **Automatic Catch-Up Mechanism:** If any rewards are not included in an update, they are automatically distributed in the next cycle. The Merkl engine ensures no missed rewards, processing only the data from the previous execution point.
+* **Unclaimed Rewards Roll Over**: Users can claim their rewards at anytime they want: each merkle tree update takes the previous merkle tree state and simply adds the new rewards, which are then reflected in the published merkle root.
 
 ## 🤿 Deep-Dive
 
@@ -34,19 +34,19 @@ Campaigns in Merkl are processed in parallel on each chain. Because campaigns ar
 
 **How it works**:
 
-- When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times.
-- Because onchain Merkle root updates occur separately, it is possible that:
-  - Rewards for one campaign have been finalized and pushed onchain.
-  - Rewards for another campaign are still pending because they weren’t processed in time for the last update.
-- Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
+* When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times.
+* Because onchain Merkle root updates occur separately, it is possible that:
+  * Rewards for one campaign have been finalized and pushed onchain.
+  * Rewards for another campaign are still pending because they weren’t processed in time for the last update.
+* Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
 
 ### Merkl root update
 
 Merkle root updates — aka reward updates — occur on average every 8 hours (ranging from 4 to 12 hours), depending on the chain.
 
-- [Reward computation](../glossary.md#reward-computation) and [reward update](../glossary.md#reward-update) are independent
-- For example, between two reward updates (8 hours apart on average), rewards are computed up to four times
-- Unclaimed rewards roll over into the next reward update.
+* [Reward computation](glossary.md#reward-computation) and [reward update](glossary.md#reward-update) are independent
+* For example, between two reward updates (8 hours apart on average), rewards are computed up to four times
+* Unclaimed rewards roll over into the next reward update.
 
 Last reward update for each chain can be viewed on the Merkl app [here](https://app.merkl.xyz/status).
 
@@ -78,9 +78,9 @@ These contract are [publicly available](https://github.com/AngleProtocol/merkl-c
 
 Key contracts:
 
-- `DistributionCreator`: Stores campaign details and configurations.
-- `Distributor`: Holds tokens and processes reward claims based on merkle proofs.
-- `AccessControlManager`: A multisig-controlled contract that manages disputes, fees, and access control but cannot alter distributions.
+* `DistributionCreator`: Stores campaign details and configurations.
+* `Distributor`: Holds tokens and processes reward claims based on merkle proofs.
+* `AccessControlManager`: A multisig-controlled contract that manages disputes, fees, and access control but cannot alter distributions.
 
 Smart contract addresses, categorized by chain are listed [here](https://app.merkl.xyz/status).
 
@@ -96,10 +96,10 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 The interface is organized around several types of pages:
 
-- **Home page (all opportunities)** – displays all available opportunities with filtering options
-- **Opportunity page** – dedicated view for each opportunity
-- **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
-- **Dashboard** – where users can claim their rewards
+* **Home page (all opportunities)** – displays all available opportunities with filtering options
+* **Opportunity page** – dedicated view for each opportunity
+* **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
+* **Dashboard** – where users can claim their rewards
 
 {% hint style="info" %}
 Among these, the Opportunity page is central, as this is where you’ll find the campaigns you’ve created!
@@ -109,8 +109,8 @@ Among these, the Opportunity page is central, as this is where you’ll find the
 
 Before using Merkl, it’s important to understand the difference between an opportunity and a campaign.
 
-- **Campaign**: a reward distribution set by a campaign creator, with specific parameters such as [distribution type](distributions.md), reward amount, [eligibility rules](customization-options.md#eligibility), [boosts](customization-options.md#boosts), and duration. A campaign always targets a specific onchain behavior (e.g. providing liquidity in a pool, holding a token, lending/borrowing), also referred to as an opportunity.
-- **Opportunity**: an asset (e.g. pool, vault,…) and its associated action (e.g. depositing liquidity, borrowing assets) that are incentivized.\
+* **Campaign**: a reward distribution set by a campaign creator, with specific parameters such as [distribution type](distributions.md), reward amount, [eligibility rules](customization-options.md#eligibility), [boosts](customization-options.md#boosts), and duration. A campaign always targets a specific onchain behavior (e.g. providing liquidity in a pool, holding a token, lending/borrowing), also referred to as an opportunity.
+* **Opportunity**: an asset (e.g. pool, vault,…) and its associated action (e.g. depositing liquidity, borrowing assets) that are incentivized.\
   Example: _Provide liquidity to the SushiswapV3 liquidity pool._
 
 <figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
@@ -123,15 +123,15 @@ Before using Merkl, it’s important to understand the difference between an opp
 
 On an Opportunity page, you’ll find key metrics that aggregate all active campaigns for that opportunity:
 
-- APR
-- TVL (Total Value Locked)
-- Daily rewards (the amount of rewards shared each day among participants)
+* APR
+* TVL (Total Value Locked)
+* Daily rewards (the amount of rewards shared each day among participants)
 
 <figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
 
 Detailed info for each campaign running on the opportunity is available across several tabs:
 
-- **Overview:** global details such as dates, APR, and eligibility rules,…
-- **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
-- **Leaderboard**: list of addresses participating in the opportunity
-- [**Linked opportunities**](../glossary.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
+* **Overview:** global details such as dates, APR, and eligibility rules,…
+* **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
+* **Leaderboard**: list of addresses participating in the opportunity
+* [**Linked opportunities**](glossary.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards

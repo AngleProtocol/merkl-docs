@@ -54,13 +54,13 @@ Merkl is a **non-custodial solution**. You retain full control over your assets�
 * Learn how Merkl works under the hood by checking the [Technical Overview](merkl-mechanisms/technical-overview.md)
 * Explore available the versatility of [Merkl Incentive Mechanisms](merkl-mechanisms/incentive-mechanisms.md), including its [Campaign Types](merkl-mechanisms/campaign-types/), [Distribution Types](merkl-mechanisms/distributions.md), its [Customizability Hooks](merkl-mechanisms/customization-options.md) or the [Additional Features](merkl-mechanisms/features.md) it offers
 * Start your first campaign on [Merkl Studio](https://studio.merkl.xyz/) using our [guides](distribute-with-merkl/create-a-campaign.md)
-* Forwarder, deposit URL, dispute,... — check the [Glossary](glossary.md) if there's a term you don't understand.
+* Forwarder, deposit URL, dispute,... — check the [Glossary](merkl-mechanisms/glossary.md) if there's a term you don't understand.
 
 ### For Users
 
 * Discover active campaigns & start earning in [the Merkl App](https://app.merkl.xyz/)
 * Learn how to earn rewards in Merkl by checking the [user guide](earn-with-merkl/earning-with-merkl.md)
-* Opportunity, campaign, APR,... — check the [Glossary](glossary.md) if there's a term you don't understand.
+* Opportunity, campaign, APR,... — check the [Glossary](merkl-mechanisms/glossary.md) if there's a term you don't understand.
 
 ## 🔗 Links
 
