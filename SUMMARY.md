@@ -24,6 +24,7 @@
 * [Create a campaign](distribute-with-merkl/create-a-campaign.md)
 * [Create multiple campaigns](distribute-with-merkl/create-multiple-campaigns.md)
 * [Create a point program](distribute-with-merkl/create-a-point-program.md)
+- [Create a campaign pre-TGE](distribute-with-merkl/create-a-pretge-campaign.md)
 * [Create a campaign from a multisig or Gnosis Safe](distribute-with-merkl/create-your-campaign-from-a-multisig-or-gnosis-safe.md)
 * [Create your campaign from a DAO](distribute-with-merkl/create-your-campaign-from-dao.md)
 * [Campaign Management](distribute-with-merkl/campaign-management.md)
