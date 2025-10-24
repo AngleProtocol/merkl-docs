@@ -48,7 +48,7 @@ You can set a higher budget, but only do so if you know that your campaign will 
 
 **Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
 
-**CLAMM campaigns**: Fixed reward rates don't work well for Concentrated Liquidity AMM campaigns (e.g., "1k points per $ per day") as they don't accurately reflect value distribution. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
+**CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
 
 <figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in [the Points section](https://app.merkl.xyz/?tokenType=POINT&sort=tvl-desc) of the Merkl app.</p></figcaption></figure>
 
@@ -71,11 +71,11 @@ Using the Merkl API, you can fetch:
 
 Reward amounts are expressed in units of the mock token you configured.
 
-**Calculating total points**: When retrieving rewards from the API, each user's total points are calculated by adding the `amount` and `pending` fields together. The API response includes both fields separately:
-- `amount`: Points that have been fully processed
-- `pending`: Points that are still being calculated or processed
+**Calculating total points**: When retrieving rewards from the API, each user's total points are calculated by adding the `amount` and `pending` fields together. Both fields represent computed values that you can use immediately for your points system.
 
-To get a user's total points, use: `totalPoints = amount + pending`
+{% hint style="info" %}
+**Note**: The `amount` and `pending` fields are inherited from Merkl's token distribution model, but for points programs you don't need to distinguish between them - both are ready to use. To get a user's total points, use: `totalPoints = amount + pending`
+{% endhint %}
 
 Below are some useful API routes for accessing your campaign results:
 
