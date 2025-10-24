@@ -46,7 +46,9 @@ You can set a higher budget, but only do so if you know that your campaign will 
 
 **Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/features.md#-forwarders). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
 
-**Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram. 
+**Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
+
+**CLAMM campaigns**: Fixed reward rates don't work well for Concentrated Liquidity AMM campaigns (e.g., "1k points per $ per day") as they don't accurately reflect value distribution. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
 
 <figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in [the Points section](https://app.merkl.xyz/?tokenType=POINT&sort=tvl-desc) of the Merkl app.</p></figcaption></figure>
 
@@ -54,6 +56,8 @@ The campaigns you create will distribute **non-transferable mock tokens**. Users
 
 {% hint style="warning" %}
 **Important**: All points data displayed in the Merkl frontend is informational only. Leaderboard rankings and point totals shown in the app should not be considered final, as projects retain full control to adjust allocations based on their own criteria before conducting airdrops or distributing rewards.
+
+**Creator address filtering**: Fixed reward rate campaigns credit all remaining points to the creator address at the end of a campaign. Make sure to filter out creator addresses from your leaderboards when using API data to avoid showing them in rankings.
 {% endhint %}
 
 ### 2. Retrieve results via Merkl's API
@@ -67,6 +71,12 @@ Using the Merkl API, you can fetch:
 
 Reward amounts are expressed in units of the mock token you configured.
 
+**Calculating total points**: When retrieving rewards from the API, each user's total points are calculated by adding the `amount` and `pending` fields together. The API response includes both fields separately:
+- `amount`: Points that have been fully processed
+- `pending`: Points that are still being calculated or processed
+
+To get a user's total points, use: `totalPoints = amount + pending`
+
 Below are some useful API routes for accessing your campaign results:
 
 - Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true`\
@@ -74,6 +84,16 @@ Below are some useful API routes for accessing your campaign results:
 - Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
    (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c))
 - Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
+
+{% hint style="info" %}
+**Important: Understanding the `chainId` parameter**
+
+When calling Merkl's API endpoints, the `chainId` parameter refers to **the chain where your point token is deployed**, not the chain where your campaigns are computing activity. 
+
+For example, if your point token is deployed on Gnosis (chainId: 100), use `chainId=100` in your API calls, even if your campaigns track activity on other chains.
+
+This is because Merkl's API organizes rewards by the reward token's deployment chain, not by the chain where the tracked activity occurs.
+{% endhint %}
 
 For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
 
@@ -119,6 +139,14 @@ A point source is the specific opportunity or asset that Merkl monitors to calcu
 - A Morpho lending market
 - A vault or staking contract
 {% endhint %}
+
+### Cost optimization strategies
+
+**Create longer-duration campaigns**: Pay the user fee once by creating campaigns with longer durations instead of multiple short campaigns.
+
+**Enable forwarding to reduce campaign count**: Merkl's forwarding system can automatically detect and reward users who hold your tokens indirectly through other protocols (e.g., forwarding points earned on your token to users in Pendle). This reduces the number of campaigns you need to create.
+
+**Free TGE distribution**: If you use Merkl post-TGE to incentivize your token, you get a free TGE distribution included.
 
 ### Invoicing
 
