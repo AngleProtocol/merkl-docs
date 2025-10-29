@@ -30,7 +30,6 @@
 * [Create your campaign from a DAO](distribute-with-merkl/create-your-campaign-from-dao.md)
 * [Campaign Management](distribute-with-merkl/campaign-management.md)
 * [Fee Model](distribute-with-merkl/fee-model.md)
-* [Campaign Creator FAQ](distribute-with-merkl/campaign-creator-faq.md)
 
 ## Earn with Merkl
 
