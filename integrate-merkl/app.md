@@ -137,6 +137,9 @@ This route provides:
 - Claimed: the number of already claimed tokens.
 - Proofs that will assist in integrating the claiming of rewards (details in the next section).
 
+
+We do not yet return time-series data through our API. However, if you need historical data, you could take a daily snapshot of our API to build such dataset.
+
 ## Claiming user rewards
 
 Rewards on Merkl are claimable per token: meaning that if a user has accumulated rewards of several tokens, they may choose to only claim their rewards of one token type, just like they can choose to claim all their token rewards at once.

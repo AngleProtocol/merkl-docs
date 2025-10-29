@@ -4,7 +4,7 @@ description: Manage your campaigns once they’re live
 
 # Campaign Management
 
-Once your campaign is created, you will be able to see it in the [Opportunities page](https://app.merkl.xyz/). Note that it can take up to one hour to appear in our app due to cache.
+Once your campaign is created, you will be able to see it in the [Opportunities page](https://app.merkl.xyz/). Note that it can take up to 1 hour to be visible on our app due to cache.
 
 ## Campaign Management Actions
 
@@ -14,8 +14,9 @@ You now have the full ownership of your campaign. You’ll be able to:
 * **Track any delay** related to the campaign or the chain on which the campaign is running using [Merkl status page](https://app.merkl.xyz/status)
 * **See the campaign leaderboard** in the opportunity page to track addresses’ participation
 * **Integrate campaign data** into your own app using our API. You’ll find the procedure [here](https://docs.merkl.xyz/integrate-merkl/app)
+* **Renew your campaigns** Campaigns cannot be extended after they end, but you can easily create a new one using the same parameters
 * **Reallocate unclaimed rewards** from any recipient to another address at your discretion. You’ll find the procedure [here](https://docs.merkl.xyz/merkl-mechanisms/features)
-* **Cancel a campaign**: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
+* **Cancel a campaign**: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right. Any remaining (undistributed) tokens will be available in the next 24 hours for withdrawal through the Merkl UI or directly via contract interaction.
 *   (If needed) **edit some parameters** of your campaigns.
 
     ✅ You can:
@@ -27,10 +28,12 @@ You now have the full ownership of your campaign. You’ll be able to:
     ❌ You cannot:
 
     * Change the reward token
-    * Change the total reward amount (create a new campaign for that — and shift the start/end date by at least 1 hour to avoid duplication bugs in the Merkl engine)
-
+    * Change the total reward amount. 
+        - To **reduce** the total amount: cancel and recreate a new campaign.  
+        If you want identical dates, **offset** either the start or end by **≥ 15 min** to avoid campaign duplication in the merkl engine.
+        - To **increase** the total amount: create an **additional campaign** running in parallel. In the Merkl app, look for opportunities with **2+ lightning icons** to see examples of multiple active campaigns on an opportunity.
+    
 **Note**: If you want to add extra rewards or add another new reward token to your existing campaign, you’ll need to create another campaign on top of the current one. The new campaign must have a slightly modified start or end date (by a minimum of one hour) to prevent campaign duplication in our engine.
-
 
 ## Merkl API Good to know
 
