@@ -15,8 +15,9 @@ You now have the full ownership of your campaign. You’ll be able to:
 * **See the campaign leaderboard** in the opportunity page to track addresses’ participation
 * **Integrate campaign data** into your own app using our API. You’ll find the procedure [here](https://docs.merkl.xyz/integrate-merkl/app)
 * **Renew your campaigns** Campaigns cannot be extended after they end, but you can easily create a new one using the same parameters
-* **Reallocate unclaimed rewards** from any recipient to another address at your discretion. You’ll find the procedure [here](https://docs.merkl.xyz/merkl-mechanisms/features)
-* **Cancel a campaign**: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right. Any remaining (undistributed) tokens will be available in the next 24 hours for withdrawal through the Merkl UI or directly via contract interaction.
+* **Reallocate unclaimed rewards** from any recipient to another address at your discretion. You’ll find the procedure [here](https://docs.merkl.xyz/merkl-mechanisms/features#campaign-cancellation)
+* **Cancel a campaign** by opening the [Studio](https://studio.merkl.xyz/users/) and selecting the campaign you want to cancel. You can find a full guide [here](https://docs.merkl.xyz/merkl-mechanisms/features)
+
 *   (If needed) **edit some parameters** of your campaigns.
 
     ✅ You can:
