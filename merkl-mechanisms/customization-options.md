@@ -155,7 +155,6 @@ If you expect to **add whitelisted addresses over time**, use this method so you
 - Set a boost of "1000000000" (i.e 1× in base 9) for whitelisted addresses, "0" for the `ZERO_ADDRESS` (that way all non-whitelisted addresses do not receive rewards)
 
 ```json
-{
   [
   {
     "address": "0x1234567890abcdef1234567890abcdef12345678",
@@ -170,7 +169,6 @@ If you expect to **add whitelisted addresses over time**, use this method so you
     "boost": "0"
   }
 ]
-}
 ```
 
 #### Dynamic blacklist (example)
@@ -179,8 +177,8 @@ Similarly, **you can keep a mutable blacklist without having to cancel and then 
 - Set a boost of "0" for blacklisted addresses, and "1000000000" (i.e 1× in base 9) for the `ZERO_ADDRESS` (that way all non-blacklisted addresses receive rewards)
 
 ```json
-{
-  [
+
+[
   {
     "address": "0x1234567890abcdef1234567890abcdef12345678",
     "boost": "0"
@@ -194,7 +192,6 @@ Similarly, **you can keep a mutable blacklist without having to cancel and then 
     "boost": "1000000000"
   }
 ]
-}
 ```
 ## Advanced Logic
 
