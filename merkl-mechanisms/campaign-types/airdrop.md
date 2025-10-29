@@ -12,6 +12,7 @@ Airdrops do not appear “live” like continuously computed campaigns because t
 To review your airdrop after creation, use this filtered view:  
 <https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST&sort=lastCampaignCreatedAt-desc>  
 Note: As for any campaigns, it can take up to ~1 hour after creation before your airdrop campaign is visible in the Merkl app.
+{% endhint %}
 
 ## JSON airdrops
 
