@@ -174,7 +174,7 @@ If you expect to **add whitelisted addresses over time**, use this method so you
 ```
 
 #### Dynamic blacklist (example)
-Similarly, you can keep a mutable blacklist without having to cancel and then recreate a campaign. To achieve this:
+Similarly, **you can keep a mutable blacklist without having to cancel and then recreate a campaign**. To achieve this:
 - Use the `MULTIPLY` boosting function 
 - Set a boost of "0" for blacklisted addresses, and "1000000000" (i.e 1× in base 9) for the `ZERO_ADDRESS` (that way all non-blacklisted addresses receive rewards)
 
