@@ -195,7 +195,7 @@ Similarly, **you can keep a mutable blacklist without having to cancel and then 
   }
 ]
 }
-
+```
 ## Advanced Logic
 
 ### 🌉 Jumper Bridge
