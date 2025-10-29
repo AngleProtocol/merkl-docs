@@ -7,6 +7,12 @@ Merkl supports two different types of airdrops:
 1. **Custom Allocation Airdrops**: Campaign creators define the reward distribution, specifying which users receive what amount. Providers upload a JSON file with allocation details, and Merkl handles the distribution via its claim system.
 2. **Snapshot-Based Airdrops**: Merkl distributes rewards based on a snapshot of a given token’s balance at a chosen point in time.
 
+{% hint style="info" %}
+Airdrops do not appear “live” like continuously computed campaigns because the Merkl Engine performs no ongoing calculation.  
+To review your airdrop after creation, use this filtered view:  
+<https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST&sort=lastCampaignCreatedAt-desc>  
+Note: As for any campaigns, it can take up to ~1 hour after creation before your airdrop campaign is visible in the Merkl app.
+
 ## JSON airdrops
 
 For Custom Allocation Airdrops, providers only need to upload a JSON file specifying user addresses and reward amounts. To create your JSON Airdrop campaign on Merkl, visit this [page](https://studio.merkl.xyz/create-campaign/airdrop).
