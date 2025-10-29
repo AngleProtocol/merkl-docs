@@ -149,7 +149,7 @@ Any other response will be dropped, and if the object cannot be parsed, the cuto
 **Important:** **The boost values are to be given in base 9**. This means that for a boost of 1, the value given for boost should be: "1000000000".
 {% endhint %}
 
-##### Dynamic whitelist (example)
+#### Dynamic whitelist (example)
 If you expect to **add whitelisted addresses over time**, use this method so you don't have to cancel and recreate the campaign with the updated list of whitelisted addresses. To achieve this:
 - Use the `MULTIPLY` boosting function 
 - Set a boost of "1000000000" (i.e 1× in base 9) for whitelisted addresses, "0" for the `ZERO_ADDRESS` (that way all non-whitelisted addresses do not receive rewards)
