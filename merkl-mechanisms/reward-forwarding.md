@@ -1,4 +1,4 @@
-# 🔁 Forwarders
+# Reward Forwarding
 
 Merkl Engine intelligently enables users to **earn rewards even when they don’t hold the incentivized asset directly in their wallet**. For example, in a campaign rewarding token holders, many users may have their tokens staked in a contract. If Merkl has integrated that staking contract, those users will still receive rewards based on their staked amount.
 
