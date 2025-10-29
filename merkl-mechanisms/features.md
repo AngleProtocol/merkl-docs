@@ -13,7 +13,7 @@ Blacklisting excludes specific addresses from receiving rewards.
 <figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
-If a [forwarder](features.md#forwarders) is blacklisted, all associated users are also ineligible.
+If a [forwarder](../merkl-mechanisms/reward-forwarding.md) is blacklisted, all associated users are also ineligible.
 
 
 
@@ -129,6 +129,28 @@ To reallocate rewards, you need to call from the creator address [reallocateCamp
 * to: the address that should receive the reallocated rewards
 
 To reallocate all unclaimed rewards, you can set `froms` to `[0x0000000000000000000000000000000000000000]`.
+
+## 🛑 Campaign Cancellation
+
+Cancel a campaign by opening the [Studio](https://studio.merkl.xyz/users/) and sign in with the creator address. If you only need the cancellation transaction payload (e.g., for a Safe), you may impersonate the creator address to fetch it. 
+
+Step 1: From the Opportunities list, open the opportunity that contains your campaign. 
+    
+<figure><img src="../.gitbook/assets/cancel-screenshot1.png" alt=""><figcaption></figcaption></figure>
+    
+Step 2: Select the campaign, and click Cancel on the right.
+    
+<figure><img src="../.gitbook/assets/cancel-screenshot2.png" alt=""><figcaption></figcaption></figure>
+    
+Step 3: Confirm the action by typing STOP when prompted. You can then execute the cancellation transaction. If you prefer to execute via a Safe, download the payload and drag and drop on Safe transaction builder.
+    
+<figure><img src="../.gitbook/assets/cancel-screenshot3.png" alt=""><figcaption></figcaption></figure>
+
+Once cancelled, the campaign stops accruing rewards immediately. Any undistributed tokens become withdrawable within **24 hours** - either from the Merkl UI or directly by calling the contract.
+
+{% hint style="warning" %}
+Cancellation is **irreversible**. The engine will not process further updates for this campaign after cancellation, and previously processed distributions remain final.
+{% endhint %}
 
 ## ✏️ Campaign Overrides
 
