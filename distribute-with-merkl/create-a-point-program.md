@@ -150,6 +150,6 @@ A point source is the specific opportunity or asset that Merkl monitors to calcu
 
 ### Invoicing
 
-**Billing cycle**: You will be invoiced retroactively at the end of each month for all campaigns created during that period.
+**Billing cycle**: You will be invoiced retroactively at the end of each month for all campaigns created during that period. If you cancel a campaing shortly after creating it, we usually waive it as a goodwill gesture but if it’s near a full week it would be billed.
 
 **Payment terms**: Invoices must be paid within 7 days. If payment is not received within this timeframe, all ongoing campaigns will be paused and your project will be temporarily blocked from Merkl until payment is resolved.
