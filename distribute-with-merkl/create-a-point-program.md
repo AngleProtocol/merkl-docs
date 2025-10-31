@@ -44,7 +44,7 @@ You can set a higher budget, but only do so if you know that your campaign will 
 
 **Duration.** When setting up your campaigns, you’ll also need to set a start and end date. Even if your points program is meant to last 6 months, we recommend creating shorter campaigns and renewing them periodically. Campaign parameters are difficult to change once live, so shorter durations give you flexibility to adjust as needed.
 
-**Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/features.md#-forwarders). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
+**Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/reward-forwarding.md). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
 
 **Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
 

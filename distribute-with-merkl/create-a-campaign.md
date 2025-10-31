@@ -65,7 +65,7 @@ For each token to distribute as reward, Merkl sets a minimum amount of token tha
 
 This section allows you to set blacklist and/or whitelist for your campaign. Blacklisted addresses won't receive any rewards, whereas whitelisted addresses will exclusively receive the campaign's rewards (excluding all other addresses).
 
-You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/features#forwarders).
+You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/reward-forwarding).
 
 <figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
 

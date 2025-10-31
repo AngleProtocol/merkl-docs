@@ -14,6 +14,8 @@ To review your airdrop after creation, use this filtered view:
 Note: As for any campaigns, it can take up to ~1 hour after creation before your airdrop campaign is visible in the Merkl app.
 {% endhint %}
 
+**All addresses indicated must be in checksummed!**
+
 ## JSON airdrops
 
 For Custom Allocation Airdrops, providers only need to upload a JSON file specifying user addresses and reward amounts. To create your JSON Airdrop campaign on Merkl, visit this [page](https://studio.merkl.xyz/create-campaign/airdrop).
