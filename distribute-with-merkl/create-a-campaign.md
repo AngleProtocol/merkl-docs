@@ -23,15 +23,11 @@ Connect the wallet holding the rewards to distribute. Make sure you’re connect
 You can create cross-chain campaigns with Merkl — incentivize an asset on one chain while distributing the rewards on another (e.g. incentivize an WETH-USDC pool on Ethereum by distributing WBTC on Base).
 {% endhint %}
 
-
-
 3. **Click on&#x20;**_**Create Campaign**_
 
 Click on the _Create Campaign_ button to create a single campaign.
 
 <figure><img src="../.gitbook/assets/Group 7.png" alt=""><figcaption></figcaption></figure>
-
-
 
 4. **Select your incentive category**
 
@@ -42,8 +38,6 @@ Choose your incentive category by clicking on the appropriate card.
 {% hint style="info" %}
 To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, please use the _Token Holding_ campaign category.
 {% endhint %}
-
-
 
 5. **Configure your rewards**
 
@@ -59,35 +53,25 @@ The total rewards amount is the total amount of rewards to be distributed over t
 For each token to distribute as reward, Merkl sets a minimum amount of token that can be distributed per hour. If your token amount is too low (generally parameters are calibrated so that you cannot distribute less than $1 per hour), then you will not be able to create your campaign.
 {% endhint %}
 
-
-
 6. **Set restrictions**
 
 This section allows you to set blacklist and/or whitelist for your campaign. Blacklisted addresses won't receive any rewards, whereas whitelisted addresses will exclusively receive the campaign's rewards (excluding all other addresses).
 
-You can also verify if an address is a known & supported forwarder contract: rewards distributed to this address will be forwarded to all users who deposited funds in this contract. You can learn more about this in the [forwarding section](https://docs.merkl.xyz/merkl-mechanisms/reward-forwarding).
-
 <figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
-
-
 
 7. **Personalize your campaign**
 
-Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, forwarders and more. New options are constantly being added to Merkl! Check out the non-exhaustive list of options on the [Customization options page](../merkl-mechanisms/customization-options.md).
+Campaigns on Merkl can be fully tailored to your needs. You can choose whether or not to apply customization options such as boosts, and more. New options are constantly being added to Merkl! Check out the non-exhaustive list of options on the [Customization options page](../merkl-mechanisms/customization-options.md).
 
 <figure><img src="../.gitbook/assets/Group 20.png" alt=""><figcaption></figcaption></figure>
 
 You may also be asked to provide a deposit URL — this is the link to the asset you want to incentivize (e.g. a lending market, liquidity pool, etc.). Since Merkl is non-custodial, users must interact directly with the protocols to be eligible for rewards. Merkl does not hold any user funds.
-
-
 
 8. **Review campaign and accept Terms**
 
 Double-check all the information. Once you’re done, hit the _Accept Terms_ button, and confirm in your wallet.
 
 <figure><img src="../.gitbook/assets/Group 9.png" alt=""><figcaption></figcaption></figure>
-
-
 
 9. **Approve and launch**
 
@@ -110,7 +94,7 @@ Regardless of the method you choose, you will need to follow these 3 steps:
 {% hint style="info" %}
 **Using a multisig wallet (Safe Wallet):**
 
-The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](broken-reference) where everything is explained in more detail.
+The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig or Gnosis Safe Transaction Builder, check this [page](broken-reference/) where everything is explained in more detail.
 {% endhint %}
 
 Congratulations! You have launched your incentive campaign! 🎉
