@@ -32,7 +32,7 @@ A capped reward rate campaign is similar to a [variable reward rate campaign](gl
 
 ## Customization option
 
-Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, forwarders, bridged liquidity, and more. A non exhaustive list of customization options is available [here](customization-options.md).
+Optional features that can be added to a campaign to make it unique, such as boosts, blacklists, bridged liquidity, and more. A non exhaustive list of customization options is available on the [Customization options page](customization-options.md).
 
 ## Cross-chain rewards
 
@@ -79,7 +79,7 @@ Fixed token rewards are a type of [fixed reward rate campaign](glossary.md#fixed
 
 A contract (such as staking, an Automated Liquidity Manager, or a vault) that holds the incentivized asset on behalf of users. Merkl detects the underlying users and distributes rewards to them, even if the asset isn’t held directly in their wallet.
 
-For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. Reward forwarding is enabled by default in Merkl.
+For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. [Reward forwarding](reward-forwarding.md) is enabled by default in Merkl.
 
 ## Linked opportunities
 
