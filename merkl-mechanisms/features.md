@@ -13,9 +13,7 @@ Blacklisting excludes specific addresses from receiving rewards.
 <figure><img src="../.gitbook/assets/Group 27.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
-If a [forwarder](../merkl-mechanisms/reward-forwarding.md) is blacklisted, all associated users are also ineligible.
-
-
+If a [forwarder](reward-forwarding.md) is blacklisted, all associated users are also ineligible.
 
 Example of a staking contract blacklist:
 
@@ -109,7 +107,7 @@ Once a campaign has ended, campaign creators can reallocate unclaimed rewards fr
 
 Campaign creators can also reallocate all unclaimed rewards at once.
 
-To give users time to claim their rewards, reallocation is only available after a defined window following the campaign’s end. Currently, this window ranges from 1 day to 7 months post-campaign. One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them. 
+To give users time to claim their rewards, reallocation is only available after a defined window following the campaign’s end. Currently, this window ranges from 1 day to 7 months post-campaign. One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them.
 
 When reallocation is triggered, the process can take up to 24 hours. This delay is due to required security checks and the need to publish a Merkle root onchain—an essential step for making the reallocated rewards claimable. Since Merkle root updates do not occur continuously or in real time, this contributes to the delay.
 
@@ -132,19 +130,19 @@ To reallocate all unclaimed rewards, you can set `froms` to `[0x0000000000000000
 
 ## 🛑 Campaign Cancellation
 
-Cancel a campaign by opening the [Studio](https://studio.merkl.xyz/users/) and sign in with the creator address. If you only need the cancellation transaction payload (e.g., for a Safe), you may impersonate the creator address to fetch it. 
+Cancel a campaign by opening the [Studio](https://studio.merkl.xyz/users/) and sign in with the creator address. If you only need the cancellation transaction payload (e.g., for a Safe), you may impersonate the creator address to fetch it.
 
-Step 1: From the Opportunities list, open the opportunity that contains your campaign. 
-    
-<figure><img src="../.gitbook/assets/cancel-screenshot1.png" alt=""><figcaption></figcaption></figure>
-    
+Step 1: From the Opportunities list, open the opportunity that contains your campaign.
+
+<figure><img src="../.gitbook/assets/Group-cancellation-2.png" alt=""><figcaption></figcaption></figure>
+
 Step 2: Select the campaign, and click Cancel on the right.
-    
-<figure><img src="../.gitbook/assets/cancel-screenshot2.png" alt=""><figcaption></figcaption></figure>
-    
+
+<figure><img src="../.gitbook/assets/Group-cancellation.png" alt=""><figcaption></figcaption></figure>
+
 Step 3: Confirm the action by typing STOP when prompted. You can then execute the cancellation transaction. If you prefer to execute via a Safe, download the payload and drag and drop on Safe transaction builder.
-    
-<figure><img src="../.gitbook/assets/cancel-screenshot3.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Group-cancellation-3.png" alt=""><figcaption></figcaption></figure>
 
 Once cancelled, the campaign stops accruing rewards immediately. Any undistributed tokens become withdrawable within **24 hours** - either from the Merkl UI or directly by calling the contract.
 
@@ -180,5 +178,5 @@ For protocols using gauge systems:
 * These connectors automatically translate governance votes into highly customizable Merkl campaigns. Our Governance Plug-in Templates are available [here](https://github.com/AngleProtocol/merkl-contracts/tree/main/contracts/partners/middleman).
 
 {% hint style="info" %}
-Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](broken-reference).
+Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](broken-reference/).
 {% endhint %}
