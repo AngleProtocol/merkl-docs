@@ -78,29 +78,7 @@ Reward reallocation is particularly useful in the following situations:
 
 ### How to Reallocate Rewards
 
-You can reallocate rewards in two ways:
-
-#### Via the Studio (Recommended for single campaign reallocations)
-
-The easiest way to reallocate rewards is through the [Merkl Studio](https://studio.merkl.xyz/users/):
-
-1. Connect to the studio using your creator address
-2. Navigate to your opportunity's management page
-3. Locate the button with three dots next to the "Renew" button
-4. Click on it and select "Reallocate unclaimed funds"
-
-The reallocation interface will guide you through the process:
-- **Reallocate rewards from**: Enter the address of the participant you want to reallocate from
-- The system will display the unclaimed rewards amount for that address
-- **Enter a wallet address to reallocate rewards to**: Enter the destination address (a wallet that can claim, such as an EOA, Safe, or other contract with claim functionality)
-
-{% hint style="warning" %}
-**Important**: Reallocation is done per campaign ID. If your opportunity contains multiple campaigns that need reallocation, you must repeat this process for each campaign separately when using the Studio interface. For batch reallocations across multiple campaigns, see the [programmatic approach](#programmatically-for-advanced-users-and-batch-reallocations) below using Safe multisig.
-{% endhint %}
-
-#### Programmatically (For advanced users and batch reallocations)
-
-If you need to reallocate rewards from multiple campaigns (when an opportunity contains several campaigns) or prefer a programmatic approach, you can call the `reallocateCampaignRewards` function directly on the Campaign Creator contract. This is particularly useful when batching multiple reallocations into a single transaction using a Safe multisig.
+To reallocate rewards, you can call the `reallocateCampaignRewards` function directly on the Campaign Creator contract. This approach is particularly useful when batching multiple reallocations into a single transaction using a Safe multisig.
 
 **Function signature:**
 ```solidity
@@ -210,7 +188,7 @@ To reallocate all unclaimed rewards from a campaign at once, set `froms` to `["0
 
 **No fees**: Reallocation operations are free—no fees are charged.
 
-**Multiple campaigns**: If an opportunity contains multiple campaigns that need reallocation, you must perform reallocation for each campaign ID separately. When using the Studio interface, this means repeating the reallocation process for each campaign. However, when using the programmatic approach with a Safe multisig, you can batch all reallocation transactions into a single Safe transaction by creating multiple calls to `reallocateCampaignRewards`—one for each campaign ID. This is more efficient and cost-effective when dealing with multiple campaigns.
+**Multiple campaigns**: If an opportunity contains multiple campaigns that need reallocation, you must perform reallocation for each campaign ID separately. When using the programmatic approach with a Safe multisig, you can batch all reallocation transactions into a single Safe transaction by creating multiple calls to `reallocateCampaignRewards`—one for each campaign ID. This is more efficient and cost-effective when dealing with multiple campaigns.
 
 For more technical details, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in the features documentation.
 
