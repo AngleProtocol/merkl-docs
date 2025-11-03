@@ -11,8 +11,8 @@ You now have the full ownership of your campaign. You’ll be able to:
 * Monitor its performance using our API (refer [here](https://docs.merkl.xyz/integrate-merkl/app) for more details) or directly in the studio’s dashboard (coming soon)
 * See the campaign leaderboard in the opportunity page to track addresses’ participation
 * Integrate campaign data into your own app using our API. You’ll find the procedure [here](https://docs.merkl.xyz/integrate-merkl/app)
-* **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](#address-remapping-alternative-to-manual-reallocation) below.
-* **Reallocate unclaimed rewards**: As a campaign creator, you have full control over reward reallocation. You can redirect rewards from any recipient to another address at your discretion. This is particularly useful when smart contracts receive pending rewards but lack a claim function, or when forwarding is not yet implemented. See the detailed section on [reward reallocation](#reward-reallocation) below for complete instructions.
+* **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](#address-remapping) below.
+* **Reallocate unclaimed rewards**: As a campaign creator, you can redirect rewards from any recipient to another address at your discretion. See the [reward reallocation section](#reward-reallocation) below for instructions.
 * Cancel a campaign: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
 *   (If needed) edit some parameters of your campaigns.
 
@@ -31,56 +31,51 @@ You now have the full ownership of your campaign. You’ll be able to:
 
 If you need assistance renewing your campaign, please notify us at least 3 days before it ends to ensure a smooth transition.
 
-## Address Remapping (Alternative to Manual Reallocation)
+## Address Remapping
 
-Instead of performing regular manual reallocations or waiting until the end of an incentive program to reallocate all rewards, campaign creators can request **address remapping** directly from the Merkl team.
+Campaign creators can request **address remapping** from the Merkl team to automatically redirect rewards from a source address to a destination address throughout the campaign duration. The Merkl engine handles this redirection automatically—no manual intervention is required.
 
-When you request address remapping, the Merkl engine will automatically redirect rewards from a source address (e.g., a smart contract A) to a destination address (e.g., address B) throughout the campaign duration. This is handled automatically by Merkl's infrastructure—you don't need to perform manual reallocations.
+**Remapping vs. Forwarding:**
+
+While both mechanisms redirect rewards, they serve different purposes:
+
+- **Forwarding** is an automatic Merkl feature that distributes rewards to users who hold the incentivized asset indirectly (e.g., through staking contracts or LP tokens). Forwarding works at the protocol level and is integrated directly into Merkl's reward distribution logic. See the [Forwarders section](../merkl-mechanisms/features.md#-forwarders) for more details.
+- **Address remapping** is a manual configuration set up by the Merkl team that redirects rewards from one specific address to another specific address. It's used when a contract receives rewards but cannot claim them, and you want those rewards sent to a claimable address for the entire campaign duration.
 
 **When to use address remapping:**
 
-- You have a smart contract that receives rewards but cannot claim them, and you want these rewards automatically redirected to a claimable address for the entire campaign duration
-- You need to redirect rewards from multiple addresses on a recurring basis, making manual reallocations impractical
-- You want a proactive solution that handles reward redirection automatically rather than requiring periodic manual intervention
+- You have a smart contract that receives rewards but cannot claim them, and you want these rewards automatically redirected to a claimable address
+- You need ongoing, automatic redirection during a campaign (rather than one-time adjustments)
 
 **How to request address remapping:**
 
-Contact the Merkl team directly to request address remapping for your campaign. Provide:
+Contact the Merkl team directly with:
 - Your campaign ID(s)
 - The source address(es) from which rewards should be redirected
 - The destination address(es) where rewards should be sent
 
-The Merkl team will configure the remapping, and the Merkl engine will handle the automatic redirection for the duration of your campaign(s).
-
 {% hint style="info" %}
-Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than waiting until campaign end or performing frequent manual reallocations, remapping provides a seamless, automated solution.
+Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than performing frequent manual reallocations, remapping provides a seamless, automated solution.
 {% endhint %}
 
 ## Reward Reallocation
 
-As a campaign creator, you have the power to reallocate unclaimed rewards from any recipient address to another address at your discretion. This is a powerful feature that gives you full control over reward distribution, especially in scenarios where automatic forwarding is not yet implemented or when certain addresses cannot claim their rewards.
+As a campaign creator, you can reallocate unclaimed rewards from any recipient address to another address at your discretion. This gives you full control over reward distribution, especially when certain addresses cannot claim their rewards.
 
 {% hint style="info" %}
-**Remapping vs. Reallocation**: If you need ongoing, automatic redirection of rewards during a campaign, consider [address remapping](#address-remapping-alternative-to-manual-reallocation) instead. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control.
+**Remapping vs. Reallocation**: Address remapping handles ongoing, automatic redirection during a campaign. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control.
 {% endhint %}
 
-### When to Use Reward Reallocation
+**Common use cases:**
 
-Reward reallocation is particularly useful in the following situations:
+- Smart contracts without claim functions that need rewards redirected to claimable addresses
+- Lost wallets or inaccessible addresses
+- One-time partner facilitation (redirecting from contract addresses to partner wallets)
 
-**Smart contracts without claim functions**: Some smart contracts may receive pending rewards but lack a `claim()` function to retrieve them. In such cases, these rewards remain unclaimable. By reallocating them to a wallet address that can claim (such as an EOA, Safe, or other contract with claim functionality), you enable the partner or stakeholder to easily claim their rewards.
+**How to reallocate rewards:**
 
-**Forwarding not yet implemented**: When forwarding is not yet available, some contracts may accumulate rewards that need to be manually redirected to appropriate addresses.
+Call the `reallocateCampaignRewards` function on the Campaign Creator contract:
 
-**Lost wallets or inaccessible addresses**: If rewards are allocated to addresses that are no longer accessible, you can reallocate them to active addresses.
-
-**Partner facilitation**: Reallocate rewards from a contract address to a partner's wallet address (EOA, Safe, etc.) to simplify the claiming process and improve user experience.
-
-### How to Reallocate Rewards
-
-To reallocate rewards, you can call the `reallocateCampaignRewards` function directly on the Campaign Creator contract. This approach is particularly useful when batching multiple reallocations into a single transaction using a Safe multisig.
-
-**Function signature:**
 ```solidity
 function reallocateCampaignRewards(
     bytes32 _campaignId,
@@ -90,9 +85,9 @@ function reallocateCampaignRewards(
 ```
 
 **Parameters:**
-- `_campaignId`: The campaign ID you want to reallocate unclaimed rewards for
-- `froms`: An array of addresses that you want to reallocate from
-- `to`: The address that should receive the reallocated rewards
+- `_campaignId`: The campaign ID for reallocation
+- `froms`: Array of addresses to reallocate from (use `["0x0000000000000000000000000000000000000000"]` to reallocate all unclaimed rewards)
+- `to`: The destination address
 
 **Example transaction payload** (for use with Safe Transaction Builder):
 
@@ -135,11 +130,11 @@ When reallocating from the same address across multiple campaigns, create multip
         "name": "reallocateCampaignRewards",
         "payable": false
       },
-  "contractInputsValues": {
-    "_campaignId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "froms": "[\"0x0000000000000000000000000000000000000000\"]",
-    "to": "0x0000000000000000000000000000000000000000"
-  }
+      "contractInputsValues": {
+        "_campaignId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "froms": "[\"0x0000000000000000000000000000000000000000\"]",
+        "to": "0x0000000000000000000000000000000000000000"
+      }
     },
     {
       "to": "0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd",
@@ -178,17 +173,11 @@ When reallocating from the same address across multiple campaigns, create multip
 
 This example shows how to batch reallocations from the same source address to the same destination address across multiple campaigns. Simply add more transaction objects to the `transactions` array for additional campaigns.
 
-To reallocate all unclaimed rewards from a campaign at once, set `froms` to `["0x0000000000000000000000000000000000000000"]`.
+**Important considerations:**
 
-### Important Considerations
-
-**Reallocation timing**: When you trigger a reallocation, the process can take up to 24 hours to complete due to required security checks and the processing needed to update reward distributions. This applies whether you're:
-- Reallocating all unclaimed rewards at the end of a campaign
-- Reallocating rewards from specific addresses (partial reallocation)
-
-**No fees**: Reallocation operations are free—no fees are charged.
-
-**Multiple campaigns**: If an opportunity contains multiple campaigns that need reallocation, you must perform reallocation for each campaign ID separately. When using the programmatic approach with a Safe multisig, you can batch all reallocation transactions into a single Safe transaction by creating multiple calls to `reallocateCampaignRewards`—one for each campaign ID. This is more efficient and cost-effective when dealing with multiple campaigns.
+- Reallocation can take up to 24 hours to complete due to security checks and processing
+- Reallocation operations are free—no fees are charged
+- Each campaign must be reallocated separately (but can be batched in a single Safe transaction)
 
 For more technical details, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in the features documentation.
 
