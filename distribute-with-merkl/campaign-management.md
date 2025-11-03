@@ -223,6 +223,12 @@ To fetch important data regarding your campaigns, you can use our API to get det
 - Checking rewards amount at token level: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/)
 - Checking how many rewards are unclaimed: [https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
 - Integrating APRs data in your front-end: [https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/](https://api.merkl.xyz/docs#tag/opportunities/get/v4/opportunities/)
-    - For this route, match the incentivized asset’s address with the “explorerAddress” field.
+    - For this route, match the incentivized asset's address with the "explorerAddress" field.
+
+{% hint style="warning" %}
+**Using `&test=true` with aglaMerkl or other test tokens**
+
+When using test tokens like aglaMerkl in your campaigns (both regular reward campaigns and point campaigns with mock tokens), these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens (which are filtered out of the frontend) will be included in the API response.
+{% endhint %}
 
 Note: You can find each campaign or opportunity ID directly on the opportunities page [here](https://app.merkl.xyz/).
