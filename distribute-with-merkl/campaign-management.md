@@ -11,6 +11,7 @@ You now have the full ownership of your campaign. You’ll be able to:
 * Monitor its performance using our API (refer [here](https://docs.merkl.xyz/integrate-merkl/app) for more details) or directly in the studio’s dashboard (coming soon)
 * See the campaign leaderboard in the opportunity page to track addresses’ participation
 * Integrate campaign data into your own app using our API. You’ll find the procedure [here](https://docs.merkl.xyz/integrate-merkl/app)
+* **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](#address-remapping-alternative-to-manual-reallocation) below.
 * **Reallocate unclaimed rewards**: As a campaign creator, you have full control over reward reallocation. You can redirect rewards from any recipient to another address at your discretion. This is particularly useful when smart contracts receive pending rewards but lack a claim function, or when forwarding is not yet implemented. See the detailed section on [reward reallocation](#reward-reallocation) below for complete instructions.
 * Cancel a campaign: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
 *   (If needed) edit some parameters of your campaigns.
@@ -30,9 +31,38 @@ You now have the full ownership of your campaign. You’ll be able to:
 
 If you need assistance renewing your campaign, please notify us at least 3 days before it ends to ensure a smooth transition.
 
+## Address Remapping (Alternative to Manual Reallocation)
+
+Instead of performing regular manual reallocations or waiting until the end of an incentive program to reallocate all rewards, campaign creators can request **address remapping** directly from the Merkl team.
+
+When you request address remapping, the Merkl engine will automatically redirect rewards from a source address (e.g., a smart contract A) to a destination address (e.g., address B) throughout the campaign duration. This is handled automatically by Merkl's infrastructure—you don't need to perform manual reallocations.
+
+**When to use address remapping:**
+
+- You have a smart contract that receives rewards but cannot claim them, and you want these rewards automatically redirected to a claimable address for the entire campaign duration
+- You need to redirect rewards from multiple addresses on a recurring basis, making manual reallocations impractical
+- You want a proactive solution that handles reward redirection automatically rather than requiring periodic manual intervention
+
+**How to request address remapping:**
+
+Contact the Merkl team directly to request address remapping for your campaign. Provide:
+- Your campaign ID(s)
+- The source address(es) from which rewards should be redirected
+- The destination address(es) where rewards should be sent
+
+The Merkl team will configure the remapping, and the Merkl engine will handle the automatic redirection for the duration of your campaign(s).
+
+{% hint style="info" %}
+Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than waiting until campaign end or performing frequent manual reallocations, remapping provides a seamless, automated solution.
+{% endhint %}
+
 ## Reward Reallocation
 
 As a campaign creator, you have the power to reallocate unclaimed rewards from any recipient address to another address at your discretion. This is a powerful feature that gives you full control over reward distribution, especially in scenarios where automatic forwarding is not yet implemented or when certain addresses cannot claim their rewards.
+
+{% hint style="info" %}
+**Remapping vs. Reallocation**: If you need ongoing, automatic redirection of rewards during a campaign, consider [address remapping](#address-remapping-alternative-to-manual-reallocation) instead. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control.
+{% endhint %}
 
 ### When to Use Reward Reallocation
 
