@@ -167,22 +167,10 @@ When reallocation is triggered, the process can take up to 24 hours. This delay 
 
 Once the reallocation is complete and the Merkle root is updated on the relevant chain, the new rewards can be claimed just like any other Merkl reward, using the address to which they were reassigned.
 
-### Why Reallocation is Important
+### Use Cases
 
-Reallocation is particularly critical in scenarios where:
-
-**Automatic forwarding is not yet implemented**: When forwarding functionality is not available, smart contracts may accumulate pending rewards that cannot be automatically forwarded to end users. In these cases, campaign creators can manually reallocate these rewards to appropriate addresses.
-
-**Smart contracts lack claim functions**: Some smart contracts receive pending rewards but don't have a `claim()` function implemented. These rewards would remain unclaimable if left on the contract address. By reallocating them to a wallet address that can claim (such as an EOA, Safe, or other contract with claim functionality), partners or stakeholders can easily claim their rewards.
-
-**Use Cases:**
-
-* Redirecting rewards from smart contracts without claim functions to wallet addresses (EOAs, Safe, etc.) that can claim rewards
-* Handling cases where automatic forwarding is not yet implemented
-* Recovering rewards from lost wallets or inaccessible addresses
-* Facilitating reward claims by moving rewards from contract addresses to user-controlled addresses
-
-**No fees are charged for reallocations.**
+* Useful for redirecting rewards from addresses that cannot claim them (e.g., lost wallets, smart contracts without claim functions).
+* No fees are charged for reallocations.
 
 Campaign creators can perform reallocations either through the [Merkl Studio](https://studio.merkl.xyz/users/) interface or programmatically via the smart contract. For detailed instructions, see the [Campaign Management documentation](../distribute-with-merkl/campaign-management.md#reward-reallocation).
 
