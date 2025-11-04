@@ -86,9 +86,9 @@ Below are some useful API routes for accessing your campaign results:
 - Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
 
 {% hint style="warning" %}
-**Using `&test=true` with aglaMerkl tokens**
+**Using `&test=true` with test tokens**
 
-When using test tokens like aglaMerkl in your campaigns (both regular reward campaigns and point campaigns), these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens (which are filtered out of the frontend) will be included in the API response.
+To retrieve campaign data via the API for test tokens like aglaMerkl, you must include the `&test=true` parameter in your API requests. To learn more about test campaigns and the `&test=true` parameter, please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
 {% endhint %}
 
 {% hint style="info" %}

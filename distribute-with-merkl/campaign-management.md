@@ -193,9 +193,9 @@ To fetch important data regarding your campaigns, you can use our API to get det
     - For this route, match the incentivized asset's address with the "explorerAddress" field.
 
 {% hint style="warning" %}
-**Using `&test=true` with aglaMerkl or other test tokens**
+**Test campaigns integration**
 
-When using test tokens like aglaMerkl in your campaigns (both regular reward campaigns and point campaigns with mock tokens), these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens (which are filtered out of the frontend) will be included in the API response.
+You may want to start testing the flow and integrating our data before your point program starts. To read more on test campaigns, please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
 {% endhint %}
 
 Note: You can find each campaign or opportunity ID directly on the opportunities page [here](https://app.merkl.xyz/).

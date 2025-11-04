@@ -23,12 +23,7 @@ As you browse through the documentation, you'll notice that some API parameters 
 {% hint style="warning" %}
 **Using `&test=true` parameter with test tokens**
 
-When using test tokens like aglaMerkl in your campaigns (both regular reward campaigns and point campaigns), these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens (which are filtered out of the frontend) will be included in the API response.
-
-For example, when retrieving campaigns created by your address:
-```
-https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true
-```
+To retrieve campaign data via the API for test tokens like aglaMerkl, you must include the `&test=true` parameter in your API requests. To learn more about test campaigns and the `&test=true` parameter, please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
 {% endhint %}
 
 ## Understanding the difference between Opportunities and Campaigns
