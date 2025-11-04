@@ -8,13 +8,29 @@ Merkl supports two different types of airdrops:
 2. **Snapshot-Based Airdrops**: Merkl distributes rewards based on a snapshot of a given token’s balance at a chosen point in time.
 
 {% hint style="info" %}
-Airdrops do not appear “live” like continuously computed campaigns because the Merkl Engine performs no ongoing calculation.  
-To review your airdrop after creation, use this filtered view:  
-<https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST&sort=lastCampaignCreatedAt-desc>  
-Note: As for any campaigns, it can take up to ~1 hour after creation before your airdrop campaign is visible in the Merkl app.
+Airdrops do not appear “live” like continuously computed campaigns because the Merkl Engine performs no ongoing calculation.\
+\
+To review your airdrop after creation, use this filtered view:\
+[https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST\&sort=lastCampaignCreatedAt-desc](https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST\&sort=lastCampaignCreatedAt-desc)\
+\
+Note: As for any campaigns, it can take up to \~1 hour after creation before your airdrop campaign is visible in the Merkl app.
 {% endhint %}
 
 **All addresses indicated must be in checksummed!**
+
+## Airdrop timing
+
+Once an airdrop campaign is created and launched on Merkl, it usually takes up to **12 hours** before the **tokens become claimable** by users.
+
+{% hint style="warning" %}
+We recommend **waiting \~12 hours** after the campaign is created **before announcing to your community** that the airdrop is live.
+{% endhint %}
+
+Please note that the **campaign end date** on Merkl is **different from the airdrop claim end date**. Even after a campaign is marked as “ended” on the Merkl App, users can still claim their tokens via their Merkl dashboard.
+
+{% hint style="danger" %}
+The **campaign end date** on the Merkl App **cannot be modified**.
+{% endhint %}
 
 ## JSON airdrops
 
@@ -57,7 +73,7 @@ Example:
 * **rewardToken:** The token being distributed.
 * **rewards:** User rewards with recipient addresses and reasons for the rewards.
 
-### Important Note
+### Important note
 
 Merkl applies a 0.5% fee to airdrop campaigns. This fee is added on top of the total airdropped amount, ensuring recipients receive the full intended distribution.
 
@@ -70,7 +86,7 @@ Our frontend automatically calculates the correct amount for you.
 
 Airdropped tokens become claimable at the next [reward update](../glossary.md#reward-update-aka-merkl-root-update) on the target chain, which typically occurs within 8 hours. If you plan to announce the airdrop, we recommend waiting until the rewards are claimable to notify your users.
 
-## Token Balance Airdrops
+## Token balance airdrops
 
 Merkl allows you to distribute tokens to holders based on their snapshotted balance at a chosen moment in time.
 
