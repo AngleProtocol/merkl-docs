@@ -65,6 +65,10 @@ Where:
 - **V**: Total supply of the boost token/NFT
 - **v**: User’s holdings of the boost token/NFT
 
+{% hint style="warning" %}
+**Example:** To achieve a boost of 10%, you'll need to indicate a Boost Multiplicator of 1.1
+{% endhint %}
+
 #### NFT-Based Boosting
 
 Boosts can be based on NFT holdings. Contact us for help setting up NFT-based reward boosts.
@@ -140,8 +144,54 @@ const data : {
 
 Any other response will be dropped, and if the object cannot be parsed, the cutomization option will fail.
 
-**The boost values are to be given in base 9**. This means that for a boost of 1, the value given for boost should be: "1000000000".
 
+{% hint style="warning" %}
+**Important:** **The boost values are to be given in base 9**. This means that for a boost of 1, the value given for boost should be: "1000000000".
+{% endhint %}
+
+#### Dynamic whitelist (example)
+If you expect to **add whitelisted addresses over time**, use this method so you don't have to cancel and recreate the campaign with the updated list of whitelisted addresses. To achieve this:
+- Use the `MULTIPLY` boosting function 
+- Set a boost of "1000000000" (i.e 1× in base 9) for whitelisted addresses, "0" for the `ZERO_ADDRESS` (that way all non-whitelisted addresses do not receive rewards)
+
+```json
+[
+  {
+    "address": "0x1234567890abcdef1234567890abcdef12345678",
+    "boost": "1000000000"
+  },
+  {
+    "address": "0xabcdef1234567890abcdef1234567890abcdef1234",
+    "boost": "1000000000"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "boost": "0"
+  }
+]
+```
+
+#### Dynamic blacklist (example)
+Similarly, **you can keep a mutable blacklist without having to cancel and then recreate a campaign**. To achieve this:
+- Use the `MULTIPLY` boosting function 
+- Set a boost of "0" for blacklisted addresses, and "1000000000" (i.e 1× in base 9) for the `ZERO_ADDRESS` (that way all non-blacklisted addresses receive rewards)
+
+```json
+[
+  {
+    "address": "0x1234567890abcdef1234567890abcdef12345678",
+    "boost": "0"
+  },
+  {
+    "address": "0xabcdef1234567890abcdef1234567890abcdef1234",
+    "boost": "0"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "boost": "1000000000"
+  }
+]
+```
 ## Advanced Logic
 
 ### 🌉 Jumper Bridge

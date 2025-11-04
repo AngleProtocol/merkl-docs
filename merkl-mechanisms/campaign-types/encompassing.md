@@ -101,6 +101,11 @@ Example:
 }
 ```
 
+{% hint style="warning" %}
+**Keep recent history:** Include at least 3/4 days of past entries in your Reward JSON so that, if there are delays, the Merkl engine can still fetch and process recent rewards without requiring you to re-upload old data.
+{% endhint %}
+
+
 ### 2. 📊 Data JSON
 
 The expected format for the JSON data is the following
