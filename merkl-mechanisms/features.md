@@ -107,16 +107,18 @@ Once a campaign has ended, campaign creators can reallocate unclaimed rewards fr
 
 Campaign creators can also reallocate all unclaimed rewards at once.
 
-To give users time to claim their rewards, reallocation is only available after a defined window following the campaign’s end. Currently, this window ranges from 1 day to 7 months post-campaign. One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them.
+To give users time to claim their rewards, reallocation is only available after a defined window following the campaign's end. Currently, this window ranges from 1 day to 7 months post-campaign.
 
 When reallocation is triggered, the process can take up to 24 hours. This delay is due to required security checks and the need to publish a Merkle root onchain—an essential step for making the reallocated rewards claimable. Since Merkle root updates do not occur continuously or in real time, this contributes to the delay.
 
 Once the reallocation is complete and the Merkle root is updated on the relevant chain, the new rewards can be claimed just like any other Merkl reward, using the address to which they were reassigned.
 
-**Use Case:**
+### Use Cases
 
 * Useful for redirecting rewards from addresses that cannot claim them (e.g., lost wallets, smart contracts without claim functions).
 * No fees are charged for reallocations.
+
+Campaign creators can perform reallocations either through the [Merkl Studio](https://studio.merkl.xyz/users/) interface or programmatically via the smart contract. For detailed instructions, see the [Campaign Management documentation](../distribute-with-merkl/campaign-management.md#reward-reallocation).
 
 **Developer:**
 

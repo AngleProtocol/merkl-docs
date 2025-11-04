@@ -40,6 +40,38 @@ You can check whether your token is already whitelisted by setting it as the rew
 Make sure you have all the tokens you want to distribute in your wallet when creating a campaign
 {% endhint %}
 
+## 🧪 Test campaigns
+
+You may want to start testing the flow and integrating our data before your point program starts. Merkl is not deployed on testnets, but you can still run test campaigns using our test token: **aglaMerkl**.
+
+These test campaigns are not mandatory — they're available to help you experiment with how Merkl works using valueless tokens, so you can better prepare your upcoming campaigns. However, since they consume computation resources on our end, we encourage you to use this feature only when there's a clear need.
+
+Note that test campaigns will **not appear on the Merkl app** and will not be visible to users, as they are automatically filtered out from the interface.
+
+To get started, send us a message and we'll provide you with our test token. aglaMerkl has no value and is only intended for creating test campaigns on Merkl.
+
+You can then create your test campaign using aglaMerkl tokens. While the campaign won't show up in the Merkl app, you'll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation. You can refer to the [Campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management/) for more info regarding the mostly used endpoints.
+
+{% hint style="warning" %}
+**Using `&test=true` with test tokens**
+
+When using test tokens like aglaMerkl in your campaigns, these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens will be included in the API response, as they are filtered out by default.
+
+For example, when retrieving campaigns created by your address:
+```
+https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true
+```
+{% endhint %}
+
+Make sure to verify that:
+
+* distribution is functioning as expected
+* key metrics like TVL are correctly computed
+
+If everything looks good in the API, it will appear correctly in the Merkl front end once the real campaign is live!
+
+If you need help to create your first test campaigns, feel free to reach out to us.
+
 ## 📃 Merkl terms
 
 You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.

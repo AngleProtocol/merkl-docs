@@ -20,6 +20,12 @@ We encourage you to use the API documentation for reference after having read th
 As you browse through the documentation, you'll notice that some API parameters are optional. Keep in mind though that specifying more parameters can speed up the result of your API queries.
 {% endhint %}
 
+{% hint style="warning" %}
+**Using `&test=true` parameter with test tokens**
+
+To retrieve campaign data via the API for test tokens like aglaMerkl, you must include the `&test=true` parameter in your API requests. To learn more about test campaigns and the `&test=true` parameter, please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
+{% endhint %}
+
 ## Understanding the difference between Opportunities and Campaigns
 
 To show Merkl data in your front-end, you have 2 types of data you can use:
