@@ -9,7 +9,7 @@ description: Everything you need to know to create campaigns on Merkl
 1. **Go to Merkl Studio**\
    [Merkl Studio](https://studio.merkl.xyz/) is your command center to launch, manage and optimize your incentive campaigns.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
 
 2. **Connect your wallet**
 
@@ -17,7 +17,7 @@ Connect the wallet holding the rewards to distribute. Make sure you’re connect
 
 <figure><img src="../.gitbook/assets/Group 8.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.03 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.03 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 You can create cross-chain campaigns with Merkl — incentivize an asset on one chain while distributing the rewards on another (e.g. incentivize an WETH-USDC pool on Ethereum by distributing WBTC on Base).
@@ -33,7 +33,7 @@ Click on the _Create Campaign_ button to create a single campaign.
 
 Choose your incentive category by clicking on the appropriate card.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.21 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 17.42.21 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, please use the _Token Holding_ campaign category.
@@ -101,6 +101,10 @@ Congratulations! You have launched your incentive campaign! 🎉
 
 {% hint style="success" %}
 **Please note that once created, your campaign may take up to one hour to become visible on the front-end.**
+{% endhint %}
+
+{% hint style="warning" %}
+Please note that it’s expected for your campaign’s **TVL and APR to show 0** at launch, and for the **leaderboard to appear empty**. The Merkl Engine needs a few hours to perform the necessary computations before this data becomes available.
 {% endhint %}
 
 ## 🧪 Test campaigns
