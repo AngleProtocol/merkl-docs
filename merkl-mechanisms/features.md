@@ -103,9 +103,9 @@ Some smart contracts on the chain you are incentivizing activity may not exist o
 
 ## 🔄 Campaign Reallocation
 
-Once a campaign has ended, campaign creators can reallocate unclaimed rewards from any recipient to another address at their discretion.
+As a campaign creator, you can reallocate unclaimed rewards from any recipient address to another address at your discretion. This gives you full control over reward distribution, especially when certain addresses cannot claim their rewards.
 
-Campaign creators can also reallocate all unclaimed rewards at once.
+Once a campaign has ended, campaign creators can reallocate unclaimed rewards from any recipient to another address at their discretion. Campaign creators can also reallocate all unclaimed rewards at once.
 
 To give users time to claim their rewards, reallocation is only available after a defined window following the campaign's end. Currently, this window ranges from 1 day to 7 months post-campaign.
 
@@ -115,10 +115,44 @@ Once the reallocation is complete and the Merkle root is updated on the relevant
 
 ### Use Cases
 
-* Useful for redirecting rewards from addresses that cannot claim them (e.g., lost wallets, smart contracts without claim functions).
+* Smart contracts without claim functions that need rewards redirected to claimable addresses
+* Lost wallets or inaccessible addresses
+* One-time partner facilitation (redirecting from contract addresses to partner wallets)
 * No fees are charged for reallocations.
 
-Campaign creators can perform reallocations either through the [Merkl Studio](https://studio.merkl.xyz/users/) interface or programmatically via the smart contract. For detailed instructions, see the [Campaign Management documentation](../distribute-with-merkl/campaign-management.md#reward-reallocation).
+Campaign creators can perform reallocations either through the [Merkl Studio](https://studio.merkl.xyz/users/) interface or programmatically via the smart contract.
+
+**How to reallocate rewards:**
+
+Call the `reallocateCampaignRewards` function on the Campaign Creator contract:
+
+```solidity
+function reallocateCampaignRewards(
+    bytes32 _campaignId,
+    address[] memory froms,
+    address to
+)
+```
+
+**Parameters:**
+
+* `_campaignId`: The campaign ID for reallocation
+* `froms`: Array of addresses to reallocate from (use `["0x0000000000000000000000000000000000000000"]` to reallocate all unclaimed rewards)
+* `to`: The destination address
+
+**Example transaction payload** (for use with Safe Transaction Builder):
+
+When reallocating from the same address across multiple campaigns, create multiple transactions in your Safe batch—one for each campaign ID:
+
+[Download example payload file](../.gitbook/assets/reallocation-payload-example.json)
+
+This example shows how to batch reallocations from the same source address to the same destination address across multiple campaigns. Simply add more transaction objects to the `transactions` array for additional campaigns.
+
+**Important considerations:**
+
+* Reallocation can take up to 24 hours to complete due to security checks and processing
+* Reallocation operations are free—no fees are charged
+* Each campaign must be reallocated separately (but can be batched in a single Safe transaction)
 
 **Developer:**
 

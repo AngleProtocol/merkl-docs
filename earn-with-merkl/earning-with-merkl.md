@@ -81,3 +81,9 @@ To structure the claim:
 - `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
 
 <figure><img src=".gitbook/assets/DistributorClaim.png" alt=""><figcaption><p>Claiming Merkl rewards using a block explorer</p></figcaption></figure>
+
+### Address Remapping
+
+If you're earning rewards through a smart contract that cannot claim them (e.g., non-upgradeable contracts on Uniswap V4 that cannot call `toggleOperator` or transfer), you may need **address remapping** to redirect your rewards to a claimable address.
+
+Contact the Merkl team via [Discord](https://discord.com/channels/1209830388726243369/1210212731047776357) with your campaign ID(s), source address (contract), and destination address (claimable wallet). For complete details on address remapping, see the [Address Remapping section](../merkl-mechanisms/reward-forwarding.md#address-remapping) in Reward Forwarding.

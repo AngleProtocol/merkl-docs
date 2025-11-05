@@ -46,5 +46,28 @@ To ensure efficient distribution, Merkl enforces a minimum distribution threshol
 Forwarding will not be enabled for an address if the total rewards over a given period fall below the minimum per-hour threshold for that token. For example, if an ERC20 vault receives just $0.01 of rewards in a day and the token’s threshold is $0.10 per hour, those rewards will not be forwarded. Instead, they’ll remain accrued at the vault address.
 
 {% hint style="info" %}
-Coming soon: When creating a campaign, you’ll be able to specify that an address is an ERC20 token—enabling automatic forwarding to its token holders.
+Coming soon: When creating a campaign, you'll be able to specify that an address is an ERC20 token—enabling automatic forwarding to its token holders.
+{% endhint %}
+
+## Address Remapping
+
+If you're earning rewards through a smart contract that cannot claim them (e.g., non-upgradeable contracts on Uniswap V4 that cannot call `toggleOperator` or transfer), you may need **address remapping** to redirect your rewards to a claimable address.
+
+**Remapping vs. Forwarding:**
+
+While both mechanisms redirect rewards, they serve different purposes:
+
+* **Forwarding** (described above) automatically distributes rewards to users who hold the incentivized asset indirectly through integrated protocols (e.g., staking contracts or LP tokens). Forwarding works at the protocol level and is integrated directly into Merkl's reward distribution logic.
+* **Address remapping** is a manual configuration set up by the Merkl team that redirects rewards from one specific address (your contract) to another specific address (your claimable wallet). It's used when a contract receives rewards but cannot claim them, and you want those rewards sent to a claimable address for the entire campaign duration.
+
+**How to request address remapping:**
+
+Contact the Merkl team via [Discord](https://discord.com/channels/1209830388726243369/1210212731047776357) with:
+
+* Your campaign ID(s)
+* The source address (contract) from which rewards should be redirected
+* The destination address (claimable wallet) where rewards should be sent
+
+{% hint style="info" %}
+Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than performing frequent manual reallocations, remapping provides a seamless, automated solution.
 {% endhint %}
