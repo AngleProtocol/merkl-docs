@@ -14,6 +14,8 @@ Think of Merkl as a flexible indexing tool: you define the logic you want to tra
 - Apply additional logic or filters before allocating points
 - Display points in your own UI exactly as you envision
 
+**Because Merkl is your indexing layer for your point program, your frontend should be the source of truth for points!**
+
 In this page, we break down how to set up points tracking campaigns with Merkl and how to consume the results for your points system.
 
 ## Step by step process
