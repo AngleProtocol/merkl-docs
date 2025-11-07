@@ -119,6 +119,11 @@ This approach gives you full control over point allocation, letting you exclude 
 
 If you prefer not to renormalize later, you can set your multipliers directly when creating campaigns in Merkl by increasing the reward rate at creation.
 
+{% hint style="info" %}
+For cancelled campaigns, you may need to renormalize the affected points or exclude the campaign’s results from your totals.
+{% endhint %}
+
+
 ### 4. **Display points on your own UI**
 
 You are responsible for displaying points in your own interface. Using data from Merkl’s mock campaigns via the API, you can easily build a leaderboard, dashboard, or other visualizations.
