@@ -142,7 +142,7 @@ const data : {
 }[]
 ```
 
-Any other response will be dropped, and if the object cannot be parsed, the cutomization option will fail.
+**Ensure your endpoint is non-null and in the correct format; otherwise reward computation will fail. Also, ensure there are no duplicate addresses: if duplicates exist, only the first boost value will be used!**
 
 
 {% hint style="warning" %}
@@ -170,6 +170,11 @@ If you expect to **add whitelisted addresses over time**, use this method so you
   }
 ]
 ```
+
+{% hint style="info" %}
+This is our current recommended method for private LP deals: whitelisted addresses aren’t shown in the Merkl app, and users only see “API boost” in the campaign rules. More features for such campaigns will be rolled out in the future!   
+{% endhint %}
+
 
 #### Dynamic blacklist (example)
 Similarly, **you can keep a mutable blacklist without having to cancel and then recreate a campaign**. To achieve this:
