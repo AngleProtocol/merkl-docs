@@ -79,34 +79,24 @@ Reward amounts are expressed in units of the mock token you configured.
 **Note**: The `amount` and `pending` fields are inherited from Merkl's token distribution model, but for points programs you don't need to distinguish between them - both are ready to use. To get a user's total points, use: `totalPoints = amount + pending`
 {% endhint %}
 
-Below are some useful API routes for accessing your campaign results:
+[The Merkl API integration page](../integrate-merkl/api.md.md) provides all the resources you could need to fetch data related to your points campaigns on Merkl.
 
-- Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true`\
+Below are some of the most useful API routes for accessing your campaign results:
+
+- Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>`\
   (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701))
 - Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
    (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c))
 - Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
 
-{% hint style="warning" %}
-**Using `&test=true` with test tokens**
-
-To retrieve campaign data via the API for test tokens like aglaMerkl, you must include the `&test=true` parameter in your API requests. To learn more about test campaigns and the `&test=true` parameter, please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
-{% endhint %}
-
 {% hint style="info" %}
 **Important: Understanding the `chainId` parameter**
 
-When calling Merkl's API endpoints, the `chainId` parameter refers to **the chain where your point token is deployed**, not the chain where your campaigns are computing activity. 
+When calling Merkl's API endpoints, the `chainId` parameter refers to **the chain where your point token is deployed**, not the chain where your campaigns are computing activity.
 
 For example, if your point token is deployed on Gnosis (chainId: 100), use `chainId=100` in your API calls, even if your campaigns track activity on other chains.
 
 This is because Merkl's API organizes rewards by the reward token's deployment chain, not by the chain where the tracked activity occurs.
-{% endhint %}
-
-For more info on how you can track the results of existing campaigns, you may also refer to [our campaign management page](./campaign-management.md).
-
-{% hint style="warning" %}
-Please note that Merkl's rewards endpoints are paginated - be sure to fetch all pages using `&page=<NUMBER>`
 {% endhint %}
 
 ### **3. Normalize and customize**
@@ -123,7 +113,6 @@ If you prefer not to renormalize later, you can set your multipliers directly wh
 For cancelled campaigns, you may need to renormalize the affected points or exclude the campaign’s results from your totals.
 {% endhint %}
 
-
 ### 4. **Display points on your own UI**
 
 You are responsible for displaying points in your own interface. Using data from Merkl’s mock campaigns via the API, you can easily build a leaderboard, dashboard, or other visualizations.
@@ -136,11 +125,13 @@ Once you have your list of users and their earned points, you can export it to a
 
 Points tracking campaigns follow a straightforward pricing model based on the number of opportunities (point sources) you're monitoring:
 
-**Standard Campaigns**
+**Standard Campaigns**:
+
 - **$30 per week** per point source that can be created through the Merkl UI
 - **Additional fee**: $0.015 per recipient if your campaign has more than 500 recipients
 
-**Advanced Campaigns**
+**Advanced Campaigns**:
+
 - **One-time setup fee**: $300 for complex campaigns (e.g., Net Lending on Aave) that require custom development and testing by our team
 - **Ongoing cost**: $30 per week after setup (same as standard campaigns)
 
@@ -148,6 +139,7 @@ Points tracking campaigns follow a straightforward pricing model based on the nu
 **What is a point source?**
 
 A point source is the specific opportunity or asset that Merkl monitors to calculate points. Examples include:
+
 - A Uniswap liquidity pool
 - A Morpho lending market
 - A vault or staking contract
