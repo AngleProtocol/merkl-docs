@@ -46,7 +46,7 @@ To check the status of Merkl’s features, the compatibility between campaign ty
 
 To check whether a smart contract is detected as a [forwarder](reward-forwarding.md) by Merkl, go to the [**Forwarder Scan page**](https://forwarders.merkl.xyz/), accessible from the navigation bar in Merkl Studio by clicking 'Scan'.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-10-10 à 15.20.07 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-10-10 à 15.20.07 1.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Some [customization options](customization-options.md), [campaign types](campaign-types/), and [distribution types](distributions.md) are not configurable directly via Merkl Studio. In such cases, we recommend reaching out to us — we can either configure your campaign for you or provide dedicated API endpoints to help you set it up.

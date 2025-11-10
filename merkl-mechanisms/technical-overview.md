@@ -92,7 +92,7 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 [The Merkl App](https://app.merkl.xyz/), built on the Merkl API, enables users to explore reward opportunities, track APRs, and seamlessly claim their rewards.
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-09-17 à 10.51.55 1.png" alt="Homepage of the Merkl app"><figcaption><p>Home page of the Merkl App</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-09-17 à 10.51.55 1.png" alt="Homepage of the Merkl app"><figcaption><p>Home page of the Merkl App</p></figcaption></figure>
 
 The interface is organized around several types of pages:
 

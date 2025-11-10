@@ -2,7 +2,7 @@
 description: Integrate Merkl in your app using Merkl API V4
 ---
 
-# Integrate Merkl to your App - Merkl API V4 Docs
+# Integrate Merkl to your App (API V4)
 
 Merkl provides an API, available [here](https://api.merkl.xyz/docs), that serves all the data shown in the Merkl app. You can use it to track campaigns, display APRs, and integrate user rewards directly into your frontend as a white-label solution.
 
@@ -16,16 +16,17 @@ If you use Merkl as a white-label solution in your frontend, you must integrate 
 
 The Merkl API provides two types of data for displaying incentive information:
 
-- **Campaigns**: Individual incentive programs running on a specific pool, ERC20 token, or protocol over a defined time period
-- **Opportunities**: Collections of campaigns targeting the same asset or user base. For example, multiple parallel campaigns on a single liquidity pool collectively form one opportunity.
+* **Campaigns**: Individual incentive programs running on a specific pool, ERC20 token, or protocol over a defined time period
+* **Opportunities**: Collections of campaigns targeting the same asset or user base. For example, multiple parallel campaigns on a single liquidity pool collectively form one opportunity.
 
 ### Campaign IDs
 
 Merkl uses two distinct identifier types for campaigns:
 
-- **`campaignId`** (format: `0x...`): The onchain identifier of a campaign. Note that this is **not unique** across chains—multiple campaigns on different chains may share the same `campaignId`. You can find this in the [opportunities page](https://app.merkl.xyz/) by selecting an opportunity, viewing campaign details, and navigating to the "Advanced" tab.
+* **`campaignId`** (format: `0x...`): The onchain identifier of a campaign. Note that this is **not unique** across chains—multiple campaigns on different chains may share the same `campaignId`. You can find this in the [opportunities page](https://app.merkl.xyz/) by selecting an opportunity, viewing campaign details, and navigating to the "Advanced" tab.
+* **`id`** (format: numeric, e.g., `13972358188887408622`): The unique database identifier used for most API routes. You can retrieve this by querying the [campaigns endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/) with a `campaignId`. You may also find a campaign's database ID under the advanced tab of a campaign on the Merkl app.
 
-- **`id`** (format: numeric, e.g., `13972358188887408622`): The unique database identifier used for most API routes. You can retrieve this by querying the [campaigns endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/) with a `campaignId`. You may also find a campaign's database ID under the advanced tab of a campaign on the Merkl app.
+<figure><img src="../.gitbook/assets/API-V4.png" alt=""><figcaption></figcaption></figure>
 
 ## Best Practices for Using the Merkl API
 
@@ -127,11 +128,11 @@ The Merkl API provides endpoints to retrieve user leaderboards and reward statis
 
 **Recommended endpoints:**
 
-- **Campaign leaderboard**: Get all users rewarded in a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/)
-- **Token-level rewards**: Check rewards across all campaigns for a token - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/)
-- **Campaign-level rewards**: Check total amount of rewards distributed in a specific campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total)
-- **Unclaimed rewards**: Check unclaimed amounts for a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
-- **Historical metrics**: Get TVL and APR history for a campaign - [`https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics`](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics)
+* **Campaign leaderboard**: Get all users rewarded in a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/)
+* **Token-level rewards**: Check rewards across all campaigns for a token - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/token/)
+* **Campaign-level rewards**: Check total amount of rewards distributed in a specific campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/total)
+* **Unclaimed rewards**: Check unclaimed amounts for a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
+* **Historical metrics**: Get TVL and APR history for a campaign - [`https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics`](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics)
 
 ### Integrating User Rewards
 
@@ -145,11 +146,11 @@ Example - Checking a user's rewards on zkSync: [`https://api.merkl.xyz/v4/users/
 
 **This endpoint returns:**
 
-- **`amount`**: Total tokens credited to the user onchain
-- **`pending`**: Pending rewards that will be credited on the next Merkle root update
-- **`claimed`**: Tokens already claimed by the user
-- **`proofs`**: Cryptographic proofs needed for claiming rewards (detailed in the next section)
-- **`breakdowns`**: Campaign attribution for earned rewards (may be incomplete and not show all campaigns)
+* **`amount`**: Total tokens credited to the user onchain
+* **`pending`**: Pending rewards that will be credited on the next Merkle root update
+* **`claimed`**: Tokens already claimed by the user
+* **`proofs`**: Cryptographic proofs needed for claiming rewards (detailed in the next section)
+* **`breakdowns`**: Campaign attribution for earned rewards (may be incomplete and not show all campaigns)
 
 {% hint style="info" %}
 The claimable amount equals `amount - claimed`.
@@ -157,12 +158,12 @@ The claimable amount equals `amount - claimed`.
 
 **Important notes about this endpoint:**
 
-- **Historical data**: The API doesn't return time-series data. To build historical datasets, take daily snapshots of the API responses.
+* **Historical data**: The API doesn't return time-series data. To build historical datasets, take daily snapshots of the API responses.
+*   **Caching behavior**: This route is cached. If called immediately after a user claims rewards, the data may be stale. Use the `reloadChainId` parameter to force a cache refresh:
 
-- **Caching behavior**: This route is cached. If called immediately after a user claims rewards, the data may be stale. Use the `reloadChainId` parameter to force a cache refresh:
-  ```
-  https://api.merkl.xyz/v4/users/{address}/rewards?chainId=324&reloadChainId=324
-  ```
+    ```
+    https://api.merkl.xyz/v4/users/{address}/rewards?chainId=324&reloadChainId=324
+    ```
 
 **Building claim transactions:**
 

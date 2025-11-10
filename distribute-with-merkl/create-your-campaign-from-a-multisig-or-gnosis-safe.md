@@ -46,11 +46,11 @@ If you are using something other than the Transaction Builder, proceed as you ar
 
 You will see the 3 following transactions:
 
-- `approve`: Approval for the MerklDistributor contract to spend the reward tokens
-- `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
-- `createCampaign`: Transaction to create the campaign.
+* `approve`: Approval for the MerklDistributor contract to spend the reward tokens
+* `acceptConditions`: Transaction to accept Merkl T\&Cs. It is mandatory to have this transaction the first time you create a campaign; you can remove it later if you wish.
+* `createCampaign`: Transaction to create the campaign.
 
-<figure><img src="../.gitbook/assets/safe-wallet-approve+accept+create.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 Click on _Create Batch_ and then _Send Batch_ to execute the transactions and deploy your Merkl Campaign.
 

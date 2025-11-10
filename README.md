@@ -34,7 +34,7 @@ At its core, Merkl operates on an offchain engine that processes both onchain an
 * 📊 **Advanced Analytics**: Gain deep insights into incentive performance, including reward distribution, liquidity source breakdowns, and engagement trends.
 * 🔌 **Effortless Integration**: Use the Merkl API for seamless data integration (APRs, rewards, analytics) or rely on the Merkl App for a ready-to-use interface.
 
-<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 12.56.11 1.png" alt=""><figcaption><p>Launch and manage your incentive campaigns in Merkl Studio</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 12.56.11 1.png" alt=""><figcaption><p>Launch and manage your incentive campaigns in Merkl Studio</p></figcaption></figure>
 
 ### For Users
 
@@ -45,7 +45,7 @@ At its core, Merkl operates on an offchain engine that processes both onchain an
 
 Merkl is a **non-custodial solution**. You retain full control over your assets—Merkl only processes reward claims. There is no additional smart contract risk beyond what’s already involved in your DeFi activities.
 
-<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 11.47.52 1.png" alt=""><figcaption><p>Users can explore earning opportunities and claim their rewards on the Merkl App</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Capture d’écran 2025-06-10 à 11.47.52 1.png" alt=""><figcaption><p>Users can explore earning opportunities and claim their rewards on the Merkl App</p></figcaption></figure>
 
 ## How to get started?
 
