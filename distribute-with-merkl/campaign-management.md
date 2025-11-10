@@ -28,7 +28,7 @@ You now have the full ownership of your campaign. You’ll be able to:
 * **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](campaign-management.md#address-remapping) below.
 * **Reallocate unclaimed rewards**: As a campaign creator, you can redirect rewards from any recipient to another address at your discretion. See the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features for instructions.
 * Cancel a campaign: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
-*   (If needed) edit some parameters of your campaigns.
+* (If needed) edit some parameters of your campaigns.
 
     ✅ You can:
 
