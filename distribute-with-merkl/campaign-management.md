@@ -26,7 +26,7 @@ You now have the full ownership of your campaign. You’ll be able to:
 * See the campaign leaderboard in the opportunity page to track addresses’ participation
 * Integrate campaign data into your own app using our API. You’ll find the procedure [here](https://docs.merkl.xyz/integrate-merkl/app)
 * **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](campaign-management.md#address-remapping) below.
-* **Reallocate unclaimed rewards**: As a campaign creator, you can redirect rewards from any recipient to another address at your discretion. See the [reward reallocation section](campaign-management.md#reward-reallocation) below for instructions.
+* **Reallocate unclaimed rewards**: As a campaign creator, you can redirect rewards from any recipient to another address at your discretion. See the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features for instructions.
 * Cancel a campaign: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
 *   (If needed) edit some parameters of your campaigns.
 
@@ -76,129 +76,9 @@ Contact the Merkl team directly with:
 Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than performing frequent manual reallocations, remapping provides a seamless, automated solution.
 {% endhint %}
 
-## Reward Reallocation
-
-As a campaign creator, you can reallocate unclaimed rewards from any recipient address to another address at your discretion. This gives you full control over reward distribution, especially when certain addresses cannot claim their rewards.
-
 {% hint style="info" %}
-**Remapping vs. Reallocation**: Address remapping handles ongoing, automatic redirection during a campaign. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control.
+**Remapping vs. Reallocation**: Address remapping handles ongoing, automatic redirection during a campaign. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control. For complete details on reallocation, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features.
 {% endhint %}
-
-**Common use cases:**
-
-* Smart contracts without claim functions that need rewards redirected to claimable addresses
-* Lost wallets or inaccessible addresses
-* One-time partner facilitation (redirecting from contract addresses to partner wallets)
-
-**How to reallocate rewards:**
-
-Call the `reallocateCampaignRewards` function on the Campaign Creator contract:
-
-```solidity
-function reallocateCampaignRewards(
-    bytes32 _campaignId,
-    address[] memory froms,
-    address to
-)
-```
-
-**Parameters:**
-
-* `_campaignId`: The campaign ID for reallocation
-* `froms`: Array of addresses to reallocate from (use `["0x0000000000000000000000000000000000000000"]` to reallocate all unclaimed rewards)
-* `to`: The destination address
-
-**Example transaction payload** (for use with Safe Transaction Builder):
-
-When reallocating from the same address across multiple campaigns, create multiple transactions in your Safe batch—one for each campaign ID:
-
-```json
-{
-  "version": "1.0",
-  "chainId": "1",
-  "createdAt": 1234567890000,
-  "meta": {
-    "name": "Campaign Rewards Reallocation",
-    "description": "",
-    "txBuilderVersion": "1.16.5",
-    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  },
-  "transactions": [
-    {
-      "to": "0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd",
-      "value": "0",
-      "data": null,
-      "contractMethod": {
-        "inputs": [
-          {
-            "internalType": "bytes32",
-            "name": "_campaignId",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "address[]",
-            "name": "froms",
-            "type": "address[]"
-          },
-          {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-          }
-        ],
-        "name": "reallocateCampaignRewards",
-        "payable": false
-      },
-      "contractInputsValues": {
-        "_campaignId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "froms": "[\"0x0000000000000000000000000000000000000000\"]",
-        "to": "0x0000000000000000000000000000000000000000"
-      }
-    },
-    {
-      "to": "0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd",
-      "value": "0",
-      "data": null,
-      "contractMethod": {
-        "inputs": [
-          {
-            "internalType": "bytes32",
-            "name": "_campaignId",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "address[]",
-            "name": "froms",
-            "type": "address[]"
-          },
-          {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-          }
-        ],
-        "name": "reallocateCampaignRewards",
-        "payable": false
-      },
-      "contractInputsValues": {
-        "_campaignId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "froms": "[\"0x0000000000000000000000000000000000000000\"]",
-        "to": "0x0000000000000000000000000000000000000000"
-      }
-    }
-  ]
-}
-```
-
-This example shows how to batch reallocations from the same source address to the same destination address across multiple campaigns. Simply add more transaction objects to the `transactions` array for additional campaigns.
-
-**Important considerations:**
-
-* Reallocation can take up to 24 hours to complete due to security checks and processing
-* Reallocation operations are free—no fees are charged
-* Each campaign must be reallocated separately (but can be batched in a single Safe transaction)
-
-For more technical details, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in the features documentation.
 
 To fetch important data regarding your campaigns, you can use our API to get detailed information. More information [here](https://docs.merkl.xyz/integrate-merkl/app). Here are the most commonly used endpoints:
 
