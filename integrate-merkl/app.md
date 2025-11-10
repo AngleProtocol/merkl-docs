@@ -27,10 +27,6 @@ Merkl uses two distinct identifier types for campaigns:
 
 - **`id`** (format: numeric, e.g., `13972358188887408622`): The unique database identifier used for most API routes. You can retrieve this by querying the [campaigns endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/) with a `campaignId`. You may also find a campaign's database ID under the advanced tab of a campaign on the Merkl app.
 
-{% hint style="info" %}
-For a list of the most frequently used API endpoints, see the [campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management).
-{% endhint %}
-
 ## Best Practices for Using the Merkl API
 
 ### Finding Relevant Opportunities

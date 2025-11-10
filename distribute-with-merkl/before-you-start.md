@@ -10,8 +10,8 @@ description: >-
 
 Before setting up your campaign on Merkl, make sure you have read and understood:
 
-* [**Merkl’s reward distribution process**](../merkl-mechanisms/technical-overview.md) (reward computation vs. reward update, dispute period, etc.). 
-TLDR: 
+* [**Merkl’s reward distribution process**](../merkl-mechanisms/technical-overview.md) (reward computation vs. reward update, dispute period, etc.).
+TLDR:
   - Reward computations (process by which the Merkl Engine calculates reward allocations) run on average every 2 hours. After this step, users can view the rewards they’ve earned, which are marked as "Claimable soon" or "Pending"
   - Rewards updates (process by which the Merkl Engine compresses computed campaign data into a Merkle root and pushes it onchain) run on average every 8 hours. After this step, users can claim their rewards.
 * [**The different incentive mechanisms**](../merkl-mechanisms/incentive-mechanisms.md) (campaign types, distribution types)
@@ -50,7 +50,7 @@ Note that test campaigns will **not appear on the Merkl app** and will not be vi
 
 To get started, send us a message and we'll provide you with our test token. aglaMerkl has no value and is only intended for creating test campaigns on Merkl.
 
-You can then create your test campaign using aglaMerkl tokens. While the campaign won't show up in the Merkl app, you'll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation. You can refer to the [Campaign management page](https://docs.merkl.xyz/distribute-with-merkl/campaign-management/) for more info regarding the mostly used endpoints.
+You can then create your test campaign using aglaMerkl tokens. While the campaign won't show up in the Merkl app, you'll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation. You can refer to the [API integration page](https://docs.merkl.xyz/integrate-merkl/app) for how to effectively use the API.
 
 {% hint style="warning" %}
 **Using `&test=true` with test tokens**
