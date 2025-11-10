@@ -23,7 +23,11 @@ Merkl's fees are deducted directly from the incentives distributed by campaign c
 
 For projects planning to distribute significant incentives, Merkl offers a 25% fee discount when you commit upfront to campaigns distributing more than $500k in total incentives.
 
-**How it works**: Pay your fees in advance for campaigns totaling at least $500k in distributions, and receive an automatic 25% reduction on those fees.
+**How it works**: Commit to distributing at least $500k in incentives and pre-pay the corresponding Merkl fees. This prepayment functions like purchasing credits on a SaaS platform and immediately applies a minimum 25% discount (2.25% effective rate), with deeper reductions available for larger commitments.
+
+**Fee outcomes with commitment pricing**: As volume grows, the effective rate keeps sliding—e.g., a $2M commitment lands around 1.97% ($39,375), while multi-million dollar programs approach sub-1.5% rates.
+
+**Minimum commitment**: $500k in expected distributions, which corresponds to an upfront payment of $11,250 (25% off the standard 3%).
 
 {% hint style="success" %}
 Contact the Merkl team to discuss commitment model options and unlock volume discounts.
