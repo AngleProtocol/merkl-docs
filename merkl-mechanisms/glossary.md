@@ -109,6 +109,10 @@ In pre-TGE campaigns, participants receive reward tokens representing a future a
 
 A system that lets a Merkl user share a link to an opportunity with another person. If that person deposits liquidity into the opportunity, both the new participant and the original user receive a boost in rewards. Referral helps campaigns grow virally.
 
+## [Reward computes](../merkl-mechanisms/technical-overview.md#reward-computation)
+
+## [Reward updates](../merkl-mechanisms/technical-overview.md#reward-updates)
+
 ## TVL
 
 Total Value Locked (TVL) measures the total amount of assets deposited in an opportunity. It reflects the combined value of all tokens provided by liquidity providers and serves as a key indicator of the market/pool’s size and liquidity depth. TVL directly impacts an opportunity’s APR and daily rewards.

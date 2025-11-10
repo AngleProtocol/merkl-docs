@@ -2,7 +2,7 @@
 description: Integrate Merkl in your app using Merkl API V4
 ---
 
-# Integrate Merkl API V4
+# Integrate Merkl API
 
 Merkl provides an API, available [here](https://api.merkl.xyz/docs), that serves all the data shown in the Merkl app. You can use it to track campaigns, display APRs, and integrate user rewards directly into your frontend as a white-label solution.
 

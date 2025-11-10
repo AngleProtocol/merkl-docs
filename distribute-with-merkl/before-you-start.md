@@ -39,8 +39,6 @@ Make sure you have all the tokens you want to distribute in your wallet when cre
 
 ## 🧪 Test campaigns
 
-TODO: check redundancy with API
-
 You may want to start testing the flow and integrating our data before your point program starts. Merkl is not deployed on testnets, but you can still run test campaigns using our test token: **aglaMerkl**.
 
 These test campaigns are not mandatory — they're available to help you experiment with how Merkl works using valueless tokens, so you can better prepare your upcoming campaigns. However, since they consume computation resources on our end, we encourage you to use this feature only when there's a clear need.
