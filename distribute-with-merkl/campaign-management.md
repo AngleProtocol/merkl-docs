@@ -22,7 +22,7 @@ Rest assured that when this happens, **all rewards are distributed retroactively
 
 As the campaign creator, you have full control over your campaign. Available actions include:
 
-* **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [address remapping section](campaign-management.md#address-remapping) below.
+* **Request address remapping**: For ongoing campaigns, you can contact the Merkl team to set up automatic address remapping, where rewards from specific addresses are automatically redirected to other addresses throughout the campaign duration. See the [Address Remapping section](../merkl-mechanisms/reward-forwarding.md#address-remapping) in Reward Forwarding for full details.
 * **Reallocate unclaimed rewards**: As a campaign creator, you can redirect rewards from any recipient to another address at your discretion. See the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features for instructions.
 * Cancel a campaign: go in the [studio](https://studio.merkl.xyz/users/) using the creator address, select the campaign you want to cancel and click on the button on the right.
 * (If needed) edit some parameters of your campaigns.
@@ -51,34 +51,3 @@ If you need assistance renewing your campaign, please notify us at least 3 days 
 View leaderboards and key metrics like APR and TVL directly in the studio dashboard for your campaign. For advanced analytics and programmatic access, use the [Merkl API](https://docs.merkl.xyz/integrate-merkl/app).
 {% endhint %}
 
-## Address Remapping
-
-Campaign creators can request **address remapping** from the Merkl team to automatically redirect rewards from a source address to a destination address throughout the campaign duration. The Merkl engine handles this redirection automatically—no manual intervention is required.
-
-**Remapping vs. Forwarding:**
-
-While both mechanisms redirect rewards, they serve different purposes:
-
-* **Forwarding** is an automatic Merkl feature that distributes rewards to users who hold the incentivized asset indirectly (e.g., through staking contracts or LP tokens). Forwarding works at the protocol level and is integrated directly into Merkl's reward distribution logic. See the [Forwarders section](../merkl-mechanisms/features.md#-forwarders) for more details.
-* **Address remapping** is a manual configuration set up by the Merkl team that redirects rewards from one specific address to another specific address. It's used when a contract receives rewards but cannot claim them, and you want those rewards sent to a claimable address for the entire campaign duration.
-
-**When to use address remapping:**
-
-* You have a smart contract that receives rewards but cannot claim them, and you want these rewards automatically redirected to a claimable address
-* You need ongoing, automatic redirection during a campaign (rather than one-time adjustments)
-
-**How to request address remapping:**
-
-Contact the Merkl team directly with:
-
-* Your campaign ID(s)
-* The source address(es) from which rewards should be redirected
-* The destination address(es) where rewards should be sent
-
-{% hint style="info" %}
-Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than performing frequent manual reallocations, remapping provides a seamless, automated solution.
-{% endhint %}
-
-{% hint style="info" %}
-**Remapping vs. Reallocation**: Address remapping handles ongoing, automatic redirection during a campaign. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control. For complete details on reallocation, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features.
-{% endhint %}
