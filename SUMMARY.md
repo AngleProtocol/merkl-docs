@@ -38,6 +38,6 @@
 
 ## Integrate Merkl
 
-* [Integrate Merkl to your App (API V4)](integrate-merkl/app.md)
+* [Merkl API](integrate-merkl/app.md)
 * [Branding and Integration](integrate-merkl/branding-and-integration.md)
 * [Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)

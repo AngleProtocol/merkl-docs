@@ -4,7 +4,7 @@ Merkl Engine intelligently enables users to **earn rewards even when they don’
 
 This mechanism—tracking indirect ownership across contracts and protocols—is handled by Merkl forwarders. Forwarders allow Merkl to distribute rewards to users holding an incentivized asset indirectly, such as through staking contracts or LP tokens. By default, Merkl supports forwarding for most major DeFi protocols.
 
-In most [campaign types](../mechanisms/hooks/mechanisms/), Merkl automatically detects and applies any integrated forwarding logic. 
+In most [campaign types](../mechanisms/hooks/mechanisms/), Merkl automatically detects and applies any integrated forwarding logic.
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2025-10-10 à 15.20.07 1.png" alt=""><figcaption><p>The forwarder scan in Merkl Studio</p></figcaption></figure>
 

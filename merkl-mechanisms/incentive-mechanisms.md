@@ -34,6 +34,14 @@ Some of the most commonly used campaign types include
 * [Fixed reward rate campaigns](distributions.md#fixed-reward-rate-campaigns): a predefined amount of rewards per unit of liquidity is distributed at a fixed rate.
 * [Capped reward rate campaigns](distributions.md#capped-reward-rate-campaigns): similar to variable rate campaigns, but with a maximum APR that cannot be exceeded.
 
+### 3️⃣ Customization Options
+
+[Distribution types](distributions.md) define how rewards are allocated among eligible users. Common models include:
+
+* [Variable reward rate campaigns](distributions.md#variable-reward-rate-campaigns): rewards are distributed proportionally based on time-weighted liquidity within the eligibility pool.
+* [Fixed reward rate campaigns](distributions.md#fixed-reward-rate-campaigns): a predefined amount of rewards per unit of liquidity is distributed at a fixed rate.
+* [Capped reward rate campaigns](distributions.md#capped-reward-rate-campaigns): similar to variable rate campaigns, but with a maximum APR that cannot be exceeded.
+
 ## 🔄 Feature Compatibility
 
 {% hint style="danger" %}

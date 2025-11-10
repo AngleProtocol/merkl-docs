@@ -16,13 +16,6 @@ The methodology used to calculate rewards is as follows:
 
 Transfer events are tracked to reconstruct the exact balance of each participant. An integral is then computed over the selected time frame for every user, with no approximations: everything is exact. Users are then rewarded proportionally to their individual area under the curve compared to the total area of all participants.
 
-### Customizability options
-
-Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../customization-options.md) such as:
-
-* **Whitelisting or blacklisting** specific addresses for reward eligibility.
-* [**Forwarding rewards**](../glossary.md#forwarder) to users whose tokens are staked in external contracts (e.g. LP tokens or lending positions).
-
 ## Applications
 
 Token Holding Campaigns are highly versatile, supporting a wide range of DeFi use cases.

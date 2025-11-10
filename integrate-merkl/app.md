@@ -2,7 +2,7 @@
 description: Integrate Merkl in your app using Merkl API V4
 ---
 
-# Integrate Merkl to your App (API V4)
+# Integrate Merkl API V4
 
 Merkl provides an API, available [here](https://api.merkl.xyz/docs), that serves all the data shown in the Merkl app. You can use it to track campaigns, display APRs, and integrate user rewards directly into your frontend as a white-label solution.
 
@@ -16,10 +16,10 @@ If you use Merkl as a white-label solution in your frontend, you must integrate 
 
 The Merkl API provides two types of data for displaying incentive information:
 
-* **Campaigns**: Individual incentive programs running on a specific pool, ERC20 token, or protocol over a defined time period
+* **Campaigns**: Individual incentive programs running on a specific pool, ERC20 token, or protocol over a defined time period and with specific parameters such as reward amount, [eligibility rules](../merkl-mechanisms/customization-options.md), [distribution types](../merkl-mechanisms/distributions.md), ...
 * **Opportunities**: Collections of campaigns targeting the same asset or user base. For example, multiple parallel campaigns on a single liquidity pool collectively form one opportunity.
 
-### Campaign IDs
+### About Campaign IDs
 
 Merkl uses two distinct identifier types for campaigns:
 

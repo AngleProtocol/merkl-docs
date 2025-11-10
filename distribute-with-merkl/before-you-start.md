@@ -10,10 +10,7 @@ description: >-
 
 Before setting up your campaign on Merkl, make sure you have read and understood:
 
-* [**Merkl’s reward distribution process**](../merkl-mechanisms/technical-overview.md) (reward computation vs. reward update, dispute period, etc.).
-TLDR:
-  - Reward computations (process by which the Merkl Engine calculates reward allocations) run on average every 2 hours. After this step, users can view the rewards they’ve earned, which are marked as "Claimable soon" or "Pending"
-  - Rewards updates (process by which the Merkl Engine compresses computed campaign data into a Merkle root and pushes it onchain) run on average every 8 hours. After this step, users can claim their rewards.
+* [**Merkl’s reward distribution process**](../merkl-mechanisms/technical-overview.md) (reward computation vs. reward update, dispute period, etc.)
 * [**The different incentive mechanisms**](../merkl-mechanisms/incentive-mechanisms.md) (campaign types, distribution types)
 * [**Merkl forwarding system**](../merkl-mechanisms/reward-forwarding.md)
 * How to personalize your campaign using [**customization options**](../merkl-mechanisms/customization-options.md)
@@ -42,6 +39,8 @@ Make sure you have all the tokens you want to distribute in your wallet when cre
 
 ## 🧪 Test campaigns
 
+TODO: check redundancy with API
+
 You may want to start testing the flow and integrating our data before your point program starts. Merkl is not deployed on testnets, but you can still run test campaigns using our test token: **aglaMerkl**.
 
 These test campaigns are not mandatory — they're available to help you experiment with how Merkl works using valueless tokens, so you can better prepare your upcoming campaigns. However, since they consume computation resources on our end, we encourage you to use this feature only when there's a clear need.
@@ -58,6 +57,7 @@ You can then create your test campaign using aglaMerkl tokens. While the campaig
 When using test tokens like aglaMerkl in your campaigns, these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens will be included in the API response, as they are filtered out by default.
 
 For example, when retrieving campaigns created by your address:
+
 ```
 https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true
 ```
@@ -72,16 +72,11 @@ If everything looks good in the API, it will appear correctly in the Merkl front
 
 If you need help to create your first test campaigns, feel free to reach out to us.
 
-## 📃 Merkl terms
-
-You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.
-
 ## 💰 What budget should I set for my campaign?
 
 The ideal campaign budget depends on your specific objectives and the distribution method you choose. Campaign budgets follow a natural supply-and-demand dynamic: liquidity providers want to maximize their rewards, while campaign creators aim to minimize costs. As a result, TVL typically scales proportionally with the reward budget you allocate.
 
 Depending on your campaign type, you need to account for fees differently (see our [fees section](../distribute-with-merkl/fee-model.md) for details).
-
 
 **Distribution methods matter**: If you're concerned about over-distributing rewards early in your campaign, consider using a [capped APR campaign](../merkl-mechanisms/distributions.md#-capped-reward-rate-campaigns). This approach ensures you don't exhaust your budget too quickly if TVL starts low, as rewards are distributed at a fixed rate relative to TVL rather than depleting a fixed token amount.
 
@@ -95,3 +90,6 @@ Depending on your campaign type, you need to account for fees differently (see o
 **Start small, iterate often**: We recommend launching shorter campaigns initially (e.g., 2 weeks) to test performance and gather data. You can then create follow-up campaigns with optimized parameters based on actual TVL, user engagement, and APR effectiveness. This iterative approach minimizes risk and maximizes ROI.
 {% endhint %}
 
+## 📃 Merkl terms
+
+You must also make sure that you have read and understood [Merkl's Terms & Conditions](https://app.merkl.xyz/terms). You will be required to agree to these terms during the campaign setup process.

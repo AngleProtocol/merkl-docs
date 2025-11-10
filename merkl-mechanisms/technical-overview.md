@@ -12,11 +12,11 @@ Merkl operates through campaigns created by campaign creators. A campaign is a t
 
 ### How it works
 
-1. **Campaign Creation**: Campaign creators set up campaigns using a smart contract called the **Merkl Distribution Creator**. This includes defining eligibility criteria, reward structures, and distribution methods. Campaign details are then pushed onchain, along with the incentive tokens that need to be distributed
+1. **Campaign Creation**: Campaign creators set up campaigns using a smart contract called the **Merkl Distribution Creator**. This includes defining eligibility criteria, reward structures, and distribution methods. Campaign details are pushed onchain, along with the incentive tokens that need to be distributed
 2. **User Participation**: Users engage with the protocol (e.g., providing liquidity, lending, borrowing) in order to earn the rewards/points as specified in the campaign.
 3. **Reward Computation:** At fixed intervals, a system called the **Merkl Engine** fetches campaigns from the **Merkl Distribution Creator** contract and processes reward calculations based on available onchain and offchain data and on the rules set by the campaign creator. After this step, users can see that they have earned rewards which are only pending as they cannot claim them yet (awaiting reward update).
-4. **Reward Update:** At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [here](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
-5. **Dispute Period:** After this step, a 1-2 hour dispute period begins, during which newly computed rewards cannot be claimed yet. However, rewards from the previous Merkle root remain claimable. During this period, dispute bots verify the published reward file. If an inconsistency is found, a dispute can be raised to halt incorrect distributions before they become effective.
+4. **Reward Update:** At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [on the Merkl status page](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
+5. **Dispute Period:** After this step, a 1-2 hour dispute period begins, during which newly computed rewards cannot be claimed yet. However, rewards from the previous merkle root remain claimable. During this period, dispute bots verify the published reward file. If an inconsistency is found, a dispute can be raised to halt incorrect distributions before they become effective.
 6. **Reward Availability:** Once the dispute period ends, users can see their rewards on any frontend integrated with the Merkl API. Users can claim rewards through a Merkl-powered frontend. Merkle proofs, required for claiming, are provided by the Merkl API or can be computed from reward files.
 
 ### Key Features
@@ -28,39 +28,67 @@ Merkl operates through campaigns created by campaign creators. A campaign is a t
 
 ## 🤿 Deep-Dive
 
-### Parallel Campaign Processing
+### Reward Computation
 
-Campaigns in Merkl are processed in parallel on each chain. Because campaigns are processed independently, rewards from some campaigns may be available onchain (after a merkle root update) while others are still being computed or have not been fully processed yet.
+For every campaign running on Merkl, the process by which the Merkl Engine calculates reward allocations based on the rules defined for the campaign is called reward computation or compute.
+
+Even though the Merkl engine usually looks into every onchain event affecting a given pool when computing for a campaign running on top of it, the Merkl engine usually proceeds to rewards computation for a given campaign every 2 hours on average.
+
+Once a campaign has finished computing, rewards associated to it are not immediately available onchain but are visible as pending rewards on the dashboard of a user.
+
+Campaigns on a given chain are usually processed in parallel on Merkl. Because campaigns are processed independently, rewards from some campaigns may be available onchain while others are still being computed or have not been fully processed yet.
+It's possible that for some size reason compute for campaigns is delayed. You can track delayed campaigns on the Merkl app's status page.
+
+When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times. 
+
+### Reward Updates
+
+For rewards to become available and claimable onchain, the Merkl system needs to post onchain the associated rewards. This takes place through a process called an update.
+
+Reward updates, occur on average every 8 hours (ranging from 4 to 12 hours), depending on the chain.
+
+Just like computes, it's possible that updates for a chain are delayed, and Merkl status page can be used to track this.
+
+As such, the moment when rewards are computed is fully independent from the moment when rewards are posted onchain, and these processes follow their own independent life cycles, even though updates push the results of compute processes.
+
+For example, between two reward updates (8 hours apart on average), rewards for a campaign can be updated up to four times. 
+
+It's important to note that Unclaimed rewards roll over into the next reward update.
+
+Last reward update for each chain can be viewed [on the Merkl app](https://app.merkl.xyz/status).
 
 **How it works**:
 
-* When a campaign is processed, the Merkl Engine resumes from where it last left off, ensuring no reward gaps even if updates occur at different times.
+* 
 * Because onchain Merkle root updates occur separately, it is possible that:
   * Rewards for one campaign have been finalized and pushed onchain.
   * Rewards for another campaign are still pending because they weren’t processed in time for the last update.
 * Merkl App/API Visibility: The Merkl app displays the last time each campaign was processed. However, note that processed rewards are not immediately claimable—they only become available after the next Merkle root update. In this case, they appear as Pending rewards in the dashboard of a user.
 
-### Merkl root update
+On average, while the Merkl system is looking
 
-Merkle root updates — aka reward updates — occur on average every 8 hours (ranging from 4 to 12 hours), depending on the chain.
 
-* [Reward computation](glossary.md#reward-computation) and [reward update](glossary.md#reward-update) are independent
-* For example, between two reward updates (8 hours apart on average), rewards are computed up to four times
-* Unclaimed rewards roll over into the next reward update.
+TLDR:
 
-Last reward update for each chain can be viewed on the Merkl app [here](https://app.merkl.xyz/status).
+  - Reward computations (process by which the Merkl Engine calculates reward allocations) run on average every 2 hours. After this step, users can view the rewards they’ve earned, which are marked as "Claimable soon" or "Pending"
+  - Rewards updates (process by which the Merkl Engine compresses computed campaign data into a Merkle root and pushes it onchain) run on average every 8 hours. After this step, users can claim their rewards.
+
+### Reward Updates
+
 
 ### Dispute Process
 
-If an issue is detected during the dispute period, a dispute can be raised by sending a `disputeToken` to the Merkl Distributor contract.
+If an issue is detected during the dispute period or if someone wants to contest the way rewards were allocated for a given campaign, a dispute can be raised by sending a `disputeToken` to the Merkl Distributor contract.
 
 If the dispute is valid, the merkle root is revoked, and the disputer is refunded. If invalid, the disputer forfeits their funds, and the dispute period restarts.
 
 Dispute conditions (`disputeToken`, `disputeAmount`, `disputePeriod`) can be retrieved from the Distributor contract on the relevant chain.
 
-#### Open-source dispute bot
+#### Dispute Bots
 
-Angle Labs has developed [an open-source bot](https://github.com/AngleProtocol/merkl-dispute) to verify Merkl reward distributions. Running a dispute bot helps maintain system integrity by detecting and preventing incorrect reward allocations.
+The Merkl team runs several independent dispute bots on independent infrastructure to ensure redundancy and make sure that someone taking over the bot to update merkle roots cannot steal rewards.
+
+For security reasons, the code for these bots is closed source, but for the reference on how to run a dispute bot, you may look into [this open-source repository](https://github.com/AngleProtocol/merkl-dispute) .
 
 {% hint style="info" %}
 More active dispute bots mean a stronger system. Need help setting one up? Reach out to the Merkl team—we’re happy to assist!
