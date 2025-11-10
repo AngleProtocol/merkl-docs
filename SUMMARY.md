@@ -12,7 +12,7 @@
   * [Token Holding Campaigns](merkl-mechanisms/campaign-types/erc20-mechanisms.md)
   * [Lending and Borrowing Campaigns](merkl-mechanisms/campaign-types/lending-borrowing.md)
   * [Encompassing Campaigns](merkl-mechanisms/campaign-types/encompassing.md)
-  * [🔐 \[NEW\] 🔐 Staking & Restaking Campaigns](merkl-mechanisms/campaign-types/staking.md)
+  * [Staking & Restaking Campaigns](merkl-mechanisms/campaign-types/staking.md)
 * [Distribution Types](merkl-mechanisms/distributions.md)
 * [Reward Forwarding](merkl-mechanisms/reward-forwarding.md)
 * [Customization Options](merkl-mechanisms/customization-options.md)
@@ -41,3 +41,8 @@
 * [Integrate Merkl API](integrate-merkl/app.md)
 * [Branding and Integration](integrate-merkl/branding-and-integration.md)
 * [Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)
+
+
+TODO:
+- check diff checker on github
+- check individual campaign types if it's clear

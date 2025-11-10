@@ -70,7 +70,7 @@ When this happens, the Merkl system is designed so that **all rewards are distri
 
 ### Dispute Period & Process
 
-The **dispute period** is a security window of 1-2 hours following each reward update during which anyone can contest reward allocations made by the Merkl engine. This safeguard ensures the integrity of the reward infrastructure and allows campaign creators to oversee the reward computations before they become final and claimable.
+The **dispute period** is a security window of 1-2 hours following each reward update during which anyone can contest reward allocations made by the Merkl engine. This safeguard ensures the integrity and consistency of the reward infrastructure and allows campaign creators to oversee the reward computations before they become final and claimable.
 
 **Raising a dispute**: If an issue is detected during the dispute period or if you want to contest reward allocations for a campaign, raise a dispute by sending a `disputeToken` to the Merkl Distributor contract.
 
