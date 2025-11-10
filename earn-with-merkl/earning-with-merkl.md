@@ -84,6 +84,4 @@ To structure the claim:
 
 ### Address Remapping
 
-If you're earning rewards through a smart contract that cannot claim them (e.g., non-upgradeable contracts on Uniswap V4 that cannot call `toggleOperator` or transfer), you may need **address remapping** to redirect your rewards to a claimable address.
-
-Contact the Merkl team via [Discord](https://discord.com/channels/1209830388726243369/1210212731047776357) with your campaign ID(s), source address (contract), and destination address (claimable wallet). For complete details on address remapping, see the [Address Remapping section](../merkl-mechanisms/reward-forwarding.md#address-remapping) in Reward Forwarding.
+If a smart contract you use can’t claim rewards, ask the Merkl team to remap those rewards to a claimable wallet by reaching out on [Discord](https://discord.com/channels/1209830388726243369/1210212731047776357) with the campaign ID, source address, and destination address. The full walkthrough lives in the [Reward Forwarding guide](../merkl-mechanisms/reward-forwarding.md#address-remapping).

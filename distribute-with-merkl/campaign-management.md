@@ -53,32 +53,6 @@ View leaderboards and key metrics like APR and TVL directly in the studio dashbo
 
 ## Address Remapping
 
-Campaign creators can request **address remapping** from the Merkl team to automatically redirect rewards from a source address to a destination address throughout the campaign duration. The Merkl engine handles this redirection automatically—no manual intervention is required.
+Need rewards from a non-claimable contract to land in a claimable wallet? Ask the Merkl team to enable address remapping by pinging them with your campaign ID(s), the source address, and the destination address. The Merkl engine will then redirect the rewards automatically for the duration of the campaign.
 
-**Remapping vs. Forwarding:**
-
-While both mechanisms redirect rewards, they serve different purposes:
-
-* **Forwarding** is an automatic Merkl feature that distributes rewards to users who hold the incentivized asset indirectly (e.g., through staking contracts or LP tokens). Forwarding works at the protocol level and is integrated directly into Merkl's reward distribution logic. See the [Forwarders section](../merkl-mechanisms/features.md#-forwarders) for more details.
-* **Address remapping** is a manual configuration set up by the Merkl team that redirects rewards from one specific address to another specific address. It's used when a contract receives rewards but cannot claim them, and you want those rewards sent to a claimable address for the entire campaign duration.
-
-**When to use address remapping:**
-
-* You have a smart contract that receives rewards but cannot claim them, and you want these rewards automatically redirected to a claimable address
-* You need ongoing, automatic redirection during a campaign (rather than one-time adjustments)
-
-**How to request address remapping:**
-
-Contact the Merkl team directly with:
-
-* Your campaign ID(s)
-* The source address(es) from which rewards should be redirected
-* The destination address(es) where rewards should be sent
-
-{% hint style="info" %}
-Address remapping is particularly useful for long-running campaigns where you expect regular reward accumulation on addresses that cannot claim. Rather than performing frequent manual reallocations, remapping provides a seamless, automated solution.
-{% endhint %}
-
-{% hint style="info" %}
-**Remapping vs. Reallocation**: Address remapping handles ongoing, automatic redirection during a campaign. Reallocation is better suited for one-time or occasional adjustments, especially after a campaign has ended or when you need immediate manual control. For complete details on reallocation, see the [Campaign Reallocation section](../merkl-mechanisms/features.md#-campaign-reallocation) in Additional Features.
-{% endhint %}
+For the full decision tree (when to prefer forwarding, remapping, or reallocation), head to the [Reward Forwarding guide](../merkl-mechanisms/reward-forwarding.md#address-remapping).
