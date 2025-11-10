@@ -45,10 +45,6 @@ To ensure efficient distribution, Merkl enforces a minimum distribution threshol
 
 Forwarding will not be enabled for an address if the total rewards over a given period fall below the minimum per-hour threshold for that token. For example, if an ERC20 vault receives just $0.01 of rewards in a day and the token’s threshold is $0.10 per hour, those rewards will not be forwarded. Instead, they’ll remain accrued at the vault address.
 
-{% hint style="info" %}
-Coming soon: When creating a campaign, you'll be able to specify that an address is an ERC20 token—enabling automatic forwarding to its token holders.
-{% endhint %}
-
 ## Address Remapping
 
 If you're earning rewards through a smart contract that cannot claim them (e.g., non-upgradeable contracts on Uniswap V4 that cannot call `toggleOperator` or transfer), you may need **address remapping** to redirect your rewards to a claimable address.
