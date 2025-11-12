@@ -142,11 +142,12 @@ Among these, the Opportunity page is central, as this is where you’ll find the
 
 #### Focus - Opportunity page
 
-On an Opportunity page, you’ll find key metrics that aggregate all active campaigns for that opportunity:
+On an Opportunity page, you'll find key metrics that aggregate all active campaigns for that opportunity:
 
-* APR
-* TVL (Total Value Locked)
-* Daily rewards (the amount of rewards shared each day among participants)
+* **APR (Annual Percentage Rate)**: The yearly return from participating in the opportunity, expressed as a percentage. The APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
+* **TVL (Total Value Locked)**: The total value of **eligible** assets for the campaigns on the opportunity. This reflects only the assets that meet the campaign's eligibility criteria—for example, if a campaign includes a blacklist, the TVL excludes the value held by blacklisted addresses. The TVL serves as a key indicator of the market/pool's size and liquidity depth, and directly impacts the opportunity's APR. When multiple campaigns run on the same opportunity with different eligibility rules, the displayed TVL is the maximum eligible TVL across all campaigns.
+* **Daily Rewards**: The total amount of tokens or points distributed each day, shared among all eligible users across the campaigns on the opportunity. When multiple campaigns run on an opportunity, the displayed daily rewards represent the sum of all individual campaign daily rewards.
+
 
 <figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
 
@@ -156,3 +157,7 @@ Detailed info for each campaign running on the opportunity is available across s
 * **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
 * **Leaderboard**: list of addresses participating in the opportunity
 * [**Linked opportunities**](glossary.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
+
+### Merkl Studio
+
+[Merkl Studio](https://studio.merkl.xyz) is the command center for campaign creators. It enables anyone to launch and manage incentive campaigns independently within minutes, providing powerful tools for campaign configuration and oversight.
