@@ -42,8 +42,3 @@
 * [Integrate Merkl API](integrate-merkl/app.md)
 * [Branding and Integration](integrate-merkl/branding-and-integration.md)
 * [Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)
-
-
-TODO:
-- check diff checker on github
-- check individual campaign types if it's clear
