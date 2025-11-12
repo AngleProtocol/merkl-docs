@@ -2,35 +2,21 @@
 description: Integrate Merkl in your app using Merkl API V4
 ---
 
-# Integrate Merkl to your App (API V4)
+# Integrate Merkl API
 
 Merkl provides an API, available [here](https://api.merkl.xyz/docs), that serves all the data shown in the Merkl app. You can use it to track campaigns, display APRs, and integrate user rewards directly into your frontend as a white-label solution.
 
-This guide will walk you through the key integration patterns. We encourage you to reference the full API documentation for detailed endpoint specifications.
+This guide will walk you through the key integration patterns and best practices for using the Merkl API. We encourage you to reference the full API documentation for detailed endpoint specifications.
 
 {% hint style="info" %}
 If you use Merkl as a white-label solution in your frontend, you must integrate [our logo](branding-and-integration.md) with a clickable link that redirects to our app.
 {% endhint %}
 
-## Understanding the difference between Opportunities and Campaigns
+{% hint style="info" %}
+The Merkl API provides two types of data for displaying incentive information: **campaigns** and **opportunities**. Before integrating the API, it's important to understand [the difference between a campaign and an opportunity](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign) within Merkl.
+{% endhint %}
 
-The Merkl API provides two types of data for displaying incentive information:
-
-* **Campaigns**: Individual incentive programs running on a specific pool, ERC20 token, or protocol over a defined time period
-* **Opportunities**: Collections of campaigns targeting the same asset or user base. For example, multiple parallel campaigns on a single liquidity pool collectively form one opportunity.
-
-### Campaign IDs
-
-Merkl uses two distinct identifier types for campaigns:
-
-* **`campaignId`** (format: `0x...`): The onchain identifier of a campaign. Note that this is **not unique** across chains—multiple campaigns on different chains may share the same `campaignId`. You can find this in the [opportunities page](https://app.merkl.xyz/) by selecting an opportunity, viewing campaign details, and navigating to the "Advanced" tab.
-* **`id`** (format: numeric, e.g., `13972358188887408622`): The unique database identifier used for most API routes. You can retrieve this by querying the [campaigns endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/) with a `campaignId`. You may also find a campaign's database ID under the advanced tab of a campaign on the Merkl app.
-
-<figure><img src="../.gitbook/assets/API-V4.png" alt=""><figcaption></figcaption></figure>
-
-## Best Practices for Using the Merkl API
-
-### Finding Relevant Opportunities
+## Finding Relevant Opportunities
 
 The opportunities endpoint provides key metrics like APR, TVL, and daily rewards that you can display in your frontend.
 
@@ -78,7 +64,7 @@ If you need a custom tag for your opportunities, contact us and we'll assign it 
 Each opportunity has a permanent unique ID that remains unchanged even when multiple successive campaigns are created on the same pool or asset.
 {% endhint %}
 
-### Finding Relevant Campaigns
+## Finding Relevant Campaigns
 
 While the opportunities endpoint provides high-level metrics about what's being incentivized, the campaigns endpoint offers detailed campaign rules (duration, budget, campaign type, customization options, etc.). Use this endpoint to display in-depth campaign information to your users.
 
@@ -102,7 +88,7 @@ https://api.merkl.xyz/v4/campaigns?tokenSymbol={symbol}
 
 Example for campaigns distributing $PYTH: [`https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH`](https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH)
 
-### Retrieving Both Campaign and Opportunity Data
+## Retrieving Both Campaign and Opportunity Data
 
 The `campaigns` endpoint provides campaign-specific information but not upstream opportunity data. Similarly, querying for an opportunity doesn't include downstream campaign details. To retrieve all information in a single request:
 
@@ -122,7 +108,16 @@ https://api.merkl.xyz/v4/opportunities?campaigns=true
 When multiple campaigns run in parallel on the same opportunity with different rules (e.g., different blacklists), their eligible TVL values may differ. When querying an opportunity, the TVL shown is the maximum eligible TVL across all underlying campaigns, and the APR is the sum of all campaign APRs.
 {% endhint %}
 
-### Fetching Campaign and User Statistics
+### About Campaign IDs
+
+Merkl uses two distinct identifier types for campaigns:
+
+* **`campaignId`** (format: `0x...`): The onchain identifier of a campaign. Note that this is **not unique** across chains—multiple campaigns on different chains may share the same `campaignId`. You can find this in the [opportunities page](https://app.merkl.xyz/) by selecting an opportunity, viewing campaign details, and navigating to the "Advanced" tab.
+* **`id`** (format: numeric, e.g., `13972358188887408622`): The unique database identifier used for most API routes. You can retrieve this by querying the [campaigns endpoint](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/) with a `campaignId`. You may also find a campaign's database ID under the advanced tab of a campaign on the Merkl app.
+
+<figure><img src="../.gitbook/assets/API-V4.png" alt=""><figcaption></figcaption></figure>
+
+## Fetching Campaign and User Statistics
 
 The Merkl API provides endpoints to retrieve user leaderboards and reward statistics for individual campaigns or across multiple campaigns distributing the same token.
 
@@ -134,7 +129,7 @@ The Merkl API provides endpoints to retrieve user leaderboards and reward statis
 * **Unclaimed rewards**: Check unclaimed amounts for a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
 * **Historical metrics**: Get TVL and APR history for a campaign - [`https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics`](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics)
 
-### Integrating User Rewards
+## Integrating User Rewards
 
 To retrieve reward data for a specific user, use the following endpoint:
 
@@ -214,7 +209,7 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
 }
 ```
 
-### Additional Tips
+## Additional Tips
 
 **Pagination** - All Merkl API endpoints are paginated. Iterate through pages or increase the page size parameter to retrieve more results (using `&page=<NUMBER>`)
 

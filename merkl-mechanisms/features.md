@@ -203,16 +203,3 @@ Merkl allows campaign creators to modify an active campaign by adding extra cust
 ## ◀️ Retroactive Campaigns
 
 You can create campaigns in the past to reward OG users. It can start and end in the past or it can end in the future.
-
-## 🏛️ Onchain Governance System Integrations
-
-Merkl supports onchain governance-driven incentives, allowing protocols to automatically issue incentives through Merkl based on governance vote outcomes.
-
-For protocols using gauge systems:
-
-* Merkl provides ready-to-use smart contracts to plug into any gauge system.
-* These connectors automatically translate governance votes into highly customizable Merkl campaigns. Our Governance Plug-in Templates are available [here](https://github.com/AngleProtocol/merkl-contracts/tree/main/contracts/partners/middleman).
-
-{% hint style="info" %}
-Need help integrating Merkl with your onchain reward system? We’re here to assist—reach out for guidance! We've also got a detailed guide for this available [here](broken-reference/).
-{% endhint %}

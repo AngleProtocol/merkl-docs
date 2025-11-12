@@ -67,7 +67,7 @@ While you may see various campaign types associated with some lending or borrowi
 
 <figure><img src="../.gitbook/assets/CLAMM-fill-out-campaign-detail.png" alt=""><figcaption></figcaption></figure>
 
-You will then be redirected to the campaign configuration page. The details required will depend on the campaign type you selected. Refer to [the documentation](../mechanisms/campaigns/README.md) for your specific campaign type or category. These pages provide detailed explanations of each required parameter.
+You will then be redirected to the campaign configuration page. The details required will depend on the campaign type you selected. Refer to [the documentation](../merkl-mechanisms/campaign-types/README.md) for your specific campaign type or category. These pages provide detailed explanations of each required parameter.
 
 In most campaigns, you will be required to input a rewards amount as well as start and end dates for the campaign. The total rewards amount is the total amount of rewards to be distributed over the whole campaign duration (a maintenance fee may be applied on top).
 

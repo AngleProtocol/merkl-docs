@@ -8,7 +8,7 @@ description: Reward users who lend, borrow, or use tokens as collateral in lendi
 
 Merkl supports **most major lending and borrowing protocols**, such as Morpho, Euler, Compound, and Aave.
 
-The full list of supported protocols can be found in the ["Lending & Borrowing" section of Merkl Studio](https://studio.merkl.xyz/create-campaign/lend) when selecting a protocol.
+A non-exhaustive list of supported protocols can be found in the ["Lending & Borrowing" section of Merkl Studio](https://studio.merkl.xyz/create-campaign/lend) when selecting a protocol.
 
 <figure><img src="../../.gitbook/assets/Group 14.png" alt=""><figcaption></figcaption></figure>
 
@@ -31,18 +31,6 @@ As a campaign creator, you have the possibility to enable net lending on a speci
 For example, if you lend $100 wstETH and borrow $60 wstETH, you get rewarded for $40 wstETH ($100 - $60).
 
 Note: this is not always the case. If you’ve got a doubt about net lending when preparing a campaign, feel free to reach out to us.
-
-## 🪡 Campaign personalization
-
-Campaign creators can design custom lending incentive campaigns by leveraging:
-
-* [distribution types](../distributions.md): fixed reward rate, variable reward rate, …
-* [customization options](../customization-options.md): whitelist / blacklist systems, boosts,…
-* [additional features](../features.md): forwarders, token wrappers,…
-
-## 🚀 Create a campaign
-
-To set up and launch a lending & borrowing incentive campaign, please follow the steps in the [“Create a Campaign”](../../distribute-with-merkl/create-a-campaign.md) section.
 
 ## 🦋 Morpho multi-market campaign
 

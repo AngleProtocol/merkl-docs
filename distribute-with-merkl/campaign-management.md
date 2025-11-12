@@ -4,20 +4,6 @@ description: Manage your campaigns once they’re live
 
 # Campaign Management
 
-{% hint style="success" %}
-**Campaign visibility**
-
-Once your campaign is created, you will be able to see it in the [Opportunities page](https://app.merkl.xyz/). Note that it can take up to 1 hour to be visible on our app due to cache.
-{% endhint %}
-
-{% hint style="info" %}
-**Reward delays & retroactive distribution**
-
-Occasional delays of a few hours may occur in reward distribution. If an invariant is triggered or a third-party data feed experiences a temporary issue, calculations are paused until all safety checks pass at the next scheduled computation.
-
-Rest assured that when this happens, **all rewards are distributed retroactively**. No rewards are lost.
-{% endhint %}
-
 ## Campaign Management Actions
 
 As the campaign creator, you have full control over your campaign. Available actions include:

@@ -1,47 +1,43 @@
 # Token Holding Campaigns
 
-Merkl enables the creation of token holding campaigns (formerly known as ERC20 campaigns), where **users earn incentives based on their token balance over time**.
+Merkl enables the creation of token holding campaigns (also known as ERC20 campaigns), where **users earn rewards based on their token balance over time**.
 
-At their simplest, these campaigns function like traditional `StakingRewards` contracts. But thanks to Merkl’s **high customizability** and **advanced forwarding mechanisms**, token holding campaigns can support far more flexible and complex use cases — going well beyond the limitations of standard staking systems.
+At their simplest, these campaigns function like traditional `StakingRewards` contracts. However, Merkl's **high customizability** and **advanced forwarding mechanisms** enable token holding campaigns to support far more flexible and complex use cases—going well beyond the limitations of standard staking systems.
 
-## Campaign design
+## Campaign Design
 
-### Distribution type
+### Distribution Type
 
-In Token Holding Campaigns, users who hold an incentivized ERC20 token in their wallet earn rewards based on their balance. How those rewards are allocated depends on the [**distribution type**](../distributions.md) chosen by the campaign creator.
+In Token Holding Campaigns, users holding an incentivized ERC20 token in their wallet earn rewards based on their balance. How these rewards are allocated depends on the [distribution and scoring types](../distributions.md) and the [customization options](../customization-options.md) chosen by the campaign creator.
 
-For example, in a [variable reward rate campaign](../distributions.md#variable-reward-rate-campaigns), rewards are distributed proportionally to each user’s share of the total token supply. So if a user holds 1% of the total supply over a given period, they’re eligible to receive 1% of the rewards distributed during that time.
+For example, in a [variable reward rate campaign](../distributions.md#variable-reward-rate-campaigns), rewards are distributed proportionally to each user's share of the total token supply. If a user holds 1% of the total supply over a given period, they are eligible to receive 1% of the rewards distributed during that time.
 
-The methodology used to calculate rewards is as follows:
+**Reward calculation methodology:**
 
-Transfer events are tracked to reconstruct the exact balance of each participant. An integral is then computed over the selected time frame for every user, with no approximations: everything is exact. Users are then rewarded proportionally to their individual area under the curve compared to the total area of all participants.
+Transfer events are tracked to reconstruct the exact balance of each participant. An integral is then computed over the selected time frame for every user, with no approximations—everything is exact. Users are rewarded proportionally to their individual area under the curve compared to the total area of all participants.
 
-### Customizability options
-
-Merkl allows campaign creators to fully customize their incentive campaigns with [**customization options**](../customization-options.md) such as:
-
-* **Whitelisting or blacklisting** specific addresses for reward eligibility.
-* [**Forwarding rewards**](../glossary.md#forwarder) to users whose tokens are staked in external contracts (e.g. LP tokens or lending positions).
+Merkl's tracking is exhaustive and does not rely on discretionary snapshots. Instead, the Merkl engine analyzes every onchain event to track the evolution of each user's balance over time.
 
 ## Applications
 
 Token Holding Campaigns are highly versatile, supporting a wide range of DeFi use cases.
 
-Any protocol that issues receipt tokens when users interact with it is automatically supported by Merkl. This notably applies to:
+Any protocol that issues receipt tokens when users interact with it is automatically supported by Merkl. This includes:
 
-* **constant product AMMs** like Uniswap V2, Sushiswap, or similar liquidity pools.
-* **lending and borrowing protocols** that emit receipt and debt tokens (i.e., ERC20 tokens) such as Aave. Lenders can be rewarded based on how much they lend over time, and borrowers based on how much they borrow.
+* **Constant product AMMs**: Uniswap V2, SushiSwap, and similar liquidity pools
+* **Lending and borrowing protocols**: Platforms that emit receipt and debt tokens (ERC20 tokens) such as Aave—lenders can be rewarded based on their lending amount over time, and borrowers based on their borrowing amount
+* **Perpetual DEXes**: Perp protocols that issue receipt tokens to depositors in trading vaults
 
 {% hint style="danger" %}
-Not all lending and borrowing protocols issue ERC20 receipt or debt tokens when you borrow from them. These protocols require a custom integration within Merkl. You can find more information about these specialized campaigns on our dedicated [lending & borrowing page](lending-borrowing.md).
+Not all lending and borrowing protocols issue ERC20 receipt or debt tokens when users borrow from them. These protocols require a custom integration within Merkl. You can find more information about these specialized campaigns on the dedicated [lending & borrowing page](lending-borrowing.md).
+
+Additionally, some lending/borrowing protocols may require more tailored incentives (e.g., incentivizing lenders while blacklisting users who fold their liquidity). In such cases, a dedicated integration is recommended, similar to the custom integration implemented for Aave.
 {% endhint %}
 
-### Full integration
+### Merkl API Integration
 
-For constant product AMMs and lending & borrowing protocols that issue receipt tokens, we strongly recommend **full Merkl integration**. Without it, Merkl may be unable to accurately compute APR and TVL for incentivized pools. A full integration ensures seamless calculation and visibility.
+The logic for reward computation is independent from the API logic used to compute APRs and TVLs for the associated opportunity.
 
-{% hint style="info" %}
-If you want your Constant Product AMM, or lending and borrowing protocol to be fully integrated and supported by Merkl, or to create tailored protocol-campaigns (as we did for Silo and Radiant), please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process. **Integration allows APRs and TVL calculations**.
-{% endhint %}
+For the protocol it integrates, the Merkl system can automatically recognize whether a given ERC20 token originates from a specific protocol, and then compute the associated TVL and APR if a campaign is running on it.
 
-Additionally, some lending/borrowing protocols may want to be able to offer more tailored incentives (e.g., incentivize lenders while blacklisting those who fold their liquidity). In this case as well, we recommend a dedicated integration, as we did for Silo and Radiant.
+If you are unsure whether the Merkl API will properly recognize your token as coming from your protocol before creating a campaign, please [contact us on the Merkl Discord by opening a BD ticket](https://discord.com/invite/jnYfrGxDbe) to discuss the integration process.

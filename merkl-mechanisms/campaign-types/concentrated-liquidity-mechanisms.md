@@ -16,16 +16,6 @@ LPs who provide liquidity in optimal, high-impact ranges are rewarded more gener
 
 <figure><img src="../../.gitbook/assets/Concentrated-liquidity.png" alt=""><figcaption></figcaption></figure>
 
-## 🏦 Reward forwarding
-
-Merkl enables reward forwarding.
-
-[Forwarders](../glossary.md#forwarder) — e.g., Automated Liquidity Managers such as Gamma or Arrakis where users deposit liquidity— are treated like any other LPs. They receive rewards, which are automatically forwarded to the original depositors.
-
-{% hint style="info" %}
-If you want to integrate your forwarder within Merkl, please contact us on the [Merkl Discord by opening a BD ticket](https://www.google.com/url?q=https://discord.gg/jnYfrGxDbe\&sa=D\&source=docs\&ust=1714726869927696\&usg=AOvVaw1loOKjqz9IGEdpNjWsvrmD) to discuss the integration process.
-{% endhint %}
-
 ## 🔢 Reward formula
 
 When campaign creators launch concentrated liquidity campaigns, they define:

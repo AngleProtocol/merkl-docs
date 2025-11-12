@@ -4,7 +4,9 @@ description: The various distribution types of Merkl campaigns
 
 # Distribution Types
 
-Merkl supports various distribution methods, allowing campaign creators to choose how rewards are allocated based on participant activity and liquidity contributions.
+**Distribution types** define the reward distribution model and how the total campaign budget is spent over time. They determine the economic structure of your campaign—whether you distribute a fixed budget proportionally, offer guaranteed APRs, or cap maximum returns.
+
+Merkl supports various distribution models, allowing campaign creators to choose the approach that best fits their incentive goals and budget constraints.
 
 <figure><img src="../.gitbook/assets/schema_distribution-type-radius-corner.png" alt=""><figcaption></figcaption></figure>
 

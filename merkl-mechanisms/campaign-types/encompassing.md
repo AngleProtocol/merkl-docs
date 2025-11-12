@@ -8,9 +8,9 @@ description: >-
 
 Merkl's All Encompassing Campaigns enable protocols to distribute rewards without requiring Merkl's Engine to calculate reward allocation. In this model, partners provide some API endpoints containing opportunity data and rewards, which are distributed based on the provided output.
 
-The Merkl Engine aggregates the computed reward data provided by the partner into a Merkle root and pushes it onchain, enabling users to claim their rewards. These reward update run on average every 8 hours (ranging from 4 to 12 hours).
+The Merkl Engine aggregates the computed reward data provided by the partner into a Merkle root and pushes it onchain, enabling users to claim their rewards.
 
-Once a reward update has been processed, it becomes immutable and cannot be reverted. Nevertheless, campaign data can be dynamically updated throughout the campaign duration by modifying the reward endpoint output, with the final update required before the campaign's end date.
+Once [a reward update](../technical-overview.md#reward-updates) has been processed, it becomes immutable and cannot be reverted. Nevertheless, campaign data can be dynamically updated throughout the campaign duration by modifying the reward endpoint output, with the final update required before the campaign's end date.
 
 ## 🛠️ Campaign configuration
 
@@ -141,4 +141,4 @@ Our frontend automatically calculates the correct amount for you.
 
 ### ⏳ Distribution lag
 
-Tokens become claimable at the next [reward update](../glossary.md#reward-update-aka-merkl-root-update) on the target chain, which typically occurs within 8 hours. If you plan to announce the distribution, we recommend waiting until the rewards are claimable to notify your users.
+Tokens become claimable at the next [reward update](../technical-overview.md#reward-updates) on the target chain, which typically occurs within 8 hours. If you plan to announce the distribution, we recommend waiting until the rewards are claimable to notify your users.
