@@ -14,6 +14,7 @@
   * [Encompassing Campaigns](merkl-mechanisms/campaign-types/encompassing.md)
   * [Staking & Restaking Campaigns](merkl-mechanisms/campaign-types/staking.md)
 * [Distribution Types](merkl-mechanisms/distributions.md)
+* [Scoring Types](merkl-mechanisms/scoring.md)
 * [Reward Forwarding](merkl-mechanisms/reward-forwarding.md)
 * [Customization Options](merkl-mechanisms/customization-options.md)
 * [Additional Features](merkl-mechanisms/features.md)
