@@ -121,7 +121,9 @@ The customization option has the following parameters:
   - `ZERO_ADDRESS`: If an eligible address as per our reward computation is not within your API response, we will use the `ZERO_ADDRESS` boost as a default boost value for this address. Since we always exclude the zero address in our computation, it is indeed safe to use the null address as a default. If you use this option, you must therefore absolutely input a boost value for the zero address.
   - `ERROR`: If there is an address eligible to rewards that we do not find in your API response, the campaign will not proceed.
 
-Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:`sendScores=True`
+Depending on whether `sendScores` is true or false, we will POST the following body along with the API call:
+
+`sendScores=True`
 
 ```jsx
 let body: { address: string, score: string }[]
@@ -132,6 +134,11 @@ let body: { address: string, score: string }[]
 ```jsx
 let body: { addresses: string[] }
 ```
+
+{% hint style="info" %}
+The Merkl Engine will first make a POST request with all the addresses rewarded by the campaign. If this request fails, it will split the payload in 2 and make 2 requests with 50% of the addresses in each request. The script will continue dividing the payload size by 2 until your API responds correctly.
+This being said, we recommend supporting at least payloads of 250 addresses to prevent our engine from making too many requests to your backend.
+{% endhint %}
 
 We will expect the following response:
 

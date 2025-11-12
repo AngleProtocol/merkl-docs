@@ -129,6 +129,109 @@ The Merkl API provides endpoints to retrieve user leaderboards and reward statis
 * **Unclaimed rewards**: Check unclaimed amounts for a campaign - [`https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/`](https://api.merkl.xyz/docs#tag/rewards/get/v4/rewards/unclaim/)
 * **Historical metrics**: Get TVL and APR history for a campaign - [`https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics`](https://api.merkl.xyz/docs#tag/campaigns/get/v4/campaigns/{id}/metrics)
 
+<details>
+
+<summary>Example Python script for fetching campaign metrics (unclaimed rewards, number of wallets and evolution of APR/TVL/Daily Rewards)</summary>
+
+```python
+import datetime
+import requests
+
+def timestamp_to_date(timestamp: int) -> str:
+    dt = datetime.datetime.fromtimestamp(timestamp)
+    return dt.strftime('%d/%m/%Y')
+
+def get_unclaimed_rewards(campaign_id: int):
+    campaign_info_url = f"https://api.merkl.xyz/v4/campaigns/{campaign_id}"
+    campaign_response = requests.get(campaign_info_url)
+    
+    campaign_onchain_id = campaign_response.json().get("campaignId")
+    distribution_chain_id = campaign_response.json().get("distributionChainId")
+    reward_token_symbol = campaign_response.json().get("rewardToken", {}).get("symbol", "UNKNOWN")
+    decimals = campaign_response.json().get("rewardToken", {}).get("decimals", 18)
+    total_budget = int(campaign_response.json().get("amount", 0))/(10 ** decimals)
+
+    unclaimed_url = f"https://api.merkl.xyz/v4/rewards/unclaim?chainId={distribution_chain_id}&campaignIds={campaign_onchain_id}"
+
+    response_distributed = requests.get(f"https://api.merkl.xyz/v4/rewards/total?chainId={distribution_chain_id}&campaignId={campaign_onchain_id}")
+    total_distributed = int(response_distributed.json().get("amount"))/(10 ** decimals)
+    response = requests.get(unclaimed_url)
+    unclaimed = int(response.json().get(campaign_onchain_id))/(10 ** decimals)
+    
+    print(f"Total budget: {total_budget:,.2f} {reward_token_symbol}")
+    print(f"Distributed: {total_distributed:,.2f} {reward_token_symbol} ")
+    print(f"Claimed: {total_distributed - unclaimed:,.2f} {reward_token_symbol}")
+    print(f"Unclaimed: {unclaimed:,.2f} {reward_token_symbol}")
+
+def get_campaign_metrics(campaignId: int):
+    url = f"https://api.merkl.xyz/v4/campaigns/{campaignId}/metrics"
+
+    response = requests.get(url)
+    data = response.json()
+    if response.status_code != 200:
+        print(f"Failed to fetch metrics for campaign {campaignId}. Status code: {response.status_code}")
+        return
+    
+    
+    tvlsRecords = data["tvlRecords"]
+    aprRecords = data["aprRecords"]
+    dailyRewardsRecords = data["dailyRewardsRecords"]
+    walletCountRecords = data["walletCount"]
+    # Find the min and max wallet count
+    min_wallets = min([item["walletCount"] for item in walletCountRecords])
+    max_wallets = max([item["walletCount"] for item in walletCountRecords])
+    
+    print(f"Campaign {campaignId} metrics:")
+    print("")
+    get_unclaimed_rewards(campaignId)
+    print("")
+    print(f"Min wallets: {min_wallets}")
+    print(f"Max wallets: {max_wallets}")
+    print("")
+    
+    results = {}
+    
+    for item in tvlsRecords:
+        if item["timestamp"] not in results:
+            results[item["timestamp"]] = {}
+        results[item["timestamp"]]["TVL"] = int(item["total"])
+    for item in aprRecords:
+        if item["timestamp"] not in results:
+            results[item["timestamp"]] = {}
+        results[item["timestamp"]]["APR"] = float(item["apr"])
+    for item in dailyRewardsRecords:
+        if item["timestamp"] not in results:
+            results[item["timestamp"]] = {}
+        results[item["timestamp"]]["Daily Rewards"] = float(item["total"])
+    # Find the closest wallet count record for each timestamp and add it to results
+    for timestamp in results.keys():
+        closest_record = min(
+            walletCountRecords,
+            key=lambda record: abs(int(timestamp) - int(record.get('timestamp', 0)))
+        )
+        results[timestamp]["Wallets"] = closest_record.get("walletCount", 0)
+
+    # Print the results in a table format
+    print(f"{'Date':<20} {'TVL ($)':<20} {'APR (%)':<15} {'Daily Rewards ($)':<20} {'Wallets':<10}")
+    for timestamp in sorted(results.keys()):
+        date_str = timestamp_to_date(int(timestamp))
+        tvl = results[timestamp].get("TVL", 0)
+        apr = results[timestamp].get("APR", 0)  # Convert to percentage
+        daily_rewards = results[timestamp].get("Daily Rewards", 0)
+        wallets = results[timestamp].get("Wallets", 0)
+        # Print TVL in human readable format
+        tvl = f"{tvl:,.0f}"
+        daily_rewards = f"{daily_rewards:,.2f}"
+        print(f"{date_str:<20} {tvl:<20} {apr:<15.2f} {daily_rewards:<20} {wallets:<10}")
+        
+if __name__ == "__main__":
+    # Example usage
+    campaign_id = 12345  # Replace with your campaign ID
+    get_campaign_metrics(campaign_id)
+```
+
+</details>
+
 ## Integrating User Rewards
 
 To retrieve reward data for a specific user, use the following endpoint:
@@ -149,6 +252,10 @@ Example - Checking a user's rewards on zkSync: [`https://api.merkl.xyz/v4/users/
 
 {% hint style="info" %}
 The claimable amount equals `amount - claimed`.
+{% endhint %}
+
+{% hint style="warning" %}
+`pending` rewards update more frequently (about every 2 hours) than the `amount`. Integrating `pending` rewards in your app lets you show more timely updates to your users. However, always display pending rewards separately to avoid confusion because `pending` rewards are not claimable. Also note that whenever tokens are credited on-chain, the `pending` rewards reset to zero because they are added to the `amount`.
 {% endhint %}
 
 **Important notes about this endpoint:**
