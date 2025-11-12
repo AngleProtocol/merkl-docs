@@ -4,19 +4,13 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 # Glossary
 
-## APR
-
-Annual Percentage Rate (APR) represents the yearly return from participating in an opportunity, expressed as a percentage. The APR can be fixed and stay constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
+## [APR](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
 
 ## [Blacklist](../merkl-mechanisms/features.md#-blacklisting)
 
 ## [Boost](../merkl-mechanisms/customization-options.md#-boost)
 
-## Campaign
-
-A distribution of tokens or points over a defined period, launched by an incentivizer to reward participants of a specific opportunity. For example, an incentive campaign distributing 50k tokens over 3 days to users who provide liquidity in a particular pool.
-
-Note that multiple campaigns can exist for the same opportunity. For instance, Protocol A and Protocol B may both launch campaigns to reward participants of the opportunity “Deposit tokens in the AAA-BBB liquidity pool.” In such cases, users can earn rewards from both campaigns with just one deposit.
+## [Campaign](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign)
 
 ## [Capped reward rate campaigns](../merkl-mechanisms/distributions.md#-capped-reward-rate-campaigns)
 
@@ -24,19 +18,9 @@ Note that multiple campaigns can exist for the same opportunity. For instance, P
 
 ## [Cross-chain rewards](../merkl-mechanisms/features.md#-cross-chain-campaigns)
 
-Distributing rewards to users on a different blockchain than where the incentivized asset is located. For example, incentivizing a WETH-USDC pool on Ethereum by distributing WBTC rewards on Base.
+## [Daily rewards](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
 
-## Daily rewards
-
-The total amount of tokens or points distributed each day, shared among all users eligible for the campaign.
-
-## Dashboard
-
-The page in the Merkl App where users can claim their earned rewards in a single transaction and without any gas fees.
-
-## Deposit URL
-
-A link shown on an opportunity’s page that directs users to the protocol where the incentivized action must be performed to become eligible for rewards. For example, the page of a lending market where liquidity must be deposited to earn rewards via Merkl. Note that Merkl is non-custodial, meaning liquidity is never held by Merkl but deposited directly into the protocols.
+## [Dashboard](../merkl-mechanisms/technical-overview.md#merkl-app)
 
 ## [Dispute](../merkl-mechanisms/technical-overview.md#dispute-period--process)
 
@@ -46,35 +30,17 @@ A link shown on an opportunity’s page that directs users to the protocol where
 
 ## [Fixed reward rate campaigns](../merkl-mechanisms/distributions.md#-fixed-reward-rate-campaigns)
 
-## Forwarder
+## [Forwarder](../merkl-mechanisms/reward-forwarding.md)
 
-A contract (such as staking, an Automated Liquidity Manager, or a vault) that holds the incentivized asset on behalf of users. Merkl detects the underlying users and distributes rewards to them, even if the asset isn’t held directly in their wallet.
+## [Linked opportunities](../merkl-mechanisms/reward-forwarding.md#linked-opportunities)
 
-For example, a campaign distributing rewards to USDA holders. Users who staked USDA and receive stUSD in exchange would normally be ineligible because they don't hold the USDA directly in their wallet. With forwarders, Merkl recognizes stUSD holders as USDA holders and distributes rewards accordingly. [Reward forwarding](reward-forwarding.md) is enabled by default in Merkl.
+## [Merkl Studio](../merkl-mechanisms/technical-overview.md#merkl-studio)
 
-## Linked opportunities
+## [Net lending & borrowing](../merkl-mechanisms/campaign-types/lending-borrowing.md#-preventing-lending-loops)
 
-DeFi opportunities linked by liquidity, where one funnels funds into the other and receives rewards from it.
+## [Opportunity](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign)
 
-For example, a vault managing user funds (child opportunity) may deposit liquidity into an Uniswap pool (parent opportunity) and earn rewards from Merkl campaigns incentivizing that pool. Thanks to Merkl forwarders, participants in the child opportunity—who are indirectly participating in the parent opportunity—receive rewards from the parent, in addition to any Merkl rewards from the child itself.
-
-Linked opportunities are displayed in the Merkl App to help users decide where to deposit liquidity to maximize rewards.
-
-## Merkl Studio
-
-The command center for incentive campaign creators. It allows anyone to launch incentive campaigns via Merkl, independently and in just a few minutes, and provides powerful tools to manage them effectively.
-
-## Net lending & borrowing
-
-Net lending & borrowing refers to lending & borrowing opportunities in the Merkl App where only the initially deposited liquidity is rewarded, excluding recursive supply-and-borrow loops that artificially inflate TVL.
-
-## Opportunity
-
-An asset (liquidity pool, lending market, ...) and its associated action that is incentivized via Merkl. For example, providing liquidity to a specific liquidity pool, holding a particular token, or lending a token on a given protocol. Not to be confused with a [campaign](glossary.md#campaign).
-
-## Pre-TGE
-
-In pre-TGE campaigns, participants receive reward tokens representing a future allocation of tokens that have not yet been launched. These pre-TGE tokens are non-transferable, non-tradable, and their displayed value is an estimate subject to change at the time of the Token Generation Event (TGE).
+## [Pre-TGE](../distribute-with-merkl/create-a-pretge-campaign.md)
 
 ## [Referral](../merkl-mechanisms/customization-options.md#-referral-program)
 
@@ -82,9 +48,7 @@ In pre-TGE campaigns, participants receive reward tokens representing a future a
 
 ## [Reward updates](../merkl-mechanisms/technical-overview.md#reward-updates)
 
-## TVL
-
-Total Value Locked (TVL) measures the total amount of assets deposited in an opportunity. It reflects the combined value of all tokens provided by liquidity providers and serves as a key indicator of the market/pool’s size and liquidity depth. TVL directly impacts an opportunity’s APR and daily rewards.
+## [TVL](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
 
 ## [Variable reward rate campaign](../merkl-mechanisms/distributions.md#-variable-reward-rate-campaigns)
 
