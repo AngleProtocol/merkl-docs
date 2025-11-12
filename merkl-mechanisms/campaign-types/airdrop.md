@@ -84,7 +84,7 @@ Our frontend automatically calculates the correct amount for you.
 
 ### Distribution lag
 
-Airdropped tokens become claimable at the next [reward update](../glossary.md#reward-update-aka-merkl-root-update) on the target chain, which typically occurs within 8 hours. If you plan to announce the airdrop, we recommend waiting until the rewards are claimable to notify your users.
+Airdropped tokens become claimable at the next [reward update](../technical-overview.md#reward-updates) on the target chain, which typically occurs within 8 hours. If you plan to announce the airdrop, we recommend waiting until the rewards are claimable to notify your users.
 
 ## Token balance airdrops
 
