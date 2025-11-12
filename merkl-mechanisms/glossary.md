@@ -4,52 +4,52 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 # Glossary
 
-## [APR](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
+## [APR](https://docs.merkl.xyz/merkl-mechanisms/technical-overview#focus-opportunity-page)
 
-## [Blacklist](../merkl-mechanisms/features.md#-blacklisting)
+## [Blacklist](https://docs.merkl.xyz/merkl-mechanisms/features#blacklisting)
 
-## [Boost](../merkl-mechanisms/customization-options.md#-boost)
+## [Boost](https://docs.merkl.xyz/merkl-mechanisms/customization-options#boost)
 
-## [Campaign](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign)
+## [Campaign](https://docs.merkl.xyz/merkl-mechanisms/technical-overview#opportunity-vs.-campaign)
 
-## [Capped reward rate campaigns](../merkl-mechanisms/distributions.md#-capped-reward-rate-campaigns)
+## [Capped reward rate campaign](https://docs.merkl.xyz/merkl-mechanisms/distributions#capped-reward-rate-campaigns)
 
-## [Customization option](../merkl-mechanisms/customization-options.md)
+## [Customization option](customization-options.md)
 
-## [Cross-chain rewards](../merkl-mechanisms/features.md#-cross-chain-campaigns)
+## [Cross-chain rewards](https://docs.merkl.xyz/merkl-mechanisms/features#cross-chain-campaigns)
 
-## [Daily rewards](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
+## [Daily rewards](https://docs.merkl.xyz/merkl-mechanisms/features#cross-chain-campaigns)
 
-## [Dashboard](../merkl-mechanisms/technical-overview.md#merkl-app)
+## [Dashboard](technical-overview.md#merkl-app)
 
-## [Dispute](../merkl-mechanisms/technical-overview.md#dispute-period--process)
+## [Dispute](https://docs.merkl.xyz/merkl-mechanisms/technical-overview#dispute-period-and-process)
 
-## [Eligibility](../merkl-mechanisms/customization-options.md#eligibility)
+## [Eligibility](customization-options.md#eligibility)
 
-## [Encompassing campaign](../merkl-mechanisms/campaign-types/encompassing.md)
+## [Encompassing campaign](campaign-types/encompassing.md)
 
-## [Fixed reward rate campaigns](../merkl-mechanisms/distributions.md#-fixed-reward-rate-campaigns)
+## [Fixed reward rate campaign](https://docs.merkl.xyz/merkl-mechanisms/distributions#fixed-reward-rate-campaigns)
 
-## [Forwarder](../merkl-mechanisms/reward-forwarding.md)
+## [Forwarder](reward-forwarding.md)
 
-## [Linked opportunities](../merkl-mechanisms/reward-forwarding.md#linked-opportunities)
+## [Linked opportunities](reward-forwarding.md#linked-opportunities)
 
-## [Merkl Studio](../merkl-mechanisms/technical-overview.md#merkl-studio)
+## [Merkl Studio](technical-overview.md#merkl-studio)
 
-## [Net lending & borrowing](../merkl-mechanisms/campaign-types/lending-borrowing.md#-preventing-lending-loops)
+## [Net lending & borrowing](https://docs.merkl.xyz/merkl-mechanisms/campaign-types/lending-borrowing#preventing-lending-loops)
 
-## [Opportunity](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign)
+## [Opportunity](https://docs.merkl.xyz/merkl-mechanisms/technical-overview#opportunity-vs.-campaign)
 
 ## [Pre-TGE](../distribute-with-merkl/create-a-pretge-campaign.md)
 
-## [Referral](../merkl-mechanisms/customization-options.md#-referral-program)
+## [Referral](https://docs.merkl.xyz/merkl-mechanisms/customization-options#referral-program)
 
-## [Reward computes](../merkl-mechanisms/technical-overview.md#reward-computation)
+## [Reward compute](technical-overview.md#reward-computation)
 
-## [Reward updates](../merkl-mechanisms/technical-overview.md#reward-updates)
+## [Reward update](technical-overview.md#reward-updates)
 
-## [TVL](../merkl-mechanisms/technical-overview.md#focus---opportunity-page)
+## [TVL](https://docs.merkl.xyz/merkl-mechanisms/customization-options#referral-program)
 
-## [Variable reward rate campaign](../merkl-mechanisms/distributions.md#-variable-reward-rate-campaigns)
+## [Variable reward rate campaign](https://docs.merkl.xyz/merkl-mechanisms/distributions#variable-reward-rate-campaigns)
 
-## [Whitelist](../merkl-mechanisms/features.md#-whitelisting)
+## [Whitelist](https://docs.merkl.xyz/merkl-mechanisms/features#whitelisting)
