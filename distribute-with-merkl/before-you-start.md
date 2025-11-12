@@ -11,9 +11,9 @@ description: >-
 Before setting up your campaign on Merkl, make sure you have read and understood:
 
 * [**Merkl’s reward distribution process**](../merkl-mechanisms/technical-overview.md) (reward computation vs. reward update, dispute period, etc.)
-* [**The different incentive mechanisms**](../merkl-mechanisms/incentive-mechanisms.md) (campaign types, distribution types)
-* [**Merkl forwarding system**](../merkl-mechanisms/reward-forwarding.md)
+* [**The different incentive mechanisms**](../merkl-mechanisms/incentive-mechanisms.md) (campaign types, distribution types, scoring types)
 * How to personalize your campaign using [**customization options**](../merkl-mechanisms/customization-options.md)
+* [**Merkl forwarding system**](../merkl-mechanisms/reward-forwarding.md)
 * [**Additional features**](../merkl-mechanisms/features.md) that can make your campaign unique
 
 {% hint style="info" %}

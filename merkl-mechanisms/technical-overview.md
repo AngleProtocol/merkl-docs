@@ -91,9 +91,9 @@ The **dispute period** is a security window of 1-2 hours following each reward u
 **Strengthen the network**: More active dispute bots make the system more secure. Need help setting one up? Reach out to the Merkl team—we're happy to assist!
 {% endhint %}
 
-## 📌 Other Key Merkl components
+## 📌 Other Key Merkl components and concepts
 
-Beyond the Merkl engine and dispute bots described above, Merkl consists of several core components that interact to facilitate reward distribution
+Beyond the Merkl engine and dispute bots described above, Merkl consists of several core components that interact to facilitate reward distribution.
 
 ### Merkl Smart Contracts
 
@@ -113,6 +113,16 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 [Merkl API](../integrate-merkl/app.md) provides real-time access to Merkl data, including rewards, APRs, merkle proofs, and analytics. This API enables any frontend to integrate Merkl seamlessly.
 
+### Opportunity vs. Campaign
+
+Understanding the distinction between **opportunities** and **campaigns** is fundamental to how Merkl operates.
+
+* **Campaign**: An individual incentive program created by a campaign creator with specific parameters including [a distribution type](distributions.md), [a scoring type](scoring.md), [customization options](customization-options.md), a budget amount, and a duration. Each campaign has [a specific type](../merkl-mechanisms/campaign-types/README.md) and targets a particular onchain behavior (e.g., providing liquidity in a pool, holding a token, lending/borrowing)—this targeted behavior represents an opportunity.
+* **Opportunity**: A specific asset (e.g., pool, vault) and its associated action (e.g., depositing liquidity, borrowing assets) that can be incentivized. Multiple campaigns can run in parallel on a single opportunity, meaning users performing one onchain action can simultaneously earn rewards from several different campaigns.\
+  Example: _Providing liquidity to a SushiSwap V3 pool is an opportunity that may have multiple active campaigns offering different rewards._
+
+<figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
+
 ### Merkl App
 
 [The Merkl App](https://app.merkl.xyz/), built on the Merkl API, enables users to explore reward opportunities, track APRs, and seamlessly claim their rewards.
@@ -122,26 +132,12 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 The interface is organized around several types of pages:
 
 * **Home page (all opportunities)** – displays all available opportunities with filtering options
-* **Opportunity page** – dedicated view for each opportunity
+* **Opportunity page** – dedicated view for each opportunity with all its campains
 * **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
 * **Dashboard** – where users can claim their rewards
 
 {% hint style="info" %}
-Among these, the Opportunity page is central, as this is where you’ll find the campaigns you’ve created!
-{% endhint %}
-
-#### Opportunity vs. Campaign
-
-Before using Merkl, it’s important to understand the difference between an opportunity and a campaign.
-
-* **Campaign**: a reward distribution set by a campaign creator, with specific parameters such as [distribution type](distributions.md), reward amount, [eligibility rules](customization-options.md#eligibility), [boosts](customization-options.md#boosts), and duration. A campaign always targets a specific onchain behavior (e.g. providing liquidity in a pool, holding a token, lending/borrowing), also referred to as an opportunity.
-* **Opportunity**: an asset (e.g. pool, vault,…) and its associated action (e.g. depositing liquidity, borrowing assets) that are incentivized.\
-  Example: _Provide liquidity to the SushiswapV3 liquidity pool._
-
-<figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
-
-{% hint style="success" %}
-**Multiple campaigns can run simultaneously on the same opportunity**. This means that for a single onchain action, a user can earn rewards from several campaigns.
+Among these, the Opportunity page is central, as this is where you’ll find the campaigns created.
 {% endhint %}
 
 #### Focus - Opportunity page

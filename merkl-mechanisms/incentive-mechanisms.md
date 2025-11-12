@@ -12,7 +12,7 @@ When creating a campaign on Merkl, campaign creators can configure:
 
 ### 1️⃣ Campaign Type
 
-[Campaign types](../mechanisms/campaigns/) define the action that needs to be done to be eligible to rewards.
+[Campaign types](../merkl-mechanisms/campaign-types/README.md) define the action that needs to be done to be eligible to rewards.
 
 Merkl supports multiple campaign types, rewarding users for both financial activities (e.g., liquidity provision, lending) and other onchain/offchain actions.
 
