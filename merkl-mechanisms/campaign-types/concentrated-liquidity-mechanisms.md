@@ -23,9 +23,14 @@ When campaign creators launch concentrated liquidity campaigns, they define:
 * The pool to be incentivized (using the **pool address or ID**)
 * A **reward period**
 * A set of **incentive parameters**, which define how rewards will be distributed among liquidity providers.
+  * **In-Range positions only**: Only reward positions that are being used in swaps
   * **Fees earned**: The fees earned by the position during the period, which represent the liquidity of the position used by the pool.
   * **Token 0 holding**: The share of token 0 held by a position relative to the total token 0 in the pool.
-  * **Token 1 holding**: The share of token 1 held by a position relative to the total token 1 in the pool.
+  * **Token 1 holding**: The share of token 1 held by a position relative to the total token 1 in the pool. 
+
+{% hint style="info" %}
+A position is "in range" when the current market price falls within the price range specified by the position's lower and upper ticks. When a position is in range, it actively provides liquidity for trades and earns fees. Out-of-range positions do not contribute to liquidity at the current price and therefore don't earn trading fees. We highly recommend only rewarding in range positions.
+{% endhint %}
 
 Each factor is assigned a weight (`w_fees`, `w_0`, `w_1`), which the campaign creator defines when setting up the campaign in Merkl Studio.
 
