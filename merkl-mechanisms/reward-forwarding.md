@@ -11,7 +11,7 @@ In most [campaign types](../mechanisms/hooks/mechanisms/), Merkl automatically d
 <figure><img src="../.gitbook/assets/ForwarderScan.png" alt=""><figcaption><p>The forwarder scan in Merkl Studio</p></figcaption></figure>
 
 {% hint style="info" %}
-Check whether a contract is recognized as a forwarder by Merkl at [https://forwarders.merkl.xyz/](https://forwarders.merkl.xyz%)
+Check whether a contract is recognized as a forwarder by Merkl at https://forwarders.merkl.xyz/
 {% endhint %}
 
 **Key characteristics:**

@@ -12,7 +12,7 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 ## [Campaign](technical-overview.md#opportunity-vs.-campaign)
 
-## [Capped reward rate campaign](https://docs.merkl.xyz/merkl-mechanisms/distributions#capped-reward-rate-campaigns)
+## [Capped reward rate campaign](distributions.md#capped-reward-rate-campaigns)
 
 ## [Customization option](customization-options.md)
 
@@ -20,7 +20,9 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 ## [Daily rewards](technical-overview.md#focus-opportunity-page)
 
-## [Dashboard](technical-overview.md#merkl-app)
+## [Dashboard (Merkl App)](technical-overview.md#merkl-app)
+
+## [Dashboard (Merkl Studio)](../distribute-with-merkl/campaign-management.md)
 
 ## [Dispute](technical-overview.md#dispute-period-and-process)
 
@@ -34,11 +36,15 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 ## [Linked opportunities](reward-forwarding.md#linked-opportunities)
 
+## [Merkl App](technical-overview.md#merkl-app)
+
 ## [Merkl Studio](technical-overview.md#merkl-studio)
 
 ## [Net lending & borrowing](campaign-types/lending-borrowing.md#preventing-lending-loops)
 
 ## [Opportunity](technical-overview.md#opportunity-vs.-campaign)
+
+## [Point program](../distribute-with-merkl/create-a-point-program.md)
 
 ## [Pre-TGE](../distribute-with-merkl/create-a-pretge-campaign.md)
 

@@ -14,9 +14,9 @@ Merkl operates through campaigns created by campaign creators. A campaign is a t
 
 1. **Campaign Creation**: Campaign creators set up campaigns using a smart contract called the **Merkl Distribution Creator**. This includes defining eligibility criteria, reward structures, and distribution methods. Campaign details are pushed onchain, along with the incentive tokens that need to be distributed
 2. **User Participation**: Users engage with the protocol (e.g., providing liquidity, lending, borrowing) in order to earn the rewards/points as specified in the campaign.
-3. [**Reward Computation:**](#reward-computation) At fixed intervals, a system called the **Merkl Engine** fetches campaigns from the **Merkl Distribution Creator** contract and processes reward calculations based on available onchain and offchain data and on the rules set by the campaign creator. After this step, users can see that they have earned rewards which are only pending as they cannot claim them yet (awaiting reward update).
-4. [**Reward Update:**](#reward-updates) At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [on the Merkl status page](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
-5. [**Dispute Period:**](#dispute-process) After this step, a 1-2 hour dispute period begins, during which newly computed rewards cannot be claimed yet. However, rewards from the previous merkle root remain claimable. During this period, dispute bots verify the published reward file. If an inconsistency is found, a dispute can be raised to halt incorrect distributions before they become effective.
+3. [**Reward Computation:**](technical-overview.md#reward-computation) At fixed intervals, a system called the **Merkl Engine** fetches campaigns from the **Merkl Distribution Creator** contract and processes reward calculations based on available onchain and offchain data and on the rules set by the campaign creator. After this step, users can see that they have earned rewards which are only pending as they cannot claim them yet (awaiting reward update).
+4. [**Reward Update:**](technical-overview.md#reward-updates) At regular intervals as well (potentially different from the reward computation intervals), the Merkl Engine generates a merkle tree from processed campaigns. This tree is then compressed as a merkle root that is pushed onchain to a contract called the **Merkl Distributor** contract. A reward file is also made available [on the Merkl status page](https://app.merkl.xyz/status), in order to ensure transparency and enable anyone to manually audit past reward distributions.
+5. [**Dispute Period:**](technical-overview.md#dispute-process) After this step, a 1-2 hour dispute period begins, during which newly computed rewards cannot be claimed yet. However, rewards from the previous merkle root remain claimable. During this period, dispute bots verify the published reward file. If an inconsistency is found, a dispute can be raised to halt incorrect distributions before they become effective.
 6. **Reward Availability:** Once the dispute period ends, users can see their rewards on any frontend integrated with the Merkl API. Users can claim rewards through a Merkl-powered frontend. Merkle proofs, required for claiming, are provided by the Merkl API or can be computed from reward files.
 
 ### Key Features
@@ -117,7 +117,7 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 
 Understanding the distinction between **opportunities** and **campaigns** is fundamental to how Merkl operates.
 
-* **Campaign**: An individual incentive program created by a campaign creator with specific parameters including [a distribution type](distributions.md), [a scoring type](scoring.md), [customization options](customization-options.md), a budget amount, and a duration. Each campaign has [a specific type](../merkl-mechanisms/campaign-types/README.md) and targets a particular onchain behavior (e.g., providing liquidity in a pool, holding a token, lending/borrowing)—this targeted behavior represents an opportunity.
+* **Campaign**: An individual incentive program created by a campaign creator with specific parameters including [a distribution type](distributions.md), [a scoring type](scoring.md), [customization options](customization-options.md), a budget amount, and a duration. Each campaign has [a specific type](campaign-types/) and targets a particular onchain behavior (e.g., providing liquidity in a pool, holding a token, lending/borrowing)—this targeted behavior represents an opportunity.
 * **Opportunity**: A specific asset (e.g., pool, vault) and its associated action (e.g., depositing liquidity, borrowing assets) that can be incentivized. Multiple campaigns can run in parallel on a single opportunity, meaning users performing one onchain action can simultaneously earn rewards from several different campaigns.\
   Example: _Providing liquidity to a SushiSwap V3 pool is an opportunity that may have multiple active campaigns offering different rewards._
 
@@ -136,8 +136,10 @@ The interface is organized around several types of pages:
 * **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
 * **Dashboard** – where users can claim their rewards
 
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.14.56 1.png" alt=""><figcaption><p>Dashboard page where users can claim their rewards</p></figcaption></figure>
+
 {% hint style="info" %}
-Among these, the Opportunity page is central, as this is where you’ll find the campaigns created.
+Among all these pages, the **Opportunity page** is central, as this is where you’ll find the campaigns created.
 {% endhint %}
 
 #### Focus - Opportunity page
@@ -147,7 +149,6 @@ On an Opportunity page, you'll find key metrics that aggregate all active campai
 * **APR (Annual Percentage Rate)**: The yearly return from participating in the opportunity, expressed as a percentage. The APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
 * **TVL (Total Value Locked)**: The total value of **eligible** assets for the campaigns on the opportunity. This reflects only the assets that meet the campaign's eligibility criteria—for example, if a campaign includes a blacklist, the TVL excludes the value held by blacklisted addresses. The TVL serves as a key indicator of the market/pool's size and liquidity depth, and directly impacts the opportunity's APR. When multiple campaigns run on the same opportunity with different eligibility rules, the displayed TVL is the maximum eligible TVL across all campaigns.
 * **Daily Rewards**: The total amount of tokens or points distributed each day, shared among all eligible users across the campaigns on the opportunity. When multiple campaigns run on an opportunity, the displayed daily rewards represent the sum of all individual campaign daily rewards.
-
 
 <figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
 
