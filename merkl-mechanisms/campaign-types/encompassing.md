@@ -161,7 +161,7 @@ Here is an example data JSON using a gist:
 
 **Creating a public gist:** Go to [https://gist.github.com/](https://gist.github.com/), fill in the data and select `Create public gist`
 
-**Getting the raw URL:** Once you create your gist, the URL of the page you are on should look something like this: `https://gist.github.com/BaptistG/576bd5711fded3f44d906efbcaff80e0`. To get the raw url, you need to add `/raw` at the end (`https://gist.github.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw` with the previous example`).
+**Getting the raw URL:** Once you create your gist, the URL of the page you are on should look something like this: `https://gist.github.com/BaptistG/576bd5711fded3f44d906efbcaff80e0`. To get the raw url, you need to add `/raw` at the end (`https://gist.github.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw` with the previous example).
 
 {% endhint %}
 
