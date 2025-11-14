@@ -130,6 +130,259 @@ Example:
 
 This data will be used to display the campaign in the Merkl frontend.
 
+### Validating your endpoints
+<details>
+
+<summary>You can use this python script to validate that your endpoints are in the correct format</summary>
+
+```python
+import requests
+import json
+import re
+from typing import Dict, Any, Optional
+
+def is_number_regex(s):
+    # Matches integers and decimals (including negative)
+    return bool(re.match(r'^-?\d+(\.\d+)?$', s))
+
+def validate_data_url(url: str) -> Optional[Dict[str, Any]]:
+    """
+    Validate that the data URL returns the expected format:
+    {
+      "tvl": "100000",
+      "apr": "0.5",
+      "opportunityName": "Testing distribution aglaMerkl"
+    }
+    """
+    print(f"\n=== Validating Data URL ===")
+    print(f"URL: {url}")
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Check required fields
+        required_fields = ["tvl", "apr", "opportunityName"]
+        missing_fields = [field for field in required_fields if field not in data]
+        
+        if missing_fields:
+            print(f"❌ INVALID: Missing required fields: {missing_fields}")
+            return None
+        
+        # Validate types
+        if not isinstance(data["tvl"], str):
+            print(f"❌ INVALID: 'tvl' should be a string, got {type(data['tvl']).__name__}")
+            return None
+        
+        if not isinstance(data["apr"], str):
+            print(f"❌ INVALID: 'apr' should be a string, got {type(data['apr']).__name__}")
+            return None
+        
+        if not isinstance(data["opportunityName"], str):
+            print(f"❌ INVALID: 'opportunityName' should be a string, got {type(data['opportunityName']).__name__}")
+            return None
+        
+        # Validate numeric formats
+        if not is_number_regex(data["tvl"]):
+            print(f"❌ INVALID: 'tvl' should be a numeric string, got '{data['tvl']}'")
+            return None
+        if not is_number_regex(data["apr"]):
+            print(f"❌ INVALID: 'apr' should be a numeric string, got '{data['apr']}'")
+            return None
+        
+        print("✅ VALID: Data URL format is correct")
+        print(f"   TVL: {data['tvl']}")
+        print(f"   APR: {data['apr']}")
+        print(f"   Opportunity Name: {data['opportunityName']}")
+        
+        return data
+        
+    except requests.RequestException as e:
+        print(f"❌ ERROR: Failed to fetch data from URL: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"❌ ERROR: Invalid JSON response: {e}")
+        return None
+
+
+def validate_reward_url(url: str) -> Optional[Dict[str, Any]]:
+    """
+    Validate that the reward URL returns the expected format:
+    {
+      "rewardToken": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "rewards": {
+        "0x37305B1cD40574E4C5Ce33f8e8306Be057fD7341": {
+          "season1": {
+            "amount": "1000000000000000000",
+            "timestamp": "1741370722"
+          }
+        }
+      }
+    }
+    """
+    print(f"\n=== Validating Reward URL ===")
+    print(f"URL: {url}")
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Check required top-level fields
+        if "rewardToken" not in data:
+            print(f"❌ INVALID: Missing 'rewardToken' field")
+            return None
+        
+        if "rewards" not in data:
+            print(f"❌ INVALID: Missing 'rewards' field")
+            return None
+        
+        if not isinstance(data["rewardToken"], str):
+            print(f"❌ INVALID: 'rewardToken' should be a string, got {type(data['rewardToken']).__name__}")
+            return None
+        
+        if not isinstance(data["rewards"], dict):
+            print(f"❌ INVALID: 'rewards' should be a dict, got {type(data['rewards']).__name__}")
+            return None
+        
+        # Validate rewards structure
+        for address, seasons in data["rewards"].items():
+            if not isinstance(seasons, dict):
+                print(f"❌ INVALID: Rewards for {address} should be a dict, got {type(seasons).__name__}")
+                return None
+            
+            for season_name, season_data in seasons.items():
+                if not isinstance(season_data, dict):
+                    print(f"❌ INVALID: Season data for {address}/{season_name} should be a dict")
+                    return None
+                
+                if "amount" not in season_data:
+                    print(f"❌ INVALID: Missing 'amount' in {address}/{season_name}")
+                    return None
+                
+                if "timestamp" not in season_data:
+                    print(f"❌ INVALID: Missing 'timestamp' in {address}/{season_name}")
+                    return None
+                
+                if not isinstance(season_data["amount"], str):
+                    print(f"❌ INVALID: 'amount' should be a string in {address}/{season_name}")
+                    return None
+                
+                if not isinstance(season_data["timestamp"], str):
+                    print(f"❌ INVALID: 'timestamp' should be a string in {address}/{season_name}")
+                    return None
+        
+        print("✅ VALID: Reward URL format is correct")
+        print(f"   Reward Token: {data['rewardToken']}")
+        print(f"   Total Addresses: {len(data['rewards'])}")
+        
+        return data
+        
+    except requests.RequestException as e:
+        print(f"❌ ERROR: Failed to fetch data from URL: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"❌ ERROR: Invalid JSON response: {e}")
+        return None
+
+
+def calculate_user_rewards(reward_data: Dict[str, Any], decimals: int = 18):
+    """
+    Calculate and print the amount each user would receive (divided by 1e18)
+    """
+    print(f"\n=== User Reward Amounts ===")
+    
+    if not reward_data or "rewards" not in reward_data:
+        print("No reward data available")
+        return
+    
+    total_amount = 0
+    user_totals = {}
+    
+    for address, seasons in reward_data["rewards"].items():
+        user_total = 0
+        for reason, season_data in seasons.items():
+            amount_wei = int(season_data["amount"])
+            amount_tokens = amount_wei / (10 ** decimals)
+            user_total += amount_tokens
+        
+        user_totals[address] = user_total
+        total_amount += user_total
+    
+    # Print sorted by amount (descending)
+    sorted_users = sorted(user_totals.items(), key=lambda x: x[1], reverse=True)
+    
+    for address, amount in sorted_users:
+        print(f"{address}: {amount:,.6f} tokens")
+    
+    print(f"\n{'='*60}")
+    print(f"Total Amount Distributed: {total_amount:,.6f} tokens")
+    print(f"{'='*60}")
+    
+    return total_amount
+    
+def check_campaign_rewards(campaign_id: str, expected_total: float, decimals: int = 18):
+    """
+    Check if the campaign has enough budget for the expected total rewards
+    """
+    print(f"\n=== Checking Campaign Rewards ===")
+    
+    url = f"https://api.merkl.xyz/v4/campaigns/{campaign_id}"
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        
+        total_budget_wei = int(data.get("amount", "0"))
+        total_budget_tokens = total_budget_wei / (10 ** decimals)
+        
+        print(f"Campaign ID: {campaign_id}")
+        print(f"Total Budget: {total_budget_tokens:,.6f} tokens")
+        print(f"Expected Total Rewards: {expected_total:,.6f} tokens")
+        
+        if total_budget_tokens >= expected_total:
+            print("✅ The campaign has enough budget for the expected rewards.")
+        else:
+            print("❌ The campaign does NOT have enough budget for the expected rewards.")
+        
+    except requests.RequestException as e:
+        print(f"❌ ERROR: Failed to fetch campaign metrics: {e}")
+    except json.JSONDecodeError as e:
+        print(f"❌ ERROR: Invalid JSON response: {e}")
+
+
+if __name__ == "__main__":
+    # Example URLs - replace with actual URLs
+    data_url = "https://gist.githubusercontent.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw"
+    reward_url = "https://gist.github.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3/raw"
+    decimals = 18  # Adjust if reward token has different decimals
+    campaign_id = "3141666711044140572" # Leave empty if campaign not created yet. If filled with the campaign DB ID, the script will check if the amounts match and if you have enough budget in the campaign.
+    
+    print("=" * 60)
+    print("URL Format Validation Script")
+    print("=" * 60)
+    
+    # Validate data URL
+    data_result = validate_data_url(data_url)
+    
+    # Validate reward URL
+    reward_result = validate_reward_url(reward_url)
+    
+    # If reward URL is valid, calculate user amounts
+    if reward_result:
+        total_amount = calculate_user_rewards(reward_result, decimals)
+        # If campaign ID is provided, check campaign rewards
+        if campaign_id and total_amount is not None and campaign_id.strip() != "":
+            check_campaign_rewards(campaign_id, total_amount, decimals)
+    
+    print("\n" + "=" * 60)
+    print("Validation Complete")
+    print("=" * 60)
+```
+</details>
+
 ### ⚠️ Important Note
 
 Merkl applies a 0.5% fee to this type of campaigns. This fee is added on top of the total airdropped amount, ensuring recipients receive the full intended distribution.
