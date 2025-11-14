@@ -4,7 +4,7 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 # Glossary
 
-## [APR](technical-overview.md#focus-opportunity-page)
+## [APR](technical-overview.md#apr)
 
 ## [Blacklist](features.md#blacklisting)
 
@@ -18,7 +18,7 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 ## [Cross-chain rewards](features.md#cross-chain-campaigns)
 
-## [Daily rewards](technical-overview.md#focus-opportunity-page)
+## [Daily rewards](technical-overview.md#daily-rewards)
 
 ## [Dashboard (Merkl App)](technical-overview.md#merkl-app)
 
@@ -54,7 +54,7 @@ description: Here you'll find the key terms used across Merkl's products and exp
 
 ## [Reward update](technical-overview.md#reward-updates)
 
-## [TVL](technical-overview.md#focus-opportunity-page)
+## [TVL](technical-overview.md#tvl)
 
 ## [Variable reward rate campaign](distributions.md#variable-reward-rate-campaigns)
 

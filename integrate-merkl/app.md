@@ -88,6 +88,12 @@ https://api.merkl.xyz/v4/campaigns?tokenSymbol={symbol}
 
 Example for campaigns distributing $PYTH: [`https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH`](https://api.merkl.xyz/v4/campaigns?tokenSymbol=PYTH)
 
+**Excluding sub-campaigns** - Find all campaigns except sub-campaigns created by parent campaigns due to [reward forwarding](../merkl-mechanisms/reward-forwarding.md)
+
+```
+https://api.merkl.xyz/v4/campaigns?excludeSubCampaigns=true
+```
+
 ## Retrieving Both Campaign and Opportunity Data
 
 The `campaigns` endpoint provides campaign-specific information but not upstream opportunity data. Similarly, querying for an opportunity doesn't include downstream campaign details. To retrieve all information in a single request:
