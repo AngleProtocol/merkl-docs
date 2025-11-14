@@ -182,7 +182,7 @@ You can now use the raw URL to initialize the campaign: `https://gist.githubuser
 
 ### Create the campaign
 
-You now have everything you need to create the campaign. You will need to choose the start and end dates of the campaign and commit the airdropped amount upfront.
+You now have everything you need to create the campaign. You will need to choose the start and end dates of the campaign and commit the airdroped amount upfront.
 
 {% hint style="info" %}
 
