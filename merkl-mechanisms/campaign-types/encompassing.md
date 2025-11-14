@@ -156,6 +156,7 @@ Here is an example data JSON using a gist:
 [https://gist.githubusercontent.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw](https://gist.githubusercontent.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw)
 
 {% hint style="warning" %}
+
 **Important** You need to give us a **raw** URL of a **public** gist.
 
 **Creating a public gist:** Go to [https://gist.github.com/](https://gist.github.com/), fill in the data and select `Create public gist`
