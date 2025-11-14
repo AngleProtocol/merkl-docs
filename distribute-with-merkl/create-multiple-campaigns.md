@@ -18,10 +18,9 @@ Next, find the `DatabaseId` of the template campaign(s) you will be using to der
 
 ### 2. Prepare the multiple campaigns payload
 
-This [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) will be how you’ll be able to build a batch using your selected template `DatabaseId` value(s) (from Step 1) and base parameters across all your campaign.
+This [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) will be how you’ll be able to build a batch using your selected template `DatabaseId` value(s) (from Step 1) and base parameters across all your campaigns.
 
-Request body structure (annoted)
-
+Request body structure (annotated)
 ```json
 {
   "creatorAddress": "0x...", // address in checksum that will execute the payload (base parameter)
@@ -34,8 +33,7 @@ Request body structure (annoted)
       {
         "amount": "85372895000000000000000", // in decimals
         "targetToken": "0x...", // or poolAddress / poolId / market / evkAddress
-        "blacklist": [], // addresses to exclude (checksum)
-        "whitelist": [] // addresses to include (checksum)
+        "blacklist": [] // addresses to exclude (checksum)
       // ... override more parameters
       }
       // ...add more campaigns for this same template DatabaseId if needed
@@ -44,13 +42,14 @@ Request body structure (annoted)
   }
 }
 ```
+{% hint style="info" %}
+You can view all editable parameters for a given template by calling https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}. 
+{% endhint %}
 
-#### Base parameters
-
-**Base parameters apply to the entire batch**. If one campaign needs a different base parameter (e.g., different reward token), you'd need to create a separate payload.
+#### Base parameters 
+**Base parameters apply to the entire batch**. If one campaign needs a different base parameter (e.g., different reward token), you'd need to create a separate payload. 
 
 The base parameters are:
-
 - `creatorAddress`: the address creating the campaigns
 - `rewardToken`: the token used for rewards for all campaigns
 - `distributionChainId`: the chainId where campaigns will run
@@ -60,62 +59,59 @@ The base parameters are:
 Note: you can go to this [page](https://www.unixtimestamp.com/) to retrieve the right Unix timestamps.
 
 ##### Per-campaign override parameters
-
 Per-campaign overrides go under `campaignsParams`. Supported fields include:
+ - `amount`: amount of rewards to be distributed in a campaign
+ - `computeChainId`: input the id of a chain while making sure it's a chain we already support. Supported chains can be found on our [status page](https://app.merkl.xyz/status)
+ - `blacklist`: the list of addresses you want to exclude from the campaign
+ - `whitelist`: the list of addresses you want to include in the campaign (excluding all others)
+ - `distributionMethodParameters`: depending on your distribution type
 
-- `amount`: amount of rewards to be distributed in a campaign
-- `computeChainId`: input the id of a chain while making sure it's a chain we already support. Supported chains can be found on our [status page](https://app.merkl.xyz/status)
-- `blacklist`: the list of addresses you want to exclude from the campaign
-- `whitelist`: the list of addresses you want to include in the campaign (excluding all others)
-- `distributionMethodParameters`: depending on your distribution type
-  - Variable reward rate:
-
-```
+Variable reward rate:
+```json
 "distributionMethodParameters": {
                     "distributionMethod": "DUTCH_AUCTION"
                   } 
 ```
 
-  - Fixed APR rate:
-
-```
+Fixed APR rate: 
+    
+ ```json
  "distributionMethodParameters": {
-                    "distributionMethod": "FIX_APR",
-                    "distributionSettings": {
-                        "apr": "0.1",
-                        "rewardTokenPricing": true,
-                        "targetTokenPricing": true
-                    }
-                  }  
+        "distributionMethod": "FIX_APR",
+        "distributionSettings": {
+            "apr": "0.08",
+            "targetToken": "0x3048925B3EA5A8C12eeCCcb8810F5F7544dB54af",
+            "rewardTokenPricing": true,
+            "targetTokenPricing": true,
+        }
+    }
 ```
 
-  - Capped APR rate:
 
+Capped APR rate: 
+ ```json
+"distributionMethodParameters": {
+        "distributionMethod": "MAX_APR",
+        "distributionSettings": {
+            "apr": "1",
+            "targetToken": "0xA9d17f6D3285208280a1Fd9B94479c62e0AABa64",
+            "rewardTokenPricing": true,
+            "targetTokenPricing": true,
+        }
+    }
 ```
- "distributionMethodParameters": {
-                    "distributionMethod": "MAX_APR",
-                    "distributionSettings": {
-                        "apr": "0.1",
-                        "rewardTokenPricing": true,
-                        "targetTokenPricing": true
-                    }
-                  }  
-```
-
 **The best practice is to use a template campaign with the same distribution type as the one you plan to use**. Yet, even though we don’t recommend doing so, you can still edit the distributionType (variable, fixed, capped) of the template campaign. If you wish to do so, please **reach out to us directly to ensure your parameters are correct!**
+
 
 For Fixed/Capped APR, please contact us to confirm when rewardTokenPricing and targetTokenPricing should be true or false.
 
 #### Per-campaign override parameters (campaign-specific)
-
 Here is the list of the relevant parameters depending on the campaign type used as a template:
 
 **ERC20LOGPROCESSOR campaigns - CampaignType: 18** (e.g., `DatabaseId`: 8270489034958466914)
-
 - `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns), or the 0x address of the LP token for the underlying incentivized v2 pool
 
 **UniV3 campaigns - CampaignType: 2** (e.g., `DatabaseId`: 9427880006586247706)
-
 - `poolAddress`: the 0x address of the incentivized pool
 - `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
 - `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
@@ -123,7 +119,6 @@ Here is the list of the relevant parameters depending on the campaign type used 
 - `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
 
 **UniV4 campaigns - CampaignType: 13** (e.g., `DatabaseId`: 14050222419773482936)
-
 - `poolId`: the 0x address of the incentivized pool
 - `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
 - `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
@@ -131,24 +126,19 @@ Here is the list of the relevant parameters depending on the campaign type used 
 - `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
 
 **Morpho single token campaigns - CampaignType: 57** (e.g., `DatabaseId`: 3011317640800818752)
-
 - `targetToken`: the 0x address of the token supplied on any Morpho Market
 
 **Euler supply campaigns - CampaignType: 12** (e.g., `DatabaseId`: 16912425279432080078)
-
 - `evkAddress`: the 0x address of the incentivized vault
 
 **Euler borrow campaigns - CampaignType: 12** (e.g., `DatabaseId`: 17331543524323336682)
-
 - `evkAddress`: the 0x address of the incentivized vault
 
 Once you have completed all the parameters, you can generate the payload.
 
 #### Example
-
 You want to generate the payload for the following campaigns:
-
-- 2 UniswapV3 campaigns (template `DatabaseId`: 9427880006586247706)
+-  2 UniswapV3 campaigns (template `DatabaseId`: 9427880006586247706)
 - 1 Morpho (supply at the market level) campaign with a fixed rate of 5% APR (template `DatabaseId`: 6937583984928148176) 
 - 1 Aave (supply side) campaign with a capped APR of 10% (template `DatabaseId`: 711211603263558496)
 
@@ -230,19 +220,19 @@ If you're planning to launch several campaigns simultaneously — for example, a
 
 To get started, you’ll need to provide:
 
-- The assets you'd like to incentivize
-- Any customization options you'd like to apply (you can read more about supported customization options [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
+* The assets you'd like to incentivize
+* Any customization options you'd like to apply (you can read more about supported customization options [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
 
 Once provided, we’ll save this configuration on our end and generate the corresponding **keys** needed to launch your campaigns in bulk. We will share with you these keys via a GitHub Gist.
 
 Once your configuration is set, you’ll be able to create multiple campaigns at once, all sharing the same following base parameters:
 
-- `program`: Provided by us – the internal ID of your incentive program
-- `creator`: The Safe address that will execute the campaign payload
-- `rewardToken`: In checksum format
-- `distributionChainId`: The chain where the rewards will be distributed
-- `startTimestamp`: Campaign start time (Unix)
-- `endTimestamp`: Campaign end time (Unix)
+* `program`: Provided by us – the internal ID of your incentive program
+* `creator`: The Safe address that will execute the campaign payload
+* `rewardToken`: In checksum format
+* `distributionChainId`: The chain where the rewards will be distributed
+* `startTimestamp`: Campaign start time (Unix)
+* `endTimestamp`: Campaign end time (Unix)
 
 This setup is particularly useful for protocols or chains running recurring or large-scale programs. For example, a chain running a coordinated incentive program may want to incentivize its DEXes, lending protocols, vaults, and more — all with aligned campaign durations and launch timing.
 
@@ -255,18 +245,18 @@ To use it:
 1. Input the base parameters listed above.
 2. In the request body, paste the JSON file with the **keys and placeholder amounts** we provided via GitHub Gist. You can find an example below in the example section.
 3. For each key:
-   - Replace the placeholder amount with the number of tokens you want to allocate (in raw units).
-   - Use the correct number of decimals (e.g., `5000000000000000000` for 5 tokens if the token has 18 decimals).
-   - **If you do not plan to incentivize a specific key, do not set the amount to `0`. Instead, remove the key entirely from the JSON.**
+   * Replace the placeholder amount with the number of tokens you want to allocate (in raw units).
+   * Use the correct number of decimals (e.g., `5000000000000000000` for 5 tokens if the token has 18 decimals).
+   * **If you do not plan to incentivize a specific key, do not set the amount to `0`. Instead, remove the key entirely from the JSON.**
 4. Click Send. If the payload is successfully generated, you’ll be able to download it. If not, there may be an error, feel free to reach out to us — we’ll help troubleshoot.
 5. Download the generated payload and drag it into the Safe Transaction Builder to execute it.
 
-#### Example
+### Example
 
 Let’s say you’re a chain and want to incentivize:
 
-- 5 Uniswap pools
-- 2 Euler vaults
+* 5 Uniswap pools
+* 2 Euler vaults
 
 You would send us the addresses of the pools and vaults you want to incentivize. Once received, we’ll configure your setup and return the associated keys via a GitHub Gist.
 
@@ -300,7 +290,7 @@ Then proceed with the steps outlined in the Payload Generation section above.
 
 ### Considerations Before Generating a Payload
 
-- **Minimum Rewards Threshold:** Each campaign must meet the minimum hourly token distribution (typically ≥ \~$1/hour). If a campaign in the payload falls below this threshold, the payload will not be generated and will return an error message.
-- **Duplicate Campaigns:** If you're reusing the same keys to increase rewards for an existing campaign, you’ll need to modify the `startTimestamp` or `endTimestamp` slightly (e.g., by 1 second) to avoid a duplicate campaign error.
-- **Payload Size Limitations:** If your payload is too large, Safe may fail to execute the transaction. In that case, split your campaigns into multiple smaller batches. Creating up to \~20 campaigns at once typically works fine.
-- **Decimal Precision:** Ensure the amounts you distribute match the token's decimals. For example, for an 18-decimal token, `1 token = 1000000000000000000`.
+* **Minimum Rewards Threshold:** Each campaign must meet the minimum hourly token distribution (typically ≥ ~$1/hour). If a campaign in the payload falls below this threshold, the payload will not be generated and will return an error message.
+* **Duplicate Campaigns:** If you're reusing the same keys to increase rewards for an existing campaign, you’ll need to modify the `startTimestamp` or `endTimestamp` slightly (e.g., by 1 second) to avoid a duplicate campaign error.
+* **Payload Size Limitations:** If your payload is too large, Safe may fail to execute the transaction. In that case, split your campaigns into multiple smaller batches. Creating up to \~20 campaigns at once typically works fine.
+* **Decimal Precision:** Ensure the amounts you distribute match the token's decimals. For example, for an 18-decimal token, `1 token = 1000000000000000000`.
