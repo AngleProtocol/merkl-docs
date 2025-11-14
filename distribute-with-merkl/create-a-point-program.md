@@ -26,7 +26,7 @@ To have Merkl track activity on a protocol or token of your choice, you need to 
 
 Therefore, to run a point program with Merkl, you’ll need a token that serves as the distribution unit when instructing the system what to track.
 
-Merkl provides a template [PointToken.sol](https://github.com/AngleProtocol/merkl-contracts/blob/main/contracts/partners/tokenWrappers/PointToken.sol) for such mock tokens. For any point campaign, we can also deploy and mint a mock point token for you on the chain of your choice (typically a low-cost chain). For your mock token, you can also configure:
+Merkl provides a template [PointToken.sol](https://github.com/AngleProtocol/merkl-contracts/blob/main/contracts/partners/tokenWrappers/PointToken.sol) for such point tokens. For any point campaign, we can also deploy and mint a mock point token for you on the chain of your choice (typically a low-cost chain). For your point token, you can also configure:
 
 - The token’s name and symbol
 - The logo you’d like to use
@@ -35,26 +35,32 @@ Keep in mind that the chain where you deploy campaigns is independent of the cha
 
 Once deployed and whitelisted, this point token will be equivalent to an API key you can use to start tracking campaigns on Merkl.
 
-### 1. Create campaigns using mock tokens to launch computation
+### 1. Create campaigns using point tokens to launch computation
 
-Once you've got your mock point token, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 mock token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
+Once you've got your mock point token, you can setup campaigns on Merkl that mirror your intended logic (e.g., “1 point token per \$1,000 deposited on this pool”). Campaigns can be [created programmatically](./create-a-campaign.md) with simple scripts, and, just like any other Merkl campaign, you have access to extensive [customization options](../merkl-mechanisms/customization-options.md) for how results are computed.
 
-**Allocations.** Each campaign requires a maximum allocation of mock tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation. **We recommend setting a cap of 3 billion points**, this will ensure that:
+**Allocations.** Each campaign requires a maximum allocation of point tokens. If you don’t want a hard cap, avoid entering an excessively large number (e.g., trillions of tokens), as this can break Merkl’s invariants and prevent proper computation. **We recommend setting a cap of 3 billion points**, this will ensure that:
 - everyone with more than $1 will earn points
 - you have a big enough budget to not have your campaign end early. 
 You can set a higher budget, but only do so if you know that your campaign will distribute more than 3 billion points.
 
-**Duration.** When setting up your campaigns, you’ll also need to set a start and end date. Even if your points program is meant to last 6 months, we recommend creating shorter campaigns and renewing them periodically. Campaign parameters are difficult to change once live, so shorter durations give you flexibility to adjust as needed.
+**Duration:** When setting up your campaigns, you’ll also need to set a start and end date. Even if your points program is meant to last 6 months, we recommend creating shorter campaigns and renewing them periodically. Campaign parameters are difficult to change once live, so shorter durations give you flexibility to adjust as needed.
 
-**Forwarders.** Merkl has [a forwarder system](../merkl-mechanisms/reward-forwarding.md). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
+**Forwarders:** Merkl has [a forwarder system](../merkl-mechanisms/reward-forwarding.md). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
 
-**Fixed reward rate campaigns.** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 mock token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
+**Fixed reward rate campaigns:** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 point token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
 
-**CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
+{% hint style="info" %}
+**Understanding the associated virtual APR for points**: If you are reasoning in terms of points APR (meaning the APR in points if a point was worth $1):
+ - Rewarding 1 point per $1 per day is equivalent to a 36500% APR (100% per day multiplied by 365)
+ - Rewaring 1 point per $1000 per day is equivalent to 35.5% APR (0.1% per day multiplied by 365)
+{% endhint %}
+
+**CLAMM campaigns:**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
 
 <figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in [the Points section](https://app.merkl.xyz/?tokenType=POINT&sort=tvl-desc) of the Merkl app.</p></figcaption></figure>
 
-The campaigns you create will distribute **non-transferable mock tokens**. Users cannot claim these tokens through the Merkl UI—they exist purely for tracking purposes.
+The campaigns you create will distribute **non-transferable point tokens**. Users cannot claim these tokens through the Merkl UI—they exist purely for tracking purposes.
 
 {% hint style="warning" %}
 **Important**: All points data displayed in the Merkl frontend is informational only. Leaderboard rankings and point totals shown in the app should not be considered final, as projects retain full control to adjust allocations based on their own criteria before conducting airdrops or distributing rewards.
@@ -71,7 +77,7 @@ Using the Merkl API, you can fetch:
 - The list of eligible addresses across one or all your campaigns
 - Each address’s relative contribution to the pool or protocol being tracked
 
-Reward amounts are expressed in units of the mock token you configured.
+Reward amounts are expressed in units of the point token you configured.
 
 **Calculating total points**: When retrieving rewards from the API, each user's total points are calculated by adding the `amount` and `pending` fields together. Both fields represent computed values that you can use immediately for your points system.
 
@@ -85,9 +91,9 @@ Below are some of the most useful API routes for accessing your campaign results
 
 - Retrieve all campaigns created by your address at `https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>`\
   (e.g. [https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701](https://api.merkl.xyz/v4/campaigns?creatorAddress=0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701))
-- Get the reward breakdown in mock token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
+- Get the reward breakdown in point token units for all the campaigns you created at `https://api.merkl.xyz/v4/rewards?chainId=&campaignId=<YOUR_CAMPAIGN_ID>`\
    (e.g. [https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c](https://api.merkl.xyz/v4/rewards?chainId=100&campaignId=0x83adc24c9644324beebd26e6e2a7b9ffc14ce40d1d7cde309854ef79c9485c4c))
-- Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your mock token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
+- Alternatively, Merkl also provides a route that returns the list of all addresses that have ever been rewarded with a specific reward token. You can use this endpoint with your point token to retrieve the full set of participants across all your campaigns along with their relative contribution. (e.g [https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0](https://api.merkl.xyz/v4/rewards/token/?chainId=999&address=0x0A04dc9cBf6cf3BB216f24a501994eFfB2Aa8F6f&items=100&page=0)). Beware that if you created campaigns that you then cancelled with a given reward token, the results of these campaigns will also be factored in the output of this API route.
 
 {% hint style="info" %}
 **Important: Understanding the `chainId` parameter**
@@ -101,9 +107,9 @@ This is because Merkl's API organizes rewards by the reward token's deployment c
 
 ### **3. Normalize and customize**
 
-All results from the Merkl API are expressed in mock token units. Before allocating points to your users, you can renormalize these results to fit your specific rules.
+All results from the Merkl API are expressed in point token units. Before allocating points to your users, you can renormalize these results to fit your specific rules.
 
-For example, if one campaign distributes 1 point per \$1,000 deposited in Protocol A, and another does the same for Protocol B, you can apply different multipliers for each protocol. Suppose you want a 5× multiplier for Protocol B: if address A earned 1 mock token from the second campaign, you can assign 5 points to that address.
+For example, if one campaign distributes 1 point per \$1,000 deposited in Protocol A, and another does the same for Protocol B, you can apply different multipliers for each protocol. Suppose you want a 5× multiplier for Protocol B: if address A earned 1 point token from the second campaign, you can assign 5 points to that address.
 
 This approach gives you full control over point allocation, letting you exclude certain campaigns, selectively boost rewards for specific users, or otherwise customize your system.
 
