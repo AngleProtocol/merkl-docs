@@ -173,7 +173,7 @@ You must first initialize the gist of the reward URL. You do this by creating a 
   "rewardToken": "<ADDRESS OF THE REWARD TOKEN YOU WILL AIRDROP IN CHECKSUM>",
   "rewards": {}
 }
-````
+```
 
 Here is an example if you want to airdrop [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) on Ethereum: [https://gist.github.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3/42921f90a660bfb7db8b6f890adc725644ad1490](https://gist.github.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3/42921f90a660bfb7db8b6f890adc725644ad1490)
 
@@ -216,7 +216,7 @@ The gist should look like this:
     }
   }
 }
-````
+```
 
 Here is an example for the WETH airdrop: [https://gist.github.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3](https://gist.github.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3)
 
