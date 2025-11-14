@@ -51,6 +51,15 @@ Linked opportunities are displayed in the Merkl App to help users understand the
 
 **Important note about subcampaign/linked opportunity visibility:** Subcampaigns are only created after the Merkl engine has completed its first computation cycle on the main campaign. This means that immediately after a campaign is created, the API cannot report any subcampaigns or linked opportunities, even though the engine will process them once the first compute runs. For example, if you renew a campaign, the new campaign will initially show no APR on linked opportunities right after it starts, even though the previous campaign displayed this information. The linked opportunities and their APRs will appear once the first engine computation completes.
 
+### Example of linked opportunities:
+When the Merkl Engine runs a campaign’s calculations, it scans for smart contracts it recognizes (e.g., vaults) to avoid distributing to smart contracts directly. If any are detected, the Merkl Engine creates child campaigns accordingly. In the below example, the main campaign incentivizes USDC supply across all whitelisted Morpho markets on Ethereum.
+<figure><img src="../.gitbook/assets/linked-opportunities-example.png" alt=""><figcaption></figcaption></figure>
+
+Each child campaign has its own APR, determined by the vault’s allocation to the whitelisted Morpho markets. You can click any child opportunity to view the APR associated with this child campaign and check whether other campaigns are stacked on top of this opportunity.
+<figure><img src="../.gitbook/assets/child-campaign-example.png" alt=""><figcaption></figcaption></figure>
+
+It’s also possible for a child campaign to have its own children. In this example, because the Prime Vault sources a part of its liquidity from Karpathkey Morpho Vault V2, the Merkl Engine creates an additional child campaign for that flow.
+
 ## Enabling Forwarding
 
 Forwarding is enabled by default for most campaign types on Merkl. If your campaign requires integration with a new forwarder or support for a different protocol, please contact our team.
