@@ -203,13 +203,16 @@ The gist should look like this:
   "rewardToken": "<ADDRESS OF THE REWARD TOKEN YOU WILL AIRDROP IN CHECKSUM>",
   "rewards": {
     "<ADDRESS OF USER 1>": {
-      "season1": "1000000000000000000" 
+      "season1": "1000000000000000000",
+      "timestamp": "1741370722"
     },
     "<ADDRESS OF USER 2>": {
-      "season1": "4000000000000000000" 
+      "season1": "4000000000000000000",
+      "timestamp": "1741370722"
     },
     "<ADDRESS OF USER 3>": {
-      "season1": "6000000000000000000" 
+      "season1": "6000000000000000000",
+      "timestamp": "1741370722"
     }
   }
 }
@@ -221,6 +224,7 @@ Here is an example for the WETH airdrop: [https://gist.github.com/BaptistG/e9bc9
 {% hint style="warning" %}
 
 **Important:** 
+- Your gihtub account has the power to update the gist, so if you get your account compromised, someone could airdrop themselves everything.
 - You must update this gist at least 12 hours before the scheduled end of the campaign. If you don't, our engine might not distribute the rewards and send you all the tokens back at the end of the campaign instead of running the airdrop
 - Don't forget that Merkl will take a small fee on the tokens you send, you can't distrubte more than what is in our distributor, to verify the amount, go to the campaign page on our app.
 
