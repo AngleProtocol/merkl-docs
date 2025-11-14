@@ -147,7 +147,7 @@ Tokens become claimable at the next [reward update](../technical-overview.md#rew
 
 If you are running a quest on your app where users become eligible to rewards after a while, it can be beneficial to create an encompassing campaign because your quest will be exposed to our user base.
 
-However, you probably don't need to go through the trouble of developing us a real API endpoint for us because the data is almost static (only updated once, at the end of the quest).
+However, you probably don't need to go through the trouble of developing a real API endpoint for us because the data is almost static (only updated once, at the end of the quest).
 
 What we recommend is doing this via gists.
 
