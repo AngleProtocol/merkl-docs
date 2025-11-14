@@ -182,7 +182,7 @@ You can now use the raw URL to initialize the campaign: `https://gist.githubuser
 
 ### Create the campaign
 
-You now have everything you need to create the campaign. You will need to choose the start and end dates of the campaign and commit the airdroped amount upfront.
+You now have everything you need to create the campaign. You will need to choose the start and end dates of the campaign and commit the airdropped amount upfront.
 
 {% hint style="info" %}
 
@@ -190,12 +190,12 @@ If you don't airdrop all the tokens by the end of the campaign, you will automat
 
 {% endhint %}
 
-### Airdroping the rewards
+### Airdropping the rewards
 
 Before the end of the campaign you created, you need to update the rewards endpoint to tell Merkl to airdrop the rewards. To do so you should go to your gist, click edit and add data. For example, if I want to airdrop the following rewards of my token that has 18 decimals to 3 users where:
-- User 1 get 1 token
+- User 1 gets 1 token
 - User 2 gets 4 tokens
-- User 4 gets 6 tokens
+- User 3 gets 6 tokens
 
 The gist should look like this:
 
@@ -225,8 +225,8 @@ Here is an example for the WETH airdrop: [https://gist.github.com/BaptistG/e9bc9
 {% hint style="warning" %}
 
 **Important:** 
-- Your gihtub account has the power to update the gist, so if you get your account compromised, someone could airdrop themselves everything.
+- Your GitHub account has the power to update the gist, so if you get your account compromised, someone could airdrop themselves everything.
 - You must update this gist at least 12 hours before the scheduled end of the campaign. If you don't, our engine might not distribute the rewards and send you all the tokens back at the end of the campaign instead of running the airdrop
-- Don't forget that Merkl will take a small fee on the tokens you send, you can't distrubte more than what is in our distributor, to verify the amount, go to the campaign page on our app.
+- Don't forget that Merkl will take a small fee on the tokens you send, you can't distribute more than what is in our distributor, to verify the amount, go to the campaign page on our app.
 
 {% endhint %}
