@@ -44,6 +44,8 @@ Merkl automatically blacklists addresses that display suspicious behavior, such 
 
 If you believe you were blacklisted by mistake, please open a support ticket with your wallet address and an explanation of your activity. Our team will review your case.
 
+Learn more about blacklists in [the case of concentrated liquidity campaigns](../merkl-mechanisms/campaign-types/concentrated-liquidity-mechanisms.md#-fake-volume-attacks-detection)
+
 ## An opportunity I'm interested in is marked as linked to other opportunities in the Merkl App. What does this mean?
 
 When an opportunity is marked as linked to other opportunities, it means your deposits flow through multiple layers of contracts.
