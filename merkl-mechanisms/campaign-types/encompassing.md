@@ -204,16 +204,22 @@ The gist should look like this:
   "rewardToken": "<ADDRESS OF THE REWARD TOKEN YOU WILL AIRDROP IN CHECKSUM>",
   "rewards": {
     "<ADDRESS OF USER 1>": {
-      "season1": "1000000000000000000",
-      "timestamp": "1741370722"
+      "season1": {
+        "amount": "1000000000000000000",
+        "timestamp": "1741370722"
+      }
     },
     "<ADDRESS OF USER 2>": {
-      "season1": "4000000000000000000",
-      "timestamp": "1741370722"
+      "season1": {
+        "amount": "4000000000000000000",
+        "timestamp": "1741370722"
+      }
     },
     "<ADDRESS OF USER 3>": {
-      "season1": "6000000000000000000",
-      "timestamp": "1741370722"
+      "season1": {
+        "amount": "6000000000000000000",
+        "timestamp": "1741370722"
+      }
     }
   }
 }
