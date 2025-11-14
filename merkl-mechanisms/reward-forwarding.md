@@ -58,7 +58,7 @@ In the below example, the main campaign incentivizes USDC supply across all whit
 Each child campaign has its own APR, determined by the vault’s allocation to the whitelisted Morpho markets. You can click on any child opportunity to view the APR associated with this child campaign, and check whether other campaigns are stacked on top of this opportunity. In the screenshot below, you can see the Prime Vault opportunity page, which displays the APR from the USDC Morpho campaign. 
 <figure><img src="../.gitbook/assets/child-campaign-example.png" alt=""><figcaption></figcaption></figure>
 
-A child campaign can also have its own children. In this example, because the Prime Vault sources a part of its liquidity from Karpathkey Morpho Vault V2, the Merkl Engine creates an additional child campaign for that flow.
+A child campaign can also have its own children. In this example, because the Prime Vault sources a part of its liquidity from Karpatkey Morpho Vault V2, the Merkl Engine creates an additional child campaign for that flow.
 
 ## Enabling Forwarding
 
