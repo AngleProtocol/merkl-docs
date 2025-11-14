@@ -91,9 +91,56 @@ The **dispute period** is a security window of 1-2 hours following each reward u
 **Strengthen the network**: More active dispute bots make the system more secure. Need help setting one up? Reach out to the Merkl team—we're happy to assist!
 {% endhint %}
 
-## 📌 Other Key Merkl components and concepts
+## 📌 Key Merkl Concepts
 
-Beyond the Merkl engine and dispute bots described above, Merkl consists of several core components that interact to facilitate reward distribution.
+### Opportunity vs. Campaign
+
+Understanding the distinction between **opportunities** and **campaigns** is fundamental to how Merkl operates.
+
+* **Campaign**: An individual incentive program created by a campaign creator with specific parameters including [a distribution type](distributions.md), [a scoring type](scoring.md), [customization options](customization-options.md), a budget amount, and a duration. Each campaign has [a specific type](campaign-types/) and targets a particular onchain behavior (e.g., providing liquidity in a pool, holding a token, lending/borrowing)—this targeted behavior represents an opportunity.
+* **Opportunity**: A specific asset (e.g., pool, vault) and its associated action (e.g., depositing liquidity, borrowing assets) that can be incentivized. Multiple campaigns can run in parallel on a single opportunity, meaning users performing one onchain action can simultaneously earn rewards from several different campaigns.\
+  Example: _Providing liquidity to a SushiSwap V3 pool is an opportunity that may have multiple active campaigns offering different rewards._
+
+<figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
+
+### Main Metrics
+
+The following metrics are fundamental to Merkl and appear throughout all Merkl user-facing components: the API, the app, and Merkl Studio.
+
+#### Daily Rewards
+
+Daily rewards for a campaign represent the total amount of tokens or points distributed each day, shared among all eligible users of the campaign. While this number is typically accurate, it may be estimated for certain [distribution types](../merkl-mechanisms/distributions.md) (such as fixed and capped reward rates) that distribute based on the eligible TVL in the campaign.
+
+When multiple campaigns run on an opportunity, including subcampaigns, the daily rewards displayed for the opportunity represent the sum of all individual campaign daily rewards.
+
+#### TVL
+
+The Total Value Locked (TVL) of a campaign on Merkl represents the total value of **eligible** assets for the campaigns on the opportunity. This reflects only the assets that meet the campaign's eligibility criteria, for example:
+
+* if a campaign includes a blacklist, the TVL excludes the value held by blacklisted addresses.
+* for certain campaign types like net-lending campaigns, the TVL represents the net supplied TVL (i.e., total supplied minus borrowed), as this reflects only the liquidity that's eligible for rewards.
+
+In these cases, Merkl may initially approximate the TVL and requires an engine compute to display the accurate TVL for the campaign. As such, the TVL may not be accurate at launch for newly created campaigns. In some situations also, the TVL might be over or underestimated due to approximations for computational simplicity or because exact computing logic has not yet been implemented.
+
+Overall, the TVL serves as a key indicator of the market or pool's size and liquidity depth.
+
+When multiple campaigns run on the same opportunity with different eligibility rules, the displayed TVL for the opportunity is **the maximum eligible TVL** across all campaigns.
+
+#### APR
+
+The Annual Percentage Rate (APR) within Merkl represents the yearly return from participating in a campaign, expressed as a percentage. Depending on the [distribution type](../merkl-mechanisms/distributions.md), the APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
+
+For [distribution types](../merkl-mechanisms/distributions.md) where the APR is not defined as fixed, the main APR for a campaign is calculated as:
+
+$$
+\frac{\text{Daily Rewards} \times 365}{\text{Eligible TVL}}
+$$
+
+At the level of an opportunity, the APR is the sum of the APRs of the campaigns ([including the subcampaigns](../merkl-mechanisms/reward-forwarding.md#linked-opportunities)) running on this opportunity.
+
+## 🧱 User-Facing Components
+
+Beyond the Merkl engine and dispute bots, the Merkl ecosystem includes several user-facing components that work together to enable campaign creation, reward tracking, and claiming.
 
 ### Merkl Smart Contracts
 
@@ -112,16 +159,6 @@ Smart contract addresses, categorized by chain are listed [here](https://app.mer
 ### Merkl API
 
 [Merkl API](../integrate-merkl/app.md) provides real-time access to Merkl data, including rewards, APRs, merkle proofs, and analytics. This API enables any frontend to integrate Merkl seamlessly.
-
-### Opportunity vs. Campaign
-
-Understanding the distinction between **opportunities** and **campaigns** is fundamental to how Merkl operates.
-
-* **Campaign**: An individual incentive program created by a campaign creator with specific parameters including [a distribution type](distributions.md), [a scoring type](scoring.md), [customization options](customization-options.md), a budget amount, and a duration. Each campaign has [a specific type](campaign-types/) and targets a particular onchain behavior (e.g., providing liquidity in a pool, holding a token, lending/borrowing)—this targeted behavior represents an opportunity.
-* **Opportunity**: A specific asset (e.g., pool, vault) and its associated action (e.g., depositing liquidity, borrowing assets) that can be incentivized. Multiple campaigns can run in parallel on a single opportunity, meaning users performing one onchain action can simultaneously earn rewards from several different campaigns.\
-  Example: _Providing liquidity to a SushiSwap V3 pool is an opportunity that may have multiple active campaigns offering different rewards._
-
-<figure><img src="../.gitbook/assets/Group 23.png" alt=""><figcaption><p>An opportunity page with several incentive campaigns running on it</p></figcaption></figure>
 
 ### Merkl App
 
@@ -142,22 +179,14 @@ The interface is organized around several types of pages:
 Among all these pages, the **Opportunity page** is central, as this is where you’ll find the campaigns created.
 {% endhint %}
 
-#### Focus - Opportunity page
-
-On an Opportunity page, you'll find key metrics that aggregate all active campaigns for that opportunity:
-
-* **APR (Annual Percentage Rate)**: The yearly return from participating in the opportunity, expressed as a percentage. The APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
-* **TVL (Total Value Locked)**: The total value of **eligible** assets for the campaigns on the opportunity. This reflects only the assets that meet the campaign's eligibility criteria—for example, if a campaign includes a blacklist, the TVL excludes the value held by blacklisted addresses. The TVL serves as a key indicator of the market/pool's size and liquidity depth, and directly impacts the opportunity's APR. When multiple campaigns run on the same opportunity with different eligibility rules, the displayed TVL is the maximum eligible TVL across all campaigns.
-* **Daily Rewards**: The total amount of tokens or points distributed each day, shared among all eligible users across the campaigns on the opportunity. When multiple campaigns run on an opportunity, the displayed daily rewards represent the sum of all individual campaign daily rewards.
-
-<figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
-
-Detailed info for each campaign running on the opportunity is available across several tabs:
+Detailed info for each campaign running on an opportunity is available across several tabs:
 
 * **Overview:** global details such as dates, APR, and eligibility rules,…
 * **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
 * **Leaderboard**: list of addresses participating in the opportunity
-* [**Linked opportunities**](glossary.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
+* [**Linked opportunities**](./reward-forwarding.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
+
+<figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
 
 ### Merkl Studio
 

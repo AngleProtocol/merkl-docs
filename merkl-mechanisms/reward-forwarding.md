@@ -49,6 +49,8 @@ For example, a vault managing user funds (child opportunity) may deposit liquidi
 
 Linked opportunities are displayed in the Merkl App to help users understand the full reward potential of their deposits and make informed decisions about where to allocate liquidity.
 
+**Important note about subcampaign/linked opportunity visibility:** Subcampaigns are only created after the Merkl engine has completed its first computation cycle on the main campaign. This means that immediately after a campaign is created, the API cannot report any subcampaigns or linked opportunities, even though the engine will process them once the first compute runs. For example, if you renew a campaign, the new campaign will initially show no APR on linked opportunities right after it starts, even though the previous campaign displayed this information. The linked opportunities and their APRs will appear once the first engine computation completes.
+
 ## Enabling Forwarding
 
 Forwarding is enabled by default for most campaign types on Merkl. If your campaign requires integration with a new forwarder or support for a different protocol, please contact our team.

@@ -105,7 +105,7 @@ https://api.merkl.xyz/v4/opportunities?campaigns=true
 ```
 
 {% hint style="info" %}
-When multiple campaigns run in parallel on the same opportunity with different rules (e.g., different blacklists), their eligible TVL values may differ. When querying an opportunity, the TVL shown is the maximum eligible TVL across all underlying campaigns, and the APR is the sum of all campaign APRs.
+Learn more about [how TVLs, APRs, and daily rewards are computed](../merkl-mechanisms/technical-overview.md#main-metrics) and why they may differ between the campaign and opportunity levels.
 {% endhint %}
 
 ### About Campaign IDs
@@ -255,13 +255,13 @@ The claimable amount equals `amount - claimed`.
 {% endhint %}
 
 {% hint style="warning" %}
-`pending` rewards update more frequently (about every 2 hours) than the `amount`. Integrating `pending` rewards in your app lets you show more timely updates to your users. However, always display pending rewards separately to avoid confusion because `pending` rewards are not claimable. Also note that whenever tokens are credited on-chain, the `pending` rewards reset to zero because they are added to the `amount`.
+`pending` rewards update more frequently (about every 2 hours) than the `amount`. Integrating `pending` rewards in your app lets you show more timely updates to your users. However, always display pending rewards separately to avoid confusion because `pending` rewards are not claimable. Also note that whenever tokens are credited onchain, the `pending` rewards reset to zero because they are added to the `amount`.
 {% endhint %}
 
 **Important notes about this endpoint:**
 
 * **Historical data**: The API doesn't return time-series data. To build historical datasets, take daily snapshots of the API responses.
-*   **Caching behavior**: This route is cached. If called immediately after a user claims rewards, the data may be stale. Use the `reloadChainId` parameter to force a cache refresh:
+* **Caching behavior**: This route is cached. If called immediately after a user claims rewards, the data may be stale. Use the `reloadChainId` parameter to force a cache refresh:
 
     ```
     https://api.merkl.xyz/v4/users/{address}/rewards?chainId=324&reloadChainId=324
