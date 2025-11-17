@@ -252,7 +252,7 @@ https://api.merkl.xyz/v4/users/{address}/rewards?chainId={chain_id}
 
 Example for a single chain - Checking a user's rewards on zkSync: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324)
 
-Example for multiple chains - Checking a user's rewards on zkSync, Ethereum and Arbitrum: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324,1,42161)
+Example for multiple chains - Checking a user's rewards on zkSync, Ethereum and Arbitrum: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324,1,42161`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324,1,42161)
 
 **This endpoint returns:**
 
