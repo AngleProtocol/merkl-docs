@@ -22,6 +22,10 @@ The opportunities endpoint provides key metrics like APR, TVL, and daily rewards
 
 Multiple filters are available to query opportunities. For a complete list, see the [opportunities endpoint documentation](https://api.merkl.xyz/docs#tag/opportunities/GET/v4/opportunities/).
 
+{% hint style="info" %}
+The `apr` field in each opportunity is already converted to a percentage (`"apr": 50.41` is 50.41% APR)
+{% endhint %}
+
 **Recommended filters:**
 
 **By Protocol ID** - Find all opportunities for a specific protocol:
@@ -246,7 +250,9 @@ To retrieve reward data for a specific user, use the following endpoint:
 https://api.merkl.xyz/v4/users/{address}/rewards?chainId={chain_id}
 ```
 
-Example - Checking a user's rewards on zkSync: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324)
+Example for a single chain - Checking a user's rewards on zkSync: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324)
+
+Example for multiple chains - Checking a user's rewards on zkSync, Ethereum and Arbitrum: [`https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324`](https://api.merkl.xyz/v4/users/0x4F2BF7469Bc38d1aE779b1F4affC588f35E60973/rewards?chainId=324,1,42161)
 
 **This endpoint returns:**
 
