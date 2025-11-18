@@ -130,6 +130,28 @@ If the operator sets `creator = address(0)` or `creator = operatorAddress`:
 **Important**: Always set the `creator` parameter to the address that granted the allowance and has the predeposited balance. Otherwise, the system will fall back to the operator's wallet, and the transaction will revert if the operator has insufficient tokens.
 {% endhint %}
 
+**⚠️ Insufficient predeposited balance or allowance:**
+
+If the operator correctly sets the `creator` parameter but encounters one of these issues:
+
+* **Insufficient predeposited balance**: The creator's `creatorBalance[creatorAddress][token]` is insufficient or zero
+* **Allowance exceeded**: The operator's allowance has been exceeded or was never granted
+
+The system will attempt a **fallback**: it tries to take tokens from the operator's wallet instead.
+
+* ✅ If the operator has sufficient tokens in their wallet → the transaction succeeds (using the operator's tokens), and **the operator becomes the creator** of the campaign
+* ❌ If the operator's wallet balance is insufficient → the transaction will **revert**
+
+⚠️ The creator should ensure:
+* Sufficient tokens are predeposited before an operator attempts to create a campaign
+* The operator has been granted sufficient allowance to spend the predeposited tokens
+
+Otherwise, the campaign creation will fall back to using the operator's wallet balance, and **the operator will become the campaign creator** instead of the intended creator address, which may not be the intended behavior.
+
+{% hint style="info" %}
+Before creating a campaign, verify that the creator has predeposited enough tokens to cover the campaign amount plus fees, and that the operator has sufficient allowance. If multiple campaigns are created in sequence, track both the remaining predeposited balance and remaining allowance to avoid unintended fallback behavior or failed transactions.
+{% endhint %}
+
 ## 🧪 Test campaigns
 
 You may want to start testing the flow and integrating our data before launching your campaign. To learn more about test campaigns and how to use our test token (aglaMerkl), please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
