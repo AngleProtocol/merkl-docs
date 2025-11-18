@@ -37,6 +37,128 @@ You can check whether your token is already whitelisted by setting it as the rew
 Make sure you have all the tokens you want to distribute in your wallet when creating a campaign
 {% endhint %}
 
+## 💳 Token Predeposit System
+
+Merkl offers a **predeposit system** that allows campaign creators to pre-fund their campaign tokens directly into the `DistributionCreator` contract. This system provides several advantages:
+
+* **Gas optimization**: Pre-fund tokens once and use them for multiple campaigns without repeated approvals
+* **Better token management**: Centralize your campaign tokens in one place
+* **Operator delegation**: Enable operators to manage campaigns on your behalf using predeposited balances
+
+### How it works
+
+The predeposit system uses two key mechanisms:
+
+1. **Creator Balance** (`creatorBalance`): Stores tokens predeposited by each campaign creator
+2. **Creator Allowance** (`creatorAllowance`): Allows creators to grant spending permissions to operators
+
+{% hint style="info" %}
+**Finding the DistributionCreator contract address**: You can find the `DistributionCreator` contract address for your chain on the [Merkl Status page](https://app.merkl.xyz/status). Select your chain and click on **Creator** to view the contract address and access it directly in your chain's block explorer.
+{% endhint %}
+
+### How to deposit tokens
+
+The most common workflow is for a Safe (multisig) or individual wallet to deposit tokens for themselves and then grant permissions to operators. Here's how it works:
+
+#### Step 1: Approve the contract
+
+First, approve the `DistributionCreator` contract to spend your tokens:
+
+```solidity
+IERC20(token).approve(distributionCreatorAddress, amount)
+```
+
+{% hint style="tip" %}
+**Tip**: You can approve `type(uint256).max` for unlimited approval if you plan to deposit multiple times—this is more gas efficient.
+{% endhint %}
+
+#### Step 2: Deposit tokens into your creator balance
+
+Call `increaseTokenBalance()` to transfer tokens from your wallet into your creator balance:
+
+```solidity
+increaseTokenBalance(yourAddress, rewardToken, amount)
+```
+
+**Parameters:**
+
+* `yourAddress`: the Safe or wallet address
+* `rewardToken`: The token address you want to deposit 
+* `amount`: The amount of tokens to deposit
+
+**Example:**
+
+```solidity
+// Your Safe wants to deposit 10,000 aglaMerkl
+IERC20(aglaMerkl).approve(distributionCreator, type(uint256).max);
+distributionCreator.increaseTokenBalance(safeAddress, aglaMerkl, 10000e18);
+// ✅ 10,000 aglaMerkl transferred from Safe wallet
+// ✅ creatorBalance[safeAddress][aglaMerkl] = 10000e18
+```
+
+#### Withdrawing tokens
+
+To withdraw tokens from your creator balance back to your wallet:
+
+```solidity
+decreaseTokenBalance(yourAddress, rewardToken, recipientAddress, amount)
+```
+
+**Example:**
+
+```solidity
+// Withdraw 5,000 aglaMerkl from your creator balance to your Safe
+distributionCreator.decreaseTokenBalance(safeAddress, aglaMerkl, safeAddress, 5000e18);
+// ✅ creatorBalance[safeAddress][aglaMerkl] decreased by 5000e18
+// ✅ 5,000 aglaMerkl transferred back to Safe wallet
+```
+
+#### Depositing for others
+
+Regular users can deposit tokens on behalf of other addresses, but the tokens will always come from the caller's wallet:
+
+```solidity
+// Alice deposits tokens but credits Bob's balance
+distributionCreator.increaseTokenBalance(Bob, aglaMerkl, 1000e18);
+// ⚠️ Tokens are taken from Alice's wallet, not Bob's
+// ✅ creatorBalance[Bob][aglaMerkl] = 1000e18
+```
+
+**Note**: Once tokens are credited to Bob's balance, Bob becomes the owner and only Bob (or a governor) can withdraw them.
+
+#### Step 3: Grant allowances to operators
+
+Once you have tokens in your creator balance, you can grant spending permissions to operators:
+
+```solidity
+increaseTokenAllowance(yourAddress, operator, rewardToken, amount)
+```
+
+**Parameters:**
+
+* `yourAddress`: Your address (the owner of the balance)
+* `operator`: The operator address you want to authorize
+* `rewardToken`: The token for which to grant allowance
+* `amount`: Maximum amount the operator can spend from your balance
+
+**Example:**
+
+```solidity
+// Grant operator permission to spend up to 5,000 aglaMerkl
+distributionCreator.increaseTokenAllowance(safeAddress, operatorAddress, aglaMerkl, 5000e18);
+// ✅ creatorAllowance[safeAddress][operatorAddress][aglaMerkl] = 5000e18
+// ✅ Operator can now create campaigns using up to 5,000 aglaMerkl from your balance
+```
+
+### Setting up operators
+
+To delegate campaign management to operators, you need to grant **two separate permissions**:
+
+1. **Campaign management permission**: `toggleCampaignOperator(user, operator)` - Authorizes operators to create and manage campaigns (toggle on/off)
+2. **Token spending allowance**: `increaseTokenAllowance(user, operator, rewardToken, amount)` - Grants operators permission to spend your predeposited tokens
+
+Both permissions are required for an operator to fully manage campaigns using your predeposited balance. See the [Campaign Operators section](campaign-management.md#campaign-operators) for more details.
+
 ## 🧪 Test campaigns
 
 You may want to start testing the flow and integrating our data before your point program starts. Merkl is not deployed on testnets, but you can still run test campaigns using our test token: **aglaMerkl**.
