@@ -23,7 +23,7 @@
 ## Distribute with Merkl
 
 * [Before you start](distribute-with-merkl/before-you-start.md)
-* [Create a campaign using Merkl studio](distribute-with-merkl/create-a-campaign.md)
+* [Create a campaign](distribute-with-merkl/create-a-campaign.md)
 * [Create multiple campaigns](distribute-with-merkl/create-multiple-campaigns.md)
 * [Create a campaign from a multisig or Gnosis Safe](distribute-with-merkl/create-your-campaign-from-a-multisig-or-gnosis-safe.md)
 * [Create your campaign from a DAO](distribute-with-merkl/create-your-campaign-from-dao.md)
