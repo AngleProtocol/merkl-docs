@@ -6,8 +6,6 @@ description: Step-by-step guide for creating a campaign using Merkl Studio
 
 Merkl Studio is your command center to launch, manage, and optimize incentive campaigns. This guide walks you through the process of creating a campaign step by step.
 
-<figure><img src="../.gitbook/assets/studioDashboard.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
-
 {% hint style="info" %}
 Merkl Studio doesn't support all campaign types and customization options offered by Merkl. If you need features not available in the Studio or have questions, please reach out to us.
 {% endhint %}
@@ -20,7 +18,7 @@ Connect the wallet holding the rewards you want to distribute. Ensure you're con
 
 <figure><img src="../.gitbook/assets/Group 8.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Capture d'écran 2025-06-10 à 17.42.03 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ConnectWallet.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 You can create cross-chain campaigns with Merkl—incentivize an asset on one chain while distributing rewards on another (e.g., incentivize a WETH-USDC pool on Ethereum by distributing WBTC on Base).
@@ -36,7 +34,7 @@ Click the _Create Campaign_ button to begin setting up your campaign.
 
 Choose your incentive category by clicking on the appropriate card.
 
-<figure><img src="../.gitbook/assets/Capture d'écran 2025-06-10 à 17.42.21 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IncentiveCategory.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 To incentivize Aave lending positions, Uniswap V2, or similar liquidity pools, use the _Token Holding_ campaign category.
