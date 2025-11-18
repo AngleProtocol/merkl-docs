@@ -34,7 +34,7 @@
 
 ## Earn with Merkl
 
-* [Earn rewards](earn-with-merkl/earning-with-merkl.md)
+* [Earn rewards - User guide](earn-with-merkl/earning-with-merkl.md)
 * [Merkl User FAQ](earn-with-merkl/faq-earn.md)
 
 ## Integrate Merkl
