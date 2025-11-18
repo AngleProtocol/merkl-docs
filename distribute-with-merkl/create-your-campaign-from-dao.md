@@ -4,9 +4,7 @@ description: Guide to create a Merkl Campaign from a DAO
 
 # Create Your Campaign from a DAO
 
-You can create campaigns directly using onchain smart contracts with Merkl.
-
-This guide covers different methods for doing so.
+You can create campaigns directly using onchain smart contracts with Merkl. This guide covers different methods for doing so.
 
 ## Prerequisites
 
