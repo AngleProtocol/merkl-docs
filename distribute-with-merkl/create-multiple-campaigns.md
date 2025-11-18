@@ -2,32 +2,41 @@
 description: Everything you need to know to create multiple campaigns in batch on Merkl
 ---
 
-# Create multiple campaigns
+# Create Multiple Campaigns
 
-A multiple campaigns payload lets you create multiple campaigns sharing the same base parameters (creator address, reward token, reward chain, start and end time) in a single transaction. Batching will save you both time and gas.
+While [Merkl Studio](https://studio.merkl.xyz) is ideal for creating standard campaigns, Merkl also provides tooling for campaign creators who need to create multiple (and potentially advanced) campaigns at once.
 
-## 🔀 Step-by-step process for multiple campaigns creation
+This feature enables campaign creators to launch multiple campaigns sharing the same base parameters (creator address, reward token, reward chain, start and end time) in a single transaction.
 
-This method uses **existing campaigns as templates**. You select past campaigns that are as close as possible to what you want, tweak a few parameters, generate a payload, and execute it with a Safe.
+All batch campaign creation methods involve generating a payload. This guide walks you through payload generation. Once you have a payload, refer to [Create a Campaign from a Multisig or Gnosis Safe](./create-your-campaign-from-a-multisig-or-gnosis-safe.md) for execution instructions.
 
-### 1. Retrieve the campaign templates you want to use
+## Method 1: Override Parameters from Existing Template Campaigns
 
-Choose past campaigns as close as possible to what you plan to launch. We strongly recommend matching both the [campaign type](https://docs.merkl.xyz/merkl-mechanisms/campaign-types) and the [distribution type](https://docs.merkl.xyz/merkl-mechanisms/distributions). This minimizes edits and reduces the chance of errors.
+This method uses **existing campaigns as templates**. You select past campaigns that closely match what you want, tweak a few parameters, generate a payload, and execute it with a Safe.
 
-Next, find the `DatabaseId` of the template campaign(s) you will be using to derive your payload(s). To do this, go to the [Merkl app](https://app.merkl.xyz/), select an opportunity and open the "Advanced Tab". Then copy your template `DatabaseId`.
+### 1. Retrieve Campaign Templates
 
-### 2. Prepare the multiple campaigns payload
+Choose past campaigns as close as possible to what you plan to launch. We strongly recommend matching both the [campaign type](../merkl-mechanisms/campaign-types/README.md) and the [distribution type](../merkl-mechanisms/distributions.md). This minimizes edits and reduces the chance of errors.
 
-This [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) will be how you’ll be able to build a batch using your selected template `DatabaseId` value(s) (from Step 1) and base parameters across all your campaigns.
+Next, find the `DatabaseId` of the template campaign(s) you will use to derive your payload(s). To do this:
 
-Request body structure (annotated)
+1. Go to the [Merkl app](https://app.merkl.xyz/)
+2. Select an opportunity and open the "Advanced" tab
+3. Copy your template `DatabaseId`
+
+### 2. Prepare the Campaign Payload
+
+Use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) to build a batch using your selected template `DatabaseId` value(s) (from Step 1) and updated parameters for all your campaigns.
+
+**Request body structure:**
+
 ```json
 {
-  "creatorAddress": "0x...", // address in checksum that will execute the payload (base parameter)
-  "rewardToken": "0x...", // checksum format (base parameter)
-  "distributionChainId": 1, // chain where rewards will be distributed (base parameter)
-  "startTimestamp": 1756512000, // Unix seconds (base parameter)
-  "endTimestamp": 1756598400, // Unix seconds (base parameter)
+  "creatorAddress": "0x...", // address in checksum format
+  "rewardToken": "0x...", // checksum format
+  "distributionChainId": 1, // chain where rewards will be distributed
+  "startTimestamp": 1756512000, // Unix seconds
+  "endTimestamp": 1756598400, // Unix seconds
   "campaignsParams": {
     "9427880006586247706": [// <-- template DatabaseId from Step 1
       {
@@ -42,104 +51,99 @@ Request body structure (annotated)
   }
 }
 ```
+
+#### Understanding Parameters
+
+The endpoint uses two types of parameters:
+
+**1. Base Parameters** (apply to all campaigns in the batch)
+
+These parameters are shared across all campaigns. If you need different values for some campaigns (e.g., different reward token), create a separate payload.
+
+- `creatorAddress`: The address creating the campaigns
+- `rewardToken`: The token used for rewards across all campaigns
+- `distributionChainId`: The chain ID where campaigns will run
+- `startTimestamp`: The start date of the campaigns (in Unix timestamp format)
+- `endTimestamp`: The end date of the campaigns (in Unix timestamp format)
+
 {% hint style="info" %}
-You can view all editable parameters for a given template by calling https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}. 
+You can use [this converter](https://www.unixtimestamp.com/) to convert dates to Unix timestamps.
 {% endhint %}
 
-#### Base parameters 
-**Base parameters apply to the entire batch**. If one campaign needs a different base parameter (e.g., different reward token), you'd need to create a separate payload. 
+**2. Per-Campaign Parameters** (specific to each campaign)
 
-The base parameters are:
-- `creatorAddress`: the address creating the campaigns
-- `rewardToken`: the token used for rewards for all campaigns
-- `distributionChainId`: the chainId where campaigns will run
-- `startTimestamp`: the start date of the campaigns (in Unix timestamp format)
-- `endTimestamp`: the end date of the campaigns (in Unix timestamp format)
+These parameters go under `campaignsParams` and let you customize each campaign. The available fields vary by campaign type. You can view all parameters that you can play on for a specific campaign using this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}).
 
-Note: you can go to this [page](https://www.unixtimestamp.com/) to retrieve the right Unix timestamps.
+Example: Campaign ID `13756496363331257690` - [https://api.merkl.xyz/v4/config/13756496363331257690](https://api.merkl.xyz/v4/config/13756496363331257690)
 
-##### Per-campaign override parameters
-Per-campaign overrides go under `campaignsParams`. Supported fields include:
- - `amount`: amount of rewards to be distributed in a campaign
- - `computeChainId`: input the id of a chain while making sure it's a chain we already support. Supported chains can be found on our [status page](https://app.merkl.xyz/status)
- - `blacklist`: the list of addresses you want to exclude from the campaign
- - `whitelist`: the list of addresses you want to include in the campaign (excluding all others)
- - `distributionMethodParameters`: depending on your distribution type
+**Common fields (available for most campaign types):**
+
+- `amount`: Amount of rewards to be distributed in the campaign
+- `computeChainId`: ID of a supported chain (see our [status page](https://app.merkl.xyz/status))
+- `blacklist`: List of addresses to exclude from the campaign
+- `whitelist`: List of addresses to include (excluding all others)
+- `distributionMethodParameters`: Distribution type configuration (see below)
+
+**Distribution method options:**
 
 Variable reward rate:
 ```json
-"distributionMethodParameters": {
-                    "distributionMethod": "DUTCH_AUCTION"
-                  } 
+{
+  "distributionMethod": "DUTCH_AUCTION"
+} 
 ```
 
-Fixed APR rate: 
-    
- ```json
- "distributionMethodParameters": {
-        "distributionMethod": "FIX_APR",
-        "distributionSettings": {
-            "apr": "0.08",
-            "targetToken": "0x3048925B3EA5A8C12eeCCcb8810F5F7544dB54af",
-            "rewardTokenPricing": true,
-            "targetTokenPricing": true,
-        }
-    }
+Fixed APR rate:
+```json
+{
+  "distributionMethod": "FIX_APR",
+  "distributionSettings": {
+      "apr": "0.08",
+      "targetToken": "0x3048925B3EA5A8C12eeCCcb8810F5F7544dB54af",
+      "rewardTokenPricing": true,
+      "targetTokenPricing": true
+  }
+}
 ```
 
-
-Capped APR rate: 
- ```json
-"distributionMethodParameters": {
-        "distributionMethod": "MAX_APR",
-        "distributionSettings": {
-            "apr": "1",
-            "targetToken": "0xA9d17f6D3285208280a1Fd9B94479c62e0AABa64",
-            "rewardTokenPricing": true,
-            "targetTokenPricing": true,
-        }
-    }
+Capped APR rate:
+```json
+{
+  "distributionMethod": "MAX_APR",
+  "distributionSettings": {
+      "apr": "1",
+      "targetToken": "0xA9d17f6D3285208280a1Fd9B94479c62e0AABa64",
+      "rewardTokenPricing": true,
+      "targetTokenPricing": true
+  }
+}
 ```
-**The best practice is to use a template campaign with the same distribution type as the one you plan to use**. Yet, even though we don’t recommend doing so, you can still edit the distributionType (variable, fixed, capped) of the template campaign. If you wish to do so, please **reach out to us directly to ensure your parameters are correct!**
 
+{% hint style="warning" %}
+**Best practice**: Use a template campaign with the same distribution type as the one you plan to use. While you can change the distribution type (variable, fixed, capped) from the template, we don't recommend this. If you need to do so, **please reach out to us directly to ensure your parameters are correct.**
 
-For Fixed/Capped APR, please contact us to confirm when rewardTokenPricing and targetTokenPricing should be true or false.
+For Fixed/Capped APR campaigns, contact us to confirm when `rewardTokenPricing` and `targetTokenPricing` should be true or false.
+{% endhint %}
 
-#### Per-campaign override parameters (campaign-specific)
-Here is the list of the relevant parameters depending on the campaign type used as a template:
+**Campaign-specific fields (examples by type):**
 
-**ERC20LOGPROCESSOR campaigns - CampaignType: 18** (e.g., `DatabaseId`: 8270489034958466914)
-- `targetToken`: the 0x address of the token you want to incentivize holding (for token holding campaigns), or the 0x address of the LP token for the underlying incentivized v2 pool
-
-**UniV3 campaigns - CampaignType: 2** (e.g., `DatabaseId`: 9427880006586247706)
-- `poolAddress`: the 0x address of the incentivized pool
-- `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
-- `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
-- `weightToken1`: the weight of rewards for holding token1, in 10,000 basis points (e.g., 2500 = 25%)
-- `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
-
-**UniV4 campaigns - CampaignType: 13** (e.g., `DatabaseId`: 14050222419773482936)
-- `poolId`: the 0x address of the incentivized pool
-- `weightFees`: the weight of rewards based on total fees generated, in 10,000 basis points (e.g., 5000 = 50%)
-- `weightToken0`: the weight of rewards for holding token0, in 10,000 basis points (e.g., 2500 = 25%)
-- `weightToken1`: the weight of rewards for holding token1, in 10,000 basis points (e.g., 2500 = 25%)
-- `isOutOfRangeIncentivized`: a boolean parameter. Set to true if you want to reward out-of-range positions
-
-**Morpho single token campaigns - CampaignType: 57** (e.g., `DatabaseId`: 3011317640800818752)
-- `targetToken`: the 0x address of the token supplied on any Morpho Market
-
-**Euler supply campaigns - CampaignType: 12** (e.g., `DatabaseId`: 16912425279432080078)
-- `evkAddress`: the 0x address of the incentivized vault
-
-**Euler borrow campaigns - CampaignType: 12** (e.g., `DatabaseId`: 17331543524323336682)
-- `evkAddress`: the 0x address of the incentivized vault
-
-Once you have completed all the parameters, you can generate the payload.
+- **ERC20LOGPROCESSOR (CampaignType: 18)** - Example [DatabaseId: 8270489034958466914](https://api.merkl.xyz/v4/config/8270489034958466914)
+  - `targetToken`: Address of the token to incentivize holding, or the LP token address for V2 pools
+- **UniV3 (CampaignType: 2)** - Example [DatabaseId: 9427880006586247706](https://api.merkl.xyz/v4/config/9427880006586247706)
+  - `poolAddress`, `weightToken0`, `weightToken1`, `weightFees`
+- **UniV4 (CampaignType: 13)** - Example [DatabaseId: 14050222419773482936](https://api.merkl.xyz/v4/config/14050222419773482936)
+- **Morpho single token (CampaignType: 57)** - Example [DatabaseId: 3011317640800818752](https://api.merkl.xyz/v4/config/3011317640800818752)
+  - `targetToken`: Address of the token supplied on any Morpho Market
+- **Euler supply (CampaignType: 12)** - Example [DatabaseId: 16912425279432080078](https://api.merkl.xyz/v4/config/16912425279432080078)
+  - `evkAddress`: Address of the incentivized vault
+- **Euler borrow (CampaignType: 12)** - Example [DatabaseId: 17331543524323336682](https://api.merkl.xyz/v4/config/17331543524323336682)
 
 #### Example
-You want to generate the payload for the following campaigns:
--  2 UniswapV3 campaigns (template `DatabaseId`: 9427880006586247706)
-- 1 Morpho (supply at the market level) campaign with a fixed rate of 5% APR (template `DatabaseId`: 6937583984928148176) 
+
+You want to generate a payload for the following campaigns:
+
+- 2 Uniswap V3 campaigns (template `DatabaseId`: 9427880006586247706)
+- 1 Morpho (supply at the market level) campaign with a fixed rate of 5% APR (template `DatabaseId`: 6937583984928148176)
 - 1 Aave (supply side) campaign with a capped APR of 10% (template `DatabaseId`: 711211603263558496)
 
 When using the API endpoint, the body will look like this:
@@ -206,50 +210,93 @@ When using the API endpoint, the body will look like this:
 }
 ```
 
-### 3. Generate the multiple campaigns payload
+## Method 2: Using Campaign Configurations
 
-Then, call the endpoint to generate the Safe payload containing all campaigns. After downloading it, drag and drop that payload into Gnosis Safe Transaction Builder and execute it to create the campaigns. You can read more of this process in the [Create a campaign from a multisig or Gnosis Safe section](https://docs.merkl.xyz/distribute-with-merkl/create-your-campaign-from-a-multisig-or-gnosis-safe).
+This method allows you to generate a campaign payload using full campaign configurations rather than just overriding parameters from templates.
 
-After executing it, you're done! The campaigns typically appear in the Merkl app within ~1 hour. You can view the latest created campaigns here: https://app.merkl.xyz/?sort=lastCampaignCreatedAt-desc&tokenType=all
+### 1. Get Campaign Configuration
 
-## ⏭️ Create batch campaigns or multiple campaigns at once (deprecated method)
+Use this endpoint to retrieve a campaign configuration: [https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id})
 
-If you're planning to launch several campaigns simultaneously — for example, as part of a protocol-level program or a chain-wide initiative — please reach out to us on Telegram so we can better support you and fast-track the operational setup and onboarding. If we’re not already in contact, you can open a BD ticket on our [Discord](https://discord.gg/kZVG3T6Z)
+### 2. Adjust Parameters
 
-### Set up
+Modify the parameters in the configuration(s) according to your needs.
 
-To get started, you’ll need to provide:
+### 3. Preview Your Campaign (Optional)
 
-* The assets you'd like to incentivize
-* Any customization options you'd like to apply (you can read more about supported customization options [here](https://docs.merkl.xyz/merkl-mechanisms/hooks))
+You can simulate how your campaigns would appear after your payload is executed:
 
-Once provided, we’ll save this configuration on our end and generate the corresponding **keys** needed to launch your campaigns in bulk. We will share with you these keys via a GitHub Gist.
+- **Opportunity preview**: Call `https://api.merkl.xyz/v4/config/opportunity` with your campaign config in the body to see opportunity details (name, etc.)
+- **TVL preview**: Call `https://api.merkl.xyz/v4/config/tvl` to estimate TVL
 
-Once your configuration is set, you’ll be able to create multiple campaigns at once, all sharing the same following base parameters:
+### 4. Generate the Payload
 
-* `program`: Provided by us – the internal ID of your incentive program
-* `creator`: The Safe address that will execute the campaign payload
-* `rewardToken`: In checksum format
-* `distributionChainId`: The chain where the rewards will be distributed
-* `startTimestamp`: Campaign start time (Unix)
-* `endTimestamp`: Campaign end time (Unix)
+Call the endpoint `https://api.merkl.xyz/v4/config/encode/batch` to generate your payload.
 
-This setup is particularly useful for protocols or chains running recurring or large-scale programs. For example, a chain running a coordinated incentive program may want to incentivize its DEXes, lending protocols, vaults, and more — all with aligned campaign durations and launch timing.
+In the request body, enter your configurations as a list:
+
+```json
+[{
+    "distributionChainId": 56,
+    "campaignId": "0xcadb252f36c79aacbd6c96ce2af6cee374c2b0a0929ef6878525bee24987ed5e",
+    "amount": "5000000000000000000000000",
+    "computeChainId": 56,
+    "creator": "0x67C06896Efb9Ce0A14C32B597Fa8bAa3f2659e7D",
+    "startTimestamp": 1763636400,
+    "rewardToken": "0xEdBeBe204Ef070B6880E07A28b55edc7748C24BA",
+    "distributionMethodParameters": {
+        "distributionMethod": "DUTCH_AUCTION",
+        "distributionSettings": {}
+    },
+    "campaignType": 18,
+    "endTimestamp": 1764068400,
+    "blacklist": [],
+    "whitelist": [],
+    "forwarders": [],
+    "targetToken": "0x5029f49585D57ed770D2194841B5A0bE06BFc2ED"
+}]
+```
+
+## Method 3: Pre-Set Campaign Keys (Deprecated)
+
+{% hint style="warning" %}
+This method is deprecated. We recommend using Method 1 or Method 2 instead.
+{% endhint %}
+
+This method requires the Merkl team to pre-define campaigns in the backend. You then generate a payload by specifying the amount, dates, and chain for each pre-defined campaign.
+
+### Setup
+
+To get started, provide:
+
+- The assets you'd like to incentivize
+- Any [customization options](../merkl-mechanisms/customization-options.md) you'd like to apply
+
+We'll save this configuration and generate the corresponding **keys** needed to launch your campaigns in bulk, which we'll share via a GitHub Gist.
+
+Once configured, you'll be able to create multiple campaigns at once, all sharing the same base parameters:
+
+- `program`: Provided by us—the internal ID of your incentive program
+- `creator`: The Safe address that will execute the campaign payload
+- `rewardToken`: In checksum format
+- `distributionChainId`: The chain where rewards will be distributed
+- `startTimestamp`: Campaign start time (Unix timestamp)
+- `endTimestamp`: Campaign end time (Unix timestamp)
 
 ### Payload Generation
 
-You can generate your campaign payloads using this endpoint: [https://api.merkl.xyz/docs#tag/programpayload/POST/v4/program-payload/program/withAmounts](https://api.merkl.xyz/docs#tag/programpayload/POST/v4/program-payload/program/withAmounts).
+Generate your campaign payloads using this [endpoint](https://api.merkl.xyz/docs#tag/programpayload/POST/v4/program-payload/program/withAmounts).
 
 To use it:
 
 1. Input the base parameters listed above.
-2. In the request body, paste the JSON file with the **keys and placeholder amounts** we provided via GitHub Gist. You can find an example below in the example section.
+2. In the request body, paste the JSON file with the **keys and placeholder amounts** we provided via GitHub Gist (see example below).
 3. For each key:
    * Replace the placeholder amount with the number of tokens you want to allocate (in raw units).
    * Use the correct number of decimals (e.g., `5000000000000000000` for 5 tokens if the token has 18 decimals).
-   * **If you do not plan to incentivize a specific key, do not set the amount to `0`. Instead, remove the key entirely from the JSON.**
-4. Click Send. If the payload is successfully generated, you’ll be able to download it. If not, there may be an error, feel free to reach out to us — we’ll help troubleshoot.
-5. Download the generated payload and drag it into the Safe Transaction Builder to execute it.
+   * **If you do not plan to incentivize a specific key, remove it entirely from the JSON rather than setting the amount to `0`.**
+4. Click Send. If the payload is successfully generated, you'll be able to download it. If there's an error, reach out to us and we'll help troubleshoot.
+5. Download the generated payload
 
 ### Example
 
@@ -291,6 +338,6 @@ Then proceed with the steps outlined in the Payload Generation section above.
 ### Considerations Before Generating a Payload
 
 * **Minimum Rewards Threshold:** Each campaign must meet the minimum hourly token distribution (typically ≥ ~$1/hour). If a campaign in the payload falls below this threshold, the payload will not be generated and will return an error message.
-* **Duplicate Campaigns:** If you're reusing the same keys to increase rewards for an existing campaign, you’ll need to modify the `startTimestamp` or `endTimestamp` slightly (e.g., by 1 second) to avoid a duplicate campaign error.
+* **Duplicate Campaigns:** If you're reusing the same keys or configuration to increase rewards for an existing campaign, you’ll need to modify the `startTimestamp` or `endTimestamp` slightly (e.g., by 1 second) to avoid a duplicate campaign error.
 * **Payload Size Limitations:** If your payload is too large, Safe may fail to execute the transaction. In that case, split your campaigns into multiple smaller batches. Creating up to \~20 campaigns at once typically works fine.
 * **Decimal Precision:** Ensure the amounts you distribute match the token's decimals. For example, for an 18-decimal token, `1 token = 1000000000000000000`.

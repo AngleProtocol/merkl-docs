@@ -49,18 +49,6 @@ To get started, send us a message and we'll provide you with our test token. agl
 
 You can then create your test campaign using aglaMerkl tokens. While the campaign won't show up in the Merkl app, you'll be able to **check everything is working properly via the Merkl API**, using the campaign ID generated at creation. You can refer to the [API integration page](https://docs.merkl.xyz/integrate-merkl/app) for how to effectively use the API.
 
-{% hint style="warning" %}
-**Using `&test=true` with test tokens**
-
-When using test tokens like aglaMerkl in your campaigns, these tokens are automatically hidden from the Merkl frontend. To retrieve campaign data via the API for these test tokens, you must include the `&test=true` parameter in your API requests. This ensures that campaigns using test tokens will be included in the API response, as they are filtered out by default.
-
-For example, when retrieving campaigns created by your address:
-
-```
-https://api.merkl.xyz/v4/campaigns?creatorAddress=<YOUR_ADDRESS>&test=true
-```
-{% endhint %}
-
 Make sure to verify that:
 
 * distribution is functioning as expected
