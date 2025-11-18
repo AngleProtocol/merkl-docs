@@ -334,7 +334,7 @@ export const claim = async (chainId: number, signer: JsonRpcSigner) => {
 
 **Query optimization** - While many API parameters are optional, specifying additional filters can significantly improve query performance.
 
-**Test campaigns** - To retrieve data for test campaigns (using tokens like `aglaMerkl`), include the `&test=true` parameter in your requests. Learn more in the [Before you start guide](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns).
+**Test campaigns** - To retrieve data for test campaigns (using tokens like `aglaMerkl`), include the `&test=true` parameter in your requests.
 
 ## Benefit from TypeScript Typings
 

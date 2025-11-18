@@ -31,6 +31,6 @@ Contact the Merkl team to discuss commitment model options and unlock volume dis
 
 ## Unclaimed Rewards Policy
 
-Campaign creators on Merkl can [freely reallocate](../merkl-mechanisms/features.md) all unclaimed rewards once their campaign ends.
+Campaign creators on Merkl can [freely reallocate](../distribute-with-merkl/campaign-management.md#campaign-management) all unclaimed rewards once their campaign ends.
 
 One year after the campaign's end, if the campaign creators have not previously reallocated rewards and if there remain unclaimed rewards, Merkl reserves the right to reclaim them.

@@ -10,26 +10,8 @@ Merkl supports two different types of airdrops:
 {% hint style="info" %}
 Airdrops do not appear “live” like continuously computed campaigns because the Merkl Engine performs no ongoing calculation.\
 \
-To review your airdrop after creation, use this filtered view:\
+To review your airdrop in the main opportunities page after creation, use this filtered view:\
 [https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST\&sort=lastCampaignCreatedAt-desc](https://app.merkl.xyz/?status=LIVE%2CSOON%2CPAST\&sort=lastCampaignCreatedAt-desc)\
-\
-Note: As for any campaigns, it can take up to \~1 hour after creation before your airdrop campaign is visible in the Merkl app.
-{% endhint %}
-
-**All addresses indicated must be in checksummed!**
-
-## Airdrop timing
-
-Once an airdrop campaign is created and launched on Merkl, it usually takes up to **12 hours** before the **tokens become claimable** by users.
-
-{% hint style="warning" %}
-We recommend **waiting \~12 hours** after the campaign is created **before announcing to your community** that the airdrop is live.
-{% endhint %}
-
-Please note that the **campaign end date** on Merkl is **different from the airdrop claim end date**. Even after a campaign is marked as “ended” on the Merkl App, users can still claim their tokens via their Merkl dashboard.
-
-{% hint style="danger" %}
-The **campaign end date** on the Merkl App **cannot be modified**.
 {% endhint %}
 
 ## JSON airdrops
@@ -73,7 +55,9 @@ Example:
 * **rewardToken:** The token being distributed.
 * **rewards:** User rewards with recipient addresses and reasons for the rewards.
 
-### Important note
+**All addresses indicated must be in checksummed!**
+
+### Fees for airdrops
 
 Merkl applies a 0.5% fee to airdrop campaigns. This fee is added on top of the total airdropped amount, ensuring recipients receive the full intended distribution.
 
@@ -82,9 +66,38 @@ Merkl applies a 0.5% fee to airdrop campaigns. This fee is added on top of the t
 
 Our frontend automatically calculates the correct amount for you.
 
-### Distribution lag
+### Airdrop timing
 
-Airdropped tokens become claimable at the next [reward update](../technical-overview.md#reward-updates) on the target chain, which typically occurs within 8 hours. If you plan to announce the airdrop, we recommend waiting until the rewards are claimable to notify your users.
+Once an airdrop campaign is created and launched on Merkl, it usually takes up to **12 hours** before the **tokens become claimable** by users (as the airdrop becomes available at the next [reward update](../technical-overview.md#reward-updates) on the target chain).
+
+{% hint style="warning" %}
+We recommend until the rewards are claimable **to notify your community** that the airdrop is live.
+{% endhint %}
+
+As mentioned above, airdrops always appear as `PAST` on the Merkl app, with  **campaign end date** in the past. Note that the end date on the Merkl app is **different from the airdrop claim end date**: it is the date when new rewards stop distributing. Even after a campaign is marked as “ended” on the Merkl App, users can still claim their tokens via their Merkl dashboard.
+
+{% hint style="warning" %}
+The **campaign end date** on the Merkl App **cannot be modified**.
+{% endhint %}
+
+### Controlling Claim Dates with Token Wrappers
+
+As explained [in this page of our docs](../features.md#-infinite-customizability-with-token-wrappers), it is possible to distribute wrappers of standard ERC20 tokens using Merkl.
+
+In the context of an airdrop, we offer a wrapper type that allows you to retain the tokens you airdrop in your wallet and maintain full control over when they become claimable by users.
+
+Once your wrapper is deployed and you've minted wrapper tokens, the process works as follows:
+
+1. Create your airdrop campaign on Merkl, distributing your wrapper token instead of the underlying token you want to airdrop
+2. Wait for a reward update for the wrapper tokens to become claimable on Merkl
+3. The wrapper tokens are typically marked as test tokens, making them invisible on the frontend
+4. Users can only claim the actual tokens once you:
+   * Approve the wrapper token contract to spend the underlying token
+   * Hold the underlying tokens in your address
+
+This approach is particularly useful for TGE (Token Generation Event) processes where tokens must only become claimable after a specific date chosen by the campaign creator.
+
+From a user perspective, users only see the underlying token arriving in their wallet, not the wrapper token.
 
 ## Token balance airdrops
 

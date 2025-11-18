@@ -2,7 +2,7 @@
 description: Everything you need to know to create a campaign distributing a pre-TGE token with Merkl
 ---
 
-# Create a Campaign pre-TGE
+# Merkl for pre-TGE Tokens
 
 Merkl enables you to distribute tokens before they become transferable at TGE. This approach combines the best of both worlds: users can claim actual tokens (not just points), while you maintain control over transferability until your TGE.
 

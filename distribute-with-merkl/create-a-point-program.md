@@ -2,7 +2,7 @@
 description: Everything you need to know to create and manage a point program with Merkl
 ---
 
-# Create and manage a point program
+# Create and Manage a Point Program
 
 Merkl serves as a powerful indexing and computation engine for points programs, tracking onchain activity and calculating time-weighted user contributions. However, **Merkl does not mint or allocate points directly**—it provides the raw data and calculations that you can use however you see fit.
 
@@ -56,7 +56,7 @@ You can set a higher budget, but only do so if you know that your campaign will 
  - Rewaring 1 point per $1000 per day is equivalent to 35.5% APR (0.1% per day multiplied by 365)
 {% endhint %}
 
-**CLAMM campaigns:**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
+**CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
 
 <figure><img src="../.gitbook/assets/Group 25.png" alt=""><figcaption><p>Once created point campaigns appear in [the Points section](https://app.merkl.xyz/?tokenType=POINT&sort=tvl-desc) of the Merkl app.</p></figcaption></figure>
 
@@ -75,9 +75,17 @@ As noted earlier, Merkl does not mint points directly. Instead, you need to pars
 Using the Merkl API, you can fetch:
 
 - The list of eligible addresses across one or all your campaigns
-- Each address’s relative contribution to the pool or protocol being tracked
+- Each address's relative contribution to the pool or protocol being tracked
 
 Reward amounts are expressed in units of the point token you configured.
+
+{% hint style="info" %}
+**API Update Frequency**
+
+Once you create a campaign, API values update approximately **every 2 hours** when there are no delays. The schedule for API updates follows Merkl's [reward computation cycle](../merkl-mechanisms/technical-overview.md#reward-computation).
+
+If there is a delay in the computation process or any other issue with the campaign, the campaign will not move forward and its associated API values will not be updated until the issue is resolved. You can monitor computation status for any given campaign on the [Merkl status page](https://app.merkl.xyz/status).
+{% endhint %}
 
 **Calculating total points**: When retrieving rewards from the API, each user's total points are calculated by adding the `amount` and `pending` fields together. Both fields represent computed values that you can use immediately for your points system.
 
