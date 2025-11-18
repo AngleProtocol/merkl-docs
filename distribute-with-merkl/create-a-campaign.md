@@ -6,7 +6,7 @@ description: Step-by-step guide for creating a campaign using Merkl Studio
 
 Merkl Studio is your command center to launch, manage, and optimize incentive campaigns. This guide walks you through the process of creating a campaign step by step.
 
-<figure><img src="../.gitbook/assets/Capture d'écran 2025-06-10 à 17.41.52 1.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/studioDashboard.png" alt=""><figcaption><p>Merkl Studio homepage</p></figcaption></figure>
 
 {% hint style="info" %}
 Merkl Studio doesn't support all campaign types and customization options offered by Merkl. If you need features not available in the Studio or have questions, please reach out to us.
@@ -86,7 +86,7 @@ Regardless of the method you choose, you will need to complete these 3 steps:
 * Approve the tokens for transfer
 * Deposit the tokens
 
-#### Using an EOA:
+#### Using an EOA
 
 * Double-check your campaign configuration
 * Read and accept Merkl's Terms & Conditions by clicking the _Accept_ button and signing with your wallet
@@ -96,11 +96,8 @@ Regardless of the method you choose, you will need to complete these 3 steps:
 
 The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig, see [this guide](./create-your-campaign-from-a-multisig-or-gnosis-safe.md).
 
-## Campaign Launch Complete
 
-Congratulations! You have successfully launched your incentive campaign! 🎉
-
-Your campaign may take up to **one hour** to become visible on the frontend after creation.
+Once you've executed your transaction, your campaign may take up to **one hour** to become visible on the frontend after creation.
 
 {% hint style="note" %}
 It's expected for your campaign's **TVL and APR to show 0** at launch, and for the **leaderboard to appear empty**. The Merkl Engine needs a few hours to perform [the necessary computations](../merkl-mechanisms/technical-overview.md#reward-computation) before this data becomes available.
