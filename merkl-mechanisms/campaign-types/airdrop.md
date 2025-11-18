@@ -108,3 +108,7 @@ For this type of campaign, in addition to the reward amount, campaign creators m
 * Snapshot Date – The balance snapshot is taken at the last block before this date.
 * Distribution Date – The date on which rewards should be distributed.
 * Snapshot Name – A label for your snapshot.
+
+## Automatic claim implementation
+
+In certain cases, it may be relevant to implement automatic claiming for your airdrop recipients. If you're interested in implementing such a solution, please contact us.

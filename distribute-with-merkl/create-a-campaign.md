@@ -100,3 +100,36 @@ Once you've executed your transaction, your campaign may take up to **one hour**
 {% hint style="note" %}
 It's expected for your campaign's **TVL and APR to show 0** at launch, and for the **leaderboard to appear empty**. The Merkl Engine needs a few hours to perform [the necessary computations](../merkl-mechanisms/technical-overview.md#reward-computation) before this data becomes available.
 {% endhint %}
+
+## Creating campaigns on behalf of a creator
+
+When an operator creates a campaign on behalf of a creator, it's **critical** to set the correct `creator` parameter in the campaign parameters. The system will look for the predeposited balance and allowance based on this `creator` address.
+
+For complete setup instructions (how to predeposit tokens, authorize operators, and grant allowances), see the [Setting up operators section](../distribute-with-merkl/before-you-start.md#setting-up-operators) in Before you start.
+
+**Operator creates campaign:**
+
+```solidity
+CampaignParameters memory campaign = CampaignParameters({
+    creator: creatorAddress,  // ✅ MUST be the address that granted the allowance and has the predeposited balance!
+    // ... other parameters
+});
+
+distributionCreator.createCampaign(campaign);
+```
+
+**⚠️ Common mistake:**
+
+If the operator sets `creator = address(0)` or `creator = operatorAddress`:
+
+* ❌ System looks for `creatorBalance[operatorAddress][token]` = 0
+* ❌ Fallback → takes tokens from the operator's wallet instead
+* ⚠️ If the operator doesn't have sufficient tokens in their wallet, the transaction will revert
+
+{% hint style="warning" %}
+**Important**: Always set the `creator` parameter to the address that granted the allowance and has the predeposited balance. Otherwise, the system will fall back to the operator's wallet, and the transaction will revert if the operator has insufficient tokens.
+{% endhint %}
+
+## 🧪 Test campaigns
+
+You may want to start testing the flow and integrating our data before launching your campaign. To learn more about test campaigns and how to use our test token (aglaMerkl), please refer to the [Before you start](https://docs.merkl.xyz/distribute-with-merkl/before-you-start#test-campaigns) section.
