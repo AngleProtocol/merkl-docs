@@ -8,7 +8,7 @@ As a campaign manager, you have full control over your campaigns and can perform
 
 The Merkl Studio is where campaign managers can monitor and manage their campaigns.
 
-<figure><img src="../.gitbook/assets/Capture d'écran 2025-11-12 à 15.16.56 1.png" alt=""><figcaption><p>Dashboard view in Merkl Studio</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/DashboardView.png" alt=""><figcaption><p>Dashboard view in Merkl Studio</p></figcaption></figure>
 
 {% hint style="info" %}
 The Studio also helps you monitor campaign performance and track key metrics like APR and TVL. For advanced analytics and programmatic access, use the [Merkl API](../integrate-merkl/app.md).
