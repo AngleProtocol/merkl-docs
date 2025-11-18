@@ -1,53 +1,80 @@
 ---
-description: Everything you need to know to earn on Merkl
+description: Everything you need to know to earn rewards with Merkl
 ---
 
 # Earn with Merkl
 
-All yield opportunities using Merkl are listed at [app.merkl.xyz](https://app.merkl.xyz)
+{% hint style="warning" %}
+**Before your start**
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 11.47.52 1.png" alt=""><figcaption><p>The Merkl App</p></figcaption></figure>
+Make sure you understand:
 
-This interface displays the different campaigns and their types. For every opportunity, you will find a link to deposit your funds directly on the respective protocol's app. Once you deposit your funds or perform the required actions for an opportunity incentivized by Merkl, no additional steps are required to start receiving your rewards. You can claim them directly from the [Merkl dashboard](https://app.merkl.xyz/user) or any other app that integrates with Merkl. In particular, **you will not need to stake your tokens anywhere else**.
+* The difference between an [opportunity and a campaign](../merkl-mechanisms/technical-overview.md#opportunity-vs.-campaign)
+* Key terms: [daily rewards, APR, and TVL](../merkl-mechanisms/technical-overview.md#main-metrics)
+* How the [Merkl App](../merkl-mechanisms/technical-overview.md#merkl-app) is structured
+{% endhint %}
 
-The Merkl engine is compatible with multiple campaign creators incentivizing the same type of campaigns (e.g., the same pool on Uniswap V3) with potentially different parameters. If you are eligible for a campaign on Merkl, you will claim rewards from all campaign creators who have incentivized your behavior when claiming your rewards. This means that many teams can incentivize a specific behavior at the same time with different tokens.
+All yield opportunities from protocols and chains distributing rewards through Merkl are available on the [Merkl App](https://app.merkl.xyz/).
 
-Additionally, you can claim all your tokens in one click per chain, making the process seamless and efficient.
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-09-17 à 10.51.55 2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 ## How to get started
 
-Merkl is a one-stop shop for finding the best investment opportunities in DeFi and it only takes a few clicks to get started!
+#### 1. Explore opportunities
 
-1. Visit the [Merkl App](https://app.merkl.xyz/).
-2. Explore the various opportunities and find the one that suits you best.
-3. Before getting on any Merkl opportunity, make sure that you understand how it works and how users can be rewarded as part of this opportunity. For this, we encourage you to:
-   1. check the different [campaign types](../merkl-mechanisms/campaign-types/). All campaign have their specificities and it's crucial to understand them before trying to earn rewards from it
-   2. explore the page associated with each opportunity in the Merkl App. Every opportunity listed on Merkl has a dedicated page where you can find details about the different campaigns linked to it. It's important to review the information for each live campaign to check if any specific rules or eligibility criteria apply.\
+Visit the [Merkl App](https://app.merkl.xyz/) and browse the available opportunities to find the one that suits you best. You can filter by chain, protocol, category, status, and more for an easy overview.
 
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-18 à 17.55.17 1.png" alt=""><figcaption></figcaption></figure>
 
-       <figure><img src="../.gitbook/assets/Group 1.png" alt=""><figcaption><p>Opportunity page in the Merkl App with two active incentive campaigns</p></figcaption></figure>
+#### 2. Check campaign details
 
-3. understand the protocol where you're depositing liquidity and DYOR before investing. Merkl is non-custodial — you don’t need to deposit any assets on Merkl to be eligible or to claim your rewards. All interactions happen directly on the protocols. The main risk with Merkl lies in the underlying protocols being incentivized and with which you interact. Your funds on these underlying protocols may be at risk due to inherent issues, such as smart contract vulnerabilities or operational failures. While we do our best to whitelist every project we work with to ensure they are reliable and safe for our users, we cannot fully audit every project using the platform, and are not responsible for the potential issues of the protocols incentivized on Merkl.
-4. Deposit your liquidity directly on the protocol's app by following the provided links on the opportunity page.
-5. That's it! You're now earning rewards, no staking or other onchain action is needed.
-6. The next day, your [user dashboard](https://app.merkl.xyz/user/) will start showing the rewards you've earned. All you need to do now is claim all your earned tokens with a single click. If gas is expensive, you can wait a few more days/weeks to claim the rewards.\
+Select an opportunity and review campaign details such as APR, TVL, daily rewards, end date, and distribution strategy.
 
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-18 à 17.56.35 1.png" alt=""><figcaption></figcaption></figure>
 
-    <figure><img src="../.gitbook/assets/Capture d’écran 2025-06-10 à 12.20.32 1.png" alt=""><figcaption><p>The Merkl dashboard to claim rewards in the Merkl App</p></figcaption></figure>
-
-7. Make sure that you claim all your rewards within a year of receiving them!
-
-Happy farming!
-
-{% hint style="info" %}
-The reward reports stored in the bucket for a given chain can be accessed from [the status page](https://app.merkl.xyz/status) on the Merkl app.
+{% hint style="warning" %}
+Make sure to check the **eligibility rules** (e.g., blacklist, health factor) to confirm you qualify for rewards.
 {% endhint %}
 
 {% hint style="info" %}
-Before aping in a campaign, do not get lured by APR values: it could be the case the only whitelisted addresses can access rewards, or that only highly concentrated positions earn the majority of what's available for rewards
+Do not get lured by high APRs. Rewards may be limited to whitelisted addresses or mostly go to large positions.
 {% endhint %}
 
-## Rewards on Merkl
+#### 3. Interact with the protocol
+
+Use the CTA button on the opportunity page to interact directly with the incentivized protocol (e.g., supply, lend, borrow).
+
+{% hint style="danger" %}
+Always do your own research (DYOR) before investing and ensure you trust the protocol you’re interacting with.
+
+**Merkl is non-custodial**. No funds are held in Merkl smart contracts. You interact directly with the protocols, while Merkl tracks your onchain activity and distributes rewards accordingly.
+
+The main risks when using Merkl come from the underlying protocols, which may have smart contract vulnerabilities or operational issues that could put your funds at risk.
+
+Merkl is not responsible for any issues arising from incentivized protocols running campaigns on the platform.
+{% endhint %}
+
+#### 4. Start earning rewards
+
+Once you’ve interacted with the protocol, you’ll start earning rewards automatically. No staking or additional onchain actions are required.
+
+#### 5. Claim your rewards
+
+Visit your [Merkl dashboard](https://app.merkl.xyz/users/) to track and claim your rewards. Ensure you are connected with the same wallet used to interact with the protocol. Make sure to claim all your rewards within a year of receiving them!
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.14.56 1.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+Rewards usually show up in your dashboard around 8 hours after you interact with the protocol, giving Merkl time to calculate and distribute them. Check the [Status page](https://app.merkl.xyz/status) for details on reward distribution per chain.
+{% endhint %}
+
+{% hint style="info" %}
+You can claim all your rewards per chain at once to optimize gas costs!
+{% endhint %}
+
+## Advanced features
 
 Rewards on Merkl do not increase block by block, but can be claimed at a frequency which depends on the chain. You can check the claim frequency on the [Status page](https://app.merkl.xyz/status).
 
@@ -55,8 +82,8 @@ Note that, by default, rewards can only be claimed by the address that earned th
 
 So to sum up, assuming Alice earned the rewards:
 
-- by default only Alice can claim and rewards are sent to Alice.
-- by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
+* by default only Alice can claim and rewards are sent to Alice.
+* by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
 
 If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
 
@@ -70,15 +97,14 @@ Currently, when you're connected to the Merkl frontend with an operator address,
 
 To claim rewards on behalf of another address using an operator, you'll need to bypass the frontend and use the Merkl API directly. For example, you can retrieve the Merkle proof for a specific user and chain by calling: `https://api.merkl.xyz/v4/users/0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701/rewards?chainId=1`
 
-This response will include the Merkle proof data needed to submit a claim.
-You can then use this information to call the claim function on the [Merkl Distributor contract](../integrate-merkl/smart-contract-addresses.md) via a block explorer or directly onchain.
+This response will include the Merkle proof data needed to submit a claim. You can then use this information to call the claim function on the [Merkl Distributor contract](../integrate-merkl/smart-contract-addresses.md) via a block explorer or directly onchain.
 
 To structure the claim:
 
-- `users`: Provide the address(es) you're claiming on behalf of. If claiming for multiple tokens, repeat the user address for each token.
-- `tokens`: List the token addresses you're claiming.
-- `amounts`: Use the amount field from the Merkl API response for each token.
-- `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
+* `users`: Provide the address(es) you're claiming on behalf of. If claiming for multiple tokens, repeat the user address for each token.
+* `tokens`: List the token addresses you're claiming.
+* `amounts`: Use the amount field from the Merkl API response for each token.
+* `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
 
 <figure><img src=".gitbook/assets/DistributorClaim.png" alt=""><figcaption><p>Claiming Merkl rewards using a block explorer</p></figcaption></figure>
 

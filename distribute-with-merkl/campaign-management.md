@@ -6,7 +6,7 @@ description: Manage your campaigns once they’re live
 
 ## Campaign Management Actions
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.16.56 1.png" alt=""><figcaption><p>Dashboard view in Merkl Studio</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.16.56 1 (1).png" alt=""><figcaption><p>Dashboard view in Merkl Studio</p></figcaption></figure>
 
 As the campaign creator, you have full control over your campaign. Available actions include:
 

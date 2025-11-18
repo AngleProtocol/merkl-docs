@@ -109,7 +109,7 @@ The following metrics are fundamental to Merkl and appear throughout all Merkl u
 
 #### Daily Rewards
 
-Daily rewards for a campaign represent the total amount of tokens or points distributed each day, shared among all eligible users of the campaign. While this number is typically accurate, it may be estimated for certain [distribution types](../merkl-mechanisms/distributions.md) (such as fixed and capped reward rates) that distribute based on the eligible TVL in the campaign.
+Daily rewards for a campaign represent the total amount of tokens or points distributed each day, shared among all eligible users of the campaign. While this number is typically accurate, it may be estimated for certain [distribution types](distributions.md) (such as fixed and capped reward rates) that distribute based on the eligible TVL in the campaign.
 
 When multiple campaigns run on an opportunity, including subcampaigns, the daily rewards displayed for the opportunity represent the sum of all individual campaign daily rewards.
 
@@ -128,15 +128,15 @@ When multiple campaigns run on the same opportunity with different eligibility r
 
 #### APR
 
-The Annual Percentage Rate (APR) within Merkl represents the yearly return from participating in a campaign, expressed as a percentage. Depending on the [distribution type](../merkl-mechanisms/distributions.md), the APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
+The Annual Percentage Rate (APR) within Merkl represents the yearly return from participating in a campaign, expressed as a percentage. Depending on the [distribution type](distributions.md), the APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
 
-For [distribution types](../merkl-mechanisms/distributions.md) where the APR is not defined as fixed, the main APR for a campaign is calculated as:
+For [distribution types](distributions.md) where the APR is not defined as fixed, the main APR for a campaign is calculated as:
 
 $$
 \frac{\text{Daily Rewards} \times 365}{\text{Eligible TVL}}
 $$
 
-At the level of an opportunity, the APR is the sum of the APRs of the campaigns ([including the subcampaigns](../merkl-mechanisms/reward-forwarding.md#linked-opportunities)) running on this opportunity.
+At the level of an opportunity, the APR is the sum of the APRs of the campaigns ([including the subcampaigns](reward-forwarding.md#linked-opportunities)) running on this opportunity.
 
 ## 🧱 User-Facing Components
 
@@ -173,7 +173,7 @@ The interface is organized around several types of pages:
 * **Protocol / Chain / Liquidity program page** – groups all opportunities related to a specific protocol, chain, or program
 * **Dashboard** – where users can claim their rewards
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.14.56 1.png" alt=""><figcaption><p>Dashboard page where users can claim their rewards</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2025-11-12 à 15.14.56 1 (1).png" alt=""><figcaption><p>Dashboard page where users can claim their rewards</p></figcaption></figure>
 
 {% hint style="info" %}
 Among all these pages, the **Opportunity page** is central, as this is where you’ll find the campaigns created.
@@ -184,7 +184,7 @@ Detailed info for each campaign running on an opportunity is available across se
 * **Overview:** global details such as dates, APR, and eligibility rules,…
 * **Advanced**: distribution progress, last snapshot, creator address, and campaign ID,…
 * **Leaderboard**: list of addresses participating in the opportunity
-* [**Linked opportunities**](./reward-forwarding.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
+* [**Linked opportunities**](reward-forwarding.md#linked-opportunities) _(optional):_ displays opportunities connected through shared liquidity and rewards
 
 <figure><img src="../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Campaign-specific info on the opportunity page</p></figcaption></figure>
 
