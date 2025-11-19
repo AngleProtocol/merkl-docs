@@ -78,14 +78,29 @@ You can claim all your rewards per chain at once to optimize gas costs!
 
 Rewards on Merkl do not increase block by block, but can be claimed at a frequency which depends on the chain. You can check the claim frequency on the [Status page](https://app.merkl.xyz/status).
 
-Note that, by default, rewards can only be claimed by the address that earned them. You can however approve an operator to claim on your behalf by calling the function `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status). However, rewards will still be sent to the original address that earned them.
+### Operator System: Delegating Claim Rights
 
-So to sum up, assuming Alice earned the rewards:
+By default, rewards can only be claimed by the address that earned them. However, Merkl provides a flexible operator system that allows you to delegate the right to claim rewards to another address, while still receiving the rewards yourself.
 
-* by default only Alice can claim and rewards are sent to Alice.
-* by calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Then, Bob can claim for Alice by sending Alice's proof to the contract, and rewards are then sent to Alice.
+**How regular operators work:**
+
+You can approve an operator to claim on your behalf by calling the function `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status). When an operator claims on your behalf, the rewards are still sent to your original address—the operator only facilitates the transaction.
+
+If you call `toggleOperator` with `address(0)`, then anyone can claim on your behalf without requiring individual operator approvals.
+
+**Example:**
+
+Assuming Alice earned the rewards:
+
+- **Default behavior**: Only Alice can claim, and rewards are sent to Alice.
+- **With operator**: By calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Bob can then claim for Alice by submitting Alice's proof to the contract, and rewards are still sent to Alice's address.
+- **With address(0)**: By calling `toggleOperator(address(0))`, Alice allows anyone to claim on her behalf. Any address can then claim for Alice by submitting Alice's proof to the contract, and rewards are still sent to Alice's address.
 
 If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
+
+**Admin rights to claim for everyone:**
+
+In some cases, certain addresses may be granted admin rights that allow them to claim rewards on behalf of all users without requiring individual operator approvals. These admin rights are granted on a case-by-case basis and enable streamlined reward distribution for specific use cases, such as protocol-level reward forwarding or automated claim processes.
 
 ### Claiming from a multisig
 
@@ -107,6 +122,179 @@ To structure the claim:
 * `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
 
 <figure><img src=".gitbook/assets/DistributorClaim.png" alt=""><figcaption><p>Claiming Merkl rewards using a block explorer</p></figcaption></figure>
+
+## Claim Recipient System
+
+The claim recipient system allows you to redirect where claimed rewards are sent, instead of always sending to the user who earned them.
+
+### Function: `setClaimRecipient()`
+
+**Signature:**
+```solidity
+function setClaimRecipient(address recipient, address token) external
+```
+
+**Parameters:**
+
+- `recipient`: Address that will receive the claimed tokens. Use `address(0)` to remove the custom recipient (revert to default)
+- `token`: Token for which to set the recipient. Use `address(0)` to set a **global recipient** that applies to all tokens without a specific recipient
+
+**Access:** Callable by any user (sets recipient for `msg.sender`)
+
+**How it works:**
+
+- Sets a custom recipient for your own claims
+- Setting `recipient = address(0)` removes the custom recipient for that token
+- When `token = address(0)`, it sets `claimRecipient[user][address(0)]` as a global fallback
+
+**Priority order when claiming:**
+
+When claiming rewards, the system follows this priority order:
+
+1. **Token-specific recipient**: `claimRecipient[user][token]` (if set and not `address(0)`)
+2. **Global recipient**: `claimRecipient[user][address(0)]` (if set)
+3. **Default**: User's own address
+
+Token-specific recipients take precedence over the global recipient.
+
+**Examples:**
+
+```solidity
+// Define a global recipient for all tokens
+setClaimRecipient(vaultAddress, address(0));
+// ✅ claimRecipient[user][address(0)] = vaultAddress
+// ✅ All tokens without a specific recipient will go to vaultAddress
+
+// Define a specific recipient for aglaMerkl (takes priority over global)
+setClaimRecipient(aglaMerklVaultAddress, aglaMerkl);
+// ✅ claimRecipient[user][aglaMerkl] = aglaMerklVaultAddress
+// ✅ aglaMerkl goes to aglaMerklVaultAddress (not the global vault)
+
+// Remove the specific recipient for aglaMerkl
+setClaimRecipient(address(0), aglaMerkl);
+// ✅ claimRecipient[user][aglaMerkl] = address(0)
+// ✅ aglaMerkl will now use the global recipient (vaultAddress)
+```
+
+**Example flow:**
+
+```solidity
+// Setup
+setClaimRecipient(vaultAglaMerkl, aglaMerkl);           // Specific for aglaMerkl
+setClaimRecipient(defaultVault, address(0));  // Global fallback
+
+// When claiming:
+// - aglaMerkl → goes to vaultAglaMerkl (token-specific)
+// - WETH → goes to defaultVault (global fallback)
+// - DAI → goes to defaultVault (global fallback)
+```
+
+**Use cases:**
+
+- Routing rewards to smart contracts that cannot directly claim
+- Redirecting rewards to user-controlled addresses
+- Protocol-level reward forwarding mechanisms
+
+---
+
+## Claim Callback System (Automatic Actions)
+
+The `claimWithRecipient()` function supports passing arbitrary data (`bytes`) to recipient contracts, enabling automatic actions like swaps via aggregators when rewards are claimed.
+
+### How it works
+
+When you call `claimWithRecipient()` with non-empty `datas`, the system:
+
+1. Transfers tokens to the recipient address
+2. Automatically calls `onClaim()` on the recipient contract (if it implements `IClaimRecipient`)
+3. Passes the custom data to the callback, allowing the recipient to perform actions like swaps, deposits, or conversions
+
+### Function: `claimWithRecipient()`
+
+**Signature:**
+```solidity
+function claimWithRecipient(
+    address[] calldata users,
+    address[] calldata tokens,
+    uint256[] calldata amounts,
+    bytes32[][] calldata proofs,
+    address[] calldata recipients,
+    bytes[] memory datas  // Custom data for callback
+) external
+```
+
+**Parameters:**
+
+- `datas`: Array of arbitrary `bytes` data, one per claim. This data is passed to the recipient's `onClaim()` callback.
+
+### IClaimRecipient Interface
+
+Recipient contracts must implement this interface:
+
+```solidity
+interface IClaimRecipient {
+    function onClaim(address user, address token, uint256 amount, bytes memory data) 
+        external returns (bytes32);
+}
+```
+
+The callback must return `CALLBACK_SUCCESS` (keccak256("IClaimRecipient.onClaim")) or the claim will revert.
+
+**Important notes:**
+
+- If `data.length == 0`, no callback is made (standard transfer only)
+- If the callback reverts, the token transfer still occurred (uses `try/catch`)
+- The `datas` array must have the same length as other arrays
+- Data encoding is flexible - you can encode any parameters your recipient contract needs
+
+### Use cases
+
+- **Automatic swaps**: Swap rewards immediately via DEX aggregators (1inch, 0x, etc.)
+- **Auto-deposits**: Deposit rewards into liquidity pools or yield farms
+- **Token conversions**: Convert rewards to a different token automatically
+- **Complex routing**: Perform multiple actions based on encoded data
+
+### Example: Automatic Swap
+
+```solidity
+// 1. Set a swap vault as recipient
+setClaimRecipient(swapVaultAddress, aglaMerkl);
+
+// 2. Claim with swap parameters encoded in data
+bytes memory swapData = abi.encode(
+    targetToken,      // Token to receive after swap
+    minAmountOut,     // Minimum amount expected
+    swapRouter        // Aggregator router address
+);
+
+claimWithRecipient(
+    [userAddress],
+    [aglaMerkl],
+    [amount],
+    [proof],
+    [swapVaultAddress],
+    [swapData]  // Data for automatic swap
+);
+
+// The swap vault receives aglaMerkl, automatically swaps it, and sends the result to the user
+```
+
+---
+
+## Support for `address(0)` as Wildcard
+
+The `Distributor` contract uses `address(0)` as a wildcard parameter in several functions, representing **"all tokens"** or **"default"**.
+
+### Where `address(0)` is used:
+
+1. **`setClaimRecipient(recipient, address(0))`**
+   - Sets a **global recipient** that applies to all tokens without specific recipients
+
+### How it works:
+
+- When `address(0)` is used as the token parameter, it acts as a fallback/default
+- This simplifies operations that need to work across multiple tokens
+- Token-specific recipients take precedence over the global recipient (see priority order above)
 
 ### Address Remapping
 
