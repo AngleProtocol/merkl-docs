@@ -48,12 +48,18 @@ You can set a higher budget, but only do so if you know that your campaign will 
 
 **Forwarders:** Merkl has [a forwarder system](../merkl-mechanisms/reward-forwarding.md). For example, if your campaign tracks holders of a stablecoin, Merkl can often detect and reward users who hold that stablecoin indirectly through other protocols. This means you won’t need to create a separate campaign for each protocol—unless you want different reward rates or the protocol isn’t yet integrated with forwarding.
 
-**Fixed reward rate campaigns:** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g 1 point token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in you campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
+{% hint style="info" %}
+**Managing multipliers in accordance with forwarders:** If you want to have different multipliers based on where a token is used (e.g., x1 if held in wallet, x5 if used in a lending market), you need to set up your campaigns accordingly. You can either:
+- enable forwarding for the lending market: in this case, you will create an additional campaign for the lenders with x4 multiplier (because users will be getting x1 from the base campaign already)
+- disable forwarding for the lending market (done by blacklisting the market address): in this case, you will create an additional campaign for the lenders with x5 multiplier
+{% endhint %}
+
+**Fixed reward rate campaigns:** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g., 1 point token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in your campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
 
 {% hint style="info" %}
 **Understanding the associated virtual APR for points**: If you are reasoning in terms of points APR (meaning the APR in points if a point was worth $1):
  - Rewarding 1 point per $1 per day is equivalent to a 36500% APR (100% per day multiplied by 365)
- - Rewaring 1 point per $1000 per day is equivalent to 35.5% APR (0.1% per day multiplied by 365)
+ - Rewarding 1 point per $1000 per day is equivalent to 35.5% APR (0.1% per day multiplied by 365)
 {% endhint %}
 
 **CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
@@ -159,7 +165,7 @@ A point source is the specific opportunity or asset that Merkl monitors to calcu
 - A vault or staking contract
 {% endhint %}
 
-### Cost optimization strategies
+**Cost optimization strategies**
 
 **Create longer-duration campaigns**: Pay the user fee once by creating campaigns with longer durations instead of multiple short campaigns.
 
@@ -169,6 +175,6 @@ A point source is the specific opportunity or asset that Merkl monitors to calcu
 
 ### Invoicing
 
-**Billing cycle**: You will be invoiced retroactively at the end of each month for all campaigns created during that period. If you cancel a campaing shortly after creating it, we usually waive it as a goodwill gesture but if it’s near a full week it would be billed.
+**Billing cycle**: You will be invoiced retroactively at the end of each month for all campaigns created during that period. If you cancel a campaign shortly after creating it, we usually waive it as a goodwill gesture but if it's near a full week it would be billed.
 
 **Payment terms**: Invoices must be paid within 7 days. If payment is not received within this timeframe, all ongoing campaigns will be paused and your project will be temporarily blocked from Merkl until payment is resolved.
