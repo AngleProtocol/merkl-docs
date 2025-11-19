@@ -159,6 +159,55 @@ To delegate campaign management to operators, you need to grant **two separate p
 
 Both permissions are required for an operator to fully manage campaigns using your predeposited balance. See the [Campaign Operators section](campaign-management.md#campaign-operators) for more details.
 
+### Creating campaigns on behalf of a creator
+
+When an operator creates a campaign on behalf of a creator, it's **critical** to set the correct `creator` parameter in the campaign parameters. The system will look for the predeposited balance and allowance based on this `creator` address.
+
+**Operator creates campaign:**
+
+```solidity
+CampaignParameters memory campaign = CampaignParameters({
+    creator: creatorAddress,  // ✅ MUST be the address that granted the allowance and has the predeposited balance!
+    // ... other parameters
+});
+
+distributionCreator.createCampaign(campaign);
+```
+
+**⚠️ Common mistake:**
+
+If the operator sets `creator = address(0)` or `creator = operatorAddress`:
+
+* ❌ System looks for `creatorBalance[operatorAddress][token]` = 0
+* ❌ Fallback → takes tokens from the operator's wallet instead
+* ⚠️ If the operator doesn't have sufficient tokens in their wallet, the transaction will revert
+
+{% hint style="warning" %}
+**Important**: Always set the `creator` parameter to the address that granted the allowance and has the predeposited balance. Otherwise, the system will fall back to the operator's wallet, and the transaction will revert if the operator has insufficient tokens.
+{% endhint %}
+
+**⚠️ Insufficient predeposited balance or allowance:**
+
+If the operator correctly sets the `creator` parameter but encounters one of these issues:
+
+* **Insufficient predeposited balance**: The creator's `creatorBalance[creatorAddress][token]` is insufficient or zero
+* **Allowance exceeded**: The operator's allowance has been exceeded or was never granted
+
+The system will attempt a **fallback**: it tries to take tokens from the operator's wallet instead.
+
+* ✅ If the operator has sufficient tokens in their wallet → the transaction succeeds (using the operator's tokens), and **the operator becomes the creator** of the campaign
+* ❌ If the operator's wallet balance is insufficient → the transaction will **revert**
+
+⚠️ The creator should ensure:
+* Sufficient tokens are predeposited before an operator attempts to create a campaign
+* The operator has been granted sufficient allowance to spend the predeposited tokens
+
+Otherwise, the campaign creation will fall back to using the operator's wallet balance, and **the operator will become the campaign creator** instead of the intended creator address, which may not be the intended behavior.
+
+{% hint style="info" %}
+Before creating a campaign, verify that the creator has predeposited enough tokens to cover the campaign amount plus fees, and that the operator has sufficient allowance. If multiple campaigns are created in sequence, track both the remaining predeposited balance and remaining allowance to avoid unintended fallback behavior or failed transactions.
+{% endhint %}
+
 ## 🧪 Test campaigns
 
 You may want to start testing the flow and integrating our data before your point program starts. Merkl is not deployed on testnets, but you can still run test campaigns using our test token: **aglaMerkl**.

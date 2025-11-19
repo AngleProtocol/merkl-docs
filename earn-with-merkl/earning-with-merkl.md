@@ -86,14 +86,21 @@ By default, rewards can only be claimed by the address that earned them. However
 
 You can approve an operator to claim on your behalf by calling the function `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status). When an operator claims on your behalf, the rewards are still sent to your original address—the operator only facilitates the transaction.
 
+If you call `toggleOperator` with `address(0)`, then anyone can claim on your behalf without requiring individual operator approvals.
+
 **Example:**
 
 Assuming Alice earned the rewards:
 
 - **Default behavior**: Only Alice can claim, and rewards are sent to Alice.
 - **With operator**: By calling `toggleOperator`, Alice can allow Bob to claim on her behalf. Bob can then claim for Alice by submitting Alice's proof to the contract, and rewards are still sent to Alice's address.
+- **With address(0)**: By calling `toggleOperator(address(0))`, Alice allows anyone to claim on her behalf. Any address can then claim for Alice by submitting Alice's proof to the contract, and rewards are still sent to Alice's address.
 
 If you can't call `toggleOperator` and are stuck, please [open a tech ticket in our Discord ](https://discord.com/channels/1209830388726243369/1210212731047776357), the team may be able to call it on your behalf.
+
+**Admin rights to claim for everyone:**
+
+In some cases, certain addresses may be granted admin rights that allow them to claim rewards on behalf of all users without requiring individual operator approvals. These admin rights are granted on a case-by-case basis and enable streamlined reward distribution for specific use cases, such as protocol-level reward forwarding or automated claim processes.
 
 ### Claiming from a multisig
 
@@ -282,9 +289,6 @@ The `Distributor` contract uses `address(0)` as a wildcard parameter in several 
 
 1. **`setClaimRecipient(recipient, address(0))`**
    - Sets a **global recipient** that applies to all tokens without specific recipients
-
-2. **`setClaimRecipientWithGov(user, recipient, address(0))`**
-   - Sets a **global recipient** for a user across all tokens
 
 ### How it works:
 
