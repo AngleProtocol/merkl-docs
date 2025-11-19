@@ -12,12 +12,6 @@ In Token Holding Campaigns, users holding an incentivized ERC20 token in their w
 
 For example, in a [variable reward rate campaign](../distributions.md#variable-reward-rate-campaigns), rewards are distributed proportionally to each user's share of the total token supply. If a user holds 1% of the total supply over a given period, they are eligible to receive 1% of the rewards distributed during that time.
 
-**Reward calculation methodology:**
-
-Transfer events are tracked to reconstruct the exact balance of each participant. An integral is then computed over the selected time frame for every user, with no approximations—everything is exact. Users are rewarded proportionally to their individual area under the curve compared to the total area of all participants.
-
-Merkl's tracking is exhaustive and does not rely on discretionary snapshots. Instead, the Merkl engine analyzes every onchain event to track the evolution of each user's balance over time.
-
 ## Applications
 
 Token Holding Campaigns are highly versatile, supporting a wide range of DeFi use cases.

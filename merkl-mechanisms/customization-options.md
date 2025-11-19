@@ -145,7 +145,7 @@ We will expect the following response:
 ```jsx
 const data : {
   address!: string;
-  boost!: string; // should be a bigint in BASE 9 (eg. 1 = "1000000000")
+  boost!: string; // should be a bigint in BASE 9 (e.g. 1 = "1000000000")
 }[]
 ```
 
