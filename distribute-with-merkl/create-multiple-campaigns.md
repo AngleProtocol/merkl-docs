@@ -8,11 +8,11 @@ While [Merkl Studio](https://studio.merkl.xyz) is ideal for creating standard ca
 
 This feature enables campaign creators to launch multiple campaigns sharing the same base parameters (creator address, reward token, reward chain, start and end time) in a single transaction.
 
-All batch campaign creation methods involve generating a payload. This guide walks you through payload generation. Once you have a payload, refer to [Create a Campaign from a Multisig or Gnosis Safe](./create-your-campaign-from-a-multisig-or-gnosis-safe.md) for execution instructions.
+All batch campaign creation methods involve generating [campaign configurations](../merkl-mechanisms/campaignConfiguration.md) and their corresponding payloads. This guide walks you through configuration and payload generation. Once you have a payload, refer to [Create a Campaign from a Multisig or Gnosis Safe](./create-your-campaign-from-a-multisig-or-gnosis-safe.md) for execution instructions.
 
 ## Method 1: Override Parameters from Existing Template Campaigns
 
-This method uses **existing campaigns as templates**. You select past campaigns that closely match what you want, tweak a few parameters, generate a payload, and execute it with a Safe.
+This method uses **existing campaigns as templates**. You select past campaigns that closely match what you want, tweak a few parameters in their configuration, generate a payload, and execute it with a Safe.
 
 ### 1. Retrieve Campaign Templates
 
@@ -72,71 +72,13 @@ You can use [this converter](https://www.unixtimestamp.com/) to convert dates to
 
 **2. Per-Campaign Parameters** (specific to each campaign)
 
-These parameters go under `campaignsParams` and let you customize each campaign. The available fields vary by campaign type. You can view all parameters that you can play on for a specific campaign using this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}).
+These parameters go under `campaignsParams` and let you customize each campaign. The available fields correspond to the [campaign-specific parameters](../merkl-mechanisms/campaignConfiguration.md#campaign-specific-parameters) in each campaign configuration.
+
+You can view all available parameters for a specific campaign using this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}).
 
 Example: Campaign ID `13756496363331257690` - [https://api.merkl.xyz/v4/config/13756496363331257690](https://api.merkl.xyz/v4/config/13756496363331257690)
 
-**Common fields (available for most campaign types):**
-
-- `amount`: Amount of rewards to be distributed in the campaign
-- `computeChainId`: ID of a supported chain (see our [status page](https://app.merkl.xyz/status))
-- `blacklist`: List of addresses to exclude from the campaign
-- `whitelist`: List of addresses to include (excluding all others)
-- `distributionMethodParameters`: Distribution type configuration (see below)
-
-**Distribution method options:**
-
-Variable reward rate:
-```json
-{
-  "distributionMethod": "DUTCH_AUCTION"
-} 
-```
-
-Fixed APR rate:
-```json
-{
-  "distributionMethod": "FIX_APR",
-  "distributionSettings": {
-      "apr": "0.08",
-      "targetToken": "0x3048925B3EA5A8C12eeCCcb8810F5F7544dB54af",
-      "rewardTokenPricing": true,
-      "targetTokenPricing": true
-  }
-}
-```
-
-Capped APR rate:
-```json
-{
-  "distributionMethod": "MAX_APR",
-  "distributionSettings": {
-      "apr": "1",
-      "targetToken": "0xA9d17f6D3285208280a1Fd9B94479c62e0AABa64",
-      "rewardTokenPricing": true,
-      "targetTokenPricing": true
-  }
-}
-```
-
-{% hint style="warning" %}
-**Best practice**: Use a template campaign with the same distribution type as the one you plan to use. While you can change the distribution type (variable, fixed, capped) from the template, we don't recommend this. If you need to do so, **please reach out to us directly to ensure your parameters are correct.**
-
-For Fixed/Capped APR campaigns, contact us to confirm when `rewardTokenPricing` and `targetTokenPricing` should be true or false.
-{% endhint %}
-
-**Campaign-specific fields (examples by type):**
-
-- **ERC20LOGPROCESSOR (CampaignType: 18)** - Example [DatabaseId: 8270489034958466914](https://api.merkl.xyz/v4/config/8270489034958466914)
-  - `targetToken`: Address of the token to incentivize holding, or the LP token address for V2 pools
-- **UniV3 (CampaignType: 2)** - Example [DatabaseId: 9427880006586247706](https://api.merkl.xyz/v4/config/9427880006586247706)
-  - `poolAddress`, `weightToken0`, `weightToken1`, `weightFees`
-- **UniV4 (CampaignType: 13)** - Example [DatabaseId: 14050222419773482936](https://api.merkl.xyz/v4/config/14050222419773482936)
-- **Morpho single token (CampaignType: 57)** - Example [DatabaseId: 3011317640800818752](https://api.merkl.xyz/v4/config/3011317640800818752)
-  - `targetToken`: Address of the token supplied on any Morpho Market
-- **Euler supply (CampaignType: 12)** - Example [DatabaseId: 16912425279432080078](https://api.merkl.xyz/v4/config/16912425279432080078)
-  - `evkAddress`: Address of the incentivized vault
-- **Euler borrow (CampaignType: 12)** - Example [DatabaseId: 17331543524323336682](https://api.merkl.xyz/v4/config/17331543524323336682)
+For simple use cases where you only want to change the campaign amount, you'll only need to modify the `amount` field.
 
 #### Example
 
@@ -212,21 +154,21 @@ When using the API endpoint, the body will look like this:
 
 ## Method 2: Using Campaign Configurations
 
-This method allows you to generate a campaign payload using full campaign configurations rather than just overriding parameters from templates.
+This method allows you to generate a campaign payload using full [campaign configurations](../merkl-mechanisms/campaignConfiguration.md) rather than just overriding parameters from templates.
 
-### 1. Get Campaign Configuration
+### 1. Retrieve Campaign Configurations
 
-Use this endpoint to retrieve a campaign configuration: [https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id})
+Use this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}) to retrieve campaign configurations from existing campaigns.
 
 ### 2. Adjust Parameters
 
-Modify the parameters in the configuration(s) according to your needs.
+Modify the parameters in the configurations according to your needs. Refer to the [campaign configuration documentation](../merkl-mechanisms/campaignConfiguration.md) for details on available parameters.
 
-### 3. Preview Your Campaign (Optional)
+### 3. Preview Your Campaigns (Optional)
 
 You can simulate how your campaigns would appear after your payload is executed:
 
-- **Opportunity preview**: Call `https://api.merkl.xyz/v4/config/opportunity` with your campaign config in the body to see opportunity details (name, etc.)
+- **Opportunity preview**: Call `https://api.merkl.xyz/v4/config/opportunity` with your campaign configuration in the body to see opportunity details (name, etc.)
 - **TVL preview**: Call `https://api.merkl.xyz/v4/config/tvl` to estimate TVL
 
 ### 4. Generate the Payload
@@ -272,7 +214,7 @@ To get started, provide:
 - The assets you'd like to incentivize
 - Any [customization options](../merkl-mechanisms/customization-options.md) you'd like to apply
 
-We'll save this configuration and generate the corresponding **keys** needed to launch your campaigns in bulk, which we'll share via a GitHub Gist.
+We'll save these configurations and generate the corresponding **keys** needed to launch your campaigns in bulk, which we'll share via a GitHub Gist.
 
 Once configured, you'll be able to create multiple campaigns at once, all sharing the same base parameters:
 

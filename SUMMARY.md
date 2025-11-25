@@ -18,6 +18,7 @@
 * [Reward Forwarding](merkl-mechanisms/reward-forwarding.md)
 * [Customization Options](merkl-mechanisms/customization-options.md)
 * [Additional Features](merkl-mechanisms/features.md)
+* [Campaign Configuration](merkl-mechanisms/campaignConfiguration.md)
 * [Glossary](merkl-mechanisms/glossary.md)
 
 ## Distribute with Merkl
@@ -40,5 +41,6 @@
 ## Integrate Merkl
 
 * [Integrate Merkl API](integrate-merkl/app.md)
+* [Display Your Native APR](integrate-merkl/nativeAPR.md)
 * [Branding and Integration](integrate-merkl/branding-and-integration.md)
 * [Smart Contract Addresses](integrate-merkl/smart-contract-addresses.md)

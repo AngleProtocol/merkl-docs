@@ -8,7 +8,7 @@ You can create campaigns directly using onchain smart contracts with Merkl. This
 
 ## Prerequisites
 
-All methods require generating the associated data for your campaigns.
+All methods require generating the associated [campaign configuration](../merkl-mechanisms/campaignConfiguration.md) and data for your campaigns.
 
 To retrieve the necessary campaign data and parameters, check our guides for using [Merkl Studio](./create-a-campaign.md) or [the Merkl APIs programmatically](./create-multiple-campaigns.md). In either case, the campaign data can be found in the campaign JSON payload you would receive when creating campaigns from a multisig.
 
