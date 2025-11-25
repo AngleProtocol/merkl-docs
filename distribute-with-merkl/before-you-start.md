@@ -14,16 +14,14 @@ Before setting up your campaign on Merkl, make sure you have read and understood
 * [**The different incentive mechanisms**](../merkl-mechanisms/incentive-mechanisms.md) (campaign types, distribution types, scoring types)
 * How to personalize your campaign using [**customization options**](../merkl-mechanisms/customization-options.md)
 * [**Merkl forwarding system**](../merkl-mechanisms/reward-forwarding.md)
+* [What the **configuration** of a campaign is](../merkl-mechanisms/campaignConfiguration.md)
 * [**Additional features**](../merkl-mechanisms/features.md) that can make your campaign unique
 
 {% hint style="info" %}
 If you're looking for some incentive mechanism for which you're not sure about whether it's supported, or looking to add incentive features or customization options that are not displayed on the platform, please contact us!
 {% endhint %}
 
-Some Merkl features (e.g., new distribution types, campaign types, customization options) may not be directly available in the campaign creation flow. If a required configuration option is not available in the frontend, we can:
-
-* Help you generate the correct campaign payload.
-* Provide dedicated API endpoints so you can structure your campaign as needed.
+Some Merkl features (e.g., new distribution types, campaign types, customization options) may not be directly available in the campaign creation flow. If a required configuration option is not available in the frontend, make sure to check [our docs for advanced campaign creation](./create-multiple-campaigns.md).
 
 ## 📝 Token whitelisting
 
@@ -36,6 +34,14 @@ You can check whether your token is already whitelisted by setting it as the rew
 {% hint style="success" %}
 Make sure you have all the tokens you want to distribute in your wallet when creating a campaign
 {% endhint %}
+
+## Campaign launch flow
+
+When creating your first campaign with Merkl, keep in mind that it may take up to **1 hour** for the campaign to become visible on the Merkl app.
+
+It's normal for TVLs and APRs to show as 0 when your campaign first appears. In most cases, the Merkl system dynamically fetches and updates these values every 10 minutes, but for complex campaigns, it may require an engine computation cycle (up to 2 hours) to accurately calculate and display TVLs, as described in the [technical overview](../merkl-mechanisms/technical-overview.md#tvl).
+
+It's also expected for **your campaign's leaderboard to appear empty right after launch**. The Merkl Engine needs time to perform [the necessary computations](../merkl-mechanisms/technical-overview.md#reward-computation) before this data becomes available. The first rewards typically become claimable approximately 8 hours after campaign creation, though pending rewards should appear within 2 hours after they start.
 
 ## 🧪 Test campaigns
 

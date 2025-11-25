@@ -122,7 +122,9 @@ The Total Value Locked (TVL) of a campaign on Merkl represents the total value o
 * if a campaign includes a blacklist, the TVL excludes the value held by blacklisted addresses.
 * for certain campaign types like net-lending campaigns, the TVL represents the net supplied TVL (i.e., total supplied minus borrowed), as this reflects only the liquidity that's eligible for rewards.
 
-In these cases, Merkl may initially approximate the TVL and requires an engine compute to display the accurate TVL for the campaign. As such, the TVL may not be accurate at launch for newly created campaigns. In some situations also, the TVL might be over or underestimated due to approximations for computational simplicity or because exact computing logic has not yet been implemented.
+In these cases, Merkl may initially approximate the TVL and requires an engine computation to display the accurate TVL for the campaign. As such, the TVL may not be accurate at launch for newly created campaigns. In some situations, the TVL might also be over- or underestimated due to approximations made for computational efficiency or because exact computing logic has not yet been implemented.
+
+When the Merkl system has a fallback mechanism, TVL values update every 10 minutes on the Merkl app and API. For complex campaigns without such fallbacks, TVLs (and consequently APRs) only update after each computation cycle. This means TVL updates may occur at most every 2 hours for the opportunities related to these campaigns.
 
 Overall, the TVL serves as a key indicator of the market or pool's size and liquidity depth.
 
@@ -130,15 +132,17 @@ When multiple campaigns run on the same opportunity with different eligibility r
 
 #### APR
 
-The Annual Percentage Rate (APR) within Merkl represents the yearly return from participating in a campaign, expressed as a percentage. Depending on the [distribution type](distributions.md), the APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as the number of participants.
+The Annual Percentage Rate (APR) represents the yearly return from participating in a campaign, expressed as a percentage. Depending on the [distribution type](distributions.md), the APR can be fixed and remain constant throughout the campaign, or it can be variable and fluctuate based on factors such as eligible TVL and the number of participants.
 
-For [distribution types](distributions.md) where the APR is not defined as fixed, the main APR for a campaign is calculated as:
+For [distribution types](distributions.md) where the APR is not fixed, the APR for a campaign is calculated as:
 
 $$
 \frac{\text{Daily Rewards} \times 365}{\text{Eligible TVL}}
 $$
 
-At the level of an opportunity, the APR is the sum of the APRs of the campaigns ([including the subcampaigns](reward-forwarding.md#linked-opportunities)) running on this opportunity.
+In these cases, the APR updates at the same frequency as the eligible TVL (every 10 minutes for simple campaigns, or every 2 hours for more complex campaigns where TVL cannot be simply approximated).
+
+At the opportunity level, the displayed APR is the sum of the APRs from all campaigns ([including subcampaigns](reward-forwarding.md#linked-opportunities)) running on that opportunity.
 
 ## 🧱 User-Facing Components
 

@@ -94,9 +94,4 @@ Regardless of the method you choose, you will need to complete these 3 steps:
 
 The recommended method for distributing rewards with Merkl using a multisig is through the Gnosis Safe Transaction Builder. To learn how to deploy your campaign from a multisig, see [this guide](./create-your-campaign-from-a-multisig-or-gnosis-safe.md).
 
-
 Once you've executed your transaction, your campaign may take up to **one hour** to become visible on the frontend after creation.
-
-{% hint style="note" %}
-It's expected for your campaign's **TVL and APR to show 0** at launch, and for the **leaderboard to appear empty**. The Merkl Engine needs a few hours to perform [the necessary computations](../merkl-mechanisms/technical-overview.md#reward-computation) before this data becomes available.
-{% endhint %}
