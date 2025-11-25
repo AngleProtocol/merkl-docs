@@ -59,7 +59,7 @@ You can set a higher budget, but only do so if you know that your campaign will 
 {% hint style="info" %}
 **Understanding the associated virtual APR for points**: If you are reasoning in terms of points APR (meaning the APR in points if a point was worth $1):
  - Rewarding 1 point per $1 per day is equivalent to a 36500% APR (100% per day multiplied by 365)
- - Rewarding 1 point per $1000 per day is equivalent to 35.5% APR (0.1% per day multiplied by 365)
+ - Rewarding 1 point per $1000 per day is equivalent to 36.5% APR (0.1% per day multiplied by 365)
 {% endhint %}
 
 **CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 
