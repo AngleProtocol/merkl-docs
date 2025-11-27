@@ -72,6 +72,11 @@ When reallocation is triggered, the process can take up to 24 hours. This delay 
 
 Once the reallocation is complete and the Merkle root is updated on the relevant chain, the reallocated rewards become claimable just like any other Merkl reward, using the address to which they were reassigned.
 
+{% hint style="warning" %}
+Claiming is not yet available in the studio app, campaign managers must go to the [app dashboard](https://app.merkl.xyz/users/) to claim their reallocated rewards.
+{% endhint %}
+
+
 ### Use Cases
 
 * Smart contracts without claim functions that need rewards redirected to claimable addresses

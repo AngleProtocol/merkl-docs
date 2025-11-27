@@ -24,7 +24,7 @@ When campaign creators launch concentrated liquidity campaigns, they define:
 * A **reward period**
 * A set of **incentive parameters**, which define how rewards will be distributed among liquidity providers.
   * **In-Range positions only**: Only reward positions that are being used in swaps
-  * **Fees earned**: The fees earned by the position during the period, which represent the liquidity of the position used by the pool.
+  * **Liquidity Contribution**: Measures the **time-weighted contribution of a position to the overall liquidity in the pool**. Positions that remain tightly concentrated around the active tick contribute more liquidity—assuming equal TVL—than those spread across a wider range.
   * **Token 0 holding**: The share of token 0 held by a position relative to the total token 0 in the pool.
   * **Token 1 holding**: The share of token 1 held by a position relative to the total token 1 in the pool. 
 
@@ -32,41 +32,23 @@ When campaign creators launch concentrated liquidity campaigns, they define:
 A position is "in range" when the current market price falls within the price range specified by the position's lower and upper ticks. When a position is in range, it actively provides liquidity for trades and earns fees. Out-of-range positions do not contribute to liquidity at the current price and therefore don't earn trading fees. We highly recommend only rewarding in range positions.
 {% endhint %}
 
-Each factor is assigned a weight (`w_fees`, `w_0`, `w_1`), which the campaign creator defines when setting up the campaign in Merkl Studio.
-
-Merkl analyzes swaps within the pool during the incentive period and assigns rewards based on these 3 parameters.
-
-With this setup, this is as if the overall incentive budget was split in 3, with a proportion being shared by LPs based on how much fees they've earned, a proportion shared based on the overall amount of token 0 they've held and a last portion based on the relative token 1 balance they've had in their position during the time period.
-
 {% hint style="warning" %}
-In the context of **Uniswap v4**, the "Fee earned" parameter is no longer taken into account. It is replaced by **"Liquidity Contribution"**, which measures the **time-weighted contribution of a position to the overall liquidity in the pool**. Positions that remain tightly concentrated around the active tick contribute more liquidity—assuming equal TVL—than those spread across a wider range.
-
-For example, a position might generate high fees during a short burst of activity, but if it wasn’t consistently concentrated throughout the reward period, it won’t earn significant rewards. What matters here is **sustained concentration over time**, not short-term volume or swap activity.
+A position might generate high fees during a short burst of activity, but if it wasn’t consistently concentrated throughout the reward period, it won’t earn significant rewards. What matters here is **sustained concentration over time**, not short-term volume or swap activity.
 {% endhint %}
 
+Each factor is assigned a weight (% liquidity contribution, % token0, % token1), which the campaign creator defines when setting up the campaign in Merkl Studio.
+
+Merkl analyzes liquidity within the pool during the incentive period and assigns rewards based on these 3 parameters.
+
+With this setup, this is as if the overall incentive budget was split in 3, with a proportion being shared by LPs based on how much liquidity they have on the active tick, a proportion shared based on the overall amount of token 0 they've held and a last portion based on the relative token 1 balance they've had in their position during the time period.
+
 {% hint style="success" %}
-Building on its Uniswap v3 foundation, Merkl's integration with Uniswap v4 brings major enhancements—delivering a more performant, stable, and JIT attack-resistant reward mechanism.
+Merkl released an improved version of its concentrated liquidity reward engine to bring major enhancements—delivering a more performant, stable, and JIT attack-resistant reward mechanism.
 
 The system enables precise measurement of liquidity over time, resulting in more deterministic and reliable attribution of LP contributions while minimizing the influence of short-term volatility.
 {% endhint %}
 
 ### 🧮 Example Calculation
-
-#### Uniswap v3 and similar AMM
-
-If incentive weights are set as:
-
-* Fees = 40%,
-* Token 0 = 30%,
-* Token 1 = 30%,
-
-Then:
-
-* A user earning 50% of total pool fees receives 20% of total rewards (50% × 40%).
-* A user holding 30% of Token 0 receives 9% of total rewards (30% × 30%).
-* A user holding 20% of Token 1 receives 6% of total rewards (20% × 30%).
-
-#### Uniswap v4
 
 If incentive weights are set as:
 
@@ -95,7 +77,7 @@ Here are some suggestions depending on your needs and pool type:
 * You can also refer to the Merkl blog about [liquidity walls](https://blog.merkl.xyz/merkl-insights-how-can-incentives-prevent-your-token-from-dumping) explaining how to prevent a token from dumping, or a stablecoin from losing its peg
 
 {% hint style="danger" %}
-Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or weight fees parameters on similar campaigns.
+Merkl is not responsible for defining your strategy and targets. Nevertheless, you can refer to live campaigns to look for typical APRs and/or parameter weights on similar campaigns.
 {% endhint %}
 
 ## 💉 Sampling and Anti-DoS
@@ -167,5 +149,9 @@ However, actual APR varies per position. A position may earn more or less than t
 
 Example:
 
-* If fees = 99%, a full-range position may earn minimal rewards despite providing high liquidity.
+* If liquidity contribution = 99%, a full-range position may earn minimal rewards despite providing high liquidity.
 * If Token A = 60% and Token B = 10%, LPs holding more Token A will earn disproportionately higher rewards and you may be better off skewing your position so it has more of token A than of token B.
+
+{% hint style="warning" %}
+The TVL of concentrated liquidity pools is updated every 2 hours and excludes blacklisted liquidity (so if the pool TVL is $1M and a blacklisted user holds 30% of the pool's TVL, the displayed TVL will be $700k)
+{% endhint %}

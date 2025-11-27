@@ -443,6 +443,30 @@ If you don't airdrop all the tokens by the end of the campaign, you will automat
 
 {% endhint %}
 
+#### Generating the payload
+
+The Merkl Studio does not yet support creating encompassing campaigns. We recommend calling the [encode batch](https://api.merkl.xyz/docs#tag/config/post/v4configencodebatch) route on the API to generate a Gnosis Safe payload for your campaign.
+
+```json
+[
+  {
+    "distributionChainId": 1,    
+    "amount": "1000000000000000000",
+    "computeChainId": 1,
+    "creator": "0x0000000000000000000000000000000000000000",
+    "startTimestamp": 1763985600,
+    "rewardToken": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "campaignType": 27,
+    "endTimestamp": 1766613600,
+    "dataUrl": "https://gist.github.com/BaptistG/576bd5711fded3f44d906efbcaff80e0/raw",
+    "rewardsUrl": "https://gist.githubusercontent.com/BaptistG/e9bc9e9703a40cd6ad7e30d3e4e039a3/raw",
+    "hooks": []
+  }
+]
+```
+
+The Gnosis Safe payload will be under the key `safePayload`
+
 ### Airdropping the rewards
 
 Before the end of the campaign you created, you need to update the rewards endpoint to tell Merkl to airdrop the rewards. To do so you should go to your gist, click edit and add data. For example, if I want to airdrop the following rewards of my token that has 18 decimals to 3 users where:
