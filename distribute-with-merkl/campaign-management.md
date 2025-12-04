@@ -34,6 +34,10 @@ To cancel a campaign, open [Merkl Studio](https://studio.merkl.xyz/users/) and s
 
 Once canceled, the campaign stops accruing rewards immediately. Undistributed tokens become withdrawable within **24 hours**—either from the Merkl UI or directly by calling the contract.
 
+{% hint style="info" %}
+After cancellation, the campaign will appear as **"Invalid"** in the Studio dashboard. This is expected behavior—the Merkl engine processes cancellations by overriding the campaign to an invalid campaign type, which triggers the return of undistributed rewards to the admin address of the campaign.
+{% endhint %}
+
 {% hint style="warning" %}
 Cancellation is **irreversible**. The engine will not process further updates for this campaign, and previously processed distributions remain final.
 {% endhint %}
@@ -66,7 +70,7 @@ As a campaign manager, you can reallocate unclaimed rewards from any recipient a
 
 Once a campaign has ended, you can reallocate unclaimed rewards from specific recipients or reallocate all unclaimed rewards at once.
 
-To give users time to claim their rewards, reallocation is only available after a defined window following the campaign's end. Currently, this window ranges from 1 day to 7 months post-campaign.
+To give users time to claim their rewards, reallocation is only available after a defined window following the campaign's end. Currently, this window ranges from 1 day to 1 year post-campaign.
 
 When reallocation is triggered, the process can take up to 24 hours. This delay is due to required security checks and the need to publish a Merkle root onchain—an essential step for making the reallocated rewards claimable. Since Merkle root updates are not continuous or real-time, this contributes to the processing time.
 
