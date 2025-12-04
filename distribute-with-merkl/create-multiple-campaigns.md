@@ -168,12 +168,12 @@ Modify the parameters in the configurations according to your needs. Refer to th
 
 You can simulate how your campaigns would appear after your payload is executed:
 
-- **Opportunity preview**: Call `https://api.merkl.xyz/v4/config/opportunity` with your campaign configuration in the body to see opportunity details (name, etc.)
-- **TVL preview**: Call `https://api.merkl.xyz/v4/config/tvl` to estimate TVL
+- **Opportunity preview**: Call [`https://api.merkl.xyz/v4/config/opportunity`](https://api.merkl.xyz/docs#tag/config/post/v4configopportunity) with your campaign configuration in the body to see opportunity details (name, etc.)
+- **TVL preview**: Call [`https://api.merkl.xyz/v4/config/tvl`](https://api.merkl.xyz/docs#tag/config/post/v4configtvl) to estimate TVL
 
 ### 4. Generate the Payload
 
-Call the endpoint `https://api.merkl.xyz/v4/config/encode/batch` to generate your payload.
+Call the endpoint `https://api.merkl.xyz/docs#tag/config/post/v4configencodebatchsafe` to generate your payload. You may also call [this endpoint](https://api.merkl.xyz/docs#tag/config/post/v4configencodebatch) if you want to get the transaction data to execute your campaign from an EOA.
 
 In the request body, enter your configurations as a list:
 
