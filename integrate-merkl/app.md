@@ -16,6 +16,22 @@ If you use Merkl as a white-label solution in your frontend, you must integrate 
 The Merkl API provides two types of data for displaying incentive information: **campaigns** and **opportunities**. Before integrating the API, it's important to understand [the difference between a campaign and an opportunity](../merkl-mechanisms/technical-overview.md#opportunity-vs-campaign) within Merkl.
 {% endhint %}
 
+## API Rate Limit
+
+The Merkl API has a default rate limit of **10 requests per second**. This limit is sufficient for most integration use cases.
+
+If your application requires a higher rate limit, please contact the Merkl team to request a custom API key. Once provided, you can include your API key in the `X-API-Key` header for all requests to `api.merkl.xyz`:
+
+```
+X-API-Key: your-api-key-here
+```
+
+Example request with API key:
+
+```bash
+curl -H "X-API-Key: your-api-key-here" https://api.merkl.xyz/v4/opportunities
+```
+
 ## Finding Relevant Opportunities
 
 The opportunities endpoint provides key metrics like APR, TVL, and daily rewards that you can display in your frontend.
