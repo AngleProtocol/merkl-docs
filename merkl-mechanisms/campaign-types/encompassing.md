@@ -103,6 +103,8 @@ Example:
 
 {% hint style="warning" %}
 **Keep recent history:** Include at least 3/4 days of past entries in your Reward JSON so that, if there are delays, the Merkl engine can still fetch and process recent rewards without requiring you to re-upload old data.
+
+**Give yourself a buffer with the end date:** We recommend setting the end date of your campaign 24 hours after you expect to distribute the last funds to make sure all rewards are processed before the end of the campaign.
 {% endhint %}
 
 
