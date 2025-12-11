@@ -89,6 +89,43 @@ The `distributionMethodParameters` field defines how rewards are distributed ove
 }
 ```
 
+#### Understanding Distribution Settings Parameters
+
+**rewardTokenPricing**:
+
+- `false`: The campaign distributes a fixed amount of reward tokens per unit (or dollar) of liquidity provided
+- `true`: The campaign distributes a fixed dollar value of rewards per unit (or dollar) of liquidity provided
+
+**targetTokenPricing**:
+
+- `false`: Rewards are calculated per unit of liquidity provided
+- `true`: Rewards are calculated per dollar of liquidity provided
+
+We recommend using `targetTokenPricing = true` for most campaigns to ensure consistent reward distribution regardless of liquidity value fluctuations.
+
+When both `rewardTokenPricing = true` and `targetTokenPricing = true`, the campaign pays a fixed APR.
+
+{% hint style="info" %}
+For most campaign types (such as token holding campaigns), the `targetToken` address is automatically derived from the campaign configuration and doesn't need to be specified manually within the `distributionSettings`.
+{% endhint %}
+
+#### Understanding the APR Value Format
+
+The `apr` value in `distributionSettings` represents different metrics depending on your pricing configuration:
+
+**Fixed APR** (`targetTokenPricing = true` and `rewardTokenPricing = true`):
+
+- The value represents the target APR as a decimal
+- Example: `"apr": "0.01"` = 1% APR, `"apr": "0.08"` = 8% APR
+
+**Token-per-Dollar Rate** (`targetTokenPricing = true` and `rewardTokenPricing = false`):
+
+- The value represents the number of reward tokens earned per dollar of liquidity per year
+- Example: `"apr": "1"` = 1 reward token per year per $1 of liquidity provided
+  - For $1,000 in liquidity: ~2.74 tokens per day (1,000 ÷ 365)
+- To reward 1 token per day per $1,000 provided, use: `"apr": "0.365"`
+  - Calculation: 1 token/day × 365 days = 365 tokens/year ÷ 1,000 dollars = 0.365 tokens per year per dollar
+
 ### Campaign-Specific Parameters
 
 Each campaign type has its own set of specific parameters in addition to the common parameters listed above.
@@ -113,12 +150,31 @@ Each campaign type has its own set of specific parameters in addition to the com
 
 The Merkl API provides endpoints to convert between campaign configurations and the encoded format used onchain.
 
-**Encoding configurations for onchain deployment:**
+**Encoding configurations for onchain campaign creation:**
 
-- [Encode single campaign from config](https://api.merkl.xyz/docs#tag/config/post/v4configencode)
-- [Encode multiple campaigns from their respective configs](https://api.merkl.xyz/docs#tag/config/post/v4configencodebatch)
+These endpoints convert campaign configurations into transaction data for calling the Merkl Distribution Creator contract:
 
-**Decoding onchain campaign data into configurations:**
+- [Encode single campaign from config](https://api.merkl.xyz/docs#tag/config/POST/v4/config/encode) - Generate transaction data for one campaign
+- [Encode multiple campaigns from their respective configs](https://api.merkl.xyz/docs#tag/config/POST/v4/config/encode/batch) - Generate transaction data for multiple campaigns
 
-- [Decode from onchain campaign ID](https://api.merkl.xyz/docs#tag/config/get/v4configdecodeonchaindistributionchainidcampaignid)
-- [Decode from onchain campaign data](https://api.merkl.xyz/docs#tag/config/post/v4configdecodedistributionchainid)
+If you're deploying campaigns from a Gnosis Safe, use these endpoints instead to get Safe-compatible transaction payloads:
+
+- [Get Safe payload from a single campaign config](https://api.merkl.xyz/docs#tag/config/POST/v4/config/encode/safe) - Generate Safe transaction payload for one campaign
+- [Get Safe payload from multiple campaigns config](https://api.merkl.xyz/docs#tag/config/POST/v4/config/encode/batch/safe) - Generate Safe transaction payload for multiple campaigns
+
+**Decoding onchain data into configurations:**
+
+These endpoints convert various types of onchain and encoded data back into readable configuration objects:
+
+- [Decode from onchain campaign ID](https://api.merkl.xyz/docs#tag/config/GET/v4/config/decode/onchain/{distributionChainId}/{campaignId}) - Retrieve configuration for an existing campaign
+- [Decode from Database ID](https://api.merkl.xyz/docs#tag/config/GET/v4/config/decode/onchain/{distributionChainId}/{campaignId}) - Retrieve configuration for an existing campaign using its `DatabaseId`
+- [Decode from raw onchain campaign data](https://api.merkl.xyz/docs#tag/config/POST/v4/config/decode/{distributionChainId}) - Parse encoded campaign data
+- [Decode from Gnosis Safe payload](https://api.merkl.xyz/docs#tag/config/POST/v4/config/decode/safe) - Extract configuration from Safe transaction payload
+- [Decode from transaction data](https://api.merkl.xyz/docs#tag/config/GET/v4/config/decode/{distributionChainId}/{payload}) - Parse campaign creation transaction data
+
+**Previewing campaigns before deployment:**
+
+These endpoints allow you to simulate how your campaign will appear and estimate its metrics before deploying it onchain:
+
+- [Preview opportunity details](https://api.merkl.xyz/docs#tag/config/post/v4configopportunity) - See how your campaign will be categorized and displayed (opportunity name, grouping, etc.)
+- [Estimate TVL](https://api.merkl.xyz/docs#tag/config/post/v4configtvl) - Calculate the expected Total Value Locked for your campaign configuration

@@ -54,12 +54,19 @@ You can set a higher budget, but only do so if you know that your campaign will 
 - disable forwarding for the lending market (done by blacklisting the market address): in this case, you will create an additional campaign for the lenders with x5 multiplier
 {% endhint %}
 
-**Fixed reward rate campaigns:** Please make sure that Merkl knows how to price the asset you are incentivizing if you're configuring campaigns with a fixed point reward rate (e.g., 1 point token per $1,000 deposited). To do so, either look for existing campaigns on our app, or check if all the assets involved in your campaign are priced by Merkl. When in doubt, reach out to the sales team on Telegram.
+**Fixed reward rate campaigns:** When configuring campaigns with a fixed point reward rate (e.g., 1 point token per $1,000 deposited), ensure that Merkl can price the assets involved in your campaign. You can verify this by checking for existing campaigns with similar assets on the [Merkl app](https://app.merkl.xyz/) or confirming that all relevant assets are priced by Merkl. If you're unsure, contact the sales team on Telegram.
 
 {% hint style="info" %}
-**Understanding the associated virtual APR for points**: If you are reasoning in terms of points APR (meaning the APR in points if a point was worth $1):
- - Rewarding 1 point per $1 per day is equivalent to a 36500% APR (100% per day multiplied by 365)
- - Rewarding 1 point per $1000 per day is equivalent to 36.5% APR (0.1% per day multiplied by 365)
+**Understanding Virtual APR for Points**
+
+When reasoning in terms of points APR (the APR that would apply if each point were worth $1):
+
+- Rewarding 1 point per $1 per day = **36,500% APR**
+  - Calculation: 100% per day × 365 days
+- Rewarding 1 point per $1,000 per day = **36.5% APR**
+  - Calculation: 0.1% per day × 365 days
+
+For detailed guidance on configuring distribution rates for your points campaigns, refer to the [campaign configuration documentation](../merkl-mechanisms/campaignConfiguration.md#understanding-distribution-settings-parameters).
 {% endhint %}
 
 **CLAMM campaigns**: Fixed reward rates are not used for Concentrated Liquidity AMM campaigns because CLAMM distribution models are based on token0/token1 and fees (v3) or liquidity contribution (v4), not dollar values. For CLAMM campaigns, use variable reward rates instead: create a large budget and handle renormalization yourself based on the TVL during that period to properly distribute rewards. 

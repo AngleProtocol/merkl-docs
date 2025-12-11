@@ -10,23 +10,71 @@ This feature enables campaign creators to launch multiple campaigns sharing the 
 
 All batch campaign creation methods involve generating [campaign configurations](../merkl-mechanisms/campaignConfiguration.md) and their corresponding payloads. This guide walks you through configuration and payload generation. Once you have a payload, refer to [Create a Campaign from a Multisig or Gnosis Safe](./create-your-campaign-from-a-multisig-or-gnosis-safe.md) for execution instructions.
 
-## Method 1: Override Parameters from Existing Template Campaigns
+## Method 1: Using Campaign Configurations (Recommended method)
 
-This method uses **existing campaigns as templates**. You select past campaigns that closely match what you want, tweak a few parameters in their configuration, generate a payload, and execute it with a Safe.
+This method allows you to generate a campaign payload using full [campaign configurations](../merkl-mechanisms/campaignConfiguration.md).
+
+### 1. Retrieve Campaign Configurations
+
+Use this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}) to retrieve campaign configurations from existing campaigns.
+
+### 2. Adjust Parameters
+
+Modify the parameters in the configurations according to your needs. Refer to the [campaign configuration documentation](../merkl-mechanisms/campaignConfiguration.md) for details on available parameters.
+
+{% hint style="info" %}
+Before generating your payload, you can preview how your campaigns will appear using the [campaign preview endpoints](../merkl-mechanisms/campaignConfiguration.md#previewing-campaigns-before-deployment) to validate your configurations and catch potential issues early.
+{% endhint %}
+
+### 3. Generate the Payload
+
+Use [this endpoint](https://api.merkl.xyz/docs#tag/config/POST/v4/config/encode/batch/safe) to generate your Safe-compatible transaction payload.
+
+In the request body, provide your configurations as a JSON array:
+
+```json
+[{
+    "distributionChainId": 56,
+    "campaignId": "0xcadb252f36c79aacbd6c96ce2af6cee374c2b0a0929ef6878525bee24987ed5e",
+    "amount": "5000000000000000000000000",
+    "computeChainId": 56,
+    "creator": "0x67C06896Efb9Ce0A14C32B597Fa8bAa3f2659e7D",
+    "startTimestamp": 1763636400,
+    "rewardToken": "0xEdBeBe204Ef070B6880E07A28b55edc7748C24BA",
+    "distributionMethodParameters": {
+        "distributionMethod": "DUTCH_AUCTION",
+        "distributionSettings": {}
+    },
+    "campaignType": 18,
+    "endTimestamp": 1764068400,
+    "blacklist": [],
+    "whitelist": [],
+    "forwarders": [],
+    "targetToken": "0x5029f49585D57ed770D2194841B5A0bE06BFc2ED"
+}]
+```
+
+{% hint style="info" %}
+For additional encoding options to create your campaigns onchain (direct transaction data, single campaign encoding, etc.), see the [encoding and decoding documentation](../merkl-mechanisms/campaignConfiguration.md#encoding-and-decoding-configurations).
+{% endhint %}
+
+## Method 2: Override Parameters from Existing Template Campaigns
+
+This method uses **existing campaigns as templates**. Instead of specifying complete campaign configurations (as in Method 1), you only need to override specific parameters from template campaigns. Simply select existing campaigns that closely match your needs, modify the parameters you want to change, generate a payload, and execute it with a Safe.
 
 ### 1. Retrieve Campaign Templates
 
-Choose past campaigns as close as possible to what you plan to launch. We strongly recommend matching both the [campaign type](../merkl-mechanisms/campaign-types/README.md) and the [distribution type](../merkl-mechanisms/distributions.md). This minimizes edits and reduces the chance of errors.
+Select existing campaigns that most closely match what you plan to launch. We strongly recommend matching both the [campaign type](../merkl-mechanisms/campaign-types/README.md) and the [distribution type](../merkl-mechanisms/distributions.md) to minimize the number of parameters you need to modify and reduce the chance of errors.
 
-Next, find the `DatabaseId` of the template campaign(s) you will use to derive your payload(s). To do this:
+Next, find the `DatabaseId` of the template campaign(s) you'll use as the base for your new campaigns:
 
 1. Go to the [Merkl app](https://app.merkl.xyz/)
 2. Select an opportunity and open the "Advanced" tab
-3. Copy your template `DatabaseId`
+3. Copy the `DatabaseId` value
 
 ### 2. Prepare the Campaign Payload
 
-Use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) to build a batch using your selected template `DatabaseId` value(s) (from Step 1) and updated parameters for all your campaigns.
+Use this [endpoint](https://api.merkl.xyz/docs#tag/campaigns/post/v4/campaigns/generate-payload) to generate your batch payload by providing your template `DatabaseId` value(s) (from Step 1) along with the parameters you want to override for each campaign.
 
 **Request body structure:**
 
@@ -150,53 +198,6 @@ When using the API endpoint, the body will look like this:
     ]
   }
 }
-```
-
-## Method 2: Using Campaign Configurations
-
-This method allows you to generate a campaign payload using full [campaign configurations](../merkl-mechanisms/campaignConfiguration.md) rather than just overriding parameters from templates.
-
-### 1. Retrieve Campaign Configurations
-
-Use this [endpoint](https://api.merkl.xyz/docs#tag/config/get/v4/config/{id}) to retrieve campaign configurations from existing campaigns.
-
-### 2. Adjust Parameters
-
-Modify the parameters in the configurations according to your needs. Refer to the [campaign configuration documentation](../merkl-mechanisms/campaignConfiguration.md) for details on available parameters.
-
-### 3. Preview Your Campaigns (Optional)
-
-You can simulate how your campaigns would appear after your payload is executed:
-
-- **Opportunity preview**: Call [`https://api.merkl.xyz/v4/config/opportunity`](https://api.merkl.xyz/docs#tag/config/post/v4configopportunity) with your campaign configuration in the body to see opportunity details (name, etc.)
-- **TVL preview**: Call [`https://api.merkl.xyz/v4/config/tvl`](https://api.merkl.xyz/docs#tag/config/post/v4configtvl) to estimate TVL
-
-### 4. Generate the Payload
-
-Call the endpoint `https://api.merkl.xyz/docs#tag/config/post/v4configencodebatchsafe` to generate your payload. You may also call [this endpoint](https://api.merkl.xyz/docs#tag/config/post/v4configencodebatch) if you want to get the transaction data to execute your campaign from an EOA.
-
-In the request body, enter your configurations as a list:
-
-```json
-[{
-    "distributionChainId": 56,
-    "campaignId": "0xcadb252f36c79aacbd6c96ce2af6cee374c2b0a0929ef6878525bee24987ed5e",
-    "amount": "5000000000000000000000000",
-    "computeChainId": 56,
-    "creator": "0x67C06896Efb9Ce0A14C32B597Fa8bAa3f2659e7D",
-    "startTimestamp": 1763636400,
-    "rewardToken": "0xEdBeBe204Ef070B6880E07A28b55edc7748C24BA",
-    "distributionMethodParameters": {
-        "distributionMethod": "DUTCH_AUCTION",
-        "distributionSettings": {}
-    },
-    "campaignType": 18,
-    "endTimestamp": 1764068400,
-    "blacklist": [],
-    "whitelist": [],
-    "forwarders": [],
-    "targetToken": "0x5029f49585D57ed770D2194841B5A0bE06BFc2ED"
-}]
 ```
 
 ## Method 3: Pre-Set Campaign Keys (Deprecated)

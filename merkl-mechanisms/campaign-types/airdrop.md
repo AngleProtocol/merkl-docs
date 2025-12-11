@@ -55,7 +55,9 @@ Example:
 * **rewardToken:** The token being distributed.
 * **rewards:** User rewards with recipient addresses and reasons for the rewards.
 
-**All addresses indicated must be in checksummed!**
+{% hint style="warning" %}
+**Important**: All addresses in your JSON file MUST be in [checksummed format](https://eips.ethereum.org/EIPS/eip-55). Non-checksummed addresses will cause the campaign to fail. Use tools like [Etherscan](https://etherscan.io/) or ethers.js `getAddress()` to convert addresses to the correct format.
+{% endhint %}
 
 ### Fees for airdrops
 
