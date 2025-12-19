@@ -56,6 +56,12 @@ You don't need to include `acceptConditions` for every campaign—including it o
 
 Similarly, for approval amounts: you can grant a large allowance once and then exclude the approval transaction from future payloads.
 
+**Handle Large Payloads:**
+
+On some chains, transaction payloads may be too large for the available block space, especially when creating multiple campaigns in a single payload. This occurs when the encoded campaign data exceeds the chain's transaction size limits. The limits vary by chain and depend on the number of campaigns and their complexity—some campaign types encode more data onchain than others.
+
+If your transaction fails due to payload size, you'll need to split it into multiple smaller payloads. Use our [Payload Splitter tool](https://splitter.merkl.xyz/) to automatically divide large payloads into executable batches.
+
 **Save for Future Use:**
 
 Save the transaction batch in your library to streamline the process and create new campaigns faster in the future.
