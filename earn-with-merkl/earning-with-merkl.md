@@ -93,9 +93,26 @@ When claiming rewards from a multisig address, we recommend delegating the claim
 
 ### Claiming as an operator
 
-Currently, when you're connected to the Merkl frontend with an operator address, you only see rewards earned by that operator address—not by the addresses that have appointed it.
+Once an address has approved you as an operator by calling `toggleOperator` on the [distributor smart contract](https://app.merkl.xyz/status), you can claim rewards on behalf of that address directly from the Merkl frontend.
 
-To claim rewards on behalf of another address using an operator, you'll need to bypass the frontend and use the Merkl API directly. For example, you can retrieve the Merkle proof for a specific user and chain by calling: `https://api.merkl.xyz/v4/users/0xA9DdD91249DFdd450E81E1c56Ab60E1A62651701/rewards?chainId=1`
+#### How to claim via the frontend
+
+1. **Navigate to the user's dashboard**: Go to `https://app.merkl.xyz/users/[ADDRESS]` where `[ADDRESS]` is the wallet address for which you want to claim rewards.
+
+2. **Enable Operator mode**: On the right side of the dashboard, you'll find a button with three vertical dots (⋮). Click on it and select **"Operator mode (advanced)"** to enable it.
+
+   {% hint style="warning" %}
+   **Operator mode (advanced)**
+   
+   Claim rewards on behalf of addresses that approved you. Claims without approval will fail.
+   {% endhint %}
+
+3. **Connect your operator wallet**: Connect the wallet that has been toggled as an operator for the address you're claiming on behalf of.
+
+4. **Claim the rewards**: Once connected, you'll see the rewards available for the address, and you can claim them as you would normally. The rewards will be sent to the original address that earned them, not to your operator address.
+
+{% hint style="info" %}
+If you need to claim rewards programmatically or via the API instead of the frontend, you can retrieve the Merkle proof for a specific user and chain by calling: `https://api.merkl.xyz/v4/users/[ADDRESS]/rewards?chainId=[CHAIN_ID]`
 
 This response will include the Merkle proof data needed to submit a claim. You can then use this information to call the claim function on the [Merkl Distributor contract](../integrate-merkl/smart-contract-addresses.md) via a block explorer or directly onchain.
 
@@ -107,6 +124,7 @@ To structure the claim:
 * `proofs`: Include the Merkle proof array for each token, also retrieved from the API.
 
 <figure><img src=".gitbook/assets/DistributorClaim.png" alt=""><figcaption><p>Claiming Merkl rewards using a block explorer</p></figcaption></figure>
+{% endhint %}
 
 ### Address Remapping
 
