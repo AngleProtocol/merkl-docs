@@ -258,6 +258,202 @@ if __name__ == "__main__":
 
 </details>
 
+## States Analytics API
+
+{% hint style="info" %}
+This is a **beta feature**. The API and its endpoints are subject to change.
+{% endhint %}
+
+The Merkl States Analytics API provides detailed position and transaction data for users across different DeFi protocols. This service is particularly useful for building analytics dashboards, tracking position history, and computing PnL (Profit and Loss) for user positions.
+
+**Base URL:** `https://merkl-states-analytics-default-17958766110.europe-west1.run.app`
+
+**Full API Documentation:** [Swagger Documentation](https://merkl-states-analytics-default-17958766110.europe-west1.run.app/swagger)
+
+### Authentication
+
+This API requires a bearer authentication token for beta access. Contact the Merkl team to request your access token.
+
+Include your bearer token in the `authorization` header for all requests:
+
+```bash
+curl 'https://merkl-states-analytics-default-17958766110.europe-west1.run.app/v0/positions/{userAddress}/{chainId}' \
+  --header 'authorization: Bearer your-token-here'
+```
+
+### Available Endpoints
+
+#### Get User Position History
+
+Fetch historical position data for a user across opportunities (pools, lending markets, etc.):
+
+```
+GET /v0/positions/{userAddress}/{chainId}
+```
+
+**Path Parameters:**
+
+* **`userAddress`** (required): The user's wallet address
+* **`chainId`** (required): Chain ID to query
+
+**Query Parameters:**
+
+* **`opportunityIds`** (optional): Comma-separated opportunity IDs to filter (pool address/ID, token address, vault address, market ID, etc.)
+* **`enrichPositions`** (optional, boolean): Set to `true` to enrich CLAMM positions with formatted token amounts and global state data. Defaults to `false`
+* **`fetchHistory`** (optional, boolean): Set to `true` to include history snapshots. Defaults to `false`
+* **`maxTimestamp`** (optional, numeric): Maximum timestamp to fetch data until
+* **`daily`** (optional, boolean): Set to `true` to generate daily snapshots from history. Defaults to `false`
+* **`protocol`** (optional, string): Filter positions by protocol name (e.g., "uniswap"). Case-insensitive partial match
+* **`filterByIds`** (optional, array): Array of specific position IDs to filter
+* **`page`** (optional, numeric): Page number (1-indexed). Defaults to 1
+* **`items`** (optional, numeric): Items per page. Defaults to 50
+
+**Behavior:**
+
+* If no `maxTimestamp` is provided and current time is >1 day ahead of most recent data, uses most recent timestamp
+* When `daily=true`, generates daily snapshots at 86400-second intervals per position
+* When `enrichPositions=true`, CLAMM positions (those with `positionId`) are automatically enriched with global states and formatted token amounts
+* When `protocol` is specified, only positions matching that protocol are returned
+
+**Examples:**
+
+All positions for a user on Ethereum:
+```
+GET /v0/positions/0x1234.../{chainId}?fetchHistory=true
+```
+
+Only Uniswap positions with enrichment:
+```
+GET /v0/positions/0x1234.../1?protocol=uniswap&enrichPositions=true
+```
+
+Daily snapshots for specific opportunities:
+```
+GET /v0/positions/0x1234.../1?opportunityIds=0xPoolAddress&fetchHistory=true&daily=true
+```
+
+#### Get Uniswap Positions for a Pool
+
+Fetch all positions for a specific Uniswap pool on a chain:
+
+```
+GET /v0/positions/uniswap/{chainId}/{poolId}
+```
+
+**Path Parameters:**
+
+* **`chainId`** (required): Chain ID to query
+* **`poolId`** (required): Pool identifier - either an EVM address (0x...) or bytes32 format
+
+**Query Parameters:**
+
+Same as the user position endpoint: `enrichPositions`, `fetchHistory`, `maxTimestamp`, `daily`, `filterByIds`, `page`, `items`
+
+**Example:**
+
+Get all positions for a Uniswap pool on Ethereum with history:
+```
+GET /v0/positions/uniswap/1/0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640?fetchHistory=true
+```
+
+#### Get Transactions
+
+Fetch state data associated with specific transaction hashes:
+
+```
+GET /v0/transactions/{chainId}
+```
+
+**Path Parameters:**
+
+* **`chainId`** (required): Chain ID to query transactions from
+
+**Query Parameters:**
+
+* **`txHashes`** (required): Comma-separated transaction hashes (e.g., "0x123abc...,0x456def...")
+* **`reasonFilter`** (optional): Substring filter for the reason field to narrow results
+
+**Response:**
+
+Returns an array of state objects, each containing:
+* `blockNumber`: Block number where the state was recorded
+* `blockTimestamp`: Timestamp of the block
+* `chainId`: Chain ID
+* `protocol`: Protocol identifier (e.g., "uniswap-v3", "aave-v3")
+* `campaignType`: Campaign type identifier
+* `reason`: Reason identifier (typically poolAddress_positionId or similar)
+* `storingId`: Storing identifier for the state set
+* `state`: The actual state data (structure varies by protocol)
+* `txHashes`: Array of transaction hashes associated with this state
+
+**Use Cases:**
+* Track state changes caused by specific transactions
+* Get states impacted by a particular transaction
+
+**Examples:**
+
+Single transaction:
+```
+GET /v0/transactions/1?txHashes=0x123abc...
+```
+
+Multiple transactions:
+```
+GET /v0/transactions/1?txHashes=0x123abc...,0x456def...
+```
+
+With reason filter:
+```
+GET /v0/transactions/1?txHashes=0x123abc...&reasonFilter=0xPoolAddress
+```
+
+### Response Format
+
+All position endpoints return data in the following structure:
+
+```json
+{
+  "data": {
+    "position-key": {
+      "address": "string",
+      "chainId": 1,
+      "tokenAddressOrPoolId": "string",
+      "positionId": "string",
+      "timestamp": 1234567890,
+      "value": {
+        "field1": "value1",
+        "field2": "value2"
+      },
+      "history": [
+        {
+          "blockNumber": 123456,
+          "blockTimestamp": 1234567890,
+          "chainId": 1,
+          "globalState": { },
+          "value": { }
+        }
+      ],
+      "globalState": { }
+    }
+  },
+  "pagination": {
+    "page": 1,
+    "maxItems": 50,
+    "items": 10,
+    "totalCount": 100,
+    "totalSnapshots": 150
+  }
+}
+```
+
+### Use Cases
+
+* **Position Tracking**: Monitor user positions across multiple protocols and chains
+* **PnL Analytics**: Calculate profit and loss using historical position data with `fetchHistory=true` and `daily=true`
+* **Portfolio Visualization**: Display user holdings with enriched token amounts using `enrichPositions=true`
+* **Protocol Analytics**: Aggregate data by protocol using the `protocol` filter
+* **Pool-Specific Insights**: Analyze all positions in a specific pool using the Uniswap pool endpoint
+
 ## Integrating User Rewards
 
 To retrieve reward data for a specific user, use the following endpoint:
